@@ -1,0 +1,37 @@
+﻿@charset "utf-8";
+
+/* for all
+---------------------------------------------------------------------------- */
+
+@import "modules.css";
+@import "base.css";
+
+
+div#maincontents
+{
+   width: 100%;
+}
+.clearfix
+{
+    display: inline-block;
+}
+.clearfix:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+div#mainleft
+{
+    width: 20%;
+    margin: 20px 2px 0px 5px;
+    float: left;
+}
+
+div#mainright
+{
+	float:right;
+	width:79%;
+	margin-right:0px;
+}

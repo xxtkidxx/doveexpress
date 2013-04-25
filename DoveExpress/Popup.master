@@ -1,0 +1,67 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Popup.master.cs" Inherits="Popup" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+   <link href="css/StyleSheet.css" rel="stylesheet" type="text/css" />
+   <title>PHẦN MỀM QUẢN LÝ ĐẦU TƯ VÀ DOANH NGHIỆP KHU CNC HÒA LẠC</title>
+</head>
+<body>
+<script type="text/javascript">
+    function printform(divid) {
+        var printContent = document.getElementById(divid);
+        var windowUrl = 'about:blank';
+        var uniqueName = new Date();
+        var windowName = 'Print' + uniqueName.getTime();
+        var printWindow = window.open(windowUrl, windowName, 'left=0;top=0,width=0,height=0,toolbar=0,scrollbars=0,status=0,location=0');
+
+        printWindow.document.write(printContent.innerHTML);
+        printWindow.document.close();
+        printWindow.focus();
+        printWindow.print();
+        printWindow.close();
+    }
+</script>
+    <form id="form1" runat="server">
+    <telerik:RadCodeBlock ID="RadCodeBlockMain" runat="server">
+       <script type="text/javascript">
+           function RowDblClick(sender, eventArgs) {
+                sender.get_masterTableView().editItem(eventArgs.get_itemIndexHierarchical());
+            }
+       </script>
+       <script type="text/javascript">
+                var popUp;
+                function PopUpShowing(sender, eventArgs) {
+                    popUp = eventArgs.get_popUp();
+                    var gridWidth = sender.get_element().offsetWidth;
+                    var gridHeight = sender.get_element().offsetHeight;
+                    var popUpWidth = popUp.style.width.substr(0, popUp.style.width.indexOf("px"));
+                    var popUpHeight = popUp.style.height.substr(0, popUp.style.height.indexOf("px"));
+                    popUp.style.left = ((gridWidth - popUpWidth) / 2 + sender.get_element().offsetLeft).toString() + "px";
+                    popUp.style.top = ((gridHeight - popUpHeight) / 2 + sender.get_element().offsetTop).toString() + "px";
+                } 
+      </script>
+      <script type="text/javascript">
+            function onRequestStart(sender, args) {
+                if (args.get_eventTarget().indexOf("ExportToPdfButton") >= 0 ||
+                        args.get_eventTarget().indexOf("ExportToExcelButton") >= 0 ||
+                        args.get_eventTarget().indexOf("ExportToWordButton") >= 0 ||
+                        args.get_eventTarget().indexOf("ExportToCsvButton") >= 0) {
+                    args.set_enableAjax(false);
+                }
+            }                  
+       </script>
+    </telerik:RadCodeBlock>
+      <telerik:RadScriptManager ID="RadScriptManagerPopup" runat="server">
+      </telerik:RadScriptManager>
+      <telerik:RadAjaxManager ID="RadAjaxManagerPopup" runat="server" UpdatePanelsRenderMode="Inline">
+      </telerik:RadAjaxManager>
+    <div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolderPopup" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>

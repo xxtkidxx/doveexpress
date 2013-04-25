@@ -1,0 +1,143 @@
+@charset "utf-8";
+
+/* Table Of Contents
+----------------------------------------
+
+# Reset 'Browser standard style'
+
+----------------------------------------*/
+
+
+/* # Reset 'Browser standard style'
+---------------------------------------------------------------------------- */
+
+html {
+	overflow-y: scroll;
+}
+
+body,
+h1,h2,h3,h4,h5,h6,
+p,ul,ol,dl,dt,dd,li,th,
+form,address,pre,caption,cite,code,dfn,var {
+	font-size: 100%;
+	font-style: normal;
+	font-weight: normal;
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+}
+
+img { 
+	border: 0; 
+	vertical-align: bottom;
+}
+
+table { 
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+caption, th { text-align: left; }
+
+fieldset { border: 0; }
+
+hr { display: none; }
+
+ol, ul { list-style: none; } 
+
+q:before, q:after { content: ''; } 
+
+abbr, acronym { border: 0; }
+
+em { font-style: normal; }
+
+
+
+/* # offscreen
+---------------------------------------------------------------------------- */
+
+.offscreen {
+	text-indent: -9999em;
+	position: absolute;
+	overflow: hidden;
+}
+
+
+/* # float clear
+---------------------------------------------------------------------------- */
+
+.clearLeft  { clear:left; }
+.clearRight { clear:right; }
+.clearBoth  { clear:both; }
+
+
+/* # float
+---------------------------------------------------------------------------- */
+
+.floatLeft  { float:left; }
+.floatRight { float:right; }
+
+
+/* # align
+---------------------------------------------------------------------------- */
+
+.alignLeft   { text-align: left !important; }
+.alignCenter { text-align: center !important; }
+.alignRight  { text-align: right !important; }
+
+
+/* # valign
+---------------------------------------------------------------------------- */
+
+.valignBaseline { vertical-align: baseline; }
+
+
+/* # rollover
+---------------------------------------------------------------------------- */
+
+.imgover {}
+
+
+/* # font color
+---------------------------------------------------------------------------- */
+
+.attention { 
+	color: #f00; 
+}
+
+.required { 
+	color: #f66; 
+}
+
+
+/* # font size
+---------------------------------------------------------------------------- */
+
+.smallText { font-size: 83%; }
+
+
+/* # last list 
+---------------------------------------------------------------------------- */
+
+.lastList {
+	background: none !important;
+	border: none !important;
+	margin-right: 0 !important;
+}
+
+
+/* # clearfix 
+---------------------------------------------------------------------------- */
+
+.clearfix {
+	zoom: 1;
+}
+
+.clearfix:after {
+	clear: both;
+	content: ".";
+	display: block;
+	height: 0;
+	line-height: 0;
+	visibility: hidden;
+}
