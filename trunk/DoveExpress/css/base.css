@@ -1,0 +1,1494 @@
+﻿charset "utf-8";
+
+/* Table Of Contents
+----------------------------------------
+
+# General Elements
+# body
+# layout
+# header
+# gNav
+# pageBody
+# content
+# sidebar
+# footer
+# clearfix
+# common classes
+
+----------------------------------------*/
+
+
+/* # General Elements
+---------------------------------------------------------------------------- */
+
+a    { color: #00427a; text-decoration: none; outline: none; }
+a:hover   { color: #3a6e00; }
+
+
+/* # body
+---------------------------------------------------------------------------- */
+
+body {
+	background:#FFFFFF;
+	color: #000;
+	font-size: 12px;
+	font-family: Arial, Tahoma, Helvetica, sans-serif;
+	line-height: 1.0;
+}
+
+
+/* # layout
+---------------------------------------------------------------------------- */
+
+div#pagebody
+{
+background:#FFFFFF;
+display:block;
+position:absolute;
+top:0;
+left:0;
+width:100%;	
+}
+div.admin_banner
+{
+    width: 100%;
+    border-bottom: 0px solid white;
+    background-color: #0A2D63;
+    background-image: url('../images/img_header.png');
+    background-repeat: repeat-y;
+    height:90px;
+}
+div.admin_left
+{
+    float: left;
+    height: 80px;
+    width: 100%;
+    background-repeat: no-repeat;
+    text-align: right;
+    padding-right: 20px;
+    vertical-align: bottom;
+}
+div.admin_left_company
+{
+    float: left;
+    height: 80px;
+    width: 100%;
+    text-align: right;
+    padding-right: 20px;
+    vertical-align: bottom;
+    background-image: url('../images/img_doitac.png');
+    background-repeat: no-repeat;
+}
+div.admin_header
+{
+    float: right;
+    text-align:right;
+    vertical-align:bottom;
+    line-height:20px;
+    padding-right:20px;
+    color: White;
+    padding-top:70px;
+}
+div.admin_cms {
+width:100%;
+margin: 0px 0px 5px 5px;
+min-height:400px;
+}
+div.admin_menu 
+{
+   height:25px;
+   display:block; 
+}
+div.content_left
+{
+	width:17%;
+	float:left;
+	background:url('../Images/img_bodycontentleft.jpg') repeat-x #b4d4fa;
+	border-right:2px solid white;
+		height:100%;
+}
+
+ul.menu_content 
+{
+display:block;
+margin-top:5px;
+} 
+ul.menu_content li {
+	height:30px;
+	line-height:30px;
+
+}
+ul.menu_content li a {
+	height:20px;
+	font-weight:600;
+	font-size:13px;
+	padding: 0px 0px 0px 30px;
+	color:#ff8231;
+}
+
+ul.menu_content li:hover {
+	background:#b5bed6;
+	border:1px solid navy;
+}
+ul.menu_content li a:hover {
+
+	text-decoration:underline;
+}
+
+
+div.content_right {
+	float:right;
+	width:100%;
+}
+/*----------- add quang hung----------*/
+
+div.headerthongtin
+{
+width:100%;
+height:26px;
+line-height:26px;
+background:url('../Images/img_bghearderthongtin.jpg') repeat-x;
+}
+div.headerthongtin ul {
+	display:block;
+	width:100%;
+
+}
+div.headerthongtin ul li {
+display:inline;
+background:url('../Images/img_phancanh.jpg') no-repeat;
+background-position:left center;
+padding:0px 5px 0px 10px;
+}
+div.headerthongtin ul li.lifirst {
+	background:none;
+}
+div.headerthongtin ul li img {
+	padding-bottom:3px;
+}
+
+table.thongtin {
+width:100%;
+border-collapse:collapse;
+background:url('../Images/bg_newproduct.jpg') repeat-x #FFFFFF;
+
+}
+
+
+table.thongtin tr td.td1  {
+	width:12%;
+    vertical-align:top; 
+    padding-left:5px;
+}
+table.thongtin tr td.td12  {
+	width:12%;
+	padding-left:5px
+}
+table.thongtin tr td.td13  {
+	width:88%;
+}
+table.thongtin tr td.td2  {
+	width:90%;
+	vertical-align:top;
+}
+
+table.thongtin tr td textarea {
+	width:100%;
+	border:1px #bababa solid;
+}
+table.thongtin tr td input {
+	width:100%;
+	border:1px #bababa solid;
+	
+}
+table.thongtin tr td input.inputkinhphi {
+	width:20%;
+
+}
+ span.spankhinhphi {
+padding:0px 5px 0px 5px;
+}
+
+.divtable {
+	display:table;
+	width:100%;
+}
+table.tabledivtable 
+{
+	width:100%;
+}
+table#Table1  
+{
+border-bottom:2px solid #9cb6c5;
+border-collapse:collapse;
+background:url('../Images/bg_newproduct.jpg') repeat-x #FFFFFF;
+margin-top:-2px;
+
+   }
+ table#Table1 tr td {
+border-bottom:1px solid #e5eff8;
+border-left:1px solid #e5eff8;
+width:100%;
+}
+div.divpopup 
+{
+    width:100%;background:#ffffff;
+   
+}  
+
+/*-----------------------beginform kinhphi---------------------------*/
+div#beginkinhphi  
+{
+    margin-top:0px;
+
+    }
+table#tablebox {
+	width:100%;
+	border-collapse:collapse;
+
+}
+table#tablebox tr td {
+	vertical-align:top;
+	padding-left:5px;
+
+}
+ fieldset {
+  /* clear: both; note that this clear causes inputs to break to left in ie5.x mac, commented out */
+  border-color: #6293ce;
+  border-width: 1px;
+  border-style: solid;
+  padding:0px 5px 5px 5px;        /* padding in fieldset support spotty in IE */
+  margin: 0;
+}
+.columnKP  
+{
+
+    height:600px;    
+ }
+
+div#br1 {
+	
+}
+table.tablekp {
+	width:100%;
+}
+
+table.tablekp tr td#td1 {
+	width:40%;
+	text-align:right;
+	vertical-align:bottom;
+	padding-right:10px;
+}
+table.tablekp tr td#td2 {
+	width:30%;
+	text-align:center;
+	vertical-align:bottom;
+
+}
+table.tablekp tr td#td3 {
+	width:30%;
+	text-align:center;
+	vertical-align:bottom;
+}
+
+#iputnam {
+	width:50px;
+}
+#iputsotien{
+	width:120px;
+}
+#iputnamcol2 {
+	width:70px;
+}
+#iputsotiencol2 {
+	width:120px;
+}
+#fieldset_end {
+	border:none;
+	margin-top:5px;
+}
+#tablens {
+	width:100%;
+}
+#tablens tr td {
+	text-align:center;
+}
+#tablens tr td#td1 {
+	width:20%;
+}
+#spannsnn {
+	color:blue;
+}
+#spannns {
+	color:#CC0000;
+}
+span.spantd1 { color:Blue;font-size:14px;}
+span.rtsTxtnew { margin-left:12px;font-size:12px;float:left; }
+span.rtsTxtnew1 {font-size:12px;float:left; }
+span.txtleft {  font-size:12px;float:left; }
+span.txtlefttext {  font-size:12px;float:left;padding-left:20px; }
+span.txtlefttext1 {  font-size:12px;float:left; }
+/*--------------- from hoc vị------------------------------*/
+table.tablecgs 
+{
+
+border-collapse:collapse;
+background:url('../Images/bg_newproduct.jpg') repeat-x #FFFFFF;
+margin-top:-2px;   
+}
+table.tablecgs tr td {
+border-bottom:1px solid #e5eff8;
+border-left:1px solid #e5eff8;
+
+}
+table.tablecgs tr td.td1 
+{
+    width:100px;
+  
+}   
+table.tablecgs tr td.td2 
+{
+    width:230px;
+
+}  
+table.tablecgs tr td.td3 
+{
+    width:180px;
+  
+}
+table.tablecgs tr td .txttext { width:97%;font-size:12px; } 
+table.tablecgs tr td RadComboBox .txttext { font-size:12px; } 
+/*-------------Tableldc -------------*/
+table#Tableldc 
+{
+border:1px solid #e5eff8;
+border-bottom:2px solid #9cb6c5;
+border-collapse:collapse;
+background:url('../Images/bg_newproduct.jpg') repeat-x #FFFFFF;
+margin-top:-2px;
+}
+table#Tableldc tr td {
+border-bottom:1px solid #e5eff8;
+border-left:1px solid #e5eff8;
+
+}
+div.bgpopup 
+{
+
+    height:auto;
+}
+.transparent {
+	/* Required for IE 5, 6, 7 */
+	/* ...or something to trigger hasLayout, like zoom: 1; */
+	position:absolute;
+	top:0; /* Add a top and bottom position so the element */
+	bottom:0; /* stretches to the height of the parent */
+  	left:0;
+	width:100%;
+	background-color:#bababa;
+
+	/* Theoretically for IE 8 & 9 (more valid) */
+	/* ...but not required as filter works too */
+	/* should come BEFORE filter */
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+
+	/* This works in IE 8 & 9 too */
+	/* ... but also 5, 6, 7 */
+	filter: alpha(opacity=80);
+
+	/* Older than Firefox 0.9 */
+	-moz-opacity:0.8;
+
+	/* Safari 1.x (pre WebKit!) */
+	-khtml-opacity: 0.8;
+
+	/* Modern!
+	/* Firefox 0.9+, Safari 2?, Chrome any?
+	/* Opera 9+, IE 9+ */
+	opacity: 0.8;
+}
+
+/**--------------Header Scheduler------------------------*/
+.Resource1, .Resource2, .Resource3, .Resource4
+{
+    height: 89px;
+}
+.RadScheduler .rsContent .rsVerticalHeaderTable .Resource1, 
+.RadScheduler .rsContent .rsVerticalHeaderTable .Resource2, 
+.RadScheduler .rsContent .rsVerticalHeaderTable .Resource3, 
+.RadScheduler .rsContent .rsVerticalHeaderTable .Resource4
+{
+    height: 10000px;
+}
+.Resource1
+{
+    background: url('Img/orange.png') repeat-x;
+    background-color:#ffdea0;
+}
+.Resource2
+{
+    background: url('Img/green.png') repeat-x;
+    background-color:#dffdab; 
+}
+.Resource3
+{
+    background: url('Img/blue.png') repeat-x;
+    background-color:#a9d6f9; 
+}
+.Resource4
+{
+    background: url('Img/pink.png') repeat-x;
+    background-color:#fcb0df; 
+}
+.RadScheduler .rsContent .rsVerticalHeaderTable th[rowspan="21"]
+{
+    height: 100%;
+}
+.RadScheduler .rsContent .rsVerticalHeaderTable th div
+{
+    width: 100%;
+    min-width: auto;
+    height: 1px;
+    overflow: visible;
+}
+/*---------------------------Edit Scheduler0------------------------------*/
+
+table.TableEditSched  
+{
+border-bottom:2px solid #9cb6c5;
+border-collapse:collapse;
+margin-top:-2px;
+
+   }
+ table.TableEditSched tr td 
+ {
+     padding-left: 5px;
+   border-bottom:1px solid #e5eff8;
+   border-left:1px solid #e5eff8;
+ min-height:26px;
+ line-height :26px;
+}
+table.TableEditInGrid 
+{
+    width:100%;
+border-bottom:2px solid #9cb6c5;
+background:url('../Images/bg_newproduct.jpg') repeat-x #FFFFFF;
+border-collapse:collapse;
+margin-top:-2px;
+}
+ table.TableEditInGrid tr td {
+border:1px solid #e5eff8;
+ min-height:26px;
+ line-height :26px;
+}
+table.TableEditInGrid tr td.title {
+ border:1px solid #e5eff8;
+ min-height:26px;
+ line-height :26px;
+ color:Blue; 
+}
+/*-------------------------------------Lịch -----------------*/
+.RadScheduler div.rsApt a.rsAptDelete
+{
+    background-position: 0;
+    right: 4px;
+    top: 4px;
+    width: 0px;
+    z-index: 52;
+}
+
+.RadScheduler .rsApt .rsAptDelete:hover
+{
+    background-image: url('../images/grid/Delete_ingrid.gif');
+}
+
+.RadScheduler .rsCustomAppointmentContainerInner
+{
+    display: block;
+    padding: 5px 0 0 5px;
+}
+
+#qsfexAdvEditWrapper *,
+.RadScheduler .rsCustomAppointmentContainerInner *
+{
+    position: relative;
+    z-index: 2;
+}
+
+.rsCustomAppointmentContainer
+{
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.rsCustomAppointmentContainer div,
+#qsfexAdvEditWrapper .qsfexAdvAppType
+{
+    position: absolute;
+    width: 187px;
+    height: 100%;
+    border-top: 1px solid transparent;
+    top: 1px;
+    right:-2px;
+    z-index: 1;
+}
+
+#qsfexAdvEditWrapper .qsfexAdvAppType,
+.rsTemplateWrapper .rsCustomAppointmentContainer div
+{
+    top: -1px;
+    right: 0;
+}
+
+.rsDayView .rsCustomAppointmentContainer h2
+{
+    position: relative;
+    z-index: 50;
+    font: bold 15px Arial, sans-serif;
+    /*padding: 15px;*/
+}
+
+.qsfexAdvEditControlWrapper textarea
+{
+    border: 1px solid #777;
+    font: 11px arial,sans-serif;
+    margin: 5px 8px;
+    opacity: 0.8;
+    -moz-opacity: 0.8;
+    filter: alpha(opacity=80);
+}
+
+.qsfexAdvEditControlWrapper
+{
+    width: 100%;
+}
+
+#InlineInsertTemplate textarea,
+#InlineEditTemplate textarea
+{
+    border: 1px solid #AFB4C5;
+    font: 11px Arial, sans-serif;
+    line-height: 20px;
+    float: left;
+}
+
+.RadScheduler .qsfexAdvEditControlWrapper textarea
+{
+    line-height: 20px;
+}
+
+#InlineInsertTemplate img,
+#InlineEditTemplate img
+{
+    padding: 0 0 0 6px;
+    width: 22px;
+    height: 22px;
+}
+
+.rsWeekView .rsCustomAppointmentContainer h2,
+.rsMonthView .rsCustomAppointmentContainer h2
+{
+    
+    margin: 2px;
+    padding: 0;
+    font: normal 11px Arial, sans-serif;
+}
+
+.RadScheduler div.rsAptContent {
+    overflow: visible;
+}
+
+.rsAptContent ._Green span.subject
+{
+    color: #486309;
+    font-weight:600;
+}
+
+.rsDayView .rsAptContent ._Green div,
+.rsDayView .rsAptEditFormWrapper ._Green div,
+#qsfexAdvEditWrapper ._Green .qsfexAdvAppType
+{
+    background: url('Images/_Green.png') no-repeat top right;
+}
+
+#qsfexAdvEditWrapper div._Green,
+.rsAptType__Green
+{
+    background: #D0ECBB;
+}
+
+* html .rsDayView .rsAptContent ._Green div,
+* html .rsDayView .rsAptEditFormWrapper ._Green div,
+* html #qsfexAdvEditWrapper ._Green .qsfexAdvAppType
+{
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader (src='Images/_Green.png', sizingMethod='crop');
+}
+
+.rsAptContent ._Blue span.subject
+{
+    color: #375970;
+    font-weight:600;
+}
+
+.rsDayView .rsAptContent ._Blue div,
+.rsDayView .rsAptEditFormWrapper ._Blue div,
+#qsfexAdvEditWrapper ._Blue .qsfexAdvAppType
+{
+    background: url('Images/_Blue.png') no-repeat top right;
+}
+
+#qsfexAdvEditWrapper div._Blue,
+.rsAptType__Blue
+{
+    background: #BBD0EC;
+}
+
+* html .rsDayView .rsAptContent ._Blue div,
+* html .rsDayView .rsAptEditFormWrapper ._Blue div,
+* html #qsfexAdvEditWrapper ._Blue .qsfexAdvAppType
+{
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader (src='Images/_Blue.png', sizingMethod='crop');
+}
+
+.rsAptContent ._Orange span.subject
+{
+    color: #744b24;
+    font-weight:600;
+}
+
+.rsDayView .rsAptContent ._Orange div,
+.rsDayView .rsAptEditFormWrapper ._Orange div,
+#qsfexAdvEditWrapper ._Orange .qsfexAdvAppType
+{
+    background: url('Images/_Orange.png') no-repeat top right;
+}
+
+#qsfexAdvEditWrapper div._Orange,
+.rsAptType__Orange
+{
+    background: #EDD5B7;
+}
+
+* html .rsDayView .rsAptContent ._Orange div,
+* html .rsDayView .rsAptEditFormWrapper ._Orange div,
+* html #qsfexAdvEditWrapper ._Orange .qsfexAdvAppType
+{
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader (src='Images/_Orange.png', sizingMethod='crop');
+}
+
+* html #qsfexAdvEditWrapper #qsfexAdvEditInnerWrapper .qsfexAdvAppType
+{
+    background: none;
+}
+
+* html .rsDayView .rsAptContent .rsCustomAppointmentContainer div,
+* html .rsDayView .rsAptEditFormWrapper .rsCustomAppointmentContainer div
+{
+    border: 0;
+    top: 2px;
+    background: none;
+    padding-top: 2px;
+}
+
+* html .rsDayView .rsAptEditFormWrapper .rsCustomAppointmentContainer div
+{
+    padding: 0;
+    top: 0;
+    height: 132%;
+}
+
+.AppointmentTypeSelector
+{
+    width: 22px;
+    height: 14px;
+    border: 1px solid #fff;
+    display: block;
+    float: left;
+}
+
+.AppointmentTypeSelectorTable
+{
+    width: 160px;
+    height: 22px;
+}
+
+.AppointmentTypeSelectorTable td
+{
+    border: 0 !important;
+}
+
+.rsCustomAppointmentContainerInner .AppointmentTypeSelectorTable,
+.rsAdvancedEditLink
+{
+    float: left;
+}
+
+*+html .rsCustomAppointmentContainerInner .AppointmentTypeSelectorTable,
+*+html .rsAdvancedEditLink
+{
+    float: none;
+    display: inline;
+}
+
+* html .rsCustomAppointmentContainerInner .AppointmentTypeSelectorTable,
+* html .rsAdvancedEditLink
+{
+    overflow: hidden;
+    float: none;
+    display: inline;
+}
+
+.RadScheduler a.rsAdvancedEditLink
+{
+    color: #333;
+    padding: 3px;
+    vertical-align: top;
+    display: inline-block;
+}
+
+.AppointmentTypeSelectorTable input,
+.AppointmentTypeSelectorTable label
+{
+    float: left;
+    clear: none;
+}
+
+.AppointmentTypeSelectorTable input
+{
+    margin: 2px;
+    height: 13px;
+}
+
+.RadScheduler .inline-label
+{
+    float: left;
+    clear: left;
+    width: 90px;
+    color: #333;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 2px 3px 2px 8px;
+}
+
+.repeatCheckBox label
+{
+    vertical-align: text-top;
+}
+
+#qsfexAdvEditWrapper
+{
+    background: #EEE none repeat scroll 0 0;
+    border: 1px solid #666666;
+    padding: 20px;
+}
+
+#qsfexAdvEditInnerWrapper
+{
+    border:1px solid #777;
+    padding-top:5px;
+}
+
+.qsfexAdvEditControlWrapper input.riTextBox
+{
+    margin-bottom: 2px;
+}
+
+#RadScheduler1_Form_RepeatCheckBox
+{
+    margin: 3px 3px 3px 8px !important;
+}
+
+* html .RadScheduler .rsApt
+{
+    filter: none !important;
+}
+
+.rsAptContent ._Yellow span.subject
+{
+    color: #744b24;
+    font-weight:600;
+}
+
+.rsDayView .rsAptContent ._Yellow div,
+.rsDayView .rsAptEditFormWrapper ._Yellow div,
+#qsfexAdvEditWrapper ._Yellow .qsfexAdvAppType
+{
+    background: url('Images/_Yellow.png') no-repeat top right;
+}
+
+#qsfexAdvEditWrapper div._Yellow, .rsAptType__Yellow
+{
+    background-color: #FFFBC7;
+}
+
+* html .rsDayView .rsAptContent ._Yellow div,
+* html .rsDayView .rsAptEditFormWrapper ._Yellow div,
+* html #qsfexAdvEditWrapper ._Yellow .qsfexAdvAppType
+{
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader (src='Images/_Orange.png', sizingMethod='crop');
+}
+.rsAptContent ._Red span.subject
+{
+    color: #744b24;
+    font-weight:600;
+}
+
+.rsDayView .rsAptContent ._Red div,
+.rsDayView .rsAptEditFormWrapper ._Red div,
+#qsfexAdvEditWrapper ._Red .qsfexAdvAppType
+{
+    background: url('Images/_Yellow.png') no-repeat top right;
+}
+
+#qsfexAdvEditWrapper div._Red, .rsAptType__Red
+{
+    background-color: #ECBBBB;
+}
+
+* html .rsDayView .rsAptContent ._Red div,
+* html .rsDayView .rsAptEditFormWrapper ._Red div,
+* html #qsfexAdvEditWrapper ._Red .qsfexAdvAppType
+{
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader (src='Images/_Orange.png', sizingMethod='crop');
+}
+/*----------------------ComBo MulltiColoum------------*/
+
+        .multipleRowsColumns .rcbItem, .multipleRowsColumns .rcbHovered
+        {
+            float: left;
+            margin: 0 1px;
+            min-height: 13px;
+            overflow: hidden;
+            padding: 2px 19px 2px 6px;
+            width: 70px;
+        }
+        html.rfdButton a.rfdSkinnedButton
+        {
+            vertical-align: middle;
+            margin: 0 0 0 5px;
+        }
+        * html.rfdButton a.rfdSkinnedButton,
+        * html.rfdButton input.rfdDecorated
+        {
+            vertical-align: top;
+        }
+a.linkNotification
+{
+    color: #0000FF;
+    text-decoration: none;
+}
+a.linkNotification:hover
+{
+    color: #800000;
+    text-decoration: none;
+}
+.cssListBox
+{
+    height :300px;
+}
+.RadListBox .rlbList
+{
+    height :300px;
+    }
+    /* -------------------------Lại phần lịch -----------------*/
+    
+    
+#idEditSched
+{
+    background: #EEE none repeat scroll 0 0;
+    border: 1px solid #663300;
+    padding: 20px;
+    padding: 10px 10px 10px 10px;
+    margin: 10px 10px 10px 10px;
+}
+#idEditSched div._Green
+{
+    background: #D0ECBB;
+}
+#idEditSched div._Orange
+{
+    background: #EDD5B7;
+}
+#idEditSched div._Blue
+{
+    background: #BBD0EC;
+}
+#idEditSched div._Yellow
+{
+    background: #FFFBC7;
+}
+#idEditSched div._Red
+{
+    background: #ECBBBB;
+}
+/*-------------------------Header DetaiView----------------------------*/
+.headerDetaiView
+{
+    background-image: url('../images/grid/rgCommandRow.gif');
+    background-repeat: repeat-x;
+    height:28px; line-height :28px;
+    color :White;
+    font-weight:bold;
+    padding-left:15px;
+}
+.classDetaiview
+{
+  border-color:White ;
+  border-width:0px;
+}
+/**/
+.TextNumber
+{
+    text-align:right;
+}
+
+.stylePanel
+{
+    overflow:visible;
+}
+
+.CalendarExtender
+{
+    width: 200px;
+    height: 200px;
+    background-color: #FFFFFF;
+}
+div.divspxemtiep
+{
+    background-image: url('../images/web/img_btxemptiep.png');
+    background-repeat: no-repeat;
+    width:65px;
+    height:30px;
+    line-height:28px;
+    text-align: center;
+}
+div.divspxemtiep a.lixemtiep
+{
+    color: #FFFFFF;
+    text-decoration: none;
+}
+/*Trang đầu*/
+div.divcontentfirst
+{
+    font-size: 12px;
+    padding: 10px 10px 10px 10px;
+    width:98%;
+    text-align:left;    
+}
+div.notifiHeader
+{
+    background-image: url('../images/img_bgcontentHeaderpng.png');
+    background-repeat: repeat-x;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #FFFFFF;
+    width: 100%;
+    height: 36px;
+    line-height:36px;
+    margin-left:-5px;
+    z-index:-99;
+}
+
+div.divcontentfirst div.divchuyenmucleft
+{
+    background-position: center top;
+    width: 48%;
+    float: left;
+    margin-top:20px;
+    border: 1px solid #D5D8DE;
+    position: relative;
+    height: 300px;
+    background-image: url('../images/img_headmenubg.png');
+    background-repeat: repeat-x;
+} 
+div.divcontentfirst div.divchuyenmucright
+{
+    background-position: center top;
+    width: 48%;
+    float:right;
+    margin-top:20px;
+    border: 1px solid #D5D8DE;
+    position: relative;
+    height: 300px;
+    background-image: url('../images/img_headmenubg.png');
+    background-repeat: repeat-x;
+} 
+div.divcontentheader
+{
+    width: 100%;
+    height: 30px;
+    background-image: url('../images/img_headmenu.png');
+    background-repeat: no-repeat;
+    line-height: 30px;
+}
+div.divcontentheader a
+{
+    text-decoration: none;
+    color: #FFFFFF;
+}
+div.divcontentheader span
+{
+    font-weight: bold;
+    text-transform: uppercase;
+    color: White;
+    padding-left: 10px;
+    font-family: Tahoma;
+    font-size: 12px;
+}
+div.divxemtiep
+{
+    background-image: url('../images/web/img_btxemptiep.png');
+    background-repeat: no-repeat;
+    width:65px;
+    height:30px;
+    line-height:28px;
+    float:right;
+    text-align: center;
+    margin:10px 10px 5px 0px;
+    position:absolute; bottom:0px; right:0px;
+}
+a.lixemtiet
+{       
+    text-decoration: none;
+    color: #FFFFFF;  
+}
+p.linetieude
+{
+    background-position: left center;
+    font-weight: 600;
+    padding: 10px 10px 10px 20px;
+    font-family: Tahoma;
+    font-size: 12px;
+    background-image: url('../images/img_iconTitle.png');
+    background-repeat: no-repeat;
+}
+p.linetieude a
+{
+    text-decoration: none;
+    color: #000000;
+}
+p.linetieude a:hover
+{
+    text-decoration: none;
+    color: #000066;
+}
+p.plinehead
+{
+    padding-left: 15px;
+    padding-right:10px;
+    font-family: Tahoma;
+    font-size: 12px;
+    line-height:20px;
+}
+div.divcontentfirst div.divchuyenmuc
+{
+    background-position: center top;
+    float: left;
+    margin-top:20px;
+    border: 1px solid #D5D8DE;
+    position: relative;
+    background-image: url('../images/img_headmenubg.png');
+    background-repeat: repeat-x;
+    width:100%;
+} 
+div.divcontentfirst div.divchuyenmuc div.divchitiet
+{
+    background-image: url('../images/web/img_btxemptiep.png');
+    background-repeat: no-repeat;
+    width:65px;
+    height:30px;
+    line-height:28px;
+    float:right;
+    text-align: center;
+    margin:10px 10px 5px 0px;
+}
+div.divnoidung
+{
+    padding-left: 15px;
+    padding-right:10px;
+    font-family: Tahoma;
+    font-size: 12px;
+    line-height:20px;
+}
+div#divinfo {
+	margin-top:15px;
+	clear:both;
+}
+div#divinfo ul {
+	display:block;
+	float:right;
+	
+}
+div#divinfo ul li {
+	color:#000000;
+	padding:3px;
+}
+div#divinfo_id1 {
+	clear:both;
+	
+}
+div#divinfo_id1 ul {
+	display:block;
+	margin:10px 0px 10px 0px;
+}
+div#divinfo_id1 ul li {
+	display:inline;
+	float:left;
+	margin:0px 0px 0px 10px;
+}
+div#divinfo_id1 ul li a.vedautrang {
+	background:url('../images/img_vetrangtruoc.jpg') no-repeat;
+	background-position:left center;
+	padding:0px 10px 0px 20px;
+	color:black;
+	font-weight:bold;
+}
+div#divinfo_id1 ul li a.bantin{
+	background:url('../images/img_printer.jpg') no-repeat;
+	background-position:left center;
+	padding:10px 10px 0px 30px;
+	color:black;
+	font-weight:bold;
+
+}
+div#divinfo_id1 ul li a.lendautrang{
+	background:url('../images/img_lendautrang.jpg') no-repeat;
+	background-position:left center;
+	padding:10px 10px 0px 30px;
+	color:black;
+	font-weight:bold;
+	
+}
+div.divtinkhac
+{
+    color:White; 
+    margin:20px 20px 50px 5px;
+    width:90%;
+}
+div.divtinkhac div.headertinkhac
+{
+    height:27px; line-height:25px;
+    padding-left:8px;
+}
+div.divtinkhac div.headertinkhac span
+{
+    color: #404040;
+    font-weight: bold;
+}
+
+ div.divtinkhac ul.ultinkhac
+{
+    width:98%;
+    clear: both;
+    list-style:  none;
+	padding: 5px 0 0 5px;
+}
+ div.divtinkhac ul.ultinkhac li
+{
+    width:100%;
+    float: left;
+    height: 26px;    
+    font-size: 12px;
+    background-image: url('../images/web/img_aicon.png');
+    background-repeat: no-repeat;    
+}
+
+ div.divtinkhac ul.ultinkhac li a 
+ {
+    margin-left:20px;
+    line-height:19px;
+    height:26px;
+    display: block;
+	padding: 5px;
+    color: #272828;
+    text-decoration: none;
+}
+
+ div.divtinkhac ul.ultinkhac li a:hover {
+	color: #272828;
+}
+ div.divtinkhac ul.ultinkhac li a.selected {
+	color: Red;
+	font-weight:bold;
+	font-size:15px;
+}
+
+/*Phân trang*/
+.divphantrang
+{
+    margin-top:5px;
+    padding: 20px 0px 20px 0px;
+}
+.aphantrang
+{
+    text-decoration: none;
+    color:#000000;
+} 
+.divSearch
+{
+    padding: 0px 0px 20px 0px;
+    color:Black;
+    }
+.divSearch table
+{
+    border-style: none;
+    border-width: 0px;
+    width: 460px;
+}
+.divSearch table img
+{
+    border-style: none;
+    border-width: 0px;
+}
+.divSearch table tr td.tdboder
+{
+     width:10px;
+     border-style: none;
+    border-width: 0px;
+}
+.divSearch table tr td.tdCenter
+{
+    background-color:#BFEBF4;
+    border-style: none;
+    border-width: 0px;
+    font-size:12px;
+    height :36px;
+    line-height:36px;
+}
+.divSearch table tr td.tdCenter select option
+{
+    font-size:12px;
+    font-family:Tahoma;
+}
+.cssDropdown
+{
+    border: 1px solid #ABADB3;
+    font-size: 12px;
+    font-family: Tahoma;
+    height: 20px;
+    width:80px;    
+}
+.cssDropdownPage
+{
+    border: 1px solid #ABADB3;
+    font-size: 12px;
+    font-family: Tahoma;
+    height: 20px;
+    width:50px;    
+}
+.divSearch table tr td.tdCenter a.xem
+{
+    background-position: center center;
+    border-width: 0px;
+    border-style: none;
+    width: 60px;
+    background-image: url('../images/img_btXem.png');
+    background-repeat: no-repeat;
+    margin-left: 5px;
+    height: 36px;
+    text-align: center;
+    color: #000000;
+    text-decoration: none;
+}
+
+ /*End-------------------Phân trang*/
+div#divfooterbackend
+{
+    height: 80px;
+    text-align: center;
+    padding-top: 10px;
+    line-height: 20px;
+    color: #FFFFFF;
+    background-color: #042E68;
+    width: 100%;
+    background-image: url('../images/img_footer.png');
+    background-repeat: no-repeat;
+     font-family: Tahoma;
+    font-size:14px;
+}
+
+div#divfooterbackend a.a_footter
+{
+    color: #FFFFFF;
+    text-decoration:none;   
+}
+
+/*----------ListBox-------*/
+.cssListBoxChucDanh
+{
+    
+    }
+.cssListBoxChucDanh ul
+{
+    float:left;
+    width:100%;
+}
+.cssListBoxChucDanh ul li
+{
+    float:left;
+    width:40%;
+    padding:5px;
+}
+/*----------RadMenu-------*/
+.cssMenuNgang
+{
+    }
+.cssMenuNgang ul
+{
+    width :100%;
+    float:left;
+    padding-left:0px !important;
+}
+.cssMenuNgang ul li
+{
+ float:left;
+ padding-left:0px !important;
+ }
+ .cssMenuNgang ul li a
+{
+     padding-left:5px !important;
+}
+  .cssMenuNgang ul li a span
+{
+ float:left;
+ padding-left:0px !important;
+ padding-right:5px !important;
+ }
+ div.rmSlide
+ {
+     
+     }
+div.rmSlide ul
+ {
+     
+     }
+div.rmSlide ul li 
+ {
+     
+     }
+div.rmSlide ul li a
+{
+     
+}
+div.rmSlide ul li a span
+{
+   padding-left:27px !important;
+   padding-right:12px !important;
+}
+div.rsHeader
+{
+ z-index:0 !important;
+    }
+    div#divFirstview
+{
+    background-position: center center;
+    background-image: url('../images/img_bground.png');
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 500px;
+    background-color: #EBEDED;
+}
+ div#divFirstview .banquanly
+{
+    font-family: tahoma;
+    font-size: 14px;
+    color: #000000;
+    position: relative;
+    margin-bottom:50px;
+}
+.itemSpace
+{
+   border-left:2px solid red !important;
+   border-right:0px;
+   border-bottom :0px;
+   border-top:0px;
+   border-color:Red;
+    }
+    
+    table.tableInGrid
+    {
+        border:0px none;
+    }
+        table.tableInGrid tr
+    {
+        border:0px none;
+    }
+    table.tableInGrid tr td
+    {
+        border-left:0px solid blue !important;
+        border-right:0px none !important;
+        border-bottom :0px none !important;
+        border-top:0px none !important;
+    }
+    table.tableInGrid tr td.tdlast
+    {
+        border:0px none !important;
+    }
+    table.tableInGrid tr td.tddece
+    {
+       border-left:1px solid blue !important;
+       border-right:0px none !important;
+       border-bottom:2px solid blue !important;
+       border-top:0px none !important;
+       text-align:center;
+    }
+       table.tableInGrid tr td.tddece_nlast
+    {
+       border-left:1px solid blue !important;
+       border-right:1px solid blue !important;
+       border-bottom:2px solid blue !important;
+       border-top:0px none !important;
+       text-align:center;
+    }
+     table.tableInGrid tr td.tddece2
+    {
+       border-left:1px solid blue !important;
+       border-right:0px none !important;
+       border-bottom:0px solid blue !important;
+       border-top:0px none !important;
+       text-align:center;
+    }
+     table.tableInGrid tr td.tddecelast
+    {
+       border-left:1px solid blue !important;
+       border-right:1px solid blue !important;
+       border-bottom:0px solid blue !important;
+       border-top:0px none !important;
+       text-align:center;
+    }
+      table.tableInGrid tr td.tddeceAll
+    {
+        height:0px !important;
+       border-left:0px none blue !important;
+       border-right:0px none !important;
+       border-bottom:2px solid blue !important;
+       border-top:0px none !important;
+       text-align:center;
+    }
+    .csstextNum
+    {
+      text-align: right;  
+        }
+   .csstextType
+    {
+      text-align:center;
+      text-transform:uppercase;
+    }
+        
+.RadMenu .rmGroup .rmText {
+      padding: 0 24px 0 5px !important;
+      _padding: 0 24px 0 5px !important;
+}      
+
+.itemmenu .rmGroup .rmText {
+      padding: 0 24px 0 22px !important;
+      _padding: 0 24px 0 22px !important;
+}     
+
+/*---- chỉnh lại item của Grid*/ 
+.itemGridStyle td 
+{
+     padding: 2px 2px 2px 2px !important;
+     _padding: 2px 2px 2px 2px !important;
+}

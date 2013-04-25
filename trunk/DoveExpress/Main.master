@@ -1,0 +1,98 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Main.master.cs" Inherits="Main" %>
+<%@ Register Assembly="FlashControl" Namespace="Bewise.Web.UI.WebControls" TagPrefix="Bewise" %>
+<%@ Register src="controls/Menus.ascx" tagname="Menu" tagprefix="uc1" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+   <title>PHẦN MỀM QUẢN LÝ ĐẦU TƯ VÀ DOANH NGHIỆP KHU CNC HÒA LẠC</title>
+   <link href="css/StyleSheet.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<script type="text/javascript">
+    function printform(divid) {
+        var printContent = document.getElementById(divid);
+        var windowUrl = 'about:blank';
+        var uniqueName = new Date();
+        var windowName = 'Print' + uniqueName.getTime();
+        var printWindow = window.open(windowUrl, windowName, 'left=0;top=0,width=0,height=0,toolbar=0,scrollbars=0,status=0,location=0');
+
+        printWindow.document.write(printContent.innerHTML);
+        printWindow.document.close();
+        printWindow.focus();
+        printWindow.print();
+        printWindow.close();
+    }
+</script>
+<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+<form id="form1" runat="server" >   
+<div id ="pagebody" class ="clearfix">
+<telerik:RadCodeBlock ID="RadCodeBlock" runat="server">
+           <script type="text/javascript">
+               function RowDblClick(sender, eventArgs) {
+                   sender.get_masterTableView().editItem(eventArgs.get_itemIndexHierarchical());
+               }
+           </script>
+           <script type="text/javascript">
+               function PopUpShowing(sender, eventArgs) {
+                   var popUp = eventArgs.get_popUp();
+                   var gridWidth = sender.get_element().offsetWidth;
+                   var gridHeight = sender.get_element().offsetHeight;
+                   var popUpWidth = popUp.style.width.substr(0, popUp.style.width.indexOf("px"));
+                   var popUpHeight = popUp.style.height.substr(0, popUp.style.height.indexOf("px"));
+                   popUp.style.left = ((gridWidth - popUpWidth) / 2 + sender.get_element().offsetLeft).toString() + "px";
+                   popUp.style.top = "80px";
+               }
+               function PopUpShowingSmall(sender, eventArgs) {
+                   var popUp = eventArgs.get_popUp();
+                   var gridWidth = sender.get_element().offsetWidth;
+                   var gridHeight = sender.get_element().offsetHeight;
+                   var popUpWidth = popUp.style.width.substr(0, popUp.style.width.indexOf("px"));
+                   var popUpHeight = popUp.style.height.substr(0, popUp.style.height.indexOf("px"));
+                   popUp.style.left = ((gridWidth - popUpWidth) / 2 + sender.get_element().offsetLeft).toString() + "px";
+                   popUp.style.top = ((gridHeight - popUpHeight) / 2 + sender.get_element().offsetTop).toString() + "px";
+               } 
+           </script>
+          <script type="text/javascript">
+              function onRequestStart(sender, args) {
+                  if (args.get_eventTarget().indexOf("ExportToPdfButton") >= 0 ||
+                            args.get_eventTarget().indexOf("ExportToExcelButton") >= 0 ||
+                            args.get_eventTarget().indexOf("ExportToWordButton") >= 0 ||
+                            args.get_eventTarget().indexOf("ExportToCsvButton") >= 0) {
+                      args.set_enableAjax(false);
+                  }
+              }            
+           </script>
+        </telerik:RadCodeBlock>       
+<div class="admin_banner clearfix">
+          <div class ="admin_header">
+           <asp:Label ID="lblFullName" runat="server" Text="Người dùng:"></asp:Label>
+           </div>
+       </div>
+
+<div class ="admin_menu">
+        <telerik:RadScriptManager ID="RadScriptManager" runat="server">
+        </telerik:RadScriptManager>
+        <telerik:RadAjaxManager ID="RadAjaxManager" runat="server" 
+               UpdatePanelsRenderMode="Inline">
+        </telerik:RadAjaxManager>             
+        <uc1:Menu ID="Menu" runat="server"  />
+       <!-- admin_menu-->
+</div>
+<div class ="clearfix" style =" height:0px; clear:both; visibility:hidden;"></div>
+<div class ="admin_cms clearfix">     
+            <asp:ContentPlaceHolder id="ContentPlaceHolder" runat="server">
+        
+            </asp:ContentPlaceHolder>         
+</div>
+<div class ="clearfix"></div>
+<div id ="divfooterbackend">
+   <a class="a_footter" href="http://vielina.com/vn/home/index.php?disp_id=24&lang=vn&sub_index=21&organization_id=4&organization=1">
+                 ©Copyright 2012-<%= System.DateTime.Now.Year %> Ban quản lý Khu Công nghệ cao Hòa Lạc.</a>
+               <br />  Địa chỉ: Km 29 Đại lộ Thăng Long, Thạch Thất, Hà Nội  
+               <br />   Điện thoại: 04.63269292     .Fax: 04.63269290
+</div>
+</div> 
+    </form>
+</body>
+</html>
+
