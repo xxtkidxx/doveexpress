@@ -30,75 +30,92 @@
     <CollapseAnimation Type="Linear" />
     <DefaultGroupSettings OffsetX="2" OffsetY="2" />
     <Items>
-      <telerik:RadMenuItem runat="server" Font-Size="Small" Text="Quản lý Doanh nghiệp" Value="List" ImageUrl="~/images/home.png">
+      <telerik:RadMenuItem runat="server" Font-Size="Small" Text="Danh mục chung" Value="DANHMUCCHUNG" ImageUrl="~/images/home.png">
         <Items>
-            <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=DoanhNghieps" Text="Quản lý doanh nghiệp" Value="DoanhNghiep">
+             <telerik:RadMenuItem runat="server" Font-Size="Small" Text="Vùng địa lý" Value="VUNGDIALY">
+                 <Items>
+                    <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="" Text="Quận, huyện" Value="QUANHUYEN">
+                    </telerik:RadMenuItem>
+                    <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="" Text="Tỉnh thành" Value="TINHTHANH">
+                    </telerik:RadMenuItem>
+                    <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="" Text="Quốc gia" Value="QUOCGIA">
+                    </telerik:RadMenuItem> 
+                    <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="" Text="Khu vực" Value="KHUVUC">
+                    </telerik:RadMenuItem> 
+                 </Items>
+            </telerik:RadMenuItem> 
+            <telerik:RadMenuItem runat="server" Font-Size="Small" Text="Mã bảng cước" Value="MABANGCUOC">                 
+            </telerik:RadMenuItem> 
+            <telerik:RadMenuItem runat="server" Font-Size="Small" Text="Sản phẩm" Value="SANPHAM">
+                 <Items>
+                    <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="" Text="Mã sản phẩm" Value="MASANPHAM">
+                    </telerik:RadMenuItem>
+                    <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="" Text="Vùng sản phẩm" Value="VUNGSANPHAM">
+                    </telerik:RadMenuItem>
+                    <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="" Text="Cước sản phẩm" Value="CUOCSANPHAM">
+                    </telerik:RadMenuItem> 
+                 </Items>
+            </telerik:RadMenuItem>
+            <telerik:RadMenuItem runat="server" Font-Size="Small" Text="Dịch vụ" Value="DICHVU">
+                 <Items>
+                    <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="" Text="Mã dịch vụ" Value="MADICHVU">
+                    </telerik:RadMenuItem>
+                    <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="" Text="Vùng dịch vụ" Value="VUNGDICHVU">
+                    </telerik:RadMenuItem>
+                    <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="" Text="Cước dịch vụ" Value="CUOCDICHVU">
+                    </telerik:RadMenuItem> 
+                 </Items>
+            </telerik:RadMenuItem>
+            <telerik:RadMenuItem runat="server" Font-Size="Small" Text="Tỷ giá" Value="TYGIA">                 
             </telerik:RadMenuItem> 
         </Items>
      </telerik:RadMenuItem> 
-    <telerik:RadMenuItem runat="server" Font-Size="Small" Text="Vốn đầu tư phát triển" Value="VDTPT">
+    <telerik:RadMenuItem runat="server" Font-Size="Small" Text="Danh mục riêng" Value="DANHMUCRIENG">
         <Items>
-             <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=DUANs" Text="Thông tin dự án đầu tư phát triển" Value="DUANs">
+             <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="" Text="Đơn vị" Value="DONVI">
              </telerik:RadMenuItem> 
+             <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="" Text="Phòng ban" Value="PHONGBAN">
+             </telerik:RadMenuItem>
+             <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="" Text="Nhân viên" Value="NHANVIEN">
+             </telerik:RadMenuItem>
+             <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="" Text="Phân quyền" Value="PHANQUYEN">
+             </telerik:RadMenuItem>
+             <telerik:RadMenuItem runat="server" NavigateUrl="../Default.aspx?ctl=ActionLog" Text="Nhật ký sử dụng" Value="ActionLog" Font-Size="Small">
+             </telerik:RadMenuItem>
+             <telerik:RadMenuItem runat="server" NavigateUrl="../Default.aspx?ctl=ErrorLog" Text="Nhật ký lỗi" Value="ErrorLog" Font-Size="Small">
+             </telerik:RadMenuItem>
+             <telerik:RadMenuItem runat="server" NavigateUrl="../Default.aspx?ctl=User_Log" Text="Nhật ký đăng nhập" Value="User_Log" Font-Size="Small">
+             </telerik:RadMenuItem>
         </Items>
-    </telerik:RadMenuItem>   
-    <telerik:RadMenuItem runat="server" Font-Size="Small" Text="Vốn hành chính sự nghiệp" Val
-    ue="VHCSN">
-        <Items>
-             <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=DONVIDUTOANs" Text="Đơn vị dự toán" Value="DONVIDUTOANs">
-             </telerik:RadMenuItem> 
-        </Items>
-    </telerik:RadMenuItem> 
-    <telerik:RadMenuItem runat="server" Font-Size="Small" Text="Cấp phép đầu tư" Value="CPDT">
-        <Items>
-        </Items>
-    </telerik:RadMenuItem>      
-    <telerik:RadMenuItem runat="server" Text="Quản trị hệ thống" Font-Size="Small" Value="List">
-            <Items>
-                <telerik:RadMenuItem runat="server" Font-Size="Small" Text="Danh mục" Value="List">
-                 <Items>
-                    <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=JobTitles" Text="Chức danh" Value="JobTitles">
-                    </telerik:RadMenuItem> 
-                    <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=Vitriduans" Text="Vị trí dự án" Value="Vitriduans">
-                    </telerik:RadMenuItem> 
-                    <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=Trangthaiduans" Text="Trạng thái dự án" Value="Trangthaiduans">
-                    </telerik:RadMenuItem> 
-                    <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=Trinhdos" Text="Trình độ" Value="Trinhdos">
-                    </telerik:RadMenuItem>
-                    <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=Nguonkinhphis" Text="Nguồn kinh phí" Value="Nguonkinhphis">
-                    </telerik:RadMenuItem>    
-                    <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=Nguonvons" Text="Nguồn vốn" Value="Nguonvons">
-                    </telerik:RadMenuItem>                      
-                </Items>
-                </telerik:RadMenuItem> 
-               <telerik:RadMenuItem runat="server" Font-Size="Small" Text="Doanh nghiệp" Value="List">
-                 <Items>
-                    <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=DNTypes" Text="Loại hình doanh nghiệp" Value="DNTypes">
-                    </telerik:RadMenuItem> 
-                    <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=Nganhnghe" Text="Ngành nghề kinh doanh" Value="Nganhnghe">
-                    </telerik:RadMenuItem> 
-                </Items>
-                </telerik:RadMenuItem>          
-                <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=DEPTs" Text="Phòng ban, bộ phận" Value="DEPTs">
-                </telerik:RadMenuItem>                          
-            </Items>
-    </telerik:RadMenuItem>        
-    <telerik:RadMenuItem runat="server" Text="Hệ thống phân quyền" Font-Size="Small" Value="System">
-            <Items>
-                <telerik:RadMenuItem runat="server" NavigateUrl="../Default.aspx?ctl=Group_Users" Text="Quản lý nhóm người dùng" Value="Group_Users" Font-Size="Small">
-                </telerik:RadMenuItem>
-                <telerik:RadMenuItem runat="server" NavigateUrl="../Default.aspx?ctl=UserAdmins" Text="Quản lý người dùng ban quản lý" Value="UserAdmins" Font-Size="Small">
-                </telerik:RadMenuItem>
-                <telerik:RadMenuItem runat="server" NavigateUrl="../Default.aspx?ctl=UserCompanys" Text="Quản lý người dùng công ty" Value="UserCompanys" Font-Size="Small">
-                </telerik:RadMenuItem>
-                <telerik:RadMenuItem runat="server" NavigateUrl="../Default.aspx?ctl=ActionLog" Text="Nhật ký sử dụng" Value="ActionLog" Font-Size="Small">
-                </telerik:RadMenuItem>
-                <telerik:RadMenuItem runat="server" NavigateUrl="../Default.aspx?ctl=ErrorLog" Text="Nhật ký lỗi" Value="ErrorLog" Font-Size="Small">
-                </telerik:RadMenuItem>
-                <telerik:RadMenuItem runat="server" NavigateUrl="../Default.aspx?ctl=User_Log" Text="Nhật ký đăng nhập" Value="User_Log" Font-Size="Small">
-                </telerik:RadMenuItem>
-            </Items>
     </telerik:RadMenuItem>
+    <telerik:RadMenuItem runat="server" Font-Size="Small" Text="Khách hàng, đối tác" Value="KHACHHANGDOITAC">
+        <Items>
+            <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="" Text="Nhóm khách hàng" Value="NHOMKHACHHANG">
+            </telerik:RadMenuItem> 
+            <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="" Text="Khách hàng" Value="KHACHHANG">
+            </telerik:RadMenuItem>
+            <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="" Text="Đối tác" Value="DOITAC">
+            </telerik:RadMenuItem>
+        </Items>           
+    </telerik:RadMenuItem>
+    <telerik:RadMenuItem runat="server" Font-Size="Small" Text="Nhận gửi" Value="NHANGUI">                 
+    </telerik:RadMenuItem>
+    <telerik:RadMenuItem runat="server" Font-Size="Small" Text="Báo cáo" Value="BAOCAO">   
+     <Items>
+            <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="" Text="Doanh thu theo ngày" Value="BAOCAONGAY">
+            </telerik:RadMenuItem> 
+            <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="" Text="Doanh thu theo khách hàng" Value="BAOCAOKHACHHANG">
+            </telerik:RadMenuItem>
+            <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="" Text="Theo nhân viên kinh doanh" Value="BAOCAONVKD">
+            </telerik:RadMenuItem>
+            <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="" Text="Quản lý công nợ" Value="BAOCAOCONGNO">
+            </telerik:RadMenuItem>
+            <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="" Text="Quản lý thanh toán" Value="BAOCAOTHANHTOAN">
+            </telerik:RadMenuItem>
+        </Items>                     
+    </telerik:RadMenuItem>
+    <telerik:RadMenuItem runat="server" Font-Size="Small" Text="Tài chỉnh" Value="TAICHINH">                 
+    </telerik:RadMenuItem>  
     <telerik:RadMenuItem runat="server" Text="Cá nhân" Font-Size="Small" Value="User">
             <Items>
                 <telerik:RadMenuItem runat="server" NavigateUrl="../Default.aspx?ctl=User_Pass" Text="Thay đổi mật khẩu" Value="User_Pass" Font-Size="Small">
@@ -111,37 +128,3 @@
     </telerik:RadMenuItem>
     </Items>
 </telerik:RadMenu>
-<telerik:RadNotification ID="RadNotificationOffice" runat="server" LoadContentOn="TimeInterval" Skin="Vista"
-        Width="300" Animation="Fade" EnableRoundedCorners="true" EnableShadow="true" 
-        OnClientUpdated="OnClientUpdated" Title="Thông báo" OffsetX="-5" OffsetY="20"
-        TitleIcon="Images/img_info161.png" UpdateInterval="3000" OnCallbackUpdate="OnCallbackUpdate" AutoCloseDelay="0" 
-        Position="TopRight" ShowCloseButton="true" Enabled="False">
-        <ContentTemplate>
-        <div style="margin: 5px 5px 5px 5px;">                    
-            <div style=" padding-top:5px; padding-right:5px; width:40px; float :left;">
-                <img id="img" src="Images/img_info32.png" alt="" />
-            </div>
-            <div style="padding-top:5px; padding-right:5px; width:210px; float:right; line-height:20px;">
-                <asp:Literal ID="areThongbao" runat="server" ></asp:Literal>
-                <asp:LinkButton CssClass ="linkNotification" ID="btnDelete" runat="server" onClick="btnDownloadTextFile_Click" style="padding: 5px 5px;float:right">Xóa</asp:LinkButton>                    
-            </div>
-        </div>            
-       </ContentTemplate>
- </telerik:RadNotification> 
- <telerik:RadNotification ID="RadNotificationReminder" runat="server" LoadContentOn="TimeInterval" Skin="Vista"
-        Width="300" Animation="Fade" EnableRoundedCorners="true" EnableShadow="true" 
-        OnClientUpdated="OnClientUpdated" Title="Nhắc nhở lịch " OffsetX="-5" OffsetY="550" 
-        TitleIcon="Images/img_reminder16.png" UpdateInterval="3000" OnClientShowing ="OnClientShowing" 
-        OnCallbackUpdate="OnCallbackReminder" AutoCloseDelay="2000" Position="TopRight" ShowCloseButton="true" Enabled="False">
-        <ContentTemplate>
-        <div style="margin: 5px 0px 5px 5px;">                    
-            <div style=" padding-top:5px; padding-right:10px; padding-bottom:10px; width:40px; float :left;">
-                <img id="img1" src="Images/img_reminder32.png" alt="" />
-            </div>
-            <div style="padding-top:5px; padding-left:10px; padding-right:5px; width:210px; float:right; line-height:20px;">
-                 <asp:Literal ID="area" runat="server" ></asp:Literal>
-                <asp:LinkButton CssClass ="linkNotification" ID="LinkButton1" runat="server" onClick="btnDeleteReminder_Click" style="padding: 5px 5px;float:right">Tắt nhắc nhở</asp:LinkButton>                    
-            </div>
-        </div>            
-       </ContentTemplate>
-</telerik:RadNotification> 
