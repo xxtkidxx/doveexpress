@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "CNC", ".", "{5400B45F-370B-4520-A616-240119FAFA45}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "DoveExpress", ".", "{5400B45F-370B-4520-A616-240119FAFA45}"
 	ProjectSection(WebsiteProperties) = preProject
 		SccProjectName = "Svn"
 		SccAuxPath = "Svn"
@@ -9,21 +9,25 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "CNC", ".", "{5400B45F-370B-
 		SccProvider = "SubversionScc"
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
 		Debug.AspNetCompiler.VirtualPath = "/CNC"
-		Debug.AspNetCompiler.PhysicalPath = "..\CNC\"
+		Debug.AspNetCompiler.PhysicalPath = "..\DoveExpress\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\CNC\"
 		Debug.AspNetCompiler.Updateable = "true"
 		Debug.AspNetCompiler.ForceOverwrite = "true"
 		Debug.AspNetCompiler.FixedNames = "false"
 		Debug.AspNetCompiler.Debug = "True"
 		Release.AspNetCompiler.VirtualPath = "/CNC"
-		Release.AspNetCompiler.PhysicalPath = "..\CNC\"
+		Release.AspNetCompiler.PhysicalPath = "..\DoveExpress\"
 		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\CNC\"
 		Release.AspNetCompiler.Updateable = "true"
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "51100"
+		VWDPort = "49652"
 		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+	ProjectSection(SvnOrigin) = preProject
+		@Keys = Enlist
+		Enlist = Required
 	EndProjectSection
 EndProject
 Global
