@@ -15,7 +15,7 @@ public partial class Main : System.Web.UI.MasterPage
             ITCLIB.Security.User user = new ITCLIB.Security.User();
             user = (ITCLIB.Security.User)Session["User"];
             lblFullName.Text = "Người dùng: <b>" + user.UserName + "</b>";
-            Control control = new Control();// = LoadControl("FirstView.ascx");
+            Control control = new Control();
             if (Request.QueryString["ctl"] != null)
             {
                 RadAjaxManager.Dispose();
@@ -69,8 +69,10 @@ public partial class Main : System.Web.UI.MasterPage
                             Response.Redirect("Login.aspx", true);
                         }
                         break;
-                    case "jobtitles":
-                        control = LoadControl("module/JobTitles.ascx");
+
+
+                    case "khuvuc":
+                        control = LoadControl("module/KHUVUC.ascx");
                         break;
                     case "vitriduans":
                         control = LoadControl("module/Vitriduan.ascx");
@@ -148,7 +150,7 @@ public partial class Main : System.Web.UI.MasterPage
             }
             else
             {
-                control = LoadControl("module/FirstView.ascx");
+                
             }
             ContentPlaceHolder.Controls.Add(control);
         }

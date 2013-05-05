@@ -92,8 +92,10 @@
 </div>
 <div style ="clear:both;"></div>
 <div id ="divfooter">
-Ban quản lý Khu Công nghệ cao Hòa Lạc<br />
-Km 29 Đại lộ Thăng Long, Thạch Thất, Hà Nội     Điện thoại: 04.63269292     Fax: 04.63269290
+©Copyright 2012-<%= System.DateTime.Now.Year %> Chuyển phát nhanh Bồ Câu - Dove Express.
+<br /> Hà Nội: 33 ngách 15 ngõ 167 Tây Sơn, Đống Đa - ÐT: 04.2242.4232 - Fax: 04.3533.5153 - Email: hn@dovevn.com  
+<br /> TP.HCM: 49/3 Hậu Giang, Tân Bình - ÐT: 08. 2218.0607 - Fax: 08. 3948.7154 - Email: hcm@dovevn.com
+<br /> Website: www.dovevn.com 
 </div>
 </div> 
 </form>
