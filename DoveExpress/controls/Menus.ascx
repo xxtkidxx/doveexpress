@@ -38,9 +38,9 @@
                     </telerik:RadMenuItem>
                     <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="" Text="Tỉnh thành" Value="TINHTHANH">
                     </telerik:RadMenuItem>
-                    <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="" Text="Quốc gia" Value="QUOCGIA">
+                    <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=QUOCGIA" Text="Quốc gia" Value="QUOCGIA">
                     </telerik:RadMenuItem> 
-                    <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="" Text="Khu vực" Value="KHUVUC">
+                    <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=KHUVUC" Text="Khu vực" Value="KHUVUC">
                     </telerik:RadMenuItem> 
                  </Items>
             </telerik:RadMenuItem> 
