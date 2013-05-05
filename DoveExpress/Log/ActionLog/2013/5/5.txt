@@ -1,0 +1,48 @@
+Thời gian: 2013-05-05 18:57:21 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-05-05 21:00:30 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-05-05 21:05:07 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted KHUVUCs
+Kết quả : {PK_ID:"1"}
+__________________________
+Thời gian: 2013-05-05 21:05:37 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated KHUVUCs
+Kết quả : {PK_ID:"1"}
+__________________________
+Thời gian: 2013-05-05 21:05:54 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted KHUVUCs
+Kết quả : {PK_ID:"2"}
+__________________________
+Thời gian: 2013-05-05 21:13:45 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-05-05 21:14:43 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated KHUVUCs
+Kết quả : {PK_ID:"1"}
+__________________________
+Thời gian: 2013-05-05 22:07:31 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________

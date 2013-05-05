@@ -1,0 +1,25 @@
+Thời gian lỗi : 2013-05-05 18:53:06 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/controls/. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-05-05 18:57:22 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/default.aspx. 
+Nội dung lỗi:The file '/DoveExpress/module/FirstView.ascx' does not exist.
+__________________________
+Thời gian lỗi : 2013-05-05 21:13:46 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=KHUVUC. 
+Nội dung lỗi:Type 'Telerik.Web.UI.GridClientSettings' does not have a public property named 'ClientSettings'.
+__________________________
+Thời gian lỗi : 2013-05-05 21:14:08 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=KHUVUC. 
+Nội dung lỗi:Type 'Telerik.Web.UI.GridClientEvents' does not have a public property named 'AllowKeyboardNavigation'.
+__________________________
+Thời gian lỗi : 2013-05-05 22:11:15 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=QUOCGIA. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________

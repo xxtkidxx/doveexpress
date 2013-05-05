@@ -74,6 +74,19 @@ public partial class Main : System.Web.UI.MasterPage
                     case "khuvuc":
                         control = LoadControl("module/KHUVUC.ascx");
                         break;
+                    case "quocgia":
+                        _AjaxSetting.AjaxControlID = "RadSplitterQUOCGIA";
+                        _AjaxUpdatedControl.ControlID = "RadSplitterQUOCGIA";
+                        _AjaxUpdatedControl.LoadingPanelID = "RadAjaxLoadingPanelQUOCGIA";
+                        _AjaxSetting.UpdatedControls.Add(_AjaxUpdatedControl);
+                        RadAjaxManager.AjaxSettings.Add(_AjaxSetting);
+                        control = LoadControl("module/QUOCGIA.ascx");
+                        break;
+
+
+
+
+
                     case "vitriduans":
                         control = LoadControl("module/Vitriduan.ascx");
                         break;
