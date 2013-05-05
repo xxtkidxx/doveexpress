@@ -32,50 +32,6 @@
         }
     }
   </script> 
-<script type="text/javascript">
-    var comboBox;
-    function OnClientLoadQUOCGIA(sender) {
-        comboBox = sender;
-    }
-    function ClientNodeClicking(sender, args) {
-        var txtpk = GetGridServerElementQUOCGIA("hfID");
-        var node = args.get_node()
-        txtpk.value = node.get_value();
-        comboBox.set_text(node.get_text());
-        comboBox.set_value(node.get_value());
-        comboBox.trackChanges();
-        comboBox.get_items().getItem(0).set_text(node.get_text());
-        comboBox.commitChanges();
-        comboBox.hideDropDown();
-    }
-
-    function StopPropagation(e) {
-        if (!e) {
-            e = window.event;
-        }
-
-        e.cancelBubble = true;
-    }
-
-    function OnClientDropDownOpenedHandler(sender, eventArgs) {
-        var tree = sender.get_items().getItem(0).findControl("RaTreViewDir");
-        var selectedNode = tree.get_selectedNode();
-        if (selectedNode) {
-            selectedNode.scrollIntoView();
-        }
-    }
-    function OnClientShowText(sender, eventArgs) {
-
-    }
-    function OnClientCloseText(sender, eventArgs) {
-        if (eventArgs.get_argument() != null) {
-        }
-        else {
-        }
-        return false;
-    }
-</script>
-
 </telerik:RadCodeBlock>
 <telerik:RadAjaxLoadingPanel Skin="Vista" ID="RadAjaxLoadingPanelQUOCGIA" runat="server" />
 <telerik:RadSplitter ID="RadSplitterQUOCGIA" runat="server" Width="100%" Height ="550px">
@@ -85,8 +41,7 @@
         Skin ="Vista" DataFieldID="PK_ID" 
         DataSourceID="SqlDataSourceKHUVUC" DataTextField="C_NAME"  DataValueField="PK_ID" 
         onitemdatabound="RadPanelBarListKHUVUC_ItemDataBound" 
-        onitemclick="RadPanelBarListKHUVUC_ItemClick" 
-        onprerender="RadPanelBarListKHUVUC_PreRender" >
+        onitemclick="RadPanelBarListKHUVUC_ItemClick">
      </telerik:RadPanelBar>
 </telerik:RadPane>
 <telerik:RadSplitBar ID="RadSplitBarQUOCGIA" runat="server" CollapseMode="Forward" />
@@ -135,15 +90,13 @@
 
 <ExpandCollapseColumn Visible="True" FilterControlAltText="Filter ExpandColumn column"></ExpandCollapseColumn>
         <Columns>
-                <telerik:GridBoundColumn UniqueName="pk_id" HeaderText="" DataField="pk_id" Visible ="false"
-                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
+                <telerik:GridBoundColumn UniqueName="pk_id" HeaderText="" DataField="pk_id" Visible ="false">
                 </telerik:GridBoundColumn>
-                 <telerik:GridBoundColumn UniqueName="FK_" HeaderText="" DataField="c_parent" Visible ="false"
-                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
+                 <telerik:GridBoundColumn UniqueName="FK_KHUVUC" HeaderText="" DataField="FK_KHUVUC" Visible ="false">
                 </telerik:GridBoundColumn>
                  <telerik:GridTemplateColumn HeaderText ="" ShowFilterIcon="false">   
                  <FilterTemplate >
-                  <center> <asp:Button ID="btnSearch" Visible ="false" Text="Tìm" runat="server"/>
+                  <center>
                    <asp:ImageButton ID="btnShowAll" runat="server" ImageUrl="../Images/Grid/filterCancel.gif" AlternateText="Xem tất" ToolTip="Xem tất" OnClick="btnShowAll_Click" Style="vertical-align: middle" />
                   </center>
                  </FilterTemplate>
@@ -153,9 +106,12 @@
                  <HeaderStyle HorizontalAlign ="Center" Width ="30px" />
                  <ItemStyle HorizontalAlign ="Center" Width ="30px" />
               </telerik:GridTemplateColumn>
-                <telerik:GridBoundColumn UniqueName="c_name" HeaderText="Tên quốc gia" DataField="c_name" 
-                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
-                </telerik:GridBoundColumn>
+              <telerik:GridBoundColumn UniqueName="C_CODE" HeaderText="Mã quốc gia" DataField="C_CODE" 
+              AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
+              </telerik:GridBoundColumn>
+              <telerik:GridBoundColumn UniqueName="C_NAME" HeaderText="Tên quốc gia" DataField="c_name" 
+              AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
+              </telerik:GridBoundColumn>
         </Columns>
         <EditFormSettings InsertCaption="Thêm quốc gia mới" CaptionFormatString="Sửa quốc gia: <b>{0}</b>" CaptionDataField="C_NAME" EditFormType="Template" PopUpSettings-Width="600px">
         <EditColumn UniqueName="EditCommandColumn1" FilterControlAltText="Filter EditCommandColumn1 column"></EditColumn>
@@ -169,52 +125,42 @@
               <table id="Table1" cellspacing="3" cellpadding="3" style="width: 100%" border="0">
                         <tr>
                             <td>
-                                Trực thuộc phòng ban (bộ phận):
+                                Thuộc khu vực:
                             </td>
                             <td>
-                                <asp:HiddenField ID="hfID" runat="server"  Value ='<%# Bind("c_parent")%>'/>
-           <telerik:RadComboBox ID="rcbParent" runat="server" Width="400px" 
-                ShowToggleImage="True" Style="vertical-align: middle;" 
-                EmptyMessage="Chọn phòng ban (bộ phận)" ExpandAnimation-Type="None" CollapseAnimation-Type="None">
-                     <ItemTemplate>
-                        <div id ="div1">
-                                 <telerik:RadTreeView runat="server" ID="RaTreViewDir" OnClientNodeClicking ="ClientNodeClicking" 
-                                  Width="100%" Height="200px" DataFieldID="pk_id" DataFieldParentID="c_parent" DataSourceID="QUOCGIATreelist" 
-                                     DataTextField="c_name" DataValueField="pk_id" >                        
-                                  </telerik:RadTreeView>
-                          </div>
-                        </ItemTemplate>
-                         <Items>
-                            <telerik:RadComboBoxItem Text=""  />
-                        </Items>
-                <ExpandAnimation Type="None"></ExpandAnimation>
-                <CollapseAnimation Type="None"></CollapseAnimation>
-            </telerik:RadComboBox>
-                            <script type="text/javascript">
-                                var div1 = document.getElementById("div1");
-                                div1.onclick = StopPropagation;
-                            </script>
-                           <br />
-                                <asp:RequiredFieldValidator ForeColor ="Red"  ID="RequiredFieldValidator1" runat="server" ErrorMessage="Tên quốc gia không thể rỗng" ControlToValidate="rcbParent" SetFocusOnError="True" Display="Dynamic" ValidationGroup="G1"></asp:RequiredFieldValidator>
+                            <asp:DropDownList ID="ddlKhuvuc" SelectedValue='<%# Bind("FK_KHUVUC") %>' DataTextField="C_NAME" DataValueField="PK_ID" runat="server" DataSourceID="SqlDataSourceKHUVUC" AppendDataBoundItems="True">
+                            <asp:ListItem Value="" Text="Chọn"></asp:ListItem>
+                            </asp:DropDownList>   
+                            <br />
+                            <asp:RequiredFieldValidator ForeColor ="Red"  ID="RequiredFieldValidator1" runat="server" ErrorMessage="Khu vực không thể rỗng" ControlToValidate="ddlKhuvuc" SetFocusOnError="True" Display="Dynamic" ValidationGroup="G1"></asp:RequiredFieldValidator>
                    </td>
                </tr>
+                        <tr>
+                            <td>
+                                Mã quốc gia:
+                            </td>
+                            <td>
+                                <asp:HiddenField ID="txtID" Value='<%# Eval("pk_id") %>' runat="server"  />
+                                <asp:TextBox ID="txtCode" Width ="400px" Text='<%# Bind( "C_CODE") %>' runat="server"></asp:TextBox>
+                               <br /><span style="color:Red;">
+                                <asp:RequiredFieldValidator ID="rfvCode" runat="server" ErrorMessage="Mã quốc gia không thể rỗng" ControlToValidate="txtCode" SetFocusOnError="True" Display="Dynamic" ValidationGroup="G1"></asp:RequiredFieldValidator>
+                             </span> 
+                            </td>
+                        </tr> 
                         <tr>
                             <td>
                                 Tên quốc gia:
                             </td>
                             <td>
-                                <asp:HiddenField ID="txtID" Value='<%# Eval("pk_id") %>' runat="server"  />
                                 <asp:TextBox ID="txtName" Width ="400px" Text='<%# Bind( "C_NAME") %>' runat="server"></asp:TextBox>
                                <br /><span style="color:Red;">
                                 <asp:RequiredFieldValidator ID="rfvName" runat="server" ErrorMessage="Tên quốc gia không thể rỗng" ControlToValidate="txtName" SetFocusOnError="True" Display="Dynamic" ValidationGroup="G1"></asp:RequiredFieldValidator>
-                                <asp:Label ID="lbtThongbao" runat="server" Text=""></asp:Label>
                              </span> 
                             </td>
-                        </tr>                   
+                        </tr>                    
                     </table>
              </FormTemplate>
-
-<PopUpSettings Width="600px" ></PopUpSettings>
+        <PopUpSettings Width="600px" ></PopUpSettings>
         </EditFormSettings>
         </MasterTableView>
         <ValidationSettings CommandsToValidate="PerformInsert,Update" ValidationGroup="G1"/>
@@ -227,7 +173,6 @@
         <SortingSettings SortedAscToolTip="Sắp xếp tăng dần" 
             SortedDescToolTip="Sắp xếp giảm dần" SortToolTip="Click để sắp xếp" />
         <StatusBarSettings LoadingText="Đang tải..." ReadyText="Sẵn sàng" />
-
 <FilterMenu EnableImageSprites="False"></FilterMenu>
 </telerik:RadGrid>
 <asp:SqlDataSource ID="QUOCGIADataSource" runat="server" ConnectionString="<%$ ConnectionStrings:CNCREPORTConnectionString %>"
