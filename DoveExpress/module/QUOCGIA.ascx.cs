@@ -53,19 +53,35 @@ public partial class module_QUOCGIA : System.Web.UI.UserControl
         }
         RadGridQUOCGIA.MasterTableView.Rebind();
     }
-    protected bool CheckName(string idParent, string strName)
+    protected void CheckCode(object source, ServerValidateEventArgs args)
     {
-        string SelectSQL = String.Format("Select DMPHONGBAN.C_NAME FROM DMPHONGBAN WHERE DMPHONGBAN.C_NAME = '{0}' and  DMPHONGBAN.c_parent = {1} AND DMPHONGBAN.PK_ID <> {2}", strName, idParent, Session["txtID"]);
+        string SelectSQL;
+        SelectSQL = "Select DMQUOCGIA.C_CODE FROM DMQUOCGIA WHERE DMQUOCGIA.C_CODE = '" + args.Value + "' AND DMQUOCGIA.PK_ID <> " + Session["txtID"].ToString();
         DataTable oDataTable = new DataTable();
         ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
         oDataTable = SelectQuery.query_data(SelectSQL);
         if (oDataTable.Rows.Count != 0)
         {
-            return true;
+            args.IsValid = false;
         }
         else
         {
-            return false;
+            args.IsValid = true;
+        }
+    }
+    protected void CheckName(object source, ServerValidateEventArgs args)
+    {
+        string SelectSQL = String.Format("Select DMQUOCGIA.C_NAME FROM DMQUOCGIA WHERE DMQUOCGIA.C_NAME = '{0}' AND DMQUOCGIA.PK_ID <> {2}", args.Value, Session["txtID"].ToString());
+        DataTable oDataTable = new DataTable();
+        ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
+        oDataTable = SelectQuery.query_data(SelectSQL);
+        if (oDataTable.Rows.Count != 0)
+        {
+            args.IsValid = false;
+        }
+        else
+        {
+            args.IsValid = true;
         }
     }
     private void DisplayMessage(string text)
@@ -95,7 +111,7 @@ public partial class module_QUOCGIA : System.Web.UI.UserControl
         else
         {
             SetMessage("Xóa quốc gia thành công!");
-            ITCLIB.ActionLog.ActionLog.WriteLog(Session["UserID"].ToString(), "Deleted QUOCGIAOffices", e.Item.KeyValues);
+            ITCLIB.ActionLog.ActionLog.WriteLog(Session["UserID"].ToString(), "Deleted QUOCGIA", e.Item.KeyValues);
         }
     }
     protected void RadGridQUOCGIA_ItemInserted(object sender, GridInsertedEventArgs e)
@@ -109,7 +125,7 @@ public partial class module_QUOCGIA : System.Web.UI.UserControl
         else
         {
             SetMessage("Tạo mới quốc gia thành công!");
-            ITCLIB.ActionLog.ActionLog.WriteLog(Session["UserID"].ToString(), "Inserted QUOCGIAOffices", "{PK_ID:\"" + getmaxid("DMPHONGBAN") + "\"}");
+            ITCLIB.ActionLog.ActionLog.WriteLog(Session["UserID"].ToString(), "Inserted QUOCGIA", "{PK_ID:\"" + getmaxid("DMPHONGBAN") + "\"}");
         }
     }
     protected void RadGridQUOCGIA_ItemUpdated(object sender, GridUpdatedEventArgs e)
@@ -124,7 +140,7 @@ public partial class module_QUOCGIA : System.Web.UI.UserControl
         else
         {
             SetMessage("Cập nhật quốc gia thành công!");
-            ITCLIB.ActionLog.ActionLog.WriteLog(Session["UserID"].ToString(), "Updated QUOCGIAOffices", e.Item.KeyValues);
+            ITCLIB.ActionLog.ActionLog.WriteLog(Session["UserID"].ToString(), "Updated QUOCGIA", e.Item.KeyValues);
         }
     }
     protected void RadGridQUOCGIA_ItemDataBound(object sender, GridItemEventArgs e)
@@ -153,7 +169,7 @@ public partial class module_QUOCGIA : System.Web.UI.UserControl
             }
             foreach (GridDataItem item in RadGridQUOCGIA.SelectedItems)
             {
-                if (!ValidateDeleteGroup(item["pk_id"].Text))
+                if (!ValidateDelete(item["pk_id"].Text))
                 {
                     SetMessage(String.Format("Không thể xóa quốc gia \"{0}\" do có tham chiếu dữ liệu khác.", item["c_name"].Text));
                     RadGridQUOCGIA.Rebind();
@@ -167,20 +183,7 @@ public partial class module_QUOCGIA : System.Web.UI.UserControl
 
         else if (e.CommandName == RadGrid.UpdateCommandName)
         {
-            GridEditableItem edititem = (GridEditableItem)e.Item;
-            HiddenField hfParent = (HiddenField)edititem.FindControl("hfID");
-            RadComboBox cmbQUOCGIA = (RadComboBox)edititem.FindControl("rcbParent");
-            TextBox txtName = (TextBox)edititem.FindControl("txtName");
-            if (CheckName(hfParent.Value, txtName.Text))
-            {
-                e.Canceled = true;
-                Label lbtThongbao = (Label)edititem.FindControl("lbtThongbao");
-                lbtThongbao.Text = String.Format("Tên phòng ban đã tồn tại trong chuyên mục cha \"{0}\"", cmbQUOCGIA.SelectedItem.Text);
-            }
-            else
-            {
-                Session["paID"] = hfParent.Value;
-            }
+
         }
     }
     protected string getmaxid(string table)
@@ -200,9 +203,9 @@ public partial class module_QUOCGIA : System.Web.UI.UserControl
             return "1";
         }
     }
-    protected bool ValidateDeleteGroup(string pkID)
+    protected bool ValidateDelete(string pkID)
     {
-        int rowcount = 0;
+        /*Ưint rowcount = 0;
         string SelectSQL1 = "SELECT PK_ID FROM USERS WHERE USERS.FK_PHONGBAN = " + pkID;
         string SelectSQL2 = "SELECT PK_ID FROM DMPHONGBAN WHERE DMPHONGBAN.c_parent = " + pkID;
         DataTable oDataTable = new DataTable();
@@ -213,10 +216,10 @@ public partial class module_QUOCGIA : System.Web.UI.UserControl
         {
             return false;
         }
-        else
-        {
+        else*/
+        //{
             return true;
-        }
+        //}
     }
     protected void RadGridQUOCGIA_ItemCreated(object sender, GridItemEventArgs e)
     {
@@ -244,5 +247,17 @@ public partial class module_QUOCGIA : System.Web.UI.UserControl
     {
         Session["kvID"] = RadPanelBarListKHUVUC.SelectedItem.Value;
         RadGridQUOCGIA.DataBind();
+    }
+    protected void RadPanelBarListKHUVUC_PreRender(object sender, EventArgs e)
+    {
+        if (!IsPostBack)
+        {
+            RadPanelItem item = (RadPanelItem)RadPanelBarListKHUVUC.FindItemByValue("0");
+            if (item != null)
+            {
+                item.Expanded = true;
+                item.Selected = true;
+            }
+        }
     }
 }
