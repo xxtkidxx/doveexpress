@@ -98,83 +98,20 @@ public partial class Main : System.Web.UI.MasterPage
                         RadAjaxManager.AjaxSettings.Add(_AjaxSetting);
                         control = LoadControl("module/QUANHUYEN.ascx");
                         break;
+                    case "mabangcuoc":
+                        _AjaxSetting.AjaxControlID = "RadGridMABANGCUOC";
+                        _AjaxUpdatedControl.ControlID = "RadGridMABANGCUOC";
+                        _AjaxUpdatedControl.LoadingPanelID = "RadAjaxLoadingPanelMABANGCUOC";
+                        _AjaxSetting.UpdatedControls.Add(_AjaxUpdatedControl);
+                        RadAjaxManager.AjaxSettings.Add(_AjaxSetting);
+                        control = LoadControl("module/MABANGCUOC.ascx");
+                        break;
 
 
 
 
 
-                    case "vitriduans":
-                        control = LoadControl("module/Vitriduan.ascx");
-                        break;
-                    case "trangthaiduans":
-                        control = LoadControl("module/Trangthaiduan.ascx");
-                        break;
-                    case "trinhdos":
-                        control = LoadControl("module/Trinhdo.ascx");
-                        break;
-                    case "nguonkinhphis":
-                        control = LoadControl("module/Nguonkinhphi.ascx");
-                        break;
-                    case "nguonvons":
-                        control = LoadControl("module/Nguonvon.ascx");
-                        break;
-                    case "depts":
-                        _AjaxSetting.AjaxControlID = "RadSplitterDEPT";
-                        _AjaxUpdatedControl.ControlID = "RadSplitterDEPT";
-                        _AjaxUpdatedControl.LoadingPanelID = "RadAjaxLoadingPanelDept";
-                        _AjaxSetting.UpdatedControls.Add(_AjaxUpdatedControl);
-                        RadAjaxManager.AjaxSettings.Add(_AjaxSetting);
-                        control = LoadControl("module/Depts.ascx");
-                        break;
-                    case "nganhnghe":
-                        _AjaxSetting.AjaxControlID = "RadGridNganhnghes";
-                        _AjaxUpdatedControl.ControlID = "RadGridNganhnghes";
-                        _AjaxUpdatedControl.LoadingPanelID = "RadAjaxLoadingPanelNganhnghe";
-                        _AjaxSetting.UpdatedControls.Add(_AjaxUpdatedControl);
-                        RadAjaxManager.AjaxSettings.Add(_AjaxSetting);
-                        control = LoadControl("module/Nganhnghe.ascx");
-                        break;
-                    case "donvidutoans":
-                        _AjaxSetting.AjaxControlID = "RadGridDONVIDUTOAN";
-                        _AjaxUpdatedControl.ControlID = "RadGridDONVIDUTOAN";
-                        _AjaxUpdatedControl.LoadingPanelID = "RadAjaxLoadingPanelDONVIDUTOAN";
-                        _AjaxSetting.UpdatedControls.Add(_AjaxUpdatedControl);
-                        RadAjaxManager.AjaxSettings.Add(_AjaxSetting);
-                        control = LoadControl("module/DONVIDUTOAN.ascx");
-                        break;
-                        
-                    case "doanhnghieps":
-                        _AjaxSetting.AjaxControlID = "RadGridDoanhNghieps";
-                        _AjaxUpdatedControl.ControlID = "RadGridDoanhNghieps";
-                        _AjaxUpdatedControl.LoadingPanelID = "RadAjaxProxyDoanhNghiep";
-                        _AjaxSetting.UpdatedControls.Add(_AjaxUpdatedControl);
-                        RadAjaxManager.AjaxSettings.Add(_AjaxSetting);
-                        control = LoadControl("module/Doanhnghiep.ascx");
-                        break;
-                    case "dntypes":
-                        _AjaxSetting.AjaxControlID = "RadGridLoaiHinhDN";
-                        _AjaxUpdatedControl.ControlID = "RadGridLoaiHinhDN";
-                        _AjaxUpdatedControl.LoadingPanelID = "RadAjaxProxyLoaiHinhDN";
-                        _AjaxSetting.UpdatedControls.Add(_AjaxUpdatedControl);
-                        RadAjaxManager.AjaxSettings.Add(_AjaxSetting);
-                        control = LoadControl("module/Doanhnghiep_Loaihinh.ascx");
-                        break;
-                    case "dnhtdautus":
-                        _AjaxSetting.AjaxControlID = "RadGridHinhthucDautu";
-                        _AjaxUpdatedControl.ControlID = "RadGridHinhthucDautu";
-                        _AjaxUpdatedControl.LoadingPanelID = "RadAjaxProxyHinhthucDautu";
-                        _AjaxSetting.UpdatedControls.Add(_AjaxUpdatedControl);
-                        RadAjaxManager.AjaxSettings.Add(_AjaxSetting);
-                        control = LoadControl("module/Doanhnghiep_Hinhthucdautu.ascx");
-                        break;
-                    case "duans":
-                        _AjaxSetting.AjaxControlID = "RadGridDUAN";
-                        _AjaxUpdatedControl.ControlID = "RadGridDUAN";
-                        _AjaxUpdatedControl.LoadingPanelID = "RadAjaxLoadingPanelDUAN";
-                        _AjaxSetting.UpdatedControls.Add(_AjaxUpdatedControl);
-                        RadAjaxManager.AjaxSettings.Add(_AjaxSetting);
-                        control = LoadControl("module/DUANs.ascx");
-                        break; 
+                    
                 }             
             }
             else
