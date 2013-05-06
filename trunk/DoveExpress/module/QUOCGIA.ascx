@@ -41,8 +41,13 @@
         Skin ="Vista" DataFieldID="PK_ID" 
         DataSourceID="SqlDataSourceKHUVUC" DataTextField="C_NAME"  DataValueField="PK_ID" 
         onitemdatabound="RadPanelBarListKHUVUC_ItemDataBound" 
-        onitemclick="RadPanelBarListKHUVUC_ItemClick">
-     </telerik:RadPanelBar>
+        onitemclick="RadPanelBarListKHUVUC_ItemClick" AppendDataBoundItems="True" 
+        onprerender="RadPanelBarListKHUVUC_PreRender">
+<Items> 
+<telerik:RadPanelItem runat="server" Text="Tất cả" Value="0" ImageUrl="../images/folder-closed.gif" SelectedImageUrl="../images/folder_open.png">  
+</telerik:RadPanelItem> 
+</Items> 
+</telerik:RadPanelBar>
 </telerik:RadPane>
 <telerik:RadSplitBar ID="RadSplitBarQUOCGIA" runat="server" CollapseMode="Forward" />
 <telerik:RadPane ID="MiddlePaneQUOCGIA" runat="server" Width="79%">
@@ -144,6 +149,7 @@
                                 <asp:TextBox ID="txtCode" Width ="400px" Text='<%# Bind( "C_CODE") %>' runat="server"></asp:TextBox>
                                <br /><span style="color:Red;">
                                 <asp:RequiredFieldValidator ID="rfvCode" runat="server" ErrorMessage="Mã quốc gia không thể rỗng" ControlToValidate="txtCode" SetFocusOnError="True" Display="Dynamic" ValidationGroup="G1"></asp:RequiredFieldValidator>
+                                <asp:CustomValidator ID="cuvCODE" ControlToValidate="txtCODE" OnServerValidate="CheckCode" runat="server" ErrorMessage="Mã quốc gia đã tồn tại" Display="Dynamic" ValidationGroup="G1"></asp:CustomValidator>
                              </span> 
                             </td>
                         </tr> 
@@ -155,6 +161,7 @@
                                 <asp:TextBox ID="txtName" Width ="400px" Text='<%# Bind( "C_NAME") %>' runat="server"></asp:TextBox>
                                <br /><span style="color:Red;">
                                 <asp:RequiredFieldValidator ID="rfvName" runat="server" ErrorMessage="Tên quốc gia không thể rỗng" ControlToValidate="txtName" SetFocusOnError="True" Display="Dynamic" ValidationGroup="G1"></asp:RequiredFieldValidator>
+                                <asp:CustomValidator ID="CustomValidator1" ControlToValidate="txtName" OnServerValidate="CheckName" runat="server" ErrorMessage="Tên quốc gia đã tồn tại" Display="Dynamic" ValidationGroup="G1"></asp:CustomValidator>
                              </span> 
                             </td>
                         </tr>                    
@@ -178,8 +185,8 @@
 <asp:SqlDataSource ID="QUOCGIADataSource" runat="server" ConnectionString="<%$ ConnectionStrings:CNCREPORTConnectionString %>"
         DeleteCommand="DELETE FROM [DMQUOCGIA] WHERE [pk_id] = @pk_id" 
         InsertCommand="INSERT INTO [DMQUOCGIA] ([C_CODE], [C_NAME],[FK_KHUVUC]) VALUES (@C_CODE, @C_NAME,@FK_KHUVUC)"
-        SelectCommand="SELECT * FROM [DMQUOCGIA] where FK_KHUVUC =@FK_KHUVUC ORDER BY LTRIM([c_name])"     
-    UpdateCommand="UPDATE [DMQUOCGIA] SET [C_CODE] = @C_CODE, [C_NAME] = @C_NAME, [FK_KHUVUC] = @FK_KHUVUC WHERE [pk_id] = @pk_id" >
+        SelectCommand="SELECT * FROM [DMQUOCGIA] where (@FK_KHUVUC = 0 OR FK_KHUVUC =@FK_KHUVUC) ORDER BY LTRIM([c_name])"     
+        UpdateCommand="UPDATE [DMQUOCGIA] SET [C_CODE] = @C_CODE, [C_NAME] = @C_NAME, [FK_KHUVUC] = @FK_KHUVUC WHERE [pk_id] = @pk_id" >
         <SelectParameters>
             <asp:SessionParameter DefaultValue="1" Name="FK_KHUVUC" SessionField="kvID"/>
         </SelectParameters>
