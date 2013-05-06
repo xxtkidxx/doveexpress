@@ -34,9 +34,9 @@
         <Items>
              <telerik:RadMenuItem runat="server" Font-Size="Small" Text="Vùng địa lý" Value="VUNGDIALY">
                  <Items>
-                    <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="" Text="Quận, huyện" Value="QUANHUYEN">
+                    <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=QUANHUYEN" Text="Quận, huyện" Value="QUANHUYEN">
                     </telerik:RadMenuItem>
-                    <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="" Text="Tỉnh thành" Value="TINHTHANH">
+                    <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=TINHTHANH" Text="Tỉnh thành" Value="TINHTHANH">
                     </telerik:RadMenuItem>
                     <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=QUOCGIA" Text="Quốc gia" Value="QUOCGIA">
                     </telerik:RadMenuItem> 

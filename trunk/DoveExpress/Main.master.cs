@@ -79,8 +79,24 @@ public partial class Main : System.Web.UI.MasterPage
                         _AjaxUpdatedControl.ControlID = "RadSplitterQUOCGIA";
                         _AjaxUpdatedControl.LoadingPanelID = "RadAjaxLoadingPanelQUOCGIA";
                         _AjaxSetting.UpdatedControls.Add(_AjaxUpdatedControl);
-                        //RadAjaxManager.AjaxSettings.Add(_AjaxSetting);
+                        RadAjaxManager.AjaxSettings.Add(_AjaxSetting);
                         control = LoadControl("module/QUOCGIA.ascx");
+                        break;
+                    case "tinhthanh":
+                        _AjaxSetting.AjaxControlID = "RadSplitterTINHTHANH";
+                        _AjaxUpdatedControl.ControlID = "RadSplitterTINHTHANH";
+                        _AjaxUpdatedControl.LoadingPanelID = "RadAjaxLoadingPanelTINHTHANH";
+                        _AjaxSetting.UpdatedControls.Add(_AjaxUpdatedControl);
+                        RadAjaxManager.AjaxSettings.Add(_AjaxSetting);
+                        control = LoadControl("module/TINHTHANH.ascx");
+                        break;
+                    case "quanhuyen":
+                        _AjaxSetting.AjaxControlID = "RadSplitterQUANHUYEN";
+                        _AjaxUpdatedControl.ControlID = "RadSplitterQUANHUYEN";
+                        _AjaxUpdatedControl.LoadingPanelID = "RadAjaxLoadingPanelQUANHUYEN";
+                        _AjaxSetting.UpdatedControls.Add(_AjaxUpdatedControl);
+                        RadAjaxManager.AjaxSettings.Add(_AjaxSetting);
+                        control = LoadControl("module/QUANHUYEN.ascx");
                         break;
 
 

@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 using Telerik.Web.UI;
 using System.Data;
 
-public partial class module_QUOCGIA : System.Web.UI.UserControl
+public partial class module_TINHTHANH : System.Web.UI.UserControl
 {
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -15,13 +15,13 @@ public partial class module_QUOCGIA : System.Web.UI.UserControl
         switch (sBrowserType)
         {
             case "IE6":
-                RadGridQUOCGIA.MasterTableView.EditFormSettings.PopUpSettings.Modal = false;
+                RadGridTINHTHANH.MasterTableView.EditFormSettings.PopUpSettings.Modal = false;
                 break;
             case "IE7":
-                RadGridQUOCGIA.MasterTableView.EditFormSettings.PopUpSettings.Modal = false;
+                RadGridTINHTHANH.MasterTableView.EditFormSettings.PopUpSettings.Modal = false;
                 break;
             default:
-                RadGridQUOCGIA.MasterTableView.EditFormSettings.PopUpSettings.Modal = true;
+                RadGridTINHTHANH.MasterTableView.EditFormSettings.PopUpSettings.Modal = true;
                 break;
         }
         if (!ITCLIB.Security.Security.CanViewModule("Lists"))
@@ -37,8 +37,8 @@ public partial class module_QUOCGIA : System.Web.UI.UserControl
     }
     protected void btnShowAll_Click(object sender, System.Web.UI.ImageClickEventArgs e)
     {
-        RadGridQUOCGIA.MasterTableView.FilterExpression = string.Empty;
-        foreach (GridColumn column in RadGridQUOCGIA.MasterTableView.RenderColumns)
+        RadGridTINHTHANH.MasterTableView.FilterExpression = string.Empty;
+        foreach (GridColumn column in RadGridTINHTHANH.MasterTableView.RenderColumns)
         {
             if (column is GridBoundColumn)
             {
@@ -51,12 +51,12 @@ public partial class module_QUOCGIA : System.Web.UI.UserControl
                 boundColumn.CurrentFilterValue = string.Empty;
             }
         }
-        RadGridQUOCGIA.MasterTableView.Rebind();
+        RadGridTINHTHANH.MasterTableView.Rebind();
     }
     protected void CheckCode(object source, ServerValidateEventArgs args)
     {
         string SelectSQL;
-        SelectSQL = "Select DMQUOCGIA.C_CODE FROM DMQUOCGIA WHERE DMQUOCGIA.C_CODE = '" + args.Value + "' AND DMQUOCGIA.PK_ID <> " + Session["txtID"].ToString();
+        SelectSQL = "Select DMTINHTHANH.C_CODE FROM DMTINHTHANH WHERE DMTINHTHANH.C_CODE = '" + args.Value + "' AND DMTINHTHANH.PK_ID <> " + Session["txtID"].ToString();
         DataTable oDataTable = new DataTable();
         ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
         oDataTable = SelectQuery.query_data(SelectSQL);
@@ -71,7 +71,7 @@ public partial class module_QUOCGIA : System.Web.UI.UserControl
     }
     protected void CheckName(object source, ServerValidateEventArgs args)
     {
-        string SelectSQL = String.Format("Select DMQUOCGIA.C_NAME FROM DMQUOCGIA WHERE DMQUOCGIA.C_NAME = '{0}' AND DMQUOCGIA.PK_ID <> {1}", args.Value, Session["txtID"].ToString());
+        string SelectSQL = String.Format("Select DMTINHTHANH.C_NAME FROM DMTINHTHANH WHERE DMTINHTHANH.C_NAME = '{0}' AND DMTINHTHANH.PK_ID <> {1}", args.Value, Session["txtID"].ToString());
         DataTable oDataTable = new DataTable();
         ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
         oDataTable = SelectQuery.query_data(SelectSQL);
@@ -86,82 +86,82 @@ public partial class module_QUOCGIA : System.Web.UI.UserControl
     }
     private void DisplayMessage(string text)
     {
-        RadGridQUOCGIA.Controls.Add(new LiteralControl(string.Format("<span style='color:red'>{0}</span>", text)));
+        RadGridTINHTHANH.Controls.Add(new LiteralControl(string.Format("<span style='color:red'>{0}</span>", text)));
     }
     private void SetMessage(string message)
     {
         gridMessage = message;
     }
     private string gridMessage = null;
-    protected void RadGridQUOCGIA_DataBound(object sender, EventArgs e)
+    protected void RadGridTINHTHANH_DataBound(object sender, EventArgs e)
     {
         if (!string.IsNullOrEmpty(gridMessage))
         {
             DisplayMessage(gridMessage);
         }
     }
-    protected void RadGridQUOCGIA_ItemDeleted(object sender, GridDeletedEventArgs e)
+    protected void RadGridTINHTHANH_ItemDeleted(object sender, GridDeletedEventArgs e)
     {
         GridDataItem dataItem = (GridDataItem)e.Item;
         if (e.Exception != null)
         {
             e.ExceptionHandled = true;
-            SetMessage("Không thể xóa quốc gia. Lý do: " + e.Exception.Message);
+            SetMessage("Không thể xóa tỉnh thành. Lý do: " + e.Exception.Message);
         }
         else
         {
-            SetMessage("Xóa quốc gia thành công!");
-            ITCLIB.ActionLog.ActionLog.WriteLog(Session["UserID"].ToString(), "Deleted QUOCGIA", e.Item.KeyValues);
+            SetMessage("Xóa tỉnh thành thành công!");
+            ITCLIB.ActionLog.ActionLog.WriteLog(Session["UserID"].ToString(), "Deleted TINHTHANH", e.Item.KeyValues);
         }
     }
-    protected void RadGridQUOCGIA_ItemInserted(object sender, GridInsertedEventArgs e)
+    protected void RadGridTINHTHANH_ItemInserted(object sender, GridInsertedEventArgs e)
     {
         GridEditableItem item = (GridEditableItem)e.Item;
         if (e.Exception != null)
         {
             e.ExceptionHandled = true;
-            SetMessage("Không thể tạo mới quốc gia. Lý do: " + e.Exception.Message);
+            SetMessage("Không thể tạo mới tỉnh thành. Lý do: " + e.Exception.Message);
         }
         else
         {
-            SetMessage("Tạo mới quốc gia thành công!");
-            ITCLIB.ActionLog.ActionLog.WriteLog(Session["UserID"].ToString(), "Inserted QUOCGIA", "{PK_ID:\"" + getmaxid("DMPHONGBAN") + "\"}");
+            SetMessage("Tạo mới tỉnh thành thành công!");
+            ITCLIB.ActionLog.ActionLog.WriteLog(Session["UserID"].ToString(), "Inserted TINHTHANH", "{PK_ID:\"" + getmaxid("DMPHONGBAN") + "\"}");
         }
     }
-    protected void RadGridQUOCGIA_ItemUpdated(object sender, GridUpdatedEventArgs e)
+    protected void RadGridTINHTHANH_ItemUpdated(object sender, GridUpdatedEventArgs e)
     {
         GridEditableItem item = (GridEditableItem)e.Item;
         if (e.Exception != null)
         {
             e.KeepInEditMode = true;
             e.ExceptionHandled = true;
-            SetMessage("Không thể cập nhật quốc gia. Lý do: " + e.Exception.Message);
+            SetMessage("Không thể cập nhật tỉnh thành. Lý do: " + e.Exception.Message);
         }
         else
         {
-            SetMessage("Cập nhật quốc gia thành công!");
-            ITCLIB.ActionLog.ActionLog.WriteLog(Session["UserID"].ToString(), "Updated QUOCGIA", e.Item.KeyValues);
+            SetMessage("Cập nhật tỉnh thành thành công!");
+            ITCLIB.ActionLog.ActionLog.WriteLog(Session["UserID"].ToString(), "Updated TINHTHANH", e.Item.KeyValues);
         }
     }
-    protected void RadGridQUOCGIA_ItemDataBound(object sender, GridItemEventArgs e)
+    protected void RadGridTINHTHANH_ItemDataBound(object sender, GridItemEventArgs e)
     {
         RadGrid grid = (RadGrid)sender;
         if (e.Item is GridEditableItem && e.Item.IsInEditMode)
         {
             GridEditableItem editItem = (GridEditableItem)e.Item;
             HiddenField txtID = (HiddenField)editItem.FindControl("txtID");
-            DropDownList ddlKhuvuc = (DropDownList)editItem.FindControl("ddlKhuvuc");
-            Session["txtID"] = (txtID.Value != "") ? txtID.Value : "0";            
+            DropDownList ddlQUOCGIA = (DropDownList)editItem.FindControl("ddlQUOCGIA");
+            Session["txtID"] = (txtID.Value != "") ? txtID.Value : "0";
             if (e.Item.OwnerTableView.IsItemInserted)
             {
-                if (Session["kvID"] != null)
+                if (Session["qgid"] != null)
                 {
-                    ddlKhuvuc.SelectedValue = Session["kvID"].ToString();
+                    ddlQUOCGIA.SelectedValue = Session["qgid"].ToString();
                 }
             }
             else
             {
-                
+
             }
         }
         if (e.Item is GridDataItem)
@@ -170,21 +170,21 @@ public partial class module_QUOCGIA : System.Web.UI.UserControl
             lblSTT.Text = (e.Item.ItemIndex + 1).ToString();
         }
     }
-    protected void RadGridQUOCGIA_ItemCommand(object sender, GridCommandEventArgs e)
+    protected void RadGridTINHTHANH_ItemCommand(object sender, GridCommandEventArgs e)
     {
         if (e.CommandName == "DeleteSelected")
         {
-            if (RadGridQUOCGIA.SelectedIndexes.Count == 0)
+            if (RadGridTINHTHANH.SelectedIndexes.Count == 0)
             {
                 SetMessage("Không có bản ghi được chọn!");
-                RadGridQUOCGIA.Rebind();
+                RadGridTINHTHANH.Rebind();
             }
-            foreach (GridDataItem item in RadGridQUOCGIA.SelectedItems)
+            foreach (GridDataItem item in RadGridTINHTHANH.SelectedItems)
             {
                 if (!ValidateDelete(item["pk_id"].Text))
                 {
-                    SetMessage(String.Format("Không thể xóa quốc gia \"{0}\" do có tham chiếu dữ liệu khác.", item["c_name"].Text));
-                    RadGridQUOCGIA.Rebind();
+                    SetMessage(String.Format("Không thể xóa tỉnh thành \"{0}\" do có tham chiếu dữ liệu khác.", item["c_name"].Text));
+                    RadGridTINHTHANH.Rebind();
                 }
             }
         }
@@ -230,41 +230,41 @@ public partial class module_QUOCGIA : System.Web.UI.UserControl
         }
         else*/
         //{
-            return true;
+        return true;
         //}
     }
-    protected void RadGridQUOCGIA_ItemCreated(object sender, GridItemEventArgs e)
+    protected void RadGridTINHTHANH_ItemCreated(object sender, GridItemEventArgs e)
     {
     }
-    protected void RadGridQUOCGIA_PreRender(object sender, EventArgs e)
+    protected void RadGridTINHTHANH_PreRender(object sender, EventArgs e)
     {
 
     }
     protected void lblcap_PreRender(object sender, EventArgs e)
     {
         Label titile = (Label)sender;
-        if (Session["kvID"] != null)
+        if (Session["qgid"] != null)
         {
-            titile.Text = ITCLIB.Admin.cFunction.getname(Session["kvID"].ToString(), "DMKHUVUC");
+            titile.Text = ITCLIB.Admin.cFunction.getname(Session["qgid"].ToString(), "DMQUOCGIA");
         }
         else { titile.Text = ""; }
     }
-    protected void RadPanelBarListKHUVUC_ItemDataBound(object sender, RadPanelBarEventArgs e)
+    protected void RadPanelBarListQUOCGIA_ItemDataBound(object sender, RadPanelBarEventArgs e)
     {
         RadPanelItem item = (RadPanelItem)e.Item;
         item.ImageUrl = "../images/folder-closed.gif";
         item.SelectedImageUrl = "../images/folder_open.png";
     }
-    protected void RadPanelBarListKHUVUC_ItemClick(object sender, RadPanelBarEventArgs e)
+    protected void RadPanelBarListQUOCGIA_ItemClick(object sender, RadPanelBarEventArgs e)
     {
-        Session["kvID"] = RadPanelBarListKHUVUC.SelectedItem.Value;
-        RadGridQUOCGIA.DataBind();
+        Session["qgid"] = RadPanelBarListQUOCGIA.SelectedItem.Value;
+        RadGridTINHTHANH.DataBind();
     }
-    protected void RadPanelBarListKHUVUC_PreRender(object sender, EventArgs e)
+    protected void RadPanelBarListQUOCGIA_PreRender(object sender, EventArgs e)
     {
         if (!IsPostBack)
         {
-            RadPanelItem item = (RadPanelItem)RadPanelBarListKHUVUC.FindItemByValue("0");
+            RadPanelItem item = (RadPanelItem)RadPanelBarListQUOCGIA.FindItemByValue("0");
             if (item != null)
             {
                 item.Expanded = true;
