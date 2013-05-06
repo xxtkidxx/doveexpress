@@ -44,7 +44,7 @@
                     </telerik:RadMenuItem> 
                  </Items>
             </telerik:RadMenuItem> 
-            <telerik:RadMenuItem runat="server" Font-Size="Small" Text="Mã bảng cước" Value="MABANGCUOC">                 
+            <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=MABANGCUOC" Text="Mã bảng cước" Value="MABANGCUOC">                 
             </telerik:RadMenuItem> 
             <telerik:RadMenuItem runat="server" Font-Size="Small" Text="Sản phẩm" Value="SANPHAM">
                  <Items>
