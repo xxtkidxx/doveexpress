@@ -1,0 +1,78 @@
+Thời gian: 2013-05-06 20:41:29 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-05-06 20:43:52 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated QUOCGIAOffices
+Kết quả : {pk_id:"15"}
+__________________________
+Thời gian: 2013-05-06 21:18:02 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-05-06 21:42:05 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted TINHTHANH
+Kết quả : {PK_ID:"15"}
+__________________________
+Thời gian: 2013-05-06 21:42:24 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated TINHTHANH
+Kết quả : {pk_id:"1"}
+__________________________
+Thời gian: 2013-05-06 21:44:06 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated TINHTHANH
+Kết quả : {pk_id:"1"}
+__________________________
+Thời gian: 2013-05-06 21:48:42 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted QUANHUYEN
+Kết quả : {PK_ID:"15"}
+__________________________
+Thời gian: 2013-05-06 21:48:53 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted QUANHUYEN
+Kết quả : {PK_ID:"15"}
+__________________________
+Thời gian: 2013-05-06 22:43:41 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-05-06 22:44:36 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted MABANGCUOCs
+Kết quả : {PK_ID:"1"}
+__________________________
+Thời gian: 2013-05-06 22:44:41 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated MABANGCUOCs
+Kết quả : {PK_ID:"1"}
+__________________________
+Thời gian: 2013-05-06 22:44:54 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted MABANGCUOCs
+Kết quả : {PK_ID:"2"}
+__________________________
+Thời gian: 2013-05-06 22:45:06 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted MABANGCUOCs
+Kết quả : {PK_ID:"3"}
+__________________________

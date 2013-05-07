@@ -48,11 +48,11 @@
             </telerik:RadMenuItem> 
             <telerik:RadMenuItem runat="server" Font-Size="Small" Text="Sản phẩm" Value="SANPHAM">
                  <Items>
-                    <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="" Text="Mã sản phẩm" Value="MASANPHAM">
+                    <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=MASANPHAM" Text="Mã sản phẩm" Value="MASANPHAM">
                     </telerik:RadMenuItem>
-                    <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="" Text="Vùng sản phẩm" Value="VUNGSANPHAM">
+                    <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=MAVUNG" Text="Vùng tính cước" Value="MAVUNG">
                     </telerik:RadMenuItem>
-                    <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="" Text="Cước sản phẩm" Value="CUOCSANPHAM">
+                    <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=CUOCSANPHAM" Text="Chi tiết cước sản phẩm" Value="CUOCSANPHAM">
                     </telerik:RadMenuItem> 
                  </Items>
             </telerik:RadMenuItem>
