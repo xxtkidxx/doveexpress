@@ -66,7 +66,7 @@
                     </telerik:RadMenuItem> 
                  </Items>
             </telerik:RadMenuItem>
-            <telerik:RadMenuItem runat="server" Font-Size="Small" Text="Tỷ giá" Value="TYGIA">                 
+            <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=TYGIA" Text="Tỷ giá" Value="TYGIA">                 
             </telerik:RadMenuItem> 
         </Items>
      </telerik:RadMenuItem> 
