@@ -122,6 +122,9 @@ public partial class Main : System.Web.UI.MasterPage
                         RadAjaxManager.AjaxSettings.Add(_AjaxSetting);
                         control = LoadControl("module/MAVUNG.ascx");
                         break;
+                     case "tygia":                    
+                        control = LoadControl("module/TYGIA.ascx");
+                        break;
 
 
 
