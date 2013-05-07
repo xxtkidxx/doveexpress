@@ -1,0 +1,154 @@
+Thời gian lỗi : 2013-05-06 20:42:00 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=QUOCGIA. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-05-06 20:42:01 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=QUOCGIA. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-05-06 20:42:35 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=QUOCGIA. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-05-06 20:57:38 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=QUOCGIA. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\module\QUOCGIA.ascx(104): error CS1061: 'ASP.module_quocgia_ascx' does not contain a definition for 'btnShowAll_Click' and no extension method 'btnShowAll_Click' accepting a first argument of type 'ASP.module_quocgia_ascx' could be found (are you missing a using directive or an assembly reference?)
+__________________________
+Thời gian lỗi : 2013-05-06 20:58:09 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=QUOCGIA. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\module\QUOCGIA.ascx(163): error CS0407: 'bool module_QUOCGIA.CheckName(object, System.Web.UI.WebControls.ServerValidateEventArgs)' has the wrong return type
+__________________________
+Thời gian lỗi : 2013-05-06 20:58:43 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=QUOCGIA. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\module\QUOCGIA.ascx.cs(72): error CS0161: 'module_QUOCGIA.CheckName(object, System.Web.UI.WebControls.ServerValidateEventArgs)': not all code paths return a value
+__________________________
+Thời gian lỗi : 2013-05-06 21:03:53 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/Grid/AddRecord.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-05-06 21:03:53 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/Grid/Edit.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\5\6.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-05-06 21:03:53 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/Grid/Delete.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-05-06 21:03:53 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/Grid/Refresh.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-05-06 21:03:53 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/Grid/pdf.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-05-06 21:03:53 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/Grid/word.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-05-06 21:03:53 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/Grid/excel.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-05-06 21:03:53 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/Grid/csv.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-05-06 21:03:53 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/img_save.jpg. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-05-06 21:03:53 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/img_Close.jpg. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\5\6.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-05-06 21:31:45 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=QUOCGIA. 
+Nội dung lỗi:'ddlKhuvuc' has a SelectedValue which is invalid because it does not exist in the list of items.
+Parameter name: value
+__________________________
+Thời gian lỗi : 2013-05-06 21:31:46 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=QUOCGIA. 
+Nội dung lỗi:'ddlKhuvuc' has a SelectedValue which is invalid because it does not exist in the list of items.
+Parameter name: value
+__________________________
+Thời gian lỗi : 2013-05-06 21:33:40 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=QUOCGIA. 
+Nội dung lỗi:'ddlKhuvuc' has a SelectedValue which is invalid because it does not exist in the list of items.
+Parameter name: value
+__________________________
+Thời gian lỗi : 2013-05-06 21:34:50 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=QUOCGIA. 
+Nội dung lỗi:'ddlKhuvuc' has a SelectedValue which is invalid because it does not exist in the list of items.
+Parameter name: value
+__________________________
+Thời gian lỗi : 2013-05-06 21:34:57 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=QUOCGIA. 
+Nội dung lỗi:'ddlKhuvuc' has a SelectedValue which is invalid because it does not exist in the list of items.
+Parameter name: value
+__________________________
+Thời gian lỗi : 2013-05-06 21:36:30 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=QUOCGIA. 
+Nội dung lỗi:'ddlKhuvuc' has a SelectedValue which is invalid because it does not exist in the list of items.
+Parameter name: value
+__________________________
+Thời gian lỗi : 2013-05-06 21:37:15 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=QUOCGIA. 
+Nội dung lỗi:'ddlKhuvuc' has a SelectedValue which is invalid because it does not exist in the list of items.
+Parameter name: value
+__________________________
+Thời gian lỗi : 2013-05-06 21:37:19 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=QUOCGIA. 
+Nội dung lỗi:'ddlKhuvuc' has a SelectedValue which is invalid because it does not exist in the list of items.
+Parameter name: value
+__________________________
+Thời gian lỗi : 2013-05-06 21:37:24 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=QUOCGIA. 
+Nội dung lỗi:'ddlKhuvuc' has a SelectedValue which is invalid because it does not exist in the list of items.
+Parameter name: value
+__________________________
+Thời gian lỗi : 2013-05-06 21:40:36 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=TINHTHANH. 
+Nội dung lỗi:Index (zero based) must be greater than or equal to zero and less than the size of the argument list.
+__________________________
+Thời gian lỗi : 2013-05-06 21:41:14 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=TINHTHANH. 
+Nội dung lỗi:Index (zero based) must be greater than or equal to zero and less than the size of the argument list.
+__________________________
+Thời gian lỗi : 2013-05-06 21:47:25 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=QUANHUYEN. 
+Nội dung lỗi:Invalid object name 'DMQUANHUYEN'.
+__________________________
+Thời gian lỗi : 2013-05-06 21:48:04 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=QUANHUYEN. 
+Nội dung lỗi:Invalid column name 'FK_TINHTHANH'.
+__________________________
