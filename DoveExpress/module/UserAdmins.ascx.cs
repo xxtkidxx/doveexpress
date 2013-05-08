@@ -164,7 +164,6 @@ public partial class Modules_UserAdmins : System.Web.UI.UserControl
                     raddrivervalue += "," + node.Value;
                 }
             }
-            Session["ttt"] = raddrivervalue;
             UserAdminsDataSource.UpdateParameters["FK_DEPT"].DefaultValue = raddrivervalue;
         }
         else if (e.CommandName == RadGrid.PerformInsertCommandName)
@@ -244,9 +243,5 @@ public partial class Modules_UserAdmins : System.Web.UI.UserControl
             }
         }*/
         return true;
-    }
-    protected void Button1_Click(object sender, EventArgs e)
-    {
-        ITCLIB.Admin.JavaScript.ShowMessage(Session["ttt"].ToString(), this);
     }
 }

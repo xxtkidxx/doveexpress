@@ -6,10 +6,6 @@
               radopen("Popup.aspx?ctl=User_Priv_Module&guID=" + guIDvalue, "Phân quyền Modoule");
 
           }
-          else if (type == "2") {
-              radopen("Popup.aspx?ctl=User_Priv_Report&guID=" + guIDvalue, "Phân quyền Report");
-
-          }
           return false;
       }
 </script> 
@@ -66,21 +62,11 @@
                 <telerik:GridBoundColumn UniqueName="C_DESC" HeaderText="Mô tả nhóm" DataField="C_DESC"
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
                 </telerik:GridBoundColumn>
-                <telerik:GridTemplateColumn HeaderText ="Loại nhóm" ShowFilterIcon="false" AllowFiltering ="false" >               
-                <ItemTemplate>
-                       <%# getstatus(Eval("C_TYPE"))%>
-                </ItemTemplate>
-                </telerik:GridTemplateColumn>
                 <telerik:GridTemplateColumn UniqueName="UserPrivModule" HeaderText="Phân quyền Module" DataField="PK_ID" AllowFiltering="False">
                     <ItemTemplate>
                         <asp:LinkButton ID="libUserPrivModule" OnClientClick='<%# String.Format("javascript:return OnClientLinkClicked(1,{0})", Eval("PK_ID"))%>' runat="server">Phân quyền</asp:LinkButton>&nbsp;&nbsp;
                     </ItemTemplate>
-                </telerik:GridTemplateColumn>  
-                 <telerik:GridTemplateColumn UniqueName="UserPrivReport" HeaderText="Phân quyền Report" DataField="PK_ID" AllowFiltering="False">
-                    <ItemTemplate>
-                        <asp:LinkButton ID="libUserPrivReport" OnClientClick='<%# String.Format("javascript:return OnClientLinkClicked(2,{0})", Eval("PK_ID"))%>' runat="server">Phân quyền</asp:LinkButton>&nbsp;&nbsp;
-                    </ItemTemplate>
-                </telerik:GridTemplateColumn>           
+                </telerik:GridTemplateColumn>        
         </Columns>
         <EditFormSettings InsertCaption="Thêm nhóm mới" CaptionFormatString="Sửa nhóm: <b>{0}</b>" CaptionDataField="C_NAME" EditFormType="Template" PopUpSettings-Width="300px">
         <EditColumn UniqueName="EditCommandColumn1" FilterControlAltText="Filter EditCommandColumn1 column"></EditColumn>
@@ -121,20 +107,7 @@
                             <td>
                                 <telerik:RadTextBox ID="txtGroupUserDesc" TextMode="MultiLine" Rows ="2" Columns ="1" Width ="95%" Text='<%# Bind( "C_DESC") %>' runat="server"></telerik:RadTextBox>
                             </td>
-                        </tr> 
-                        <tr>
-                            <td>
-                                Loại nhóm:
-                            </td>
-                            <td>
-                             <telerik:RadComboBox ID="ddlLoaiNhom" SelectedValue='<%# Bind("C_TYPE") %>' runat="server" Enabled='<%# (Container is GridEditFormInsertItem)%>'>
-                             <Items>   
-                                 <telerik:RadComboBoxItem Value="0" Text="Nhóm quản trị"/>   
-                                 <telerik:RadComboBoxItem Value="1" Text="Nhóm công ty"/> 
-                             </Items>
-                           </telerik:RadComboBox>
-                            </td>
-                        </tr>                     
+                        </tr>                   
                     </table>
                     <table style="width: 100%">
                         <tr>

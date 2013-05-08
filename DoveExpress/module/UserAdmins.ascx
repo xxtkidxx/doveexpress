@@ -226,7 +226,7 @@
 <asp:SqlDataSource ID="UserAdminsDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
         DeleteCommand="DELETE FROM USERS WHERE PK_ID = @PK_ID" 
         InsertCommand="INSERT INTO USERS (FK_GROUPUSER,FK_DEPT,C_LoginName,C_Password,C_NAME,C_Address,c_Tel,C_Email,C_DESC) VALUES (@FK_GROUPUSER,@FK_DEPT, @C_LoginName,@C_Password,@C_NAME,@C_Address,@c_Tel,@C_Email,@C_DESC)"
-        SelectCommand="SELECT USERS.PK_ID,USERS.FK_GroupUser,USERS.FK_DEPT,USERS.C_LoginName,USERS.C_Password,USERS.C_NAME,USERS.C_Address,USERS.c_Tel,USERS.C_Email,USERS.C_DESC,GROUPUSER.C_NAME AS GROUPUSERNAME FROM USERS INNER JOIN GROUPUSER ON  USERS.FK_GROUPUSER = GROUPUSER.PK_ID WHERE FK_GroupUser <> 0 AND GROUPUSER.C_TYPE = 0"
+        SelectCommand="SELECT USERS.PK_ID,USERS.FK_GroupUser,USERS.FK_DEPT,USERS.C_LoginName,USERS.C_Password,USERS.C_NAME,USERS.C_Address,USERS.c_Tel,USERS.C_Email,USERS.C_DESC,GROUPUSER.C_NAME AS GROUPUSERNAME FROM USERS INNER JOIN GROUPUSER ON  USERS.FK_GROUPUSER = GROUPUSER.PK_ID WHERE FK_GroupUser <> 0"
         UpdateCommand="UPDATE USERS SET FK_GROUPUSER=@FK_GROUPUSER,FK_DEPT=@FK_DEPT,C_LoginName = @C_LoginName, C_Password = ISNULL(@C_Password,C_Password),C_NAME=@C_NAME,C_Address=@C_Address,c_Tel=@c_Tel,C_Email=@C_Email,C_DESC=@C_DESC WHERE PK_ID = @PK_ID">
         <UpdateParameters>
             <asp:Parameter Name="FK_DEPT" Type="String" ConvertEmptyStringToNull="False"/>            
@@ -255,10 +255,9 @@
         </InsertParameters>
 </asp:SqlDataSource>
 <asp:SqlDataSource ID="GroupUserDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
-   SelectCommand="SELECT GROUPUSER.PK_ID,GROUPUSER.C_NAME FROM GROUPUSER WHERE PK_ID <> 0  AND C_TYPE = 0 order by LTRIM(GROUPUSER.C_NAME)">
+   SelectCommand="SELECT GROUPUSER.PK_ID,GROUPUSER.C_NAME FROM GROUPUSER WHERE PK_ID <> 0 order by LTRIM(GROUPUSER.C_NAME)">
   </asp:SqlDataSource>
   <asp:SqlDataSource ID="DeptDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
    SelectCommand="SELECT DMPHONGBAN.PK_ID,DMPHONGBAN.C_NAME,DMPHONGBAN.C_PARENT FROM DMPHONGBAN order by LTRIM(DMPHONGBAN.C_NAME)">
   </asp:SqlDataSource>
-<asp:Button ID="Button1" runat="server" Text="Button" onclick="Button1_Click" />
 
