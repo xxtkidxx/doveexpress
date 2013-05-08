@@ -205,21 +205,4 @@ public partial class company_GroupUsers : System.Web.UI.UserControl
         ITCLIB.Admin.SQL acess = new ITCLIB.Admin.SQL();
         acess.ExecuteNonQuery(sqldelete);
     }
-    protected string getstatus(object status)
-    {
-        string result = "";
-        if (status != DBNull.Value)
-        {
-            switch (status.ToString())
-            {
-                case "0":
-                    result = "Nhóm quản trị";
-                    break;
-                case "1":
-                    result = "Nhóm công ty";
-                    break;
-            }
-        }
-        return result;
-    }
 }

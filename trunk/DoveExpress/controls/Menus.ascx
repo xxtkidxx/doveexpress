@@ -45,17 +45,13 @@
                  </Items>
             </telerik:RadMenuItem> 
             <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=MABANGCUOC" Text="Mã bảng cước" Value="MABANGCUOC">                 
-            </telerik:RadMenuItem> 
-            <telerik:RadMenuItem runat="server" Font-Size="Small" Text="Giá cước" Value="SANPHAM">
-                 <Items>
-                    <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=MASANPHAM" Text="Mã hàng, sản phẩm" Value="MASANPHAM">
-                    </telerik:RadMenuItem>
-                    <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=MAVUNG" Text="Vùng tính cước" Value="MAVUNG">
-                    </telerik:RadMenuItem>
-                    <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=CUOCSANPHAM" Text="Chi tiết cước" Value="CUOCSANPHAM">
-                    </telerik:RadMenuItem> 
-                 </Items>
             </telerik:RadMenuItem>
+            <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=MASANPHAM" Text="Mã hàng, sản phẩm" Value="MASANPHAM">
+            </telerik:RadMenuItem>
+            <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=MAVUNG" Text="Vùng tính cước" Value="MAVUNG">
+            </telerik:RadMenuItem>
+            <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=CUOCSANPHAM" Text="Chi tiết cước" Value="CUOCSANPHAM">
+            </telerik:RadMenuItem> 
             <telerik:RadMenuItem runat="server" Font-Size="Small" Text="Dịch vụ" Visible ="false" Value="DICHVU">
                  <Items>
                     <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="" Text="Mã dịch vụ" Value="MADICHVU">
@@ -76,7 +72,7 @@
              </telerik:RadMenuItem>
              <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=User" Text="Nhân viên" Value="NHANVIEN">
              </telerik:RadMenuItem>
-             <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="" Text="Phân quyền" Value="PHANQUYEN">
+             <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=GroupUser" Text="Phân quyền" Value="PHANQUYEN">
              </telerik:RadMenuItem>
              <telerik:RadMenuItem runat="server" NavigateUrl="../Default.aspx?ctl=ActionLog" Text="Nhật ký sử dụng" Value="ActionLog" Font-Size="Small">
              </telerik:RadMenuItem>

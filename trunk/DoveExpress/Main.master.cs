@@ -24,7 +24,7 @@ public partial class Main : System.Web.UI.MasterPage
                 AjaxUpdatedControl _AjaxUpdatedControl = new AjaxUpdatedControl();                
                 switch ((string)Request.QueryString["ctl"].ToLower())
                 {
-                    case "group_users":
+                    case "groupuser":
                         _AjaxSetting.AjaxControlID = "RadGridGroupUser";
                         _AjaxUpdatedControl.ControlID = "RadGridGroupUser";
                         _AjaxUpdatedControl.LoadingPanelID = "RadAjaxLoadingPanelGroupUser";
@@ -37,7 +37,7 @@ public partial class Main : System.Web.UI.MasterPage
                         _AjaxUpdatedControl.ControlID = "RadGridUserAdmin";
                         _AjaxUpdatedControl.LoadingPanelID = "RadAjaxLoadingPanelUserAdmin";
                         _AjaxSetting.UpdatedControls.Add(_AjaxUpdatedControl);
-                        //RadAjaxManager.AjaxSettings.Add(_AjaxSetting);
+                        RadAjaxManager.AjaxSettings.Add(_AjaxSetting);
                         control = LoadControl("module/UserAdmins.ascx");
                         break;
                     case "user_pass":
