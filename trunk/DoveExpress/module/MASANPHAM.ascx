@@ -123,7 +123,7 @@
             SortedDescToolTip="Sắp xếp giảm dần" SortToolTip="Click để sắp xếp" />
         <StatusBarSettings LoadingText="Đang tải..." ReadyText="Sẵn sàng" />
 </telerik:RadGrid>
-<asp:SqlDataSource ID="MASANPHAMDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:CNCREPORTConnectionString %>"
+<asp:SqlDataSource ID="MASANPHAMDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
         DeleteCommand="DELETE FROM [DMMASANPHAM] WHERE [PK_ID] = @PK_ID" 
         InsertCommand="INSERT INTO [DMMASANPHAM] ([C_CODE], [C_NAME]) VALUES (@C_CODE, @C_NAME)"
         SelectCommand="SELECT [PK_ID], [C_CODE], [C_NAME] FROM [DMMASANPHAM] ORDER BY LTRIM([C_CODE])"      

@@ -182,7 +182,7 @@
         <StatusBarSettings LoadingText="Đang tải..." ReadyText="Sẵn sàng" />
 <FilterMenu EnableImageSprites="False"></FilterMenu>
 </telerik:RadGrid>
-<asp:SqlDataSource ID="QUOCGIADataSource" runat="server" ConnectionString="<%$ ConnectionStrings:CNCREPORTConnectionString %>"
+<asp:SqlDataSource ID="QUOCGIADataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
         DeleteCommand="DELETE FROM [DMQUOCGIA] WHERE [pk_id] = @pk_id" 
         InsertCommand="INSERT INTO [DMQUOCGIA] ([C_CODE], [C_NAME],[FK_KHUVUC]) VALUES (@C_CODE, @C_NAME,@FK_KHUVUC)"
         SelectCommand="SELECT * FROM [DMQUOCGIA] where (@FK_KHUVUC = 0 OR FK_KHUVUC =@FK_KHUVUC) ORDER BY LTRIM([c_name])"     
@@ -206,6 +206,6 @@
 </asp:SqlDataSource>      
 </telerik:RadPane>
  </telerik:RadSplitter>
- <asp:SqlDataSource ID="SqlDataSourceKHUVUC" runat="server" ConnectionString="<%$ ConnectionStrings:CNCREPORTConnectionString %>"
+ <asp:SqlDataSource ID="SqlDataSourceKHUVUC" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
     SelectCommand="SELECT [PK_ID], [C_CODE], [C_NAME] FROM [DMKHUVUC]">
  </asp:SqlDataSource> 

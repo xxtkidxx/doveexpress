@@ -78,7 +78,7 @@
 </MasterTableView>
 <HeaderContextMenu CssClass="GridContextMenu GridContextMenu_Default"></HeaderContextMenu>
 </telerik:RadGrid>
-<asp:SqlDataSource ID="UserPrivModuleDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:CNCREPORTConnectionString %>"
+<asp:SqlDataSource ID="UserPrivModuleDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
    SelectCommand="SELECT MODULE.C_NAME,GROUPUSER_MODULE.FK_MODULE,GROUPUSER_MODULE.C_LEVELPERMISSION FROM GROUPUSER_MODULE INNER JOIN MODULE ON GROUPUSER_MODULE.FK_MODULE = MODULE.PK_ID INNER JOIN GROUPUSER ON GROUPUSER_MODULE.FK_GROUPUSER = GROUPUSER.PK_ID WHERE GROUPUSER_MODULE.FK_GROUPUSER=@FK_GROUPUSER">
     <SelectParameters>
         <asp:QueryStringParameter DefaultValue="0" Name="FK_GROUPUSER" QueryStringField="guID" Type="Int32" />

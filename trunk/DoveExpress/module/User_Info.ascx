@@ -81,7 +81,7 @@
          </HeaderTemplate>
 </asp:DetailsView>   
   
-<asp:SqlDataSource ID="User_InfoDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:CNCREPORTConnectionString %>"
+<asp:SqlDataSource ID="User_InfoDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
     UpdateCommand="UPDATE [USERS] SET C_NAME=@C_NAME,C_EMAIL=@C_EMAIL,C_ADDRESS=@C_ADDRESS,C_TEL =@C_TEL,C_DESC=@C_DESC WHERE PK_ID=@PK_ID"
      SelectCommand="SELECT PK_ID,C_NAME,C_EMAIL,C_ADDRESS,C_TEL,C_DESC FROM [USERS] WHERE PK_ID=@PK_ID">
     <SelectParameters>
