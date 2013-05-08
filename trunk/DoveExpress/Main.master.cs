@@ -125,6 +125,14 @@ public partial class Main : System.Web.UI.MasterPage
                      case "tygia":                    
                         control = LoadControl("module/TYGIA.ascx");
                         break;
+                     case "phongban":
+                        _AjaxSetting.AjaxControlID = "RadSplitterDEPT";
+                        _AjaxUpdatedControl.ControlID = "RadSplitterDEPT";
+                        _AjaxUpdatedControl.LoadingPanelID = "RadAjaxLoadingPanelDept";
+                        _AjaxSetting.UpdatedControls.Add(_AjaxUpdatedControl);
+                        RadAjaxManager.AjaxSettings.Add(_AjaxSetting);
+                        control = LoadControl("module/Depts.ascx");
+                        break;
 
 
 

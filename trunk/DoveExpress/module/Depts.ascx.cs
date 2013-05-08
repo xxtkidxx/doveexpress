@@ -50,7 +50,7 @@ public partial class Depts : System.Web.UI.UserControl
             string DOANHNGHIEPNAME = "";
                 if (Session["DOANHNGHIEP"].ToString() == "0")
                 {
-                    DOANHNGHIEPNAME = "Ban quản lý CNC Láng - Hòa Lạc";
+                    DOANHNGHIEPNAME = "Chuyển phát nhanh Bồ Câu - Dove Express";
                 }else
                 {
                     DOANHNGHIEPNAME = ITCLIB.Admin.cFunction.LoadFieldfromTable(Session["DOANHNGHIEP"].ToString(),"TENDOANHNGHIEP","DOANHNGHIEP");

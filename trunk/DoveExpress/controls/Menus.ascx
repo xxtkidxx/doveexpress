@@ -46,17 +46,17 @@
             </telerik:RadMenuItem> 
             <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=MABANGCUOC" Text="Mã bảng cước" Value="MABANGCUOC">                 
             </telerik:RadMenuItem> 
-            <telerik:RadMenuItem runat="server" Font-Size="Small" Text="Sản phẩm" Value="SANPHAM">
+            <telerik:RadMenuItem runat="server" Font-Size="Small" Text="Giá cước" Value="SANPHAM">
                  <Items>
-                    <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=MASANPHAM" Text="Mã sản phẩm" Value="MASANPHAM">
+                    <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=MASANPHAM" Text="Mã hàng, sản phẩm" Value="MASANPHAM">
                     </telerik:RadMenuItem>
                     <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=MAVUNG" Text="Vùng tính cước" Value="MAVUNG">
                     </telerik:RadMenuItem>
-                    <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=CUOCSANPHAM" Text="Chi tiết cước sản phẩm" Value="CUOCSANPHAM">
+                    <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=CUOCSANPHAM" Text="Chi tiết cước" Value="CUOCSANPHAM">
                     </telerik:RadMenuItem> 
                  </Items>
             </telerik:RadMenuItem>
-            <telerik:RadMenuItem runat="server" Font-Size="Small" Text="Dịch vụ" Value="DICHVU">
+            <telerik:RadMenuItem runat="server" Font-Size="Small" Text="Dịch vụ" Visible ="false" Value="DICHVU">
                  <Items>
                     <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="" Text="Mã dịch vụ" Value="MADICHVU">
                     </telerik:RadMenuItem>
@@ -72,9 +72,7 @@
      </telerik:RadMenuItem> 
     <telerik:RadMenuItem runat="server" Font-Size="Small" Text="Danh mục riêng" Value="DANHMUCRIENG">
         <Items>
-             <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="" Text="Đơn vị" Value="DONVI">
-             </telerik:RadMenuItem> 
-             <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="" Text="Phòng ban" Value="PHONGBAN">
+             <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=PHONGBAN" Text="Phòng ban" Value="PHONGBAN">
              </telerik:RadMenuItem>
              <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="" Text="Nhân viên" Value="NHANVIEN">
              </telerik:RadMenuItem>
