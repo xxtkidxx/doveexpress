@@ -129,10 +129,10 @@
              <tr>
 	            <td style =" width:150px;"> <span class="rtsTxtnew">Phòng ban:</span></td>
 	            <td colspan="4">
-                 <telerik:RadTreeView runat="server" ID="tvDept" CheckBoxes="True"  TriStateCheckBoxes="true" CheckChildNodes="true" Width="100%" Height="140px" 
+                 <telerik:RadTreeView runat="server" ID="tvDept" CheckBoxes="True"  CheckChildNodes="true" Width="100%" Height="140px" 
                  DataFieldID="PK_ID" DataFieldParentID="C_PARENT" DataSourceID="DeptDataSource" DataTextField="C_NAME" DataValueField="PK_ID">
                  </telerik:RadTreeView> 
-                 <asp:HiddenField ID="hfFK_DEPT" runat="server"  Value ='<%# Bind("FK_DEPT")%>'/>   
+                 <asp:HiddenField ID="hfFK_DEPT" runat="server"  Value ='<%# Eval("FK_DEPT")%>'/>   
                  <asp:TextBox ID="txtID" Text='<%# Eval( "PK_ID") %>' Visible="false" runat="server"></asp:TextBox>           
                 </td>
             
