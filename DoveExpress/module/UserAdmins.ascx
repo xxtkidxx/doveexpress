@@ -34,45 +34,7 @@
     }
   </script>
 <script type="text/javascript">
-      var cmbDept;
-      function OnClientLoadDept(sender) {
-          cmbDept = sender;
-      }
-      function nodeClicking(sender, args)
-            {
-                var hfFK_DEPT = GetGridServerElementUserAdmin("hfFK_DEPT");  
-                var node = args.get_node()
-                hfFK_DEPT.value = node.get_value();
-                cmbDept.set_value(node.get_value());
-                cmbDept.set_text(node.get_text());
-                cmbDept.trackChanges();
-                cmbDept.get_items().getItem(0).set_text(node.get_text());
-                cmbDept.commitChanges();
-                cmbDept.hideDropDown();
-                // Call comboBox.attachDropDown if:
-                // 1) The RadComboBox is inside an AJAX panel.
-                // 2) The RadTreeView has a server-side event handler for the NodeClick event, i.e. it initiates a postback when clicking on a Node.
-                // Otherwise the AJAX postback becomes a normal postback regardless of the outer AJAX panel.
-                //comboBox.attachDropDown();
-            }
-            function StopPropagation(e)
-            {
-                if(!e)
-                {
-                    e = window.event;
-                }
-
-                e.cancelBubble = true;
-            }            
-            function OnClientDropDownOpenedHandler(sender, eventArgs)
-            {
-                var tree = sender.get_items().getItem(0).findControl("tvDept");
-                var selectedNode = tree.get_selectedNode();
-                if (selectedNode)
-                {
-                    selectedNode.scrollIntoView();
-                }
-            }
+      
 </script>
 </telerik:RadCodeBlock>
 <telerik:RadAjaxLoadingPanel Skin="Vista" ID="RadAjaxLoadingPanelUserAdmin" runat="server" />
@@ -127,12 +89,12 @@
                 <telerik:GridBoundColumn UniqueName="C_LoginName" HeaderText="Tên đăng nhập" DataField="C_LoginName"
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
                 </telerik:GridBoundColumn>
-                <telerik:GridTemplateColumn UniqueName="C_DEPTNAME" HeaderText="Tên phòng ban" DataField="C_DEPTNAME" 
+                <telerik:GridTemplateColumn UniqueName="FK_DEPT" HeaderText="Tên phòng ban" DataField="FK_DEPT" 
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
                     <ItemTemplate>
-                        <%# Eval("C_DEPTNAME")%>
+                         <%# ITCLIB.Admin.cFunction.getnamefix(Eval("FK_DEPT").ToString(),"DMPHONGBAN")%>
                     </ItemTemplate>
-                </telerik:GridTemplateColumn>  
+                </telerik:GridTemplateColumn> 
                 <telerik:GridBoundColumn UniqueName="C_NAME" HeaderText="Họ và tên" DataField="C_NAME"
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
                 </telerik:GridBoundColumn>
@@ -164,25 +126,16 @@
             <center>
             <div style="width:800px;background:#FFFFFF" class="clearfix">      
             <table id="tblEdit" class ="TableEditInGrid" cellspacing="3" cellpadding="3" style="width: 100%" border="0">
-            <tr>
-	             <td style =" width:150px;"> <span class="rtsTxtnew">Phòng ban:</span></td>
+             <tr>
+	            <td style =" width:150px;"> <span class="rtsTxtnew">Phòng ban:</span></td>
 	            <td colspan="4">
-                    <asp:TextBox ID="txtID" Text='<%# Eval( "PK_ID") %>' Visible="false" runat="server"></asp:TextBox>
-                    <asp:HiddenField ID="hfFK_DEPT" runat="server"  Value ='<%# Bind("FK_DEPT")%>'/>
-                    <telerik:RadComboBox ID="cmbDept" runat="server" Width="250px" ShowToggleImage="True" Style="vertical-align: middle;" OnClientDropDownOpened="OnClientDropDownOpenedHandler" OnClientLoad ="OnClientLoadDept"
-                    EmptyMessage="Chọn phòng ban" ExpandAnimation-Type="None" CollapseAnimation-Type="None">
-                        <ItemTemplate>
-                            <div id="div1">
-                                <telerik:RadTreeView runat="server" ID="tvDept" OnClientNodeClicking="nodeClicking" Width="100%" Height="140px" DataFieldID="PK_ID" DataFieldParentID="C_PARENT" DataSourceID="DeptDataSource" 
-                                     DataTextField="C_NAME" DataValueField="PK_ID">
-                                </telerik:RadTreeView>
-                            </div>
-                        </ItemTemplate>
-                        <Items>
-                            <telerik:RadComboBoxItem Text="" />
-                        </Items>
-                    </telerik:RadComboBox>                    
+                 <telerik:RadTreeView runat="server" ID="tvDept" CheckBoxes="True"  TriStateCheckBoxes="true" CheckChildNodes="true" Width="100%" Height="140px" 
+                 DataFieldID="PK_ID" DataFieldParentID="C_PARENT" DataSourceID="DeptDataSource" DataTextField="C_NAME" DataValueField="PK_ID">
+                 </telerik:RadTreeView> 
+                 <asp:HiddenField ID="hfFK_DEPT" runat="server"  Value ='<%# Bind("FK_DEPT")%>'/>   
+                 <asp:TextBox ID="txtID" Text='<%# Eval( "PK_ID") %>' Visible="false" runat="server"></asp:TextBox>           
                 </td>
+            
             </tr>
             <tr>
 	             <td style =" width:150px;"> <span class="rtsTxtnew">Tên đăng nhập:</span></td>
@@ -270,10 +223,10 @@
             SortedDescToolTip="Sắp xếp giảm dần" SortToolTip="Click để sắp xếp" />
         <StatusBarSettings LoadingText="Đang tải..." ReadyText="Sẵn sàng" />
 </telerik:RadGrid>
-<asp:SqlDataSource ID="UserAdminsDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:CNCREPORTConnectionString %>"
+<asp:SqlDataSource ID="UserAdminsDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
         DeleteCommand="DELETE FROM USERS WHERE PK_ID = @PK_ID" 
-        InsertCommand="INSERT INTO USERS (FK_GROUPUSER,FK_DEPT,FK_DOANHNGHIEP,C_LoginName,C_Password,C_NAME,C_Address,c_Tel,C_Email,C_DESC) VALUES (@FK_GROUPUSER,@FK_DEPT,0, @C_LoginName,@C_Password,@C_NAME,@C_Address,@c_Tel,@C_Email,@C_DESC)"
-        SelectCommand="SELECT USERS.PK_ID,USERS.FK_GroupUser,USERS.FK_DEPT,USERS.C_LoginName,USERS.C_Password,USERS.C_NAME,USERS.C_Address,USERS.c_Tel,USERS.C_Email,USERS.C_DESC,GROUPUSER.C_NAME AS GROUPUSERNAME,DMPHONGBAN.C_NAME AS C_DEPTNAME FROM USERS INNER JOIN GROUPUSER ON  USERS.FK_GROUPUSER = GROUPUSER.PK_ID LEFT OUTER JOIN DMPHONGBAN ON USERS.FK_DEPT = DMPHONGBAN.PK_ID WHERE FK_GroupUser <> 0 AND GROUPUSER.C_TYPE = 0"
+        InsertCommand="INSERT INTO USERS (FK_GROUPUSER,FK_DEPT,C_LoginName,C_Password,C_NAME,C_Address,c_Tel,C_Email,C_DESC) VALUES (@FK_GROUPUSER,@FK_DEPT, @C_LoginName,@C_Password,@C_NAME,@C_Address,@c_Tel,@C_Email,@C_DESC)"
+        SelectCommand="SELECT USERS.PK_ID,USERS.FK_GroupUser,USERS.FK_DEPT,USERS.C_LoginName,USERS.C_Password,USERS.C_NAME,USERS.C_Address,USERS.c_Tel,USERS.C_Email,USERS.C_DESC,GROUPUSER.C_NAME AS GROUPUSERNAME FROM USERS INNER JOIN GROUPUSER ON  USERS.FK_GROUPUSER = GROUPUSER.PK_ID WHERE FK_GroupUser <> 0 AND GROUPUSER.C_TYPE = 0"
         UpdateCommand="UPDATE USERS SET FK_GROUPUSER=@FK_GROUPUSER,FK_DEPT=@FK_DEPT,C_LoginName = @C_LoginName, C_Password = ISNULL(@C_Password,C_Password),C_NAME=@C_NAME,C_Address=@C_Address,c_Tel=@c_Tel,C_Email=@C_Email,C_DESC=@C_DESC WHERE PK_ID = @PK_ID">
         <UpdateParameters>
             <asp:Parameter Name="FK_DEPT" Type="String" ConvertEmptyStringToNull="False"/>            
@@ -301,9 +254,11 @@
             <asp:Parameter Name="C_DESC" Type="String" />
         </InsertParameters>
 </asp:SqlDataSource>
-<asp:SqlDataSource ID="GroupUserDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:CNCREPORTConnectionString %>"
+<asp:SqlDataSource ID="GroupUserDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
    SelectCommand="SELECT GROUPUSER.PK_ID,GROUPUSER.C_NAME FROM GROUPUSER WHERE PK_ID <> 0  AND C_TYPE = 0 order by LTRIM(GROUPUSER.C_NAME)">
   </asp:SqlDataSource>
-  <asp:SqlDataSource ID="DeptDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:CNCREPORTConnectionString %>"
+  <asp:SqlDataSource ID="DeptDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
    SelectCommand="SELECT DMPHONGBAN.PK_ID,DMPHONGBAN.C_NAME,DMPHONGBAN.C_PARENT FROM DMPHONGBAN order by LTRIM(DMPHONGBAN.C_NAME)">
   </asp:SqlDataSource>
+<asp:Button ID="Button1" runat="server" Text="Button" onclick="Button1_Click" />
+

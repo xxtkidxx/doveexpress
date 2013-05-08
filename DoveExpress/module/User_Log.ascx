@@ -40,7 +40,7 @@
             SortedDescToolTip="Sắp xếp giảm dần" SortToolTip="Click để sắp xếp" />
         <StatusBarSettings LoadingText="Đang tải..." ReadyText="Sẵn sàng" />
 </telerik:RadGrid>
-<asp:SqlDataSource ID="User_LogDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:CNCREPORTConnectionString %>"
+<asp:SqlDataSource ID="User_LogDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
    SelectCommand = "SELECT USERS.C_LOGINNAME,USER_LOG.PK_LOG, USER_LOG.C_IP,USER_LOG.LogTime FROM [USER_LOG] LEFT OUTER JOIN [USERS] ON USER_LOG.FK_USER=USERS.PK_ID ORDER BY USER_LOG.PK_LOG DESC" 
    DeleteCommand = "DELETE FROM USER_LOG">
 </asp:SqlDataSource>

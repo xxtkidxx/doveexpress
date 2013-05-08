@@ -726,7 +726,7 @@ namespace ITCLIB
             //TuanDA
             public int ExecuteNonQuery(string SqlStr)
             {
-                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["CNCREPORTConnectionString"].ConnectionString);
+                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["DOVEEXPRESSConnectionString"].ConnectionString);
                 if (con.State == ConnectionState.Closed)
                 {
                     con.Open();
@@ -756,7 +756,7 @@ namespace ITCLIB
             }
             public object ExecuteScalar(string SqlStr)
             {
-                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["CNCREPORTConnectionString"].ConnectionString);
+                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["DOVEEXPRESSConnectionString"].ConnectionString);
                 if (con.State == ConnectionState.Closed)
                 {
                     con.Open();
@@ -786,7 +786,7 @@ namespace ITCLIB
             }
             public DataTable query_data(string strsql)
             {
-                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["CNCREPORTConnectionString"].ConnectionString);
+                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["DOVEEXPRESSConnectionString"].ConnectionString);
                 if (con.State == ConnectionState.Closed)
                 {
                     con.Open();

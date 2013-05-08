@@ -163,7 +163,7 @@
 <telerik:RadWindowManager ReloadOnShow="true" ShowContentDuringLoad="false" Modal="true" ID="RadWindowManager1" 
     runat="server" VisibleStatusbar="False" Width="800px" Height="600px">  
 </telerik:RadWindowManager> 
-<asp:SqlDataSource ID="GroupUsersDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:CNCREPORTConnectionString %>"
+<asp:SqlDataSource ID="GroupUsersDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
         DeleteCommand="DELETE FROM GROUPUSER WHERE PK_ID = @PK_ID" 
         InsertCommand="INSERT INTO GROUPUSER (PK_ID, C_NAME, C_DESC,C_TYPE) VALUES (@PK_ID, @C_NAME, @C_DESC,@C_TYPE)"
         SelectCommand="SELECT PK_ID, C_NAME, C_DESC,C_TYPE FROM GROUPUSER WHERE PK_ID > 0 order by PK_ID"

@@ -70,7 +70,7 @@
 </asp:DetailsView> 
    
    
-<asp:SqlDataSource ID="User_PassDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:CNCREPORTConnectionString %>"
+<asp:SqlDataSource ID="User_PassDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
      UpdateCommand="UPDATE [USERS] SET C_PASSWORD =@C_PASSWORD WHERE PK_ID=@PK_ID"
      SelectCommand="SELECT [PK_ID] FROM [USERS] WHERE [PK_ID]=@PK_ID"
     >

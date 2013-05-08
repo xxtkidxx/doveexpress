@@ -150,6 +150,22 @@ public partial class Modules_UserAdmins : System.Web.UI.UserControl
                 string encryptpass = ITCLIB.Security.Security.Encrypt(txtPassword.Text.Trim());
                 UserAdminsDataSource.UpdateParameters["C_Password"].DefaultValue = encryptpass;
             }
+            RadTreeView tvDept = (RadTreeView)editItem.FindControl("tvDept");
+            string raddrivervalue = "";
+            IList<RadTreeNode> nodeCollection = tvDept.CheckedNodes;
+            foreach (RadTreeNode node in nodeCollection)
+            {
+                if (raddrivervalue == "")
+                {
+                    raddrivervalue += node.Value;
+                }
+                else
+                {
+                    raddrivervalue += "," + node.Value;
+                }
+            }
+            Session["ttt"] = raddrivervalue;
+            UserAdminsDataSource.UpdateParameters["FK_DEPT"].DefaultValue = raddrivervalue;
         }
         else if (e.CommandName == RadGrid.PerformInsertCommandName)
         {
@@ -160,6 +176,21 @@ public partial class Modules_UserAdmins : System.Web.UI.UserControl
                 string encryptpass = ITCLIB.Security.Security.Encrypt(txtPassword.Text.Trim());
                 UserAdminsDataSource.InsertParameters["C_Password"].DefaultValue = encryptpass;
             }
+            RadTreeView tvDept = (RadTreeView)editItem.FindControl("tvDept");
+            string raddrivervalue = "";
+            IList<RadTreeNode> nodeCollection = tvDept.CheckedNodes;
+            foreach (RadTreeNode node in nodeCollection)
+            {
+                if (raddrivervalue == "")
+                {
+                    raddrivervalue += node.Value;
+                }
+                else
+                {
+                    raddrivervalue += "," + node.Value;
+                }
+            }
+            UserAdminsDataSource.InsertParameters["FK_DEPT"].DefaultValue = raddrivervalue;
         }
     }
     protected void RadGridUserAdmin_ItemDataBound(object sender, GridItemEventArgs e)
@@ -175,16 +206,19 @@ public partial class Modules_UserAdmins : System.Web.UI.UserControl
             TextBox txtID = (TextBox)editItem.FindControl("txtID");
             Session["txtID"] = txtID.Text;
             HiddenField hfFK_DEPT = (HiddenField)editItem.FindControl("hfFK_DEPT");
-            RadComboBox cmbDept = (RadComboBox)editItem.FindControl("cmbDept");
-            RadTreeView tvDept = (RadTreeView)cmbDept.Items[0].FindControl("tvDept");
+            RadTreeView tvDept = (RadTreeView)editItem.FindControl("tvDept");
             tvDept.ExpandAllNodes();
-            string SelectSQL = "SELECT C_NAME FROM DMPHONGBAN WHERE PK_ID =" + hfFK_DEPT.Value;
-            DataTable oDataTable = new DataTable();
-            ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
-            oDataTable = SelectQuery.query_data(SelectSQL);
-            if (oDataTable.Rows.Count != 0)
+            string drivervalue = hfFK_DEPT.Value;
+            if (drivervalue != "")
             {
-                cmbDept.Text = oDataTable.Rows[0]["C_NAME"].ToString();
+                string[] drivers = drivervalue.Split(',');
+                foreach (string driver in drivers)
+                {
+                    if (tvDept.FindNodeByValue(driver) != null)
+                    {
+                        tvDept.FindNodeByValue(driver).Checked = true;
+                    }
+                }
             }
         }
     }
@@ -210,5 +244,9 @@ public partial class Modules_UserAdmins : System.Web.UI.UserControl
             }
         }*/
         return true;
+    }
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        ITCLIB.Admin.JavaScript.ShowMessage(Session["ttt"].ToString(), this);
     }
 }

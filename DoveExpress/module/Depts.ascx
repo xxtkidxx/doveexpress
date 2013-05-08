@@ -231,7 +231,7 @@
 
 <FilterMenu EnableImageSprites="False"></FilterMenu>
 </telerik:RadGrid>
-<asp:SqlDataSource ID="DeftsDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:CNCREPORTConnectionString %>"
+<asp:SqlDataSource ID="DeftsDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
         DeleteCommand="DELETE FROM [DMPHONGBAN] WHERE [pk_id] = @pk_id" 
         InsertCommand="INSERT INTO [DMPHONGBAN] ([c_name], [c_parent],[FK_DOANHNGHIEP]) VALUES (@c_name, @c_parent,@FK_DOANHNGHIEP)"
         SelectCommand="SELECT * FROM [DMPHONGBAN] where c_parent =@c_parent and FK_DOANHNGHIEP = @FK_DOANHNGHIEP ORDER BY LTRIM([c_name])"     
@@ -259,13 +259,13 @@
 <telerik:RadWindowManager ReloadOnShow="true" ShowContentDuringLoad="false" ID="RadWindowManagerCG" runat="server" VisibleStatusbar="False"
    OnClientClose="OnClientCloseText" OnClientShow="OnClientShowText" Behaviors ="Close,Reload" ></telerik:RadWindowManager>
 
-<asp:SqlDataSource ID="DeptTreelist" runat="server" ConnectionString="<%$ ConnectionStrings:CNCREPORTConnectionString %>"
+<asp:SqlDataSource ID="DeptTreelist" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
     SelectCommand="SELECT [pk_id], [c_name], [c_parent] FROM [DMPHONGBAN] WHERE [FK_DOANHNGHIEP] = @FK_DOANHNGHIEP ORDER BY LTRIM([c_name])">
     <SelectParameters>
             <asp:SessionParameter DefaultValue="0" Name="FK_DOANHNGHIEP" SessionField="DOANHNGHIEP"/>
         </SelectParameters>
 </asp:SqlDataSource>
-   <asp:SqlDataSource ID="SqlDataSourceListDept" runat="server" ConnectionString="<%$ ConnectionStrings:CNCREPORTConnectionString %>"
+   <asp:SqlDataSource ID="SqlDataSourceListDept" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
     SelectCommand="SELECT [pk_id], [c_name], [c_parent] FROM [DMPHONGBAN] WHERE [FK_DOANHNGHIEP] = @FK_DOANHNGHIEP ORDER BY LTRIM([c_name])">
     <SelectParameters>
             <asp:SessionParameter DefaultValue="0" Name="FK_DOANHNGHIEP" SessionField="DOANHNGHIEP"/>

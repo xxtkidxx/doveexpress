@@ -74,7 +74,7 @@
         <Items>
              <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=PHONGBAN" Text="Phòng ban" Value="PHONGBAN">
              </telerik:RadMenuItem>
-             <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="" Text="Nhân viên" Value="NHANVIEN">
+             <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=User" Text="Nhân viên" Value="NHANVIEN">
              </telerik:RadMenuItem>
              <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="" Text="Phân quyền" Value="PHANQUYEN">
              </telerik:RadMenuItem>

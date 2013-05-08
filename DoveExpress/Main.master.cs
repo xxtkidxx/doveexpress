@@ -32,21 +32,13 @@ public partial class Main : System.Web.UI.MasterPage
                         RadAjaxManager.AjaxSettings.Add(_AjaxSetting);
                         control = LoadControl("module/GroupUsers.ascx");
                         break;
-                    case "useradmins":
+                    case "user":
                         _AjaxSetting.AjaxControlID = "RadGridUserAdmin";
                         _AjaxUpdatedControl.ControlID = "RadGridUserAdmin";
                         _AjaxUpdatedControl.LoadingPanelID = "RadAjaxLoadingPanelUserAdmin";
                         _AjaxSetting.UpdatedControls.Add(_AjaxUpdatedControl);
-                        RadAjaxManager.AjaxSettings.Add(_AjaxSetting);
+                        //RadAjaxManager.AjaxSettings.Add(_AjaxSetting);
                         control = LoadControl("module/UserAdmins.ascx");
-                        break;
-                    case "usercompanys":
-                        _AjaxSetting.AjaxControlID = "RadGridUserCompany";
-                        _AjaxUpdatedControl.ControlID = "RadGridUserCompany";
-                        _AjaxUpdatedControl.LoadingPanelID = "RadAjaxLoadingPanelUserCompany";
-                        _AjaxSetting.UpdatedControls.Add(_AjaxUpdatedControl);
-                        RadAjaxManager.AjaxSettings.Add(_AjaxSetting);
-                        control = LoadControl("module/UserCompanys.ascx");
                         break;
                     case "user_pass":
                         control = LoadControl("module/User_Pass.ascx");
@@ -64,13 +56,9 @@ public partial class Main : System.Web.UI.MasterPage
                         control = LoadControl("module/User_Info.ascx");
                         break;
                     case "logout":
-                        {
                             Session.Clear();
                             Response.Redirect("Login.aspx", true);
-                        }
                         break;
-
-
                     case "khuvuc":
                         control = LoadControl("module/KHUVUC.ascx");
                         break;

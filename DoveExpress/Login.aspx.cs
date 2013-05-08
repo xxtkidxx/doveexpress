@@ -72,7 +72,7 @@ public partial class Login : System.Web.UI.Page
     protected bool CheckValidate(string user, string pass)
     {        
         string encryptpass = ITCLIB.Security.Security.Encrypt(pass);
-        string SelectSQL = "Select USERS.PK_ID,USERS.FK_GROUPUSER,USERS.C_NAME,GROUPUSER.C_TYPE, USERS.FK_DOANHNGHIEP FROM USERS INNER JOIN GROUPUSER ON USERS.FK_GROUPUSER = GROUPUSER.PK_ID WHERE USERS.C_LOGINNAME = '" + user + "' AND USERS.C_PASSWORD = '" + encryptpass + "'";
+        string SelectSQL = "Select USERS.PK_ID,USERS.FK_GROUPUSER,USERS.C_NAME,GROUPUSER.C_TYPE FROM USERS INNER JOIN GROUPUSER ON USERS.FK_GROUPUSER = GROUPUSER.PK_ID WHERE USERS.C_LOGINNAME = '" + user + "' AND USERS.C_PASSWORD = '" + encryptpass + "'";
         DataTable oDataTable = new DataTable();
         ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
         ITCLIB.Security.Security.Config();
@@ -88,7 +88,6 @@ public partial class Login : System.Web.UI.Page
             Session["User"] = sUser;           
             Session["UserID"] = (int)oDataTable.Rows[0]["PK_ID"];
             Session["GroupUser"] = (int)oDataTable.Rows[0]["FK_GROUPUSER"];
-            Session["DOANHNGHIEP"] = (int)oDataTable.Rows[0]["FK_DOANHNGHIEP"];
             return true;
         }
         else
