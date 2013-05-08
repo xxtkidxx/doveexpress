@@ -260,13 +260,13 @@
    OnClientClose="OnClientCloseText" OnClientShow="OnClientShowText" Behaviors ="Close,Reload" ></telerik:RadWindowManager>
 
 <asp:SqlDataSource ID="DeptTreelist" runat="server" ConnectionString="<%$ ConnectionStrings:CNCREPORTConnectionString %>"
-    SelectCommand="SELECT [pk_id], [c_name], [c_parent] FROM [DMPHONGBAN] WHERE [FK_DOANHNGHIEP] = @FK_DOANHNGHIEP">
+    SelectCommand="SELECT [pk_id], [c_name], [c_parent] FROM [DMPHONGBAN] WHERE [FK_DOANHNGHIEP] = @FK_DOANHNGHIEP ORDER BY LTRIM([c_name])">
     <SelectParameters>
             <asp:SessionParameter DefaultValue="0" Name="FK_DOANHNGHIEP" SessionField="DOANHNGHIEP"/>
         </SelectParameters>
 </asp:SqlDataSource>
    <asp:SqlDataSource ID="SqlDataSourceListDept" runat="server" ConnectionString="<%$ ConnectionStrings:CNCREPORTConnectionString %>"
-    SelectCommand="SELECT [pk_id], [c_name], [c_parent] FROM [DMPHONGBAN] WHERE [FK_DOANHNGHIEP] = @FK_DOANHNGHIEP">
+    SelectCommand="SELECT [pk_id], [c_name], [c_parent] FROM [DMPHONGBAN] WHERE [FK_DOANHNGHIEP] = @FK_DOANHNGHIEP ORDER BY LTRIM([c_name])">
     <SelectParameters>
             <asp:SessionParameter DefaultValue="0" Name="FK_DOANHNGHIEP" SessionField="DOANHNGHIEP"/>
         </SelectParameters>
