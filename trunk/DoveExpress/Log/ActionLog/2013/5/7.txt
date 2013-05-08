@@ -1,0 +1,54 @@
+Thời gian: 2013-05-07 20:29:00 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-05-07 20:39:43 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted MASANPHAMs
+Kết quả : {PK_ID:"1"}
+__________________________
+Thời gian: 2013-05-07 20:39:47 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated MASANPHAMs
+Kết quả : {PK_ID:"1"}
+__________________________
+Thời gian: 2013-05-07 20:39:51 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated MASANPHAMs
+Kết quả : {PK_ID:"1"}
+__________________________
+Thời gian: 2013-05-07 21:04:50 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-05-07 22:43:28 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-05-07 22:55:27 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-05-07 23:28:31 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-05-07 23:56:46 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
