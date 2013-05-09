@@ -107,11 +107,11 @@ public partial class module_KHACHHANG : System.Web.UI.UserControl
         if (e.Exception != null)
         {
             e.ExceptionHandled = true;
-            SetMessage("Không thể xóa mã bảng cước. Lý do: " + e.Exception.Message);
+            SetMessage("Không thể xóa khách hàng. Lý do: " + e.Exception.Message);
         }
         else
         {
-            SetMessage("Xóa mã bảng cước thành công!");
+            SetMessage("Xóa khách hàng thành công!");
             ITCLIB.ActionLog.ActionLog.WriteLog(Session["UserID"].ToString(), "Deleted KHACHHANGs", e.Item.KeyValues);
         }
     }
@@ -121,11 +121,11 @@ public partial class module_KHACHHANG : System.Web.UI.UserControl
         if (e.Exception != null)
         {
             e.ExceptionHandled = true;
-            SetMessage("Không thể tạo mới mã bảng cước. Lý do: " + e.Exception.Message);
+            SetMessage("Không thể tạo mới khách hàng. Lý do: " + e.Exception.Message);
         }
         else
         {
-            SetMessage("Tạo mới mã bảng cước thành công!");
+            SetMessage("Tạo mới khách hàng thành công!");
             ITCLIB.ActionLog.ActionLog.WriteLog(Session["UserID"].ToString(), "Inserted KHACHHANGs", "{PK_ID:\"" + getmaxid("DMKHACHHANG") + "\"}");
         }
     }
@@ -136,11 +136,11 @@ public partial class module_KHACHHANG : System.Web.UI.UserControl
         {
             e.KeepInEditMode = true;
             e.ExceptionHandled = true;
-            SetMessage("Không thể cập nhật mã bảng cước. Lý do: " + e.Exception.Message);
+            SetMessage("Không thể cập nhật khách hàng. Lý do: " + e.Exception.Message);
         }
         else
         {
-            SetMessage("Cập nhật mã bảng cước thành công!");
+            SetMessage("Cập nhật khách hàng thành công!");
             ITCLIB.ActionLog.ActionLog.WriteLog(Session["UserID"].ToString(), "Updated KHACHHANGs", e.Item.KeyValues);
         }
     }
@@ -172,7 +172,7 @@ public partial class module_KHACHHANG : System.Web.UI.UserControl
             {
                 if (!ValidateDeleteGroup(item["pk_id"].Text))
                 {
-                    SetMessage("Không thể xóa mã bảng cước \"" + item["c_name"].Text + "\" do có tham chiếu dữ liệu khác.");
+                    SetMessage("Không thể xóa khách hàng \"" + item["c_name"].Text + "\" do có tham chiếu dữ liệu khác.");
                     RadGridKHACHHANG.Rebind();
                 }
             }
