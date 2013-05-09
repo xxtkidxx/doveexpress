@@ -1,0 +1,162 @@
+Thời gian: 2013-05-08 18:48:04 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-05-08 19:07:23 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted DeptOffices
+Kết quả : {PK_ID:"17"}
+__________________________
+Thời gian: 2013-05-08 19:07:39 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted DeptOffices
+Kết quả : {PK_ID:"18"}
+__________________________
+Thời gian: 2013-05-08 19:07:45 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted DeptOffices
+Kết quả : {PK_ID:"19"}
+__________________________
+Thời gian: 2013-05-08 19:07:54 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted DeptOffices
+Kết quả : {PK_ID:"20"}
+__________________________
+Thời gian: 2013-05-08 19:08:01 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted DeptOffices
+Kết quả : {PK_ID:"21"}
+__________________________
+Thời gian: 2013-05-08 19:08:10 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted DeptOffices
+Kết quả : {PK_ID:"22"}
+__________________________
+Thời gian: 2013-05-08 20:19:14 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-05-08 21:51:35 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-05-08 21:53:50 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-05-08 22:05:40 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated UserAdmins
+Kết quả : 2
+__________________________
+Thời gian: 2013-05-08 22:06:16 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated UserAdmins
+Kết quả : 2
+__________________________
+Thời gian: 2013-05-08 22:08:31 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated UserAdmins
+Kết quả : 2
+__________________________
+Thời gian: 2013-05-08 22:10:51 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated UserAdmins
+Kết quả : 2
+__________________________
+Thời gian: 2013-05-08 22:10:56 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated UserAdmins
+Kết quả : 2
+__________________________
+Thời gian: 2013-05-08 22:18:05 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated UserAdmins
+Kết quả : 2
+__________________________
+Thời gian: 2013-05-08 22:30:38 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-05-08 22:30:48 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated UserAdmins
+Kết quả : 2
+__________________________
+Thời gian: 2013-05-08 22:33:58 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated UserAdmins
+Kết quả : 2
+__________________________
+Thời gian: 2013-05-08 22:34:17 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated UserAdmins
+Kết quả : 2
+__________________________
+Thời gian: 2013-05-08 22:39:19 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted UserAdmins
+Kết quả : 4
+__________________________
+Thời gian: 2013-05-08 22:39:47 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted GroupUsers
+Kết quả : 3
+__________________________
+Thời gian: 2013-05-08 22:39:50 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted GroupUsers
+Kết quả : 4
+__________________________
+Thời gian: 2013-05-08 22:43:17 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-05-08 22:47:29 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated MABANGCUOCs
+Kết quả : {PK_ID:"1"}
+__________________________
+Thời gian: 2013-05-08 22:47:38 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated MABANGCUOCs
+Kết quả : {PK_ID:"2"}
+__________________________
+Thời gian: 2013-05-08 22:47:54 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated MABANGCUOCs
+Kết quả : {PK_ID:"3"}
+__________________________
