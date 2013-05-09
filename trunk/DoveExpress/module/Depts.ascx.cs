@@ -37,7 +37,7 @@ public partial class Depts : System.Web.UI.UserControl
     }
     protected bool LoadRootDept()
     {
-        string SelectSQL = String.Format("Select DMPHONGBAN.PK_ID FROM DMPHONGBAN WHERE DMPHONGBAN.C_PARENT IS NULL and  DMPHONGBAN.FK_DOANHNGHIEP = {0}", Session["DOANHNGHIEP"].ToString());
+        string SelectSQL = String.Format("Select DMPHONGBAN.PK_ID FROM DMPHONGBAN WHERE DMPHONGBAN.C_PARENT IS NULL");
         DataTable oDataTable = new DataTable();
         ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
         oDataTable = SelectQuery.query_data(SelectSQL);
@@ -55,7 +55,7 @@ public partial class Depts : System.Web.UI.UserControl
                 {
                     DOANHNGHIEPNAME = ITCLIB.Admin.cFunction.LoadFieldfromTable(Session["DOANHNGHIEP"].ToString(),"TENDOANHNGHIEP","DOANHNGHIEP");
                 }
-                string InsertSQL = String.Format("INSERT INTO DMPHONGBAN (FK_DOANHNGHIEP,C_PARENT,C_NAME) VALUES ({0},{1},N'{2}')", Session["DOANHNGHIEP"].ToString(), "NULL", DOANHNGHIEPNAME);
+                string InsertSQL = String.Format("INSERT INTO DMPHONGBAN (C_PARENT,C_NAME) VALUES ({0},N'{1}')","NULL", DOANHNGHIEPNAME);
             ITCLIB.Admin.SQL InsertQuery = new ITCLIB.Admin.SQL();
             InsertQuery.ExecuteNonQuery(InsertSQL);
             RadPanelBarListDept.DataBind();
