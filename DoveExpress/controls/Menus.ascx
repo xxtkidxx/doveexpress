@@ -84,9 +84,9 @@
     </telerik:RadMenuItem>
     <telerik:RadMenuItem runat="server" Font-Size="Small" Text="Khách hàng, đối tác" Value="KHACHHANGDOITAC">
         <Items>
-            <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="" Text="Nhóm khách hàng" Value="NHOMKHACHHANG">
+            <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=NHOMKHACHHANG" Text="Nhóm khách hàng, đối tác" Value="NHOMKHACHHANG">
             </telerik:RadMenuItem> 
-            <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="" Text="Khách hàng" Value="KHACHHANG">
+            <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=KHACHHANG" Text="Khách hàng" Value="KHACHHANG">
             </telerik:RadMenuItem>
             <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="" Text="Đối tác" Value="DOITAC">
             </telerik:RadMenuItem>
