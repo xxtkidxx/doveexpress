@@ -233,12 +233,11 @@
 </telerik:RadGrid>
 <asp:SqlDataSource ID="DeftsDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
         DeleteCommand="DELETE FROM [DMPHONGBAN] WHERE [pk_id] = @pk_id" 
-        InsertCommand="INSERT INTO [DMPHONGBAN] ([c_name], [c_parent],[FK_DOANHNGHIEP]) VALUES (@c_name, @c_parent,@FK_DOANHNGHIEP)"
-        SelectCommand="SELECT * FROM [DMPHONGBAN] where c_parent =@c_parent and FK_DOANHNGHIEP = @FK_DOANHNGHIEP ORDER BY LTRIM([c_name])"     
+        InsertCommand="INSERT INTO [DMPHONGBAN] ([c_name], [c_parent]) VALUES (@c_name, @c_parent)"
+        SelectCommand="SELECT * FROM [DMPHONGBAN] where c_parent =@c_parent ORDER BY LTRIM([c_name])"     
     UpdateCommand="UPDATE [DMPHONGBAN] SET [c_name] = @c_name, [c_parent] = @c_parent WHERE [pk_id] = @pk_id" >
         <SelectParameters>
             <asp:SessionParameter DefaultValue="1" Name="c_parent" SessionField="paID"/>
-            <asp:SessionParameter DefaultValue="0" Name="FK_DOANHNGHIEP" SessionField="DOANHNGHIEP"/>
         </SelectParameters>
         <UpdateParameters>
             <asp:Parameter Name="c_name" Type="String" />
@@ -251,7 +250,6 @@
         <InsertParameters>
             <asp:Parameter Name="c_name" Type="String" />
             <asp:Parameter Name="c_parent" Type="Int32" />
-            <asp:SessionParameter DefaultValue="0" Name="FK_DOANHNGHIEP" SessionField="DOANHNGHIEP"/>
         </InsertParameters>
 </asp:SqlDataSource>      
 </telerik:RadPane>
@@ -260,14 +258,8 @@
    OnClientClose="OnClientCloseText" OnClientShow="OnClientShowText" Behaviors ="Close,Reload" ></telerik:RadWindowManager>
 
 <asp:SqlDataSource ID="DeptTreelist" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
-    SelectCommand="SELECT [pk_id], [c_name], [c_parent] FROM [DMPHONGBAN] WHERE [FK_DOANHNGHIEP] = @FK_DOANHNGHIEP ORDER BY LTRIM([c_name])">
-    <SelectParameters>
-            <asp:SessionParameter DefaultValue="0" Name="FK_DOANHNGHIEP" SessionField="DOANHNGHIEP"/>
-        </SelectParameters>
+    SelectCommand="SELECT [pk_id], [c_name], [c_parent] FROM [DMPHONGBAN] ORDER BY LTRIM([c_name])">
 </asp:SqlDataSource>
    <asp:SqlDataSource ID="SqlDataSourceListDept" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
-    SelectCommand="SELECT [pk_id], [c_name], [c_parent] FROM [DMPHONGBAN] WHERE [FK_DOANHNGHIEP] = @FK_DOANHNGHIEP ORDER BY LTRIM([c_name])">
-    <SelectParameters>
-            <asp:SessionParameter DefaultValue="0" Name="FK_DOANHNGHIEP" SessionField="DOANHNGHIEP"/>
-        </SelectParameters>
+    SelectCommand="SELECT [pk_id], [c_name], [c_parent] FROM [DMPHONGBAN] ORDER BY LTRIM([c_name])">
  </asp:SqlDataSource> 
