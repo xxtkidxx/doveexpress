@@ -1,13 +1,4 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="MASANPHAM.ascx.cs" Inherits="module_MASANPHAM" %>
-<telerik:RadAjaxManagerProxy ID="RadAjaxProxyMASANPHAM" runat="server">
-        <AjaxSettings>
-            <telerik:AjaxSetting AjaxControlID="RadGridMASANPHAM">
-                <UpdatedControls>
-                    <telerik:AjaxUpdatedControl ControlID="RadGridMASANPHAM" LoadingPanelID="RadAjaxLoadingPanelMASANPHAM" />
-                </UpdatedControls>
-            </telerik:AjaxSetting>
-        </AjaxSettings>
-</telerik:RadAjaxManagerProxy>
 <telerik:RadCodeBlock ID="RadCodeBlockMASANPHAM" runat="server">
 <script type="text/javascript">
         function RowDblClick(sender, eventArgs) {
