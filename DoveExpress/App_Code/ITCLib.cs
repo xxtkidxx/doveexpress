@@ -1186,342 +1186,59 @@ namespace ITCLIB
                 }
                 return result;
             }
-            public static void creatNotification(string listUserID, string strCode, string refID, string strAction)
+            public static string LoadIDQuocGia(string ID)
             {
-                string strType = strAction + "_" + strCode;
-                string strInssert = "";
-                if (listUserID != "" && listUserID != null)
+                string Result = "";
+                if (ID != "")
                 {
-                    string[] idUsers = listUserID.Split(',');
-                    SQL ac = new SQL();
-                    foreach (string idUser in idUsers)
+                    string SelectSQL = "SELECT DMQUOCGIA.C_NAME FROM DMQUOCGIA LEFT OUTER JOIN DMTINHTHANH ON DMQUOCGIA.PK_ID = DMTINHTHANH.FK_QUOCGIA LEFT OUTER JOIN DMQUANHUYEN ON DMTINHTHANH.PK_ID = DMQUANHUYEN.FK_TINHTHANH WHERE DMQUANHUYEN.PK_ID IN (" + ID + ")";
+                    ITCLIB.Admin.SQL rs = new ITCLIB.Admin.SQL();
+                    DataTable oDataTable = rs.query_data(SelectSQL);
+
+                    if (oDataTable.Rows.Count != 0)
                     {
-                        switch (strAction)
+                        for (int i = 0; i < oDataTable.Rows.Count; i++)
                         {
-                            case "INSERT":
-                                strInssert = String.Format("INSERT INTO EOF_NOTIFICATION (user_id, c_type, c_status, ref_id) values ({0},'{1}',{2}, {3})", idUser, strType, 2, refID);
-                                ac.ExecuteNonQuery(strInssert);
-                                break;
-                            case "UPDATE":
-                                strInssert = String.Format("UPDATE EOF_NOTIFICATION SET c_type ='{0}' where ref_id ={1} and c_type ='INSERT_{2}' and user_id={3}", strType, refID, strCode, idUser);
-                                if (ac.ExecuteNonQuery(strInssert) == 0)
-                                {
-                                    strInssert = String.Format("INSERT INTO EOF_NOTIFICATION (user_id, c_type, c_status, ref_id) values ({0},'INSERT_{1}',{2}, {3})", idUser, strCode, 2, refID);
-                                    ac.ExecuteNonQuery(strInssert);
-                                }
-                                break;
-                            case "DELETE":
-                                strInssert = String.Format("UPDATE EOF_NOTIFICATION SET c_type ='{0}' where ref_id ={1} and ( c_type ='INSERT_{2}' or c_type ='UPDATE_{2}') and user_id={3}", strType, refID, strCode, idUser);
-                                if (ac.ExecuteNonQuery(strInssert) == 0)
-                                {
-                                    strInssert = String.Format("INSERT INTO EOF_NOTIFICATION (user_id, c_type, c_status, ref_id) values ({0},'{1}',{2}, {3})", idUser, strType, 2, refID);
-                                    ac.ExecuteNonQuery(strInssert);
-                                }
-                                break;
-                        }
-                    }
-                }
-            }
-            public static void creatNotification(string listUserID, string strCode, string refID, string strAction, string status)
-            {
-                string strType = strAction + "_" + strCode;
-                string strInssert = "";
-                if (listUserID != "" && listUserID != null)
-                {
-                    string[] idUsers = listUserID.Split(',');
-                    SQL ac = new SQL();
-                    foreach (string idUser in idUsers)
-                    {
-                        switch (strAction)
-                        {
-                            case "INSERT":
-                                strInssert = String.Format("INSERT INTO EOF_NOTIFICATION (user_id, c_type, c_status, ref_id) values ({0},'{1}',{2}, {3})", idUser, strType, status, refID);
-                                ac.ExecuteNonQuery(strInssert);
-                                break;
-                            case "UPDATE":
-                                strInssert = String.Format("UPDATE EOF_NOTIFICATION SET c_type ='{0}',c_status = {1} where ref_id ={2} and c_type ='INSERT_{3}' and user_id={4}", strType, status, refID, strCode, idUser);
-                                if (ac.ExecuteNonQuery(strInssert) == 0)
-                                {
-                                    strInssert = String.Format("INSERT INTO EOF_NOTIFICATION (user_id, c_type, c_status, ref_id) values ({0},'INSERT_{1}',{2}, {3})", idUser, strCode, status, refID);
-                                    ac.ExecuteNonQuery(strInssert);
-                                }
-                                break;
-                            case "DELETE":
-                                strInssert = String.Format("UPDATE EOF_NOTIFICATION SET c_type ='{0}', c_status = {1} where ref_id ={2} and ( c_type ='INSERT_{3}' or c_type ='UPDATE_{3}') and user_id={4}", strType, status, refID, strCode, idUser);
-                                if (ac.ExecuteNonQuery(strInssert) == 0)
-                                {
-                                    strInssert = String.Format("INSERT INTO EOF_NOTIFICATION (user_id, c_type, c_status, ref_id) values ({0},'{1}',{2}, {3})", idUser, strType, status, refID);
-                                    ac.ExecuteNonQuery(strInssert);
-                                }
-                                break;
-                        }
-                    }
-                }
-            }
-            public static string getListTextIsViewTextByUser(string userID)
-            {
-                System.Web.SessionState.HttpSessionState session = System.Web.HttpContext.Current.Session;
-                string result = "";
-                Admin.SQL acSQl = new Admin.SQL();
-                string groupUserList = "-1", userIDlist = "-1";
-
-                string sqlSelectFieldText = "select * from EOF_TEXT ";
-                DataTable tableText = acSQl.query_data(sqlSelectFieldText);
-                if (tableText.Rows[0]["group_id_ref"] != null)
-                    groupUserList = tableText.Rows[0]["group_id_ref"].ToString() != "" ? tableText.Rows[0]["group_id_ref"].ToString() : "";
-                if (tableText.Rows[0]["user_id_ref"] != null)
-                    userIDlist = tableText.Rows[0]["user_id_ref"].ToString() != "" ? tableText.Rows[0]["user_id_ref"].ToString() : "";
-                string fk_user = tableText.Rows[0]["fk_user"].ToString();
-
-                string selectSQlfromGroupUserRef = String.Format("select PK_ID from USERS where FK_GROUPUSER IN ({0})", groupUserList.Replace(";", ","));
-                string selectSQlfromUserRef = String.Format("select PK_ID from USERS where PK_ID IN ({0})", userIDlist.Replace(";", ","));
-                string selectSQl = selectSQlfromGroupUserRef + " UNION " + selectSQlfromUserRef;
-
-                DataTable odata = acSQl.query_data(selectSQl);
-                if (odata.Rows.Count != 0)
-                {
-                    for (int i = 0; i < odata.Rows.Count; i++)
-                    {
-                        result = Admin.cFunction.GetStringForList(odata.Rows[i]["PK_ID"].ToString(), result);
-                    }
-                }
-                if (!Admin.cFunction.CheckHasStrings(fk_user, result))
-                {
-                    result = Admin.cFunction.GetStringForList(fk_user, result);
-                }
-                return result;
-            }
-            //Update Tổng
-            public static int getValueFromCodeandType(string itype, string icode, string idDN, string strdate)
-            {
-                //Đối với trường hợp 1 bảng, mặc định Value1
-                string SelectSQL = String.Format("SELECT  DOANHNGHIEP_VALUE.VALUE1 FROM DOANHNGHIEP_VALUE INNER JOIN DOANHNGHIEP_TIEUCHI ON DOANHNGHIEP_VALUE.FK_TIEUCHI = DOANHNGHIEP_TIEUCHI.PK_ID WHERE " +
-                    "(DOANHNGHIEP_TIEUCHI.C_TYPE = '{0}') AND (DOANHNGHIEP_TIEUCHI.C_CODE = '{1}') AND  DOANHNGHIEP_VALUE.FK_DOANHNGHIEP={2} AND (CONVERT(NVARCHAR(8), DOANHNGHIEP_VALUE.C_DATE, 112) = '{3}')", itype, icode, idDN, strdate);
-                DataTable oDataTable = new DataTable();
-                ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
-                oDataTable = SelectQuery.query_data(SelectSQL);
-                if (oDataTable.Rows.Count != 0)
-                {
-                    return oDataTable.Rows[0]["VALUE1"] != DBNull.Value ? int.Parse(oDataTable.Rows[0]["VALUE1"].ToString()) : 0;
-                }
-                else
-                {
-                    return 0;
-                }
-            }
-            public static int UpdateValueTong(string itype, string icode, string idDN, string strdate, int ivalue)
-            {
-                //Đối với trường hợp 1 bảng, mặc định Value1
-                string SelectSQL = String.Format("UPDATE DOANHNGHIEP_VALUE SET VALUE1 ='{0}' FROM DOANHNGHIEP_VALUE INNER JOIN DOANHNGHIEP_TIEUCHI ON DOANHNGHIEP_VALUE.FK_TIEUCHI = DOANHNGHIEP_TIEUCHI.PK_ID WHERE " +
-                    "(DOANHNGHIEP_TIEUCHI.C_TYPE = '{1}') AND (DOANHNGHIEP_TIEUCHI.C_CODE = '{2}') AND  DOANHNGHIEP_VALUE.FK_DOANHNGHIEP={3} AND (CONVERT(NVARCHAR(8), DOANHNGHIEP_VALUE.C_DATE, 112) = '{4}')", ivalue, itype, icode, idDN, strdate);
-                DataTable oDataTable = new DataTable();
-                ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
-                return SelectQuery.ExecuteNonQuery(SelectSQL);
-            }
-            public static int getValueFromCodeandType(string itype, string icode, string idDN, string strdate, string fieldName)
-            {
-                //Đối với trường hợp 1 bảng, mặc định Value1
-                string SelectSQL = String.Format("SELECT  DOANHNGHIEP_VALUE.{0} FROM DOANHNGHIEP_VALUE INNER JOIN DOANHNGHIEP_TIEUCHI ON DOANHNGHIEP_VALUE.FK_TIEUCHI = DOANHNGHIEP_TIEUCHI.PK_ID WHERE " +
-                    "(DOANHNGHIEP_TIEUCHI.C_TYPE = '{1}') AND (DOANHNGHIEP_TIEUCHI.C_CODE = '{2}') AND  DOANHNGHIEP_VALUE.FK_DOANHNGHIEP={3} AND (CONVERT(NVARCHAR(8), DOANHNGHIEP_VALUE.C_DATE, 112) = '{4}')", fieldName, itype, icode, idDN, strdate);
-                DataTable oDataTable = new DataTable();
-                ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
-                oDataTable = SelectQuery.query_data(SelectSQL);
-                if (oDataTable.Rows.Count != 0)
-                {
-                    return oDataTable.Rows[0][fieldName] != DBNull.Value ? int.Parse(oDataTable.Rows[0][fieldName].ToString()) : 0;
-                }
-                else
-                {
-                    return 0;
-                }
-            }
-            public static int UpdateValueTong(string itype, string icode, string idDN, string strdate, int ivalue, string fieldName)
-            {
-                //Đối với trường hợp 1 bảng, mặc định Value1
-                string SelectSQL = String.Format("UPDATE DOANHNGHIEP_VALUE SET {0} ='{1}' FROM DOANHNGHIEP_VALUE INNER JOIN DOANHNGHIEP_TIEUCHI ON DOANHNGHIEP_VALUE.FK_TIEUCHI = DOANHNGHIEP_TIEUCHI.PK_ID WHERE " +
-                    "(DOANHNGHIEP_TIEUCHI.C_TYPE = '{2}') AND (DOANHNGHIEP_TIEUCHI.C_CODE = '{3}') AND  DOANHNGHIEP_VALUE.FK_DOANHNGHIEP={4} AND (CONVERT(NVARCHAR(8), DOANHNGHIEP_VALUE.C_DATE, 112) = '{5}')", fieldName, ivalue, itype, icode, idDN, strdate);
-                DataTable oDataTable = new DataTable();
-                ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
-                return SelectQuery.ExecuteNonQuery(SelectSQL);
-            }
-            public static int getValueFromCodeandType(string itype, string icode, string idDN, string strdate, string fieldName, int table)
-            {
-                //Đối với trường hợp 1 bảng, mặc định Value1
-                string SelectSQL = String.Format("SELECT  DOANHNGHIEP_VALUE.{0} FROM DOANHNGHIEP_VALUE INNER JOIN DOANHNGHIEP_TIEUCHI ON DOANHNGHIEP_VALUE.FK_TIEUCHI = DOANHNGHIEP_TIEUCHI.PK_ID WHERE " +
-                    "(DOANHNGHIEP_TIEUCHI.C_TYPE = '{1}') AND (DOANHNGHIEP_TIEUCHI.C_CODE = '{2}') AND  DOANHNGHIEP_VALUE.FK_DOANHNGHIEP={3} AND (CONVERT(NVARCHAR(8), DOANHNGHIEP_VALUE.C_DATE, 112) = '{4}') AND (DOANHNGHIEP_TIEUCHI.C_TABLE = {5})", fieldName, itype, icode, idDN, strdate, table);
-                DataTable oDataTable = new DataTable();
-                ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
-                oDataTable = SelectQuery.query_data(SelectSQL);
-                if (oDataTable.Rows.Count != 0)
-                {
-                    return oDataTable.Rows[0][fieldName] != DBNull.Value ? int.Parse(oDataTable.Rows[0][fieldName].ToString()) : 0;
-                }
-                else
-                {
-                    return 0;
-                }
-            }
-            public static int UpdateValueTong(string itype, string icode, string idDN, string strdate, int ivalue, string fieldName, int table)
-            {
-                //Đối với trường hợp 1 bảng, mặc định Value1
-                string SelectSQL = String.Format("UPDATE DOANHNGHIEP_VALUE SET {0} ='{1}' FROM DOANHNGHIEP_VALUE INNER JOIN DOANHNGHIEP_TIEUCHI ON DOANHNGHIEP_VALUE.FK_TIEUCHI = DOANHNGHIEP_TIEUCHI.PK_ID WHERE " +
-                    "(DOANHNGHIEP_TIEUCHI.C_TYPE = '{2}') AND (DOANHNGHIEP_TIEUCHI.C_CODE = '{3}') AND  DOANHNGHIEP_VALUE.FK_DOANHNGHIEP={4} AND (CONVERT(NVARCHAR(8), DOANHNGHIEP_VALUE.C_DATE, 112) = '{5}') AND (DOANHNGHIEP_TIEUCHI.C_TABLE = {6})", fieldName, ivalue, itype, icode, idDN, strdate, table);
-                DataTable oDataTable = new DataTable();
-                ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
-                return SelectQuery.ExecuteNonQuery(SelectSQL);
-            }
-        }
-
-        public class ActiveText
-        {
-            public static bool IsCongvan(string iValue)
-            {
-                string namecvType = cFunction.getname(iValue, "EOF_CV_LIST");
-                if (namecvType.ToLower() == "công văn đi" || namecvType.ToLower() == "công văn đến")
-                    return true;
-                else return false;
-            }
-            public static string get_IDUserInTextFlow(string cvType)
-            {
-                string result ="";
-                string selectSQL = String.Format("select EOF_TEXT_FLOW_ITEM.FK_USER from EOF_TEXT_FLOW_ITEM INNER JOIN EOF_TEXT_FLOW on EOF_TEXT_FLOW.PK_ID = EOF_TEXT_FLOW_ITEM.FK_FLOW where EOF_TEXT_FLOW.C_TYPE ={0} AND EOF_TEXT_FLOW.C_DEFAULT ='TRUE' AND EOF_TEXT_FLOW_ITEM.FK_USER IS NOT NULL", cvType);
-                SQL ac = new SQL();
-                DataTable odatachk1 = ac.query_data(selectSQL);
-                if (odatachk1.Rows.Count != 0)
-                {
-                    foreach (DataRow oRow in odatachk1.Rows)
-                    {
-                        result += result == "" ? oRow["FK_USER"].ToString() : "," + oRow["FK_USER"].ToString();
-                    }
-                }
-                string selectUserConfig = String.Format("SELECT User_ref from T_DEPT Where PK_ID IN ({0})", get_IdDeptInTextFlow(cvType));
-                DataTable odatachk2 = ac.query_data(selectUserConfig);
-                if (odatachk2.Rows.Count != 0)
-                {
-                    foreach (DataRow oRow in odatachk2.Rows)
-                    {
-                        if (oRow["User_ref"] != DBNull.Value)
-                            result += result == "" ? oRow["User_ref"].ToString() : "," + oRow["User_ref"].ToString();
-                    }
-                }
-                return result;
-            }
-            public static string get_IdDeptInTextFlow(string cvType)
-            {
-                string result = "";
-                string selectSQL = String.Format("select EOF_TEXT_FLOW_ITEM.FK_DEPT from EOF_TEXT_FLOW_ITEM INNER JOIN EOF_TEXT_FLOW on EOF_TEXT_FLOW.PK_ID = EOF_TEXT_FLOW_ITEM.FK_FLOW where EOF_TEXT_FLOW.C_TYPE ={0} AND EOF_TEXT_FLOW.C_DEFAULT ='TRUE' AND EOF_TEXT_FLOW_ITEM.FK_USER IS NOT NULL", cvType);
-                SQL ac = new SQL();
-                DataTable odatachk1 = ac.query_data(selectSQL);
-                if (odatachk1.Rows.Count != 0)
-                {
-                    foreach (DataRow oRow in odatachk1.Rows)
-                    {
-                        result += result == "" ? oRow["FK_DEPT"].ToString() : "," + oRow["FK_DEPT"].ToString();
-                    }
-                }
-                return result;
-            }
-            public static string IsInTextFlow(string idUser, string iddept, string cvType)
-            {
-                //Retrun ID nut hiện tại
-                string result = "";
-                string strListUser = get_IDUserInTextFlow(cvType);
-                if (cFunction.CheckHasStrings(idUser, strListUser, ','))
-                {
-                    string sqlcheck1 = String.Format("SELECT EOF_TEXT_FLOW_ITEM.PK_ID from EOF_TEXT_FLOW_ITEM where ((FK_USER LIKE '%{0}%') OR (FK_USER LIKE '%,{0}') OR (FK_USER LIKE '{0},%'))", idUser);
-                    Admin.SQL ac = new SQL();
-                    DataTable odatachk1 = ac.query_data(sqlcheck1);
-                    if (odatachk1.Rows.Count != 0)
-                        result = odatachk1.Rows[0]["PK_ID"].ToString();
-                    else
-                    {
-                        string sqlcheck2 = String.Format("SELECT PK_ID from T_DEPT where ((User_ref LIKE '%{0}%') OR (User_ref LIKE '%,{0}') OR (User_ref LIKE '{0},%'))", idUser);
-                        DataTable odatachk2 = ac.query_data(sqlcheck2);
-                        if (odatachk2.Rows.Count != 0)
-                        {
-                            string sqlcheck3 = String.Format("SELECT EOF_TEXT_FLOW_ITEM.PK_ID from EOF_TEXT_FLOW_ITEM where ((FK_DEPT LIKE '%{0}%') OR (FK_DEPT LIKE '%,{0}') OR (FK_DEPT LIKE '{0},%'))", iddept);
-                            DataTable odatachk3 = ac.query_data(sqlcheck3);
-                            if (odatachk3.Rows.Count != 0)
+                            if (i == 0)
                             {
-                                result = odatachk3.Rows[0]["PK_ID"].ToString();
+                                Result += oDataTable.Rows[i]["MaBo"].ToString();
+                            }
+                            else
+                            {
+                                Result += "-" + oDataTable.Rows[i]["MaBo"].ToString();
                             }
                         }
                     }
                 }
-                return result;
+                return Result;
             }
-            public static string get_IDUserInNextNodeOFTextFlow(string pk_NutCurent)
+            public static string LoadIDTinhThanh(string ID)
             {
-                string result = "";
-                string idnutNext = checkHasChild(pk_NutCurent, "EOF_TEXT_FLOW_ITEM");
-                result = idnutNext != "" ? get_IDUserIn_NutTextFlow(idnutNext) : "";
+                string Result = "";
+                if (ID != "")
+                {
+                    string SelectSQL = "SELECT DMTINHTHANH.C_NAME FROM DMTINHTHANH LEFT OUTER JOIN DMQUANHUYEN ON DMTINHTHANH.PK_ID = DMQUANHUYEN.FK_TINHTHANH WHERE DMQUANHUYEN.PK_ID IN (" + ID + ")";
+                    ITCLIB.Admin.SQL rs = new ITCLIB.Admin.SQL();
+                    DataTable oDataTable = rs.query_data(SelectSQL);
 
-                return result;
-            }
-            public static string checkHasChild(string ivalue, string table)
-            {
-                string result = "";
-                string sqlcheck1 = String.Format("SELECT PK_ID from {0} where C_PARENT = {1}", table, ivalue);
-                Admin.SQL ac = new SQL();
-                DataTable odatachk1 = ac.query_data(sqlcheck1);
-                if (odatachk1.Rows.Count != 0)
-                {
-                    foreach (DataRow orow in odatachk1.Rows)
+                    if (oDataTable.Rows.Count != 0)
                     {
-                        result += result == "" ? orow["PK_ID"].ToString() : "," + orow["PK_ID"].ToString();
-                    }
-                }
-                return result;
-            }
-            public static string get_IDUserIn_NutTextFlow(string iNut)
-            {
-                string result = "";
-                string selectSQL = String.Format("select FK_USER, FK_DEPT from EOF_TEXT_FLOW_ITEM Where PK_ID IN ({0})", iNut);
-                SQL ac = new SQL();
-                DataTable odatachk1 = ac.query_data(selectSQL);
-                if (odatachk1.Rows.Count != 0)
-                {
-                    if (odatachk1.Rows[0]["FK_USER"] != DBNull.Value)
-                    {
-                        result += result == "" ? odatachk1.Rows[0]["FK_USER"].ToString() : "," + odatachk1.Rows[0]["FK_USER"].ToString();
-                    }
-                    if (odatachk1.Rows[0]["FK_DEPT"] != DBNull.Value)
-                    {
-                        string selectUserConfig = String.Format("SELECT User_ref from T_DEPT Where User_ref IS NOT NULL PK_ID IN ({0})", odatachk1.Rows[0]["FK_DEPT"].ToString());
-                        DataTable odatachk2 = ac.query_data(selectUserConfig);
-                        if (odatachk2.Rows.Count != 0)
+                        for (int i = 0; i < oDataTable.Rows.Count; i++)
                         {
-                            foreach (DataRow oRow in odatachk2.Rows)
+                            if (i == 0)
                             {
-                                result += result == "" ? oRow["User_ref"].ToString() : "," + oRow["User_ref"].ToString();
+                                Result += oDataTable.Rows[i]["C_NAME"].ToString();
+                            }
+                            else
+                            {
+                                Result += "-" + oDataTable.Rows[i]["C_NAME"].ToString();
                             }
                         }
                     }
-                }                
-                return result;
-            }
-            public static string get_RoleIn_NutTextFlow(string iNutCurent)
-            {
-                string result = "";
-                string idnutNext = checkHasChild(iNutCurent, "EOF_TEXT_FLOW_ITEM");
-                string selectSQL = String.Format("select FK_ROLE from EOF_TEXT_FLOW_ITEM Where FK_ROLE IS NOT NULL AND PK_ID IN ({0})", idnutNext);
-                SQL ac = new SQL();
-                DataTable odatachk1 = ac.query_data(selectSQL);
-                if (odatachk1.Rows.Count != 0)
-                {
-                    result = odatachk1.Rows[0]["FK_ROLE"].ToString();
                 }
-                else
-                {
-                    string sqlSelectThamKhao = "Select PK_ID from EOF_CV_LIST where c_name =N'Tham khảo'";
-                    DataTable odata = ac.query_data(sqlSelectThamKhao);
-                    if (odata.Rows.Count != 0)
-                    {
-                        result = odata.Rows[0]["PK_ID"].ToString();
-                    }
-                }
-                return result;
+                return Result;
             }
+
         }
     }
     namespace Controls

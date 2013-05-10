@@ -152,6 +152,19 @@ public partial class module_KHACHHANG : System.Web.UI.UserControl
             GridEditableItem editItem = (GridEditableItem)e.Item;
             HiddenField txtID = (HiddenField)editItem.FindControl("txtID");
             Session["txtID"] = (txtID.Value != "") ? txtID.Value : "0";
+            HiddenField hfQuocGia = (HiddenField)editItem.FindControl("hfQuocGia");
+            HiddenField hfTinhThanh = (HiddenField)editItem.FindControl("hfTinhThanh");
+            HiddenField hfQuanHuyen = (HiddenField)editItem.FindControl("hfQuanHuyen");
+            QUANHUYENDataSource.SelectCommand = LoadFilteredQuanHuyenManually(hfQuanHuyen.Value);
+            RadComboBox cmbQuocGia = (RadComboBox)editItem.FindControl("cmbQuocGia");
+            RadComboBox cmbTinhThanh = (RadComboBox)editItem.FindControl("cmbTinhThanh");
+            RadComboBox cmbQuanHuyen = (RadComboBox)editItem.FindControl("cmbQuanHuyen");
+            cmbQuocGia.DataBind();
+            cmbQuocGia.SelectedValue = hfQuocGia.Value;
+            cmbTinhThanh.DataBind();
+            cmbTinhThanh.SelectedValue = hfTinhThanh.Value;
+            cmbQuanHuyen.DataBind();
+            cmbQuanHuyen.SelectedValue = hfQuanHuyen.Value;
         }
         if (e.Item is GridDataItem)
         {
@@ -211,5 +224,62 @@ public partial class module_KHACHHANG : System.Web.UI.UserControl
         {
             return true;
         }
+    }
+    protected void RadGridKHACHHANG_ItemCreated(object sender, GridItemEventArgs e)
+    {
+        if (e.Item is GridEditableItem && e.Item.IsInEditMode)
+        {
+            GridEditableItem editItem = (GridEditableItem)e.Item;
+            RadComboBox cmbQuocGia = (RadComboBox)editItem.FindControl("cmbQuocGia");
+            cmbQuocGia.OnClientSelectedIndexChanged = "cmbQuocGiaClientSelectedIndexChangedHandler";
+            RadComboBox cmbTinhThanh = (RadComboBox)editItem.FindControl("cmbTinhThanh");
+            cmbTinhThanh.OnClientLoad = "OnClientLoadTinhThanh";
+            cmbTinhThanh.OnClientItemsRequested = "ItemsLoadedTinhThanh";
+            cmbTinhThanh.OnClientSelectedIndexChanged = "cmbTinhThanhClientSelectedIndexChangedHandler";
+            cmbTinhThanh.ItemsRequested += new RadComboBoxItemsRequestedEventHandler(cmbTinhThanh_ItemsRequested);
+            RadComboBox cmbQuanHuyen = (RadComboBox)editItem.FindControl("cmbQuanHuyen");
+            cmbQuanHuyen.OnClientLoad = "OnClientLoadQuanHuyen";
+            cmbQuanHuyen.OnClientItemsRequested = "ItemsLoadedQuanHuyen";
+            cmbQuanHuyen.OnClientSelectedIndexChanged = "cmbQuanHuyenClientSelectedIndexChangedHandler";
+            cmbQuanHuyen.ItemsRequested += new RadComboBoxItemsRequestedEventHandler(cmbQuanHuyen_ItemsRequested);
+        }
+    }
+    protected void cmbTinhThanh_ItemsRequested(object sender, RadComboBoxItemsRequestedEventArgs e)
+    {
+        RadComboBox cmbTinhThanh = (RadComboBox)sender;
+        TINHTHANHDataSource.SelectCommand = LoadFilteredTinhThanhManually(e.Text);
+        cmbTinhThanh.DataBind();
+    }
+    protected void cmbQuanHuyen_ItemsRequested(object sender, RadComboBoxItemsRequestedEventArgs e)
+    {
+        RadComboBox cmbQuanHuyen = (RadComboBox)sender;
+        QUANHUYENDataSource.SelectCommand = LoadFilteredQuanHuyenManually(e.Text);
+        cmbQuanHuyen.DataBind();
+    }
+    protected string LoadFilteredTinhThanhManually(string ID)
+    {
+        string SelectSQL = "";
+        if (ID != "")
+        {
+            SelectSQL = "SELECT * FROM DMTINHTHANH WHERE FK_QUOCGIA = " + ID + "order by C_NAME";
+        }
+        else
+        {
+            SelectSQL = "SELECT * FROM DMTINHTHANH order by C_NAME";
+        }
+        return SelectSQL;
+    }
+    protected string LoadFilteredQuanHuyenManually(string ID)
+    {
+        string SelectSQL = "";
+        if (ID != "")
+        {
+            SelectSQL = "SELECT * FROM DMQUANHUYEN WHERE FK_TINHTHANH = " + ID + " order by C_NAME";
+        }
+        else
+        {
+            SelectSQL = "SELECT * FROM DMQUANHUYEN order by C_NAME";
+        }
+        return SelectSQL;
     }
 }

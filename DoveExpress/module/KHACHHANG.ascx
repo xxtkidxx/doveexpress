@@ -1,4 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="KHACHHANG.ascx.cs" Inherits="module_KHACHHANG" %>
+<%@ Register TagPrefix="custom" Namespace="ITCLIB.Admin" %>
 <telerik:RadCodeBlock ID="RadCodeBlockKHACHHANG" runat="server">
 <script type="text/javascript">
         function RowDblClick(sender, eventArgs) {
@@ -7,6 +8,64 @@
                 sender.get_masterTableView().editItem(eventArgs.get_itemIndexHierarchical());
             }
         }
+</script>
+<script type="text/javascript">
+    var registeredElementsDT = [];
+    function GetRegisteredServerElementDT(serverID) {
+        var clientID = "";
+        for (var i = 0; i < registeredElementsDT.length; i++) {
+            clientID = registeredElementsDT[i];
+            if (clientID.indexOf(serverID) >= 0)
+                break;
+        }
+        return $get(clientID);
+    }
+    function GetGridServerElementDT(serverID, tagName) {
+        if (!tagName)
+            tagName = "*";
+
+        var grid = $get("<%=RadGridKHACHHANG.ClientID %>");
+        var elements = grid.getElementsByTagName(tagName);
+        for (var i = 0; i < elements.length; i++) {
+            var element = elements[i];
+            if (element.id.indexOf(serverID) >= 0)
+                return element;
+        }
+    }
+</script>
+<script type="text/javascript">
+    var cmbtinhthanh;
+    var cmbquanhuyen;
+    function OnClientLoadTinhThanh(sender) {
+        cmbtinhthanh = sender;
+    }
+    function OnClientLoadQuanHuyen(sender) {
+        cmbquanhuyen = sender;
+    }
+    function cmbQuocGiaClientSelectedIndexChangedHandler(sender, eventArgs) {
+        cmbtinhthanh.requestItems(eventArgs.get_item().get_value(), false);
+    }
+    function cmbTinhThanhClientSelectedIndexChangedHandler(sender, eventArgs) {
+        cmbquanhuyen.requestItems(eventArgs.get_item().get_value(), false);
+    }
+    function cmbQuanHuyenClientSelectedIndexChangedHandler(sender, eventArgs) {
+        var hftext = GetGridServerElementDT("hfQuanHuyen");
+        hftext.value = eventArgs.get_item().get_value();
+    }
+    function ItemsLoadedTinhThanh(combo, eventArqs) {
+        if (combo.get_items().get_count() > 0) {
+            combo.clearSelection();
+        } else {
+            combo.set_text("");
+        }
+    }
+    function ItemsLoadedQuanHuyen(combo, eventArqs) {
+        if (combo.get_items().get_count() > 0) {
+            combo.clearSelection();
+        } else {
+            combo.set_text("");
+        }
+    }
 </script>
 </telerik:RadCodeBlock>
 <telerik:RadAjaxLoadingPanel Skin="Vista" ID="RadAjaxLoadingPanelKHACHHANG" runat="server" />
@@ -21,7 +80,8 @@
     onitemdeleted="RadGridKHACHHANG_ItemDeleted" oniteminserted="RadGridKHACHHANG_ItemInserted" 
     onitemupdated="RadGridKHACHHANG_ItemUpdated" 
     onitemcommand="RadGridKHACHHANG_ItemCommand" 
-    onitemdatabound="RadGridKHACHHANG_ItemDataBound" CellSpacing="0">
+    onitemdatabound="RadGridKHACHHANG_ItemDataBound" CellSpacing="0" 
+    onitemcreated="RadGridKHACHHANG_ItemCreated">
     <PagerStyle FirstPageToolTip="Trang đầu" LastPageToolTip="Trang cuối" NextPagesToolTip="Các trang tiếp" NextPageToolTip="Trang tiếp" 
     PageSizeLabelText="Số bản ghi hiển thị:" PrevPagesToolTip="Các trang sau" PrevPageToolTip="Trang sau" PagerTextFormat="Change page: {4} &nbsp;Trang <strong>{0}</strong>/<strong>{1}</strong>, Bản ghi <strong>{2}</strong> đến <strong>{3}</strong> của tất cả <strong>{5}</strong> bản ghi" />    
     <ExportSettings HideStructureColumns="true" ExportOnlyData="true" IgnorePaging="true" OpenInNewWindow="true" Excel-Format="ExcelML"></ExportSettings>   
@@ -67,6 +127,36 @@
                 <telerik:GridBoundColumn UniqueName="C_NAME" HeaderText="Tên khách hàng" DataField="C_NAME" 
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
                 </telerik:GridBoundColumn>
+                <telerik:GridBoundColumn UniqueName="C_ADDRESS" HeaderText="Địa chỉ" DataField="C_ADDRESS" 
+                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
+                </telerik:GridBoundColumn>
+                <telerik:GridBoundColumn UniqueName="TINHTHANHNAME" HeaderText="Tỉnh thành" DataField="TINHTHANHNAME" 
+                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
+                </telerik:GridBoundColumn>
+                <telerik:GridBoundColumn UniqueName="QUANHUYENNAME" HeaderText="Quận huyện" DataField="QUANHUYENNAME" 
+                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
+                </telerik:GridBoundColumn>
+                <telerik:GridBoundColumn UniqueName="C_TEL" HeaderText="Số điện thoại" DataField="C_TEL" 
+                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
+                </telerik:GridBoundColumn>
+                <telerik:GridBoundColumn UniqueName="C_NGUOILIENHE" HeaderText="Người liên hệ" DataField="C_NGUOILIENHE" 
+                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
+                </telerik:GridBoundColumn>
+                 <telerik:GridBoundColumn UniqueName="C_MOBILE" HeaderText="Di động" DataField="C_MOBILE" 
+                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
+                </telerik:GridBoundColumn>
+                <telerik:GridBoundColumn UniqueName="C_EMAIL" HeaderText="Email" DataField="C_EMAIL" 
+                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
+                </telerik:GridBoundColumn>
+                <telerik:GridBoundColumn UniqueName="C_MST" HeaderText="MST" DataField="C_MST" 
+                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
+                </telerik:GridBoundColumn>
+                <telerik:GridBoundColumn UniqueName="C_TAIKHOAN" HeaderText="Tài khoản" DataField="C_TAIKHOAN" 
+                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
+                </telerik:GridBoundColumn>
+                <telerik:GridBoundColumn UniqueName="USERNAME" HeaderText="Nhân viên KD" DataField="USERNAME" 
+                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
+                </telerik:GridBoundColumn>
         </Columns>
         <EditFormSettings InsertCaption="Thêm khách hàng mới" CaptionFormatString="Sửa khách hàng: <b>{0}</b>" CaptionDataField="C_NAME" EditFormType="Template" PopUpSettings-Width="600px">
         <EditColumn UniqueName="EditCommandColumn1" FilterControlAltText="Filter EditCommandColumn1 column"></EditColumn>
@@ -97,6 +187,84 @@
                    <asp:CustomValidator ID="CustomValidator1" ControlToValidate="txtName" OnServerValidate="CheckName" runat="server" ErrorMessage="Tên khách hàng đã tồn tại" Display="Dynamic" ValidationGroup="G1"></asp:CustomValidator>
                 </td>
             </tr> 
+            <tr>
+                 <td style =" width:150px;"> <span class="rtsTxtnew">Địa chỉ:</td>
+                <td colspan="4">
+                   <telerik:RadTextBox ID="txtC_ADDRESS" Text='<%# Bind( "C_ADDRESS") %>' runat="server" Width="90%"></telerik:RadTextBox>                   
+                </td>
+            </tr>
+            <tr>
+                 <td style =" width:150px;"> <span class="rtsTxtnew">Quốc gia:</td>
+                <td colspan="4">
+                   <asp:HiddenField ID="hfQuocGia" runat="server"  Value ='<%# cFunction.LoadIDQuocGia(Eval("FK_QUANHUYEN").ToString()) %>' />
+                    <telerik:RadComboBox style="width:180px" ID="cmbQuocGia" runat="server" EmptyMessage="Chọn quốc gia" Filter ="Contains" 
+                    DataSourceID="QUOCGIADataSource" DataTextField="C_NAME"  DataValueField="PK_ID" EnableLoadOnDemand="true">                               
+                   </telerik:RadComboBox>                    
+                </td>
+            </tr>
+             <tr>
+                 <td style =" width:150px;"> <span class="rtsTxtnew">Tỉnh thành:</td>
+                <td colspan="4">
+                   <asp:HiddenField ID="hfTinhThanh" runat="server"  Value ='<%# cFunction.LoadIDTinhThanh(Eval("FK_QUANHUYEN").ToString()) %>' />
+                    <telerik:RadComboBox style="width:180px" ID="cmbTinhThanh" runat="server" EmptyMessage="Chọn tỉnh" 
+                    DataSourceID="TINHTHANHDataSource" DataTextField="C_NAME"  DataValueField="PK_ID">                               
+                   </telerik:RadComboBox>                    
+                </td>
+            </tr>
+             <tr>
+                 <td style =" width:150px;"><span class="rtsTxtnew">Quận huyện:</td>
+                <td colspan="4">
+                   <asp:HiddenField ID="hfQuanHuyen" runat="server"  Value ='<%# Bind("FK_QUANHUYEN") %>'/>
+                   <telerik:RadComboBox style="width:180px" ID="cmbQuanHuyen" runat="server"  EmptyMessage="Chọn quận huyện" 
+                   DataSourceID="QUANHUYENDataSource" DataTextField="C_NAME" DataValueField="PK_ID">                               
+                   </telerik:RadComboBox>                   
+                </td>
+            </tr>
+             <tr>
+                 <td style =" width:150px;"> <span class="rtsTxtnew">Điện thoại:</td>
+                <td colspan="4">
+                   <telerik:RadTextBox ID="txtC_TEL" Text='<%# Bind( "C_TEL") %>' runat="server" Width="90%"></telerik:RadTextBox>                   
+                </td>
+            </tr>
+             <tr>
+                 <td style =" width:150px;"> <span class="rtsTxtnew">Người liên hệ:</td>
+                <td colspan="4">
+                   <telerik:RadTextBox ID="txtC_NGUOILIENHE" Text='<%# Bind( "C_NGUOILIENHE") %>' runat="server" Width="90%"></telerik:RadTextBox>                   
+                </td>
+            </tr>
+            <tr>
+                 <td style =" width:150px;"> <span class="rtsTxtnew">Di động:</td>
+                <td colspan="4">
+                   <telerik:RadTextBox ID="txtC_MOBILE" Text='<%# Bind( "C_MOBILE") %>' runat="server" Width="90%"></telerik:RadTextBox>                   
+                </td>
+            </tr>
+            <tr>
+                 <td style =" width:150px;"> <span class="rtsTxtnew">Email:</td>
+                <td colspan="4">
+                    <telerik:RadTextBox ID="txtEmail" Width="90%" Text='<%# Bind( "C_Email") %>' runat="server"></telerik:RadTextBox>
+                    <asp:RegularExpressionValidator ID="revEmail" runat="server" ErrorMessage="Email sai định dạng" ControlToValidate="txtEmail" SetFocusOnError="True" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"  ValidationGroup="G1" Display="Dynamic"></asp:RegularExpressionValidator>
+                </td>
+            </tr>
+            <tr>
+                 <td style =" width:150px;"> <span class="rtsTxtnew">Mã số thuế:</td>
+                <td colspan="4">
+                   <telerik:RadTextBox ID="txtC_MST" Text='<%# Bind( "C_MST") %>' runat="server" Width="90%"></telerik:RadTextBox>                   
+                </td>
+            </tr>
+            <tr>
+                 <td style =" width:150px;"> <span class="rtsTxtnew">Tài khoản:</td>
+                <td colspan="4">
+                   <telerik:RadTextBox ID="txtC_TAIKHOAN" Text='<%# Bind( "C_TAIKHOAN") %>' runat="server" Width="90%"></telerik:RadTextBox>                   
+                </td>
+            </tr>
+            <tr>
+                 <td style =" width:150px;"> <span class="rtsTxtnew">Nhân viên kinh doanh:</td>
+                <td colspan="4">
+                   <telerik:RadComboBox style="width:180px" SelectedValue='<%# Bind("FK_USER") %>' ID="cmbFK_USER" runat="server" EmptyMessage="Chọn nhân viên" Filter ="Contains" 
+                    DataSourceID="USERDataSource" DataTextField="C_NAME"  DataValueField="PK_ID" EnableLoadOnDemand="true">                               
+                   </telerik:RadComboBox>                    
+                </td>
+            </tr>
              </table>
             </div> 
              </center> 
@@ -107,8 +275,9 @@
         <ValidationSettings CommandsToValidate="PerformInsert,Update" ValidationGroup="G1"/>
         <ClientSettings AllowKeyboardNavigation="true" KeyboardNavigationSettings-AllowSubmitOnEnter="true">
             <Selecting AllowRowSelect="True" EnableDragToSelectRows="True" />
-            <ClientEvents OnPopUpShowing="PopUpShowingSmall" />
+            <ClientEvents OnPopUpShowing="PopUpShowing" />
             <ClientEvents OnRowDblClick="RowDblClick" />
+            <Scrolling AllowScroll="True" UseStaticHeaders="True" SaveScrollPosition="True" FrozenColumnsCount="5" ScrollHeight="450px" />
         </ClientSettings>
         <SortingSettings SortedAscToolTip="Sắp xếp tăng dần" 
             SortedDescToolTip="Sắp xếp giảm dần" SortToolTip="Click để sắp xếp" />
@@ -117,15 +286,14 @@
 <asp:SqlDataSource ID="KHACHHANGDataSource" runat="server" 
     ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>" 
     DeleteCommand="DELETE FROM [DMKHACHHANG] WHERE [PK_ID] = @PK_ID" 
-    InsertCommand="INSERT INTO [DMKHACHHANG] ([FK_NHOMKHACHHANG], [C_CODE], [C_NAME], [C_ADDRESS], [FK_TINHTHANH], [FK_QUANHUYEN], [C_TEL], [FK_USER], [C_TAIKHOAN], [C_MST], [C_EMAIL], [C_MOBILE], [C_NGUOILIENHE]) VALUES (@FK_NHOMKHACHHANG, @C_CODE, @C_NAME, @C_ADDRESS, @FK_TINHTHANH, @FK_QUANHUYEN, @C_TEL, @FK_USER, @C_TAIKHOAN, @C_MST, @C_EMAIL, @C_MOBILE, @C_NGUOILIENHE)" 
-    SelectCommand="SELECT [PK_ID], [FK_NHOMKHACHHANG], [C_CODE], [C_NAME], [C_ADDRESS], [FK_TINHTHANH], [FK_QUANHUYEN], [C_TEL], [FK_USER], [C_TAIKHOAN], [C_MST], [C_EMAIL], [C_MOBILE], [C_NGUOILIENHE] FROM [DMKHACHHANG]" 
-    UpdateCommand="UPDATE [DMKHACHHANG] SET [FK_NHOMKHACHHANG] = @FK_NHOMKHACHHANG, [C_CODE] = @C_CODE, [C_NAME] = @C_NAME, [C_ADDRESS] = @C_ADDRESS, [FK_TINHTHANH] = @FK_TINHTHANH, [FK_QUANHUYEN] = @FK_QUANHUYEN, [C_TEL] = @C_TEL, [FK_USER] = @FK_USER, [C_TAIKHOAN] = @C_TAIKHOAN, [C_MST] = @C_MST, [C_EMAIL] = @C_EMAIL, [C_MOBILE] = @C_MOBILE, [C_NGUOILIENHE] = @C_NGUOILIENHE WHERE [PK_ID] = @PK_ID">
+    InsertCommand="INSERT INTO [DMKHACHHANG] ([FK_NHOMKHACHHANG], [C_CODE], [C_NAME], [C_ADDRESS], [FK_QUANHUYEN], [C_TEL], [FK_USER], [C_TAIKHOAN], [C_MST], [C_EMAIL], [C_MOBILE], [C_NGUOILIENHE]) VALUES (@FK_NHOMKHACHHANG, @C_CODE, @C_NAME, @C_ADDRESS, @FK_QUANHUYEN, @C_TEL, @FK_USER, @C_TAIKHOAN, @C_MST, @C_EMAIL, @C_MOBILE, @C_NGUOILIENHE)" 
+    SelectCommand="SELECT [DMKHACHHANG].[PK_ID], [DMKHACHHANG].[FK_NHOMKHACHHANG], [DMKHACHHANG].[C_CODE], [DMKHACHHANG].[C_NAME], [DMKHACHHANG].[C_ADDRESS], [DMKHACHHANG].[FK_QUANHUYEN], [DMKHACHHANG].[C_TEL], [DMKHACHHANG].[FK_USER], [DMKHACHHANG].[C_TAIKHOAN], [DMKHACHHANG].[C_MST], [DMKHACHHANG].[C_EMAIL], [DMKHACHHANG].[C_MOBILE], [DMKHACHHANG].[C_NGUOILIENHE],DMQUANHUYEN.C_NAME as QUANHUYENNAME,DMTINHTHANH.C_NAME as TINHTHANHNAME,USERS.C_NAME as USERNAME,DMNHOMKHACHHANG.C_NAME as NHOMKHACHHANGNAME FROM [DMKHACHHANG] LEFT OUTER JOIN DMQUANHUYEN ON DMKHACHHANG.FK_QUANHUYEN = DMQUANHUYEN.PK_ID LEFT OUTER JOIN DMTINHTHANH ON DMQUANHUYEN.FK_TINHTHANH = DMTINHTHANH.PK_ID LEFT OUTER JOIN USERS ON DMKHACHHANG.FK_USER =USERS.PK_ID LEFT OUTER JOIN DMNHOMKHACHHANG ON DMKHACHHANG.FK_NHOMKHACHHANG =DMNHOMKHACHHANG.PK_ID" 
+    UpdateCommand="UPDATE [DMKHACHHANG] SET [FK_NHOMKHACHHANG] = @FK_NHOMKHACHHANG, [C_CODE] = @C_CODE, [C_NAME] = @C_NAME, [C_ADDRESS] = @C_ADDRESS, [FK_QUANHUYEN] = @FK_QUANHUYEN, [C_TEL] = @C_TEL, [FK_USER] = @FK_USER, [C_TAIKHOAN] = @C_TAIKHOAN, [C_MST] = @C_MST, [C_EMAIL] = @C_EMAIL, [C_MOBILE] = @C_MOBILE, [C_NGUOILIENHE] = @C_NGUOILIENHE WHERE [PK_ID] = @PK_ID">
         <UpdateParameters>
             <asp:Parameter Name="FK_NHOMKHACHHANG" Type="Int32" />
             <asp:Parameter Name="C_CODE" Type="String" />
             <asp:Parameter Name="C_NAME" Type="String" />
             <asp:Parameter Name="C_ADDRESS" Type="String" />
-            <asp:Parameter Name="FK_TINHTHANH" Type="Int32" />
             <asp:Parameter Name="FK_QUANHUYEN" Type="Int32" />
             <asp:Parameter Name="C_TEL" Type="String" />
             <asp:Parameter Name="FK_USER" Type="Int32" />
@@ -144,7 +312,6 @@
             <asp:Parameter Name="C_CODE" Type="String" />
             <asp:Parameter Name="C_NAME" Type="String" />
             <asp:Parameter Name="C_ADDRESS" Type="String" />
-            <asp:Parameter Name="FK_TINHTHANH" Type="Int32" />
             <asp:Parameter Name="FK_QUANHUYEN" Type="Int32" />
             <asp:Parameter Name="C_TEL" Type="String" />
             <asp:Parameter Name="FK_USER" Type="Int32" />
@@ -158,10 +325,11 @@
 <asp:SqlDataSource ID="QUOCGIADataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
     SelectCommand="SELECT * FROM [DMQUOCGIA]">
  </asp:SqlDataSource>
-  <asp:SqlDataSource ID="TINHTHANHDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
-    SelectCommand="SELECT * FROM [DMTINHTHANH]">
+  <asp:SqlDataSource ID="TINHTHANHDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>">
  </asp:SqlDataSource>
- <asp:SqlDataSource ID="QUANHUYENDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
-    SelectCommand="SELECT * FROM [DMQUANHUYEN]">
+ <asp:SqlDataSource ID="QUANHUYENDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>">
+</asp:SqlDataSource>
+ <asp:SqlDataSource ID="USERDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
+ SelectCommand="SELECT USERS.* FROM USERS WHERE FK_GROUPUSER NOT IN (0,1)" >
 </asp:SqlDataSource>
 
