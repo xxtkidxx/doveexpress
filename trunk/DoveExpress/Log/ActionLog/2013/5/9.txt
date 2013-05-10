@@ -1,0 +1,24 @@
+Thời gian: 2013-05-09 21:15:57 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-05-09 21:32:57 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted NHOMKHACHHANGs
+Kết quả : {PK_ID:"1"}
+__________________________
+Thời gian: 2013-05-09 21:49:16 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-05-09 23:14:07 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
