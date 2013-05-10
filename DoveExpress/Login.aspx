@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head id="Head1" runat="server">
-    <title>PHẦN MỀM QUẢN LÝ ĐẦU TƯ VÀ DOANH NGHIỆP KHU CNC HÒA LẠC</title>
+    <title>PHẦN MỀM QUẢN LÝ CHUYỂN PHÁT NHANH DOVE EXPRESS</title>
     <link href="css/login.css" rel="stylesheet" type="text/css" />
     <script src="js/jquery-1.4.2.min.js" type="text/javascript"></script>
     <script src="js/jquery.corner.js" type="text/javascript"></script>
