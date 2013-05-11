@@ -1,20 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="CHITIETCUOC.ascx.cs" Inherits="module_CHITIETCUOC" %>
 <telerik:RadScriptBlock ID="RadScriptBlockCHITIETCUOC" runat="server">   
 <script type="text/javascript">
-    function CloseAndRebind(args) {
-        GetRadWindow().BrowserWindow.refreshGrid(args);
-        GetRadWindow().close();
-    }
-    function GetRadWindow() {
-        var oWindow = null;
-        if (window.radWindow) oWindow = window.radWindow; //Will work in Moz in all cases, including clasic dialog
-        else if (window.frameElement.radWindow) oWindow = window.frameElement.radWindow; //IE (and Moz as well)
-
-        return oWindow;
-    }
-    function CancelEdit() {
-        GetRadWindow().close();
-    }
     var cmbkhachhang;
     function OnClientLoadKhachHang(sender) {
         cmbkhachhang = sender;
@@ -77,7 +63,8 @@ onclientselectedindexchanged="cmbSanPhamClientSelectedIndexChangedHandler" onpre
 </telerik:RadComboBox>
 Loại tiền:&nbsp; 
 <telerik:RadComboBox ID="cmbLoaiTien" runat="server"
-ShowToggleImage="True" EmptyMessage="Chọn loại" onload="cmbLoaiTien_Load" onclientselectedindexchanged="cmbLoaiTienClientSelectedIndexChangedHandler">
+ShowToggleImage="True" EmptyMessage="Chọn loại" onclientselectedindexchanged="cmbLoaiTienClientSelectedIndexChangedHandler" 
+onprerender="cmbLoaiTien_PreRender">
 <Items>
     <telerik:RadComboBoxItem Value ="VND" Text ="VND" />
     <telerik:RadComboBoxItem Value ="USD" Text ="USD" />
