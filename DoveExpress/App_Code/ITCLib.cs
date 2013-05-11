@@ -1191,7 +1191,7 @@ namespace ITCLIB
                 string Result = "";
                 if (ID != "")
                 {
-                    string SelectSQL = "SELECT DMQUOCGIA.C_NAME FROM DMQUOCGIA LEFT OUTER JOIN DMTINHTHANH ON DMQUOCGIA.PK_ID = DMTINHTHANH.FK_QUOCGIA LEFT OUTER JOIN DMQUANHUYEN ON DMTINHTHANH.PK_ID = DMQUANHUYEN.FK_TINHTHANH WHERE DMQUANHUYEN.PK_ID IN (" + ID + ")";
+                    string SelectSQL = "SELECT DMQUOCGIA.PK_ID FROM DMQUOCGIA LEFT OUTER JOIN DMTINHTHANH ON DMQUOCGIA.PK_ID = DMTINHTHANH.FK_QUOCGIA LEFT OUTER JOIN DMQUANHUYEN ON DMTINHTHANH.PK_ID = DMQUANHUYEN.FK_TINHTHANH WHERE DMQUANHUYEN.PK_ID IN (" + ID + ")";
                     ITCLIB.Admin.SQL rs = new ITCLIB.Admin.SQL();
                     DataTable oDataTable = rs.query_data(SelectSQL);
 
@@ -1201,11 +1201,11 @@ namespace ITCLIB
                         {
                             if (i == 0)
                             {
-                                Result += oDataTable.Rows[i]["MaBo"].ToString();
+                                Result += oDataTable.Rows[i]["PK_ID"].ToString();
                             }
                             else
                             {
-                                Result += "-" + oDataTable.Rows[i]["MaBo"].ToString();
+                                Result += "-" + oDataTable.Rows[i]["PK_ID"].ToString();
                             }
                         }
                     }
@@ -1217,7 +1217,7 @@ namespace ITCLIB
                 string Result = "";
                 if (ID != "")
                 {
-                    string SelectSQL = "SELECT DMTINHTHANH.C_NAME FROM DMTINHTHANH LEFT OUTER JOIN DMQUANHUYEN ON DMTINHTHANH.PK_ID = DMQUANHUYEN.FK_TINHTHANH WHERE DMQUANHUYEN.PK_ID IN (" + ID + ")";
+                    string SelectSQL = "SELECT DMTINHTHANH.PK_ID FROM DMTINHTHANH LEFT OUTER JOIN DMQUANHUYEN ON DMTINHTHANH.PK_ID = DMQUANHUYEN.FK_TINHTHANH WHERE DMQUANHUYEN.PK_ID IN (" + ID + ")";
                     ITCLIB.Admin.SQL rs = new ITCLIB.Admin.SQL();
                     DataTable oDataTable = rs.query_data(SelectSQL);
 
@@ -1227,11 +1227,11 @@ namespace ITCLIB
                         {
                             if (i == 0)
                             {
-                                Result += oDataTable.Rows[i]["C_NAME"].ToString();
+                                Result += oDataTable.Rows[i]["PK_ID"].ToString();
                             }
                             else
                             {
-                                Result += "-" + oDataTable.Rows[i]["C_NAME"].ToString();
+                                Result += "-" + oDataTable.Rows[i]["PK_ID"].ToString();
                             }
                         }
                     }

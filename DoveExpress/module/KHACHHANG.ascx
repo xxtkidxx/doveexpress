@@ -121,6 +121,9 @@
                  <HeaderStyle HorizontalAlign ="Center" Width ="30px" />
                  <ItemStyle HorizontalAlign ="Center" Width ="30px" />
                </telerik:GridTemplateColumn>
+                <telerik:GridBoundColumn UniqueName="NHOMKHACHHANGNAME" HeaderText="Nhóm KH" DataField="NHOMKHACHHANGNAME" 
+                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
+                </telerik:GridBoundColumn>
                 <telerik:GridBoundColumn UniqueName="C_CODE" HeaderText="Mã khách hàng" DataField="C_CODE" 
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
                 </telerik:GridBoundColumn>
@@ -171,6 +174,15 @@
             <div style="width:600px;background:#FFFFFF" class="clearfix">      
             <table id="tblEdit" class ="TableEditInGrid" cellspacing="3" cellpadding="3" style="width: 100%" border="0">
             <tr>
+                 <td style =" width:150px;"> <span class="rtsTxtnew">Nhóm khách hàng:</td>
+                <td colspan="4">
+                   <telerik:RadComboBox style="width:180px" SelectedValue='<%# Bind("FK_NHOMKHACHHANG") %>' ID="cmbFK_NHOMKHACHHANG" runat="server" EmptyMessage="Chọn nhóm khách hàng" Filter ="Contains" 
+                    DataSourceID="NHOMKHACHHANGDataSource" DataTextField="C_NAME"  DataValueField="PK_ID" EnableLoadOnDemand="true">                               
+                   </telerik:RadComboBox>
+                   <asp:RequiredFieldValidator ID="rfvFK_NHOMKHACHHANG" runat="server" ErrorMessage="Hãy chọn nhóm khách hàng" ControlToValidate="cmbFK_NHOMKHACHHANG" SetFocusOnError="True" Display="Dynamic" ValidationGroup="G1"></asp:RequiredFieldValidator>                   
+                </td>
+            </tr>
+            <tr>
                  <td style =" width:150px;"> <span class="rtsTxtnew">Mã khách hàng:</td>
                 <td colspan="4">
                     <asp:HiddenField ID="txtID" Value ='<%# Eval( "PK_ID") %>' runat="server" />
@@ -205,7 +217,7 @@
              <tr>
                  <td style =" width:150px;"> <span class="rtsTxtnew">Tỉnh thành:</td>
                 <td colspan="4">
-                   <asp:HiddenField ID="hfTinhThanh" runat="server"  Value ='<%# cFunction.LoadIDTinhThanh(Eval("FK_QUANHUYEN").ToString()) %>' />
+                   <asp:HiddenField ID="hfTinhThanh" runat="server" Value ='<%# cFunction.LoadIDTinhThanh(Eval("FK_QUANHUYEN").ToString()) %>' />
                     <telerik:RadComboBox style="width:180px" ID="cmbTinhThanh" runat="server" EmptyMessage="Chọn tỉnh" 
                     DataSourceID="TINHTHANHDataSource" DataTextField="C_NAME"  DataValueField="PK_ID">                               
                    </telerik:RadComboBox>                    
@@ -331,5 +343,8 @@
 </asp:SqlDataSource>
  <asp:SqlDataSource ID="USERDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
  SelectCommand="SELECT USERS.* FROM USERS WHERE FK_GROUPUSER NOT IN (0,1)" >
+</asp:SqlDataSource>
+ <asp:SqlDataSource ID="NHOMKHACHHANGDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
+ SelectCommand="SELECT DMNHOMKHACHHANG.* FROM DMNHOMKHACHHANG WHERE C_TYPE = 0" >
 </asp:SqlDataSource>
 
