@@ -1,1 +1,230 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="CHITIETCUOC.ascx.cs" Inherits="module_CHITIETCUOC" %>
+<telerik:RadScriptBlock ID="RadScriptBlockCHITIETCUOC" runat="server">   
+<script type="text/javascript">
+    function CloseAndRebind(args) {
+        GetRadWindow().BrowserWindow.refreshGrid(args);
+        GetRadWindow().close();
+    }
+    function GetRadWindow() {
+        var oWindow = null;
+        if (window.radWindow) oWindow = window.radWindow; //Will work in Moz in all cases, including clasic dialog
+        else if (window.frameElement.radWindow) oWindow = window.frameElement.radWindow; //IE (and Moz as well)
+
+        return oWindow;
+    }
+    function CancelEdit() {
+        GetRadWindow().close();
+    }
+    var cmbkhachhang;
+    function OnClientLoadKhachHang(sender) {
+        cmbkhachhang = sender;
+    }
+    function cmbNhomKhachHangClientSelectedIndexChangedHandler(sender, eventArgs) {
+        cmbkhachhang.requestItems(eventArgs.get_item().get_value(), false);        
+    }
+    function ItemsLoadedKhachHang(combo, eventArqs) {
+        if (combo.get_items().get_count() > 0) {
+            combo.trackChanges();
+            combo.get_items().getItem(0).select();
+            combo.updateClientState();
+            combo.commitChanges();
+        } else {
+            combo.set_text("");
+        }
+        $find("<%=RadGridCHITIETCUOC.ClientID %>").get_masterTableView().rebind();
+    }
+    function cmbMaBangCuocClientSelectedIndexChangedHandler(sender, eventArgs) {
+        $find("<%=RadGridCHITIETCUOC.ClientID %>").get_masterTableView().rebind();
+    }
+    function cmbKhachHangClientSelectedIndexChangedHandler(sender, eventArgs) {
+        $find("<%=RadGridCHITIETCUOC.ClientID %>").get_masterTableView().rebind();
+    }
+    function cmbSanPhamClientSelectedIndexChangedHandler(sender, eventArgs) {
+        $find("<%=RadGridCHITIETCUOC.ClientID %>").get_masterTableView().rebind();
+    }
+    function cmbLoaiTienClientSelectedIndexChangedHandler(sender, eventArgs) {
+        $find("<%=RadGridCHITIETCUOC.ClientID %>").get_masterTableView().rebind();
+    }
+</script>
+</telerik:RadScriptBlock>
+<telerik:RadAjaxLoadingPanel Skin="Vista" ID="RadAjaxLoadingPanelCHITIETCUOC" runat="server" />
+<div style ="width:100%; margin: 10px 10px 10px 10px; ">
+Bảng cước:&nbsp; 
+<telerik:RadComboBox ID="cmbMaBangCuoc" runat="server" 
+DataTextField="C_NAME" DataValueField="PK_ID" DataSourceID="MABANGCUOCDataSource"
+ShowToggleImage="True" EmptyMessage="Chọn bảng" 
+        onprerender="cmbMaBangCuoc_PreRender" 
+        onclientselectedindexchanged="cmbMaBangCuocClientSelectedIndexChangedHandler">
+</telerik:RadComboBox>
+Nhóm khách hàng:&nbsp; 
+<telerik:RadComboBox ID="cmbNhomKhachHang" runat="server"
+DataTextField="C_NAME" DataValueField="PK_ID" DataSourceID="NHOMKHACHHANGDataSource"
+ShowToggleImage="True" EmptyMessage="Chọn nhóm"
+onclientselectedindexchanged="cmbNhomKhachHangClientSelectedIndexChangedHandler" onprerender="cmbNhomKhachHang_PreRender">
+</telerik:RadComboBox>
+Khách hàng:&nbsp; 
+<telerik:RadComboBox ID="cmbKhachHang" runat="server" 
+DataTextField="C_NAME" DataValueField="PK_ID" DataSourceID="KHACHHANGDataSource"
+ShowToggleImage="True" EmptyMessage="Chọn khách hàng" 
+onclientitemsrequested="ItemsLoadedKhachHang" onclientload="OnClientLoadKhachHang" 
+onitemsrequested="cmbKhachHang_ItemsRequested" onclientselectedindexchanged="cmbKhachHangClientSelectedIndexChangedHandler">
+</telerik:RadComboBox>
+Sản phẩm:&nbsp; 
+<telerik:RadComboBox ID="cmbSanPham" runat="server"
+DataTextField="C_NAME" DataValueField="PK_ID" DataSourceID="MASANPHAMDataSource"
+ShowToggleImage="True" EmptyMessage="Chọn sản phẩm" 
+onclientselectedindexchanged="cmbSanPhamClientSelectedIndexChangedHandler" onprerender="cmbSanPham_PreRender">
+</telerik:RadComboBox>
+Loại tiền:&nbsp; 
+<telerik:RadComboBox ID="cmbLoaiTien" runat="server"
+ShowToggleImage="True" EmptyMessage="Chọn loại" onload="cmbLoaiTien_Load" onclientselectedindexchanged="cmbLoaiTienClientSelectedIndexChangedHandler">
+<Items>
+    <telerik:RadComboBoxItem Value ="VND" Text ="VND" />
+    <telerik:RadComboBoxItem Value ="USD" Text ="USD" />
+</Items>
+</telerik:RadComboBox>
+</div>
+<telerik:RadGrid ID="RadGridCHITIETCUOC" runat="server" Skin="Vista" 
+    AllowPaging="True" PageSize="20" AllowSorting="True" 
+    AllowFilteringByColumn="False" GridLines="None" ShowStatusBar="True"
+    AutoGenerateColumns="False"  
+    AllowMultiRowEdit="True" AllowAutomaticDeletes="True" 
+    AllowAutomaticInserts="True" AllowAutomaticUpdates="True" 
+    DataSourceID="MAVUNGDataSource" ShowFooter="True"
+    ondatabound="RadGridCHITIETCUOC_DataBound" 
+    onitemdeleted="RadGridCHITIETCUOC_ItemDeleted" oniteminserted="RadGridCHITIETCUOC_ItemInserted" 
+    onitemupdated="RadGridCHITIETCUOC_ItemUpdated" 
+    onitemcommand="RadGridCHITIETCUOC_ItemCommand" 
+    onitemdatabound="RadGridCHITIETCUOC_ItemDataBound" CellSpacing="0" 
+    onitemcreated="RadGridCHITIETCUOC_ItemCreated">
+    <PagerStyle FirstPageToolTip="Trang đầu" LastPageToolTip="Trang cuối" NextPagesToolTip="Các trang tiếp" NextPageToolTip="Trang tiếp" 
+    PageSizeLabelText="Số bản ghi hiển thị:" PrevPagesToolTip="Các trang sau" PrevPageToolTip="Trang sau" PagerTextFormat="Change page: {4} &nbsp;Trang <strong>{0}</strong>/<strong>{1}</strong>, Bản ghi <strong>{2}</strong> đến <strong>{3}</strong> của tất cả <strong>{5}</strong> bản ghi" />    
+    <ExportSettings HideStructureColumns="true" ExportOnlyData="true" IgnorePaging="true" OpenInNewWindow="true" Excel-Format="ExcelML"></ExportSettings>   
+     <GroupingSettings CaseSensitive ="false"  />
+<MasterTableView Name="MasterTableViewMAVUNG" HierarchyDefaultExpanded="true" CommandItemDisplay="Top" DataSourceID="MAVUNGDataSource" DataKeyNames="PK_ID" ClientDataKeyNames="PK_ID" EditMode="InPlace" NoMasterRecordsText="Không có dữ liệu">
+<CommandItemTemplate>
+                    <div style="padding: 5px 5px;float:left;width:auto">
+                        <b>Quản lý bảng cước</b>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <asp:LinkButton ID="btnEditSelected" runat="server" CommandName="EditSelected" Visible='<%# RadGridCHITIETCUOC.EditIndexes.Count == 0 && ITCLIB.Security.Security.CanEditModule("DANHMUCCHUNG") %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Edit.gif" />Sửa</asp:LinkButton>&nbsp;&nbsp;
+                        <asp:LinkButton ID="btnUpdateEdited" runat="server" CommandName="UpdateEdited" Visible='<%# RadGridCHITIETCUOC.EditIndexes.Count > 0 %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Update.gif" />Lưu</asp:LinkButton>&nbsp;&nbsp;
+                        <asp:LinkButton ID="btnCancel" runat="server" CommandName="CancelAll" Visible='<%# RadGridCHITIETCUOC.EditIndexes.Count > 0 || RadGridCHITIETCUOC.MasterTableView.IsItemInserted %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Cancel.gif" />Hủy bỏ</asp:LinkButton>&nbsp;&nbsp;
+                        <asp:LinkButton ID="LinkButton2" runat="server" CommandName="InitInsert" Visible='<%# !RadGridCHITIETCUOC.MasterTableView.IsItemInserted && ITCLIB.Security.Security.CanAddModule("DANHMUCCHUNG") %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/AddRecord.gif" />Thêm</asp:LinkButton>&nbsp;&nbsp;
+                        <asp:LinkButton ID="LinkButton3" runat="server" CommandName="PerformInsert" Visible='<%# RadGridCHITIETCUOC.MasterTableView.IsItemInserted %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Insert.gif" />Lưu</asp:LinkButton>&nbsp;&nbsp;
+                        <asp:LinkButton ID="LinkButton1" OnClientClick="javascript:return confirm('Bạn có muốn xóa bản ghi đã chọn không?')" runat="server" CommandName="DeleteSelected" Visible='<%# ITCLIB.Security.Security.CanDeleteModule("DANHMUCCHUNG") %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Delete.gif" />Xóa</asp:LinkButton>&nbsp;&nbsp;
+                       <asp:LinkButton ID="LinkButton4" runat="server" CommandName="RebindGrid"><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Refresh.gif" />Làm mới</asp:LinkButton>
+                    </div>
+                    <div style="padding: 5px 5px;float:right;width:auto">
+                        <asp:LinkButton ID="ExportToPdfButton" runat="server" CommandName="ExportToPdf"><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/pdf.gif" /></asp:LinkButton>&nbsp;&nbsp;
+                        <asp:LinkButton ID="ExportToWordButton" runat="server" CommandName="ExportToWord"><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/word.gif" /></asp:LinkButton>&nbsp;&nbsp;
+                        <asp:LinkButton ID="ExportToExcelButton" runat="server" CommandName="ExportToExcel"><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/excel.gif" /></asp:LinkButton>&nbsp;&nbsp;
+                        <asp:LinkButton ID="ExportToCsvButton" runat="server" CommandName="ExportToCsv"><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/csv.gif" /></asp:LinkButton>&nbsp;&nbsp;
+                    </div>
+</CommandItemTemplate>
+<Columns>
+                <telerik:GridBoundColumn UniqueName="PK_ID" DataField="PK_ID" Visible ="false">
+                </telerik:GridBoundColumn>
+                 <telerik:GridTemplateColumn HeaderText ="" AllowFiltering="false" ShowFilterIcon="false">   
+                  <ItemTemplate>
+                      <asp:Label ID="lblSTT" runat="server" Text=""></asp:Label>
+                </ItemTemplate>
+                 <HeaderStyle HorizontalAlign ="Center" Width ="30px" />
+                 <ItemStyle HorizontalAlign ="Center" Width ="30px" />
+               </telerik:GridTemplateColumn>
+                <telerik:GridBoundColumn UniqueName="C_CODE" HeaderText="Mã mã vùng" DataField="C_CODE" AllowFiltering="false">
+                </telerik:GridBoundColumn>
+                <telerik:GridBoundColumn UniqueName="C_NAME" HeaderText="Tên mã vùng" DataField="C_NAME" AllowFiltering="false">
+                </telerik:GridBoundColumn>
+                <telerik:GridBoundColumn UniqueName="C_DESC" HeaderText="Tuyến đường thuộc vùng" DataField="C_DESC" AllowFiltering="false">
+                </telerik:GridBoundColumn>
+</Columns>
+<DetailTables>
+    <telerik:GridTableView DataKeyNames="PK_ID,FK_MAVUNG" DataSourceID="CHITIETCUOCDataSource" Width="100%" runat="server" CommandItemDisplay="Top" Name="TableViewCHITIETCUOC" EditMode="InPlace" NoDetailRecordsText="Không có dữ liệu.">
+           <ParentTableRelation>
+                 <telerik:GridRelationFields DetailKeyField="FK_MAVUNG" MasterKeyField="PK_ID"></telerik:GridRelationFields>
+           </ParentTableRelation>
+           <CommandItemTemplate>
+               <div style="padding: 5px 5px;float:left;width:auto">
+               <b>Chi tiết cước</b>&nbsp;&nbsp;&nbsp;&nbsp;                        
+               <asp:LinkButton ID="LinkButton2" runat="server" CommandName="InitInsert" Visible='<%# !RadGridCHITIETCUOC.MasterTableView.IsItemInserted && ITCLIB.Security.Security.CanAddModule("DANHMUCCHUNG")%>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/AddRecord.gif" />Thêm</asp:LinkButton>&nbsp;&nbsp;
+               <asp:LinkButton ID="LinkButton1" OnClientClick="javascript:return confirm('Bạn có muốn xóa bản ghi đã chọn không?')" runat="server" Visible='<%# ITCLIB.Security.Security.CanDeleteModule("DANHMUCCHUNG")%>' CommandName="DeleteSelected"><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Delete.gif" />Xóa</asp:LinkButton>&nbsp;&nbsp;
+               </div>                    
+            </CommandItemTemplate>
+                            <Columns>
+                             <telerik:GridEditCommandColumn ButtonType="ImageButton" UniqueName="EditCommandColumn" HeaderStyle-Width="80px" EditImageUrl="~/images/grid/Edit.gif"></telerik:GridEditCommandColumn>
+                            <telerik:GridBoundColumn UniqueName="C_KHOILUONG" HeaderText="Khối lượng" DataField="C_KHOILUONG" AllowFiltering="false"></telerik:GridBoundColumn>
+                            <telerik:GridBoundColumn UniqueName="C_CUOCPHI" HeaderText="Cước phí" DataField="C_CUOCPHI" AllowFiltering="false"></telerik:GridBoundColumn>       
+                            </Columns>
+     </telerik:GridTableView>
+ </DetailTables>
+</MasterTableView>
+<ValidationSettings CommandsToValidate="PerformInsert,Update" ValidationGroup="G1"/>
+        <ClientSettings>
+            <Selecting AllowRowSelect="True" EnableDragToSelectRows="True" />
+            <ClientEvents OnPopUpShowing="PopUpShowing" />
+            <ClientEvents OnRowDblClick="RowDblClick" />
+        </ClientSettings>
+        <SortingSettings SortedAscToolTip="Sắp xếp tăng dần" 
+            SortedDescToolTip="Sắp xếp giảm dần" SortToolTip="Click để sắp xếp" />
+        <StatusBarSettings LoadingText="Đang tải..." ReadyText="Sẵn sàng" />
+</telerik:RadGrid>
+<asp:SqlDataSource ID="CHITIETCUOCDataSource" runat="server" 
+    ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>" 
+    DeleteCommand="DELETE FROM [DMCHITIETCUOC] WHERE [PK_ID] = @PK_ID" 
+    InsertCommand="INSERT INTO [DMCHITIETCUOC] ([FK_MABANGCUOC], [FK_MAKHACHHANG], [FK_MASANPHAM], [FK_MAVUNG], [C_LOAITIEN], [C_KHOILUONG], [C_CUOCPHI]) VALUES (@FK_MABANGCUOC, @FK_MAKHACHHANG, @FK_MASANPHAM, @FK_MAVUNG, @C_LOAITIEN, @C_KHOILUONG, @C_CUOCPHI)" 
+    SelectCommand="SELECT [PK_ID], [FK_MABANGCUOC], [FK_MAKHACHHANG], [FK_MASANPHAM], [FK_MAVUNG], [C_LOAITIEN], [C_KHOILUONG], [C_CUOCPHI] FROM [DMCHITIETCUOC] WHERE [FK_MAVUNG] =@FK_MAVUNG AND [FK_MABANGCUOC] = @FK_MABANGCUOC AND [FK_MAKHACHHANG] = @FK_MAKHACHHANG AND [FK_MASANPHAM] = @FK_MASANPHAM AND [C_LOAITIEN] = @C_LOAITIEN" 
+    UpdateCommand="UPDATE [DMCHITIETCUOC] SET [C_KHOILUONG] = @C_KHOILUONG, [C_CUOCPHI] = @C_CUOCPHI WHERE [PK_ID] = @PK_ID">
+    <SelectParameters>
+        <asp:Parameter Name="FK_MAVUNG" Type="Int32" />
+        <asp:ControlParameter ControlID="cmbMaBangCuoc" DefaultValue="0" Name="FK_MABANGCUOC" PropertyName="SelectedValue" />
+        <asp:ControlParameter ControlID="cmbKhachHang" DefaultValue="0" Name="FK_MAKHACHHANG" PropertyName="SelectedValue" />
+        <asp:ControlParameter ControlID="cmbSanPham" DefaultValue="0" Name="FK_MASANPHAM" PropertyName="SelectedValue" />
+        <asp:ControlParameter ControlID="cmbLoaiTien" DefaultValue="0" Name="C_LOAITIEN" PropertyName="SelectedValue" />
+    </SelectParameters>
+    <DeleteParameters>
+        <asp:Parameter Name="PK_ID" Type="Int32" />
+    </DeleteParameters>
+    <InsertParameters>
+        <asp:ControlParameter ControlID="cmbMaBangCuoc" DefaultValue="0" Name="FK_MABANGCUOC" PropertyName="SelectedValue" />
+        <asp:ControlParameter ControlID="cmbKhachHang" DefaultValue="0" Name="FK_MAKHACHHANG" PropertyName="SelectedValue" />
+        <asp:ControlParameter ControlID="cmbSanPham" DefaultValue="0" Name="FK_MASANPHAM" PropertyName="SelectedValue" />
+        <asp:Parameter Name="FK_MAVUNG" Type="Int32" />
+         <asp:ControlParameter ControlID="cmbLoaiTien" DefaultValue="0" Name="C_LOAITIEN" PropertyName="SelectedValue" />
+        <asp:Parameter Name="C_KHOILUONG" Type="String" />
+        <asp:Parameter Name="C_CUOCPHI" Type="Decimal" />
+    </InsertParameters>
+    <UpdateParameters>
+        <asp:Parameter Name="C_KHOILUONG" Type="String" />
+        <asp:Parameter Name="C_CUOCPHI" Type="Decimal" />
+        <asp:Parameter Name="PK_ID" Type="Int32" />
+    </UpdateParameters>
+</asp:SqlDataSource>
+<asp:SqlDataSource ID="MAVUNGDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
+        DeleteCommand="DELETE FROM [DMMAVUNG] WHERE [PK_ID] = @PK_ID" 
+        InsertCommand="INSERT INTO [DMMAVUNG] ([C_CODE], [C_NAME], [C_DESC]) VALUES (@C_CODE, @C_NAME, @C_DESC)"
+        SelectCommand="SELECT [PK_ID], [C_CODE], [C_NAME], [C_DESC] FROM [DMMAVUNG] ORDER BY LTRIM([C_CODE])"      
+        UpdateCommand="UPDATE [DMMAVUNG] SET [C_CODE] = @C_CODE, [C_NAME] = @C_NAME,[C_DESC] = @C_DESC WHERE [PK_ID] = @PK_ID" >
+        <UpdateParameters>
+            <asp:Parameter Name="C_CODE" Type="String" />
+            <asp:Parameter Name="C_NAME" Type="String" />
+            <asp:Parameter Name="C_DESC" Type="String" />
+        </UpdateParameters>
+        <DeleteParameters>
+            <asp:Parameter Name="PK_ID" Type="Int32" />
+        </DeleteParameters>
+        <InsertParameters>
+            <asp:Parameter Name="C_CODE" Type="String" />
+            <asp:Parameter Name="C_NAME" Type="String" />
+            <asp:Parameter Name="C_DESC" Type="String" />
+        </InsertParameters>
+</asp:SqlDataSource>
+<asp:SqlDataSource ID="MABANGCUOCDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
+    SelectCommand="SELECT [PK_ID], [C_CODE], [C_NAME],[C_TYPE] FROM [DMMABANGCUOC]  WHERE [C_TYPE] = 0 ORDER BY LTRIM([C_CODE])">
+</asp:SqlDataSource>
+<asp:SqlDataSource ID="MASANPHAMDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
+        SelectCommand="SELECT [PK_ID], [C_CODE], [C_NAME] FROM [DMMASANPHAM] ORDER BY LTRIM([C_CODE])">    
+</asp:SqlDataSource>
+ <asp:SqlDataSource ID="NHOMKHACHHANGDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
+ SelectCommand="SELECT DMNHOMKHACHHANG.* FROM DMNHOMKHACHHANG WHERE C_TYPE = 0" >
+</asp:SqlDataSource>
+<asp:SqlDataSource ID="KHACHHANGDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>">
+</asp:SqlDataSource>

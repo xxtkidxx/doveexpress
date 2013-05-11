@@ -50,7 +50,7 @@
             </telerik:RadMenuItem>
             <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=MAVUNG" Text="Vùng tính cước" Value="MAVUNG">
             </telerik:RadMenuItem>
-            <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=CUOCSANPHAM" Text="Chi tiết cước" Value="CUOCSANPHAM">
+            <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=CHITIETCUOC" Text="Chi tiết cước" Value="CHITIETCUOC">
             </telerik:RadMenuItem> 
             <telerik:RadMenuItem runat="server" Font-Size="Small" Text="Dịch vụ" Visible ="false" Value="DICHVU">
                  <Items>
