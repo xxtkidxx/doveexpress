@@ -216,13 +216,6 @@ public partial class module_CHITIETCUOC : System.Web.UI.UserControl
             lblSTT.Text = (e.Item.ItemIndex + 1).ToString();
         }
     }
-    protected void cmbLoaiTien_Load(object sender, EventArgs e)
-    {
-        if (!IsPostBack)
-        {
-            cmbLoaiTien.SelectedIndex = 0;
-        }
-    }
     protected void cmbKhachHang_ItemsRequested(object sender, RadComboBoxItemsRequestedEventArgs e)
     {
         KHACHHANGDataSource.SelectCommand = LoadFilteredManually(e.Text);
@@ -247,7 +240,7 @@ public partial class module_CHITIETCUOC : System.Web.UI.UserControl
         {
             if (cmbMaBangCuoc.Items.Count != 0)
             {
-                cmbMaBangCuoc.SelectedIndex = 0;
+                //cmbMaBangCuoc.SelectedIndex = 0;
             }
         }        
     }
@@ -276,5 +269,9 @@ public partial class module_CHITIETCUOC : System.Web.UI.UserControl
                 }
             }
         }
+    }
+    protected void cmbLoaiTien_PreRender(object sender, EventArgs e)
+    {
+        
     }
 }
