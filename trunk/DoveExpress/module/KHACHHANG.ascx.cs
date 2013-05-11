@@ -161,8 +161,10 @@ public partial class module_KHACHHANG : System.Web.UI.UserControl
             RadComboBox cmbQuanHuyen = (RadComboBox)editItem.FindControl("cmbQuanHuyen");
             cmbQuocGia.DataBind();
             cmbQuocGia.SelectedValue = hfQuocGia.Value;
+            TINHTHANHDataSource.SelectCommand = LoadFilteredTinhThanhManually(hfQuocGia.Value);
             cmbTinhThanh.DataBind();
             cmbTinhThanh.SelectedValue = hfTinhThanh.Value;
+            QUANHUYENDataSource.SelectCommand = LoadFilteredQuanHuyenManually(hfTinhThanh.Value);
             cmbQuanHuyen.DataBind();
             cmbQuanHuyen.SelectedValue = hfQuanHuyen.Value;
         }
