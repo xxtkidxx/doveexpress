@@ -1,28 +1,10 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="CHITIETCUOC.ascx.cs" Inherits="module_CHITIETCUOC" %>
 <telerik:RadScriptBlock ID="RadScriptBlockCHITIETCUOC" runat="server">   
-<script type="text/javascript">
-    var cmbkhachhang;
-    function OnClientLoadKhachHang(sender) {
-        cmbkhachhang = sender;
-    }
-    function cmbNhomKhachHangClientSelectedIndexChangedHandler(sender, eventArgs) {
-        cmbkhachhang.requestItems(eventArgs.get_item().get_value(), false);        
-    }
-    function ItemsLoadedKhachHang(combo, eventArqs) {
-        if (combo.get_items().get_count() > 0) {
-            combo.trackChanges();
-            combo.get_items().getItem(0).select();
-            combo.updateClientState();
-            combo.commitChanges();
-        } else {
-            combo.set_text("");
-        }
-        $find("<%=RadGridCHITIETCUOC.ClientID %>").get_masterTableView().rebind();
-    }
+<script type="text/javascript"> 
     function cmbMaBangCuocClientSelectedIndexChangedHandler(sender, eventArgs) {
         $find("<%=RadGridCHITIETCUOC.ClientID %>").get_masterTableView().rebind();
     }
-    function cmbKhachHangClientSelectedIndexChangedHandler(sender, eventArgs) {
+    function cmbNhomKhachHangClientSelectedIndexChangedHandler(sender, eventArgs) {
         $find("<%=RadGridCHITIETCUOC.ClientID %>").get_masterTableView().rebind();
     }
     function cmbSanPhamClientSelectedIndexChangedHandler(sender, eventArgs) {
@@ -47,13 +29,6 @@ Nhóm khách hàng:&nbsp;
 DataTextField="C_NAME" DataValueField="PK_ID" DataSourceID="NHOMKHACHHANGDataSource"
 ShowToggleImage="True" EmptyMessage="Chọn nhóm"
 onclientselectedindexchanged="cmbNhomKhachHangClientSelectedIndexChangedHandler" onprerender="cmbNhomKhachHang_PreRender">
-</telerik:RadComboBox>
-Khách hàng:&nbsp; 
-<telerik:RadComboBox ID="cmbKhachHang" runat="server" 
-DataTextField="C_NAME" DataValueField="PK_ID" DataSourceID="KHACHHANGDataSource"
-ShowToggleImage="True" EmptyMessage="Chọn khách hàng" 
-onclientitemsrequested="ItemsLoadedKhachHang" onclientload="OnClientLoadKhachHang" 
-onitemsrequested="cmbKhachHang_ItemsRequested" onclientselectedindexchanged="cmbKhachHangClientSelectedIndexChangedHandler">
 </telerik:RadComboBox>
 Sản phẩm:&nbsp; 
 <telerik:RadComboBox ID="cmbSanPham" runat="server"
@@ -139,7 +114,18 @@ onprerender="cmbLoaiTien_PreRender">
                             <Columns>
                              <telerik:GridEditCommandColumn ButtonType="ImageButton" UniqueName="EditCommandColumn" HeaderStyle-Width="80px" EditImageUrl="~/images/grid/Edit.gif"></telerik:GridEditCommandColumn>
                             <telerik:GridBoundColumn UniqueName="C_KHOILUONG" HeaderText="Khối lượng" DataField="C_KHOILUONG" AllowFiltering="false"></telerik:GridBoundColumn>
-                            <telerik:GridBoundColumn UniqueName="C_CUOCPHI" HeaderText="Cước phí" DataField="C_CUOCPHI" AllowFiltering="false"></telerik:GridBoundColumn>       
+                            <telerik:GridTemplateColumn DataField="C_CUOCPHI" DataType="System.Decimal" HeaderText="Cước phí" AllowFiltering="false" UniqueName="C_CUOCPHI">
+                                <ItemTemplate>
+                                 <telerik:RadNumericTextBox runat="server"  CssClass ="csstextNum" ID="txtC_CUOCPHI" Width="100px" Enabled = "false"  DbValue='<%# Eval("C_CUOCPHI") %>'>
+                                    <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="1"/>
+                                  </telerik:RadNumericTextBox>
+                                </ItemTemplate>
+                                <EditItemTemplate>
+                                        <telerik:RadNumericTextBox runat="server" ID="txtC_CUOCPHI" DbValue='<%# Bind("C_CUOCPHI") %>'>
+                                         <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="1"/>
+                                        </telerik:RadNumericTextBox>
+                                </EditItemTemplate>
+                            </telerik:GridTemplateColumn> 
                             </Columns>
      </telerik:GridTableView>
  </DetailTables>
@@ -157,13 +143,13 @@ onprerender="cmbLoaiTien_PreRender">
 <asp:SqlDataSource ID="CHITIETCUOCDataSource" runat="server" 
     ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>" 
     DeleteCommand="DELETE FROM [DMCHITIETCUOC] WHERE [PK_ID] = @PK_ID" 
-    InsertCommand="INSERT INTO [DMCHITIETCUOC] ([FK_MABANGCUOC], [FK_MAKHACHHANG], [FK_MASANPHAM], [FK_MAVUNG], [C_LOAITIEN], [C_KHOILUONG], [C_CUOCPHI]) VALUES (@FK_MABANGCUOC, @FK_MAKHACHHANG, @FK_MASANPHAM, @FK_MAVUNG, @C_LOAITIEN, @C_KHOILUONG, @C_CUOCPHI)" 
-    SelectCommand="SELECT [PK_ID], [FK_MABANGCUOC], [FK_MAKHACHHANG], [FK_MASANPHAM], [FK_MAVUNG], [C_LOAITIEN], [C_KHOILUONG], [C_CUOCPHI] FROM [DMCHITIETCUOC] WHERE [FK_MAVUNG] =@FK_MAVUNG AND [FK_MABANGCUOC] = @FK_MABANGCUOC AND [FK_MAKHACHHANG] = @FK_MAKHACHHANG AND [FK_MASANPHAM] = @FK_MASANPHAM AND [C_LOAITIEN] = @C_LOAITIEN" 
+    InsertCommand="INSERT INTO [DMCHITIETCUOC] ([FK_MABANGCUOC], [FK_NHOMKHACHHANG], [FK_MASANPHAM], [FK_MAVUNG], [C_LOAITIEN], [C_KHOILUONG], [C_CUOCPHI]) VALUES (@FK_MABANGCUOC, @FK_NHOMKHACHHANG, @FK_MASANPHAM, @FK_MAVUNG, @C_LOAITIEN, @C_KHOILUONG, @C_CUOCPHI)" 
+    SelectCommand="SELECT [PK_ID], [FK_MABANGCUOC], [FK_NHOMKHACHHANG], [FK_MASANPHAM], [FK_MAVUNG], [C_LOAITIEN], [C_KHOILUONG], [C_CUOCPHI] FROM [DMCHITIETCUOC] WHERE [FK_MAVUNG] =@FK_MAVUNG AND [FK_MABANGCUOC] = @FK_MABANGCUOC AND [FK_NHOMKHACHHANG] = @FK_NHOMKHACHHANG AND [FK_MASANPHAM] = @FK_MASANPHAM AND [C_LOAITIEN] = @C_LOAITIEN" 
     UpdateCommand="UPDATE [DMCHITIETCUOC] SET [C_KHOILUONG] = @C_KHOILUONG, [C_CUOCPHI] = @C_CUOCPHI WHERE [PK_ID] = @PK_ID">
     <SelectParameters>
         <asp:Parameter Name="FK_MAVUNG" Type="Int32" />
         <asp:ControlParameter ControlID="cmbMaBangCuoc" DefaultValue="0" Name="FK_MABANGCUOC" PropertyName="SelectedValue" />
-        <asp:ControlParameter ControlID="cmbKhachHang" DefaultValue="0" Name="FK_MAKHACHHANG" PropertyName="SelectedValue" />
+        <asp:ControlParameter ControlID="cmbNhomKhachHang" DefaultValue="0" Name="FK_NHOMKHACHHANG" PropertyName="SelectedValue" />
         <asp:ControlParameter ControlID="cmbSanPham" DefaultValue="0" Name="FK_MASANPHAM" PropertyName="SelectedValue" />
         <asp:ControlParameter ControlID="cmbLoaiTien" DefaultValue="0" Name="C_LOAITIEN" PropertyName="SelectedValue" />
     </SelectParameters>
@@ -172,7 +158,7 @@ onprerender="cmbLoaiTien_PreRender">
     </DeleteParameters>
     <InsertParameters>
         <asp:ControlParameter ControlID="cmbMaBangCuoc" DefaultValue="0" Name="FK_MABANGCUOC" PropertyName="SelectedValue" />
-        <asp:ControlParameter ControlID="cmbKhachHang" DefaultValue="0" Name="FK_MAKHACHHANG" PropertyName="SelectedValue" />
+        <asp:ControlParameter ControlID="cmbNhomKhachHang" DefaultValue="0" Name="FK_NHOMKHACHHANG" PropertyName="SelectedValue" />
         <asp:ControlParameter ControlID="cmbSanPham" DefaultValue="0" Name="FK_MASANPHAM" PropertyName="SelectedValue" />
         <asp:Parameter Name="FK_MAVUNG" Type="Int32" />
          <asp:ControlParameter ControlID="cmbLoaiTien" DefaultValue="0" Name="C_LOAITIEN" PropertyName="SelectedValue" />
@@ -212,6 +198,4 @@ onprerender="cmbLoaiTien_PreRender">
 </asp:SqlDataSource>
  <asp:SqlDataSource ID="NHOMKHACHHANGDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
  SelectCommand="SELECT DMNHOMKHACHHANG.* FROM DMNHOMKHACHHANG WHERE C_TYPE = 0" >
-</asp:SqlDataSource>
-<asp:SqlDataSource ID="KHACHHANGDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>">
 </asp:SqlDataSource>

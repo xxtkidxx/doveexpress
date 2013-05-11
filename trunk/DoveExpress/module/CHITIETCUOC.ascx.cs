@@ -216,24 +216,6 @@ public partial class module_CHITIETCUOC : System.Web.UI.UserControl
             lblSTT.Text = (e.Item.ItemIndex + 1).ToString();
         }
     }
-    protected void cmbKhachHang_ItemsRequested(object sender, RadComboBoxItemsRequestedEventArgs e)
-    {
-        KHACHHANGDataSource.SelectCommand = LoadFilteredManually(e.Text);
-        cmbKhachHang.DataBind();
-    }
-    protected string LoadFilteredManually(string ID)
-    {
-        string SelectSQL = "";
-        if (ID != "")
-        {
-            SelectSQL = "SELECT * FROM DMKHACHHANG WHERE FK_NHOMKHACHHANG = " + ID + "order by C_NAME";
-        }
-        else
-        {
-            SelectSQL = "SELECT * FROM DMKHACHHANG order by C_NAME";
-        }
-        return SelectSQL;
-    }
     protected void cmbMaBangCuoc_PreRender(object sender, EventArgs e)
     {
         if (!IsPostBack)
@@ -261,17 +243,14 @@ public partial class module_CHITIETCUOC : System.Web.UI.UserControl
             if (cmbNhomKhachHang.Items.Count != 0)
             {
                 cmbNhomKhachHang.SelectedIndex = 0;
-                KHACHHANGDataSource.SelectCommand = LoadFilteredManually(cmbNhomKhachHang.SelectedValue);
-                cmbKhachHang.DataBind();
-                if (cmbKhachHang.Items.Count != 0)
-                {
-                    cmbKhachHang.SelectedIndex = 0;
-                }
             }
         }
     }
     protected void cmbLoaiTien_PreRender(object sender, EventArgs e)
     {
-        
+        if (cmbLoaiTien.Items.Count != 0)
+        {
+            cmbLoaiTien.SelectedIndex = 0;
+        }
     }
 }
