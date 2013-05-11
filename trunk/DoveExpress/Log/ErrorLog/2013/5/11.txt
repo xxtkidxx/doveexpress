@@ -1,0 +1,355 @@
+Thời gian lỗi : 2013-05-11 09:39:52 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=KHACHHANG. 
+Nội dung lỗi:Column 'MaBo' does not belong to table .
+__________________________
+Thời gian lỗi : 2013-05-11 09:39:53 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=KHACHHANG. 
+Nội dung lỗi:Column 'MaBo' does not belong to table .
+__________________________
+Thời gian lỗi : 2013-05-11 09:39:55 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=KHACHHANG. 
+Nội dung lỗi:Column 'MaBo' does not belong to table .
+__________________________
+Thời gian lỗi : 2013-05-11 09:39:58 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=KHACHHANG. 
+Nội dung lỗi:Column 'MaBo' does not belong to table .
+__________________________
+Thời gian lỗi : 2013-05-11 09:39:59 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=KHACHHANG. 
+Nội dung lỗi:Column 'MaBo' does not belong to table .
+__________________________
+Thời gian lỗi : 2013-05-11 09:40:31 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=KHACHHANG. 
+Nội dung lỗi:Column 'MaBo' does not belong to table .
+__________________________
+Thời gian lỗi : 2013-05-11 11:26:11 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:The server tag is not well formed.
+__________________________
+Thời gian lỗi : 2013-05-11 11:26:33 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\module\CHITIETCUOC.ascx(48): error CS1061: 'ASP.module_chitietcuoc_ascx' does not contain a definition for 'lblCap_PreRender' and no extension method 'lblCap_PreRender' accepting a first argument of type 'ASP.module_chitietcuoc_ascx' could be found (are you missing a using directive or an assembly reference?)
+__________________________
+Thời gian lỗi : 2013-05-11 11:39:36 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/Grid/Edit.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-05-11 11:39:36 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/img_save.jpg. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\5\11.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-05-11 11:39:36 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/Grid/Cancel.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-05-11 11:39:36 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/Grid/AddRecord.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\5\11.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-05-11 11:39:36 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/Grid/Delete.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-05-11 11:39:36 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/Grid/Refresh.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-05-11 11:39:36 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/img_close.jpg. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-05-11 11:39:36 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/Grid/pdf.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-05-11 11:39:36 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/Grid/word.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-05-11 11:39:36 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/Grid/excel.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-05-11 11:39:36 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/Grid/csv.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-05-11 12:43:10 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:The server tag is not well formed.
+__________________________
+Thời gian lỗi : 2013-05-11 13:50:03 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/Grid/Update.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-05-11 13:50:03 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/Grid/Insert.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\5\11.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-05-11 13:50:08 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\module\CHITIETCUOC.ascx.cs(18): error CS0103: The name 'RadGridCHITIETCUOC' does not exist in the current context
+__________________________
+Thời gian lỗi : 2013-05-11 13:51:10 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\module\CHITIETCUOC.ascx(66): error CS1061: 'ASP.module_chitietcuoc_ascx' does not contain a definition for 'RadGridCHITIETCUOC_ItemDeleted' and no extension method 'RadGridCHITIETCUOC_ItemDeleted' accepting a first argument of type 'ASP.module_chitietcuoc_ascx' could be found (are you missing a using directive or an assembly reference?)
+__________________________
+Thời gian lỗi : 2013-05-11 13:51:48 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\module\CHITIETCUOC.ascx(66): error CS1061: 'ASP.module_chitietcuoc_ascx' does not contain a definition for 'RadGridCHITIETCUOC_ItemInserted' and no extension method 'RadGridCHITIETCUOC_ItemInserted' accepting a first argument of type 'ASP.module_chitietcuoc_ascx' could be found (are you missing a using directive or an assembly reference?)
+__________________________
+Thời gian lỗi : 2013-05-11 13:51:51 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\module\CHITIETCUOC.ascx(66): error CS1061: 'ASP.module_chitietcuoc_ascx' does not contain a definition for 'RadGridCHITIETCUOC_ItemInserted' and no extension method 'RadGridCHITIETCUOC_ItemInserted' accepting a first argument of type 'ASP.module_chitietcuoc_ascx' could be found (are you missing a using directive or an assembly reference?)
+__________________________
+Thời gian lỗi : 2013-05-11 13:58:19 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:DataBinding: 'Telerik.Web.UI.GridInsertionObject' does not contain a property with the name 'txtC_KHOILUONG'.
+__________________________
+Thời gian lỗi : 2013-05-11 13:58:20 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:DataBinding: 'Telerik.Web.UI.GridInsertionObject' does not contain a property with the name 'txtC_KHOILUONG'.
+__________________________
+Thời gian lỗi : 2013-05-11 13:58:21 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:DataBinding: 'Telerik.Web.UI.GridInsertionObject' does not contain a property with the name 'txtC_KHOILUONG'.
+__________________________
+Thời gian lỗi : 2013-05-11 13:58:21 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:DataBinding: 'Telerik.Web.UI.GridInsertionObject' does not contain a property with the name 'txtC_KHOILUONG'.
+__________________________
+Thời gian lỗi : 2013-05-11 13:58:36 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:DataBinding: 'Telerik.Web.UI.GridInsertionObject' does not contain a property with the name 'txtC_KHOILUONG'.
+__________________________
+Thời gian lỗi : 2013-05-11 14:56:11 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/Grid/Edit.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-05-11 14:56:11 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/Grid/Update.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-05-11 14:56:12 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/Grid/Cancel.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-05-11 14:56:12 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/Grid/AddRecord.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\5\11.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-05-11 14:56:12 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/Grid/Insert.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-05-11 14:56:12 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/Grid/Delete.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\5\11.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-05-11 14:56:12 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/Grid/Refresh.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-05-11 14:56:12 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/Grid/pdf.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\5\11.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-05-11 14:56:12 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/Grid/word.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-05-11 14:56:12 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/Grid/excel.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-05-11 14:56:12 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/Grid/csv.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\5\11.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-05-11 14:56:12 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/img_save.jpg. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-05-11 14:56:12 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/img_Close.jpg. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\5\11.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-05-11 15:28:00 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/Grid/Delete_ingrid.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-05-11 15:52:36 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\module\CHITIETCUOC.ascx(137): error CS0103: The name 'Office' does not exist in the current context
+__________________________
+Thời gian lỗi : 2013-05-11 15:54:34 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-05-11 15:54:35 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-05-11 15:54:35 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-05-11 15:54:36 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-05-11 15:54:36 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-05-11 15:54:37 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-05-11 15:54:38 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-05-11 15:55:54 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-05-11 17:27:16 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:The Controls collection cannot be modified because the control contains code blocks (i.e. <% ... %>).
+__________________________
+Thời gian lỗi : 2013-05-11 17:27:58 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:The Controls collection cannot be modified because the control contains code blocks (i.e. <% ... %>).
+__________________________
+Thời gian lỗi : 2013-05-11 17:39:53 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Must declare the scalar variable "@FK_MABANGCUOC".
+__________________________
+Thời gian lỗi : 2013-05-11 17:39:55 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Must declare the scalar variable "@FK_MABANGCUOC".
+__________________________
+Thời gian lỗi : 2013-05-11 17:39:56 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Must declare the scalar variable "@FK_MABANGCUOC".
+__________________________
+Thời gian lỗi : 2013-05-11 17:39:57 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Must declare the scalar variable "@FK_MABANGCUOC".
+__________________________
+Thời gian lỗi : 2013-05-11 17:40:02 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Must declare the scalar variable "@FK_MABANGCUOC".
+__________________________
+Thời gian lỗi : 2013-05-11 17:40:02 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Must declare the scalar variable "@FK_MABANGCUOC".
+__________________________
+Thời gian lỗi : 2013-05-11 17:40:03 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Must declare the scalar variable "@FK_MABANGCUOC".
+__________________________
+Thời gian lỗi : 2013-05-11 17:40:03 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Must declare the scalar variable "@FK_MABANGCUOC".
+__________________________
+Thời gian lỗi : 2013-05-11 17:40:04 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Must declare the scalar variable "@FK_MABANGCUOC".
+__________________________
+Thời gian lỗi : 2013-05-11 17:40:11 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Must declare the scalar variable "@FK_MABANGCUOC".
+__________________________
+Thời gian lỗi : 2013-05-11 17:40:21 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Must declare the scalar variable "@FK_MABANGCUOC".
+__________________________
+Thời gian lỗi : 2013-05-11 17:40:22 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Must declare the scalar variable "@FK_MABANGCUOC".
+__________________________
+Thời gian lỗi : 2013-05-11 17:40:22 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Must declare the scalar variable "@FK_MABANGCUOC".
+__________________________
+Thời gian lỗi : 2013-05-11 17:40:50 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Must declare the scalar variable "@FK_MABANGCUOC".
+__________________________
+Thời gian lỗi : 2013-05-11 19:12:14 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:RadPane must be placed inside a RadSplitter control.
+__________________________
