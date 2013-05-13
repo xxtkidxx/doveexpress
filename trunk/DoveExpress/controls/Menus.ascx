@@ -88,7 +88,7 @@
             </telerik:RadMenuItem> 
             <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=KHACHHANG" Text="Khách hàng" Value="KHACHHANG">
             </telerik:RadMenuItem>
-            <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="" Text="Đối tác" Value="DOITAC">
+            <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=DOITAC" Text="Đối tác" Value="DOITAC">
             </telerik:RadMenuItem>
         </Items>           
     </telerik:RadMenuItem>
