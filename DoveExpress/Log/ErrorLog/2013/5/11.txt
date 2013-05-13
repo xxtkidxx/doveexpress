@@ -353,3 +353,43 @@ Thời gian lỗi : 2013-05-11 19:12:14 PM
 Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
 Nội dung lỗi:RadPane must be placed inside a RadSplitter control.
 __________________________
+Thời gian lỗi : 2013-05-11 20:18:04 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\module\CHITIETCUOC.ascx.cs(246): error CS0103: The name 'KHACHHANGDataSource' does not exist in the current context
+__________________________
+Thời gian lỗi : 2013-05-11 20:37:27 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'C_TONGTIEN'.
+__________________________
+Thời gian lỗi : 2013-05-11 20:37:32 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'C_TONGTIEN'.
+__________________________
+Thời gian lỗi : 2013-05-11 20:37:34 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'C_TONGTIEN'.
+__________________________
+Thời gian lỗi : 2013-05-11 20:37:35 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'C_TONGTIEN'.
+__________________________
+Thời gian lỗi : 2013-05-11 20:37:36 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'C_TONGTIEN'.
+__________________________
+Thời gian lỗi : 2013-05-11 20:38:08 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'C_TONGTIEN'.
+__________________________
+Thời gian lỗi : 2013-05-11 20:38:09 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'C_TONGTIEN'.
+__________________________

@@ -145,6 +145,14 @@ public partial class Main : System.Web.UI.MasterPage
                         RadAjaxManager.AjaxSettings.Add(_AjaxSetting);
                         control = LoadControl("module/KHACHHANG.ascx");
                         break;
+                     case "doitac":
+                        _AjaxSetting.AjaxControlID = "RadGridDOITAC";
+                        _AjaxUpdatedControl.ControlID = "RadGridDOITAC";
+                        _AjaxUpdatedControl.LoadingPanelID = "RadAjaxLoadingPanelDOITAC";
+                        _AjaxSetting.UpdatedControls.Add(_AjaxUpdatedControl);
+                        RadAjaxManager.AjaxSettings.Add(_AjaxSetting);
+                        control = LoadControl("module/DOITAC.ascx");
+                        break;
 
 
 
