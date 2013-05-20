@@ -33,9 +33,6 @@
         }
     }
   </script>
-<script type="text/javascript">
-      
-</script>
 </telerik:RadCodeBlock>
 <telerik:RadAjaxLoadingPanel Skin="Vista" ID="RadAjaxLoadingPanelUserAdmin" runat="server" />
 <telerik:RadGrid ID="RadGridUserAdmin" runat="server" Skin="Vista" 
