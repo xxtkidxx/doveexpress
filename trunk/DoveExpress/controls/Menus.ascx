@@ -92,7 +92,7 @@
             </telerik:RadMenuItem>
         </Items>           
     </telerik:RadMenuItem>
-    <telerik:RadMenuItem runat="server" Font-Size="Small" Text="Nhận gửi" Value="NHANGUI">                 
+    <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=NHANGUI" Text="Nhận gửi" Value="NHANGUI">                 
     </telerik:RadMenuItem>
     <telerik:RadMenuItem runat="server" Font-Size="Small" Text="Báo cáo" Value="BAOCAO">   
      <Items>
