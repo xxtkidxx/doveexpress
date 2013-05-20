@@ -61,76 +61,76 @@
                  <HeaderStyle HorizontalAlign ="Center" Width ="30px" />
                  <ItemStyle HorizontalAlign ="Center" Width ="30px" />
                </telerik:GridTemplateColumn>
-                <telerik:GridBoundColumn UniqueName="C_NGAY" HeaderText="Ngày" DataField="C_NGAY" 
+                <telerik:GridBoundColumn UniqueName="C_NGAY" HeaderText="Ngày" DataField="C_NGAY" HeaderStyle-Width="50px"
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
                 </telerik:GridBoundColumn>
-                <telerik:GridBoundColumn UniqueName="C_BILL" HeaderText="Số Bill" DataField="C_BILL" 
+                <telerik:GridBoundColumn UniqueName="C_BILL" HeaderText="Số Bill" DataField="C_BILL" HeaderStyle-Width="50px"
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
                 </telerik:GridBoundColumn>
-                <telerik:GridBoundColumn UniqueName="C_MAKH" HeaderText="Mã khách hàng" DataField="C_MAKH" 
+                <telerik:GridBoundColumn UniqueName="C_MAKH" HeaderText="Mã khách hàng" DataField="C_MAKH" HeaderStyle-Width="100px"
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
                 </telerik:GridBoundColumn>
-                <telerik:GridBoundColumn UniqueName="C_TENKH" HeaderText="Tên khách hàng" DataField="C_TENKH" 
+                <telerik:GridBoundColumn UniqueName="C_TENKH" HeaderText="Tên khách hàng" DataField="C_TENKH" HeaderStyle-Width="110px"
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
                 </telerik:GridBoundColumn>
-                <telerik:GridBoundColumn UniqueName="C_NGUOINHAN" HeaderText="Người nhận" DataField="C_NGUOINHAN" 
+                <telerik:GridBoundColumn UniqueName="C_NGUOINHAN" HeaderText="Người nhận" DataField="C_NGUOINHAN" HeaderStyle-Width="90px"
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
                 </telerik:GridBoundColumn>
-                <telerik:GridBoundColumn UniqueName="C_DIACHINHAN" HeaderText="Địa chỉ nhận" DataField="C_DIACHINHAN" 
+                <telerik:GridBoundColumn UniqueName="C_DIACHINHAN" HeaderText="Địa chỉ nhận" DataField="C_DIACHINHAN" HeaderStyle-Width="130px"
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
                 </telerik:GridBoundColumn>
-                 <telerik:GridBoundColumn UniqueName="TINHTHANHNAME" HeaderText="Tỉnh thành đến" DataField="TINHTHANHNAME" 
+                 <telerik:GridBoundColumn UniqueName="TINHTHANHNAME" HeaderText="Tỉnh thành đến" DataField="TINHTHANHNAME" HeaderStyle-Width="130px"
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
                 </telerik:GridBoundColumn>
-                <telerik:GridBoundColumn UniqueName="QUANHUYENNAME" HeaderText="Quận huyện đến" DataField="QUANHUYENNAME" 
+                <telerik:GridBoundColumn UniqueName="QUANHUYENNAME" HeaderText="Quận huyện đến" DataField="QUANHUYENNAME" HeaderStyle-Width="130px"
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
                 </telerik:GridBoundColumn>
-                <telerik:GridBoundColumn UniqueName="C_NOIDUNG" HeaderText="Nội dung" DataField="C_NOIDUNG" 
+                <telerik:GridBoundColumn UniqueName="C_NOIDUNG" HeaderText="Nội dung" DataField="C_NOIDUNG" HeaderStyle-Width="130px"
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
                 </telerik:GridBoundColumn>
-                <telerik:GridBoundColumn UniqueName="C_KHOILUONG" HeaderText="Khối lượng" DataField="C_KHOILUONG" 
+                <telerik:GridBoundColumn UniqueName="C_KHOILUONG" HeaderText="Khối lượng" DataField="C_KHOILUONG" HeaderStyle-Width="130px"
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
                 </telerik:GridBoundColumn>
-                <telerik:GridBoundColumn UniqueName="BANGCUOCNAME" HeaderText="Dịch vụ" DataField="BANGCUOCNAME" 
+                <telerik:GridBoundColumn UniqueName="BANGCUOCNAME" HeaderText="Dịch vụ" DataField="BANGCUOCNAME" HeaderStyle-Width="130px"
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
                 </telerik:GridBoundColumn>
-                <telerik:GridBoundColumn UniqueName="C_GIACUOC" HeaderText="Cước chính" DataField="C_GIACUOC" 
+                <telerik:GridBoundColumn UniqueName="C_GIACUOC" HeaderText="Cước chính" DataField="C_GIACUOC" HeaderStyle-Width="130px"
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
                 </telerik:GridBoundColumn>
-                <telerik:GridBoundColumn UniqueName="C_PPXD" HeaderText="PPXD" DataField="C_PPXD" 
+                <telerik:GridBoundColumn UniqueName="C_PPXD" HeaderText="PPXD" DataField="C_PPXD" HeaderStyle-Width="130px"
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
                 </telerik:GridBoundColumn>
-                <telerik:GridBoundColumn UniqueName="C_PHUTROI" HeaderText="DV phụ trội" DataField="C_PHUTROI" 
+                <telerik:GridBoundColumn UniqueName="C_PHUTROI" HeaderText="DV phụ trội" DataField="C_PHUTROI" HeaderStyle-Width="130px"
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
                 </telerik:GridBoundColumn>
-                <telerik:GridBoundColumn UniqueName="C_HINHTHUCTT" HeaderText="Hình thức TT" DataField="C_HINHTHUCTT" 
+                <telerik:GridBoundColumn UniqueName="C_HINHTHUCTT" HeaderText="Hình thức TT" DataField="C_HINHTHUCTT" HeaderStyle-Width="130px"
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
                 </telerik:GridBoundColumn>
-                <telerik:GridBoundColumn UniqueName="C_TINHTRANGTT" HeaderText="Tình trạng TT" DataField="C_TINHTRANGTT" 
+                <telerik:GridBoundColumn UniqueName="C_TINHTRANGTT" HeaderText="Tình trạng TT" DataField="C_TINHTRANGTT" HeaderStyle-Width="130px"
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
                 </telerik:GridBoundColumn>
-                <telerik:GridBoundColumn UniqueName="C_TIENHANG" HeaderText="Tiền hàng" DataField="C_TIENHANG" 
+                <telerik:GridBoundColumn UniqueName="C_TIENHANG" HeaderText="Tiền hàng" DataField="C_TIENHANG" HeaderStyle-Width="130px"
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
                 </telerik:GridBoundColumn>
-                <telerik:GridBoundColumn UniqueName="NHANVIENNHANNAME" HeaderText="Nhân viên nhận" DataField="NHANVIENNHANNAME" 
+                <telerik:GridBoundColumn UniqueName="NHANVIENNHANNAME" HeaderText="Nhân viên nhận" DataField="NHANVIENNHANNAME" HeaderStyle-Width="130px"
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
                 </telerik:GridBoundColumn>
-                <telerik:GridBoundColumn UniqueName="DOITACNAME" HeaderText="Đối tác" DataField="DOITACNAME" 
+                <telerik:GridBoundColumn UniqueName="DOITACNAME" HeaderText="Đối tác" DataField="DOITACNAME" HeaderStyle-Width="130px"
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
                 </telerik:GridBoundColumn>
-                <telerik:GridBoundColumn UniqueName="C_GIADOITAC" HeaderText="Giá đối tác" DataField="C_GIADOITAC" 
+                <telerik:GridBoundColumn UniqueName="C_GIADOITAC" HeaderText="Giá đối tác" DataField="C_GIADOITAC" HeaderStyle-Width="130px"
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
                 </telerik:GridBoundColumn>
-                <telerik:GridBoundColumn UniqueName="NHANVIENPHATNAME" HeaderText="Nhân viên phát" DataField="NHANVIENPHATNAME" 
+                <telerik:GridBoundColumn UniqueName="NHANVIENPHATNAME" HeaderText="Nhân viên phát" DataField="NHANVIENPHATNAME" HeaderStyle-Width="130px"
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
                 </telerik:GridBoundColumn>
-                <telerik:GridBoundColumn UniqueName="C_NGAYGIOPHAT" HeaderText="Ngày giờ phát" DataField="C_NGAYGIOPHAT" 
+                <telerik:GridBoundColumn UniqueName="C_NGAYGIOPHAT" HeaderText="Ngày giờ phát" DataField="C_NGAYGIOPHAT" HeaderStyle-Width="130px"
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
                 </telerik:GridBoundColumn>
-                <telerik:GridBoundColumn UniqueName="C_NGUOIKYNHAN" HeaderText="Người ký" DataField="C_NGUOIKYNHAN" 
+                <telerik:GridBoundColumn UniqueName="C_NGUOIKYNHAN" HeaderText="Người ký" DataField="C_NGUOIKYNHAN" HeaderStyle-Width="130px"
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
                 </telerik:GridBoundColumn>
-                <telerik:GridBoundColumn UniqueName="C_BOPHAN" HeaderText="Bộ phận" DataField="C_BOPHAN" 
+                <telerik:GridBoundColumn UniqueName="C_BOPHAN" HeaderText="Bộ phận" DataField="C_BOPHAN" HeaderStyle-Width="130px"
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
                 </telerik:GridBoundColumn>
         </Columns>
@@ -178,13 +178,70 @@
             <Selecting AllowRowSelect="True" EnableDragToSelectRows="True" />
             <ClientEvents OnPopUpShowing="PopUpShowing" />
             <ClientEvents OnRowDblClick="RowDblClick" />
-            <Scrolling AllowScroll="True" UseStaticHeaders="True" SaveScrollPosition="True" FrozenColumnsCount="2" ScrollHeight="450px" />
+            <Scrolling AllowScroll="True" UseStaticHeaders="True" SaveScrollPosition="True" FrozenColumnsCount="3" ScrollHeight="450px" />
         </ClientSettings>
         <SortingSettings SortedAscToolTip="Sắp xếp tăng dần" 
             SortedDescToolTip="Sắp xếp giảm dần" SortToolTip="Click để sắp xếp" />
         <StatusBarSettings LoadingText="Đang tải..." ReadyText="Sẵn sàng" />
 </telerik:RadGrid>
-<asp:SqlDataSource ID="NHANGUIDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>">
+<asp:SqlDataSource ID="NHANGUIDataSource" runat="server" 
+    ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>" 
+    DeleteCommand="DELETE FROM [NHANGUI] WHERE [PL_ID] = @PL_ID" 
+    InsertCommand="INSERT INTO [NHANGUI] ([C_NGAY], [C_MAKH], [C_BILL], [C_TENKH], [C_NGUOINHAN], [C_DIACHINHAN], [FK_QUANHUYEN], [C_NOIDUNG], [FK_MABANGCUOC], [C_KHOILUONG], [C_GIACUOC], [C_PHUTROI], [C_HINHTHUCTT], [C_TINHTRANGTT], [C_TIENHANG], [FK_NHANVIENNHAN], [FK_DOITAC], [C_GIADOITAC], [FK_NHANVIENPHAT], [C_NGAYGIOPHAT], [C_NGUOIKYNHAN], [C_BOPHAN]) VALUES (@C_NGAY, @C_MAKH, @C_BILL, @C_TENKH, @C_NGUOINHAN, @C_DIACHINHAN, @FK_QUANHUYEN, @C_NOIDUNG, @FK_MABANGCUOC, @C_KHOILUONG, @C_GIACUOC, @C_PHUTROI, @C_HINHTHUCTT, @C_TINHTRANGTT, @C_TIENHANG, @FK_NHANVIENNHAN, @FK_DOITAC, @C_GIADOITAC, @FK_NHANVIENPHAT, @C_NGAYGIOPHAT, @C_NGUOIKYNHAN, @C_BOPHAN)" 
+    SelectCommand="SELECT [PL_ID], [C_NGAY], [C_MAKH], [C_BILL], [C_TENKH], [C_NGUOINHAN], [C_DIACHINHAN], [FK_QUANHUYEN], [C_NOIDUNG], [FK_MABANGCUOC], [C_KHOILUONG], [C_GIACUOC], [C_PHUTROI], [C_HINHTHUCTT], [C_TINHTRANGTT], [C_TIENHANG], [FK_NHANVIENNHAN], [FK_DOITAC], [C_GIADOITAC], [FK_NHANVIENPHAT], [C_NGAYGIOPHAT], [C_NGUOIKYNHAN], [C_BOPHAN] FROM [NHANGUI]" 
+    UpdateCommand="UPDATE [NHANGUI] SET [C_NGAY] = @C_NGAY, [C_MAKH] = @C_MAKH, [C_BILL] = @C_BILL, [C_TENKH] = @C_TENKH, [C_NGUOINHAN] = @C_NGUOINHAN, [C_DIACHINHAN] = @C_DIACHINHAN, [FK_QUANHUYEN] = @FK_QUANHUYEN, [C_NOIDUNG] = @C_NOIDUNG, [FK_MABANGCUOC] = @FK_MABANGCUOC, [C_KHOILUONG] = @C_KHOILUONG, [C_GIACUOC] = @C_GIACUOC, [C_PHUTROI] = @C_PHUTROI, [C_HINHTHUCTT] = @C_HINHTHUCTT, [C_TINHTRANGTT] = @C_TINHTRANGTT, [C_TIENHANG] = @C_TIENHANG, [FK_NHANVIENNHAN] = @FK_NHANVIENNHAN, [FK_DOITAC] = @FK_DOITAC, [C_GIADOITAC] = @C_GIADOITAC, [FK_NHANVIENPHAT] = @FK_NHANVIENPHAT, [C_NGAYGIOPHAT] = @C_NGAYGIOPHAT, [C_NGUOIKYNHAN] = @C_NGUOIKYNHAN, [C_BOPHAN] = @C_BOPHAN WHERE [PL_ID] = @PL_ID">
+    <DeleteParameters>
+        <asp:Parameter Name="PL_ID" Type="Int32" />
+    </DeleteParameters>
+    <InsertParameters>
+        <asp:Parameter Name="C_NGAY" Type="DateTime" />
+        <asp:Parameter Name="C_MAKH" Type="String" />
+        <asp:Parameter Name="C_BILL" Type="String" />
+        <asp:Parameter Name="C_TENKH" Type="String" />
+        <asp:Parameter Name="C_NGUOINHAN" Type="String" />
+        <asp:Parameter Name="C_DIACHINHAN" Type="String" />
+        <asp:Parameter Name="FK_QUANHUYEN" Type="Int32" />
+        <asp:Parameter Name="C_NOIDUNG" Type="String" />
+        <asp:Parameter Name="FK_MABANGCUOC" Type="Int32" />
+        <asp:Parameter Name="C_KHOILUONG" Type="Single" />
+        <asp:Parameter Name="C_GIACUOC" Type="Single" />
+        <asp:Parameter Name="C_PHUTROI" Type="String" />
+        <asp:Parameter Name="C_HINHTHUCTT" Type="String" />
+        <asp:Parameter Name="C_TINHTRANGTT" Type="String" />
+        <asp:Parameter Name="C_TIENHANG" Type="String" />
+        <asp:Parameter Name="FK_NHANVIENNHAN" Type="Int32" />
+        <asp:Parameter Name="FK_DOITAC" Type="Int32" />
+        <asp:Parameter Name="C_GIADOITAC" Type="Single" />
+        <asp:Parameter Name="FK_NHANVIENPHAT" Type="Int32" />
+        <asp:Parameter Name="C_NGAYGIOPHAT" Type="DateTime" />
+        <asp:Parameter Name="C_NGUOIKYNHAN" Type="String" />
+        <asp:Parameter Name="C_BOPHAN" Type="String" />
+    </InsertParameters>
+    <UpdateParameters>
+        <asp:Parameter Name="C_NGAY" Type="DateTime" />
+        <asp:Parameter Name="C_MAKH" Type="String" />
+        <asp:Parameter Name="C_BILL" Type="String" />
+        <asp:Parameter Name="C_TENKH" Type="String" />
+        <asp:Parameter Name="C_NGUOINHAN" Type="String" />
+        <asp:Parameter Name="C_DIACHINHAN" Type="String" />
+        <asp:Parameter Name="FK_QUANHUYEN" Type="Int32" />
+        <asp:Parameter Name="C_NOIDUNG" Type="String" />
+        <asp:Parameter Name="FK_MABANGCUOC" Type="Int32" />
+        <asp:Parameter Name="C_KHOILUONG" Type="Single" />
+        <asp:Parameter Name="C_GIACUOC" Type="Single" />
+        <asp:Parameter Name="C_PHUTROI" Type="String" />
+        <asp:Parameter Name="C_HINHTHUCTT" Type="String" />
+        <asp:Parameter Name="C_TINHTRANGTT" Type="String" />
+        <asp:Parameter Name="C_TIENHANG" Type="String" />
+        <asp:Parameter Name="FK_NHANVIENNHAN" Type="Int32" />
+        <asp:Parameter Name="FK_DOITAC" Type="Int32" />
+        <asp:Parameter Name="C_GIADOITAC" Type="Single" />
+        <asp:Parameter Name="FK_NHANVIENPHAT" Type="Int32" />
+        <asp:Parameter Name="C_NGAYGIOPHAT" Type="DateTime" />
+        <asp:Parameter Name="C_NGUOIKYNHAN" Type="String" />
+        <asp:Parameter Name="C_BOPHAN" Type="String" />
+        <asp:Parameter Name="PL_ID" Type="Int32" />
+    </UpdateParameters>
        
 </asp:SqlDataSource>
 
