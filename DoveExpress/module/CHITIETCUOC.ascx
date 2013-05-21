@@ -17,24 +17,17 @@
 </telerik:RadScriptBlock>
 <telerik:RadAjaxLoadingPanel Skin="Vista" ID="RadAjaxLoadingPanelCHITIETCUOC" runat="server" />
 <div style ="width:100%; margin: 10px 10px 10px 10px; ">
-Bảng cước:&nbsp; 
-<telerik:RadComboBox ID="cmbMaBangCuoc" runat="server" 
-DataTextField="C_NAME" DataValueField="PK_ID" DataSourceID="MABANGCUOCDataSource"
-ShowToggleImage="True" EmptyMessage="Chọn bảng" 
-        onprerender="cmbMaBangCuoc_PreRender" 
-        onclientselectedindexchanged="cmbMaBangCuocClientSelectedIndexChangedHandler">
+Dịch vụ:&nbsp; 
+<telerik:RadComboBox ID="cmbSanPham" runat="server"
+DataTextField="C_NAME" DataValueField="PK_ID" DataSourceID="MASANPHAMDataSource"
+ShowToggleImage="True" EmptyMessage="Chọn dịch vụ" 
+onclientselectedindexchanged="cmbSanPhamClientSelectedIndexChangedHandler" onprerender="cmbSanPham_PreRender">
 </telerik:RadComboBox>
 Nhóm khách hàng:&nbsp; 
 <telerik:RadComboBox ID="cmbNhomKhachHang" runat="server"
 DataTextField="C_NAME" DataValueField="PK_ID" DataSourceID="NHOMKHACHHANGDataSource"
 ShowToggleImage="True" EmptyMessage="Chọn nhóm"
 onclientselectedindexchanged="cmbNhomKhachHangClientSelectedIndexChangedHandler" onprerender="cmbNhomKhachHang_PreRender">
-</telerik:RadComboBox>
-Sản phẩm:&nbsp; 
-<telerik:RadComboBox ID="cmbSanPham" runat="server"
-DataTextField="C_NAME" DataValueField="PK_ID" DataSourceID="MASANPHAMDataSource"
-ShowToggleImage="True" EmptyMessage="Chọn sản phẩm" 
-onclientselectedindexchanged="cmbSanPhamClientSelectedIndexChangedHandler" onprerender="cmbSanPham_PreRender">
 </telerik:RadComboBox>
 Loại tiền:&nbsp; 
 <telerik:RadComboBox ID="cmbLoaiTien" runat="server"
@@ -44,6 +37,13 @@ onprerender="cmbLoaiTien_PreRender">
     <telerik:RadComboBoxItem Value ="VND" Text ="VND" />
     <telerik:RadComboBoxItem Value ="USD" Text ="USD" />
 </Items>
+</telerik:RadComboBox>
+Bảng cước:&nbsp; 
+<telerik:RadComboBox ID="cmbMaBangCuoc" runat="server" 
+DataTextField="C_NAME" DataValueField="PK_ID" DataSourceID="MABANGCUOCDataSource"
+ShowToggleImage="True" EmptyMessage="Chọn bảng" 
+        onprerender="cmbMaBangCuoc_PreRender" 
+        onclientselectedindexchanged="cmbMaBangCuocClientSelectedIndexChangedHandler">
 </telerik:RadComboBox>
 </div>
 <telerik:RadGrid ID="RadGridCHITIETCUOC" runat="server" Skin="Vista" 

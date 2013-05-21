@@ -29,7 +29,7 @@
     <MasterTableView Name="MasterTableViewMASANPHAM" CommandItemDisplay="Top" DataSourceID="MASANPHAMDataSource" DataKeyNames="PK_ID" ClientDataKeyNames="PK_ID" EditMode="PopUp" NoMasterRecordsText="Không có dữ liệu">
         <CommandItemTemplate>
                     <div style="padding: 5px 5px;float:left;width:auto">
-                        <b>Quản lý mã sản phẩm</b>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <b>Quản lý dịch vụ</b>&nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:LinkButton ID="btnEditSelected" runat="server" CommandName="EditSelected" Visible='<%# RadGridMASANPHAM.EditIndexes.Count == 0 && ITCLIB.Security.Security.CanEditModule("JobLists") %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Edit.gif" />Sửa</asp:LinkButton>&nbsp;&nbsp;
                         <asp:LinkButton ID="btnUpdateEdited" runat="server" CommandName="UpdateEdited" Visible='<%# RadGridMASANPHAM.EditIndexes.Count > 0 %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Update.gif" />Lưu</asp:LinkButton>&nbsp;&nbsp;
                         <asp:LinkButton ID="btnCancel" runat="server" CommandName="CancelAll" Visible='<%# RadGridMASANPHAM.EditIndexes.Count > 0 || RadGridMASANPHAM.MasterTableView.IsItemInserted %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Cancel.gif" />Hủy bỏ</asp:LinkButton>&nbsp;&nbsp;
@@ -61,14 +61,14 @@
                  <HeaderStyle HorizontalAlign ="Center" Width ="30px" />
                  <ItemStyle HorizontalAlign ="Center" Width ="30px" />
                </telerik:GridTemplateColumn>
-                <telerik:GridBoundColumn UniqueName="C_CODE" HeaderText="Mã mã sản phẩm" DataField="C_CODE" 
+                <telerik:GridBoundColumn UniqueName="C_CODE" HeaderText="Mã dịch vụ" DataField="C_CODE" 
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
                 </telerik:GridBoundColumn>
-                <telerik:GridBoundColumn UniqueName="C_NAME" HeaderText="Tên mã sản phẩm" DataField="C_NAME" 
+                <telerik:GridBoundColumn UniqueName="C_NAME" HeaderText="Tên dịch vụ" DataField="C_NAME" 
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
                 </telerik:GridBoundColumn>
         </Columns>
-        <EditFormSettings InsertCaption="Thêm mã sản phẩm mới" CaptionFormatString="Sửa mã sản phẩm: <b>{0}</b>" CaptionDataField="C_NAME" EditFormType="Template" PopUpSettings-Width="600px">
+        <EditFormSettings InsertCaption="Thêm dịch vụ mới" CaptionFormatString="Sửa dịch vụ: <b>{0}</b>" CaptionDataField="C_NAME" EditFormType="Template" PopUpSettings-Width="600px">
         <EditColumn UniqueName="EditCommandColumn1" FilterControlAltText="Filter EditCommandColumn1 column"></EditColumn>
            <FormTemplate>
             <div class="headerthongtin">
@@ -81,20 +81,20 @@
             <div style="width:600px;background:#FFFFFF" class="clearfix">      
             <table id="tblEdit" class ="TableEditInGrid" cellspacing="3" cellpadding="3" style="width: 100%" border="0">
             <tr>
-                 <td style =" width:150px;"> <span class="rtsTxtnew">Mã mã sản phẩm:</td>
+                 <td style =" width:150px;"> <span class="rtsTxtnew">Mã dịch vụ:</td>
                 <td colspan="4">
                     <asp:HiddenField ID="txtID" Value ='<%# Eval( "PK_ID") %>' runat="server" />
                     <telerik:RadTextBox ID="txtCODE" Width ="90%" Text='<%# Bind( "C_CODE") %>' runat="server"></telerik:RadTextBox>
-                    <asp:RequiredFieldValidator ID="rfvCODE" runat="server" ErrorMessage="Mã mã sản phẩm không thể rỗng" ControlToValidate="txtCODE" SetFocusOnError="True" Display="Dynamic" ValidationGroup="G1"></asp:RequiredFieldValidator>
-                    <asp:CustomValidator ID="cuvCODE" ControlToValidate="txtCODE" OnServerValidate="CheckCode" runat="server" ErrorMessage="Mã mã sản phẩm đã tồn tại" Display="Dynamic" ValidationGroup="G1"></asp:CustomValidator>
+                    <asp:RequiredFieldValidator ID="rfvCODE" runat="server" ErrorMessage="Mã dịch vụ không thể rỗng" ControlToValidate="txtCODE" SetFocusOnError="True" Display="Dynamic" ValidationGroup="G1"></asp:RequiredFieldValidator>
+                    <asp:CustomValidator ID="cuvCODE" ControlToValidate="txtCODE" OnServerValidate="CheckCode" runat="server" ErrorMessage="Mã dịch vụ đã tồn tại" Display="Dynamic" ValidationGroup="G1"></asp:CustomValidator>
                 </td>
             </tr> 
             <tr>
-                 <td style =" width:150px;"> <span class="rtsTxtnew">Tên mã sản phẩm:</td>
+                 <td style =" width:150px;"> <span class="rtsTxtnew">Tên dịch vụ:</td>
                 <td colspan="4">
                    <telerik:RadTextBox ID="txtName" Text='<%# Bind( "C_NAME") %>' runat="server" Width="90%"></telerik:RadTextBox>
-                   <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Tên mã sản phẩm không thể rỗng" ControlToValidate="txtName" SetFocusOnError="True" Display="Dynamic" ValidationGroup="G1"></asp:RequiredFieldValidator>
-                   <asp:CustomValidator ID="CustomValidator1" ControlToValidate="txtName" OnServerValidate="CheckName" runat="server" ErrorMessage="Tên mã sản phẩm đã tồn tại" Display="Dynamic" ValidationGroup="G1"></asp:CustomValidator>
+                   <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Tên dịch vụ không thể rỗng" ControlToValidate="txtName" SetFocusOnError="True" Display="Dynamic" ValidationGroup="G1"></asp:RequiredFieldValidator>
+                   <asp:CustomValidator ID="CustomValidator1" ControlToValidate="txtName" OnServerValidate="CheckName" runat="server" ErrorMessage="Tên dịch vụ đã tồn tại" Display="Dynamic" ValidationGroup="G1"></asp:CustomValidator>
                 </td>
             </tr> 
              </table>

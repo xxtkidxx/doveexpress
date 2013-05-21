@@ -152,6 +152,16 @@ public partial class module_NHOMKHACHHANG : System.Web.UI.UserControl
             GridEditableItem editItem = (GridEditableItem)e.Item;
             HiddenField txtID = (HiddenField)editItem.FindControl("txtID");
             Session["txtID"] = (txtID.Value != "") ? txtID.Value : "0";
+            if (e.Item is GridEditFormInsertItem || e.Item is GridDataInsertItem)
+            {
+                // insert item
+                RadioButtonList txtStatus = (RadioButtonList)editItem.FindControl("txtStatus");
+                txtStatus.SelectedValue = "0";
+            }
+            else
+            {
+                // edit item
+            }
         }
         if (e.Item is GridDataItem)
         {

@@ -46,22 +46,12 @@
             </telerik:RadMenuItem> 
             <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=MABANGCUOC" Text="Mã bảng cước" Value="MABANGCUOC">                 
             </telerik:RadMenuItem>
-            <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=MASANPHAM" Text="Mã hàng, sản phẩm" Value="MASANPHAM">
+            <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=MASANPHAM" Text="Mã dịch vụ" Value="MASANPHAM">
             </telerik:RadMenuItem>
             <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=MAVUNG" Text="Vùng tính cước" Value="MAVUNG">
             </telerik:RadMenuItem>
             <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=CHITIETCUOC" Text="Chi tiết cước" Value="CHITIETCUOC">
             </telerik:RadMenuItem> 
-            <telerik:RadMenuItem runat="server" Font-Size="Small" Text="Dịch vụ" Visible ="false" Value="DICHVU">
-                 <Items>
-                    <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="" Text="Mã dịch vụ" Value="MADICHVU">
-                    </telerik:RadMenuItem>
-                    <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="" Text="Vùng dịch vụ" Value="VUNGDICHVU">
-                    </telerik:RadMenuItem>
-                    <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="" Text="Cước dịch vụ" Value="CUOCDICHVU">
-                    </telerik:RadMenuItem> 
-                 </Items>
-            </telerik:RadMenuItem>
             <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=TYGIA" Text="Tỷ giá" Value="TYGIA">                 
             </telerik:RadMenuItem> 
         </Items>
