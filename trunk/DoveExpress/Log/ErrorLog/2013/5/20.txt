@@ -1,0 +1,85 @@
+Thời gian lỗi : 2013-05-20 21:51:23 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:The server tag is not well formed.
+__________________________
+Thời gian lỗi : 2013-05-20 21:51:44 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\module\NHANGUI.ascx(166): error CS1061: 'ASP.module_nhangui_ascx' does not contain a definition for 'CheckBill' and no extension method 'CheckBill' accepting a first argument of type 'ASP.module_nhangui_ascx' could be found (are you missing a using directive or an assembly reference?)
+__________________________
+Thời gian lỗi : 2013-05-20 21:53:13 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/Grid/Edit.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-05-20 21:53:13 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/Grid/Update.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\5\20.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-05-20 21:53:14 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/Grid/Cancel.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-05-20 21:53:14 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/Grid/AddRecord.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\5\20.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-05-20 21:53:14 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/Grid/Insert.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-05-20 21:53:14 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/Grid/Delete.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-05-20 21:53:14 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/Grid/Refresh.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-05-20 21:53:14 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/Grid/pdf.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\5\20.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-05-20 21:53:15 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/Grid/word.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-05-20 21:53:15 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/Grid/excel.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\5\20.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-05-20 21:53:15 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/Grid/csv.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-05-20 21:53:15 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/img_save.jpg. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\5\20.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-05-20 21:53:15 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/img_Close.jpg. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-05-20 22:08:14 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:DataBinding: 'Telerik.Web.UI.GridInsertionObject' does not contain a property with the name 'PK_ID'.
+__________________________
+Thời gian lỗi : 2013-05-20 22:08:16 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:DataBinding: 'Telerik.Web.UI.GridInsertionObject' does not contain a property with the name 'PK_ID'.
+__________________________
