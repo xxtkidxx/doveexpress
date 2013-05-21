@@ -33,7 +33,38 @@ public partial class module_MABANGCUOC : System.Web.UI.UserControl
             string index = Request["index"].ToString();
             string Value = Request["value"].ToString();
         }
+        RadAjaxManager ajaxManager = RadAjaxManager.GetCurrent(Page);
+        ajaxManager.AjaxRequest += new RadAjaxControl.AjaxRequestDelegate(RadScriptManager_AjaxRequestMBC);
+        ajaxManager.ClientEvents.OnResponseEnd = "onResponseEndMBC";
         Session["LastUrl"] = Request.Url.ToString();
+    }
+    protected void RadScriptManager_AjaxRequestMBC(object sender, AjaxRequestEventArgs e)
+    {
+        string[] arrayvalue = e.Argument.Split(';');
+        if (arrayvalue[0] == "SelectedMBC")
+        {
+            string script = string.Format("var result = '{0}'", arrayvalue[1]);
+            ScriptManager.RegisterClientScriptBlock(Page, typeof(Page), "result", script, true);
+            UpdateDefault(arrayvalue[1]);
+        }
+    }
+    protected void UpdateDefault(string ID)
+    {
+        ITCLIB.Admin.SQL rs = new ITCLIB.Admin.SQL();
+        string Querry = "Update DMMABANGCUOC set C_DEFAULT = 1 WHERE PK_ID =" + ID + ";Update DMMABANGCUOC set C_DEFAULT = 0 WHERE PK_ID <>" + ID;
+        rs.ExecuteNonQuery(Querry);
+    }
+    protected bool getstatus(object status)
+    {
+        if (status == DBNull.Value)
+        { return false; }
+        else
+        {
+            int test = (int)status;
+            if (test == 1)
+            { return true; }
+            else { return false; }
+        }
     }
     protected void btnShowAll_Click(object sender, System.Web.UI.ImageClickEventArgs e)
     {
@@ -152,6 +183,16 @@ public partial class module_MABANGCUOC : System.Web.UI.UserControl
             GridEditableItem editItem = (GridEditableItem)e.Item;
             HiddenField txtID = (HiddenField)editItem.FindControl("txtID");
             Session["txtID"] = (txtID.Value != "") ? txtID.Value : "0";
+            if (e.Item is GridEditFormInsertItem || e.Item is GridDataInsertItem)
+            {
+                // insert item
+                RadioButtonList txtStatus = (RadioButtonList)editItem.FindControl("txtStatus");
+                txtStatus.SelectedValue = "0";
+            }
+            else
+            {
+                // edit item
+            }
         }
         if (e.Item is GridDataItem)
         {

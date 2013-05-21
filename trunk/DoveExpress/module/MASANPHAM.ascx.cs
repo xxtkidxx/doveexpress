@@ -107,11 +107,11 @@ public partial class module_MASANPHAM : System.Web.UI.UserControl
         if (e.Exception != null)
         {
             e.ExceptionHandled = true;
-            SetMessage("Không thể xóa mã sản phẩm. Lý do: " + e.Exception.Message);
+            SetMessage("Không thể xóa dịch vụ. Lý do: " + e.Exception.Message);
         }
         else
         {
-            SetMessage("Xóa mã sản phẩm thành công!");
+            SetMessage("Xóa dịch vụ thành công!");
             ITCLIB.ActionLog.ActionLog.WriteLog(Session["UserID"].ToString(), "Deleted MASANPHAMs", e.Item.KeyValues);
         }
     }
@@ -121,11 +121,11 @@ public partial class module_MASANPHAM : System.Web.UI.UserControl
         if (e.Exception != null)
         {
             e.ExceptionHandled = true;
-            SetMessage("Không thể tạo mới mã sản phẩm. Lý do: " + e.Exception.Message);
+            SetMessage("Không thể tạo mới dịch vụ. Lý do: " + e.Exception.Message);
         }
         else
         {
-            SetMessage("Tạo mới mã sản phẩm thành công!");
+            SetMessage("Tạo mới dịch vụ thành công!");
             ITCLIB.ActionLog.ActionLog.WriteLog(Session["UserID"].ToString(), "Inserted MASANPHAMs", "{PK_ID:\"" + getmaxid("DMMASANPHAM") + "\"}");
         }
     }
@@ -136,11 +136,11 @@ public partial class module_MASANPHAM : System.Web.UI.UserControl
         {
             e.KeepInEditMode = true;
             e.ExceptionHandled = true;
-            SetMessage("Không thể cập nhật mã sản phẩm. Lý do: " + e.Exception.Message);
+            SetMessage("Không thể cập nhật dịch vụ. Lý do: " + e.Exception.Message);
         }
         else
         {
-            SetMessage("Cập nhật mã sản phẩm thành công!");
+            SetMessage("Cập nhật dịch vụ thành công!");
             ITCLIB.ActionLog.ActionLog.WriteLog(Session["UserID"].ToString(), "Updated MASANPHAMs", e.Item.KeyValues);
         }
     }
@@ -172,7 +172,7 @@ public partial class module_MASANPHAM : System.Web.UI.UserControl
             {
                 if (!ValidateDeleteGroup(item["pk_id"].Text))
                 {
-                    SetMessage("Không thể xóa mã sản phẩm \"" + item["c_name"].Text + "\" do có tham chiếu dữ liệu khác.");
+                    SetMessage("Không thể xóa dịch vụ \"" + item["c_name"].Text + "\" do có tham chiếu dữ liệu khác.");
                     RadGridMASANPHAM.Rebind();
                 }
             }

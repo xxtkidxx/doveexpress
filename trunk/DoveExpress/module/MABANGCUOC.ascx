@@ -8,6 +8,19 @@
             }
         }
 </script>
+<script type="text/javascript">
+    function onClientClickSelectedMBC(sender) {
+        $find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("SelectedMBC;" + sender);
+        return false;
+    }
+    function onResponseEndMBC() {
+        if (typeof (result) != "undefined" && result && result != "") {
+            $find("<%= RadGridMABANGCUOC.ClientID %>").get_masterTableView().rebind();
+            result = "";
+        }
+        return false;
+    }
+</script>
 </telerik:RadCodeBlock>
 <telerik:RadAjaxLoadingPanel Skin="Vista" ID="RadAjaxLoadingPanelMABANGCUOC" runat="server" />
 <telerik:RadGrid ID="RadGridMABANGCUOC" runat="server" Skin="Vista" 
@@ -70,6 +83,11 @@
                 <telerik:GridBoundColumn UniqueName="C_TYPENAME" HeaderText="Loại mã bảng cước" DataField="C_TYPENAME" 
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
                 </telerik:GridBoundColumn>
+                <telerik:GridTemplateColumn UniqueName="C_DEFAULT" HeaderText="Mặc định" AllowFiltering ="false">
+                  <ItemTemplate>
+                    <asp:CheckBox ID="chkDefault" runat="server" onclick='<%# Eval("PK_ID", "if(!onClientClickSelectedMBC({0})) return false;") %>' Checked='<%# getstatus(Eval("C_DEFAULT")) %>'/>
+                  </ItemTemplate>
+                </telerik:GridTemplateColumn>        
         </Columns>
         <EditFormSettings InsertCaption="Thêm mã bảng cước mới" CaptionFormatString="Sửa mã bảng cước: <b>{0}</b>" CaptionDataField="C_NAME" EditFormType="Template" PopUpSettings-Width="600px">
         <EditColumn UniqueName="EditCommandColumn1" FilterControlAltText="Filter EditCommandColumn1 column"></EditColumn>
@@ -130,7 +148,7 @@
 <asp:SqlDataSource ID="MABANGCUOCDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
         DeleteCommand="DELETE FROM [DMMABANGCUOC] WHERE [PK_ID] = @PK_ID" 
         InsertCommand="INSERT INTO [DMMABANGCUOC] ([C_CODE], [C_NAME],[C_TYPE]) VALUES (@C_CODE, @C_NAME,@C_TYPE)"
-        SelectCommand="SELECT [PK_ID], [C_CODE], [C_NAME],[C_TYPE],(CASE WHEN (C_TYPE = '1') THEN N'Đối tác' ELSE N'Khách hàng' END) AS C_TYPENAME FROM [DMMABANGCUOC] ORDER BY LTRIM([C_CODE])"      
+        SelectCommand="SELECT [PK_ID], [C_CODE], [C_NAME],[C_TYPE],(CASE WHEN (C_TYPE = '1') THEN N'Đối tác' ELSE N'Khách hàng' END) AS C_TYPENAME,C_DEFAULT FROM [DMMABANGCUOC] ORDER BY LTRIM([C_CODE])"      
         UpdateCommand="UPDATE [DMMABANGCUOC] SET [C_CODE] = @C_CODE, [C_NAME] = @C_NAME,[C_TYPE] =@C_TYPE WHERE [PK_ID] = @PK_ID" >
         <UpdateParameters>
             <asp:Parameter Name="C_CODE" Type="String" />

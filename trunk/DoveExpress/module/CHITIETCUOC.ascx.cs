@@ -222,7 +222,19 @@ public partial class module_CHITIETCUOC : System.Web.UI.UserControl
         {
             if (cmbMaBangCuoc.Items.Count != 0)
             {
-                //cmbMaBangCuoc.SelectedIndex = 0;
+                string SelectSQL = "SELECT PK_ID FROM DMMABANGCUOC WHERE C_DEFAULT = 1";
+                DataTable oDataTable = new DataTable();
+                ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
+                oDataTable = SelectQuery.query_data(SelectSQL);
+                if (oDataTable.Rows.Count != 0)
+                {
+                    cmbMaBangCuoc.SelectedValue = oDataTable.Rows[0]["PK_ID"].ToString();
+                }
+                else
+                {
+                    cmbMaBangCuoc.SelectedIndex = 0;
+                }
+                
             }
         }        
     }
@@ -232,7 +244,7 @@ public partial class module_CHITIETCUOC : System.Web.UI.UserControl
         {
             if (cmbSanPham.Items.Count != 0)
             {
-                cmbSanPham.SelectedIndex = 0;
+                //cmbSanPham.SelectedIndex = 0;
             }
         }       
     }
