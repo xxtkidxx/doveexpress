@@ -26,7 +26,7 @@
     PageSizeLabelText="Số bản ghi hiển thị:" PrevPagesToolTip="Các trang sau" PrevPageToolTip="Trang sau" PagerTextFormat="Change page: {4} &nbsp;Trang <strong>{0}</strong>/<strong>{1}</strong>, Bản ghi <strong>{2}</strong> đến <strong>{3}</strong> của tất cả <strong>{5}</strong> bản ghi" />    
     <ExportSettings HideStructureColumns="true" ExportOnlyData="true" IgnorePaging="true" OpenInNewWindow="true" Excel-Format="ExcelML"></ExportSettings>   
      <GroupingSettings CaseSensitive ="false"  />
-    <MasterTableView Name="MasterTableViewNHANGUI" CommandItemDisplay="Top" DataSourceID="NHANGUIDataSource" DataKeyNames="PK_ID" ClientDataKeyNames="PK_ID" EditMode="EditForms" NoMasterRecordsText="Không có dữ liệu">
+    <MasterTableView Name="MasterTableViewNHANGUI" CommandItemDisplay="Top" DataSourceID="NHANGUIDataSource" DataKeyNames="PK_ID" ClientDataKeyNames="PK_ID" EditMode="PopUp" NoMasterRecordsText="Không có dữ liệu">
         <CommandItemTemplate>
                     <div style="padding: 5px 5px;float:left;width:auto">
                         <b>Quản lý nhận gửi</b>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -134,7 +134,7 @@
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
                 </telerik:GridBoundColumn>
         </Columns>
-        <EditFormSettings InsertCaption="Thêm nhận gửi mới" CaptionFormatString="Sửa nhận gửi: <b>{0}</b>" CaptionDataField="C_BILL" EditFormType="Template" PopUpSettings-Width="600px">
+        <EditFormSettings InsertCaption="Thêm nhận gửi mới" CaptionFormatString="Sửa nhận gửi: <b>{0}</b>" CaptionDataField="C_BILL" EditFormType="Template" PopUpSettings-Width="900px">
         <EditColumn UniqueName="EditCommandColumn1" FilterControlAltText="Filter EditCommandColumn1 column"></EditColumn>
            <FormTemplate>
             <div class="headerthongtin">
@@ -144,7 +144,7 @@
               </ul>
             </div>               
             <div class="clearfix bgpopup"> 
-            <div style="width:600px;background:#FFFFFF" class="clearfix">      
+            <div style="width:900px;background:#FFFFFF" class="clearfix">      
             <table id="tblEdit" class ="TableEditInGrid" cellspacing="3" cellpadding="3" style="width: 100%" border="0">
             <tr>
                 <td style =" width:150px;"> <span class="rtsTxtnew">Ngày nhận gửi:</td>
@@ -155,15 +155,46 @@
                         </DateInput>
                     </telerik:RadDatePicker>
                 </td>
-            </tr> 
-            <tr>
-            <tr>
-                 <td style =" width:150px;"> <span class="rtsTxtnew">Số Bill:</td>
+                <td style =" width:150px;"> <span class="rtsTxtnew">Số Bill:</td>
                 <td colspan="4">
                     <asp:HiddenField ID="txtID" Value ='<%# Eval( "PK_ID") %>' runat="server" />
                     <telerik:RadTextBox ID="txtCODE" Width ="90%" Text='<%# Bind( "C_BILL") %>' runat="server"></telerik:RadTextBox>
                     <asp:RequiredFieldValidator ID="rfvCODE" runat="server" ErrorMessage="Số Bill không thể rỗng" ControlToValidate="txtCODE" SetFocusOnError="True" Display="Dynamic" ValidationGroup="G1"></asp:RequiredFieldValidator>
                     <asp:CustomValidator ID="cuvCODE" ControlToValidate="txtCODE" OnServerValidate="CheckBill" runat="server" ErrorMessage="Số Bill đã tồn tại" Display="Dynamic" ValidationGroup="G1"></asp:CustomValidator>
+                </td>
+            </tr>
+            <tr>
+                <td style =" width:150px;"> <span class="rtsTxtnew">Mã khách hàng:</td>
+                <td colspan="4">
+                    <telerik:RadTextBox ID="txtC_MAKH" Width ="90%" Text='<%# Bind( "C_MAKH") %>' runat="server"></telerik:RadTextBox>
+                </td>
+                <td style =" width:150px;"> <span class="rtsTxtnew">Tên khách hàng:</td>
+                <td colspan="4">
+                    <telerik:RadTextBox ID="txtC_TENKH" Width ="90%" Text='<%# Bind( "C_TENKH") %>' runat="server"></telerik:RadTextBox>
+                </td>
+                <td style =" width:150px;"> <span class="rtsTxtnew">Người nhận:</td>
+                <td colspan="4">
+                    <telerik:RadTextBox ID="txtC_NGUOINHAN" Width ="90%" Text='<%# Bind( "C_NGUOINHAN") %>' runat="server"></telerik:RadTextBox>
+                </td>
+            </tr> 
+            <tr>                
+                <td style =" width:150px;"> <span class="rtsTxtnew">Địa chỉ người nhận:</td>
+                <td colspan="4">
+                    <telerik:RadTextBox ID="RadTextBox2" Width ="90%" Text='<%# Bind( "C_DIACHINHAN") %>' runat="server"></telerik:RadTextBox>
+                </td>
+                <td style =" width:150px;"> <span class="rtsTxtnew">Tỉnh thành:</td>
+                <td colspan="4">
+                    <telerik:RadComboBox ID="cmbTinhThanh" runat="server"
+                    DataTextField="C_NAME" DataValueField="PK_ID" DataSourceID="TinhThanhDataSource"
+                    ShowToggleImage="True" EmptyMessage="Chọn tỉnh">
+                    </telerik:RadComboBox>
+                </td>
+                <td style =" width:150px;"> <span class="rtsTxtnew">Quận huyện:</td>
+                <td colspan="4">
+                    <telerik:RadComboBox ID="cmbQuanHuyen" runat="server"
+                    DataTextField="C_NAME" DataValueField="PK_ID" DataSourceID="QuanHuyenDataSource"
+                    ShowToggleImage="True" EmptyMessage="Chọn quận huyện">
+                    </telerik:RadComboBox>
                 </td>
             </tr> 
            </table>
@@ -186,12 +217,12 @@
 </telerik:RadGrid>
 <asp:SqlDataSource ID="NHANGUIDataSource" runat="server" 
     ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>" 
-    DeleteCommand="DELETE FROM [NHANGUI] WHERE [PL_ID] = @PL_ID" 
+    DeleteCommand="DELETE FROM [NHANGUI] WHERE [PK_ID] = @PK_ID" 
     InsertCommand="INSERT INTO [NHANGUI] ([C_NGAY], [C_MAKH], [C_BILL], [C_TENKH], [C_NGUOINHAN], [C_DIACHINHAN], [FK_QUANHUYEN], [C_NOIDUNG], [FK_MABANGCUOC], [C_KHOILUONG], [C_GIACUOC], [C_PHUTROI], [C_HINHTHUCTT], [C_TINHTRANGTT], [C_TIENHANG], [FK_NHANVIENNHAN], [FK_DOITAC], [C_GIADOITAC], [FK_NHANVIENPHAT], [C_NGAYGIOPHAT], [C_NGUOIKYNHAN], [C_BOPHAN]) VALUES (@C_NGAY, @C_MAKH, @C_BILL, @C_TENKH, @C_NGUOINHAN, @C_DIACHINHAN, @FK_QUANHUYEN, @C_NOIDUNG, @FK_MABANGCUOC, @C_KHOILUONG, @C_GIACUOC, @C_PHUTROI, @C_HINHTHUCTT, @C_TINHTRANGTT, @C_TIENHANG, @FK_NHANVIENNHAN, @FK_DOITAC, @C_GIADOITAC, @FK_NHANVIENPHAT, @C_NGAYGIOPHAT, @C_NGUOIKYNHAN, @C_BOPHAN)" 
-    SelectCommand="SELECT [PL_ID], [C_NGAY], [C_MAKH], [C_BILL], [C_TENKH], [C_NGUOINHAN], [C_DIACHINHAN], [FK_QUANHUYEN], [C_NOIDUNG], [FK_MABANGCUOC], [C_KHOILUONG], [C_GIACUOC], [C_PHUTROI], [C_HINHTHUCTT], [C_TINHTRANGTT], [C_TIENHANG], [FK_NHANVIENNHAN], [FK_DOITAC], [C_GIADOITAC], [FK_NHANVIENPHAT], [C_NGAYGIOPHAT], [C_NGUOIKYNHAN], [C_BOPHAN] FROM [NHANGUI]" 
-    UpdateCommand="UPDATE [NHANGUI] SET [C_NGAY] = @C_NGAY, [C_MAKH] = @C_MAKH, [C_BILL] = @C_BILL, [C_TENKH] = @C_TENKH, [C_NGUOINHAN] = @C_NGUOINHAN, [C_DIACHINHAN] = @C_DIACHINHAN, [FK_QUANHUYEN] = @FK_QUANHUYEN, [C_NOIDUNG] = @C_NOIDUNG, [FK_MABANGCUOC] = @FK_MABANGCUOC, [C_KHOILUONG] = @C_KHOILUONG, [C_GIACUOC] = @C_GIACUOC, [C_PHUTROI] = @C_PHUTROI, [C_HINHTHUCTT] = @C_HINHTHUCTT, [C_TINHTRANGTT] = @C_TINHTRANGTT, [C_TIENHANG] = @C_TIENHANG, [FK_NHANVIENNHAN] = @FK_NHANVIENNHAN, [FK_DOITAC] = @FK_DOITAC, [C_GIADOITAC] = @C_GIADOITAC, [FK_NHANVIENPHAT] = @FK_NHANVIENPHAT, [C_NGAYGIOPHAT] = @C_NGAYGIOPHAT, [C_NGUOIKYNHAN] = @C_NGUOIKYNHAN, [C_BOPHAN] = @C_BOPHAN WHERE [PL_ID] = @PL_ID">
+    SelectCommand="SELECT [PK_ID], [C_NGAY], [C_MAKH], [C_BILL], [C_TENKH], [C_NGUOINHAN], [C_DIACHINHAN], [FK_QUANHUYEN], [C_NOIDUNG], [FK_MABANGCUOC], [C_KHOILUONG], [C_GIACUOC], [C_PHUTROI], [C_HINHTHUCTT], [C_TINHTRANGTT], [C_TIENHANG], [FK_NHANVIENNHAN], [FK_DOITAC], [C_GIADOITAC], [FK_NHANVIENPHAT], [C_NGAYGIOPHAT], [C_NGUOIKYNHAN], [C_BOPHAN] FROM [NHANGUI]" 
+    UpdateCommand="UPDATE [NHANGUI] SET [C_NGAY] = @C_NGAY, [C_MAKH] = @C_MAKH, [C_BILL] = @C_BILL, [C_TENKH] = @C_TENKH, [C_NGUOINHAN] = @C_NGUOINHAN, [C_DIACHINHAN] = @C_DIACHINHAN, [FK_QUANHUYEN] = @FK_QUANHUYEN, [C_NOIDUNG] = @C_NOIDUNG, [FK_MABANGCUOC] = @FK_MABANGCUOC, [C_KHOILUONG] = @C_KHOILUONG, [C_GIACUOC] = @C_GIACUOC, [C_PHUTROI] = @C_PHUTROI, [C_HINHTHUCTT] = @C_HINHTHUCTT, [C_TINHTRANGTT] = @C_TINHTRANGTT, [C_TIENHANG] = @C_TIENHANG, [FK_NHANVIENNHAN] = @FK_NHANVIENNHAN, [FK_DOITAC] = @FK_DOITAC, [C_GIADOITAC] = @C_GIADOITAC, [FK_NHANVIENPHAT] = @FK_NHANVIENPHAT, [C_NGAYGIOPHAT] = @C_NGAYGIOPHAT, [C_NGUOIKYNHAN] = @C_NGUOIKYNHAN, [C_BOPHAN] = @C_BOPHAN WHERE [PK_ID] = @PK_ID">
     <DeleteParameters>
-        <asp:Parameter Name="PL_ID" Type="Int32" />
+        <asp:Parameter Name="PK_ID" Type="Int32" />
     </DeleteParameters>
     <InsertParameters>
         <asp:Parameter Name="C_NGAY" Type="DateTime" />
@@ -240,8 +271,12 @@
         <asp:Parameter Name="C_NGAYGIOPHAT" Type="DateTime" />
         <asp:Parameter Name="C_NGUOIKYNHAN" Type="String" />
         <asp:Parameter Name="C_BOPHAN" Type="String" />
-        <asp:Parameter Name="PL_ID" Type="Int32" />
-    </UpdateParameters>
-       
+        <asp:Parameter Name="PK_ID" Type="Int32" />
+    </UpdateParameters>       
 </asp:SqlDataSource>
+<asp:SqlDataSource ID="QuanHuyenDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>">     
+</asp:SqlDataSource>      
+ <asp:SqlDataSource ID="TinhThanhDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
+    SelectCommand="SELECT DMTINHTHANH.PK_ID, DMTINHTHANH.C_CODE, DMTINHTHANH.C_NAME FROM [DMTINHTHANH] LEFT OUTER JOIN DMQUOCGIA ON DMTINHTHANH.FK_QUOCGIA = DMQUOCGIA.PK_ID WHERE DMQUOCGIA.C_CODE ='VN' ">
+ </asp:SqlDataSource> 
 

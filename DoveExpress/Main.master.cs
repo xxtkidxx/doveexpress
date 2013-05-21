@@ -158,13 +158,9 @@ public partial class Main : System.Web.UI.MasterPage
                         _AjaxUpdatedControl.ControlID = "RadGridNHANGUI";
                         _AjaxUpdatedControl.LoadingPanelID = "RadAjaxLoadingPanelNHANGUI";
                         _AjaxSetting.UpdatedControls.Add(_AjaxUpdatedControl);
-                        RadAjaxManager.AjaxSettings.Add(_AjaxSetting);
+                        //RadAjaxManager.AjaxSettings.Add(_AjaxSetting);
                         control = LoadControl("module/NHANGUI.ascx");
                         break;
-
-
-
-
                     
                 }             
             }
