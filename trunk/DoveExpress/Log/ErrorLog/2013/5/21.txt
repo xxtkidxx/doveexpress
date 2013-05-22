@@ -1,0 +1,17 @@
+Thời gian lỗi : 2013-05-21 21:27:53 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:DataBinding: 'Telerik.Web.UI.GridInsertionObject' does not contain a property with the name 'PK_ID'.
+__________________________
+Thời gian lỗi : 2013-05-21 22:02:36 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Ambiguous column name 'PK_ID'.
+Ambiguous column name 'C_CODE'.
+Ambiguous column name 'C_NAME'.
+__________________________
+Thời gian lỗi : 2013-05-21 22:03:26 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Must declare the scalar variable "@FK_TINHTHANH".
+__________________________

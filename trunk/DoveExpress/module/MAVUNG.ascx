@@ -29,7 +29,7 @@
     <MasterTableView Name="MasterTableViewMAVUNG" CommandItemDisplay="Top" DataSourceID="MAVUNGDataSource" DataKeyNames="PK_ID" ClientDataKeyNames="PK_ID" EditMode="PopUp" NoMasterRecordsText="Không có dữ liệu">
         <CommandItemTemplate>
                     <div style="padding: 5px 5px;float:left;width:auto">
-                        <b>Quản lý mã vùng</b>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <b>Quản lý vùng tính cước</b>&nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:LinkButton ID="btnEditSelected" runat="server" CommandName="EditSelected" Visible='<%# RadGridMAVUNG.EditIndexes.Count == 0 && ITCLIB.Security.Security.CanEditModule("JobLists") %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Edit.gif" />Sửa</asp:LinkButton>&nbsp;&nbsp;
                         <asp:LinkButton ID="btnUpdateEdited" runat="server" CommandName="UpdateEdited" Visible='<%# RadGridMAVUNG.EditIndexes.Count > 0 %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Update.gif" />Lưu</asp:LinkButton>&nbsp;&nbsp;
                         <asp:LinkButton ID="btnCancel" runat="server" CommandName="CancelAll" Visible='<%# RadGridMAVUNG.EditIndexes.Count > 0 || RadGridMAVUNG.MasterTableView.IsItemInserted %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Cancel.gif" />Hủy bỏ</asp:LinkButton>&nbsp;&nbsp;
@@ -61,17 +61,20 @@
                  <HeaderStyle HorizontalAlign ="Center" Width ="30px" />
                  <ItemStyle HorizontalAlign ="Center" Width ="30px" />
                </telerik:GridTemplateColumn>
-                <telerik:GridBoundColumn UniqueName="C_CODE" HeaderText="Mã mã vùng" DataField="C_CODE" 
+                <telerik:GridBoundColumn UniqueName="MASANPHAMNAME" HeaderText="Dịch vụ" DataField="MASANPHAMNAME" 
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
                 </telerik:GridBoundColumn>
-                <telerik:GridBoundColumn UniqueName="C_NAME" HeaderText="Tên mã vùng" DataField="C_NAME" 
+                <telerik:GridBoundColumn UniqueName="C_CODE" HeaderText="Mã vùng tính cước" DataField="C_CODE" 
+                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
+                </telerik:GridBoundColumn>
+                <telerik:GridBoundColumn UniqueName="C_NAME" HeaderText="Tên vùng tính cước" DataField="C_NAME" 
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
                 </telerik:GridBoundColumn>
                 <telerik:GridBoundColumn UniqueName="C_DESC" HeaderText="Tuyến đường thuộc vùng" DataField="C_DESC" 
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
                 </telerik:GridBoundColumn>
         </Columns>
-        <EditFormSettings InsertCaption="Thêm mã vùng mới" CaptionFormatString="Sửa mã vùng: <b>{0}</b>" CaptionDataField="C_NAME" EditFormType="Template" PopUpSettings-Width="600px">
+        <EditFormSettings InsertCaption="Thêm vùng tính cước mới" CaptionFormatString="Sửa vùng tính cước: <b>{0}</b>" CaptionDataField="C_NAME" EditFormType="Template" PopUpSettings-Width="600px">
         <EditColumn UniqueName="EditCommandColumn1" FilterControlAltText="Filter EditCommandColumn1 column"></EditColumn>
            <FormTemplate>
             <div class="headerthongtin">
@@ -84,20 +87,30 @@
             <div style="width:600px;background:#FFFFFF" class="clearfix">      
             <table id="tblEdit" class ="TableEditInGrid" cellspacing="3" cellpadding="3" style="width: 100%" border="0">
             <tr>
-                 <td style =" width:150px;"> <span class="rtsTxtnew">Mã mã vùng:</td>
+                <td style =" width:150px;"> <span class="rtsTxtnew">Tên dịch vụ:</td>
+                <td colspan="4">
+                   <telerik:RadComboBox ID="cmbSanPham" runat="server" SelectedValue='<%# Bind("FK_MASANPHAM") %>'
+                    DataTextField="C_NAME" DataValueField="PK_ID" DataSourceID="MASANPHAMDataSource"
+                    ShowToggleImage="True" EmptyMessage="Chọn dịch vụ">
+                    </telerik:RadComboBox>
+                   <asp:RequiredFieldValidator ID="rfvMASANPHAM" runat="server" ErrorMessage="Dịch vụ không thể rỗng" ControlToValidate="txtName" SetFocusOnError="True" Display="Dynamic" ValidationGroup="G1"></asp:RequiredFieldValidator>                   
+                </td>
+            </tr>
+            <tr>
+                 <td style =" width:150px;"> <span class="rtsTxtnew">Mã vùng tính cước:</td>
                 <td colspan="4">
                     <asp:HiddenField ID="txtID" Value ='<%# Eval( "PK_ID") %>' runat="server" />
                     <telerik:RadTextBox ID="txtCODE" Width ="90%" Text='<%# Bind( "C_CODE") %>' runat="server"></telerik:RadTextBox>
-                    <asp:RequiredFieldValidator ID="rfvCODE" runat="server" ErrorMessage="Mã mã vùng không thể rỗng" ControlToValidate="txtCODE" SetFocusOnError="True" Display="Dynamic" ValidationGroup="G1"></asp:RequiredFieldValidator>
-                    <asp:CustomValidator ID="cuvCODE" ControlToValidate="txtCODE" OnServerValidate="CheckCode" runat="server" ErrorMessage="Mã mã vùng đã tồn tại" Display="Dynamic" ValidationGroup="G1"></asp:CustomValidator>
+                    <asp:RequiredFieldValidator ID="rfvCODE" runat="server" ErrorMessage="Mã vùng tính cước không thể rỗng" ControlToValidate="txtCODE" SetFocusOnError="True" Display="Dynamic" ValidationGroup="G1"></asp:RequiredFieldValidator>
+                    <asp:CustomValidator ID="cuvCODE" ControlToValidate="txtCODE" OnServerValidate="CheckCode" runat="server" ErrorMessage="Mã vùng tính cước đã tồn tại" Display="Dynamic" ValidationGroup="G1"></asp:CustomValidator>
                 </td>
             </tr> 
             <tr>
-                 <td style =" width:150px;"> <span class="rtsTxtnew">Tên mã vùng:</td>
+                 <td style =" width:150px;"> <span class="rtsTxtnew">Tên vùng tính cước:</td>
                 <td colspan="4">
                    <telerik:RadTextBox ID="txtName" Text='<%# Bind( "C_NAME") %>' runat="server" Width="90%"></telerik:RadTextBox>
-                   <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Tên mã vùng không thể rỗng" ControlToValidate="txtName" SetFocusOnError="True" Display="Dynamic" ValidationGroup="G1"></asp:RequiredFieldValidator>
-                   <asp:CustomValidator ID="CustomValidator1" ControlToValidate="txtName" OnServerValidate="CheckName" runat="server" ErrorMessage="Tên mã vùng đã tồn tại" Display="Dynamic" ValidationGroup="G1"></asp:CustomValidator>
+                   <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Tên vùng tính cước không thể rỗng" ControlToValidate="txtName" SetFocusOnError="True" Display="Dynamic" ValidationGroup="G1"></asp:RequiredFieldValidator>
+                   <asp:CustomValidator ID="CustomValidator1" ControlToValidate="txtName" OnServerValidate="CheckName" runat="server" ErrorMessage="Tên vùng tính cước đã tồn tại" Display="Dynamic" ValidationGroup="G1"></asp:CustomValidator>
                 </td>
             </tr>
             <tr>
@@ -125,10 +138,11 @@
 </telerik:RadGrid>
 <asp:SqlDataSource ID="MAVUNGDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
         DeleteCommand="DELETE FROM [DMMAVUNG] WHERE [PK_ID] = @PK_ID" 
-        InsertCommand="INSERT INTO [DMMAVUNG] ([C_CODE], [C_NAME], [C_DESC]) VALUES (@C_CODE, @C_NAME, @C_DESC)"
-        SelectCommand="SELECT [PK_ID], [C_CODE], [C_NAME], [C_DESC] FROM [DMMAVUNG] ORDER BY LTRIM([C_CODE])"      
-        UpdateCommand="UPDATE [DMMAVUNG] SET [C_CODE] = @C_CODE, [C_NAME] = @C_NAME,[C_DESC] = @C_DESC WHERE [PK_ID] = @PK_ID" >
+        InsertCommand="INSERT INTO [DMMAVUNG] ([FK_MASANPHAM],[C_CODE], [C_NAME], [C_DESC]) VALUES (@FK_MASANPHAM,@C_CODE, @C_NAME, @C_DESC)"
+        SelectCommand="SELECT [DMMAVUNG].[PK_ID], [DMMAVUNG].[FK_MASANPHAM], [DMMAVUNG].[C_CODE], [DMMAVUNG].[C_NAME], [DMMAVUNG].[C_DESC],DMMASANPHAM.C_NAME as MASANPHAMNAME FROM [DMMAVUNG] LEFT OUTER JOIN DMMASANPHAM ON DMMAVUNG.FK_MASANPHAM = DMMASANPHAM.PK_ID ORDER BY DMMAVUNG.PK_ID"      
+        UpdateCommand="UPDATE [DMMAVUNG] SET [FK_MASANPHAM] = @FK_MASANPHAM,[C_CODE] = @C_CODE, [C_NAME] = @C_NAME,[C_DESC] = @C_DESC WHERE [PK_ID] = @PK_ID" >
         <UpdateParameters>
+            <asp:Parameter Name="FK_MASANPHAM" Type="Int32" />
             <asp:Parameter Name="C_CODE" Type="String" />
             <asp:Parameter Name="C_NAME" Type="String" />
             <asp:Parameter Name="C_DESC" Type="String" />
@@ -137,9 +151,13 @@
             <asp:Parameter Name="PK_ID" Type="Int32" />
         </DeleteParameters>
         <InsertParameters>
+            <asp:Parameter Name="FK_MASANPHAM" Type="Int32" />
             <asp:Parameter Name="C_CODE" Type="String" />
             <asp:Parameter Name="C_NAME" Type="String" />
             <asp:Parameter Name="C_DESC" Type="String" />
         </InsertParameters>
+</asp:SqlDataSource>
+<asp:SqlDataSource ID="MASANPHAMDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
+        SelectCommand="SELECT [PK_ID], [C_CODE], [C_NAME] FROM [DMMASANPHAM] ORDER BY PK_ID">
 </asp:SqlDataSource>
 

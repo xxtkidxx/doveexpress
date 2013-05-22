@@ -107,11 +107,11 @@ public partial class module_MAVUNG : System.Web.UI.UserControl
         if (e.Exception != null)
         {
             e.ExceptionHandled = true;
-            SetMessage("Không thể xóa mã vùng. Lý do: " + e.Exception.Message);
+            SetMessage("Không thể xóa vùng tính cước. Lý do: " + e.Exception.Message);
         }
         else
         {
-            SetMessage("Xóa mã vùng thành công!");
+            SetMessage("Xóa vùng tính cước thành công!");
             ITCLIB.ActionLog.ActionLog.WriteLog(Session["UserID"].ToString(), "Deleted MAVUNGs", e.Item.KeyValues);
         }
     }
@@ -121,11 +121,11 @@ public partial class module_MAVUNG : System.Web.UI.UserControl
         if (e.Exception != null)
         {
             e.ExceptionHandled = true;
-            SetMessage("Không thể tạo mới mã vùng. Lý do: " + e.Exception.Message);
+            SetMessage("Không thể tạo mới vùng tính cước. Lý do: " + e.Exception.Message);
         }
         else
         {
-            SetMessage("Tạo mới mã vùng thành công!");
+            SetMessage("Tạo mới vùng tính cước thành công!");
             ITCLIB.ActionLog.ActionLog.WriteLog(Session["UserID"].ToString(), "Inserted MAVUNGs", "{PK_ID:\"" + getmaxid("DMMAVUNG") + "\"}");
         }
     }
@@ -136,11 +136,11 @@ public partial class module_MAVUNG : System.Web.UI.UserControl
         {
             e.KeepInEditMode = true;
             e.ExceptionHandled = true;
-            SetMessage("Không thể cập nhật mã vùng. Lý do: " + e.Exception.Message);
+            SetMessage("Không thể cập nhật vùng tính cước. Lý do: " + e.Exception.Message);
         }
         else
         {
-            SetMessage("Cập nhật mã vùng thành công!");
+            SetMessage("Cập nhật vùng tính cước thành công!");
             ITCLIB.ActionLog.ActionLog.WriteLog(Session["UserID"].ToString(), "Updated MAVUNGs", e.Item.KeyValues);
         }
     }
@@ -172,7 +172,7 @@ public partial class module_MAVUNG : System.Web.UI.UserControl
             {
                 if (!ValidateDeleteGroup(item["pk_id"].Text))
                 {
-                    SetMessage("Không thể xóa mã vùng \"" + item["c_name"].Text + "\" do có tham chiếu dữ liệu khác.");
+                    SetMessage("Không thể xóa vùng tính cước \"" + item["c_name"].Text + "\" do có tham chiếu dữ liệu khác.");
                     RadGridMAVUNG.Rebind();
                 }
             }
