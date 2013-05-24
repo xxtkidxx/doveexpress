@@ -345,6 +345,6 @@
  SelectCommand="SELECT USERS.* FROM USERS WHERE FK_GROUPUSER NOT IN (0,1)" >
 </asp:SqlDataSource>
  <asp:SqlDataSource ID="NHOMKHACHHANGDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
- SelectCommand="SELECT DMNHOMKHACHHANG.* FROM DMNHOMKHACHHANG WHERE C_TYPE = 0" >
+ SelectCommand="SELECT DMNHOMKHACHHANG.* FROM DMNHOMKHACHHANG" >
 </asp:SqlDataSource>
 

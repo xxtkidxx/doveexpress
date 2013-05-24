@@ -1,0 +1,30 @@
+Thời gian: 2013-05-22 20:37:07 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-05-22 21:07:41 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated MAVUNGs
+Kết quả : {PK_ID:"1"}
+__________________________
+Thời gian: 2013-05-22 21:07:45 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated MAVUNGs
+Kết quả : {PK_ID:"1"}
+__________________________
+Thời gian: 2013-05-22 21:37:13 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-05-22 22:04:19 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________

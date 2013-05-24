@@ -207,5 +207,5 @@
 </telerik:RadPane>
  </telerik:RadSplitter>
  <asp:SqlDataSource ID="SqlDataSourceTINHTHANH" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
-    SelectCommand="SELECT [PK_ID], [C_CODE], [C_NAME] FROM [DMTINHTHANH]">
+    SelectCommand="SELECT [DMTINHTHANH].[PK_ID], [DMTINHTHANH].[C_CODE], [DMTINHTHANH].[C_NAME] FROM [DMTINHTHANH] LEFT OUTER JOIN DMQUOCGIA ON DMTINHTHANH.FK_QUOCGIA = DMQUOCGIA.PK_ID WHERE DMQUOCGIA.C_CODE='VN'">
  </asp:SqlDataSource> 

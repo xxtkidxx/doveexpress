@@ -107,11 +107,11 @@ public partial class module_NHOMKHACHHANG : System.Web.UI.UserControl
         if (e.Exception != null)
         {
             e.ExceptionHandled = true;
-            SetMessage("Không thể xóa nhóm khách hàng, đối tác. Lý do: " + e.Exception.Message);
+            SetMessage("Không thể xóa nhóm khách hàng. Lý do: " + e.Exception.Message);
         }
         else
         {
-            SetMessage("Xóa nhóm khách hàng, đối tác thành công!");
+            SetMessage("Xóa nhóm khách hàng thành công!");
             ITCLIB.ActionLog.ActionLog.WriteLog(Session["UserID"].ToString(), "Deleted NHOMKHACHHANGs", e.Item.KeyValues);
         }
     }
@@ -121,11 +121,11 @@ public partial class module_NHOMKHACHHANG : System.Web.UI.UserControl
         if (e.Exception != null)
         {
             e.ExceptionHandled = true;
-            SetMessage("Không thể tạo mới nhóm khách hàng, đối tác. Lý do: " + e.Exception.Message);
+            SetMessage("Không thể tạo mới nhóm khách hàng. Lý do: " + e.Exception.Message);
         }
         else
         {
-            SetMessage("Tạo mới nhóm khách hàng, đối tác thành công!");
+            SetMessage("Tạo mới nhóm khách hàng thành công!");
             ITCLIB.ActionLog.ActionLog.WriteLog(Session["UserID"].ToString(), "Inserted NHOMKHACHHANGs", "{PK_ID:\"" + getmaxid("DMNHOMKHACHHANG") + "\"}");
         }
     }
@@ -136,11 +136,11 @@ public partial class module_NHOMKHACHHANG : System.Web.UI.UserControl
         {
             e.KeepInEditMode = true;
             e.ExceptionHandled = true;
-            SetMessage("Không thể cập nhật nhóm khách hàng, đối tác. Lý do: " + e.Exception.Message);
+            SetMessage("Không thể cập nhật nhóm khách hàng. Lý do: " + e.Exception.Message);
         }
         else
         {
-            SetMessage("Cập nhật nhóm khách hàng, đối tác thành công!");
+            SetMessage("Cập nhật nhóm khách hàng thành công!");
             ITCLIB.ActionLog.ActionLog.WriteLog(Session["UserID"].ToString(), "Updated NHOMKHACHHANGs", e.Item.KeyValues);
         }
     }
@@ -152,16 +152,6 @@ public partial class module_NHOMKHACHHANG : System.Web.UI.UserControl
             GridEditableItem editItem = (GridEditableItem)e.Item;
             HiddenField txtID = (HiddenField)editItem.FindControl("txtID");
             Session["txtID"] = (txtID.Value != "") ? txtID.Value : "0";
-            if (e.Item is GridEditFormInsertItem || e.Item is GridDataInsertItem)
-            {
-                // insert item
-                RadioButtonList txtStatus = (RadioButtonList)editItem.FindControl("txtStatus");
-                txtStatus.SelectedValue = "0";
-            }
-            else
-            {
-                // edit item
-            }
         }
         if (e.Item is GridDataItem)
         {
@@ -182,7 +172,7 @@ public partial class module_NHOMKHACHHANG : System.Web.UI.UserControl
             {
                 if (!ValidateDeleteGroup(item["pk_id"].Text))
                 {
-                    SetMessage("Không thể xóa nhóm khách hàng, đối tác \"" + item["c_name"].Text + "\" do có tham chiếu dữ liệu khác.");
+                    SetMessage("Không thể xóa nhóm khách hàng \"" + item["c_name"].Text + "\" do có tham chiếu dữ liệu khác.");
                     RadGridNHOMKHACHHANG.Rebind();
                 }
             }

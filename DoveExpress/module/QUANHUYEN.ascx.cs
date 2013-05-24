@@ -264,6 +264,7 @@ public partial class module_QUANHUYEN : System.Web.UI.UserControl
     {
         if (!IsPostBack)
         {
+            Session["ttID"] = 0;
             RadPanelItem item = (RadPanelItem)RadPanelBarListTINHTHANH.FindItemByValue("0");
             if (item != null)
             {
