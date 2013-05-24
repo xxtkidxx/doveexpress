@@ -29,7 +29,7 @@
     <MasterTableView Name="MasterTableViewNHOMKHACHHANG" CommandItemDisplay="Top" DataSourceID="NHOMKHACHHANGDataSource" DataKeyNames="PK_ID" ClientDataKeyNames="PK_ID" EditMode="PopUp" NoMasterRecordsText="Không có dữ liệu">
         <CommandItemTemplate>
                     <div style="padding: 5px 5px;float:left;width:auto">
-                        <b>Quản lý nhóm khách hàng, đối tác</b>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <b>Quản lý nhóm khách hàng</b>&nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:LinkButton ID="btnEditSelected" runat="server" CommandName="EditSelected" Visible='<%# RadGridNHOMKHACHHANG.EditIndexes.Count == 0 && ITCLIB.Security.Security.CanEditModule("JobLists") %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Edit.gif" />Sửa</asp:LinkButton>&nbsp;&nbsp;
                         <asp:LinkButton ID="btnUpdateEdited" runat="server" CommandName="UpdateEdited" Visible='<%# RadGridNHOMKHACHHANG.EditIndexes.Count > 0 %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Update.gif" />Lưu</asp:LinkButton>&nbsp;&nbsp;
                         <asp:LinkButton ID="btnCancel" runat="server" CommandName="CancelAll" Visible='<%# RadGridNHOMKHACHHANG.EditIndexes.Count > 0 || RadGridNHOMKHACHHANG.MasterTableView.IsItemInserted %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Cancel.gif" />Hủy bỏ</asp:LinkButton>&nbsp;&nbsp;
@@ -61,17 +61,14 @@
                  <HeaderStyle HorizontalAlign ="Center" Width ="30px" />
                  <ItemStyle HorizontalAlign ="Center" Width ="30px" />
                </telerik:GridTemplateColumn>
-                <telerik:GridBoundColumn UniqueName="C_CODE" HeaderText="Mã nhóm khách hàng, đối tác" DataField="C_CODE" 
+                <telerik:GridBoundColumn UniqueName="C_CODE" HeaderText="Mã nhóm khách hàng" DataField="C_CODE" 
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
                 </telerik:GridBoundColumn>
-                <telerik:GridBoundColumn UniqueName="C_NAME" HeaderText="Tên nhóm khách hàng, đối tác" DataField="C_NAME" 
-                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
-                </telerik:GridBoundColumn>
-                <telerik:GridBoundColumn UniqueName="C_TYPENAME" HeaderText="Loại nhóm khách hàng, đối tác" DataField="C_TYPENAME" 
+                <telerik:GridBoundColumn UniqueName="C_NAME" HeaderText="Tên nhóm khách hàng" DataField="C_NAME" 
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
                 </telerik:GridBoundColumn>
         </Columns>
-        <EditFormSettings InsertCaption="Thêm nhóm khách hàng, đối tác mới" CaptionFormatString="Sửa nhóm khách hàng, đối tác: <b>{0}</b>" CaptionDataField="C_NAME" EditFormType="Template" PopUpSettings-Width="600px">
+        <EditFormSettings InsertCaption="Thêm nhóm khách hàng mới" CaptionFormatString="Sửa nhóm khách hàng: <b>{0}</b>" CaptionDataField="C_NAME" EditFormType="Template" PopUpSettings-Width="600px">
         <EditColumn UniqueName="EditCommandColumn1" FilterControlAltText="Filter EditCommandColumn1 column"></EditColumn>
            <FormTemplate>
             <div class="headerthongtin">
@@ -84,32 +81,22 @@
             <div style="width:600px;background:#FFFFFF" class="clearfix">      
             <table id="tblEdit" class ="TableEditInGrid" cellspacing="3" cellpadding="3" style="width: 100%" border="0">
             <tr>
-                 <td style =" width:150px;"> <span class="rtsTxtnew">Mã nhóm khách hàng, đối tác:</td>
+                 <td style =" width:150px;"> <span class="rtsTxtnew">Mã nhóm khách hàng:</td>
                 <td colspan="4">
                     <asp:HiddenField ID="txtID" Value ='<%# Eval( "PK_ID") %>' runat="server" />
                     <telerik:RadTextBox ID="txtCODE" Width ="90%" Text='<%# Bind( "C_CODE") %>' runat="server"></telerik:RadTextBox>
-                    <asp:RequiredFieldValidator ID="rfvCODE" runat="server" ErrorMessage="Mã nhóm khách hàng, đối tác không thể rỗng" ControlToValidate="txtCODE" SetFocusOnError="True" Display="Dynamic" ValidationGroup="G1"></asp:RequiredFieldValidator>
-                    <asp:CustomValidator ID="cuvCODE" ControlToValidate="txtCODE" OnServerValidate="CheckCode" runat="server" ErrorMessage="Mã nhóm khách hàng, đối tác đã tồn tại" Display="Dynamic" ValidationGroup="G1"></asp:CustomValidator>
+                    <asp:RequiredFieldValidator ID="rfvCODE" runat="server" ErrorMessage="Mã nhóm khách hàng không thể rỗng" ControlToValidate="txtCODE" SetFocusOnError="True" Display="Dynamic" ValidationGroup="G1"></asp:RequiredFieldValidator>
+                    <asp:CustomValidator ID="cuvCODE" ControlToValidate="txtCODE" OnServerValidate="CheckCode" runat="server" ErrorMessage="Mã nhóm khách hàng đã tồn tại" Display="Dynamic" ValidationGroup="G1"></asp:CustomValidator>
                 </td>
             </tr> 
             <tr>
-                 <td style =" width:150px;"> <span class="rtsTxtnew">Tên nhóm khách hàng, đối tác:</td>
+                 <td style =" width:150px;"> <span class="rtsTxtnew">Tên nhóm khách hàng:</td>
                 <td colspan="4">
                    <telerik:RadTextBox ID="txtName" Text='<%# Bind( "C_NAME") %>' runat="server" Width="90%"></telerik:RadTextBox>
-                   <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Tên nhóm khách hàng, đối tác không thể rỗng" ControlToValidate="txtName" SetFocusOnError="True" Display="Dynamic" ValidationGroup="G1"></asp:RequiredFieldValidator>
-                   <asp:CustomValidator ID="CustomValidator1" ControlToValidate="txtName" OnServerValidate="CheckName" runat="server" ErrorMessage="Tên nhóm khách hàng, đối tác đã tồn tại" Display="Dynamic" ValidationGroup="G1"></asp:CustomValidator>
+                   <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Tên nhóm khách hàng không thể rỗng" ControlToValidate="txtName" SetFocusOnError="True" Display="Dynamic" ValidationGroup="G1"></asp:RequiredFieldValidator>
+                   <asp:CustomValidator ID="CustomValidator1" ControlToValidate="txtName" OnServerValidate="CheckName" runat="server" ErrorMessage="Tên nhóm khách hàng đã tồn tại" Display="Dynamic" ValidationGroup="G1"></asp:CustomValidator>
                 </td>
             </tr>
-            <tr>
-                 <td style =" width:150px;"> <span class="rtsTxtnew">Loại:</td>
-                <td colspan="4">
-                    <asp:RadioButtonList ID="txtStatus" runat="server" RepeatDirection="Horizontal" SelectedValue ='<%# Bind( "C_TYPE") %>'>
-                        <asp:ListItem Text="" Value ="" style =" display:none;"></asp:ListItem>
-                        <asp:ListItem Text ="Khách hàng" Value ="0"></asp:ListItem>
-                         <asp:ListItem Text ="Đối tác" Value ="1"></asp:ListItem>
-                    </asp:RadioButtonList>
-                 </td>
-            </tr>  
              </table>
             </div> 
              </center> 
@@ -129,13 +116,12 @@
 </telerik:RadGrid>
 <asp:SqlDataSource ID="NHOMKHACHHANGDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
         DeleteCommand="DELETE FROM [DMNHOMKHACHHANG] WHERE [PK_ID] = @PK_ID" 
-        InsertCommand="INSERT INTO [DMNHOMKHACHHANG] ([C_CODE], [C_NAME],[C_TYPE]) VALUES (@C_CODE, @C_NAME,@C_TYPE)"
-        SelectCommand="SELECT [PK_ID], [C_CODE], [C_NAME],[C_TYPE],(CASE WHEN (C_TYPE = '1') THEN N'Đối tác' ELSE N'Khách hàng' END) AS C_TYPENAME FROM [DMNHOMKHACHHANG] ORDER BY LTRIM([C_CODE])"      
-        UpdateCommand="UPDATE [DMNHOMKHACHHANG] SET [C_CODE] = @C_CODE, [C_NAME] = @C_NAME,[C_TYPE] =@C_TYPE WHERE [PK_ID] = @PK_ID" >
+        InsertCommand="INSERT INTO [DMNHOMKHACHHANG] ([C_CODE], [C_NAME]) VALUES (@C_CODE, @C_NAME)"
+        SelectCommand="SELECT [PK_ID], [C_CODE], [C_NAME] FROM [DMNHOMKHACHHANG] ORDER BY LTRIM([C_CODE])"      
+        UpdateCommand="UPDATE [DMNHOMKHACHHANG] SET [C_CODE] = @C_CODE, [C_NAME] = @C_NAME WHERE [PK_ID] = @PK_ID" >
         <UpdateParameters>
             <asp:Parameter Name="C_CODE" Type="String" />
             <asp:Parameter Name="C_NAME" Type="String" />
-            <asp:Parameter Name="C_TYPE" Type="Int32" />
         </UpdateParameters>
         <DeleteParameters>
             <asp:Parameter Name="PK_ID" Type="Int32" />
@@ -143,7 +129,6 @@
         <InsertParameters>
             <asp:Parameter Name="C_CODE" Type="String" />
             <asp:Parameter Name="C_NAME" Type="String" />
-            <asp:Parameter Name="C_TYPE" Type="Int32" />
         </InsertParameters>
 </asp:SqlDataSource>
 

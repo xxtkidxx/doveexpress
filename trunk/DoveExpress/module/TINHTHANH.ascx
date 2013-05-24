@@ -44,8 +44,6 @@
         onitemclick="RadPanelBarListQUOCGIA_ItemClick" AppendDataBoundItems="True" 
         onprerender="RadPanelBarListQUOCGIA_PreRender">
 <Items> 
-<telerik:RadPanelItem runat="server" Text="Tất cả" Value="0" ImageUrl="../images/folder-closed.gif" SelectedImageUrl="../images/folder_open.png">  
-</telerik:RadPanelItem> 
 </Items> 
 </telerik:RadPanelBar>
 </telerik:RadPane>
@@ -207,5 +205,5 @@
 </telerik:RadPane>
  </telerik:RadSplitter>
  <asp:SqlDataSource ID="SqlDataSourceQUOCGIA" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
-    SelectCommand="SELECT [PK_ID], [C_CODE], [C_NAME] FROM [DMQUOCGIA]">
+    SelectCommand="SELECT [PK_ID], [C_CODE], [C_NAME] FROM [DMQUOCGIA] WHERE C_CODE ='VN'">
  </asp:SqlDataSource> 

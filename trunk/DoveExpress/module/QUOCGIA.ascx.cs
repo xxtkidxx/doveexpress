@@ -264,6 +264,7 @@ public partial class module_QUOCGIA : System.Web.UI.UserControl
     {
         if (!IsPostBack)
         {
+            Session["kvID"] = 0;
             RadPanelItem item = (RadPanelItem)RadPanelBarListKHUVUC.FindItemByValue("0");
             if (item != null)
             {

@@ -158,7 +158,7 @@
                     <telerik:RadTextBox ID="txtCODE" Width ="90%" Text='<%# Bind("C_BILL") %>' runat="server"></telerik:RadTextBox>
                     <asp:RequiredFieldValidator ID="rfvCODE" runat="server" ErrorMessage="Số Bill không thể rỗng" ControlToValidate="txtCODE" SetFocusOnError="True" Display="Dynamic" ValidationGroup="G1"></asp:RequiredFieldValidator>
                     <asp:CustomValidator ID="cuvCODE" ControlToValidate="txtCODE" OnServerValidate="CheckBill" runat="server" ErrorMessage="Số Bill đã tồn tại" Display="Dynamic" ValidationGroup="G1"></asp:CustomValidator>
-                </td>
+                </td>               
             </tr>
             <tr>
                 <td style ="width:100px;"> <span class="rtsTxtnew">Nhóm KH:</td>
@@ -209,7 +209,7 @@
                 <td colspan="4">
                     <telerik:RadComboBox ID="cmbMaVung" runat="server" SelectedValue='<%# Bind("FK_MAVUNG") %>'
                     DataTextField="C_NAME" DataValueField="PK_ID" DataSourceID="MAVUNGDataSource"
-                    ShowToggleImage="True" EmptyMessage="Chọn dịch vụ">
+                    ShowToggleImage="True" EmptyMessage="Chọn vùng">
                     </telerik:RadComboBox>
                 </td>
             </tr

@@ -44,14 +44,36 @@
                     </telerik:RadMenuItem> 
                  </Items>
             </telerik:RadMenuItem> 
-            <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=MABANGCUOC" Text="Mã bảng cước" Value="MABANGCUOC">                 
+            <telerik:RadMenuItem runat="server" Font-Size="Small" Text="Khách hàng" Value="KHACHHANGMENU">
+                 <Items>
+                    <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=NHOMKHACHHANG" Text="Nhóm khách hàng" Value="NHOMKHACHHANG">
+                    </telerik:RadMenuItem> 
+                    <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=KHACHHANG" Text="Khách hàng" Value="KHACHHANG">
+                    </telerik:RadMenuItem>
+                    <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=MABANGCUOC" Text="Mã bảng cước (khách hàng)" Value="MABANGCUOC">                 
+                    </telerik:RadMenuItem>                    
+                    <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=MAVUNG" Text="Vùng tính cước (Khách hàng)" Value="MAVUNG">
+                    </telerik:RadMenuItem>
+                    <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=MAVUNGQT" Text="Vùng tính cước quốc tế (Khách hàng)" Value="MAVUNGQT">
+                    </telerik:RadMenuItem>
+                    <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=CHITIETCUOC" Text="Chi tiết cước khách hàng" Value="CHITIETCUOC">
+                    </telerik:RadMenuItem> 
+                 </Items>
+            </telerik:RadMenuItem>
+            <telerik:RadMenuItem runat="server" Font-Size="Small" Text="Đối tác" Value="DOITACMENU">
+                 <Items>
+                    <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=DOITAC" Text="Đối tác" Value="DOITAC">
+                    </telerik:RadMenuItem>                
+                    <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=MAVUNGDT" Text="Vùng tính cước (đối tác)" Value="MAVUNGDT">
+                    </telerik:RadMenuItem>
+                    <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=MAVUNGQTDT" Text="Vùng tính cước quốc tế (đối tác)" Value="MAVUNGDT">
+                    </telerik:RadMenuItem>
+                    <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=CHITIETCUOCDT" Text="Chi tiết cước đối tác" Value="CHITIETCUOCDT">
+                    </telerik:RadMenuItem> 
+                 </Items>
             </telerik:RadMenuItem>
             <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=MASANPHAM" Text="Mã dịch vụ" Value="MASANPHAM">
             </telerik:RadMenuItem>
-            <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=MAVUNG" Text="Vùng tính cước" Value="MAVUNG">
-            </telerik:RadMenuItem>
-            <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=CHITIETCUOC" Text="Chi tiết cước" Value="CHITIETCUOC">
-            </telerik:RadMenuItem> 
             <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=TYGIA" Text="Tỷ giá" Value="TYGIA">                 
             </telerik:RadMenuItem> 
         </Items>
@@ -71,16 +93,6 @@
              <telerik:RadMenuItem runat="server" NavigateUrl="../Default.aspx?ctl=User_Log" Text="Nhật ký đăng nhập" Value="User_Log" Font-Size="Small">
              </telerik:RadMenuItem>
         </Items>
-    </telerik:RadMenuItem>
-    <telerik:RadMenuItem runat="server" Font-Size="Small" Text="Khách hàng, đối tác" Value="KHACHHANGDOITAC">
-        <Items>
-            <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=NHOMKHACHHANG" Text="Nhóm khách hàng, đối tác" Value="NHOMKHACHHANG">
-            </telerik:RadMenuItem> 
-            <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=KHACHHANG" Text="Khách hàng" Value="KHACHHANG">
-            </telerik:RadMenuItem>
-            <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=DOITAC" Text="Đối tác" Value="DOITAC">
-            </telerik:RadMenuItem>
-        </Items>           
     </telerik:RadMenuItem>
     <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=NHANGUI" Text="Nhận gửi" Value="NHANGUI">                 
     </telerik:RadMenuItem>

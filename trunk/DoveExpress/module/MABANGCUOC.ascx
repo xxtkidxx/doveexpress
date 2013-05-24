@@ -20,6 +20,32 @@
         }
         return false;
     }
+
+</script>
+<script type="text/javascript">
+    var ListBoxNhomKhachHang;
+    function OnClientLoadListBoxNhomKhachHang(sender) {
+        ListBoxNhomKhachHang = sender;
+    }
+    var ListBoxNhomKhachHangSelect;
+    function OnClientLoadListBoxNhomKhachHangSelect(sender) {
+        ListBoxNhomKhachHangSelect = sender;
+    }
+    var panelControl;
+    function OnClientLoadPanelControl(sender) {
+        panelControl = sender;
+    }
+    function onClientTransferringHandler(sender, e) {
+        var itemvalue = e.get_item().get_value();
+        if (ListBoxNhomKhachHangSelect.findItemByValue(itemvalue) != null) {
+            e.set_cancel(true);
+        }
+    }
+    function OnClientDeleteNhomKhachHang(sender, e) {
+        if (!confirm("Bạn thực sự muốn xóa nhóm khách hàng khỏi danh sách chọn?")) {
+            e.set_cancel(true);
+        }
+    }  
 </script>
 </telerik:RadCodeBlock>
 <telerik:RadAjaxLoadingPanel Skin="Vista" ID="RadAjaxLoadingPanelMABANGCUOC" runat="server" />
@@ -42,7 +68,7 @@
     <MasterTableView Name="MasterTableViewMABANGCUOC" CommandItemDisplay="Top" DataSourceID="MABANGCUOCDataSource" DataKeyNames="PK_ID" ClientDataKeyNames="PK_ID" EditMode="PopUp" NoMasterRecordsText="Không có dữ liệu">
         <CommandItemTemplate>
                     <div style="padding: 5px 5px;float:left;width:auto">
-                        <b>Quản lý mã bảng cước</b>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <b>Quản lý bảng cước</b>&nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:LinkButton ID="btnEditSelected" runat="server" CommandName="EditSelected" Visible='<%# RadGridMABANGCUOC.EditIndexes.Count == 0 && ITCLIB.Security.Security.CanEditModule("JobLists") %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Edit.gif" />Sửa</asp:LinkButton>&nbsp;&nbsp;
                         <asp:LinkButton ID="btnUpdateEdited" runat="server" CommandName="UpdateEdited" Visible='<%# RadGridMABANGCUOC.EditIndexes.Count > 0 %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Update.gif" />Lưu</asp:LinkButton>&nbsp;&nbsp;
                         <asp:LinkButton ID="btnCancel" runat="server" CommandName="CancelAll" Visible='<%# RadGridMABANGCUOC.EditIndexes.Count > 0 || RadGridMABANGCUOC.MasterTableView.IsItemInserted %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Cancel.gif" />Hủy bỏ</asp:LinkButton>&nbsp;&nbsp;
@@ -74,22 +100,14 @@
                  <HeaderStyle HorizontalAlign ="Center" Width ="30px" />
                  <ItemStyle HorizontalAlign ="Center" Width ="30px" />
                </telerik:GridTemplateColumn>
-                <telerik:GridBoundColumn UniqueName="C_CODE" HeaderText="Mã mã bảng cước" DataField="C_CODE" 
+                <telerik:GridBoundColumn UniqueName="C_CODE" HeaderText="Mã bảng cước" DataField="C_CODE" 
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
                 </telerik:GridBoundColumn>
-                <telerik:GridBoundColumn UniqueName="C_NAME" HeaderText="Tên mã bảng cước" DataField="C_NAME" 
+                <telerik:GridBoundColumn UniqueName="C_NAME" HeaderText="Tên bảng cước" DataField="C_NAME" 
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
-                </telerik:GridBoundColumn>
-                <telerik:GridBoundColumn UniqueName="C_TYPENAME" HeaderText="Loại mã bảng cước" DataField="C_TYPENAME" 
-                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
-                </telerik:GridBoundColumn>
-                <telerik:GridTemplateColumn UniqueName="C_DEFAULT" HeaderText="Mặc định" AllowFiltering ="false">
-                  <ItemTemplate>
-                    <asp:CheckBox ID="chkDefault" runat="server" onclick='<%# Eval("PK_ID", "if(!onClientClickSelectedMBC({0})) return false;") %>' Checked='<%# getstatus(Eval("C_DEFAULT")) %>'/>
-                  </ItemTemplate>
-                </telerik:GridTemplateColumn>        
+                </telerik:GridBoundColumn>      
         </Columns>
-        <EditFormSettings InsertCaption="Thêm mã bảng cước mới" CaptionFormatString="Sửa mã bảng cước: <b>{0}</b>" CaptionDataField="C_NAME" EditFormType="Template" PopUpSettings-Width="600px">
+        <EditFormSettings InsertCaption="Thêm bảng cước mới" CaptionFormatString="Sửa bảng cước: <b>{0}</b>" CaptionDataField="C_NAME" EditFormType="Template" PopUpSettings-Width="600px">
         <EditColumn UniqueName="EditCommandColumn1" FilterControlAltText="Filter EditCommandColumn1 column"></EditColumn>
            <FormTemplate>
             <div class="headerthongtin">
@@ -102,36 +120,49 @@
             <div style="width:600px;background:#FFFFFF" class="clearfix">      
             <table id="tblEdit" class ="TableEditInGrid" cellspacing="3" cellpadding="3" style="width: 100%" border="0">
             <tr>
-                 <td style =" width:150px;"> <span class="rtsTxtnew">Mã mã bảng cước:</td>
+                 <td style =" width:150px;"> <span class="rtsTxtnew">Mã bảng cước:</td>
                 <td colspan="4">
                     <asp:HiddenField ID="txtID" Value ='<%# Eval( "PK_ID") %>' runat="server" />
+                    <asp:HiddenField ID="txtC_VALUE" Value ='<%# Eval( "C_VALUE") %>' runat="server" />
                     <telerik:RadTextBox ID="txtCODE" Width ="90%" Text='<%# Bind( "C_CODE") %>' runat="server"></telerik:RadTextBox>
-                    <asp:RequiredFieldValidator ID="rfvCODE" runat="server" ErrorMessage="Mã mã bảng cước không thể rỗng" ControlToValidate="txtCODE" SetFocusOnError="True" Display="Dynamic" ValidationGroup="G1"></asp:RequiredFieldValidator>
-                    <asp:CustomValidator ID="cuvCODE" ControlToValidate="txtCODE" OnServerValidate="CheckCode" runat="server" ErrorMessage="Mã mã bảng cước đã tồn tại" Display="Dynamic" ValidationGroup="G1"></asp:CustomValidator>
+                    <asp:RequiredFieldValidator ID="rfvCODE" runat="server" ErrorMessage="Mã bảng cước không thể rỗng" ControlToValidate="txtCODE" SetFocusOnError="True" Display="Dynamic" ValidationGroup="G1"></asp:RequiredFieldValidator>
+                    <asp:CustomValidator ID="cuvCODE" ControlToValidate="txtCODE" OnServerValidate="CheckCode" runat="server" ErrorMessage="Mã bảng cước đã tồn tại" Display="Dynamic" ValidationGroup="G1"></asp:CustomValidator>
                 </td>
             </tr> 
             <tr>
-                 <td style =" width:150px;"> <span class="rtsTxtnew">Tên mã bảng cước:</td>
+                 <td style =" width:150px;"> <span class="rtsTxtnew">Tên bảng cước:</td>
                 <td colspan="4">
                    <telerik:RadTextBox ID="txtName" Text='<%# Bind( "C_NAME") %>' runat="server" Width="90%"></telerik:RadTextBox>
-                   <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Tên mã bảng cước không thể rỗng" ControlToValidate="txtName" SetFocusOnError="True" Display="Dynamic" ValidationGroup="G1"></asp:RequiredFieldValidator>
-                   <asp:CustomValidator ID="CustomValidator1" ControlToValidate="txtName" OnServerValidate="CheckName" runat="server" ErrorMessage="Tên mã bảng cước đã tồn tại" Display="Dynamic" ValidationGroup="G1"></asp:CustomValidator>
+                   <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Tên bảng cước không thể rỗng" ControlToValidate="txtName" SetFocusOnError="True" Display="Dynamic" ValidationGroup="G1"></asp:RequiredFieldValidator>
+                   <asp:CustomValidator ID="CustomValidator1" ControlToValidate="txtName" OnServerValidate="CheckName" runat="server" ErrorMessage="Tên bảng cước đã tồn tại" Display="Dynamic" ValidationGroup="G1"></asp:CustomValidator>
                 </td>
             </tr>
-            <tr>
-                 <td style =" width:150px;"> <span class="rtsTxtnew">Loại:</td>
-                <td colspan="4">
-                    <asp:RadioButtonList ID="txtStatus" runat="server" RepeatDirection="Horizontal" SelectedValue ='<%# Bind( "C_TYPE") %>'>
-                        <asp:ListItem Text="" Value ="" style =" display:none;"></asp:ListItem>
-                        <asp:ListItem Text ="Khách hàng" Value ="0"></asp:ListItem>
-                         <asp:ListItem Text ="Đối tác" Value ="1"></asp:ListItem>
-                    </asp:RadioButtonList>
-                 </td>
-            </tr>  
              </table>
-            </div> 
+            </div>
+<div class ="headerthongtin" id ="Div2">
+ <span style =" width :300px; text-align:left; float:left;"> Chọn nhóm khách hàng:</span> ||<span style =" width :250px; color: Blue "> Danh sách nhóm khách hàng</span>                     
+</div>
+<div style ="width:98%; background-color:White;padding-left:2px;">
+    <telerik:RadListBox ID="RadListBoxNhomKhachHang" runat="server" Width ="48%" Height ="100px"  
+            SelectionMode="Multiple" AllowTransfer="True" TransferToID="RadListBoxNhomKhachHangRef" 
+            AutoPostBackOnTransfer="True" AutoPostBackOnReorder="True" EnableDragAndDrop="True" 
+            DataKeyField="pk_id" DataSortField="c_signer"  OnClientLoad ="OnClientLoadListBoxNhomKhachHang"
+            DataSourceID="NHOMKHACHHANGDataSource" DataTextField="C_NAME" DataValueField="PK_ID" Skin="Vista" 
+           TransferMode="Copy" OnClientTransferring ="onClientTransferringHandler">
+           <Localization AllToLeft ="Bỏ chọn tất cả" AllToRight ="Chọn tất cả" Delete ="Xóa" ToLeft ="Bỏ chọn" ToRight ="Chọn"  />
+           <ButtonSettings TransferButtons ="TransferFrom,TransferAllFrom" />
+        </telerik:RadListBox>
+    <telerik:RadListBox ID="RadListBoxNhomKhachHangRef" runat="server" Width ="48%" Height ="100px" AllowDelete ="true"  
+            SelectionMode="Multiple" AutoPostBackOnReorder="true" EnableDragAndDrop="true"
+            OnClientLoad="OnClientLoadListBoxNhomKhachHangSelect" Skin="Vista" OnClientDeleting ="OnClientDeleteNhomKhachHang">
+            <Localization Delete ="Bỏ chọn" />
+            <ButtonSettings ShowDelete ="true"  />
+     </telerik:RadListBox>
+<p style =" height: 26px; line-height :26px; color:Blue;">Ghi chú: Click vào quận huyện trên danh sách trái kéo và thả vào Box phải để chọn</p>
+<br />
+</div>   
              </center> 
-        <!-- end bgpopup--></div>    
+        <!-- end bgpopup--></div>
              </FormTemplate>
         </EditFormSettings>
         </MasterTableView>
@@ -147,13 +178,13 @@
 </telerik:RadGrid>
 <asp:SqlDataSource ID="MABANGCUOCDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
         DeleteCommand="DELETE FROM [DMMABANGCUOC] WHERE [PK_ID] = @PK_ID" 
-        InsertCommand="INSERT INTO [DMMABANGCUOC] ([C_CODE], [C_NAME],[C_TYPE]) VALUES (@C_CODE, @C_NAME,@C_TYPE)"
-        SelectCommand="SELECT [PK_ID], [C_CODE], [C_NAME],[C_TYPE],(CASE WHEN (C_TYPE = '1') THEN N'Đối tác' ELSE N'Khách hàng' END) AS C_TYPENAME,C_DEFAULT FROM [DMMABANGCUOC] ORDER BY LTRIM([C_CODE])"      
-        UpdateCommand="UPDATE [DMMABANGCUOC] SET [C_CODE] = @C_CODE, [C_NAME] = @C_NAME,[C_TYPE] =@C_TYPE WHERE [PK_ID] = @PK_ID" >
+        InsertCommand="INSERT INTO [DMMABANGCUOC] ([C_CODE], [C_NAME],[C_VALUE],[C_TYPE]) VALUES (@C_CODE, @C_NAME,@C_VALUE,1)"
+        SelectCommand="SELECT [PK_ID], [C_CODE], [C_NAME],[C_TYPE],[C_VALUE] FROM [DMMABANGCUOC] WHERE C_TYPE = 1 ORDER BY LTRIM([C_CODE])"      
+        UpdateCommand="UPDATE [DMMABANGCUOC] SET [C_CODE] = @C_CODE, [C_NAME] = @C_NAME,[C_VALUE] =@C_VALUE WHERE [PK_ID] = @PK_ID" >
         <UpdateParameters>
             <asp:Parameter Name="C_CODE" Type="String" />
             <asp:Parameter Name="C_NAME" Type="String" />
-            <asp:Parameter Name="C_TYPE" Type="Int32" />
+            <asp:Parameter Name="C_VALUE" Type="String" />
         </UpdateParameters>
         <DeleteParameters>
             <asp:Parameter Name="PK_ID" Type="Int32" />
@@ -161,7 +192,12 @@
         <InsertParameters>
             <asp:Parameter Name="C_CODE" Type="String" />
             <asp:Parameter Name="C_NAME" Type="String" />
+            <asp:Parameter Name="C_VALUE" Type="String" />
             <asp:Parameter Name="C_TYPE" Type="Int32" />
         </InsertParameters>
 </asp:SqlDataSource>
+ <asp:SqlDataSource ID="NHOMKHACHHANGDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
+ SelectCommand="SELECT DMNHOMKHACHHANG.* FROM DMNHOMKHACHHANG" >
+</asp:SqlDataSource>
+
 
