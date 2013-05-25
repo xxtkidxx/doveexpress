@@ -94,7 +94,13 @@
              </telerik:RadMenuItem>
         </Items>
     </telerik:RadMenuItem>
-    <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=NHANGUI" Text="Nhận gửi" Value="NHANGUI">                 
+    <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="" Text="Nhận gửi" Value="NHANGUIMENU">  
+        <Items>
+             <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=NHANGUI" Text="Nhận gửi trong nước" Value="NHANGUI">
+             </telerik:RadMenuItem>
+             <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=NHANGUIQT" Text="Nhận gửi quốc tế" Value="NHANGUIQT">
+             </telerik:RadMenuItem>
+        </Items>               
     </telerik:RadMenuItem>
     <telerik:RadMenuItem runat="server" Font-Size="Small" Text="Báo cáo" Value="BAOCAO">   
      <Items>
