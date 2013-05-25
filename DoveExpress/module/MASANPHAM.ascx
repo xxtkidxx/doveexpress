@@ -67,6 +67,9 @@
                 <telerik:GridBoundColumn UniqueName="C_NAME" HeaderText="Tên dịch vụ" DataField="C_NAME" 
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
                 </telerik:GridBoundColumn>
+                <telerik:GridBoundColumn UniqueName="C_PPXD" HeaderText="Phụ phí xăng dầu (%)" DataField="C_PPXD" 
+                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
+                </telerik:GridBoundColumn>
         </Columns>
         <EditFormSettings InsertCaption="Thêm dịch vụ mới" CaptionFormatString="Sửa dịch vụ: <b>{0}</b>" CaptionDataField="C_NAME" EditFormType="Template" PopUpSettings-Width="600px">
         <EditColumn UniqueName="EditCommandColumn1" FilterControlAltText="Filter EditCommandColumn1 column"></EditColumn>
@@ -96,8 +99,16 @@
                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Tên dịch vụ không thể rỗng" ControlToValidate="txtName" SetFocusOnError="True" Display="Dynamic" ValidationGroup="G1"></asp:RequiredFieldValidator>
                    <asp:CustomValidator ID="CustomValidator1" ControlToValidate="txtName" OnServerValidate="CheckName" runat="server" ErrorMessage="Tên dịch vụ đã tồn tại" Display="Dynamic" ValidationGroup="G1"></asp:CustomValidator>
                 </td>
+            </tr>
+            <tr>
+                 <td style =" width:150px;"> <span class="rtsTxtnew">PPXD:</td>
+                <td colspan="4">
+                   <telerik:RadNumericTextBox runat="server"  CssClass ="csstextNum" ID="txtC_PPXD" Width="100px" DbValue='<%# Bind("C_PPXD") %>'>
+                      <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="1"/>
+                   </telerik:RadNumericTextBox>(%)                 
+                </td>
             </tr> 
-             </table>
+            </table>
             </div> 
              </center> 
         <!-- end bgpopup--></div>    
@@ -116,12 +127,13 @@
 </telerik:RadGrid>
 <asp:SqlDataSource ID="MASANPHAMDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
         DeleteCommand="DELETE FROM [DMMASANPHAM] WHERE [PK_ID] = @PK_ID" 
-        InsertCommand="INSERT INTO [DMMASANPHAM] ([C_CODE], [C_NAME]) VALUES (@C_CODE, @C_NAME)"
-        SelectCommand="SELECT [PK_ID], [C_CODE], [C_NAME] FROM [DMMASANPHAM] ORDER BY LTRIM([C_CODE])"      
-        UpdateCommand="UPDATE [DMMASANPHAM] SET [C_CODE] = @C_CODE, [C_NAME] = @C_NAME WHERE [PK_ID] = @PK_ID" >
+        InsertCommand="INSERT INTO [DMMASANPHAM] ([C_CODE], [C_NAME], [C_PPXD]) VALUES (@C_CODE, @C_NAME, @C_PPXD)"
+        SelectCommand="SELECT [PK_ID], [C_CODE], [C_NAME], [C_PPXD] FROM [DMMASANPHAM] ORDER BY LTRIM([C_CODE])"      
+        UpdateCommand="UPDATE [DMMASANPHAM] SET [C_CODE] = @C_CODE, [C_NAME] = @C_NAME, [C_PPXD] = @C_PPXD WHERE [PK_ID] = @PK_ID" >
         <UpdateParameters>
             <asp:Parameter Name="C_CODE" Type="String" />
             <asp:Parameter Name="C_NAME" Type="String" />
+            <asp:Parameter Name="C_PPXD" Type="String" />
         </UpdateParameters>
         <DeleteParameters>
             <asp:Parameter Name="PK_ID" Type="Int32" />
@@ -129,6 +141,7 @@
         <InsertParameters>
             <asp:Parameter Name="C_CODE" Type="String" />
             <asp:Parameter Name="C_NAME" Type="String" />
+            <asp:Parameter Name="C_PPXD" DefaultValue ="0" Type="String" />
         </InsertParameters>
 </asp:SqlDataSource>
 

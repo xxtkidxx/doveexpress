@@ -142,3 +142,75 @@ Tài khoản : 1
 Module : Inserted DOITACs
 Kết quả : {PK_ID:"2"}
 __________________________
+Thời gian: 2013-05-25 14:57:13 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-05-25 15:07:47 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted KHACHHANGs
+Kết quả : {PK_ID:"6"}
+__________________________
+Thời gian: 2013-05-25 15:25:21 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated MASANPHAMs
+Kết quả : {PK_ID:"1"}
+__________________________
+Thời gian: 2013-05-25 15:25:51 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated MASANPHAMs
+Kết quả : {PK_ID:"1"}
+__________________________
+Thời gian: 2013-05-25 15:25:58 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated MASANPHAMs
+Kết quả : {PK_ID:"1"}
+__________________________
+Thời gian: 2013-05-25 15:27:25 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated MASANPHAMs
+Kết quả : {PK_ID:"1"}
+__________________________
+Thời gian: 2013-05-25 15:27:50 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated MASANPHAMs
+Kết quả : {PK_ID:"1"}
+__________________________
+Thời gian: 2013-05-25 15:28:12 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated MASANPHAMs
+Kết quả : {PK_ID:"1"}
+__________________________
+Thời gian: 2013-05-25 15:28:16 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated MASANPHAMs
+Kết quả : {PK_ID:"1"}
+__________________________
+Thời gian: 2013-05-25 15:28:40 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated MASANPHAMs
+Kết quả : {PK_ID:"1"}
+__________________________
+Thời gian: 2013-05-25 15:28:45 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated MASANPHAMs
+Kết quả : {PK_ID:"1"}
+__________________________
+Thời gian: 2013-05-25 15:28:59 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated MASANPHAMs
+Kết quả : {PK_ID:"3"}
+__________________________
