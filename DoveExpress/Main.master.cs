@@ -142,6 +142,14 @@ public partial class Main : System.Web.UI.MasterPage
                         RadAjaxManager.AjaxSettings.Add(_AjaxSetting);
                         control = LoadControl("module/CHITIETCUOC.ascx");
                         break;
+                    case "chitietcuocdt":
+                        _AjaxSetting.AjaxControlID = "RadGridCHITIETCUOCDT";
+                        _AjaxUpdatedControl.ControlID = "RadGridCHITIETCUOCDT";
+                        _AjaxUpdatedControl.LoadingPanelID = "RadAjaxLoadingPanelCHITIETCUOCDT";
+                        _AjaxSetting.UpdatedControls.Add(_AjaxUpdatedControl);
+                        RadAjaxManager.AjaxSettings.Add(_AjaxSetting);
+                        control = LoadControl("module/CHITIETCUOCDT.ascx");
+                        break;
                      case "tygia":                    
                         control = LoadControl("module/TYGIA.ascx");
                         break;
