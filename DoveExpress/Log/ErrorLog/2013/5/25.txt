@@ -248,3 +248,18 @@ Thời gian lỗi : 2013-05-25 14:08:40 PM
 Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
 Nội dung lỗi:Must declare the scalar variable "@FK_NHOMKHACHHANG".
 __________________________
+Thời gian lỗi : 2013-05-25 15:06:49 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOCDT. 
+Nội dung lỗi:Invalid column name 'C_TYPE'.
+__________________________
+Thời gian lỗi : 2013-05-25 15:59:25 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Invalid column name 'FK_MAVUNG'.
+__________________________
+Thời gian lỗi : 2013-05-25 16:01:57 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Invalid column name 'C_TYPE'.
+__________________________
