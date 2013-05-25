@@ -233,9 +233,12 @@ public partial class module_MABANGCUOC : System.Web.UI.UserControl
     protected static string getStringSelect(RadListBox control)
     {
         string result = "";
-        foreach (RadListBoxItem item in control.Items)
+        if (control.Items.Count != 0)
         {
-            result = ITCLIB.Admin.cFunction.GetStringForList(item.Value, result, ',');
+            foreach (RadListBoxItem item in control.Items)
+            {
+                result = ITCLIB.Admin.cFunction.GetStringForList(item.Value, result, ',');
+            }
         }
         return result;
     }
