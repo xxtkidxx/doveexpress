@@ -33,26 +33,7 @@ public partial class module_MABANGCUOC : System.Web.UI.UserControl
             string index = Request["index"].ToString();
             string Value = Request["value"].ToString();
         }
-        RadAjaxManager ajaxManager = RadAjaxManager.GetCurrent(Page);
-        ajaxManager.AjaxRequest += new RadAjaxControl.AjaxRequestDelegate(RadScriptManager_AjaxRequestMBC);
-        ajaxManager.ClientEvents.OnResponseEnd = "onResponseEndMBC";
         Session["LastUrl"] = Request.Url.ToString();
-    }
-    protected void RadScriptManager_AjaxRequestMBC(object sender, AjaxRequestEventArgs e)
-    {
-        string[] arrayvalue = e.Argument.Split(';');
-        if (arrayvalue[0] == "SelectedMBC")
-        {
-            string script = string.Format("var result = '{0}'", arrayvalue[1]);
-            ScriptManager.RegisterClientScriptBlock(Page, typeof(Page), "result", script, true);
-            UpdateDefault(arrayvalue[1]);
-        }
-    }
-    protected void UpdateDefault(string ID)
-    {
-        ITCLIB.Admin.SQL rs = new ITCLIB.Admin.SQL();
-        string Querry = "Update DMMABANGCUOC set C_DEFAULT = 1 WHERE PK_ID =" + ID + ";Update DMMABANGCUOC set C_DEFAULT = 0 WHERE PK_ID <>" + ID;
-        rs.ExecuteNonQuery(Querry);
     }
     protected bool getstatus(object status)
     {

@@ -9,10 +9,6 @@
         }
 </script>
 <script type="text/javascript">
-    function onClientClickSelectedMBC(sender) {
-        $find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("SelectedMBC;" + sender);
-        return false;
-    }
     function onResponseEndMBC() {
         if (typeof (result) != "undefined" && result && result != "") {
             $find("<%= RadGridMABANGCUOC.ClientID %>").get_masterTableView().rebind();
@@ -133,8 +129,8 @@
                  <td style =" width:150px;"> <span class="rtsTxtnew">Tên bảng cước:</td>
                 <td colspan="4">
                    <telerik:RadTextBox ID="txtName" Text='<%# Bind( "C_NAME") %>' runat="server" Width="90%"></telerik:RadTextBox>
-                   <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Tên bảng cước không thể rỗng" ControlToValidate="txtName" SetFocusOnError="True" Display="Dynamic" ValidationGroup="G1"></asp:RequiredFieldValidator>
-                   <asp:CustomValidator ID="CustomValidator1" ControlToValidate="txtName" OnServerValidate="CheckName" runat="server" ErrorMessage="Tên bảng cước đã tồn tại" Display="Dynamic" ValidationGroup="G1"></asp:CustomValidator>
+                   <asp:RequiredFieldValidator ID="rfvName" runat="server" ErrorMessage="Tên bảng cước không thể rỗng" ControlToValidate="txtName" SetFocusOnError="True" Display="Dynamic" ValidationGroup="G1"></asp:RequiredFieldValidator>
+                   <asp:CustomValidator ID="cuvName" ControlToValidate="txtName" OnServerValidate="CheckName" runat="server" ErrorMessage="Tên bảng cước đã tồn tại" Display="Dynamic" ValidationGroup="G1"></asp:CustomValidator>
                 </td>
             </tr>
              </table>
@@ -157,8 +153,8 @@
             OnClientLoad="OnClientLoadListBoxNhomKhachHangSelect" Skin="Vista" OnClientDeleting ="OnClientDeleteNhomKhachHang">
             <Localization Delete ="Bỏ chọn" />
             <ButtonSettings ShowDelete ="true"  />
-     </telerik:RadListBox>
-<p style =" height: 26px; line-height :26px; color:Blue;">Ghi chú: Click vào quận huyện trên danh sách trái kéo và thả vào Box phải để chọn</p>
+     </telerik:RadListBox>     
+<p style =" height: 26px; line-height :26px; color:Blue;">Ghi chú: Click vào nhóm khách hàng trên danh sách trái kéo và thả vào Box phải để chọn</p>
 <br />
 </div>   
              </center> 
@@ -199,5 +195,3 @@
  <asp:SqlDataSource ID="NHOMKHACHHANGDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
  SelectCommand="SELECT DMNHOMKHACHHANG.* FROM DMNHOMKHACHHANG" >
 </asp:SqlDataSource>
-
-

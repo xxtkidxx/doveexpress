@@ -8,6 +8,31 @@
             }
         }
 </script>
+<script type="text/javascript">
+    var ListBoxQuanHuyen;
+    function OnClientLoadListBoxQuanHuyen(sender) {
+        ListBoxQuanHuyen = sender;
+    }
+    var ListBoxQuanHuyenSelect;
+    function OnClientLoadListBoxQuanHuyenSelect(sender) {
+        ListBoxQuanHuyenSelect = sender;
+    }
+    var panelControl;
+    function OnClientLoadPanelControl(sender) {
+        panelControl = sender;
+    }
+    function onClientTransferringHandler(sender, e) {
+        var itemvalue = e.get_item().get_value();
+        if (ListBoxQuanHuyenSelect.findItemByValue(itemvalue) != null) {
+            e.set_cancel(true);
+        }
+    }
+    function OnClientDeleteQuanHuyen(sender, e) {
+        if (!confirm("Bạn thực sự muốn xóa quận huyện khỏi danh sách chọn?")) {
+            e.set_cancel(true);
+        }
+    }  
+</script>
 </telerik:RadCodeBlock>
 <telerik:RadAjaxLoadingPanel Skin="Vista" ID="RadAjaxLoadingPanelMAVUNG" runat="server" />
 <telerik:RadGrid ID="RadGridMAVUNG" runat="server" Skin="Vista" 
@@ -100,6 +125,7 @@
                  <td style =" width:150px;"> <span class="rtsTxtnew">Mã vùng tính cước:</td>
                 <td colspan="4">
                     <asp:HiddenField ID="txtID" Value ='<%# Eval( "PK_ID") %>' runat="server" />
+                    <asp:HiddenField ID="txtC_DESC" Value ='<%# Eval( "C_DESC") %>' runat="server" />
                     <telerik:RadTextBox ID="txtCODE" Width ="90%" Text='<%# Bind( "C_CODE") %>' runat="server"></telerik:RadTextBox>
                     <asp:RequiredFieldValidator ID="rfvCODE" runat="server" ErrorMessage="Mã vùng tính cước không thể rỗng" ControlToValidate="txtCODE" SetFocusOnError="True" Display="Dynamic" ValidationGroup="G1"></asp:RequiredFieldValidator>
                     <asp:CustomValidator ID="cuvCODE" ControlToValidate="txtCODE" OnServerValidate="CheckCode" runat="server" ErrorMessage="Mã vùng tính cước đã tồn tại" Display="Dynamic" ValidationGroup="G1"></asp:CustomValidator>
@@ -113,14 +139,39 @@
                    <asp:CustomValidator ID="CustomValidator1" ControlToValidate="txtName" OnServerValidate="CheckName" runat="server" ErrorMessage="Tên vùng tính cước đã tồn tại" Display="Dynamic" ValidationGroup="G1"></asp:CustomValidator>
                 </td>
             </tr>
-            <tr>
-                 <td style =" width:150px;"> <span class="rtsTxtnew">Tuyến đường thuộc vùng:</td>
-                <td colspan="4">
-                   <telerik:RadTextBox ID="txtC_DESC" Text='<%# Bind( "C_DESC") %>' runat="server" Width="90%" TextMode="MultiLine" Columns="1" Rows="3"></telerik:RadTextBox>                
-                </td>
-            </tr> 
              </table>
-            </div> 
+            </div>
+<div class ="headerthongtin" id ="Div2">
+ <span style =" width :300px; text-align:left; float:left;"> Chọn quận huyện:</span> ||<span style =" width :250px; color: Blue "> Danh sách quận huyện</span>                     
+</div>
+<div style ="width:98%; background-color:White;padding-left:2px;">
+<div style =" width :20%; float :left;"> 
+    <telerik:RadPanelBar ID="RadPanelBarTinhThanh" Width ="100%" Height ="200px" 
+                        runat="server" ExpandMode="FullExpandedItem"  OnItemClick ="RadPanelBarLoadTextfromDept_ItemClick"
+                        Skin ="Vista" DataFieldID="PK_ID"  
+                        DataSourceID="SqlDataSourceTINHTHANH" DataTextField="C_NAME"  DataValueField="PK_ID" >
+     </telerik:RadPanelBar>    
+</div>
+<div style =" width :80%; float:right;">
+    <telerik:RadListBox ID="RadListBoxQuanHuyen" runat="server" Width ="48%" Height ="200px"  
+            SelectionMode="Multiple" AllowTransfer="True" TransferToID="RadListBoxQuanHuyenRef" 
+            AutoPostBackOnTransfer="True" AutoPostBackOnReorder="True" EnableDragAndDrop="True" 
+            DataKeyField="pk_id" DataSortField="c_signer"  OnClientLoad ="OnClientLoadListBoxQuanHuyen"
+            DataSourceID="QuanHuyenDataSource" DataTextField="C_NAME" DataValueField="C_CODE" Skin="Vista" 
+           TransferMode="Copy" OnClientTransferring ="onClientTransferringHandler">
+           <Localization AllToLeft ="Bỏ chọn tất cả" AllToRight ="Chọn tất cả" Delete ="Xóa" ToLeft ="Bỏ chọn" ToRight ="Chọn"  />
+           <ButtonSettings TransferButtons ="TransferFrom,TransferAllFrom" />
+        </telerik:RadListBox>
+    <telerik:RadListBox ID="RadListBoxQuanHuyenRef" runat="server" Width ="48%" Height ="200px" AllowDelete ="true"  
+            SelectionMode="Multiple" AutoPostBackOnReorder="true" EnableDragAndDrop="true"
+            OnClientLoad="OnClientLoadListBoxQuanHuyenSelect" Skin="Vista" OnClientDeleting ="OnClientDeleteQuanHuyen">
+            <Localization Delete ="Bỏ chọn" />
+            <ButtonSettings ShowDelete ="true"  />
+     </telerik:RadListBox>
+ </div>  
+<p style =" height: 26px; line-height :26px; color:Blue;">Ghi chú: Click vào quận huyện trên danh sách trái kéo và thả vào Box phải để chọn</p>
+<br />
+</div>    
              </center> 
         <!-- end bgpopup--></div>    
              </FormTemplate>
@@ -138,8 +189,8 @@
 </telerik:RadGrid>
 <asp:SqlDataSource ID="MAVUNGDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
         DeleteCommand="DELETE FROM [DMMAVUNG] WHERE [PK_ID] = @PK_ID" 
-        InsertCommand="INSERT INTO [DMMAVUNG] ([FK_MASANPHAM],[C_CODE], [C_NAME], [C_DESC]) VALUES (@FK_MASANPHAM,@C_CODE, @C_NAME, @C_DESC)"
-        SelectCommand="SELECT [DMMAVUNG].[PK_ID], [DMMAVUNG].[FK_MASANPHAM], [DMMAVUNG].[C_CODE], [DMMAVUNG].[C_NAME], [DMMAVUNG].[C_DESC],DMMASANPHAM.C_NAME as MASANPHAMNAME FROM [DMMAVUNG] LEFT OUTER JOIN DMMASANPHAM ON DMMAVUNG.FK_MASANPHAM = DMMASANPHAM.PK_ID ORDER BY DMMAVUNG.PK_ID"      
+        InsertCommand="INSERT INTO [DMMAVUNG] ([FK_MASANPHAM],[C_CODE], [C_NAME], [C_DESC],[C_TYPE]) VALUES (@FK_MASANPHAM,@C_CODE, @C_NAME, @C_DESC,1)"
+        SelectCommand="SELECT [DMMAVUNG].[PK_ID], [DMMAVUNG].[FK_MASANPHAM], [DMMAVUNG].[C_CODE], [DMMAVUNG].[C_NAME], [DMMAVUNG].[C_DESC],DMMASANPHAM.C_NAME as MASANPHAMNAME FROM [DMMAVUNG] LEFT OUTER JOIN DMMASANPHAM ON DMMAVUNG.FK_MASANPHAM = DMMASANPHAM.PK_ID WHERE DMMAVUNG.C_TYPE = 1 ORDER BY DMMAVUNG.PK_ID"      
         UpdateCommand="UPDATE [DMMAVUNG] SET [FK_MASANPHAM] = @FK_MASANPHAM,[C_CODE] = @C_CODE, [C_NAME] = @C_NAME,[C_DESC] = @C_DESC WHERE [PK_ID] = @PK_ID" >
         <UpdateParameters>
             <asp:Parameter Name="FK_MASANPHAM" Type="Int32" />
@@ -158,6 +209,15 @@
         </InsertParameters>
 </asp:SqlDataSource>
 <asp:SqlDataSource ID="MASANPHAMDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
-        SelectCommand="SELECT [PK_ID], [C_CODE], [C_NAME] FROM [DMMASANPHAM] ORDER BY PK_ID">
+        SelectCommand="SELECT [PK_ID], [C_CODE], [C_NAME] FROM [DMMASANPHAM]  WHERE C_CODE <> 'QT' ORDER BY PK_ID">
 </asp:SqlDataSource>
+ <asp:SqlDataSource ID="SqlDataSourceTINHTHANH" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
+    SelectCommand="SELECT [DMTINHTHANH].[PK_ID], [DMTINHTHANH].[C_CODE], [DMTINHTHANH].[C_NAME] FROM [DMTINHTHANH] LEFT OUTER JOIN DMQUOCGIA ON DMTINHTHANH.FK_QUOCGIA = DMQUOCGIA.PK_ID WHERE DMQUOCGIA.C_CODE='VN'">
+ </asp:SqlDataSource>
+ <asp:SqlDataSource ID="QUANHUYENDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
+        SelectCommand="SELECT * FROM [DMQUANHUYEN] where (@FK_TINHTHANH = 0 OR FK_TINHTHANH =@FK_TINHTHANH) ORDER BY LTRIM([C_CODE])">
+        <SelectParameters>
+            <asp:SessionParameter DefaultValue="0" Name="FK_TINHTHANH" SessionField="ValueFilter"/>
+        </SelectParameters>
+</asp:SqlDataSource>  
 
