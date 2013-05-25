@@ -64,9 +64,9 @@
                  <Items>
                     <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=DOITAC" Text="Đối tác" Value="DOITAC">
                     </telerik:RadMenuItem>                
-                    <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=MAVUNGDT" Text="Vùng tính cước (đối tác)" Value="MAVUNGDT">
+                    <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=MAVUNGDT" Visible="false" Text="Vùng tính cước (đối tác)" Value="MAVUNGDT">
                     </telerik:RadMenuItem>
-                    <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=MAVUNGQTDT" Text="Vùng tính cước quốc tế (đối tác)" Value="MAVUNGDT">
+                    <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=MAVUNGQTDT" Visible="false" Text="Vùng tính cước quốc tế (đối tác)" Value="MAVUNGDT">
                     </telerik:RadMenuItem>
                     <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=CHITIETCUOCDT" Text="Chi tiết cước đối tác" Value="CHITIETCUOCDT">
                     </telerik:RadMenuItem> 
