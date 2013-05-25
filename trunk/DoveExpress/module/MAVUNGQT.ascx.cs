@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data;
 using Telerik.Web.UI;
 
-public partial class module_MAVUNG : System.Web.UI.UserControl
+public partial class module_MAVUNGQT : System.Web.UI.UserControl
 {
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -15,13 +15,13 @@ public partial class module_MAVUNG : System.Web.UI.UserControl
         switch (sBrowserType)
         {
             case "IE6":
-                RadGridMAVUNG.MasterTableView.EditFormSettings.PopUpSettings.Modal = false;
+                RadGridMAVUNGQT.MasterTableView.EditFormSettings.PopUpSettings.Modal = false;
                 break;
             case "IE7":
-                RadGridMAVUNG.MasterTableView.EditFormSettings.PopUpSettings.Modal = false;
+                RadGridMAVUNGQT.MasterTableView.EditFormSettings.PopUpSettings.Modal = false;
                 break;
             default:
-                RadGridMAVUNG.MasterTableView.EditFormSettings.PopUpSettings.Modal = true;
+                RadGridMAVUNGQT.MasterTableView.EditFormSettings.PopUpSettings.Modal = true;
                 break;
         }
         if (!ITCLIB.Security.Security.CanViewModule("Lists"))
@@ -34,11 +34,15 @@ public partial class module_MAVUNG : System.Web.UI.UserControl
             string Value = Request["value"].ToString();
         }
         Session["LastUrl"] = Request.Url.ToString();
+        if (!IsPostBack)
+        {
+            Session["ValueFilter"] = 0;
+        }
     }
     protected void btnShowAll_Click(object sender, System.Web.UI.ImageClickEventArgs e)
     {
-        RadGridMAVUNG.MasterTableView.FilterExpression = string.Empty;
-        foreach (GridColumn column in RadGridMAVUNG.MasterTableView.RenderColumns)
+        RadGridMAVUNGQT.MasterTableView.FilterExpression = string.Empty;
+        foreach (GridColumn column in RadGridMAVUNGQT.MasterTableView.RenderColumns)
         {
             if (column is GridBoundColumn)
             {
@@ -51,7 +55,7 @@ public partial class module_MAVUNG : System.Web.UI.UserControl
                 boundColumn.CurrentFilterValue = string.Empty;
             }
         }
-        RadGridMAVUNG.MasterTableView.Rebind();
+        RadGridMAVUNGQT.MasterTableView.Rebind();
     }
     protected void CheckCode(object source, ServerValidateEventArgs args)
     {
@@ -87,21 +91,21 @@ public partial class module_MAVUNG : System.Web.UI.UserControl
     }
     private void DisplayMessage(string text)
     {
-        RadGridMAVUNG.Controls.Add(new LiteralControl(string.Format("<span style='color:red'>{0}</span>", text)));
+        RadGridMAVUNGQT.Controls.Add(new LiteralControl(string.Format("<span style='color:red'>{0}</span>", text)));
     }
     private void SetMessage(string message)
     {
         gridMessage = message;
     }
     private string gridMessage = null;
-    protected void RadGridMAVUNG_DataBound(object sender, EventArgs e)
+    protected void RadGridMAVUNGQT_DataBound(object sender, EventArgs e)
     {
         if (!string.IsNullOrEmpty(gridMessage))
         {
             DisplayMessage(gridMessage);
         }
     }
-    protected void RadGridMAVUNG_ItemDeleted(object sender, GridDeletedEventArgs e)
+    protected void RadGridMAVUNGQT_ItemDeleted(object sender, GridDeletedEventArgs e)
     {
         GridDataItem dataItem = (GridDataItem)e.Item;
         if (e.Exception != null)
@@ -112,10 +116,10 @@ public partial class module_MAVUNG : System.Web.UI.UserControl
         else
         {
             SetMessage("Xóa vùng tính cước thành công!");
-            ITCLIB.ActionLog.ActionLog.WriteLog(Session["UserID"].ToString(), "Deleted MAVUNGs", e.Item.KeyValues);
+            ITCLIB.ActionLog.ActionLog.WriteLog(Session["UserID"].ToString(), "Deleted MAVUNGQTs", e.Item.KeyValues);
         }
     }
-    protected void RadGridMAVUNG_ItemInserted(object sender, GridInsertedEventArgs e)
+    protected void RadGridMAVUNGQT_ItemInserted(object sender, GridInsertedEventArgs e)
     {
         GridEditableItem item = (GridEditableItem)e.Item;
         if (e.Exception != null)
@@ -126,10 +130,10 @@ public partial class module_MAVUNG : System.Web.UI.UserControl
         else
         {
             SetMessage("Tạo mới vùng tính cước thành công!");
-            ITCLIB.ActionLog.ActionLog.WriteLog(Session["UserID"].ToString(), "Inserted MAVUNGs", "{PK_ID:\"" + getmaxid("DMMAVUNG") + "\"}");
+            ITCLIB.ActionLog.ActionLog.WriteLog(Session["UserID"].ToString(), "Inserted MAVUNGQTs", "{PK_ID:\"" + getmaxid("DMMAVUNG") + "\"}");
         }
     }
-    protected void RadGridMAVUNG_ItemUpdated(object sender, GridUpdatedEventArgs e)
+    protected void RadGridMAVUNGQT_ItemUpdated(object sender, GridUpdatedEventArgs e)
     {
         GridEditableItem item = (GridEditableItem)e.Item;
         if (e.Exception != null)
@@ -141,10 +145,10 @@ public partial class module_MAVUNG : System.Web.UI.UserControl
         else
         {
             SetMessage("Cập nhật vùng tính cước thành công!");
-            ITCLIB.ActionLog.ActionLog.WriteLog(Session["UserID"].ToString(), "Updated MAVUNGs", e.Item.KeyValues);
+            ITCLIB.ActionLog.ActionLog.WriteLog(Session["UserID"].ToString(), "Updated MAVUNGQTs", e.Item.KeyValues);
         }
     }
-    protected void RadGridMAVUNG_ItemDataBound(object sender, GridItemEventArgs e)
+    protected void RadGridMAVUNGQT_ItemDataBound(object sender, GridItemEventArgs e)
     {
         RadGrid grid = (RadGrid)sender;
         if (e.Item is GridEditableItem && e.Item.IsInEditMode)
@@ -154,7 +158,9 @@ public partial class module_MAVUNG : System.Web.UI.UserControl
             Session["txtID"] = (txtID.Value != "") ? txtID.Value : "0";
             RadListBox RadListBoxQuanHuyenRef = (RadListBox)editItem.FindControl("RadListBoxQuanHuyenRef");
             HiddenField txtC_DESC = (HiddenField)editItem.FindControl("txtC_DESC");
-            setItenforListBoxSelect(RadListBoxQuanHuyenRef, txtC_DESC.Value);  
+            setItenforListBoxSelect(RadListBoxQuanHuyenRef, txtC_DESC.Value);
+            RadComboBox cmbSanPham = (RadComboBox)editItem.FindControl("cmbSanPham");
+            cmbSanPham.SelectedIndex = 0;
         }
         if (e.Item is GridDataItem)
         {
@@ -195,53 +201,53 @@ public partial class module_MAVUNG : System.Web.UI.UserControl
             }
         }
     }
-    protected void RadGridMAVUNG_ItemCommand(object sender, GridCommandEventArgs e)
+    protected void RadGridMAVUNGQT_ItemCommand(object sender, GridCommandEventArgs e)
     {
         if (e.CommandName == "DeleteSelected")
         {
-            if (RadGridMAVUNG.SelectedIndexes.Count == 0)
+            if (RadGridMAVUNGQT.SelectedIndexes.Count == 0)
             {
                 SetMessage("Không có bản ghi được chọn!");
-                RadGridMAVUNG.Rebind();
+                RadGridMAVUNGQT.Rebind();
             }
-            foreach (GridDataItem item in RadGridMAVUNG.SelectedItems)
+            foreach (GridDataItem item in RadGridMAVUNGQT.SelectedItems)
             {
                 if (!ValidateDeleteGroup(item["pk_id"].Text))
                 {
                     SetMessage("Không thể xóa vùng tính cước \"" + item["c_name"].Text + "\" do có tham chiếu dữ liệu khác.");
-                    RadGridMAVUNG.Rebind();
+                    RadGridMAVUNGQT.Rebind();
                 }
             }
         }
         else if (e.CommandName == RadGrid.PerformInsertCommandName)
         {
             GridEditableItem editItem = (GridEditableItem)e.Item;
-            RadListBox RadListBoxQuanHuyenRef = (RadListBox)editItem.FindControl("RadListBoxQuanHuyenRef");
-            if (getStringSelect(RadListBoxQuanHuyenRef) != "")
+            RadListBox RadListBoxQuocGiaRef = (RadListBox)editItem.FindControl("RadListBoxQuocGiaRef");
+            if (getStringSelect(RadListBoxQuocGiaRef) != "")
             {
-                MAVUNGDataSource.InsertParameters["C_DESC"].DefaultValue = getStringSelect(RadListBoxQuanHuyenRef);
+                MAVUNGQTDataSource.InsertParameters["C_DESC"].DefaultValue = getStringSelect(RadListBoxQuocGiaRef);
             }
         }
         else if (e.CommandName == RadGrid.UpdateCommandName)
         {
             GridEditableItem editItem = (GridEditableItem)e.Item;
-            RadListBox RadListBoxQuanHuyenRef = (RadListBox)editItem.FindControl("RadListBoxQuanHuyenRef");
-            if (getStringSelect(RadListBoxQuanHuyenRef) != "")
+            RadListBox RadListBoxQuocGiaRef = (RadListBox)editItem.FindControl("RadListBoxQuocGiaRef");
+            if (getStringSelect(RadListBoxQuocGiaRef) != "")
             {
-                MAVUNGDataSource.UpdateParameters["C_DESC"].DefaultValue = getStringSelect(RadListBoxQuanHuyenRef);
+                MAVUNGQTDataSource.UpdateParameters["C_DESC"].DefaultValue = getStringSelect(RadListBoxQuocGiaRef);
             }
         }
     }
     protected static string getStringSelect(RadListBox control)
     {
         string result = "";
-        if (control.Items.Count != 0)
+        if (control.Items.Count !=0)
         {
             foreach (RadListBoxItem item in control.Items)
             {
                 result = ITCLIB.Admin.cFunction.GetStringForList(item.Value, result, ',');
             }
-        }
+        }       
         return result;
     }
     protected string getmaxid(string table)
