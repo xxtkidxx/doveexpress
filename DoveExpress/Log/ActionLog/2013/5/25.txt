@@ -130,3 +130,15 @@ Tài khoản : 1
 Module : Inserted MAVUNGQTs
 Kết quả : {PK_ID:"7"}
 __________________________
+Thời gian: 2013-05-25 14:45:19 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted DOITACs
+Kết quả : {PK_ID:"1"}
+__________________________
+Thời gian: 2013-05-25 14:45:31 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted DOITACs
+Kết quả : {PK_ID:"2"}
+__________________________
