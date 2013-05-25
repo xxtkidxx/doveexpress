@@ -152,11 +152,47 @@ public partial class module_MAVUNG : System.Web.UI.UserControl
             GridEditableItem editItem = (GridEditableItem)e.Item;
             HiddenField txtID = (HiddenField)editItem.FindControl("txtID");
             Session["txtID"] = (txtID.Value != "") ? txtID.Value : "0";
+            RadListBox RadListBoxQuanHuyenRef = (RadListBox)editItem.FindControl("RadListBoxQuanHuyenRef");
+            HiddenField txtC_DESC = (HiddenField)editItem.FindControl("txtC_DESC");
+            setItenforListBoxSelect(RadListBoxQuanHuyenRef, txtC_DESC.Value);  
         }
         if (e.Item is GridDataItem)
         {
             Label lblSTT = (Label)e.Item.FindControl("lblSTT");
             lblSTT.Text = (e.Item.ItemIndex + 1).ToString();
+        }
+    }
+    protected static void setItenforListBoxSelect(RadListBox control, string ivalue)
+    {
+        if (ivalue != "")
+        {
+            string[] temp;
+            temp = ivalue.Split(',');
+            string ivalueconvert = "";
+            for (int i = 0; i < temp.Length; i++)
+            {
+                if (i == 0)
+                {
+                    ivalueconvert += "N'" + temp[i] + "'";
+                }
+                else
+                {
+                    ivalueconvert += ",N'" + temp[i] + "'";
+                }
+            }
+            string selectSQl = String.Format("Select C_CODE, C_NAME from DMQUANHUYEN WHERE C_CODE in ({0})", ivalueconvert);
+            ITCLIB.Admin.SQL sqlAC = new ITCLIB.Admin.SQL();
+            DataTable odata = sqlAC.query_data(selectSQl);
+            foreach (DataRow orow in odata.Rows)
+            {
+                if (control.FindItemByValue(orow["C_CODE"].ToString()) == null)
+                {
+                    RadListBoxItem item = new RadListBoxItem();
+                    item.Value = orow["C_CODE"] != null ? orow["C_CODE"].ToString() : "";
+                    item.Text = orow["C_NAME"] != null ? orow["C_NAME"].ToString() : "";
+                    control.Items.Add(item);
+                }
+            }
         }
     }
     protected void RadGridMAVUNG_ItemCommand(object sender, GridCommandEventArgs e)
@@ -177,6 +213,33 @@ public partial class module_MAVUNG : System.Web.UI.UserControl
                 }
             }
         }
+        else if (e.CommandName == RadGrid.PerformInsertCommandName)
+        {
+            GridEditableItem editItem = (GridEditableItem)e.Item;
+            RadListBox RadListBoxQuanHuyenRef = (RadListBox)editItem.FindControl("RadListBoxQuanHuyenRef");
+            if (getStringSelect(RadListBoxQuanHuyenRef) != "")
+            {
+                MAVUNGDataSource.InsertParameters["C_DESC"].DefaultValue = getStringSelect(RadListBoxQuanHuyenRef);
+            }
+        }
+        else if (e.CommandName == RadGrid.UpdateCommandName)
+        {
+            GridEditableItem editItem = (GridEditableItem)e.Item;
+            RadListBox RadListBoxQuanHuyenRef = (RadListBox)editItem.FindControl("RadListBoxQuanHuyenRef");
+            if (getStringSelect(RadListBoxQuanHuyenRef) != "")
+            {
+                MAVUNGDataSource.UpdateParameters["C_DESC"].DefaultValue = getStringSelect(RadListBoxQuanHuyenRef);
+            }
+        }
+    }
+    protected static string getStringSelect(RadListBox control)
+    {
+        string result = "";
+        foreach (RadListBoxItem item in control.Items)
+        {
+            result = ITCLIB.Admin.cFunction.GetStringForList(item.Value, result, ',');
+        }
+        return result;
     }
     protected string getmaxid(string table)
     {
@@ -211,5 +274,9 @@ public partial class module_MAVUNG : System.Web.UI.UserControl
         {
             return true;
         }
+    }
+    protected void RadPanelBarLoadTextfromDept_ItemClick(object sender, RadPanelBarEventArgs e)
+    {
+        Session["ValueFilter"] = e.Item.Value;
     }
 }

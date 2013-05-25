@@ -1,0 +1,17 @@
+Thời gian lỗi : 2013-05-24 21:02:30 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=QUANHUYEN. 
+Nội dung lỗi:Ambiguous column name 'PK_ID'.
+Ambiguous column name 'C_CODE'.
+Ambiguous column name 'C_NAME'.
+__________________________
+Thời gian lỗi : 2013-05-24 23:35:37 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=MABANGCUOC. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\module\MABANGCUOC.ascx(52): error CS0103: The name 'RadContextMenuTextRef' does not exist in the current context
+__________________________
+Thời gian lỗi : 2013-05-24 23:38:02 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=MABANGCUOC. 
+Nội dung lỗi:The DataSourceID of 'RadListBoxNhomKhachHang' must be the ID of a control of type IDataSource.  A control with ID 'SqlDataSourceNhomKhachHang' could not be found.
+__________________________
