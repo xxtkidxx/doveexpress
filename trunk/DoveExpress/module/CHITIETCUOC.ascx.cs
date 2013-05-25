@@ -77,19 +77,6 @@ public partial class module_CHITIETCUOC : System.Web.UI.UserControl
 
         }
     }
-
-    protected void RadGridCHITIETCUOC_PreRender(object sender, EventArgs e)
-    {
-        foreach (GridItem item in RadGridCHITIETCUOC.MasterTableView.Items)
-        {
-            if (item is GridEditableItem)
-            {
-                GridEditableItem editableItem = item as GridDataItem;
-                editableItem.Edit = true;
-            }
-        }
-        //RadGridCHITIETCUOC.Rebind();
-    }
     protected void RadGridCHITIETCUOC_ItemUpdated(object sender, GridUpdatedEventArgs e)
     {
         if ("MasterTableViewMAVUNG".Equals(e.Item.OwnerTableView.Name))
@@ -247,16 +234,6 @@ public partial class module_CHITIETCUOC : System.Web.UI.UserControl
                 //cmbSanPham.SelectedIndex = 0;
             }
         }       
-    }
-    protected void cmbNhomKhachHang_PreRender(object sender, EventArgs e)
-    {
-        if (!IsPostBack)
-        {
-            if (cmbNhomKhachHang.Items.Count != 0)
-            {
-                cmbNhomKhachHang.SelectedIndex = 0;
-            }
-        }
     }
     protected void cmbLoaiTien_PreRender(object sender, EventArgs e)
     {

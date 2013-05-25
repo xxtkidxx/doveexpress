@@ -14,6 +14,14 @@
         $find("<%=RadGridCHITIETCUOC.ClientID %>").get_masterTableView().rebind();
     }
 </script>
+<script type="text/javascript">
+        function RowDblClick(sender, eventArgs) {
+            var CanEdit = "<%=ITCLIB.Security.Security.CanEditModule("DANHMUCCHUNG") %>";
+            if ((eventArgs.get_tableView().get_name() == "TableViewCHITIETCUOC") && (CanEdit == "True")) {
+                sender.get_masterTableView().editItem(eventArgs.get_itemIndexHierarchical());
+            }
+        }
+</script>
 </telerik:RadScriptBlock>
 <telerik:RadAjaxLoadingPanel Skin="Vista" ID="RadAjaxLoadingPanelCHITIETCUOC" runat="server" />
 <div style ="width:100%; margin: 10px 10px 10px 10px; ">
@@ -22,12 +30,6 @@ Dịch vụ:&nbsp;
 DataTextField="C_NAME" DataValueField="PK_ID" DataSourceID="MASANPHAMDataSource"
 ShowToggleImage="True" EmptyMessage="Chọn dịch vụ" 
 onclientselectedindexchanged="cmbSanPhamClientSelectedIndexChangedHandler" onprerender="cmbSanPham_PreRender">
-</telerik:RadComboBox>
-Nhóm khách hàng:&nbsp; 
-<telerik:RadComboBox ID="cmbNhomKhachHang" runat="server"
-DataTextField="C_NAME" DataValueField="PK_ID" DataSourceID="NHOMKHACHHANGDataSource"
-ShowToggleImage="True" EmptyMessage="Chọn nhóm"
-onclientselectedindexchanged="cmbNhomKhachHangClientSelectedIndexChangedHandler" onprerender="cmbNhomKhachHang_PreRender">
 </telerik:RadComboBox>
 Loại tiền:&nbsp; 
 <telerik:RadComboBox ID="cmbLoaiTien" runat="server"
@@ -63,7 +65,7 @@ ShowToggleImage="True" EmptyMessage="Chọn bảng"
     PageSizeLabelText="Số bản ghi hiển thị:" PrevPagesToolTip="Các trang sau" PrevPageToolTip="Trang sau" PagerTextFormat="Change page: {4} &nbsp;Trang <strong>{0}</strong>/<strong>{1}</strong>, Bản ghi <strong>{2}</strong> đến <strong>{3}</strong> của tất cả <strong>{5}</strong> bản ghi" />    
     <ExportSettings HideStructureColumns="true" ExportOnlyData="true" IgnorePaging="true" OpenInNewWindow="true" Excel-Format="ExcelML"></ExportSettings>   
      <GroupingSettings CaseSensitive ="false"  />
-<MasterTableView Name="MasterTableViewMAVUNG" HierarchyDefaultExpanded="true" CommandItemDisplay="Top" DataSourceID="MAVUNGDataSource" DataKeyNames="PK_ID" ClientDataKeyNames="PK_ID" EditMode="InPlace" NoMasterRecordsText="Không có dữ liệu">
+<MasterTableView Name="MasterTableViewMAVUNG" HierarchyDefaultExpanded="false" CommandItemDisplay="Top" DataSourceID="MAVUNGDataSource" DataKeyNames="PK_ID" ClientDataKeyNames="PK_ID" EditMode="InPlace" NoMasterRecordsText="Không có dữ liệu">
 <CommandItemTemplate>
                     <div style="padding: 5px 5px;float:left;width:auto">
                         <b>Quản lý bảng cước</b>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -143,13 +145,12 @@ ShowToggleImage="True" EmptyMessage="Chọn bảng"
 <asp:SqlDataSource ID="CHITIETCUOCDataSource" runat="server" 
     ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>" 
     DeleteCommand="DELETE FROM [DMCHITIETCUOC] WHERE [PK_ID] = @PK_ID" 
-    InsertCommand="INSERT INTO [DMCHITIETCUOC] ([FK_MABANGCUOC], [FK_NHOMKHACHHANG], [FK_MASANPHAM], [FK_MAVUNG], [C_LOAITIEN], [C_KHOILUONG], [C_CUOCPHI]) VALUES (@FK_MABANGCUOC, @FK_NHOMKHACHHANG, @FK_MASANPHAM, @FK_MAVUNG, @C_LOAITIEN, @C_KHOILUONG, @C_CUOCPHI)" 
-    SelectCommand="SELECT [PK_ID], [FK_MABANGCUOC], [FK_NHOMKHACHHANG], [FK_MASANPHAM], [FK_MAVUNG], [C_LOAITIEN], [C_KHOILUONG], [C_CUOCPHI] FROM [DMCHITIETCUOC] WHERE [FK_MAVUNG] =@FK_MAVUNG AND [FK_MABANGCUOC] = @FK_MABANGCUOC AND [FK_NHOMKHACHHANG] = @FK_NHOMKHACHHANG AND [FK_MASANPHAM] = @FK_MASANPHAM AND [C_LOAITIEN] = @C_LOAITIEN" 
+    InsertCommand="INSERT INTO [DMCHITIETCUOC] ([FK_MABANGCUOC], [FK_MASANPHAM], [FK_MAVUNG], [C_LOAITIEN], [C_KHOILUONG], [C_CUOCPHI]) VALUES (@FK_MABANGCUOC, @FK_MASANPHAM, @FK_MAVUNG, @C_LOAITIEN, @C_KHOILUONG, @C_CUOCPHI)" 
+    SelectCommand="SELECT [PK_ID], [FK_MABANGCUOC], [FK_MASANPHAM], [FK_MAVUNG], [C_LOAITIEN], [C_KHOILUONG], [C_CUOCPHI] FROM [DMCHITIETCUOC] WHERE [FK_MAVUNG] =@FK_MAVUNG AND [FK_MABANGCUOC] = @FK_MABANGCUOC AND [FK_MASANPHAM] = @FK_MASANPHAM AND [C_LOAITIEN] = @C_LOAITIEN" 
     UpdateCommand="UPDATE [DMCHITIETCUOC] SET [C_KHOILUONG] = @C_KHOILUONG, [C_CUOCPHI] = @C_CUOCPHI WHERE [PK_ID] = @PK_ID">
     <SelectParameters>
         <asp:Parameter Name="FK_MAVUNG" Type="Int32" />
         <asp:ControlParameter ControlID="cmbMaBangCuoc" DefaultValue="0" Name="FK_MABANGCUOC" PropertyName="SelectedValue" />
-        <asp:ControlParameter ControlID="cmbNhomKhachHang" DefaultValue="0" Name="FK_NHOMKHACHHANG" PropertyName="SelectedValue" />
         <asp:ControlParameter ControlID="cmbSanPham" DefaultValue="0" Name="FK_MASANPHAM" PropertyName="SelectedValue" />
         <asp:ControlParameter ControlID="cmbLoaiTien" DefaultValue="0" Name="C_LOAITIEN" PropertyName="SelectedValue" />
     </SelectParameters>
@@ -158,7 +159,6 @@ ShowToggleImage="True" EmptyMessage="Chọn bảng"
     </DeleteParameters>
     <InsertParameters>
         <asp:ControlParameter ControlID="cmbMaBangCuoc" DefaultValue="0" Name="FK_MABANGCUOC" PropertyName="SelectedValue" />
-        <asp:ControlParameter ControlID="cmbNhomKhachHang" DefaultValue="0" Name="FK_NHOMKHACHHANG" PropertyName="SelectedValue" />
         <asp:ControlParameter ControlID="cmbSanPham" DefaultValue="0" Name="FK_MASANPHAM" PropertyName="SelectedValue" />
         <asp:Parameter Name="FK_MAVUNG" Type="Int32" />
          <asp:ControlParameter ControlID="cmbLoaiTien" DefaultValue="0" Name="C_LOAITIEN" PropertyName="SelectedValue" />
@@ -174,8 +174,11 @@ ShowToggleImage="True" EmptyMessage="Chọn bảng"
 <asp:SqlDataSource ID="MAVUNGDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
         DeleteCommand="DELETE FROM [DMMAVUNG] WHERE [PK_ID] = @PK_ID" 
         InsertCommand="INSERT INTO [DMMAVUNG] ([C_CODE], [C_NAME], [C_DESC]) VALUES (@C_CODE, @C_NAME, @C_DESC)"
-        SelectCommand="SELECT [PK_ID], [C_CODE], [C_NAME], [C_DESC] FROM [DMMAVUNG] ORDER BY LTRIM([C_CODE])"      
+        SelectCommand="SELECT [PK_ID], [C_CODE], [C_NAME], [C_DESC] FROM [DMMAVUNG] WHERE FK_MASANPHAM = @FK_MASANPHAM ORDER BY LTRIM([C_CODE])"      
         UpdateCommand="UPDATE [DMMAVUNG] SET [C_CODE] = @C_CODE, [C_NAME] = @C_NAME,[C_DESC] = @C_DESC WHERE [PK_ID] = @PK_ID" >
+        <SelectParameters>
+            <asp:ControlParameter ControlID="cmbSanPham" DefaultValue="0" Name="FK_MASANPHAM" PropertyName="SelectedValue" />
+        </SelectParameters>
         <UpdateParameters>
             <asp:Parameter Name="C_CODE" Type="String" />
             <asp:Parameter Name="C_NAME" Type="String" />
@@ -191,11 +194,8 @@ ShowToggleImage="True" EmptyMessage="Chọn bảng"
         </InsertParameters>
 </asp:SqlDataSource>
 <asp:SqlDataSource ID="MABANGCUOCDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
-    SelectCommand="SELECT [PK_ID], [C_CODE], [C_NAME],[C_TYPE] FROM [DMMABANGCUOC]  WHERE [C_TYPE] = 0 ORDER BY LTRIM([C_CODE])">
+    SelectCommand="SELECT [PK_ID], [C_CODE], [C_NAME],[C_TYPE] FROM [DMMABANGCUOC]  WHERE [C_TYPE] = 1 ORDER BY LTRIM([C_CODE])">
 </asp:SqlDataSource>
 <asp:SqlDataSource ID="MASANPHAMDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
         SelectCommand="SELECT [PK_ID], [C_CODE], [C_NAME] FROM [DMMASANPHAM] ORDER BY LTRIM([C_CODE])">    
-</asp:SqlDataSource>
- <asp:SqlDataSource ID="NHOMKHACHHANGDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
- SelectCommand="SELECT DMNHOMKHACHHANG.* FROM DMNHOMKHACHHANG WHERE C_TYPE = 0" >
 </asp:SqlDataSource>
