@@ -214,3 +214,9 @@ Tài khoản : 1
 Module : Updated MASANPHAMs
 Kết quả : {PK_ID:"3"}
 __________________________
+Thời gian: 2013-05-25 15:58:54 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
