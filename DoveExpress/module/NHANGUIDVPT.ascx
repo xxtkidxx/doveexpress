@@ -28,7 +28,6 @@
     <MasterTableView Name="MasterTableViewNHANGUIDVPT" CommandItemDisplay="Top" DataSourceID="NHANGUIDVPTsDataSource" DataKeyNames="PK_ID" ClientDataKeyNames="PK_ID" EditMode="InPlace" NoMasterRecordsText="Không có dữ liệu">
         <CommandItemTemplate>
                     <div style="padding: 5px 5px;float:left;width:auto">
-                        <b>Chi tiết dịch vụ phụ trội</b>&nbsp;&nbsp;&nbsp;&nbsp;       
                         <asp:LinkButton ID="LinkButton2" runat="server" CommandName="InitInsert" Visible='<%# !RadGridNHANGUIDVPT.MasterTableView.IsItemInserted %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/AddRecord.gif" />Thêm</asp:LinkButton>&nbsp;&nbsp;                 
                         <asp:LinkButton ID="LinkButton4" runat="server" CommandName="RebindGrid"><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Refresh.gif" />Làm mới</asp:LinkButton>
                     </div>
@@ -70,8 +69,7 @@
                             <telerik:RadNumericTextBox  ID="txtC_GIATIEN" Runat="server" Text ='<%#Bind("C_GIATIEN")%>' Width="120px">
                             <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
                             </telerik:RadNumericTextBox>
-                            <span style="color: Red"><asp:RequiredFieldValidator ID="RequiredFieldValidatorC_GIATIEN"
-                                ControlToValidate="txtC_GIATIEN" ErrorMessage="Giá tiền ko thể rỗng" runat="server" setFocusOnError="True" Display="Dynamic" ValidationGroup="G2"></asp:RequiredFieldValidator>
+                            <span style="color: Red"><asp:RequiredFieldValidator ID="RequiredFieldValidatorC_GIATIEN" ControlToValidate="txtC_GIATIEN" ErrorMessage="Giá tiền ko thể rỗng" runat="server" setFocusOnError="True" Display="Dynamic" ValidationGroup="G2"></asp:RequiredFieldValidator>
                             </span>
                         </span>
                     </EditItemTemplate>
@@ -99,7 +97,7 @@
         UpdateCommand="UPDATE DICHVUPT SET FK_DICHVU=@FK_DICHVU,C_GIATIEN=@C_GIATIEN WHERE PK_ID = @PK_ID" 
         oninserted="NHANGUIDVPTsDataSource_Inserted">
         <UpdateParameters>
-            <asp:Parameter Name="FK_DICHVU" Type="Int32" />
+            <asp:Parameter Name="FK_DICHVU" Type="String" />
             <asp:Parameter Name="C_GIATIEN" Type="String" />
         </UpdateParameters>
         <SelectParameters>
@@ -109,7 +107,7 @@
             <asp:Parameter Name="PK_ID" Type="Int32" />
         </DeleteParameters>
         <InsertParameters>      
-            <asp:Parameter Name="FK_DICHVU" Type="Int32" />
+            <asp:Parameter Name="FK_DICHVU" Type="String" />
             <asp:Parameter Name="C_GIATIEN" Type="String" />
             <asp:ControlParameter Name="FK_NHANGUI" Type="Int32" ControlID="txtID" DefaultValue="0"/>
             <asp:Parameter Name="NEWIDDVPT" Type="Int32" Direction="Output" DefaultValue="0"/>
