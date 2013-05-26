@@ -10,8 +10,8 @@
 </telerik:RadAjaxManagerProxy>
 <telerik:RadAjaxLoadingPanel Skin="Windows7" ID="RadAjaxLoadingPanelNHANGUIDVPT" runat="server" />
 <telerik:RadGrid ID="RadGridNHANGUIDVPT" runat="server" Skin="Windows7"
-    AllowPaging="True" PageSize="20" AllowSorting="True" 
-    AllowFilteringByColumn="True" GridLines="None" ShowStatusBar="true"
+    AllowPaging="True" PageSize="5" AllowSorting="True" 
+    GridLines="None" ShowStatusBar="true"
     AutoGenerateColumns="False"  
     AllowMultiRowEdit="True" AllowAutomaticDeletes="True" 
     AllowAutomaticInserts="True" AllowAutomaticUpdates="True" 
@@ -41,7 +41,7 @@
                 </telerik:GridButtonColumn>    
                 <telerik:GridBoundColumn UniqueName="PK_ID" HeaderText="ID" DataField="PK_ID" Visible="false">
                 </telerik:GridBoundColumn>
-                <telerik:GridTemplateColumn HeaderText="Dịch vụ" HeaderStyle-Width ="200px" SortExpression="FK_DICHVU" UniqueName="FK_DICHVU" DataField="FK_DICHVU" AllowFiltering ="false">
+                <telerik:GridTemplateColumn HeaderText="Dịch vụ" HeaderStyle-Width ="200px" SortExpression="FK_DICHVU" UniqueName="FK_DICHVU" DataField="FK_DICHVU">
                     <ItemTemplate>
                         <%# Eval("FK_DICHVU")%>
                     </ItemTemplate>
@@ -58,7 +58,7 @@
                         </span>
                     </EditItemTemplate>
                  </telerik:GridTemplateColumn>
-                <telerik:GridTemplateColumn HeaderText="Giá tiền" SortExpression="C_GIATIEN" UniqueName="C_GIATIEN" AllowFiltering ="false">
+                <telerik:GridTemplateColumn HeaderText="Giá tiền" SortExpression="C_GIATIEN" UniqueName="C_GIATIEN">
                     <ItemTemplate>
                         <telerik:RadNumericTextBox  ID="txtC_GIATIEN" Runat="server" Enabled ="false"  CssClass ="csstextNum" Text ='<%#Eval("C_GIATIEN")%>' Width="100px">
                             <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>

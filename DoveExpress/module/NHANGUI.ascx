@@ -227,7 +227,7 @@
                 <td colspan="12">
                     <telerik:RadComboBox ID="cmbQuanHuyen" runat="server" 
                     DataTextField="C_NAME" DataValueField="C_CODE" DataSourceID="QUANHUYENDataSource"
-                    ShowToggleImage="True" EmptyMessage="Chọn quận huyện" 
+                    ShowToggleImage="True" EmptyMessage="Chọn quận huyện" SelectedValue='<%# Bind("FK_QUANHUYEN") %>'
                     onclientitemsrequested="ItemsLoadedQuanHuyen" onclientload="OnClientLoadQuanHuyen" 
                     onitemsrequested="cmbQuanHuyen_ItemsRequested" onclientselectedindexchanged="cmbQuanHuyenClientSelectedIndexChangedHandler">
                     </telerik:RadComboBox>
@@ -236,7 +236,7 @@
             <tr> 
                 <td style =" width:100px;"> <span class="rtsTxtnew">Nội dung:</span></td>
                 <td colspan="16">
-                    <telerik:RadTextBox ID="RadTextBox1" Width ="90%" Text='<%# Bind("C_NOIDUNG") %>' runat="server"></telerik:RadTextBox>
+                    <telerik:RadTextBox ID="txtC_NOIDUNG" Width ="90%" Text='<%# Bind("C_NOIDUNG") %>' runat="server"></telerik:RadTextBox>
                 </td>
             </tr
             <tr>                
@@ -249,23 +249,109 @@
                 </td>
                 <td style =" width:100px;"><span class="rtsTxtnew">PPXD:</span></td>
                 <td colspan="4">
-                    <telerik:RadTextBox ID="txtPPXD" Width ="90%" runat="server"></telerik:RadTextBox>
+                     <telerik:RadNumericTextBox  ID="txtPPXD" Width ="90%" Runat="server">
+                            <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
+                    </telerik:RadNumericTextBox>
                 </td>
                 <td style =" width:100px;"> <span class="rtsTxtnew">Khối lượng:</span></td>
                 <td colspan="4">
-                    <telerik:RadTextBox ID="txtC_KHOILUONG" Width ="90%" Text='<%# Bind("C_KHOILUONG") %>' runat="server"></telerik:RadTextBox>
+                     <telerik:RadNumericTextBox  ID="txtC_KHOILUONG" Width ="90%" Runat="server" Text='<%# Bind("C_KHOILUONG") %>'>
+                            <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
+                    </telerik:RadNumericTextBox>
                 </td>
             </tr
             <tr>                
                 <td style =" width:100px;"> <span class="rtsTxtnew">Cước chính:</span></td>
                 <td colspan="4">
-                    <telerik:RadTextBox ID="txtC_GIACUOC" Width ="90%" Text='<%# Bind("C_GIACUOC") %>' runat="server"></telerik:RadTextBox>
+                    <telerik:RadNumericTextBox  ID="txtC_GIACUOC" Width ="90%" Runat="server" Text='<%# Bind("C_GIACUOC") %>'>
+                            <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
+                    </telerik:RadNumericTextBox>
                 </td>                
-                 <td style =" width:100px;"> <span class="rtsTxtnew">DV phụ trội:</td>
-                <td colspan="4">
+                <td style =" width:100px;"> <span class="rtsTxtnew">DV phụ trội:</td>
+                <td colspan="8">
                     <uc1:NHANGUIDVPT ID ="NHANGUIDVPT" runat = "server"/>  
                 </td>
             </tr
+            <tr>     
+                <td style =" width:100px;"><span class="rtsTxtnew">Tổng cước:</span></td>
+                <td colspan="4">
+                    <telerik:RadNumericTextBox  ID="txtC_TIENHANG" Width ="90%" Runat="server" Text='<%# Bind("C_TIENHANG") %>'>
+                            <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
+                    </telerik:RadNumericTextBox>
+                </td>           
+                <td style =" width:100px;"> <span class="rtsTxtnew">HTTT:</span></td>
+                <td colspan="4">
+                 <telerik:RadComboBox ID="cmbC_HINHTHUCTT" SelectedValue='<%# Bind("C_HINHTHUCTT") %>' runat="server" EmptyMessage="Chọn">
+                            <Items>
+                                <telerik:RadComboBoxItem Value ="Thanh toán ngay" Text ="Thanh toán ngay" />
+                                <telerik:RadComboBoxItem Value ="Thanh toán sau" Text ="Thanh toán sau" />
+                                <telerik:RadComboBoxItem Value ="Thanh toán đầu nhận" Text ="Thanh toán đầu nhận" />
+                                <telerik:RadComboBoxItem Value ="Khác" Text ="Khác" />
+                            </Items>
+                 </telerik:RadComboBox>
+                </td>               
+                <td style =" width:100px;"> <span class="rtsTxtnew">Đã thu:</span></td>
+                <td colspan="4">
+                    <telerik:RadNumericTextBox  ID="txtC_DATHU" Width ="90%" Runat="server" Text='<%# Bind("C_DATHU") %>'>
+                            <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
+                    </telerik:RadNumericTextBox>
+                </td>
+            </tr
+            <tr>
+                <td style =" width:100px;"> <span class="rtsTxtnew">Còn lại:</span></td>
+                <td colspan="4">
+                    <telerik:RadNumericTextBox  ID="txtC_CONLAI" Width ="90%" Runat="server">
+                            <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
+                    </telerik:RadNumericTextBox>
+                </td>
+                <td style =" width:100px;"><span class="rtsTxtnew">Nhân viên nhận:</span></td>
+                <td colspan="4">
+                    <telerik:RadComboBox ID="cmbFK_NHANVIENNHAN" runat="server" SelectedValue='<%# Bind("FK_NHANVIENNHAN") %>'
+                    DataTextField="C_NAME" DataValueField="PK_ID" DataSourceID="UserDataSource"
+                    ShowToggleImage="True" EmptyMessage="Chọn">
+                    </telerik:RadComboBox>
+                </td>
+                <td style =" width:100px;"><span class="rtsTxtnew">Đối tác:</span></td>
+                <td colspan="4">
+                    <telerik:RadComboBox ID="cmbFK_DOITAC" runat="server" SelectedValue='<%# Bind("FK_DOITAC") %>'
+                    DataTextField="C_NAME" DataValueField="PK_ID" DataSourceID="DoitacDataSource"
+                    ShowToggleImage="True" EmptyMessage="Chọn">
+                    </telerik:RadComboBox>
+                </td>
+            </tr>
+            <tr>
+             <td style =" width:100px;"><span class="rtsTxtnew">Giá đối tác:</span></td>
+                <td colspan="4">
+                     <telerik:RadNumericTextBox  ID="txtC_GIADOITAC" Width ="90%" Runat="server" Text='<%# Bind("C_GIADOITAC") %>'>
+                            <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
+                    </telerik:RadNumericTextBox>
+                </td>
+                <td style =" width:100px;"> <span class="rtsTxtnew">Nhân viên phát:</span></td>
+                <td colspan="4">
+                    <telerik:RadComboBox ID="cmbFK_NHANVIENPHAT" runat="server" SelectedValue='<%# Bind("FK_NHANVIENPHAT") %>'
+                    DataTextField="C_NAME" DataValueField="PK_ID" DataSourceID="UserDataSource"
+                    ShowToggleImage="True" EmptyMessage="Chọn">
+                    </telerik:RadComboBox>
+                </td>
+                <td style =" width:100px;"> <span class="rtsTxtnew">Ngày giờ phát:</span></td>
+                <td colspan="4">
+                    <telerik:RadDateTimePicker ID="radC_NGAYGIOPHAT"  Width ="90%" DbSelectedDate ='<%# Bind("C_NGAYGIOPHAT") %>' runat="server" AutoPostBack ="false">
+                        <DateInput ID ="DateInput2" runat ="server" DateFormat ="dd/MM/yyyy hh:mm" MinDate="1/1/1890 12:00:00 AM">
+                        <ClientEvents  OnKeyPress ="controlkeypress"/>
+                        </DateInput>
+                    </telerik:RadDateTimePicker>
+                </td>
+            </tr>
+             <tr>
+             <td style =" width:100px;"><span class="rtsTxtnew">Người ký nhận:</span></td>
+                <td colspan="4">
+                     <telerik:RadTextBox ID="txtC_NGUOIKYNHAN" Width ="90%" Text='<%# Bind("C_NGUOIKYNHAN") %>' runat="server"></telerik:RadTextBox>
+                </td>
+                <td style =" width:100px;"> <span class="rtsTxtnew">Bộ phận:</span></td>
+                <td colspan="4">
+                    <telerik:RadTextBox ID="txtC_BOPHAN" Width ="90%" Text='<%# Bind("C_BOPHAN") %>' runat="server"></telerik:RadTextBox>
+                </td>
+            </tr>
            </table>
             </div> 
              </center> 
@@ -287,9 +373,9 @@
 <asp:SqlDataSource ID="NHANGUIDataSource" runat="server" 
     ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>" 
     DeleteCommand="DELETE FROM [NHANGUI] WHERE [PK_ID] = @PK_ID" 
-    InsertCommand="INSERT INTO [NHANGUI] ([C_NGAY], [C_MAKH], [C_BILL], [C_TENKH], [C_NGUOINHAN], [C_DIACHINHAN], [FK_QUANHUYEN], [C_NOIDUNG], [FK_MASANPHAM], [C_KHOILUONG], [C_GIACUOC], [C_PHUTROI], [C_HINHTHUCTT], [C_TINHTRANGTT], [C_TIENHANG], [FK_NHANVIENNHAN], [FK_DOITAC], [C_GIADOITAC], [FK_NHANVIENPHAT], [C_NGAYGIOPHAT], [C_NGUOIKYNHAN], [C_BOPHAN]) VALUES (@C_NGAY, @C_MAKH, @C_BILL, @C_TENKH, @C_NGUOINHAN, @C_DIACHINHAN, @FK_QUANHUYEN, @C_NOIDUNG, @FK_MASANPHAM, @C_KHOILUONG, @C_GIACUOC, @C_PHUTROI, @C_HINHTHUCTT, @C_TINHTRANGTT, @C_TIENHANG, @FK_NHANVIENNHAN, @FK_DOITAC, @C_GIADOITAC, @FK_NHANVIENPHAT, @C_NGAYGIOPHAT, @C_NGUOIKYNHAN, @C_BOPHAN);SELECT @IDNHANGUI = SCOPE_IDENTITY()" 
-    SelectCommand="SELECT [PK_ID], [C_NGAY], [C_MAKH], [C_BILL], [C_TENKH], [C_NGUOINHAN], [C_DIACHINHAN], [FK_QUANHUYEN], [C_NOIDUNG], [FK_MASANPHAM], [C_KHOILUONG], [C_GIACUOC], [C_PHUTROI], [C_HINHTHUCTT], [C_TINHTRANGTT], [C_TIENHANG], [FK_NHANVIENNHAN], [FK_DOITAC], [C_GIADOITAC], [FK_NHANVIENPHAT], [C_NGAYGIOPHAT], [C_NGUOIKYNHAN], [C_BOPHAN] FROM [NHANGUI]" 
-    UpdateCommand="UPDATE [NHANGUI] SET [C_NGAY] = @C_NGAY, [C_MAKH] = @C_MAKH, [C_BILL] = @C_BILL, [C_TENKH] = @C_TENKH, [C_NGUOINHAN] = @C_NGUOINHAN, [C_DIACHINHAN] = @C_DIACHINHAN, [FK_QUANHUYEN] = @FK_QUANHUYEN, [C_NOIDUNG] = @C_NOIDUNG, [FK_MASANPHAM] = @FK_MASANPHAM, [C_KHOILUONG] = @C_KHOILUONG, [C_GIACUOC] = @C_GIACUOC, [C_PHUTROI] = @C_PHUTROI, [C_HINHTHUCTT] = @C_HINHTHUCTT, [C_TINHTRANGTT] = @C_TINHTRANGTT, [C_TIENHANG] = @C_TIENHANG, [FK_NHANVIENNHAN] = @FK_NHANVIENNHAN, [FK_DOITAC] = @FK_DOITAC, [C_GIADOITAC] = @C_GIADOITAC, [FK_NHANVIENPHAT] = @FK_NHANVIENPHAT, [C_NGAYGIOPHAT] = @C_NGAYGIOPHAT, [C_NGUOIKYNHAN] = @C_NGUOIKYNHAN, [C_BOPHAN] = @C_BOPHAN WHERE [PK_ID] = @PK_ID"
+    InsertCommand="INSERT INTO [NHANGUI] ([C_NGAY], [C_MAKH], [C_BILL], [C_TENKH], [C_NGUOINHAN], [C_DIACHINHAN], [FK_QUANHUYEN], [C_NOIDUNG], [FK_MASANPHAM], [C_KHOILUONG], [C_GIACUOC], [C_PHUTROI], [C_HINHTHUCTT], [C_DATHU], [C_TIENHANG], [FK_NHANVIENNHAN], [FK_DOITAC], [C_GIADOITAC], [FK_NHANVIENPHAT], [C_NGAYGIOPHAT], [C_NGUOIKYNHAN], [C_BOPHAN]) VALUES (@C_NGAY, @C_MAKH, @C_BILL, @C_TENKH, @C_NGUOINHAN, @C_DIACHINHAN, @FK_QUANHUYEN, @C_NOIDUNG, @FK_MASANPHAM, @C_KHOILUONG, @C_GIACUOC, @C_PHUTROI, @C_HINHTHUCTT, @C_DATHU, @C_TIENHANG, @FK_NHANVIENNHAN, @FK_DOITAC, @C_GIADOITAC, @FK_NHANVIENPHAT, @C_NGAYGIOPHAT, @C_NGUOIKYNHAN, @C_BOPHAN);SELECT @IDNHANGUI = SCOPE_IDENTITY()" 
+    SelectCommand="SELECT [PK_ID], [C_NGAY], [C_MAKH], [C_BILL], [C_TENKH], [C_NGUOINHAN], [C_DIACHINHAN], [FK_QUANHUYEN], [C_NOIDUNG], [FK_MASANPHAM], [C_KHOILUONG], [C_GIACUOC], [C_PHUTROI], [C_HINHTHUCTT], [C_DATHU], [C_TIENHANG], [FK_NHANVIENNHAN], [FK_DOITAC], [C_GIADOITAC], [FK_NHANVIENPHAT], [C_NGAYGIOPHAT], [C_NGUOIKYNHAN], [C_BOPHAN] FROM [NHANGUI]" 
+    UpdateCommand="UPDATE [NHANGUI] SET [C_NGAY] = @C_NGAY, [C_MAKH] = @C_MAKH, [C_BILL] = @C_BILL, [C_TENKH] = @C_TENKH, [C_NGUOINHAN] = @C_NGUOINHAN, [C_DIACHINHAN] = @C_DIACHINHAN, [FK_QUANHUYEN] = @FK_QUANHUYEN, [C_NOIDUNG] = @C_NOIDUNG, [FK_MASANPHAM] = @FK_MASANPHAM, [C_KHOILUONG] = @C_KHOILUONG, [C_GIACUOC] = @C_GIACUOC, [C_PHUTROI] = @C_PHUTROI, [C_HINHTHUCTT] = @C_HINHTHUCTT, [C_DATHU] = @C_DATHU, [C_TIENHANG] = @C_TIENHANG, [FK_NHANVIENNHAN] = @FK_NHANVIENNHAN, [FK_DOITAC] = @FK_DOITAC, [C_GIADOITAC] = @C_GIADOITAC, [FK_NHANVIENPHAT] = @FK_NHANVIENPHAT, [C_NGAYGIOPHAT] = @C_NGAYGIOPHAT, [C_NGUOIKYNHAN] = @C_NGUOIKYNHAN, [C_BOPHAN] = @C_BOPHAN WHERE [PK_ID] = @PK_ID"
     oninserted="NHANGUIDataSource_Inserted">
     <DeleteParameters>
         <asp:Parameter Name="PK_ID" Type="Int32" />
@@ -308,7 +394,7 @@
         <asp:Parameter Name="C_GIACUOC" Type="Single" />
         <asp:Parameter Name="C_PHUTROI" Type="String" />
         <asp:Parameter Name="C_HINHTHUCTT" Type="String" />
-        <asp:Parameter Name="C_TINHTRANGTT" Type="String" />
+        <asp:Parameter Name="C_DATHU" Type="String" />
         <asp:Parameter Name="C_TIENHANG" Type="String" />
         <asp:Parameter Name="FK_NHANVIENNHAN" Type="Int32" />
         <asp:Parameter Name="FK_DOITAC" Type="Int32" />
@@ -333,7 +419,7 @@
         <asp:Parameter Name="C_GIACUOC" Type="Single" />
         <asp:Parameter Name="C_PHUTROI" Type="String" />
         <asp:Parameter Name="C_HINHTHUCTT" Type="String" />
-        <asp:Parameter Name="C_TINHTRANGTT" Type="String" />
+        <asp:Parameter Name="C_DATHU" Type="String" />
         <asp:Parameter Name="C_TIENHANG" Type="String" />
         <asp:Parameter Name="FK_NHANVIENNHAN" Type="Int32" />
         <asp:Parameter Name="FK_DOITAC" Type="Int32" />
@@ -349,7 +435,7 @@
  SelectCommand="SELECT DMNHOMKHACHHANG.* FROM DMNHOMKHACHHANG" >
 </asp:SqlDataSource>
 <asp:SqlDataSource ID="MASANPHAMDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
-        SelectCommand="SELECT [PK_ID], [C_CODE], [C_NAME] FROM [DMMASANPHAM] ORDER BY PK_ID">
+  SelectCommand="SELECT [PK_ID], [C_CODE], [C_NAME] FROM [DMMASANPHAM]  WHERE C_CODE <> 'QT' ORDER BY PK_ID">
 </asp:SqlDataSource>
 <asp:SqlDataSource ID="MAVUNGDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>">
 </asp:SqlDataSource>
@@ -357,5 +443,11 @@
     SelectCommand="SELECT [DMTINHTHANH].[PK_ID], [DMTINHTHANH].[C_CODE], [DMTINHTHANH].[C_NAME] FROM [DMTINHTHANH] LEFT OUTER JOIN DMQUOCGIA ON DMTINHTHANH.FK_QUOCGIA = DMQUOCGIA.PK_ID WHERE DMQUOCGIA.C_CODE='VN'">
  </asp:SqlDataSource>
  <asp:SqlDataSource ID="QUANHUYENDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>">
-</asp:SqlDataSource>  
+</asp:SqlDataSource>
+<asp:SqlDataSource ID="UserDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
+    SelectCommand="SELECT USERS.PK_ID,USERS.FK_GroupUser,USERS.FK_DEPT,USERS.C_LoginName,USERS.C_Password,USERS.C_NAME,USERS.C_Address,USERS.c_Tel,USERS.C_Email,USERS.C_DESC,GROUPUSER.C_NAME AS GROUPUSERNAME FROM USERS INNER JOIN GROUPUSER ON  USERS.FK_GROUPUSER = GROUPUSER.PK_ID WHERE FK_GroupUser <> 0">
+</asp:SqlDataSource>
+<asp:SqlDataSource ID="DOITACDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>" 
+    SelectCommand="SELECT [DMDOITAC].[PK_ID], [DMDOITAC].[C_CODE], [DMDOITAC].[C_NAME], [DMDOITAC].[C_ADDRESS], [DMDOITAC].[C_TEL], [DMDOITAC].[C_NGUOILIENHE] FROM [DMDOITAC]">
+</asp:SqlDataSource>
 
