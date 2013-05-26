@@ -104,13 +104,13 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
         GridEditableItem item = (GridEditableItem)e.Item;
         if (e.Exception != null)
         {
-            e.ExceptionHandled = true;
-            SetMessage("Không thể tạo mới nhận gửi. Lý do: " + e.Exception.Message);
+            //e.ExceptionHandled = true;
+            //SetMessage("Không thể tạo mới nhận gửi. Lý do: " + e.Exception.Message);
         }
         else
         {
-            SetMessage("Tạo mới nhận gửi thành công!");
-            ITCLIB.ActionLog.ActionLog.WriteLog(Session["UserID"].ToString(), "Inserted NHANGUIs", "{PK_ID:\"" + getmaxid("NHANGUI") + "\"}");
+            //SetMessage("Tạo mới nhận gửi thành công!");
+            //ITCLIB.ActionLog.ActionLog.WriteLog(Session["UserID"].ToString(), "Inserted NHANGUIs", "{PK_ID:\"" + getmaxid("NHANGUI") + "\"}");
         }
     }
     protected void RadGridNHANGUI_ItemUpdated(object sender, GridUpdatedEventArgs e)
@@ -194,6 +194,70 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
         else
         {
             return true;
+        }
+    }
+    protected void cmbQuanHuyen_ItemsRequested(object sender, RadComboBoxItemsRequestedEventArgs e)
+    {
+        RadComboBox cmbQuanHuyen = (RadComboBox)sender;
+        QUANHUYENDataSource.SelectCommand = LoadFilteredManually(e.Text);
+        cmbQuanHuyen.DataBind();
+    }
+    protected string LoadFilteredManually(string ID)
+    {
+        string SelectSQL = "";
+        if (ID != "")
+        {
+            SelectSQL = "SELECT * FROM DMQUANHUYEN WHERE FK_TINHTHANH = " + ID + "order by C_CODE";
+        }
+        else
+        {
+            SelectSQL = "SELECT * FROM DMQUANHUYEN order by C_CODE";
+        }
+        return SelectSQL;
+    }
+    protected void UpdateExtGridNhanGui()
+    {
+        string UpdateSQL = "";
+        if (Session["NEWIDDVPT"] != null)
+        {
+            UpdateSQL += "Update DICHVUPT set FK_NHANGUI = " + Session["IDNHANGUI"].ToString() + " WHERE PK_ID IN (" + Session["NEWIDDVPT"].ToString() + ");";
+            Session["NEWIDDVPT"] = null;
+        }
+        if (UpdateSQL != "")
+        {
+            ITCLIB.Admin.SQL rs = new ITCLIB.Admin.SQL();
+            rs.ExecuteNonQuery(UpdateSQL);
+        }
+    }
+    protected void DeleteExtGridNhanGui()
+    {
+        string DeleteSQL = "";
+        if (Session["NEWIDDVPT"] != null)
+        {
+            DeleteSQL += "Delete  FROM DICHVUPT WHERE PK_ID IN (" + Session["NEWIDDVPT"] + ");";
+            Session["NEWIDDVPT"] = null;
+        }
+        if (DeleteSQL != "")
+        {
+            ITCLIB.Admin.SQL rs = new ITCLIB.Admin.SQL();
+            rs.ExecuteNonQuery(DeleteSQL);
+        }
+    }
+
+    protected void NHANGUIDataSource_Inserted(object sender, SqlDataSourceStatusEventArgs e)
+    {
+        if (e.Exception != null)
+        {
+            e.ExceptionHandled = true;
+            DeleteExtGridNhanGui();
+            SetMessage("Không thể tạo mới nhận gửi. Lý do: " + e.Exception.Message);
+        }
+        else
+        {
+            Session["IDNHANGUI"] = e.Command.Parameters["@IDNHANGUI"].Value.ToString();
+            UpdateExtGridNhanGui();
+            SetMessage("Tạo mới nhận gửi thành công!");
+            ITCLIB.ActionLog.ActionLog.WriteLog(Session["UserID"].ToString(), "Inserted NHANGUI", Session["IDNHANGUI"].ToString());
         }
     }
 }
