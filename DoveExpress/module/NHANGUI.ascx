@@ -29,6 +29,39 @@
       
     }
 </script>
+<script type="text/javascript">
+     function onResponseEndNG() {
+         if (typeof (result) != "undefined" && result && result != "") {
+             //$find("<%= RadGridNHANGUI.ClientID %>").get_masterTableView().rebind();
+             result = "";
+         }
+         return false;
+     }
+</script>
+<script type="text/javascript">
+      var registeredElementsCT = [];
+      function GetRegisteredServerElementCT(serverID) {
+          var clientID = "";
+          for (var i = 0; i < registeredElementsCT.length; i++) {
+              clientID = registeredElementsCT[i];
+              if (clientID.indexOf(serverID) >= 0)
+                  break;
+          }
+          return $get(clientID);
+      }
+      function GetGridServerElementCT(serverID, tagName) {
+          if (!tagName)
+              tagName = "*";
+
+          var grid = $get("<%=RadGridNHANGUI.ClientID %>");
+          var elements = grid.getElementsByTagName(tagName);
+          for (var i = 0; i < elements.length; i++) {
+              var element = elements[i];
+              if (element.id.indexOf(serverID) >= 0)
+                  return element;
+          }
+      }
+</script>
 </telerik:RadCodeBlock>
 <telerik:RadAjaxLoadingPanel Skin="Vista" ID="RadAjaxLoadingPanelNHANGUI" runat="server" />
 <telerik:RadGrid ID="RadGridNHANGUI" runat="server" Skin="Vista" 
@@ -197,11 +230,21 @@
                 </td>
                 <td style ="width:100px;"> <span class="rtsTxtnew">Mã khách hàng:</span></td>
                 <td colspan="4">
-                    <telerik:RadTextBox ID="txtC_MAKH" Width ="90%" Text='<%# Bind("C_MAKH") %>' runat="server"></telerik:RadTextBox>
+                    <telerik:RadAutoCompleteBox ID="radautoC_MAKH" Width ="90%" runat="server" 
+                        AllowCustomEntry="True" DataSourceID="KHACHHANGDataSource" 
+                        DataTextField="C_CODE" DataValueField="PK_ID" InputType="Text">
+                        <TextSettings SelectionMode="Single" />
+                    </telerik:RadAutoCompleteBox>
+                    <telerik:RadTextBox ID="txtC_MAKH" Width ="90%"  Visible="false" Text='<%# Eval("C_MAKH") %>' runat="server"></telerik:RadTextBox>
                 </td>
                 <td style ="width:100px;"> <span class="rtsTxtnew">Tên khách hàng:</span></td>
                 <td colspan="8">
-                    <telerik:RadTextBox ID="txtC_TENKH" Width ="90%" Text='<%# Bind("C_TENKH") %>' runat="server"></telerik:RadTextBox>
+                    <telerik:RadAutoCompleteBox ID="radautoC_TENKH" Width ="90%" runat="server" 
+                        AllowCustomEntry="True" DataSourceID="KHACHHANGDataSource" 
+                        DataTextField="C_NAME" DataValueField="PK_ID" InputType="Text">
+                        <TextSettings SelectionMode="Single" />
+                    </telerik:RadAutoCompleteBox>
+                    <telerik:RadTextBox ID="txtC_TENKH" Width ="90%"  Visible="false" Text='<%# Eval("C_TENKH") %>' runat="server"></telerik:RadTextBox>
                 </td>               
             </tr> 
             <tr> 
@@ -256,7 +299,7 @@
                 </td>
                 <td style =" width:100px;"> <span class="rtsTxtnew">Khối lượng (g):</span></td>
                 <td colspan="4">
-                     <telerik:RadNumericTextBox  ID="txtC_KHOILUONG" Width ="90%" Runat="server" Text='<%# Bind("C_KHOILUONG") %>'>
+                     <telerik:RadNumericTextBox  ID="txtC_KHOILUONG" Width ="90%" Runat="server" Text='<%# Bind("C_KHOILUONG") %>' AutoPostBack="True">
                             <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="1"/>
                     </telerik:RadNumericTextBox>
                 </td>
@@ -276,7 +319,7 @@
             <tr>     
                 <td style =" width:100px;"><span class="rtsTxtnew">Tổng cước:</span></td>
                 <td colspan="4">
-                    <telerik:RadNumericTextBox  ID="txtC_TIENHANG" Width ="90%" Runat="server" Text='<%# Bind("C_TIENHANG") %>'>
+                    <telerik:RadNumericTextBox  ID="txtC_TIENHANG" Width ="90%" Runat="server" Text='<%# Bind("C_TIENHANG") %>' AutoPostBack="True">
                             <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
                     </telerik:RadNumericTextBox>
                 </td>           
@@ -293,7 +336,7 @@
                 </td>               
                 <td style =" width:100px;"> <span class="rtsTxtnew">Đã thu:</span></td>
                 <td colspan="4">
-                    <telerik:RadNumericTextBox  ID="txtC_DATHU" Width ="90%" Runat="server" Text='<%# Bind("C_DATHU") %>'>
+                    <telerik:RadNumericTextBox  ID="txtC_DATHU" Width ="90%" Runat="server" Text='<%# Bind("C_DATHU") %>' AutoPostBack="True">
                             <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
                     </telerik:RadNumericTextBox>
                 </td>
@@ -435,6 +478,9 @@
  <asp:SqlDataSource ID="NHOMKHACHHANGDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
  SelectCommand="SELECT DMNHOMKHACHHANG.* FROM DMNHOMKHACHHANG" >
 </asp:SqlDataSource>
+ <asp:SqlDataSource ID="KHACHHANGDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
+ SelectCommand="SELECT DMKHACHHANG.* FROM DMKHACHHANG" >
+</asp:SqlDataSource>
 <asp:SqlDataSource ID="MASANPHAMDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
   SelectCommand="SELECT [PK_ID], [C_CODE], [C_NAME] FROM [DMMASANPHAM]  WHERE C_CODE <> 'QT' ORDER BY PK_ID">
 </asp:SqlDataSource>
@@ -451,4 +497,3 @@
 <asp:SqlDataSource ID="DOITACDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>" 
     SelectCommand="SELECT [DMDOITAC].[PK_ID], [DMDOITAC].[C_CODE], [DMDOITAC].[C_NAME], [DMDOITAC].[C_ADDRESS], [DMDOITAC].[C_TEL], [DMDOITAC].[C_NGUOILIENHE] FROM [DMDOITAC]">
 </asp:SqlDataSource>
-

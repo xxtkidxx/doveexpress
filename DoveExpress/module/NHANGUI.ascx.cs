@@ -34,6 +34,14 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
             string Value = Request["value"].ToString();
         }
         Session["LastUrl"] = Request.Url.ToString();
+        RadAjaxManager ajaxManager = RadAjaxManager.GetCurrent(Page);
+        ajaxManager.AjaxRequest += new RadAjaxControl.AjaxRequestDelegate(RadScriptManager_AjaxRequestNG);
+        ajaxManager.ClientEvents.OnResponseEnd = "onResponseEndNG";
+    }
+    protected void RadScriptManager_AjaxRequestNG(object sender, AjaxRequestEventArgs e)
+    {
+        string value = e.Argument;
+        
     }
     protected void btnShowAll_Click(object sender, System.Web.UI.ImageClickEventArgs e)
     {
