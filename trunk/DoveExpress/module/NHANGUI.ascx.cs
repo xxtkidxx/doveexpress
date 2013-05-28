@@ -136,12 +136,40 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
             GridEditableItem editItem = (GridEditableItem)e.Item;
             HiddenField txtID = (HiddenField)editItem.FindControl("txtID");
             Session["txtID"] = (txtID.Value != "") ? txtID.Value : "0";
+            if (e.Item is GridEditFormInsertItem || e.Item is GridDataInsertItem)
+            {
+                // insert item
+                RadDatePicker radNgaynhangui = (RadDatePicker)editItem.FindControl("radNgaynhangui");
+                radNgaynhangui.SelectedDate = System.DateTime.Now;
+                RadTextBox txtCODE = (RadTextBox)editItem.FindControl("txtCODE");
+                txtCODE.Text = GetMaxBill();
+
+            }
+            else
+            {
+                // edit item
+            }
         }
         if (e.Item is GridDataItem)
         {
             Label lblSTT = (Label)e.Item.FindControl("lblSTT");
             lblSTT.Text = (e.Item.ItemIndex + 1).ToString();
         }
+    }
+    protected string GetMaxBill()
+    {
+        string maxbill = "00000001";
+        string SelectSQL = "SELECT MAX(CAST(C_BILL AS Int)) as MAXBILL FROM NHANGUI";
+        DataTable oDataTable = new DataTable();
+        ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
+        oDataTable = SelectQuery.query_data(SelectSQL);
+
+        if (oDataTable.Rows[0]["MAXBILL"] != DBNull.Value)
+        {
+            int maxvalue = (int)oDataTable.Rows[0]["MAXBILL"];
+            maxbill = String.Format("{0:00000000}", maxvalue + 1);   
+        }
+        return maxbill;
     }
     protected void RadGridNHANGUI_ItemCommand(object sender, GridCommandEventArgs e)
     {

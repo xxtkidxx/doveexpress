@@ -1,0 +1,5 @@
+Thời gian lỗi : 2013-05-27 00:04:08 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:The DataSourceID of 'cmbFK_DOITAC' must be the ID of a control of type IDataSource.  A control with ID 'DoitacDataSource' could not be found.
+__________________________

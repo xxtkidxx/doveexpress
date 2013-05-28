@@ -1,0 +1,62 @@
+Thời gian lỗi : 2013-05-26 18:41:42 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\module\NHANGUI.ascx(227): error CS1061: 'ASP.module_nhangui_ascx' does not contain a definition for 'cmbQuanHuyen_ItemsRequested' and no extension method 'cmbQuanHuyen_ItemsRequested' accepting a first argument of type 'ASP.module_nhangui_ascx' could be found (are you missing a using directive or an assembly reference?)
+__________________________
+Thời gian lỗi : 2013-05-26 18:46:28 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\module\NHANGUI.ascx(227): error CS1061: 'ASP.module_nhangui_ascx' does not contain a definition for 'cmbQuanHuyen_ItemsRequested' and no extension method 'cmbQuanHuyen_ItemsRequested' accepting a first argument of type 'ASP.module_nhangui_ascx' could be found (are you missing a using directive or an assembly reference?)
+__________________________
+Thời gian lỗi : 2013-05-26 18:46:33 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\module\NHANGUI.ascx(227): error CS1061: 'ASP.module_nhangui_ascx' does not contain a definition for 'cmbQuanHuyen_ItemsRequested' and no extension method 'cmbQuanHuyen_ItemsRequested' accepting a first argument of type 'ASP.module_nhangui_ascx' could be found (are you missing a using directive or an assembly reference?)
+__________________________
+Thời gian lỗi : 2013-05-26 19:22:55 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\module\NHANGUIDVPT.ascx(95): error CS1061: 'ASP.module_nhanguidvpt_ascx' does not contain a definition for 'DUANVONsDataSource_Inserted' and no extension method 'DUANVONsDataSource_Inserted' accepting a first argument of type 'ASP.module_nhanguidvpt_ascx' could be found (are you missing a using directive or an assembly reference?)
+__________________________
+Thời gian lỗi : 2013-05-26 19:23:48 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:The connection name 'CNCREPORTConnectionString' was not found in the applications configuration or the connection string is empty.
+__________________________
+Thời gian lỗi : 2013-05-26 23:20:50 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Could not find control 'txtID' in ControlParameter 'FK_NHANGUI'.
+__________________________
+Thời gian lỗi : 2013-05-26 23:25:30 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Selection out of range
+Parameter name: value
+__________________________
+Thời gian lỗi : 2013-05-26 23:25:37 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Selection out of range
+Parameter name: value
+__________________________
+Thời gian lỗi : 2013-05-26 23:31:10 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\module\NHANGUIDVPT.ascx(93): error CS1061: 'ASP.module_nhanguidvpt_ascx' does not contain a definition for 'DUANVONsDataSource_Inserted' and no extension method 'DUANVONsDataSource_Inserted' accepting a first argument of type 'ASP.module_nhanguidvpt_ascx' could be found (are you missing a using directive or an assembly reference?)
+__________________________
+Thời gian lỗi : 2013-05-26 23:31:37 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\module\NHANGUIDVPT.ascx(93): error CS1061: 'ASP.module_nhanguidvpt_ascx' does not contain a definition for 'DUANVONsDataSource_Inserted' and no extension method 'DUANVONsDataSource_Inserted' accepting a first argument of type 'ASP.module_nhanguidvpt_ascx' could be found (are you missing a using directive or an assembly reference?)
+__________________________
+Thời gian lỗi : 2013-05-26 23:31:42 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\module\NHANGUIDVPT.ascx(93): error CS1061: 'ASP.module_nhanguidvpt_ascx' does not contain a definition for 'DUANVONsDataSource_Inserted' and no extension method 'DUANVONsDataSource_Inserted' accepting a first argument of type 'ASP.module_nhanguidvpt_ascx' could be found (are you missing a using directive or an assembly reference?)
+__________________________
+Thời gian lỗi : 2013-05-26 23:31:56 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\module\NHANGUIDVPT.ascx(93): error CS1061: 'ASP.module_nhanguidvpt_ascx' does not contain a definition for 'DUANVONsDataSource_Inserted' and no extension method 'DUANVONsDataSource_Inserted' accepting a first argument of type 'ASP.module_nhanguidvpt_ascx' could be found (are you missing a using directive or an assembly reference?)
+__________________________
