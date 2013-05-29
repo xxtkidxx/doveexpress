@@ -28,11 +28,15 @@
     function cmbQuanHuyenClientSelectedIndexChangedHandler(sender, eventArgs) {
       
     }
+    function cmbSanPhamClientSelectedIndexChangedHandler(sender, eventArgs) {
+         $find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("cmbSanPham;" + eventArgs.get_item().get_value());
+         return false;
+    }
 </script>
 <script type="text/javascript">
      function onResponseEndNG() {
          if (typeof (result) != "undefined" && result && result != "") {
-             //$find("<%= RadGridNHANGUI.ClientID %>").get_masterTableView().rebind();
+             alert(result);
              result = "";
          }
          return false;
@@ -288,7 +292,7 @@
                 <td colspan="4">
                     <telerik:RadComboBox ID="cmbSanPham" runat="server" 
                     DataTextField="C_NAME" DataValueField="PK_ID" DataSourceID="MASANPHAMDataSource"
-                    ShowToggleImage="True" EmptyMessage="Chọn dịch vụ">
+                    ShowToggleImage="True" EmptyMessage="Chọn dịch vụ" onclientselectedindexchanged="cmbSanPhamClientSelectedIndexChangedHandler">
                     </telerik:RadComboBox>
                 </td>
                 <td style =" width:100px;"><span class="rtsTxtnew">PPXD:</span></td>
@@ -299,7 +303,7 @@
                 </td>
                 <td style =" width:100px;"> <span class="rtsTxtnew">Khối lượng (g):</span></td>
                 <td colspan="4">
-                     <telerik:RadNumericTextBox  ID="txtC_KHOILUONG" Width ="90%" Runat="server" Text='<%# Bind("C_KHOILUONG") %>' AutoPostBack="True">
+                     <telerik:RadNumericTextBox  ID="txtC_KHOILUONG" Width ="90%" Runat="server" Text='<%# Bind("C_KHOILUONG") %>'>
                             <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="1"/>
                     </telerik:RadNumericTextBox>
                 </td>
@@ -319,7 +323,7 @@
             <tr>     
                 <td style =" width:100px;"><span class="rtsTxtnew">Tổng cước:</span></td>
                 <td colspan="4">
-                    <telerik:RadNumericTextBox  ID="txtC_TIENHANG" Width ="90%" Runat="server" Text='<%# Bind("C_TIENHANG") %>' AutoPostBack="True">
+                    <telerik:RadNumericTextBox  ID="txtC_TIENHANG" Width ="90%" Runat="server" Text='<%# Bind("C_TIENHANG") %>'>
                             <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
                     </telerik:RadNumericTextBox>
                 </td>           
@@ -336,7 +340,7 @@
                 </td>               
                 <td style =" width:100px;"> <span class="rtsTxtnew">Đã thu:</span></td>
                 <td colspan="4">
-                    <telerik:RadNumericTextBox  ID="txtC_DATHU" Width ="90%" Runat="server" Text='<%# Bind("C_DATHU") %>' AutoPostBack="True">
+                    <telerik:RadNumericTextBox  ID="txtC_DATHU" Width ="90%" Runat="server" Text='<%# Bind("C_DATHU") %>'>
                             <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
                     </telerik:RadNumericTextBox>
                 </td>
