@@ -42,46 +42,12 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
     {
         string[] arrayvalue = e.Argument.Split(';');
         if (arrayvalue[0] == "cmbSanPham")
-        {
-            /*if (e.Item is GridDataItem)
+        {            
+            foreach (GridEditFormItem item in RadGridNHANGUI.MasterTableView.GetItems(GridItemType.EditFormItem))
             {
-                // NORMAL MODE
-                GridDataItem item = e.Item as GridDataItem;
-                string strId = item.GetDataKeyValue("ID").ToString();
-            }
-
-            if (e.Item is GridEditableItem && e.Item.IsInEditMode)
-            {
-
-                if (e.Item is GridEditFormInsertItem)
+                if (item.IsInEditMode)
                 {
-                    // INSERT MODE
-                    GridEditableItem editedItem = e.Item as GridEditableItem;
-
-                }
-                else
-                {
-                    // EDIT MODE
-                    GridEditableItem editedItem = e.Item as GridEditableItem;
-                    string strId = editedItem.GetDataKeyValue("ID").ToString();
-
-                }
-
-            }*/
-            /*
-            void list_SelectedIndexChanged(object o, RadComboBoxSelectedIndexChangedEventArgs e)
-               {
-                   RadComboBox rdcbx=(RadComboBox)o;
-                   GridEditableItem editedItem =rdcbx.NamingContainer as GridEditableItem;
-                  //Code goes here
-               }
-             */
-            //if EditMode is 'InPlace'
-            //GridDataInsertItem insertItem = (GridDataInsertItem)RadGridNHANGUI.MasterTableView.GetInsertItem();          
-            //if EditMode is 'EditForms/PopUp'
-            /*GridEditFormInsertItem  insertItem = (GridEditFormInsertItem )RadGridNHANGUI.MasterTableView.GetInsertItem();
-            */
-            GridEditFormItem editableItem = (GridEditFormItem)RadGridNHANGUI.MasterTableView.GetItems(GridItemType.EditFormItem)[0];
+                    GridEditableItem editableItem = (GridEditableItem)item;
                     RadNumericTextBox txtPPXD = (RadNumericTextBox)editableItem.FindControl("txtPPXD");
                     RadTextBox txtCODE = (RadTextBox)editableItem.FindControl("txtCODE");
                     txtCODE.Text = "123456";
@@ -100,6 +66,8 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
                     }
                     string script = string.Format("var result = '{0}'", txtCODE.Text);
                     ScriptManager.RegisterClientScriptBlock(Page, typeof(Page), "result", script, true);
+                }
+            }
         }
         else if (arrayvalue[0] == "SelectedDT")
         {
