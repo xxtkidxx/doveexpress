@@ -43,6 +43,31 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
         string[] arrayvalue = e.Argument.Split(';');
         if (arrayvalue[0] == "cmbSanPham")
         {
+            /*if (e.Item is GridDataItem)
+            {
+                // NORMAL MODE
+                GridDataItem item = e.Item as GridDataItem;
+                string strId = item.GetDataKeyValue("ID").ToString();
+            }
+
+            if (e.Item is GridEditableItem && e.Item.IsInEditMode)
+            {
+
+                if (e.Item is GridEditFormInsertItem)
+                {
+                    // INSERT MODE
+                    GridEditableItem editedItem = e.Item as GridEditableItem;
+
+                }
+                else
+                {
+                    // EDIT MODE
+                    GridEditableItem editedItem = e.Item as GridEditableItem;
+                    string strId = editedItem.GetDataKeyValue("ID").ToString();
+
+                }
+
+            }*/
             //if EditMode is 'InPlace'
             //GridDataInsertItem insertItem = (GridDataInsertItem)RadGridNHANGUI.MasterTableView.GetInsertItem();          
             //if EditMode is 'EditForms/PopUp'
