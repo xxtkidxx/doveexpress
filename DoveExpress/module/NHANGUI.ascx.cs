@@ -40,8 +40,15 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
     }
     protected void RadScriptManager_AjaxRequestNG(object sender, AjaxRequestEventArgs e)
     {
-        string value = e.Argument;
-        
+        string[] arrayvalue = e.Argument.Split(';');
+        if (arrayvalue[0] == "cmbSanPham")
+        {
+            string script = string.Format("var result = '{0}'", arrayvalue[1]);
+            ScriptManager.RegisterClientScriptBlock(Page, typeof(Page), "result", script, true);
+        }
+        else if (arrayvalue[0] == "SelectedDT")
+        {
+        }        
     }
     protected void btnShowAll_Click(object sender, System.Web.UI.ImageClickEventArgs e)
     {

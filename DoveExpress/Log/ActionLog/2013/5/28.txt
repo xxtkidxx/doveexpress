@@ -1,0 +1,186 @@
+Thời gian: 2013-05-28 20:32:51 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-05-28 21:04:46 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-05-28 21:10:20 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {PK_ID:"1"}
+__________________________
+Thời gian: 2013-05-28 21:14:28 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {PK_ID:"1"}
+__________________________
+Thời gian: 2013-05-28 21:15:04 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {PK_ID:"1"}
+__________________________
+Thời gian: 2013-05-28 21:15:41 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {PK_ID:"1"}
+__________________________
+Thời gian: 2013-05-28 21:16:24 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {PK_ID:"1"}
+__________________________
+Thời gian: 2013-05-28 21:25:31 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {PK_ID:"1"}
+__________________________
+Thời gian: 2013-05-28 21:25:47 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {PK_ID:"1"}
+__________________________
+Thời gian: 2013-05-28 21:26:47 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {PK_ID:"1"}
+__________________________
+Thời gian: 2013-05-28 21:29:43 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-05-28 21:30:07 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {PK_ID:"1"}
+__________________________
+Thời gian: 2013-05-28 21:30:44 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {PK_ID:"1"}
+__________________________
+Thời gian: 2013-05-28 21:40:45 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated KHACHHANGs
+Kết quả : {PK_ID:"1"}
+__________________________
+Thời gian: 2013-05-28 21:40:54 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted KHACHHANGs
+Kết quả : {PK_ID:"2"}
+__________________________
+Thời gian: 2013-05-28 21:41:03 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted KHACHHANGs
+Kết quả : {PK_ID:"3"}
+__________________________
+Thời gian: 2013-05-28 21:41:16 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted KHACHHANGs
+Kết quả : {PK_ID:"4"}
+__________________________
+Thời gian: 2013-05-28 21:41:27 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted KHACHHANGs
+Kết quả : {PK_ID:"5"}
+__________________________
+Thời gian: 2013-05-28 21:41:37 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted KHACHHANGs
+Kết quả : {PK_ID:"6"}
+__________________________
+Thời gian: 2013-05-28 21:43:23 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {PK_ID:"1"}
+__________________________
+Thời gian: 2013-05-28 21:43:57 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {PK_ID:"1"}
+__________________________
+Thời gian: 2013-05-28 22:07:45 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-05-28 22:23:50 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {PK_ID:"1"}
+__________________________
+Thời gian: 2013-05-28 22:24:53 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted NHANGUI
+Kết quả : 2
+__________________________
+Thời gian: 2013-05-28 22:25:28 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {PK_ID:"2"}
+__________________________
+Thời gian: 2013-05-28 22:25:42 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {PK_ID:"2"}
+__________________________
+Thời gian: 2013-05-28 22:28:01 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted NHANGUI
+Kết quả : 3
+__________________________
+Thời gian: 2013-05-28 22:28:19 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {PK_ID:"3"}
+__________________________
+Thời gian: 2013-05-28 22:28:37 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {PK_ID:"3"}
+__________________________
+Thời gian: 2013-05-28 22:48:20 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-05-28 22:48:28 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {PK_ID:"3"}
+__________________________
