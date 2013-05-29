@@ -43,7 +43,27 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
         string[] arrayvalue = e.Argument.Split(';');
         if (arrayvalue[0] == "cmbSanPham")
         {
-            string script = string.Format("var result = '{0}'", arrayvalue[1]);
+            //if EditMode is 'InPlace'
+            //GridDataInsertItem insertItem = (GridDataInsertItem)RadGridNHANGUI.MasterTableView.GetInsertItem();          
+            //if EditMode is 'EditForms/PopUp'
+            GridEditFormInsertItem insertItem = (GridEditFormInsertItem)RadGridNHANGUI.MasterTableView.GetInsertItem();
+            RadNumericTextBox txtPPXD = (RadNumericTextBox)insertItem.FindControl("txtPPXD");
+            RadTextBox txtCODE = (RadTextBox)insertItem.FindControl("txtCODE");
+            txtCODE.Text = "123456";
+            string SelectSQL;
+            SelectSQL = "Select DMMASANPHAM.C_PPXD FROM DMMASANPHAM WHERE DMMASANPHAM.PK_ID = " + arrayvalue[1] + "";
+            DataTable oDataTable = new DataTable();
+            ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
+            oDataTable = SelectQuery.query_data(SelectSQL);
+            if (oDataTable.Rows.Count != 0)
+            {
+                txtPPXD.Text = oDataTable.Rows[0]["C_PPXD"].ToString();
+            }
+            else
+            {
+                txtPPXD.Text = "0";
+            }
+            string script = string.Format("var result = '{0}'", txtCODE.Text);
             ScriptManager.RegisterClientScriptBlock(Page, typeof(Page), "result", script, true);
         }
         else if (arrayvalue[0] == "SelectedDT")

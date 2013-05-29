@@ -298,7 +298,7 @@
                 <td style =" width:100px;"><span class="rtsTxtnew">PPXD:</span></td>
                 <td colspan="4">
                      <telerik:RadNumericTextBox  ID="txtPPXD" Width ="90%" Runat="server">
-                            <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
+                            <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="1"/>
                     </telerik:RadNumericTextBox>
                 </td>
                 <td style =" width:100px;"> <span class="rtsTxtnew">Khối lượng (g):</span></td>
