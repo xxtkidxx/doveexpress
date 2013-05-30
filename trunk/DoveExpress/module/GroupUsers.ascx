@@ -124,7 +124,7 @@
         </EditFormSettings>
         </MasterTableView>
         <ValidationSettings CommandsToValidate="PerformInsert,Update" ValidationGroup="G1"/>
-        <ClientSettings>
+        <ClientSettings AllowKeyboardNavigation="true" KeyboardNavigationSettings-AllowSubmitOnEnter="true" ClientEvents-OnKeyPress="KeyPressed">
             <Selecting AllowRowSelect="True" EnableDragToSelectRows="True" />
             <ClientEvents OnPopUpShowing="PopUpShowingSmall" />
             <ClientEvents OnRowDblClick="RowDblClick" />

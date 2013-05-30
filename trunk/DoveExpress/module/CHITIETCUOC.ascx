@@ -22,6 +22,27 @@
             }
         }
 </script>
+<script type="text/javascript">
+    function onClientClickSelectedCTC(sender1,sender2) {
+        $find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("SelectedCTC," + sender1 + "," + sender2);
+        return false;
+    }
+    function onResponseEndCTC() {
+        if (typeof (result) != "undefined" && result && result != "") {
+            //$find("<%= RadGridCHITIETCUOC.ClientID %>").get_masterTableView().rebind();
+            var masterTable = $find("<%= RadGridCHITIETCUOC.ClientID %>").get_masterTableView();
+            var dataItems = masterTable.get_dataItems();
+            for (var i = 0; i < dataItems.length; i++) {
+                if (dataItems[i].get_nestedViews().length > 0) {
+                    var nestedView = dataItems[i].get_nestedViews()[0];
+                    nestedView.rebind();
+                }
+            }
+            result = "";
+        }
+        return false;
+    }
+</script>
 </telerik:RadScriptBlock>
 <telerik:RadAjaxLoadingPanel Skin="Vista" ID="RadAjaxLoadingPanelCHITIETCUOC" runat="server" />
 <div style ="width:100%; margin: 10px 10px 10px 10px; ">
@@ -119,14 +140,19 @@ ShowToggleImage="True" EmptyMessage="Chọn bảng"
                             <telerik:GridTemplateColumn DataField="C_CUOCPHI" DataType="System.Decimal" HeaderText="Cước phí" AllowFiltering="false" UniqueName="C_CUOCPHI">
                                 <ItemTemplate>
                                  <telerik:RadNumericTextBox runat="server"  CssClass ="csstextNum" ID="txtC_CUOCPHI" Width="100px" Enabled = "false"  DbValue='<%# Eval("C_CUOCPHI") %>'>
-                                    <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="1"/>
+                                    <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
                                   </telerik:RadNumericTextBox>
                                 </ItemTemplate>
                                 <EditItemTemplate>
                                         <telerik:RadNumericTextBox runat="server" ID="txtC_CUOCPHI" DbValue='<%# Bind("C_CUOCPHI") %>'>
-                                         <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="1"/>
+                                         <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
                                         </telerik:RadNumericTextBox>
                                 </EditItemTemplate>
+                            </telerik:GridTemplateColumn>
+                            <telerik:GridTemplateColumn UniqueName="C_TYPE" HeaderText="Luỹ kế cuối" AllowFiltering ="false">
+                            <ItemTemplate>
+                                <asp:CheckBox ID="chkDefault" runat="server" onclick='<%# String.Format("if(!onClientClickSelectedCTC({0},{1})) return false;",Eval("PK_ID"),Eval("FK_MAVUNG")) %>' Checked='<%# getstatus(Eval("C_TYPE")) %>'/>
+                            </ItemTemplate>
                             </telerik:GridTemplateColumn> 
                             </Columns>
      </telerik:GridTableView>
@@ -146,7 +172,7 @@ ShowToggleImage="True" EmptyMessage="Chọn bảng"
     ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>" 
     DeleteCommand="DELETE FROM [DMCHITIETCUOC] WHERE [PK_ID] = @PK_ID" 
     InsertCommand="INSERT INTO [DMCHITIETCUOC] ([FK_MABANGCUOC], [FK_MASANPHAM], [FK_MAVUNG], [C_LOAITIEN], [C_KHOILUONG], [C_CUOCPHI]) VALUES (@FK_MABANGCUOC, @FK_MASANPHAM, @FK_MAVUNG, @C_LOAITIEN, @C_KHOILUONG, @C_CUOCPHI)" 
-    SelectCommand="SELECT [PK_ID], [FK_MABANGCUOC], [FK_MASANPHAM], [FK_MAVUNG], [C_LOAITIEN], [C_KHOILUONG], [C_CUOCPHI] FROM [DMCHITIETCUOC] WHERE [FK_MAVUNG] =@FK_MAVUNG AND [FK_MABANGCUOC] = @FK_MABANGCUOC AND [FK_MASANPHAM] = @FK_MASANPHAM AND [C_LOAITIEN] = @C_LOAITIEN" 
+    SelectCommand="SELECT [PK_ID], [FK_MABANGCUOC], [FK_MASANPHAM], [FK_MAVUNG], [C_LOAITIEN], [C_KHOILUONG], [C_CUOCPHI], [C_TYPE] FROM [DMCHITIETCUOC] WHERE [FK_MAVUNG] =@FK_MAVUNG AND [FK_MABANGCUOC] = @FK_MABANGCUOC AND [FK_MASANPHAM] = @FK_MASANPHAM AND [C_LOAITIEN] = @C_LOAITIEN" 
     UpdateCommand="UPDATE [DMCHITIETCUOC] SET [C_KHOILUONG] = @C_KHOILUONG, [C_CUOCPHI] = @C_CUOCPHI WHERE [PK_ID] = @PK_ID">
     <SelectParameters>
         <asp:Parameter Name="FK_MAVUNG" Type="Int32" />

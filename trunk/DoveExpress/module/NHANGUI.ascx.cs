@@ -92,10 +92,14 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
             else
             {
                 FK_MABANGCUOC = "0";
-                string script = string.Format("var result = '{0}'", SelectSQL);// "Nhóm khách hàng này không nằm trong bảng cước nào");
+                string script = string.Format("var result = '{0}'","Nhóm khách hàng này không nằm trong bảng cước nào");
                 ScriptManager.RegisterClientScriptBlock(Page, typeof(Page), "result", script, true);
             }
-        }        
+        }
+        else if (arrayvalue[0] == "cmbQuanHuyen")
+        {
+            QUANHUYENCODE = arrayvalue[1];
+        }  
     }
     protected void btnShowAll_Click(object sender, System.Web.UI.ImageClickEventArgs e)
     {
@@ -297,11 +301,11 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
         string SelectSQL = "";
         if (ID != "")
         {
-            SelectSQL = "SELECT * FROM DMQUANHUYEN WHERE FK_TINHTHANH = " + ID + "order by C_CODE";
+            SelectSQL = "SELECT * FROM DMQUANHUYEN WHERE FK_TINHTHANH = " + ID + "order by LTRIM(C_NAME)";
         }
         else
         {
-            SelectSQL = "SELECT * FROM DMQUANHUYEN order by C_CODE";
+            SelectSQL = "SELECT * FROM DMQUANHUYEN order by LTRIM(C_NAME)";
         }
         return SelectSQL;
     }

@@ -26,7 +26,8 @@
         }
     }
     function cmbQuanHuyenClientSelectedIndexChangedHandler(sender, eventArgs) {
-      
+        $find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("cmbQuanHuyen;" + eventArgs.get_item().get_value());
+         return false;
     }
     function cmbSanPhamClientSelectedIndexChangedHandler(sender, eventArgs) {
          $find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("cmbSanPham;" + eventArgs.get_item().get_value());

@@ -215,7 +215,7 @@
     SelectCommand="SELECT [DMTINHTHANH].[PK_ID], [DMTINHTHANH].[C_CODE], [DMTINHTHANH].[C_NAME] FROM [DMTINHTHANH] LEFT OUTER JOIN DMQUOCGIA ON DMTINHTHANH.FK_QUOCGIA = DMQUOCGIA.PK_ID WHERE DMQUOCGIA.C_CODE='VN'">
  </asp:SqlDataSource>
  <asp:SqlDataSource ID="QUANHUYENDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
-        SelectCommand="SELECT * FROM [DMQUANHUYEN] where (@FK_TINHTHANH = 0 OR FK_TINHTHANH =@FK_TINHTHANH) ORDER BY LTRIM([C_CODE])">
+        SelectCommand="SELECT * FROM [DMQUANHUYEN] where (@FK_TINHTHANH = 0 OR FK_TINHTHANH =@FK_TINHTHANH) ORDER BY LTRIM([C_NAME])">
         <SelectParameters>
             <asp:SessionParameter DefaultValue="0" Name="FK_TINHTHANH" SessionField="ValueFilter"/>
         </SelectParameters>

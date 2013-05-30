@@ -31,8 +31,38 @@ public partial class module_CHITIETCUOC : System.Web.UI.UserControl
         if (!IsPostBack)
         {
         }
-        //ITCLIB.Admin.JavaScript.RunScript("CancelEdit()", this);
+        RadAjaxManager ajaxManager = RadAjaxManager.GetCurrent(Page);
+        ajaxManager.AjaxRequest += new RadAjaxControl.AjaxRequestDelegate(RadScriptManager_AjaxRequestCTC);
+        ajaxManager.ClientEvents.OnResponseEnd = "onResponseEndCTC";
         Session["LastUrl"] = Request.Url.ToString();
+    }
+    protected void RadScriptManager_AjaxRequestCTC(object sender, AjaxRequestEventArgs e)
+    {
+        string[] arrayvalue = e.Argument.Split(',');
+        if (arrayvalue[0] == "SelectedCTC")
+        {
+            string script = string.Format("var result = '{0}'", e.Argument);
+            ScriptManager.RegisterClientScriptBlock(Page, typeof(Page), "result", script, true);
+            UpdateDefault(arrayvalue[1], arrayvalue[2]);
+        }
+    }
+    protected void UpdateDefault(string ID,string FK_MAVUNG)
+    {
+        ITCLIB.Admin.SQL rs = new ITCLIB.Admin.SQL();
+        string Querry = "Update DMCHITIETCUOC set C_TYPE = 1 WHERE PK_ID =" + ID + ";Update DMCHITIETCUOC set C_TYPE = 0 WHERE PK_ID <>" + ID + " AND FK_MAVUNG = " + FK_MAVUNG + " AND FK_MABANGCUOC=" + cmbMaBangCuoc.SelectedValue + " AND FK_MASANPHAM=" + cmbSanPham.SelectedValue + " AND C_LOAITIEN ='" + cmbLoaiTien.SelectedValue +"'";
+        rs.ExecuteNonQuery(Querry);
+    }
+    protected bool getstatus(object status)
+    {
+        if (status == DBNull.Value)
+        { return false; }
+        else
+        {
+            int test = (int)status;
+            if (test == 1)
+            { return true; }
+            else { return false; }
+        }
     }
     private void DisplayMessage(string text)
     {

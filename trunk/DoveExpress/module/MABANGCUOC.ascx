@@ -101,7 +101,13 @@
                 </telerik:GridBoundColumn>
                 <telerik:GridBoundColumn UniqueName="C_NAME" HeaderText="Tên bảng cước" DataField="C_NAME" 
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
-                </telerik:GridBoundColumn>      
+                </telerik:GridBoundColumn>
+                <telerik:GridTemplateColumn UniqueName="C_VALUE" HeaderText="Nhóm khách hàng" DataField="C_VALUE" 
+                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
+                    <ItemTemplate>
+                         <%# ITCLIB.Admin.cFunction.getnamefix(Eval("C_VALUE").ToString(), "DMNHOMKHACHHANG")%>
+                    </ItemTemplate>
+                </telerik:GridTemplateColumn> 
         </Columns>
         <EditFormSettings InsertCaption="Thêm bảng cước mới" CaptionFormatString="Sửa bảng cước: <b>{0}</b>" CaptionDataField="C_NAME" EditFormType="Template" PopUpSettings-Width="600px">
         <EditColumn UniqueName="EditCommandColumn1" FilterControlAltText="Filter EditCommandColumn1 column"></EditColumn>
