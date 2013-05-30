@@ -1,0 +1,150 @@
+Thời gian: 2013-05-30 13:58:10 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-05-30 14:04:58 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {PK_ID:"1"}
+__________________________
+Thời gian: 2013-05-30 14:06:04 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : 1
+Module : Inserted NHANGUI
+Kết quả : 3
+__________________________
+Thời gian: 2013-05-30 14:07:49 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : 1
+Module : Deleted KHACHHANGs
+Kết quả : {PK_ID:"1"}
+__________________________
+Thời gian: 2013-05-30 14:08:08 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : 1
+Module : Inserted KHACHHANGs
+Kết quả : {PK_ID:"2"}
+__________________________
+Thời gian: 2013-05-30 14:08:22 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : 1
+Module : Inserted KHACHHANGs
+Kết quả : {PK_ID:"3"}
+__________________________
+Thời gian: 2013-05-30 14:09:17 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : 1
+Module : Inserted KHACHHANGs
+Kết quả : {PK_ID:"4"}
+__________________________
+Thời gian: 2013-05-30 14:23:40 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {PK_ID:"2"}
+__________________________
+Thời gian: 2013-05-30 14:23:46 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {PK_ID:"2"}
+__________________________
+Thời gian: 2013-05-30 14:25:10 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {PK_ID:"3"}
+__________________________
+Thời gian: 2013-05-30 14:25:19 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {PK_ID:"3"}
+__________________________
+Thời gian: 2013-05-30 14:25:44 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : 1
+Module : Inserted NHANGUI
+Kết quả : 4
+__________________________
+Thời gian: 2013-05-30 14:25:52 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : 1
+Module : Inserted NHANGUI
+Kết quả : 5
+__________________________
+Thời gian: 2013-05-30 14:26:02 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {PK_ID:"5"}
+__________________________
+Thời gian: 2013-05-30 14:26:42 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {PK_ID:"4"}
+__________________________
+Thời gian: 2013-05-30 14:27:16 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : 1
+Module : Inserted NHANGUI
+Kết quả : 6
+__________________________
+Thời gian: 2013-05-30 14:27:26 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : 1
+Module : Inserted NHANGUI
+Kết quả : 7
+__________________________
+Thời gian: 2013-05-30 14:27:39 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {PK_ID:"7"}
+__________________________
+Thời gian: 2013-05-30 14:34:49 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-05-30 14:35:20 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : 1
+Module : Inserted KHACHHANGs
+Kết quả : {PK_ID:"5"}
+__________________________
+Thời gian: 2013-05-30 14:35:33 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : 1
+Module : Inserted KHACHHANGs
+Kết quả : {PK_ID:"6"}
+__________________________
+Thời gian: 2013-05-30 14:42:54 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : 1
+Module : Inserted KHACHHANGs
+Kết quả : {PK_ID:"7"}
+__________________________
+Thời gian: 2013-05-30 15:55:20 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-05-30 15:55:45 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : 1
+Module : Updated MABANGCUOCs
+Kết quả : {PK_ID:"1"}
+__________________________
+Thời gian: 2013-05-30 15:58:16 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
