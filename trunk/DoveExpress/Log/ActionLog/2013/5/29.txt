@@ -1,0 +1,96 @@
+Thời gian: 2013-05-29 11:04:36 AM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-05-29 11:06:32 AM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-05-29 11:09:04 AM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-05-29 14:01:45 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-05-29 14:12:58 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : 1
+Module : Inserted NHANGUI
+Kết quả : 1
+__________________________
+Thời gian: 2013-05-29 14:14:59 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-05-29 14:17:37 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-05-29 14:27:10 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : 1
+Module : Inserted NHANGUI
+Kết quả : 2
+__________________________
+Thời gian: 2013-05-29 14:58:35 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-05-29 15:43:56 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-05-29 16:03:24 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-05-29 16:04:44 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-05-29 16:05:17 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-05-29 16:07:38 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-05-29 16:13:42 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-05-29 16:28:06 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________

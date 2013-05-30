@@ -82,7 +82,7 @@
         </Columns>
         </MasterTableView>
         <ValidationSettings CommandsToValidate="PerformInsert,Update" ValidationGroup="G2"/>
-        <ClientSettings AllowKeyboardNavigation="true" KeyboardNavigationSettings-AllowSubmitOnEnter="true"></ClientSettings> 
+        <ClientSettings AllowKeyboardNavigation="true" KeyboardNavigationSettings-AllowSubmitOnEnter="true" ClientEvents-OnKeyPress="KeyPressed"></ClientSettings> 
         <ClientSettings>
             <Selecting AllowRowSelect="True" EnableDragToSelectRows="True"/>
          </ClientSettings>

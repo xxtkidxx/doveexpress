@@ -68,6 +68,13 @@
                   }
               }            
            </script>
+           <script type="text/javascript">
+               function KeyPressed(sender, eventArgs) {
+                   if (eventArgs.get_keyCode() == 46 || eventArgs.get_keyCode() == 127) {
+                eventArgs.set_cancel(true)
+              }
+            }
+           </script>
         </telerik:RadCodeBlock>       
 <div class="admin_banner clearfix">
           <div class ="admin_header">
