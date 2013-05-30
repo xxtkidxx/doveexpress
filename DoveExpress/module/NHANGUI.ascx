@@ -32,6 +32,10 @@
          $find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("cmbSanPham;" + eventArgs.get_item().get_value());
          return false;
     }
+    function cmbNhomKhachHangClientSelectedIndexChangedHandler(sender, eventArgs) {
+         $find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("cmbNhomKhachHang;" + eventArgs.get_item().get_value());
+         return false;
+    }    
 </script>
 <script type="text/javascript">
      function onResponseEndNG() {
@@ -229,7 +233,7 @@
                 <td colspan="4">
                     <telerik:RadComboBox ID="cmbNhomKhachHang" runat="server"
                     DataTextField="C_NAME" DataValueField="PK_ID" DataSourceID="NHOMKHACHHANGDataSource"
-                    ShowToggleImage="True" EmptyMessage="Chọn nhóm">
+                    ShowToggleImage="True" EmptyMessage="Chọn nhóm" onclientselectedindexchanged="cmbNhomKhachHangClientSelectedIndexChangedHandler">
                     </telerik:RadComboBox>
                 </td>
                 <td style ="width:100px;"> <span class="rtsTxtnew">Mã khách hàng:</span></td>
