@@ -40,37 +40,61 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
     }
     protected void RadScriptManager_AjaxRequestNG(object sender, AjaxRequestEventArgs e)
     {
+        string FK_DICHVU = "";
+        string FK_MABANGCUOC = "";
+        string QUANHUYENCODE = "";
+        GridEditableItem editableItem = null;
+        foreach (GridEditFormItem item in RadGridNHANGUI.MasterTableView.GetItems(GridItemType.EditFormItem))
+        {
+            if (item.IsInEditMode)
+            {
+                editableItem = (GridEditableItem)item;
+            }
+        }
+        RadNumericTextBox txtPPXD = (RadNumericTextBox)editableItem.FindControl("txtPPXD");
+        RadTextBox txtCODE = (RadTextBox)editableItem.FindControl("txtCODE");
+        RadAutoCompleteBox radautoC_MAKH = (RadAutoCompleteBox)editableItem.FindControl("radautoC_MAKH");
+        RadAutoCompleteBox radautoC_TENKH = (RadAutoCompleteBox)editableItem.FindControl("radautoC_TENKH");
+        txtCODE.Text = "123456";       
         string[] arrayvalue = e.Argument.Split(';');
         if (arrayvalue[0] == "cmbSanPham")
         {            
-            foreach (GridEditFormItem item in RadGridNHANGUI.MasterTableView.GetItems(GridItemType.EditFormItem))
+            string SelectSQL;
+            SelectSQL = "Select DMMASANPHAM.C_PPXD FROM DMMASANPHAM WHERE DMMASANPHAM.PK_ID = " + arrayvalue[1] + "";
+            DataTable oDataTable = new DataTable();
+            ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
+            oDataTable = SelectQuery.query_data(SelectSQL);
+            if (oDataTable.Rows.Count != 0)
             {
-                if (item.IsInEditMode)
-                {
-                    GridEditableItem editableItem = (GridEditableItem)item;
-                    RadNumericTextBox txtPPXD = (RadNumericTextBox)editableItem.FindControl("txtPPXD");
-                    RadTextBox txtCODE = (RadTextBox)editableItem.FindControl("txtCODE");
-                    txtCODE.Text = "123456";
-                    string SelectSQL;
-                    SelectSQL = "Select DMMASANPHAM.C_PPXD FROM DMMASANPHAM WHERE DMMASANPHAM.PK_ID = " + arrayvalue[1] + "";
-                    DataTable oDataTable = new DataTable();
-                    ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
-                    oDataTable = SelectQuery.query_data(SelectSQL);
-                    if (oDataTable.Rows.Count != 0)
-                    {
-                        txtPPXD.Text = oDataTable.Rows[0]["C_PPXD"].ToString();
-                    }
-                    else
-                    {
-                        txtPPXD.Text = "0";
-                    }
-                    string script = string.Format("var result = '{0}'", txtCODE.Text);
-                    ScriptManager.RegisterClientScriptBlock(Page, typeof(Page), "result", script, true);
-                }
+                txtPPXD.Text = oDataTable.Rows[0]["C_PPXD"].ToString();
             }
+            else
+            {
+                txtPPXD.Text = "0";
+            }
+            string script = string.Format("var result = '{0}'", txtCODE.Text);
+            ScriptManager.RegisterClientScriptBlock(Page, typeof(Page), "result", script, true);
         }
-        else if (arrayvalue[0] == "SelectedDT")
+        else if (arrayvalue[0] == "cmbNhomKhachHang")
         {
+            //KHACHHANGDataSource.SelectCommand = "SELECT DMKHACHHANG.* FROM DMKHACHHANG WHERE FK_NHOMKHACHHANG =" + arrayvalue[1];
+            //radautoC_MAKH.DataBind();
+            //radautoC_TENKH.DataBind();
+            string SelectSQL;
+            SelectSQL = "Select DMMABANGCUOC.PK_ID FROM DMMABANGCUOC WHERE (DMMABANGCUOC.C_VALUE LIKE '%," + arrayvalue[1] + ",%') OR (DMMABANGCUOC.C_VALUE LIKE '%," + arrayvalue[1] + "') OR (EOF_JOB.USER_ID_REF LIKE '" + arrayvalue[1] + ",%')";
+            DataTable oDataTable = new DataTable();
+            ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
+            oDataTable = SelectQuery.query_data(SelectSQL);
+            if (oDataTable.Rows.Count != 0)
+            {
+                FK_MABANGCUOC = oDataTable.Rows[0]["PK_ID"].ToString();
+            }
+            else
+            {
+                FK_MABANGCUOC = "0";
+                string script = string.Format("var result = '{0}'", "Nhóm khách hàng này không nằm trong bảng cước nào");
+                ScriptManager.RegisterClientScriptBlock(Page, typeof(Page), "result", script, true);
+            }
         }        
     }
     protected void btnShowAll_Click(object sender, System.Web.UI.ImageClickEventArgs e)
