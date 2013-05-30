@@ -1,0 +1,185 @@
+Thời gian lỗi : 2013-05-30 23:27:08 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\module\CHITIETCUOC.ascx(32): error CS0103: The name 'RadGridMABANGCUOC' does not exist in the current context
+__________________________
+Thời gian lỗi : 2013-05-30 23:32:15 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Index was outside the bounds of the array.
+__________________________
+Thời gian lỗi : 2013-05-30 23:32:45 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\module\CHITIETCUOC.ascx(146): error CS1009: Unrecognized escape sequence
+__________________________
+Thời gian lỗi : 2013-05-30 23:34:03 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Index was outside the bounds of the array.
+__________________________
+Thời gian lỗi : 2013-05-30 23:34:56 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:The server tag is not well formed.
+__________________________
+Thời gian lỗi : 2013-05-30 23:35:57 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Index was outside the bounds of the array.
+__________________________
+Thời gian lỗi : 2013-05-30 23:35:59 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Index was outside the bounds of the array.
+__________________________
+Thời gian lỗi : 2013-05-30 23:35:59 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Index was outside the bounds of the array.
+__________________________
+Thời gian lỗi : 2013-05-30 23:36:00 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Index was outside the bounds of the array.
+__________________________
+Thời gian lỗi : 2013-05-30 23:36:00 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Index was outside the bounds of the array.
+__________________________
+Thời gian lỗi : 2013-05-30 23:36:00 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Index was outside the bounds of the array.
+__________________________
+Thời gian lỗi : 2013-05-30 23:36:22 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Index was outside the bounds of the array.
+__________________________
+Thời gian lỗi : 2013-05-30 23:41:38 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\module\CHITIETCUOC.ascx(147): error CS1056: Unexpected character '\'
+__________________________
+Thời gian lỗi : 2013-05-30 23:42:38 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\module\CHITIETCUOC.ascx(147): error CS1056: Unexpected character '\'
+__________________________
+Thời gian lỗi : 2013-05-30 23:42:43 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\module\CHITIETCUOC.ascx(147): error CS1056: Unexpected character '\'
+__________________________
+Thời gian lỗi : 2013-05-30 23:46:25 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\module\CHITIETCUOC.ascx(148): error CS1026: ) expected
+__________________________
+Thời gian lỗi : 2013-05-30 23:46:52 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\module\CHITIETCUOC.ascx(148): error CS1026: ) expected
+__________________________
+Thời gian lỗi : 2013-05-30 23:49:42 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Lỗi truy vấn cơ sở dữ liệuInvalid column name 'VND'.
+__________________________
+Thời gian lỗi : 2013-05-30 23:49:43 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Lỗi truy vấn cơ sở dữ liệuInvalid column name 'VND'.
+__________________________
+Thời gian lỗi : 2013-05-30 23:49:43 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Lỗi truy vấn cơ sở dữ liệuInvalid column name 'VND'.
+__________________________
+Thời gian lỗi : 2013-05-30 23:49:43 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Lỗi truy vấn cơ sở dữ liệuInvalid column name 'VND'.
+__________________________
+Thời gian lỗi : 2013-05-30 23:50:12 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Lỗi truy vấn cơ sở dữ liệuInvalid column name 'VND'.
+__________________________
+Thời gian lỗi : 2013-05-30 23:51:36 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Lỗi truy vấn cơ sở dữ liệuInvalid column name 'VND'.
+__________________________
+Thời gian lỗi : 2013-05-30 23:51:36 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Lỗi truy vấn cơ sở dữ liệuInvalid column name 'VND'.
+__________________________
+Thời gian lỗi : 2013-05-30 23:51:36 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Lỗi truy vấn cơ sở dữ liệuInvalid column name 'VND'.
+__________________________
+Thời gian lỗi : 2013-05-30 23:51:36 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Lỗi truy vấn cơ sở dữ liệuInvalid column name 'VND'.
+__________________________
+Thời gian lỗi : 2013-05-30 23:51:37 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Lỗi truy vấn cơ sở dữ liệuInvalid column name 'VND'.
+__________________________
+Thời gian lỗi : 2013-05-30 23:51:37 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Lỗi truy vấn cơ sở dữ liệuInvalid column name 'VND'.
+__________________________
+Thời gian lỗi : 2013-05-30 23:51:37 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Lỗi truy vấn cơ sở dữ liệuInvalid column name 'VND'.
+__________________________
+Thời gian lỗi : 2013-05-30 23:51:37 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Lỗi truy vấn cơ sở dữ liệuInvalid column name 'VND'.
+__________________________
+Thời gian lỗi : 2013-05-30 23:52:31 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Lỗi truy vấn cơ sở dữ liệuInvalid column name 'VND'.
+__________________________
+Thời gian lỗi : 2013-05-30 23:52:32 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Lỗi truy vấn cơ sở dữ liệuInvalid column name 'VND'.
+__________________________
+Thời gian lỗi : 2013-05-30 23:52:32 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Lỗi truy vấn cơ sở dữ liệuInvalid column name 'VND'.
+__________________________
+Thời gian lỗi : 2013-05-30 23:52:32 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Lỗi truy vấn cơ sở dữ liệuInvalid column name 'VND'.
+__________________________
+Thời gian lỗi : 2013-05-30 23:52:32 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Lỗi truy vấn cơ sở dữ liệuInvalid column name 'VND'.
+__________________________
+Thời gian lỗi : 2013-05-30 23:52:32 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Lỗi truy vấn cơ sở dữ liệuInvalid column name 'VND'.
+__________________________
+Thời gian lỗi : 2013-05-30 23:52:32 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Lỗi truy vấn cơ sở dữ liệuInvalid column name 'VND'.
+__________________________
