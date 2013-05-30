@@ -22,6 +22,27 @@
             }
         }
 </script>
+<script type="text/javascript">
+    function onClientClickSelectedCTC(sender1, sender2) {
+        $find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("SelectedCTC," + sender1 + "," + sender2);
+        return false;
+    }
+    function onResponseEndCTC() {
+        if (typeof (result) != "undefined" && result && result != "") {
+            //$find("<%= RadGridCHITIETCUOCDT.ClientID %>").get_masterTableView().rebind();
+            var masterTable = $find("<%= RadGridCHITIETCUOCDT.ClientID %>").get_masterTableView();
+            var dataItems = masterTable.get_dataItems();
+            for (var i = 0; i < dataItems.length; i++) {
+                if (dataItems[i].get_nestedViews().length > 0) {
+                    var nestedView = dataItems[i].get_nestedViews()[0];
+                    nestedView.rebind();
+                }
+            }
+            result = "";
+        }
+        return false;
+    }
+</script>
 </telerik:RadScriptBlock>
 <telerik:RadAjaxLoadingPanel Skin="Vista" ID="RadAjaxLoadingPanelCHITIETCUOCDT" runat="server" />
 <div style ="width:100%; margin: 10px 10px 10px 10px; ">
@@ -119,12 +140,12 @@ ShowToggleImage="True" EmptyMessage="Chọn đối tác"
                             <telerik:GridTemplateColumn DataField="C_CUOCPHI" DataType="System.Decimal" HeaderText="Cước phí" AllowFiltering="false" UniqueName="C_CUOCPHI">
                                 <ItemTemplate>
                                  <telerik:RadNumericTextBox runat="server"  CssClass ="csstextNum" ID="txtC_CUOCPHI" Width="100px" Enabled = "false"  DbValue='<%# Eval("C_CUOCPHI") %>'>
-                                    <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="1"/>
+                                    <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
                                   </telerik:RadNumericTextBox>
                                 </ItemTemplate>
                                 <EditItemTemplate>
                                         <telerik:RadNumericTextBox runat="server" ID="txtC_CUOCPHI" DbValue='<%# Bind("C_CUOCPHI") %>'>
-                                         <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="1"/>
+                                         <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
                                         </telerik:RadNumericTextBox>
                                 </EditItemTemplate>
                             </telerik:GridTemplateColumn> 
