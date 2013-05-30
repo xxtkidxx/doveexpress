@@ -43,6 +43,15 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
         string FK_DICHVU = "";
         string FK_MABANGCUOC = "";
         string QUANHUYENCODE = "";
+        string PPXD = "0";
+        string CUOCCHINH ="0";
+        string DVPT="0";
+        string TONGCUOC="0";
+        string DATHU="0";
+        string CONLAI="0";
+        string FK_DOITAC="";
+        string GIADOITAC="";
+        string Alarm = "";
         GridEditableItem editableItem = null;
         foreach (GridEditFormItem item in RadGridNHANGUI.MasterTableView.GetItems(GridItemType.EditFormItem))
         {
@@ -54,11 +63,11 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
         RadNumericTextBox txtPPXD = (RadNumericTextBox)editableItem.FindControl("txtPPXD");
         RadTextBox txtCODE = (RadTextBox)editableItem.FindControl("txtCODE");
         RadAutoCompleteBox radautoC_MAKH = (RadAutoCompleteBox)editableItem.FindControl("radautoC_MAKH");
-        RadAutoCompleteBox radautoC_TENKH = (RadAutoCompleteBox)editableItem.FindControl("radautoC_TENKH");
-        txtCODE.Text = "123456";       
+        RadAutoCompleteBox radautoC_TENKH = (RadAutoCompleteBox)editableItem.FindControl("radautoC_TENKH");    
         string[] arrayvalue = e.Argument.Split(';');
         if (arrayvalue[0] == "cmbSanPham")
-        {            
+        {
+            FK_DICHVU = arrayvalue[1];
             string SelectSQL;
             SelectSQL = "Select DMMASANPHAM.C_PPXD FROM DMMASANPHAM WHERE DMMASANPHAM.PK_ID = " + arrayvalue[1] + "";
             DataTable oDataTable = new DataTable();
@@ -66,14 +75,15 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
             oDataTable = SelectQuery.query_data(SelectSQL);
             if (oDataTable.Rows.Count != 0)
             {
-                txtPPXD.Text = oDataTable.Rows[0]["C_PPXD"].ToString();
+                if (oDataTable.Rows[0]["C_PPXD"] != DBNull.Value)
+                {
+                    PPXD = oDataTable.Rows[0]["C_PPXD"].ToString();
+                }
             }
             else
             {
-                txtPPXD.Text = "0";
+                //txtPPXD.Text = "0";
             }
-            string script = string.Format("var result = '{0}'", txtCODE.Text);
-            ScriptManager.RegisterClientScriptBlock(Page, typeof(Page), "result", script, true);
         }
         else if (arrayvalue[0] == "cmbNhomKhachHang")
         {
@@ -91,15 +101,24 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
             }
             else
             {
-                FK_MABANGCUOC = "0";
-                string script = string.Format("var result = '{0}'","Nhóm khách hàng này không nằm trong bảng cước nào");
-                ScriptManager.RegisterClientScriptBlock(Page, typeof(Page), "result", script, true);
+                //FK_MABANGCUOC = "0";
+                Alarm = "Nhóm khách hàng này không nằm trong bảng cước nào";
             }
         }
         else if (arrayvalue[0] == "cmbQuanHuyen")
         {
             QUANHUYENCODE = arrayvalue[1];
-        }  
+        }
+        if (Alarm != "")
+        {
+            string script = string.Format("var result = '{0}'", Alarm);
+            ScriptManager.RegisterClientScriptBlock(Page, typeof(Page), "result", script, true);
+        }
+        else
+        {
+            string script = string.Format("var result = '{0}'",PPXD + "," + CUOCCHINH + "," + DVPT + "," + TONGCUOC + "," + DATHU + "," + CONLAI + "," + FK_DOITAC + "," + GIADOITAC);
+            ScriptManager.RegisterClientScriptBlock(Page, typeof(Page), "result", script, true);
+        }
     }
     protected void btnShowAll_Click(object sender, System.Web.UI.ImageClickEventArgs e)
     {
