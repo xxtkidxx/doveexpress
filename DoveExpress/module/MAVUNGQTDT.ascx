@@ -181,7 +181,7 @@ Skin ="Vista" DataFieldID="PK_ID" AppendDataBoundItems="True" DataSourceID="SqlD
         </EditFormSettings>
         </MasterTableView>
         <ValidationSettings CommandsToValidate="PerformInsert,Update" ValidationGroup="G1"/>
-        <ClientSettings AllowKeyboardNavigation="true" KeyboardNavigationSettings-AllowSubmitOnEnter="true">
+        <ClientSettings AllowKeyboardNavigation="true" KeyboardNavigationSettings-AllowSubmitOnEnter="true" ClientEvents-OnKeyPress="KeyPressed">
             <Selecting AllowRowSelect="True" EnableDragToSelectRows="True" />
             <ClientEvents OnPopUpShowing="PopUpShowingSmall" />
             <ClientEvents OnRowDblClick="RowDblClick" />

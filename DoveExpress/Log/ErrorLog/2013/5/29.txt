@@ -1,0 +1,165 @@
+Thời gian lỗi : 2013-05-29 11:01:21 AM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Login.aspx. 
+Nội dung lỗi:The system cannot find the file specified
+__________________________
+Thời gian lỗi : 2013-05-29 14:14:04 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Insert item is available only when grid is in insert mode.
+__________________________
+Thời gian lỗi : 2013-05-29 14:14:07 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Insert item is available only when grid is in insert mode.
+__________________________
+Thời gian lỗi : 2013-05-29 14:14:09 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Insert item is available only when grid is in insert mode.
+__________________________
+Thời gian lỗi : 2013-05-29 14:14:10 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Insert item is available only when grid is in insert mode.
+__________________________
+Thời gian lỗi : 2013-05-29 14:14:15 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Insert item is available only when grid is in insert mode.
+__________________________
+Thời gian lỗi : 2013-05-29 14:14:22 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Insert item is available only when grid is in insert mode.
+__________________________
+Thời gian lỗi : 2013-05-29 14:14:24 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Insert item is available only when grid is in insert mode.
+__________________________
+Thời gian lỗi : 2013-05-29 14:14:25 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Insert item is available only when grid is in insert mode.
+__________________________
+Thời gian lỗi : 2013-05-29 14:15:23 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Insert item is available only when grid is in insert mode.
+__________________________
+Thời gian lỗi : 2013-05-29 14:58:51 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Insert item is available only when grid is in insert mode.
+__________________________
+Thời gian lỗi : 2013-05-29 15:44:09 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Insert item is available only when grid is in insert mode.
+__________________________
+Thời gian lỗi : 2013-05-29 15:50:09 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-05-29 16:02:52 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-05-29 16:03:35 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-05-29 16:04:54 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-05-29 16:04:56 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-05-29 16:05:25 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-05-29 16:07:49 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-05-29 16:07:53 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-05-29 16:29:38 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-05-29 16:29:40 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-05-29 16:29:43 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-05-29 16:29:55 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-05-29 16:29:57 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-05-29 16:29:59 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-05-29 16:30:29 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-05-29 16:30:32 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-05-29 16:30:34 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-05-29 16:30:36 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-05-29 16:33:02 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-05-29 16:33:04 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-05-29 16:33:06 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
