@@ -81,7 +81,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
             //radautoC_MAKH.DataBind();
             //radautoC_TENKH.DataBind();
             string SelectSQL;
-            SelectSQL = "Select DMMABANGCUOC.PK_ID FROM DMMABANGCUOC WHERE (DMMABANGCUOC.C_VALUE LIKE '%," + arrayvalue[1] + ",%') OR (DMMABANGCUOC.C_VALUE LIKE '%," + arrayvalue[1] + "') OR (EOF_JOB.USER_ID_REF LIKE '" + arrayvalue[1] + ",%')";
+            SelectSQL = "Select DMMABANGCUOC.PK_ID FROM DMMABANGCUOC WHERE (DMMABANGCUOC.C_VALUE ='" + arrayvalue[1] + "') OR (DMMABANGCUOC.C_VALUE LIKE '%," + arrayvalue[1] + ",%') OR (DMMABANGCUOC.C_VALUE LIKE '%," + arrayvalue[1] + "') OR (DMMABANGCUOC.C_VALUE LIKE '" + arrayvalue[1] + ",%')";
             DataTable oDataTable = new DataTable();
             ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
             oDataTable = SelectQuery.query_data(SelectSQL);
@@ -92,7 +92,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
             else
             {
                 FK_MABANGCUOC = "0";
-                string script = string.Format("var result = '{0}'", "Nhóm khách hàng này không nằm trong bảng cước nào");
+                string script = string.Format("var result = '{0}'", SelectSQL);// "Nhóm khách hàng này không nằm trong bảng cước nào");
                 ScriptManager.RegisterClientScriptBlock(Page, typeof(Page), "result", script, true);
             }
         }        
