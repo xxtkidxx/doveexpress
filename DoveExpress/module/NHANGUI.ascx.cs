@@ -9,36 +9,7 @@ using Telerik.Web.UI;
 
 public partial class module_NHANGUI : System.Web.UI.UserControl
 {
-    protected void Page_Load(object sender, EventArgs e)
-    {
-        string sBrowserType = Request.Browser.Type;
-        switch (sBrowserType)
-        {
-            case "IE6":
-                RadGridNHANGUI.MasterTableView.EditFormSettings.PopUpSettings.Modal = false;
-                break;
-            case "IE7":
-                RadGridNHANGUI.MasterTableView.EditFormSettings.PopUpSettings.Modal = false;
-                break;
-            default:
-                RadGridNHANGUI.MasterTableView.EditFormSettings.PopUpSettings.Modal = true;
-                break;
-        }
-        if (!ITCLIB.Security.Security.CanViewModule("Lists"))
-        {
-            ITCLIB.Security.Security.ReturnUrl();
-        }
-        if (Request["index"] != null && Request["value"] != null)
-        {
-            string index = Request["index"].ToString();
-            string Value = Request["value"].ToString();
-        }
-        Session["LastUrl"] = Request.Url.ToString();
-        RadAjaxManager ajaxManager = RadAjaxManager.GetCurrent(Page);
-        ajaxManager.AjaxRequest += new RadAjaxControl.AjaxRequestDelegate(RadScriptManager_AjaxRequestNG);
-        ajaxManager.ClientEvents.OnResponseEnd = "onResponseEndNG";
-    }
-    private  string FK_DICHVU
+    private string FK_DICHVU
     {
         get
         {
@@ -170,11 +141,11 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
             Session["FK_DOITAC"] = value;
         }
     }
-    private string GIADOITAC
+    private int GIADOITAC
     {
         get
         {
-            return Session["GIADOITAC"] as string;
+            return int.Parse(Session["GIADOITAC"].ToString());
         }
         set
         {
@@ -215,6 +186,54 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
         }
     }
     string Alarm = "";
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        string sBrowserType = Request.Browser.Type;
+        switch (sBrowserType)
+        {
+            case "IE6":
+                RadGridNHANGUI.MasterTableView.EditFormSettings.PopUpSettings.Modal = false;
+                break;
+            case "IE7":
+                RadGridNHANGUI.MasterTableView.EditFormSettings.PopUpSettings.Modal = false;
+                break;
+            default:
+                RadGridNHANGUI.MasterTableView.EditFormSettings.PopUpSettings.Modal = true;
+                break;
+        }
+        if (!ITCLIB.Security.Security.CanViewModule("Lists"))
+        {
+            ITCLIB.Security.Security.ReturnUrl();
+        }
+        if (Request["index"] != null && Request["value"] != null)
+        {
+            string index = Request["index"].ToString();
+            string Value = Request["value"].ToString();
+        }
+        Session["LastUrl"] = Request.Url.ToString();
+        RadAjaxManager ajaxManager = RadAjaxManager.GetCurrent(Page);
+        ajaxManager.AjaxRequest += new RadAjaxControl.AjaxRequestDelegate(RadScriptManager_AjaxRequestNG);
+        ajaxManager.ClientEvents.OnResponseEnd = "onResponseEndNG";
+        if (!IsPostBack)
+        {
+            FK_DICHVU = "";
+            FK_MABANGCUOC = "";
+            FK_QUANHUYEN = "";
+            FK_MAVUNG = "";
+            C_KHOILUONG = 0;
+            PPXD = 0;
+            CUOCCHINH = 0;
+            DVPT = 0;
+            TONGCUOC = 0;
+            DATHU = 0;
+            CONLAI = 0;
+            FK_DOITAC = "";
+            GIADOITAC = 0;
+            ctcDataTable = new DataTable();
+            C_KHOILUONGLK= 0;
+            GIACUOCLK = 0;
+        }
+    }
     protected void RadScriptManager_AjaxRequestNG(object sender, AjaxRequestEventArgs e)
     {        
         GridEditableItem editableItem = null;
@@ -254,7 +273,6 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
         else if (arrayvalue[0] == "cmbQuanHuyen")
         {
             FK_QUANHUYEN = arrayvalue[1];
-            FK_DICHVU = "1";
             if (FK_DICHVU != "")
             {
                 string SelectSQL;
@@ -291,9 +309,10 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
             {
                 string SelectSQL;
                 SelectSQL = "Select DMMAVUNG.PK_ID FROM DMMAVUNG WHERE FK_MASANPHAM=" + FK_DICHVU + " AND C_TYPE = 1 AND ((DMMAVUNG.C_DESC ='" + FK_QUANHUYEN + "') OR (DMMAVUNG.C_DESC LIKE '%," + FK_QUANHUYEN + ",%') OR (DMMAVUNG.C_DESC LIKE '%," + FK_QUANHUYEN + "') OR (DMMAVUNG.C_DESC LIKE '" + FK_QUANHUYEN + ",%'))";
+                Session["test"] = SelectSQL;
                 DataTable oDataTable = new DataTable();
                 ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
-                oDataTable = SelectQuery.query_data(SelectSQL);
+                //oDataTable = SelectQuery.query_data(SelectSQL);
                 if (oDataTable.Rows.Count != 0)
                 {
                     FK_MAVUNG = oDataTable.Rows[0]["PK_ID"].ToString();
@@ -301,7 +320,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
                 else
                 {
                     //FK_MAVUNG = "0";
-                    Alarm = "Quận huyện này không nằm trong vùng tính cước nào";
+                    //Alarm = "Quận huyện này không nằm trong vùng tính cước nào";
                 }
             }
         }
@@ -628,5 +647,9 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
             SetMessage("Tạo mới nhận gửi thành công!");
             ITCLIB.ActionLog.ActionLog.WriteLog(Session["UserID"].ToString(), "Inserted NHANGUI", Session["IDNHANGUI"].ToString());
         }
+    }
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        ITCLIB.Admin.JavaScript.ShowMessage(Session["test"].ToString(), this);
     }
 }
