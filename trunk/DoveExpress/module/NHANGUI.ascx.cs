@@ -38,23 +38,183 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
         ajaxManager.AjaxRequest += new RadAjaxControl.AjaxRequestDelegate(RadScriptManager_AjaxRequestNG);
         ajaxManager.ClientEvents.OnResponseEnd = "onResponseEndNG";
     }
-    string FK_DICHVU = "";
-    string FK_MABANGCUOC = "";
-    string FK_QUANHUYEN = "";
-    string FK_MAVUNG = "";
-    int C_KHOILUONG = 0;
-    float PPXD = 0;
-    int CUOCCHINH = 0;
-    int DVPT = 0;
-    int TONGCUOC = 0;
-    int DATHU = 0;
-    int CONLAI = 0;
-    string FK_DOITAC = "";
-    string GIADOITAC = "";
-    public string Alarm = "";
-    DataTable ctcDataTable = new DataTable();
-    int C_KHOILUONGLK = 0;
-    int GIACUOCLK = 0;
+    private  string FK_DICHVU
+    {
+        get
+        {
+            return Session["FK_DICHVU"] as string;
+        }
+        set
+        {
+            Session["FK_DICHVU"] = value;
+        }
+    }
+    private string FK_MABANGCUOC
+    {
+        get
+        {
+            return Session["FK_MABANGCUOC"] as string;
+        }
+        set
+        {
+            Session["FK_MABANGCUOC"] = value;
+        }
+    }
+    private string FK_QUANHUYEN
+    {
+        get
+        {
+            return Session["FK_QUANHUYEN"] as string;
+        }
+        set
+        {
+            Session["FK_QUANHUYEN"] = value;
+        }
+    }
+    private string FK_MAVUNG
+    {
+        get
+        {
+            return Session["FK_MAVUNG"] as string;
+        }
+        set
+        {
+            Session["FK_MAVUNG"] = value;
+        }
+    }
+    private int C_KHOILUONG
+    {
+        get
+        {
+            return int.Parse(Session["C_KHOILUONG"].ToString());
+        }
+        set
+        {
+            Session["C_KHOILUONG"] = value;
+        }
+    }
+    private float PPXD
+    {
+        get
+        {
+            return float.Parse(Session["PPXD"].ToString());
+        }
+        set
+        {
+            Session["PPXD"] = value;
+        }
+    }
+    private int CUOCCHINH
+    {
+        get
+        {
+            return int.Parse(Session["CUOCCHINH"].ToString());
+        }
+        set
+        {
+            Session["CUOCCHINH"] = value;
+        }
+    }
+    private int DVPT
+    {
+        get
+        {
+            return int.Parse(Session["DVPT"].ToString());
+        }
+        set
+        {
+            Session["DVPT"] = value;
+        }
+    }
+    private int TONGCUOC
+    {
+        get
+        {
+            return int.Parse(Session["TONGCUOC"].ToString());
+        }
+        set
+        {
+            Session["TONGCUOC"] = value;
+        }
+    }
+    private int DATHU
+    {
+        get
+        {
+            return int.Parse(Session["DATHU"].ToString());
+        }
+        set
+        {
+            Session["DATHU"] = value;
+        }
+    }
+    private int CONLAI
+    {
+        get
+        {
+            return int.Parse(Session["CONLAI"].ToString());
+        }
+        set
+        {
+            Session["CONLAI"] = value;
+        }
+    }
+    private string FK_DOITAC
+    {
+        get
+        {
+            return Session["FK_DOITAC"] as string;
+        }
+        set
+        {
+            Session["FK_DOITAC"] = value;
+        }
+    }
+    private string GIADOITAC
+    {
+        get
+        {
+            return Session["GIADOITAC"] as string;
+        }
+        set
+        {
+            Session["GIADOITAC"] = value;
+        }
+    }
+    private DataTable ctcDataTable
+    {
+        get
+        {
+            return Session["ctcDataTable"] as DataTable;
+        }
+        set
+        {
+            Session["ctcDataTable"] = value;
+        }
+    }
+    private int C_KHOILUONGLK
+    {
+        get
+        {
+            return int.Parse(Session["C_KHOILUONGLK"].ToString());
+        }
+        set
+        {
+            Session["C_KHOILUONGLK"] = value;
+        }
+    }
+    private int GIACUOCLK
+    {
+        get
+        {
+            return int.Parse(Session["GIACUOCLK"].ToString());
+        }
+        set
+        {
+            Session["GIACUOCLK"] = value;
+        }
+    }
+    string Alarm = "";
     protected void RadScriptManager_AjaxRequestNG(object sender, AjaxRequestEventArgs e)
     {        
         GridEditableItem editableItem = null;
@@ -93,7 +253,8 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
         }
         else if (arrayvalue[0] == "cmbQuanHuyen")
         {
-            FK_QUANHUYEN = arrayvalue[1]; 
+            FK_QUANHUYEN = arrayvalue[1];
+            FK_DICHVU = "1";
             if (FK_DICHVU != "")
             {
                 string SelectSQL;
@@ -103,7 +264,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
                 oDataTable = SelectQuery.query_data(SelectSQL);
                 if (oDataTable.Rows.Count != 0)
                 {
-                    FK_MAVUNG = oDataTable.Rows[0]["PK_ID"].ToString();                  
+                    FK_MAVUNG = oDataTable.Rows[0]["PK_ID"].ToString();
                 }
                 else
                 {
