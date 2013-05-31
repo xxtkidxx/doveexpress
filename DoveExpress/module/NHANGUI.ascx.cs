@@ -51,7 +51,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
     int CONLAI = 0;
     string FK_DOITAC = "";
     string GIADOITAC = "";
-    string Alarm = "";
+    public string Alarm = "";
     DataTable ctcDataTable = new DataTable();
     int C_KHOILUONGLK = 0;
     int GIACUOCLK = 0;
@@ -74,9 +74,9 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
         string[] arrayvalue = e.Argument.Split(';');
         if (arrayvalue[0] == "cmbNhomKhachHang")
         {
-            //KHACHHANGDataSource.SelectCommand = "SELECT DMKHACHHANG.* FROM DMKHACHHANG WHERE FK_NHOMKHACHHANG =" + arrayvalue[1];
-            //radautoC_MAKH.DataBind();
-            //radautoC_TENKH.DataBind();
+            /*KHACHHANGDataSource.SelectCommand = "SELECT DMKHACHHANG.* FROM DMKHACHHANG WHERE FK_NHOMKHACHHANG =" + arrayvalue[1];
+            radautoC_MAKH.DataBind();
+            radautoC_TENKH.DataBind();*/
             string SelectSQL;
             SelectSQL = "Select DMMABANGCUOC.PK_ID FROM DMMABANGCUOC WHERE (DMMABANGCUOC.C_VALUE ='" + arrayvalue[1] + "') OR (DMMABANGCUOC.C_VALUE LIKE '%," + arrayvalue[1] + ",%') OR (DMMABANGCUOC.C_VALUE LIKE '%," + arrayvalue[1] + "') OR (DMMABANGCUOC.C_VALUE LIKE '" + arrayvalue[1] + ",%')";
             DataTable oDataTable = new DataTable();
@@ -88,7 +88,6 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
             }
             else
             {
-                //FK_MABANGCUOC = "0";
                 Alarm = "Nhóm khách hàng này không nằm trong bảng cước nào";
             }
         }
@@ -108,7 +107,6 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
                 }
                 else
                 {
-                    //FK_MAVUNG = "0";
                     Alarm = "Quận huyện này không nằm trong vùng tính cước nào";
                 }
             }
@@ -128,15 +126,10 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
                     PPXD = float.Parse(oDataTable1.Rows[0]["C_PPXD"].ToString());
                 }
             }
-            else
-            {
-                //txtPPXD.Text = "0";
-            }
             if (FK_QUANHUYEN != "")
             {
                 string SelectSQL;
                 SelectSQL = "Select DMMAVUNG.PK_ID FROM DMMAVUNG WHERE FK_MASANPHAM=" + FK_DICHVU + " AND C_TYPE = 1 AND ((DMMAVUNG.C_DESC ='" + FK_QUANHUYEN + "') OR (DMMAVUNG.C_DESC LIKE '%," + FK_QUANHUYEN + ",%') OR (DMMAVUNG.C_DESC LIKE '%," + FK_QUANHUYEN + "') OR (DMMAVUNG.C_DESC LIKE '" + FK_QUANHUYEN + ",%'))";
-
                 DataTable oDataTable = new DataTable();
                 ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
                 oDataTable = SelectQuery.query_data(SelectSQL);
