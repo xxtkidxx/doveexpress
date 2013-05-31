@@ -37,16 +37,29 @@
          $find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("cmbNhomKhachHang;" + eventArgs.get_item().get_value());
          return false;
     }
+    function OnValueChangedtxtC_KHOILUONG(sender, eventArgs) {
+        $find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("txtC_KHOILUONG;" + eventArgs.get_newValue());
+        return false;
+    }
+    var txtC_KHOILUONG;
+    function OnClientLoadtxtC_KHOILUONG(sender) {
+        txtC_KHOILUONG = sender;
+    } 
     var txtPPXD;
     function OnClientLoadtxtPPXD(sender) {
         txtPPXD = sender;
-    }    
+    }txtC_GIACUOC   
+    var txtC_GIACUOC;
+    function OnClientLoadtxtC_GIACUOC(sender) {
+        txtC_GIACUOC = sender;
+    }
 </script>
 <script type="text/javascript">
      function onResponseEndNG() {
          if (typeof (result) != "undefined" && result && result != "") {
              var arrayOfStrings = result.split(",");
              txtPPXD.set_value(arrayOfStrings[0]);
+             txtC_GIACUOC.set_value(arrayOfStrings[1]);
              result = "";
          }
          return false;
@@ -313,7 +326,7 @@
                 </td>
                 <td style =" width:100px;"> <span class="rtsTxtnew">Khối lượng (g):</span></td>
                 <td colspan="4">
-                     <telerik:RadNumericTextBox  ID="txtC_KHOILUONG" Width ="90%" Runat="server" Text='<%# Bind("C_KHOILUONG") %>'>
+                     <telerik:RadNumericTextBox  ID="txtC_KHOILUONG" Width ="90%" Runat="server" Text='<%# Bind("C_KHOILUONG") %>' ClientEvents-OnValueChanged="OnValueChangedtxtC_KHOILUONG" ClientEvents-OnLoad="OnClientLoadtxtC_KHOILUONG">
                             <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="1"/>
                     </telerik:RadNumericTextBox>
                 </td>
@@ -321,7 +334,7 @@
             <tr>                
                 <td style =" width:100px;"> <span class="rtsTxtnew">Cước chính:</span></td>
                 <td colspan="4">
-                    <telerik:RadNumericTextBox  ID="txtC_GIACUOC" Width ="90%" Runat="server" Text='<%# Bind("C_GIACUOC") %>'>
+                    <telerik:RadNumericTextBox  ID="txtC_GIACUOC" Width ="90%" Runat="server" Text='<%# Bind("C_GIACUOC") %>' ClientEvents-OnLoad="OnClientLoadtxtC_GIACUOC">
                             <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
                     </telerik:RadNumericTextBox>
                 </td>                

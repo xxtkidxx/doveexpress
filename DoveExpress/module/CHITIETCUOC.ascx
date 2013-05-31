@@ -136,7 +136,16 @@ ShowToggleImage="True" EmptyMessage="Chọn bảng"
             </CommandItemTemplate>
                             <Columns>
                              <telerik:GridEditCommandColumn ButtonType="ImageButton" UniqueName="EditCommandColumn" HeaderStyle-Width="80px" EditImageUrl="~/images/grid/Edit.gif"></telerik:GridEditCommandColumn>
-                            <telerik:GridBoundColumn UniqueName="C_KHOILUONG" HeaderText="Khối lượng" DataField="C_KHOILUONG" AllowFiltering="false"></telerik:GridBoundColumn>
+                            <telerik:GridTemplateColumn DataField="C_KHOILUONG" DataType="System.Decimal" HeaderText="Khối lượng" AllowFiltering="false" UniqueName="C_KHOILUONG">
+                                <ItemTemplate>
+                                        <%# Eval("C_KHOILUONG")%>
+                                </ItemTemplate>
+                                <EditItemTemplate>
+                                        <telerik:RadNumericTextBox runat="server" ID="txtC_KHOILUONG" DbValue='<%# Bind("C_KHOILUONG") %>'>
+                                         <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
+                                        </telerik:RadNumericTextBox>
+                                </EditItemTemplate>
+                            </telerik:GridTemplateColumn>
                             <telerik:GridTemplateColumn DataField="C_CUOCPHI" DataType="System.Decimal" HeaderText="Cước phí" AllowFiltering="false" UniqueName="C_CUOCPHI">
                                 <ItemTemplate>
                                  <telerik:RadNumericTextBox runat="server"  CssClass ="csstextNum" ID="txtC_CUOCPHI" Width="100px" Enabled = "false"  DbValue='<%# Eval("C_CUOCPHI") %>'>

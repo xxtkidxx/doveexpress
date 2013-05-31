@@ -1,0 +1,24 @@
+Thời gian: 2013-05-31 00:38:36 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {PK_ID:"3"}
+__________________________
+Thời gian: 2013-05-31 00:41:07 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {PK_ID:"3"}
+__________________________
+Thời gian: 2013-05-31 08:59:07 AM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-05-31 11:07:27 AM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
