@@ -42,17 +42,19 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
     string FK_MABANGCUOC = "";
     string FK_QUANHUYEN = "";
     string FK_MAVUNG = "";
-    string C_KHOILUONG = "";
-    string PPXD = "0";
-    string CUOCCHINH = "0";
-    string DVPT = "0";
-    string TONGCUOC = "0";
-    string DATHU = "0";
-    string CONLAI = "0";
+    int C_KHOILUONG = 0;
+    float PPXD = 0;
+    int CUOCCHINH = 0;
+    int DVPT = 0;
+    int TONGCUOC = 0;
+    int DATHU = 0;
+    int CONLAI = 0;
     string FK_DOITAC = "";
     string GIADOITAC = "";
     string Alarm = "";
     DataTable ctcDataTable = new DataTable();
+    int C_KHOILUONGLK = 0;
+    int GIACUOCLK = 0;
     protected void RadScriptManager_AjaxRequestNG(object sender, AjaxRequestEventArgs e)
     {        
         GridEditableItem editableItem = null;
@@ -80,7 +82,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
             {
                 if (oDataTable1.Rows[0]["C_PPXD"] != DBNull.Value)
                 {
-                    PPXD = oDataTable1.Rows[0]["C_PPXD"].ToString();
+                    PPXD = float.Parse(oDataTable1.Rows[0]["C_PPXD"].ToString());
                 }
             }
             else
@@ -148,18 +150,63 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
         }
         else if (arrayvalue[0] == "txtC_KHOILUONG")
         {
-            C_KHOILUONG = arrayvalue[1]; 
+            C_KHOILUONG =  int.Parse(arrayvalue[1]); 
         }
         if ((FK_MABANGCUOC != "") && (FK_MAVUNG != ""))
         {
-            string SelectSQL;
-            SelectSQL = "Select DMCHITIETCUOC.PK_ID,DMCHITIETCUOC.C_KHOILUONG,DMCHITIETCUOC.C_CUOCPHI,DMCHITIETCUOC.C_TYPE FROM DMCHITIETCUOC WHERE FK_MABANGCUOC = " + FK_MABANGCUOC + " AND FK_MAVUNG = " + FK_MAVUNG + "ORDER BY C_KHOILUONG";
-            ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
-            ctcDataTable = SelectQuery.query_data(SelectSQL);
-        }
-        if (C_KHOILUONG != "")
-        {
+            string SelectSQL1;
+            SelectSQL1 = "Select DMCHITIETCUOC.PK_ID,DMCHITIETCUOC.C_KHOILUONG,DMCHITIETCUOC.C_CUOCPHI,DMCHITIETCUOC.C_TYPE FROM DMCHITIETCUOC WHERE FK_MABANGCUOC = " + FK_MABANGCUOC + " AND FK_MAVUNG = " + FK_MAVUNG + " AND C_TYPE <> 1 ORDER BY C_KHOILUONG";
+            ITCLIB.Admin.SQL SelectQuery1 = new ITCLIB.Admin.SQL();
+            ctcDataTable = SelectQuery1.query_data(SelectSQL1);
+            string SelectSQL2;
+            SelectSQL2 = "Select DMCHITIETCUOC.PK_ID,DMCHITIETCUOC.C_KHOILUONG,DMCHITIETCUOC.C_CUOCPHI,DMCHITIETCUOC.C_TYPE FROM DMCHITIETCUOC WHERE FK_MABANGCUOC = " + FK_MABANGCUOC + " AND FK_MAVUNG = " + FK_MAVUNG + " AND C_TYPE <> 1 ORDER BY C_KHOILUONG";
+            DataTable oDataTable = new DataTable();
+            ITCLIB.Admin.SQL SelectQuery2 = new ITCLIB.Admin.SQL();
+            oDataTable = SelectQuery2.query_data(SelectSQL2);
+            if (oDataTable.Rows.Count != 0)
+            {
+                C_KHOILUONGLK = int.Parse(oDataTable.Rows[0]["C_KHOILUONG"].ToString());
+                GIACUOCLK = int.Parse(oDataTable.Rows[0]["C_CUOCPHI"].ToString());
+            }
 
+        }
+        if (C_KHOILUONG != 0)
+        {
+            if (ctcDataTable.Rows.Count !=0)
+            {
+                bool check = true;
+                for (int i = 0; i < ctcDataTable.Rows.Count; i++)
+                {
+                    if (check)
+                    {
+                        if (i == 0)
+                        {
+                            if (C_KHOILUONG <= int.Parse(ctcDataTable.Rows[0]["C_KHOILUONG"].ToString()))
+                            {
+                                CUOCCHINH = int.Parse(ctcDataTable.Rows[0]["C_CUOCPHI"].ToString());
+                            }
+                        }
+                        else
+                        {
+                            if (C_KHOILUONG <= int.Parse(ctcDataTable.Rows[i]["C_KHOILUONG"].ToString()) && C_KHOILUONG <= int.Parse(ctcDataTable.Rows[i - 1]["C_KHOILUONG"].ToString()))
+                            {
+                                CUOCCHINH = int.Parse(ctcDataTable.Rows[i]["C_CUOCPHI"].ToString());
+                                check = false;
+                            }
+                            else if (C_KHOILUONG >= int.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count -1]["C_KHOILUONG"].ToString()))
+                            {
+                                if (((C_KHOILUONG - int.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count -1]["C_KHOILUONG"].ToString())) % C_KHOILUONGLK) == 0)
+                                {
+                                    CUOCCHINH = int.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_CUOCPHI"].ToString()) + ((C_KHOILUONG - int.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_KHOILUONG"].ToString())) / C_KHOILUONGLK) * GIACUOCLK;
+                                }else{
+                                    CUOCCHINH = int.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_CUOCPHI"].ToString()) + (((C_KHOILUONG - int.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_KHOILUONG"].ToString())) / C_KHOILUONGLK) + 1) * GIACUOCLK;
+                                }
+                                check = false;
+                            }
+                        }
+                    }
+                }
+            }
         }
         if (Alarm != "")
         {
