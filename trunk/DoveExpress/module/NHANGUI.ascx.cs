@@ -38,20 +38,23 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
         ajaxManager.AjaxRequest += new RadAjaxControl.AjaxRequestDelegate(RadScriptManager_AjaxRequestNG);
         ajaxManager.ClientEvents.OnResponseEnd = "onResponseEndNG";
     }
+    string FK_DICHVU = "";
+    string FK_MABANGCUOC = "";
+    string FK_QUANHUYEN = "";
+    string FK_MAVUNG = "";
+    string C_KHOILUONG = "";
+    string PPXD = "0";
+    string CUOCCHINH = "0";
+    string DVPT = "0";
+    string TONGCUOC = "0";
+    string DATHU = "0";
+    string CONLAI = "0";
+    string FK_DOITAC = "";
+    string GIADOITAC = "";
+    string Alarm = "";
+    DataTable ctcDataTable = new DataTable();
     protected void RadScriptManager_AjaxRequestNG(object sender, AjaxRequestEventArgs e)
-    {
-        string FK_DICHVU = "";
-        string FK_MABANGCUOC = "";
-        string QUANHUYENCODE = "";
-        string PPXD = "0";
-        string CUOCCHINH ="0";
-        string DVPT="0";
-        string TONGCUOC="0";
-        string DATHU="0";
-        string CONLAI="0";
-        string FK_DOITAC="";
-        string GIADOITAC="";
-        string Alarm = "";
+    {        
         GridEditableItem editableItem = null;
         foreach (GridEditFormItem item in RadGridNHANGUI.MasterTableView.GetItems(GridItemType.EditFormItem))
         {
@@ -68,21 +71,38 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
         if (arrayvalue[0] == "cmbSanPham")
         {
             FK_DICHVU = arrayvalue[1];
-            string SelectSQL;
-            SelectSQL = "Select DMMASANPHAM.C_PPXD FROM DMMASANPHAM WHERE DMMASANPHAM.PK_ID = " + arrayvalue[1] + "";
-            DataTable oDataTable = new DataTable();
-            ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
-            oDataTable = SelectQuery.query_data(SelectSQL);
-            if (oDataTable.Rows.Count != 0)
+            string SelectSQL1;
+            SelectSQL1 = "Select DMMASANPHAM.C_PPXD FROM DMMASANPHAM WHERE DMMASANPHAM.PK_ID = " + arrayvalue[1] + "";
+            DataTable oDataTable1 = new DataTable();
+            ITCLIB.Admin.SQL SelectQuery1 = new ITCLIB.Admin.SQL();
+            oDataTable1 = SelectQuery1.query_data(SelectSQL1);
+            if (oDataTable1.Rows.Count != 0)
             {
-                if (oDataTable.Rows[0]["C_PPXD"] != DBNull.Value)
+                if (oDataTable1.Rows[0]["C_PPXD"] != DBNull.Value)
                 {
-                    PPXD = oDataTable.Rows[0]["C_PPXD"].ToString();
+                    PPXD = oDataTable1.Rows[0]["C_PPXD"].ToString();
                 }
             }
             else
             {
                 //txtPPXD.Text = "0";
+            }
+            if (FK_QUANHUYEN != "")
+            {
+                string SelectSQL;
+                SelectSQL = "Select DMMAVUNG.PK_ID FROM DMMAVUNG WHERE FK_MASANPHAM=" + FK_DICHVU + " AND C_TYPE = 1 AND ((DMMAVUNG.C_DESC ='" + FK_QUANHUYEN + "') OR (DMMAVUNG.C_DESC LIKE '%," + FK_QUANHUYEN + ",%') OR (DMMAVUNG.C_DESC LIKE '%," + FK_QUANHUYEN + "') OR (DMMAVUNG.C_DESC LIKE '" + FK_QUANHUYEN + ",%'))";
+                DataTable oDataTable = new DataTable();
+                ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
+                oDataTable = SelectQuery.query_data(SelectSQL);
+                if (oDataTable.Rows.Count != 0)
+                {
+                    FK_MAVUNG = oDataTable.Rows[0]["PK_ID"].ToString();
+                }
+                else
+                {
+                    //FK_MAVUNG = "0";
+                    Alarm = "Quận huyện này không nằm trong vùng tính cước nào";
+                }
             }
         }
         else if (arrayvalue[0] == "cmbNhomKhachHang")
@@ -107,7 +127,39 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
         }
         else if (arrayvalue[0] == "cmbQuanHuyen")
         {
-            QUANHUYENCODE = arrayvalue[1];
+            FK_QUANHUYEN = arrayvalue[1]; 
+            if (FK_DICHVU != "")
+            {
+                string SelectSQL;
+                SelectSQL = "Select DMMAVUNG.PK_ID FROM DMMAVUNG WHERE FK_MASANPHAM=" + FK_DICHVU + " AND C_TYPE = 1 AND ((DMMAVUNG.C_DESC ='" + FK_QUANHUYEN + "') OR (DMMAVUNG.C_DESC LIKE '%," + FK_QUANHUYEN + ",%') OR (DMMAVUNG.C_DESC LIKE '%," + FK_QUANHUYEN + "') OR (DMMAVUNG.C_DESC LIKE '" + FK_QUANHUYEN + ",%'))";
+                DataTable oDataTable = new DataTable();
+                ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
+                oDataTable = SelectQuery.query_data(SelectSQL);
+                if (oDataTable.Rows.Count != 0)
+                {
+                    FK_MAVUNG = oDataTable.Rows[0]["PK_ID"].ToString();
+                }
+                else
+                {
+                    //FK_MAVUNG = "0";
+                    Alarm = "Quận huyện này không nằm trong vùng tính cước nào";
+                }
+            }
+        }
+        else if (arrayvalue[0] == "txtC_KHOILUONG")
+        {
+            C_KHOILUONG = arrayvalue[1]; 
+        }
+        if ((FK_MABANGCUOC != "") && (FK_MAVUNG != ""))
+        {
+            string SelectSQL;
+            SelectSQL = "Select DMCHITIETCUOC.PK_ID,DMCHITIETCUOC.C_KHOILUONG,DMCHITIETCUOC.C_CUOCPHI,DMCHITIETCUOC.C_TYPE FROM DMCHITIETCUOC WHERE FK_MABANGCUOC = " + FK_MABANGCUOC + " AND FK_MAVUNG = " + FK_MAVUNG + "ORDER BY C_KHOILUONG";
+            ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
+            ctcDataTable = SelectQuery.query_data(SelectSQL);
+        }
+        if (C_KHOILUONG != "")
+        {
+
         }
         if (Alarm != "")
         {
