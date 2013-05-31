@@ -57,6 +57,7 @@
 <script type="text/javascript">
      function onResponseEndNG() {
          if (typeof (result) != "undefined" && result && result != "") {
+             alert(result);
              var arrayOfStrings = result.split(",");
              txtPPXD.set_value(arrayOfStrings[0]);
              txtC_GIACUOC.set_value(arrayOfStrings[1]);
@@ -327,7 +328,7 @@
                 <td style =" width:100px;"> <span class="rtsTxtnew">Khối lượng (g):</span></td>
                 <td colspan="4">
                      <telerik:RadNumericTextBox  ID="txtC_KHOILUONG" Width ="90%" Runat="server" Text='<%# Bind("C_KHOILUONG") %>' ClientEvents-OnValueChanged="OnValueChangedtxtC_KHOILUONG" ClientEvents-OnLoad="OnClientLoadtxtC_KHOILUONG">
-                            <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="1"/>
+                            <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
                     </telerik:RadNumericTextBox>
                 </td>
             </tr
