@@ -1,4 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="NHANGUI.ascx.cs" Inherits="module_NHANGUI" %>
+<%@ Register TagPrefix="uc1" Namespace="ITCLIB.Admin" %>
 <%@ Register TagPrefix="uc1" TagName="NHANGUIDVPT" Src="NHANGUIDVPT.ascx" %>
 <telerik:RadCodeBlock ID="RadCodeBlockNHANGUI" runat="server">
 <script type="text/javascript">
@@ -26,8 +27,10 @@
         }
     }
     function cmbQuanHuyenClientSelectedIndexChangedHandler(sender, eventArgs) {
+        var hftext = GetGridServerElementNG("hfQuanHuyen");
+        hftext.value = eventArgs.get_item().get_value();
         $find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("cmbQuanHuyen;" + eventArgs.get_item().get_value());
-         return false;
+        return false;
     }
     function cmbSanPhamClientSelectedIndexChangedHandler(sender, eventArgs) {
          $find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("cmbSanPham;" + eventArgs.get_item().get_value());
@@ -48,11 +51,29 @@
     var txtPPXD;
     function OnClientLoadtxtPPXD(sender) {
         txtPPXD = sender;
-    }txtC_GIACUOC   
+    }   
     var txtC_GIACUOC;
     function OnClientLoadtxtC_GIACUOC(sender) {
         txtC_GIACUOC = sender;
     }
+    var txtC_TIENHANG;
+    function OnClientLoadtxtC_TIENHANG(sender) {
+        txtC_TIENHANG = sender;
+    }
+    function OnValueChangedtxtC_DATHU(sender, eventArgs) {
+        //$find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("txtC_DATHU;" + eventArgs.get_newValue());
+        txtC_CONLAI.set_value(txtC_TIENHANG.get_value() - eventArgs.get_newValue());
+        return false;
+    }
+    var txtC_DATHU;
+    function OnClientLoadtxtC_DATHU(sender) {
+        txtC_DATHU = sender;
+    }
+    var txtC_CONLAI;
+    function OnClientLoadtxtC_CONLAI(sender) {
+        txtC_CONLAI = sender;
+    }
+    
 </script>
 <script type="text/javascript">
      function onResponseEndNG() {
@@ -61,23 +82,24 @@
              var arrayOfStrings = result.split(",");
              txtPPXD.set_value(arrayOfStrings[0]);
              txtC_GIACUOC.set_value(arrayOfStrings[1]);
+             txtC_TIENHANG.set_value(arrayOfStrings[3]);
              result = "";
          }
          return false;
      }
 </script>
 <script type="text/javascript">
-      var registeredElementsCT = [];
-      function GetRegisteredServerElementCT(serverID) {
+      var registeredElementsNG = [];
+      function GetRegisteredServerElementNG(serverID) {
           var clientID = "";
-          for (var i = 0; i < registeredElementsCT.length; i++) {
-              clientID = registeredElementsCT[i];
+          for (var i = 0; i < registeredElementsNG.length; i++) {
+              clientID = registeredElementsNG[i];
               if (clientID.indexOf(serverID) >= 0)
                   break;
           }
           return $get(clientID);
       }
-      function GetGridServerElementCT(serverID, tagName) {
+      function GetGridServerElementNG(serverID, tagName) {
           if (!tagName)
               tagName = "*";
 
@@ -164,7 +186,7 @@
                 <telerik:GridBoundColumn UniqueName="TINHTHANHNAME" HeaderText="Tỉnh thành" DataField="TINHTHANHNAME" HeaderStyle-Width="130px" HeaderStyle-HorizontalAlign="Center"
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
                 </telerik:GridBoundColumn>
-                <telerik:GridBoundColumn UniqueName="QUANHUYENNAME" HeaderText="Quận huyện" DataField="MAVUNGNAME" HeaderStyle-Width="130px" HeaderStyle-HorizontalAlign="Center"
+                <telerik:GridBoundColumn UniqueName="QUANHUYENNAME" HeaderText="Quận huyện" DataField="QUANHUYENNAME" HeaderStyle-Width="130px" HeaderStyle-HorizontalAlign="Center"
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
                 </telerik:GridBoundColumn>
                 <telerik:GridBoundColumn UniqueName="C_NOIDUNG" HeaderText="Nội dung" DataField="C_NOIDUNG" HeaderStyle-Width="130px" HeaderStyle-HorizontalAlign="Center"
@@ -288,6 +310,7 @@
             <tr> 
                 <td style ="width:100px;"> <span class="rtsTxtnew">Tỉnh thành:</span></td>
                 <td colspan="4">
+                    <asp:HiddenField ID="hfTinhThanh" runat="server" Value ='<%# cFunction.LoadIDTinhThanhCode(Eval("FK_QUANHUYEN").ToString()) %>' />
                     <telerik:RadComboBox ID="cmbTinhThanh" runat="server"
                     DataTextField="C_NAME" DataValueField="PK_ID" DataSourceID="TINHTHANHDataSource"
                     ShowToggleImage="True" EmptyMessage="Chọn tỉnh"
@@ -296,7 +319,7 @@
                 </td>               
                 <td style =" width:100px;"> <span class="rtsTxtnew">Quận huyện:</span></td>
                 <td colspan="12">
-                    <asp:TextBox ID="txtQuanHuyen" CssClass="txttext" Text='<%# Eval( "FK_QUANHUYEN") %>' Visible="false" runat="server"></asp:TextBox>
+                    <asp:HiddenField ID="hfQuanHuyen" runat="server"  Value ='<%# Bind("FK_QUANHUYEN") %>'/>
                     <telerik:RadComboBox ID="cmbQuanHuyen" runat="server" 
                     DataTextField="C_NAME" DataValueField="C_CODE" DataSourceID="QUANHUYENDataSource"
                     ShowToggleImage="True" EmptyMessage="Chọn quận huyện" 
@@ -347,7 +370,7 @@
             <tr>     
                 <td style =" width:100px;"><span class="rtsTxtnew">Tổng cước:</span></td>
                 <td colspan="4">
-                    <telerik:RadNumericTextBox  ID="txtC_TIENHANG" Width ="90%" Runat="server" Text='<%# Bind("C_TIENHANG") %>'>
+                    <telerik:RadNumericTextBox  ID="txtC_TIENHANG" Width ="90%" Runat="server" Text='<%# Bind("C_TIENHANG") %>' ClientEvents-OnLoad="OnClientLoadtxtC_TIENHANG">
                             <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
                     </telerik:RadNumericTextBox>
                 </td>           
@@ -364,7 +387,7 @@
                 </td>               
                 <td style =" width:100px;"> <span class="rtsTxtnew">Đã thu:</span></td>
                 <td colspan="4">
-                    <telerik:RadNumericTextBox  ID="txtC_DATHU" Width ="90%" Runat="server" Text='<%# Bind("C_DATHU") %>'>
+                    <telerik:RadNumericTextBox  ID="txtC_DATHU" Width ="90%" Runat="server" Text='<%# Bind("C_DATHU") %>' ClientEvents-OnValueChanged="OnValueChangedtxtC_DATHU" ClientEvents-OnLoad="OnClientLoadtxtC_DATHU">
                             <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
                     </telerik:RadNumericTextBox>
                 </td>
@@ -372,7 +395,7 @@
             <tr>
                 <td style =" width:100px;"> <span class="rtsTxtnew">Còn lại:</span></td>
                 <td colspan="4">
-                    <telerik:RadNumericTextBox  ID="txtC_CONLAI" Width ="90%" Runat="server">
+                    <telerik:RadNumericTextBox  ID="txtC_CONLAI" Width ="90%" Runat="server" ClientEvents-OnLoad="OnClientLoadtxtC_CONLAI">
                             <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
                     </telerik:RadNumericTextBox>
                 </td>
@@ -446,7 +469,7 @@
     ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>" 
     DeleteCommand="DELETE FROM [NHANGUI] WHERE [PK_ID] = @PK_ID" 
     InsertCommand="INSERT INTO [NHANGUI] ([C_NGAY], [C_MAKH], [C_BILL], [C_TENKH], [C_NGUOINHAN], [C_DIACHINHAN], [FK_QUANHUYEN], [C_NOIDUNG], [FK_MASANPHAM], [C_KHOILUONG], [C_GIACUOC], [C_PHUTROI], [C_HINHTHUCTT], [C_DATHU], [C_TIENHANG], [FK_NHANVIENNHAN], [FK_DOITAC], [C_GIADOITAC], [FK_NHANVIENPHAT], [C_NGAYGIOPHAT], [C_NGUOIKYNHAN], [C_BOPHAN]) VALUES (@C_NGAY, @C_MAKH, @C_BILL, @C_TENKH, @C_NGUOINHAN, @C_DIACHINHAN, @FK_QUANHUYEN, @C_NOIDUNG, @FK_MASANPHAM, @C_KHOILUONG, @C_GIACUOC, @C_PHUTROI, @C_HINHTHUCTT, @C_DATHU, @C_TIENHANG, @FK_NHANVIENNHAN, @FK_DOITAC, @C_GIADOITAC, @FK_NHANVIENPHAT, @C_NGAYGIOPHAT, @C_NGUOIKYNHAN, @C_BOPHAN);SELECT @IDNHANGUI = SCOPE_IDENTITY()" 
-    SelectCommand="SELECT [NHANGUI].[PK_ID], [NHANGUI].[C_NGAY], [NHANGUI].[C_MAKH], [NHANGUI].[C_BILL], [NHANGUI].[C_TENKH], [NHANGUI].[C_NGUOINHAN], [NHANGUI].[C_DIACHINHAN], [NHANGUI].[FK_QUANHUYEN], [NHANGUI].[C_NOIDUNG], [NHANGUI].[FK_MASANPHAM], [NHANGUI].[C_KHOILUONG], [NHANGUI].[C_GIACUOC], [NHANGUI].[C_PHUTROI], [NHANGUI].[C_HINHTHUCTT], [NHANGUI].[C_DATHU], [NHANGUI].[C_TIENHANG], [NHANGUI].[FK_NHANVIENNHAN], [NHANGUI].[FK_DOITAC], [NHANGUI].[C_GIADOITAC], [NHANGUI].[FK_NHANVIENPHAT], [NHANGUI].[C_NGAYGIOPHAT], [NHANGUI].[C_NGUOIKYNHAN], [NHANGUI].[C_BOPHAN],USERSNHAN.C_NAME as NHANVIENNHANNAME,USERSPHAT.C_NAME as NHANVIENPHATNAME,DMMASANPHAM.C_NAME as SANPHAMNAME FROM [NHANGUI] LEFT OUTER JOIN USERS as USERSNHAN ON NHANGUI.FK_NHANVIENNHAN = USERSNHAN.PK_ID LEFT OUTER JOIN USERS as USERSPHAT ON NHANGUI.FK_NHANVIENPHAT = USERSPHAT.PK_ID LEFT OUTER JOIN DMMASANPHAM ON NHANGUI.FK_MASANPHAM=DMMASANPHAM.PK_ID" 
+    SelectCommand="SELECT [NHANGUI].[PK_ID], [NHANGUI].[C_NGAY], [NHANGUI].[C_MAKH], [NHANGUI].[C_BILL], [NHANGUI].[C_TENKH], [NHANGUI].[C_NGUOINHAN], [NHANGUI].[C_DIACHINHAN], [NHANGUI].[FK_QUANHUYEN], [NHANGUI].[C_NOIDUNG], [NHANGUI].[FK_MASANPHAM], [NHANGUI].[C_KHOILUONG], [NHANGUI].[C_GIACUOC], [NHANGUI].[C_PHUTROI], [NHANGUI].[C_HINHTHUCTT], [NHANGUI].[C_DATHU], [NHANGUI].[C_TIENHANG], [NHANGUI].[FK_NHANVIENNHAN], [NHANGUI].[FK_DOITAC], [NHANGUI].[C_GIADOITAC], [NHANGUI].[FK_NHANVIENPHAT], [NHANGUI].[C_NGAYGIOPHAT], [NHANGUI].[C_NGUOIKYNHAN], [NHANGUI].[C_BOPHAN],USERSNHAN.C_NAME as NHANVIENNHANNAME,USERSPHAT.C_NAME as NHANVIENPHATNAME,DMMASANPHAM.C_NAME as SANPHAMNAME,DMQUANHUYEN.C_NAME as QUANHUYENNAME,DMTINHTHANH.C_NAME as TINHTHANHNAME FROM [NHANGUI] LEFT OUTER JOIN USERS as USERSNHAN ON NHANGUI.FK_NHANVIENNHAN = USERSNHAN.PK_ID LEFT OUTER JOIN USERS as USERSPHAT ON NHANGUI.FK_NHANVIENPHAT = USERSPHAT.PK_ID LEFT OUTER JOIN DMMASANPHAM ON NHANGUI.FK_MASANPHAM=DMMASANPHAM.PK_ID LEFT OUTER JOIN DMQUANHUYEN ON NHANGUI.FK_QUANHUYEN = DMQUANHUYEN.C_CODE LEFT OUTER JOIN DMTINHTHANH ON DMQUANHUYEN.FK_TINHTHANH = DMTINHTHANH.PK_ID" 
     UpdateCommand="UPDATE [NHANGUI] SET [C_NGAY] = @C_NGAY, [C_MAKH] = @C_MAKH, [C_BILL] = @C_BILL, [C_TENKH] = @C_TENKH, [C_NGUOINHAN] = @C_NGUOINHAN, [C_DIACHINHAN] = @C_DIACHINHAN, [FK_QUANHUYEN] = @FK_QUANHUYEN, [C_NOIDUNG] = @C_NOIDUNG, [FK_MASANPHAM] = @FK_MASANPHAM, [C_KHOILUONG] = @C_KHOILUONG, [C_GIACUOC] = @C_GIACUOC, [C_PHUTROI] = @C_PHUTROI, [C_HINHTHUCTT] = @C_HINHTHUCTT, [C_DATHU] = @C_DATHU, [C_TIENHANG] = @C_TIENHANG, [FK_NHANVIENNHAN] = @FK_NHANVIENNHAN, [FK_DOITAC] = @FK_DOITAC, [C_GIADOITAC] = @C_GIADOITAC, [FK_NHANVIENPHAT] = @FK_NHANVIENPHAT, [C_NGAYGIOPHAT] = @C_NGAYGIOPHAT, [C_NGUOIKYNHAN] = @C_NGUOIKYNHAN, [C_BOPHAN] = @C_BOPHAN WHERE [PK_ID] = @PK_ID"
     oninserted="NHANGUIDataSource_Inserted">
     <DeleteParameters>

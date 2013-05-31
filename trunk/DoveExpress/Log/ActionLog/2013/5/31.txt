@@ -76,3 +76,51 @@ Tài khoản : sysadmin
 Module : Login
 Kết quả : Thành công
 __________________________
+Thời gian: 2013-05-31 17:17:50 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-05-31 17:23:43 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-05-31 21:44:02 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-05-31 23:07:26 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-05-31 23:43:18 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-05-31 23:44:43 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {PK_ID:"3"}
+__________________________
+Thời gian: 2013-05-31 23:46:36 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-05-31 23:47:24 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {PK_ID:"3"}
+__________________________

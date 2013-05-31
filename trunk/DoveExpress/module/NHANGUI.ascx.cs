@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 using Telerik.Web.UI;
+using System.Globalization;
 
 public partial class module_NHANGUI : System.Web.UI.UserControl
 {
@@ -53,40 +54,40 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
             Session["FK_MAVUNG"] = value;
         }
     }
-    private int C_KHOILUONG
+    private decimal C_KHOILUONG
     {
         get
         {
-            return int.Parse(Session["C_KHOILUONG"].ToString());
+            return decimal.Parse(Session["C_KHOILUONG"].ToString());
         }
         set
         {
             Session["C_KHOILUONG"] = value;
         }
     }
-    private float PPXD
+    private decimal PPXD
     {
         get
         {
-            return float.Parse(Session["PPXD"].ToString());
+            return decimal.Parse(Session["PPXD"].ToString());
         }
         set
         {
             Session["PPXD"] = value;
         }
     }
-    private int CUOCCHINH
+    private decimal CUOCCHINH
     {
         get
         {
-            return int.Parse(Session["CUOCCHINH"].ToString());
+            return decimal.Parse(Session["CUOCCHINH"].ToString());
         }
         set
         {
             Session["CUOCCHINH"] = value;
         }
     }
-    private int DVPT
+    private decimal DVPT
     {
         get
         {
@@ -97,7 +98,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
             Session["DVPT"] = value;
         }
     }
-    private int TONGCUOC
+    private decimal TONGCUOC
     {
         get
         {
@@ -108,18 +109,18 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
             Session["TONGCUOC"] = value;
         }
     }
-    private int DATHU
+    private decimal DATHU
     {
         get
         {
-            return int.Parse(Session["DATHU"].ToString());
+            return decimal.Parse(Session["DATHU"].ToString());
         }
         set
         {
             Session["DATHU"] = value;
         }
     }
-    private int CONLAI
+    private decimal CONLAI
     {
         get
         {
@@ -141,11 +142,11 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
             Session["FK_DOITAC"] = value;
         }
     }
-    private int GIADOITAC
+    private decimal GIADOITAC
     {
         get
         {
-            return int.Parse(Session["GIADOITAC"].ToString());
+            return decimal.Parse(Session["GIADOITAC"].ToString());
         }
         set
         {
@@ -163,22 +164,22 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
             Session["ctcDataTable"] = value;
         }
     }
-    private int C_KHOILUONGLK
+    private decimal C_KHOILUONGLK
     {
         get
         {
-            return int.Parse(Session["C_KHOILUONGLK"].ToString());
+            return decimal.Parse(Session["C_KHOILUONGLK"].ToString());
         }
         set
         {
             Session["C_KHOILUONGLK"] = value;
         }
     }
-    private int GIACUOCLK
+    private decimal GIACUOCLK
     {
         get
         {
-            return int.Parse(Session["GIACUOCLK"].ToString());
+            return decimal.Parse(Session["GIACUOCLK"].ToString());
         }
         set
         {
@@ -302,17 +303,16 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
             {
                 if (oDataTable1.Rows[0]["C_PPXD"] != DBNull.Value)
                 {
-                    PPXD = float.Parse(oDataTable1.Rows[0]["C_PPXD"].ToString());
+                    PPXD = decimal.Parse(oDataTable1.Rows[0]["C_PPXD"].ToString());
                 }
             }
             if (FK_QUANHUYEN != "")
             {
                 string SelectSQL;
                 SelectSQL = "Select DMMAVUNG.PK_ID FROM DMMAVUNG WHERE FK_MASANPHAM=" + FK_DICHVU + " AND C_TYPE = 1 AND ((DMMAVUNG.C_DESC ='" + FK_QUANHUYEN + "') OR (DMMAVUNG.C_DESC LIKE '%," + FK_QUANHUYEN + ",%') OR (DMMAVUNG.C_DESC LIKE '%," + FK_QUANHUYEN + "') OR (DMMAVUNG.C_DESC LIKE '" + FK_QUANHUYEN + ",%'))";
-                Session["test"] = SelectSQL;
                 DataTable oDataTable = new DataTable();
                 ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
-                //oDataTable = SelectQuery.query_data(SelectSQL);
+                oDataTable = SelectQuery.query_data(SelectSQL);
                 if (oDataTable.Rows.Count != 0)
                 {
                     FK_MAVUNG = oDataTable.Rows[0]["PK_ID"].ToString();
@@ -320,7 +320,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
                 else
                 {
                     //FK_MAVUNG = "0";
-                    //Alarm = "Quận huyện này không nằm trong vùng tính cước nào";
+                    Alarm = "Quận huyện này không nằm trong vùng tính cước nào";
                 }
             }
         }
@@ -332,17 +332,18 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
         {
             string SelectSQL1;
             SelectSQL1 = "Select DMCHITIETCUOC.PK_ID,DMCHITIETCUOC.C_KHOILUONG,DMCHITIETCUOC.C_CUOCPHI,DMCHITIETCUOC.C_TYPE FROM DMCHITIETCUOC WHERE FK_MABANGCUOC = " + FK_MABANGCUOC + " AND FK_MAVUNG = " + FK_MAVUNG + " AND C_TYPE <> 1 ORDER BY C_KHOILUONG";
+            Session["test"] = SelectSQL1;
             ITCLIB.Admin.SQL SelectQuery1 = new ITCLIB.Admin.SQL();
             ctcDataTable = SelectQuery1.query_data(SelectSQL1);
             string SelectSQL2;
-            SelectSQL2 = "Select DMCHITIETCUOC.PK_ID,DMCHITIETCUOC.C_KHOILUONG,DMCHITIETCUOC.C_CUOCPHI,DMCHITIETCUOC.C_TYPE FROM DMCHITIETCUOC WHERE FK_MABANGCUOC = " + FK_MABANGCUOC + " AND FK_MAVUNG = " + FK_MAVUNG + " AND C_TYPE <> 1 ORDER BY C_KHOILUONG";
+            SelectSQL2 = "Select DMCHITIETCUOC.PK_ID,DMCHITIETCUOC.C_KHOILUONG,DMCHITIETCUOC.C_CUOCPHI,DMCHITIETCUOC.C_TYPE FROM DMCHITIETCUOC WHERE FK_MABANGCUOC = " + FK_MABANGCUOC + " AND FK_MAVUNG = " + FK_MAVUNG + " AND C_TYPE = 1 ORDER BY C_KHOILUONG";
             DataTable oDataTable = new DataTable();
             ITCLIB.Admin.SQL SelectQuery2 = new ITCLIB.Admin.SQL();
             oDataTable = SelectQuery2.query_data(SelectSQL2);
             if (oDataTable.Rows.Count != 0)
             {
-                C_KHOILUONGLK = int.Parse(oDataTable.Rows[0]["C_KHOILUONG"].ToString());
-                GIACUOCLK = int.Parse(oDataTable.Rows[0]["C_CUOCPHI"].ToString());
+                C_KHOILUONGLK = decimal.Parse(oDataTable.Rows[0]["C_KHOILUONG"].ToString(), NumberStyles.Currency);
+                GIACUOCLK = decimal.Parse(oDataTable.Rows[0]["C_CUOCPHI"].ToString(), NumberStyles.Currency);
             }
 
         }
@@ -359,23 +360,23 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
                         {
                             if (C_KHOILUONG <= int.Parse(ctcDataTable.Rows[0]["C_KHOILUONG"].ToString()))
                             {
-                                CUOCCHINH = int.Parse(ctcDataTable.Rows[0]["C_CUOCPHI"].ToString());
+                                CUOCCHINH = decimal.Parse(ctcDataTable.Rows[0]["C_CUOCPHI"].ToString(), NumberStyles.Currency);
                             }
                         }
                         else
                         {
                             if (C_KHOILUONG <= int.Parse(ctcDataTable.Rows[i]["C_KHOILUONG"].ToString()) && C_KHOILUONG <= int.Parse(ctcDataTable.Rows[i - 1]["C_KHOILUONG"].ToString()))
                             {
-                                CUOCCHINH = int.Parse(ctcDataTable.Rows[i]["C_CUOCPHI"].ToString());
+                                CUOCCHINH = decimal.Parse(ctcDataTable.Rows[i]["C_CUOCPHI"].ToString(), NumberStyles.Currency);
                                 check = false;
                             }
                             else if (C_KHOILUONG >= int.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count -1]["C_KHOILUONG"].ToString()))
                             {
-                                if (((C_KHOILUONG - int.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count -1]["C_KHOILUONG"].ToString())) % C_KHOILUONGLK) == 0)
+                                if (((C_KHOILUONG - int.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_KHOILUONG"].ToString())) % C_KHOILUONGLK) == 0)
                                 {
-                                    CUOCCHINH = int.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_CUOCPHI"].ToString()) + ((C_KHOILUONG - int.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_KHOILUONG"].ToString())) / C_KHOILUONGLK) * GIACUOCLK;
+                                    CUOCCHINH = decimal.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_CUOCPHI"].ToString(), NumberStyles.Currency) + ((C_KHOILUONG - int.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_KHOILUONG"].ToString())) / C_KHOILUONGLK) * GIACUOCLK;
                                 }else{
-                                    CUOCCHINH = int.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_CUOCPHI"].ToString()) + (((C_KHOILUONG - int.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_KHOILUONG"].ToString())) / C_KHOILUONGLK) + 1) * GIACUOCLK;
+                                    CUOCCHINH = decimal.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_CUOCPHI"].ToString(), NumberStyles.Currency) + (((C_KHOILUONG - int.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_KHOILUONG"].ToString())) / C_KHOILUONGLK) + 1) * GIACUOCLK;
                                 }
                                 check = false;
                             }
@@ -383,6 +384,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
                     }
                 }
             }
+            TONGCUOC = CUOCCHINH + ((CUOCCHINH * PPXD) / 100) + DVPT;
         }
         if (Alarm != "")
         {
@@ -496,6 +498,15 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
             GridEditableItem editItem = (GridEditableItem)e.Item;
             HiddenField txtID = (HiddenField)editItem.FindControl("txtID");
             Session["txtID"] = (txtID.Value != "") ? txtID.Value : "0";
+            HiddenField hfTinhThanh = (HiddenField)editItem.FindControl("hfTinhThanh");
+            HiddenField hfQuanHuyen = (HiddenField)editItem.FindControl("hfQuanHuyen");
+            QUANHUYENDataSource.SelectCommand = LoadFilteredManually(hfQuanHuyen.Value);
+            RadComboBox cmbTinhThanh = (RadComboBox)editItem.FindControl("cmbTinhThanh");
+            RadComboBox cmbQuanHuyen = (RadComboBox)editItem.FindControl("cmbQuanHuyen");
+            cmbTinhThanh.SelectedValue = hfTinhThanh.Value;
+            QUANHUYENDataSource.SelectCommand = LoadFilteredManually(hfTinhThanh.Value);
+            cmbQuanHuyen.DataBind();
+            cmbQuanHuyen.SelectedValue = hfQuanHuyen.Value;
             if (e.Item is GridEditFormInsertItem || e.Item is GridDataInsertItem)
             {
                 // insert item
@@ -548,6 +559,12 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
                     RadGridNHANGUI.Rebind();
                 }
             }
+        }
+        else if (e.CommandName == RadGrid.PerformInsertCommandName)
+        {                
+        }
+        else if (e.CommandName == RadGrid.UpdateCommandName)
+        {
         }
     }
     protected string getmaxid(string table)
@@ -650,6 +667,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
     }
     protected void Button1_Click(object sender, EventArgs e)
     {
+        Response.Write(Session["test"].ToString());
         ITCLIB.Admin.JavaScript.ShowMessage(Session["test"].ToString(), this);
     }
 }

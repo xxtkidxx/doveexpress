@@ -1238,7 +1238,32 @@ namespace ITCLIB
                 }
                 return Result;
             }
+            public static string LoadIDTinhThanhCode(string Code)
+            {
+                string Result = "";
+                if (Code != "")
+                {
+                    string SelectSQL = "SELECT DMTINHTHANH.PK_ID FROM DMTINHTHANH LEFT OUTER JOIN DMQUANHUYEN ON DMTINHTHANH.PK_ID = DMQUANHUYEN.FK_TINHTHANH WHERE DMQUANHUYEN.C_CODE = '" + Code + "'";
+                    ITCLIB.Admin.SQL rs = new ITCLIB.Admin.SQL();
+                    DataTable oDataTable = rs.query_data(SelectSQL);
 
+                    if (oDataTable.Rows.Count != 0)
+                    {
+                        for (int i = 0; i < oDataTable.Rows.Count; i++)
+                        {
+                            if (i == 0)
+                            {
+                                Result += oDataTable.Rows[i]["PK_ID"].ToString();
+                            }
+                            else
+                            {
+                                Result += "-" + oDataTable.Rows[i]["PK_ID"].ToString();
+                            }
+                        }
+                    }
+                }
+                return Result;
+            }
         }
     }
     namespace Controls
