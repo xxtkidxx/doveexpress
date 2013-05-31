@@ -68,46 +68,11 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
         RadNumericTextBox txtPPXD = (RadNumericTextBox)editableItem.FindControl("txtPPXD");
         RadTextBox txtCODE = (RadTextBox)editableItem.FindControl("txtCODE");
         RadAutoCompleteBox radautoC_MAKH = (RadAutoCompleteBox)editableItem.FindControl("radautoC_MAKH");
-        RadAutoCompleteBox radautoC_TENKH = (RadAutoCompleteBox)editableItem.FindControl("radautoC_TENKH");    
+        RadAutoCompleteBox radautoC_TENKH = (RadAutoCompleteBox)editableItem.FindControl("radautoC_TENKH");
+        RadNumericTextBox txtC_KHOILUONG = (RadNumericTextBox)editableItem.FindControl("txtC_KHOILUONG");
+        C_KHOILUONG = (txtC_KHOILUONG.Text != "") ? int.Parse(txtC_KHOILUONG.Text) : 0;
         string[] arrayvalue = e.Argument.Split(';');
-        if (arrayvalue[0] == "cmbSanPham")
-        {
-            FK_DICHVU = arrayvalue[1];
-            string SelectSQL1;
-            SelectSQL1 = "Select DMMASANPHAM.C_PPXD FROM DMMASANPHAM WHERE DMMASANPHAM.PK_ID = " + arrayvalue[1] + "";
-            DataTable oDataTable1 = new DataTable();
-            ITCLIB.Admin.SQL SelectQuery1 = new ITCLIB.Admin.SQL();
-            oDataTable1 = SelectQuery1.query_data(SelectSQL1);
-            if (oDataTable1.Rows.Count != 0)
-            {
-                if (oDataTable1.Rows[0]["C_PPXD"] != DBNull.Value)
-                {
-                    PPXD = float.Parse(oDataTable1.Rows[0]["C_PPXD"].ToString());
-                }
-            }
-            else
-            {
-                //txtPPXD.Text = "0";
-            }
-            if (FK_QUANHUYEN != "")
-            {
-                string SelectSQL;
-                SelectSQL = "Select DMMAVUNG.PK_ID FROM DMMAVUNG WHERE FK_MASANPHAM=" + FK_DICHVU + " AND C_TYPE = 1 AND ((DMMAVUNG.C_DESC ='" + FK_QUANHUYEN + "') OR (DMMAVUNG.C_DESC LIKE '%," + FK_QUANHUYEN + ",%') OR (DMMAVUNG.C_DESC LIKE '%," + FK_QUANHUYEN + "') OR (DMMAVUNG.C_DESC LIKE '" + FK_QUANHUYEN + ",%'))";
-                DataTable oDataTable = new DataTable();
-                ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
-                oDataTable = SelectQuery.query_data(SelectSQL);
-                if (oDataTable.Rows.Count != 0)
-                {
-                    FK_MAVUNG = oDataTable.Rows[0]["PK_ID"].ToString();
-                }
-                else
-                {
-                    //FK_MAVUNG = "0";
-                    Alarm = "Quận huyện này không nằm trong vùng tính cước nào";
-                }
-            }
-        }
-        else if (arrayvalue[0] == "cmbNhomKhachHang")
+        if (arrayvalue[0] == "cmbNhomKhachHang")
         {
             //KHACHHANGDataSource.SelectCommand = "SELECT DMKHACHHANG.* FROM DMKHACHHANG WHERE FK_NHOMKHACHHANG =" + arrayvalue[1];
             //radautoC_MAKH.DataBind();
@@ -134,6 +99,44 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
             {
                 string SelectSQL;
                 SelectSQL = "Select DMMAVUNG.PK_ID FROM DMMAVUNG WHERE FK_MASANPHAM=" + FK_DICHVU + " AND C_TYPE = 1 AND ((DMMAVUNG.C_DESC ='" + FK_QUANHUYEN + "') OR (DMMAVUNG.C_DESC LIKE '%," + FK_QUANHUYEN + ",%') OR (DMMAVUNG.C_DESC LIKE '%," + FK_QUANHUYEN + "') OR (DMMAVUNG.C_DESC LIKE '" + FK_QUANHUYEN + ",%'))";
+                DataTable oDataTable = new DataTable();
+                ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
+                oDataTable = SelectQuery.query_data(SelectSQL);
+                if (oDataTable.Rows.Count != 0)
+                {
+                    FK_MAVUNG = oDataTable.Rows[0]["PK_ID"].ToString();                  
+                }
+                else
+                {
+                    //FK_MAVUNG = "0";
+                    Alarm = "Quận huyện này không nằm trong vùng tính cước nào";
+                }
+            }
+        }
+        else if (arrayvalue[0] == "cmbSanPham")
+        {
+            FK_DICHVU = arrayvalue[1];
+            string SelectSQL1;
+            SelectSQL1 = "Select DMMASANPHAM.C_PPXD FROM DMMASANPHAM WHERE DMMASANPHAM.PK_ID = " + arrayvalue[1] + "";
+            DataTable oDataTable1 = new DataTable();
+            ITCLIB.Admin.SQL SelectQuery1 = new ITCLIB.Admin.SQL();
+            oDataTable1 = SelectQuery1.query_data(SelectSQL1);
+            if (oDataTable1.Rows.Count != 0)
+            {
+                if (oDataTable1.Rows[0]["C_PPXD"] != DBNull.Value)
+                {
+                    PPXD = float.Parse(oDataTable1.Rows[0]["C_PPXD"].ToString());
+                }
+            }
+            else
+            {
+                //txtPPXD.Text = "0";
+            }
+            if (FK_QUANHUYEN != "")
+            {
+                string SelectSQL;
+                SelectSQL = "Select DMMAVUNG.PK_ID FROM DMMAVUNG WHERE FK_MASANPHAM=" + FK_DICHVU + " AND C_TYPE = 1 AND ((DMMAVUNG.C_DESC ='" + FK_QUANHUYEN + "') OR (DMMAVUNG.C_DESC LIKE '%," + FK_QUANHUYEN + ",%') OR (DMMAVUNG.C_DESC LIKE '%," + FK_QUANHUYEN + "') OR (DMMAVUNG.C_DESC LIKE '" + FK_QUANHUYEN + ",%'))";
+
                 DataTable oDataTable = new DataTable();
                 ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
                 oDataTable = SelectQuery.query_data(SelectSQL);
