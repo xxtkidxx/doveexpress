@@ -113,6 +113,7 @@ public partial class module_NHANGUIDVPT : System.Web.UI.UserControl
             GridFooterItem footerItem = (GridFooterItem)e.Item;
             RadNumericTextBox lblTongtien = footerItem["C_GIATIEN"].FindControl("lblTongtien") as RadNumericTextBox;
             lblTongtien.DbValue = Double.Parse(total.ToString());
+            Session["DVPT"] = Double.Parse(total.ToString());
         }
     }
     protected bool ValidateDeleteNHANGUIDVPT(string guID)

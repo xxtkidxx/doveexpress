@@ -1,0 +1,235 @@
+Thời gian lỗi : 2013-05-31 16:10:41 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:d:\Dropbox\Work\2013\DoveExpress\module\NHANGUI.ascx.cs(97): error CS0029: Cannot implicitly convert type 'int' to 'string'
+__________________________
+Thời gian lỗi : 2013-05-31 16:42:12 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Input string was not in a correct format.
+__________________________
+Thời gian lỗi : 2013-05-31 16:42:16 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-05-31 16:42:18 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Input string was not in a correct format.
+__________________________
+Thời gian lỗi : 2013-05-31 16:44:06 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-05-31 16:53:48 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Input string was not in a correct format.
+__________________________
+Thời gian lỗi : 2013-05-31 16:53:51 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Input string was not in a correct format.
+__________________________
+Thời gian lỗi : 2013-05-31 16:53:52 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Input string was not in a correct format.
+__________________________
+Thời gian lỗi : 2013-05-31 16:53:56 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Input string was not in a correct format.
+__________________________
+Thời gian lỗi : 2013-05-31 16:54:00 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Input string was not in a correct format.
+__________________________
+Thời gian lỗi : 2013-05-31 16:54:01 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Input string was not in a correct format.
+__________________________
+Thời gian lỗi : 2013-05-31 16:57:33 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Input string was not in a correct format.
+__________________________
+Thời gian lỗi : 2013-05-31 16:57:35 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Input string was not in a correct format.
+__________________________
+Thời gian lỗi : 2013-05-31 16:57:38 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Input string was not in a correct format.
+__________________________
+Thời gian lỗi : 2013-05-31 16:57:41 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Input string was not in a correct format.
+__________________________
+Thời gian lỗi : 2013-05-31 16:57:46 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Input string was not in a correct format.
+__________________________
+Thời gian lỗi : 2013-05-31 16:58:44 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Input string was not in a correct format.
+__________________________
+Thời gian lỗi : 2013-05-31 16:59:41 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Input string was not in a correct format.
+__________________________
+Thời gian lỗi : 2013-05-31 17:03:15 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Input string was not in a correct format.
+__________________________
+Thời gian lỗi : 2013-05-31 17:03:17 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Input string was not in a correct format.
+__________________________
+Thời gian lỗi : 2013-05-31 17:03:18 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Input string was not in a correct format.
+__________________________
+Thời gian lỗi : 2013-05-31 17:07:03 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/Grid/Update.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-05-31 17:07:03 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/Grid/Edit.gif. 
+Nội dung lỗi:The process cannot access the file 'D:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\5\31.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-05-31 17:07:05 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/Grid/Cancel.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-05-31 17:07:05 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/Grid/AddRecord.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-05-31 17:07:05 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/Grid/Insert.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-05-31 17:07:05 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/Grid/Delete.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-05-31 17:07:05 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/Grid/Refresh.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-05-31 17:07:06 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/Grid/pdf.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-05-31 17:07:06 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/Grid/word.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-05-31 17:07:06 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/Grid/excel.gif. 
+Nội dung lỗi:The process cannot access the file 'D:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\5\31.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-05-31 17:07:06 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/Grid/csv.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-05-31 17:07:06 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/img_save.jpg. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-05-31 17:07:06 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/img_Close.jpg. 
+Nội dung lỗi:The process cannot access the file 'D:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\5\31.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-05-31 17:09:41 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-05-31 17:15:35 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Input string was not in a correct format.
+__________________________
+Thời gian lỗi : 2013-05-31 17:24:12 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-05-31 21:47:00 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Input string was not in a correct format.
+__________________________
+Thời gian lỗi : 2013-05-31 21:48:21 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\module\NHANGUI.ascx.cs(335): error CS1002: ; expected
+__________________________
+Thời gian lỗi : 2013-05-31 21:48:57 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Input string was not in a correct format.
+__________________________
+Thời gian lỗi : 2013-05-31 21:51:37 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Input string was not in a correct format.
+__________________________
+Thời gian lỗi : 2013-05-31 21:51:39 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Input string was not in a correct format.
+__________________________
+Thời gian lỗi : 2013-05-31 21:51:42 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Input string was not in a correct format.
+__________________________
+Thời gian lỗi : 2013-05-31 21:53:30 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\module\NHANGUI.ascx.cs(386): error CS1525: Invalid expression term '/'
+__________________________
+Thời gian lỗi : 2013-05-31 21:54:03 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Input string was not in a correct format.
+__________________________
+Thời gian lỗi : 2013-05-31 21:54:07 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Input string was not in a correct format.
+__________________________
+Thời gian lỗi : 2013-05-31 21:54:08 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Input string was not in a correct format.
+__________________________
