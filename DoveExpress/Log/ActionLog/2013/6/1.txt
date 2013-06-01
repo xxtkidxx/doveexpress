@@ -82,3 +82,9 @@ Tài khoản : 1
 Module : Updated NHANGUIs
 Kết quả : {PK_ID:"3"}
 __________________________
+Thời gian: 2013-06-01 21:51:44 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {PK_ID:"3"}
+__________________________
