@@ -364,18 +364,40 @@
                             <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
                     </telerik:RadNumericTextBox>
                 </td>                
-                <td style =" width:100px;"> <span class="rtsTxtnew">DV phụ trội:</td>
-                <td colspan="8">
-                   
+                <td style =" width:100px;"><span class="rtsTxtnew">DV đóng gói:</td>
+                <td colspan="4">
+                    <telerik:RadNumericTextBox  ID="txtC_DONGGOI" Width ="90%" Runat="server" Text='<%# Bind("C_DONGGOI") %>' ClientEvents-OnLoad="OnClientLoadtxtC_GIACUOC">
+                            <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
+                    </telerik:RadNumericTextBox>
                 </td>
-            </tr
-            <tr>     
+                <td style =" width:100px;"><span class="rtsTxtnew">DV khai giá:</td>
+                <td colspan="4">
+                    <telerik:RadNumericTextBox  ID="txtC_KHAIGIA" Width ="90%" Runat="server" Text='<%# Bind("C_KHAIGIA") %>' ClientEvents-OnLoad="OnClientLoadtxtC_GIACUOC">
+                            <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
+                    </telerik:RadNumericTextBox>
+                </td>
+            </tr>
+            <tr>                
+                <td style =" width:100px;"> <span class="rtsTxtnew">DV COD:</span></td>
+                <td colspan="4">
+                    <telerik:RadNumericTextBox  ID="txtC_COD" Width ="90%" Runat="server" Text='<%# Bind("C_COD") %>' ClientEvents-OnLoad="OnClientLoadtxtC_GIACUOC">
+                            <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
+                    </telerik:RadNumericTextBox>
+                </td>                
+                <td style =" width:100px;"><span class="rtsTxtnew">DV khác:</td>
+                <td colspan="4">
+                    <telerik:RadNumericTextBox  ID="txtC_KHAC" Width ="90%" Runat="server" Text='<%# Bind("C_KHAC") %>' ClientEvents-OnLoad="OnClientLoadtxtC_GIACUOC">
+                            <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
+                    </telerik:RadNumericTextBox>
+                </td>
                 <td style =" width:100px;"><span class="rtsTxtnew">Tổng cước:</span></td>
                 <td colspan="4">
                     <telerik:RadNumericTextBox  ID="txtC_TIENHANG" Width ="90%" Runat="server" Text='<%# Bind("C_TIENHANG") %>' ClientEvents-OnLoad="OnClientLoadtxtC_TIENHANG">
                             <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
                     </telerik:RadNumericTextBox>
-                </td>           
+                </td>  
+            </tr>
+            <tr>                         
                 <td style =" width:100px;"> <span class="rtsTxtnew">HTTT:</span></td>
                 <td colspan="4">
                  <telerik:RadComboBox ID="cmbC_HINHTHUCTT" SelectedValue='<%# Bind("C_HINHTHUCTT") %>' runat="server" EmptyMessage="Chọn">
@@ -393,14 +415,14 @@
                             <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
                     </telerik:RadNumericTextBox>
                 </td>
-            </tr
-            <tr>
                 <td style =" width:100px;"> <span class="rtsTxtnew">Còn lại:</span></td>
                 <td colspan="4">
                     <telerik:RadNumericTextBox  ID="txtC_CONLAI" Width ="90%" Runat="server" ClientEvents-OnLoad="OnClientLoadtxtC_CONLAI">
                             <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
                     </telerik:RadNumericTextBox>
                 </td>
+            </tr
+            <tr>                
                 <td style =" width:100px;"><span class="rtsTxtnew">Nhân viên nhận:</span></td>
                 <td colspan="4">
                     <telerik:RadComboBox ID="cmbFK_NHANVIENNHAN" runat="server" SelectedValue='<%# Bind("FK_NHANVIENNHAN") %>'
@@ -415,14 +437,14 @@
                     ShowToggleImage="True" EmptyMessage="Chọn">
                     </telerik:RadComboBox>
                 </td>
-            </tr>
-            <tr>
-             <td style =" width:100px;"><span class="rtsTxtnew">Giá đối tác:</span></td>
+                <td style =" width:100px;"><span class="rtsTxtnew">Giá đối tác:</span></td>
                 <td colspan="4">
                      <telerik:RadNumericTextBox  ID="txtC_GIADOITAC" Width ="90%" Runat="server" Text='<%# Bind("C_GIADOITAC") %>'>
                             <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
                     </telerik:RadNumericTextBox>
                 </td>
+            </tr>
+            <tr>
                 <td style =" width:100px;"> <span class="rtsTxtnew">Nhân viên phát:</span></td>
                 <td colspan="4">
                     <telerik:RadComboBox ID="cmbFK_NHANVIENPHAT" runat="server" SelectedValue='<%# Bind("FK_NHANVIENPHAT") %>'
@@ -438,15 +460,15 @@
                         </DateInput>
                     </telerik:RadDateTimePicker>
                 </td>
-            </tr>
-             <tr>
-             <td style =" width:100px;"><span class="rtsTxtnew">Nhân viên khai thác:</span></td>
+                <td style =" width:100px;"><span class="rtsTxtnew">Nhân viên KT:</span></td>
                 <td colspan="4">
                     <telerik:RadComboBox ID="cmbFK_NHANVIENKHAITHAC" runat="server" SelectedValue='<%# Bind("FK_NHANVIENKHAITHAC") %>'
                     DataTextField="C_NAME" DataValueField="PK_ID" DataSourceID="UserDataSource"
                     ShowToggleImage="True" EmptyMessage="Chọn">
                     </telerik:RadComboBox>
              </td>
+            </tr>
+             <tr>             
              <td style =" width:100px;"><span class="rtsTxtnew">Người ký nhận:</span></td>
                 <td colspan="4">
                      <telerik:RadTextBox ID="txtC_NGUOIKYNHAN" Width ="90%" Text='<%# Bind("C_NGUOIKYNHAN") %>' runat="server"></telerik:RadTextBox>
