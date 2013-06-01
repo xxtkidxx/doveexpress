@@ -87,50 +87,6 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
             Session["CUOCCHINH"] = value;
         }
     }
-    private decimal DVPT
-    {
-        get
-        {
-            return int.Parse(Session["DVPT"].ToString());
-        }
-        set
-        {
-            Session["DVPT"] = value;
-        }
-    }
-    private decimal TONGCUOC
-    {
-        get
-        {
-            return int.Parse(Session["TONGCUOC"].ToString());
-        }
-        set
-        {
-            Session["TONGCUOC"] = value;
-        }
-    }
-    private decimal DATHU
-    {
-        get
-        {
-            return decimal.Parse(Session["DATHU"].ToString());
-        }
-        set
-        {
-            Session["DATHU"] = value;
-        }
-    }
-    private decimal CONLAI
-    {
-        get
-        {
-            return int.Parse(Session["CONLAI"].ToString());
-        }
-        set
-        {
-            Session["CONLAI"] = value;
-        }
-    }
     private string FK_DOITAC
     {
         get
@@ -214,26 +170,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
         Session["LastUrl"] = Request.Url.ToString();
         RadAjaxManager ajaxManager = RadAjaxManager.GetCurrent(Page);
         ajaxManager.AjaxRequest += new RadAjaxControl.AjaxRequestDelegate(RadScriptManager_AjaxRequestNG);
-        ajaxManager.ClientEvents.OnResponseEnd = "onResponseEndNG";
-        if (!IsPostBack)
-        {
-            FK_DICHVU = "";
-            FK_MABANGCUOC = "";
-            FK_QUANHUYEN = "";
-            FK_MAVUNG = "";
-            C_KHOILUONG = 0;
-            PPXD = 0;
-            CUOCCHINH = 0;
-            DVPT = 0;
-            TONGCUOC = 0;
-            DATHU = 0;
-            CONLAI = 0;
-            FK_DOITAC = "";
-            GIADOITAC = 0;
-            ctcDataTable = new DataTable();
-            C_KHOILUONGLK= 0;
-            GIACUOCLK = 0;
-        }
+        ajaxManager.ClientEvents.OnResponseEnd = "onResponseEndNG";        
     }
     protected void RadScriptManager_AjaxRequestNG(object sender, AjaxRequestEventArgs e)
     {        
@@ -384,7 +321,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
                     }
                 }
             }
-            TONGCUOC = CUOCCHINH + ((CUOCCHINH * PPXD) / 100) + DVPT;
+            //CUOCCHINH = CUOCCHINH + ((CUOCCHINH * PPXD) / 100);
         }
         if (Alarm != "")
         {
@@ -393,7 +330,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
         }
         else
         {
-            string script = string.Format("var result = '{0}'",PPXD + "," + CUOCCHINH + "," + DVPT + "," + TONGCUOC + "," + DATHU + "," + CONLAI + "," + FK_DOITAC + "," + GIADOITAC);
+            string script = string.Format("var result = '{0}'",PPXD + "," + CUOCCHINH + "," + FK_DOITAC + "," + GIADOITAC);
             ScriptManager.RegisterClientScriptBlock(Page, typeof(Page), "result", script, true);
         }
     }
@@ -496,6 +433,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
         if (e.Item is GridEditableItem && e.Item.IsInEditMode)
         {
             GridEditableItem editItem = (GridEditableItem)e.Item;
+            RadDatePicker radNgaynhangui = (RadDatePicker)editItem.FindControl("radNgaynhangui");
             HiddenField txtID = (HiddenField)editItem.FindControl("txtID");
             Session["txtID"] = (txtID.Value != "") ? txtID.Value : "0";
             HiddenField hfTinhThanh = (HiddenField)editItem.FindControl("hfTinhThanh");
@@ -507,18 +445,81 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
             QUANHUYENDataSource.SelectCommand = LoadFilteredManually(hfTinhThanh.Value);
             cmbQuanHuyen.DataBind();
             cmbQuanHuyen.SelectedValue = hfQuanHuyen.Value;
+            RadNumericTextBox txtPPXD = (RadNumericTextBox)editItem.FindControl("txtPPXD");
+            RadTextBox txtCODE = (RadTextBox)editItem.FindControl("txtCODE");
+            RadAutoCompleteBox radautoC_MAKH = (RadAutoCompleteBox)editItem.FindControl("radautoC_MAKH");
+            RadAutoCompleteBox radautoC_TENKH = (RadAutoCompleteBox)editItem.FindControl("radautoC_TENKH");
+            RadNumericTextBox txtC_KHOILUONG = (RadNumericTextBox)editItem.FindControl("txtC_KHOILUONG");
+            RadComboBox cmbNhomKhachHang = (RadComboBox)editItem.FindControl("cmbNhomKhachHang ");
+            RadComboBox cmbSanPham = (RadComboBox)editItem.FindControl("cmbSanPham");
+            RadNumericTextBox txtC_GIACUOC = (RadNumericTextBox)editItem.FindControl("txtC_GIACUOC");
+            RadNumericTextBox txtC_DONGGOI = (RadNumericTextBox)editItem.FindControl("txtC_DONGGOI");
+            RadNumericTextBox txtC_KHAIGIA = (RadNumericTextBox)editItem.FindControl("txtC_KHAIGIA");
+            RadNumericTextBox txtC_COD = (RadNumericTextBox)editItem.FindControl("txtC_COD");
+            RadNumericTextBox txtC_KHAC = (RadNumericTextBox)editItem.FindControl("txtC_KHAC");
+            RadNumericTextBox txtC_TIENHANG = (RadNumericTextBox)editItem.FindControl("txtC_TIENHANG");
+            RadNumericTextBox txtC_DATHU = (RadNumericTextBox)editItem.FindControl("txtC_DATHU");
+            RadNumericTextBox txtC_CONLAI = (RadNumericTextBox)editItem.FindControl("txtC_CONLAI");
             if (e.Item is GridEditFormInsertItem || e.Item is GridDataInsertItem)
             {
                 // insert item
-                RadDatePicker radNgaynhangui = (RadDatePicker)editItem.FindControl("radNgaynhangui");
                 radNgaynhangui.SelectedDate = System.DateTime.Now;
-                RadTextBox txtCODE = (RadTextBox)editItem.FindControl("txtCODE");
                 txtCODE.Text = GetMaxBill();
 
             }
             else
             {
                 // edit item
+                txtC_CONLAI.Text = (decimal.Parse(txtC_TIENHANG.Text) - decimal.Parse(txtC_DATHU.Text)).ToString();
+                string SelectSQL1;
+                SelectSQL1 = "Select DMMASANPHAM.C_PPXD FROM DMMASANPHAM WHERE DMMASANPHAM.PK_ID = " + cmbSanPham.SelectedValue + "";
+                DataTable oDataTable1 = new DataTable();
+                ITCLIB.Admin.SQL SelectQuery1 = new ITCLIB.Admin.SQL();
+                oDataTable1 = SelectQuery1.query_data(SelectSQL1);
+                if (oDataTable1.Rows.Count != 0)
+                {
+                    if (oDataTable1.Rows[0]["C_PPXD"] != DBNull.Value)
+                    {
+                        txtPPXD.Text = oDataTable1.Rows[0]["C_PPXD"].ToString();
+                    }
+                }
+                FK_DICHVU = cmbSanPham.SelectedValue;
+                FK_QUANHUYEN = hfQuanHuyen.Value;
+                string FK_NHOMKHACHHANG = "1";//(cmbNhomKhachHang.SelectedIndex.ToString() != "Chọn nhóm") ? cmbNhomKhachHang.SelectedValue : " ";
+                string SelectSQL2;
+                SelectSQL2 = "Select DMMABANGCUOC.PK_ID FROM DMMABANGCUOC WHERE (DMMABANGCUOC.C_VALUE ='" + FK_NHOMKHACHHANG + "') OR (DMMABANGCUOC.C_VALUE LIKE '%," + FK_NHOMKHACHHANG + ",%') OR (DMMABANGCUOC.C_VALUE LIKE '%," + FK_NHOMKHACHHANG + "') OR (DMMABANGCUOC.C_VALUE LIKE '" + FK_NHOMKHACHHANG + ",%')";
+                DataTable oDataTable2 = new DataTable();
+                ITCLIB.Admin.SQL SelectQuery2 = new ITCLIB.Admin.SQL();
+                oDataTable2 = SelectQuery2.query_data(SelectSQL2);
+                if (oDataTable2.Rows.Count != 0)
+                {
+                    FK_MABANGCUOC = oDataTable2.Rows[0]["PK_ID"].ToString();
+                }
+                else
+                {
+                    FK_MABANGCUOC = "0";
+                }               
+                string SelectSQL3;
+                SelectSQL3 = "Select DMMAVUNG.PK_ID FROM DMMAVUNG WHERE FK_MASANPHAM=" + FK_DICHVU + " AND C_TYPE = 1 AND ((DMMAVUNG.C_DESC ='" + FK_QUANHUYEN + "') OR (DMMAVUNG.C_DESC LIKE '%," + FK_QUANHUYEN + ",%') OR (DMMAVUNG.C_DESC LIKE '%," + FK_QUANHUYEN + "') OR (DMMAVUNG.C_DESC LIKE '" + FK_QUANHUYEN + ",%'))";
+                DataTable oDataTable3 = new DataTable();
+                ITCLIB.Admin.SQL SelectQuery3 = new ITCLIB.Admin.SQL();
+                oDataTable3 = SelectQuery3.query_data(SelectSQL3);
+                if (oDataTable3.Rows.Count != 0)
+                {
+                    FK_MAVUNG = oDataTable3.Rows[0]["PK_ID"].ToString();
+                }
+                else
+                {
+                    FK_MAVUNG = "0";
+                }
+                C_KHOILUONG = decimal.Parse(txtC_KHOILUONG.Text);
+                PPXD = decimal.Parse(txtPPXD.Text);
+                CUOCCHINH = decimal.Parse(txtC_GIACUOC.Text);
+                FK_DOITAC = "";
+                GIADOITAC = 0;
+                ctcDataTable = new DataTable();
+                C_KHOILUONGLK = 0;
+                GIACUOCLK = 0;                            
             }
         }
         if (e.Item is GridDataItem)
