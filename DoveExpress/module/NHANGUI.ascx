@@ -59,10 +59,21 @@
     function OnClientLoadtxtC_TIENHANG(sender) {
         txtC_TIENHANG = sender;
     }
-    function OnValueChangedtxtC_DATHU(sender, eventArgs) {
-        //$find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("txtC_DATHU;" + eventArgs.get_newValue());
-        txtC_CONLAI.set_value(txtC_TIENHANG.get_value() - eventArgs.get_newValue());
-        return false;
+    var txtC_DONGGOI;
+    function OnClientLoadtxtC_DONGGOI(sender) {
+        txtC_DONGGOI = sender;
+    }
+    var txtC_KHAIGIA;
+    function OnClientLoadtxtC_KHAIGIA(sender) {
+        txtC_KHAIGIA = sender;
+    }
+    var txtC_COD;
+    function OnClientLoadtxtC_COD(sender) {
+        txtC_COD = sender;
+    }
+    var txtC_KHAC;
+    function OnClientLoadtxtC_KHAC(sender) {
+        txtC_KHAC = sender;
     }
     var txtC_DATHU;
     function OnClientLoadtxtC_DATHU(sender) {
@@ -72,7 +83,36 @@
     function OnClientLoadtxtC_CONLAI(sender) {
         txtC_CONLAI = sender;
     }
-    
+     function OnValueChangedtxtC_GIACUOC(sender, eventArgs) {
+        //$find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("txtC_DATHU;" + eventArgs.get_newValue());
+        txtC_TIENHANG.set_value(txtC_GIACUOC.get_value() + txtC_KHAC.get_value() + txtC_COD.get_value() + txtC_KHAIGIA.get_value() + txtC_DONGGOI.get_value());
+        return false;
+    }
+     function OnValueChangedtxtC_DONGGOI(sender, eventArgs) {
+        //$find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("txtC_DATHU;" + eventArgs.get_newValue());
+        txtC_TIENHANG.set_value(txtC_GIACUOC.get_value() + txtC_KHAC.get_value() + txtC_COD.get_value() + txtC_KHAIGIA.get_value() + txtC_DONGGOI.get_value());
+        return false;
+    }
+     function OnValueChangedtxtC_KHAIGIA(sender, eventArgs) {
+        //$find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("txtC_DATHU;" + eventArgs.get_newValue());
+        txtC_TIENHANG.set_value(txtC_GIACUOC.get_value() + txtC_KHAC.get_value() + txtC_COD.get_value() + txtC_KHAIGIA.get_value() + txtC_DONGGOI.get_value());
+        return false;
+    }
+     function OnValueChangedtxtC_COD(sender, eventArgs) {
+        //$find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("txtC_DATHU;" + eventArgs.get_newValue());
+        txtC_TIENHANG.set_value(txtC_GIACUOC.get_value() + txtC_KHAC.get_value() + txtC_COD.get_value() + txtC_KHAIGIA.get_value() + txtC_DONGGOI.get_value());
+        return false;
+    }
+     function OnValueChangedtxtC_KHAC(sender, eventArgs) {
+        //$find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("txtC_DATHU;" + eventArgs.get_newValue());
+        txtC_TIENHANG.set_value(txtC_GIACUOC.get_value() + txtC_KHAC.get_value() + txtC_COD.get_value() + txtC_KHAIGIA.get_value() + txtC_DONGGOI.get_value());
+        return false;
+    }
+    function OnValueChangedtxtC_DATHU(sender, eventArgs) {
+        //$find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("txtC_DATHU;" + eventArgs.get_newValue());
+        txtC_CONLAI.set_value(txtC_TIENHANG.get_value() - eventArgs.get_newValue());
+        return false;
+    }    
 </script>
 <script type="text/javascript">
      function onResponseEndNG() {
@@ -81,7 +121,7 @@
              var arrayOfStrings = result.split(",");
              txtPPXD.set_value(arrayOfStrings[0]);
              txtC_GIACUOC.set_value(arrayOfStrings[1]);
-             txtC_TIENHANG.set_value(arrayOfStrings[3]);
+             //txtC_TIENHANG.set_value(arrayOfStrings[3]);
              result = "";
          }
          return false;
@@ -360,19 +400,21 @@
             <tr>                
                 <td style =" width:100px;"> <span class="rtsTxtnew">Cước chính:</span></td>
                 <td colspan="4">
-                    <telerik:RadNumericTextBox  ID="txtC_GIACUOC" Width ="90%" Runat="server" Text='<%# Bind("C_GIACUOC") %>' ClientEvents-OnLoad="OnClientLoadtxtC_GIACUOC">
+                    <telerik:RadNumericTextBox  ID="txtC_GIACUOC" Width ="90%" Runat="server" Text='<%# Bind("C_GIACUOC") %>' ClientEvents-OnLoad="OnClientLoadtxtC_GIACUOC" ClientEvents-OnValueChanged="OnValueChangedtxtC_GIACUOC">
                             <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
                     </telerik:RadNumericTextBox>
                 </td>                
                 <td style =" width:100px;"><span class="rtsTxtnew">DV đóng gói:</td>
                 <td colspan="4">
-                    <telerik:RadNumericTextBox  ID="txtC_DONGGOI" Width ="90%" Runat="server" Text='<%# Bind("C_DONGGOI") %>' ClientEvents-OnLoad="OnClientLoadtxtC_GIACUOC">
+                    <telerik:RadNumericTextBox  ID="txtC_DONGGOI" Width ="90%" Runat="server" Text='<%# Bind("C_DONGGOI") %>' ClientEvents-OnLoad="OnClientLoadtxtC_DONGGOI" ClientEvents-OnValueChanged="OnValueChangedtxtC_DONGGOI">
+                            <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
                             <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
                     </telerik:RadNumericTextBox>
                 </td>
                 <td style =" width:100px;"><span class="rtsTxtnew">DV khai giá:</td>
                 <td colspan="4">
-                    <telerik:RadNumericTextBox  ID="txtC_KHAIGIA" Width ="90%" Runat="server" Text='<%# Bind("C_KHAIGIA") %>' ClientEvents-OnLoad="OnClientLoadtxtC_GIACUOC">
+                    <telerik:RadNumericTextBox  ID="txtC_KHAIGIA" Width ="90%" Runat="server" Text='<%# Bind("C_KHAIGIA") %>' ClientEvents-OnLoad="OnClientLoadtxtC_KHAIGIA" ClientEvents-OnValueChanged="OnValueChangedtxtC_KHAIGIA">
+                            <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
                             <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
                     </telerik:RadNumericTextBox>
                 </td>
@@ -380,13 +422,14 @@
             <tr>                
                 <td style =" width:100px;"> <span class="rtsTxtnew">DV COD:</span></td>
                 <td colspan="4">
-                    <telerik:RadNumericTextBox  ID="txtC_COD" Width ="90%" Runat="server" Text='<%# Bind("C_COD") %>' ClientEvents-OnLoad="OnClientLoadtxtC_GIACUOC">
+                    <telerik:RadNumericTextBox  ID="txtC_COD" Width ="90%" Runat="server" Text='<%# Bind("C_COD") %>' ClientEvents-OnLoad="OnClientLoadtxtC_COD" ClientEvents-OnValueChanged="OnValueChangedtxtC_COD">
+                            <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
                             <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
                     </telerik:RadNumericTextBox>
                 </td>                
                 <td style =" width:100px;"><span class="rtsTxtnew">DV khác:</td>
                 <td colspan="4">
-                    <telerik:RadNumericTextBox  ID="txtC_KHAC" Width ="90%" Runat="server" Text='<%# Bind("C_KHAC") %>' ClientEvents-OnLoad="OnClientLoadtxtC_GIACUOC">
+                    <telerik:RadNumericTextBox  ID="txtC_KHAC" Width ="90%" Runat="server" Text='<%# Bind("C_KHAC") %>' ClientEvents-OnLoad="OnClientLoadtxtC_KHAC" ClientEvents-OnValueChanged="OnValueChangedtxtC_KHAC">
                             <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
                     </telerik:RadNumericTextBox>
                 </td>

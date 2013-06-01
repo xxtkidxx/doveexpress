@@ -113,3 +113,23 @@ Thời gian lỗi : 2013-06-01 21:37:22 PM
 Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
 Nội dung lỗi:DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'FK_NHANVIENKHAITHAC'.
 __________________________
+Thời gian lỗi : 2013-06-01 21:53:46 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Input string was not in a correct format.
+__________________________
+Thời gian lỗi : 2013-06-01 23:31:11 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\module\NHANGUI.ascx.cs(536): error CS0136: A local variable named 'txtCODE' cannot be declared in this scope because it would give a different meaning to 'txtCODE', which is already used in a 'parent or current' scope to denote something else
+__________________________
+Thời gian lỗi : 2013-06-01 23:34:11 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Input string was not in a correct format.
+__________________________
+Thời gian lỗi : 2013-06-01 23:34:15 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Input string was not in a correct format.
+__________________________
