@@ -121,7 +121,6 @@
              var arrayOfStrings = result.split(",");
              txtPPXD.set_value(arrayOfStrings[0]);
              txtC_GIACUOC.set_value(arrayOfStrings[1]);
-             //txtC_TIENHANG.set_value(arrayOfStrings[3]);
              result = "";
          }
          return false;

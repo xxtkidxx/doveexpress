@@ -54,11 +54,11 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
             Session["FK_MAVUNG"] = value;
         }
     }
-    private decimal C_KHOILUONG
+    private int C_KHOILUONG
     {
         get
         {
-            return decimal.Parse(Session["C_KHOILUONG"].ToString());
+            return int.Parse(Session["C_KHOILUONG"].ToString());
         }
         set
         {
@@ -120,11 +120,11 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
             Session["ctcDataTable"] = value;
         }
     }
-    private decimal C_KHOILUONGLK
+    private int C_KHOILUONGLK
     {
         get
         {
-            return decimal.Parse(Session["C_KHOILUONGLK"].ToString());
+            return int.Parse(Session["C_KHOILUONGLK"].ToString());
         }
         set
         {
@@ -268,8 +268,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
         if ((FK_MABANGCUOC != "") && (FK_MAVUNG != ""))
         {
             string SelectSQL1;
-            SelectSQL1 = "Select DMCHITIETCUOC.PK_ID,DMCHITIETCUOC.C_KHOILUONG,DMCHITIETCUOC.C_CUOCPHI,DMCHITIETCUOC.C_TYPE FROM DMCHITIETCUOC WHERE FK_MABANGCUOC = " + FK_MABANGCUOC + " AND FK_MAVUNG = " + FK_MAVUNG + " AND C_TYPE <> 1 ORDER BY C_KHOILUONG";
-            Session["test"] = SelectSQL1;
+            SelectSQL1 = "Select DMCHITIETCUOC.PK_ID,DMCHITIETCUOC.C_KHOILUONG,DMCHITIETCUOC.C_CUOCPHI,DMCHITIETCUOC.C_TYPE FROM DMCHITIETCUOC WHERE FK_MABANGCUOC = " + FK_MABANGCUOC + " AND FK_MAVUNG = " + FK_MAVUNG + " AND C_TYPE <> 1 ORDER BY C_KHOILUONG  ASC";
             ITCLIB.Admin.SQL SelectQuery1 = new ITCLIB.Admin.SQL();
             ctcDataTable = SelectQuery1.query_data(SelectSQL1);
             string SelectSQL2;
@@ -279,7 +278,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
             oDataTable = SelectQuery2.query_data(SelectSQL2);
             if (oDataTable.Rows.Count != 0)
             {
-                C_KHOILUONGLK = decimal.Parse(oDataTable.Rows[0]["C_KHOILUONG"].ToString(), NumberStyles.Currency);
+                C_KHOILUONGLK = int.Parse(oDataTable.Rows[0]["C_KHOILUONG"].ToString(), NumberStyles.Currency);
                 GIACUOCLK = decimal.Parse(oDataTable.Rows[0]["C_CUOCPHI"].ToString(), NumberStyles.Currency);
             }
 
@@ -302,7 +301,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
                         }
                         else
                         {
-                            if (C_KHOILUONG <= int.Parse(ctcDataTable.Rows[i]["C_KHOILUONG"].ToString()) && C_KHOILUONG <= int.Parse(ctcDataTable.Rows[i - 1]["C_KHOILUONG"].ToString()))
+                            if (C_KHOILUONG <= int.Parse(ctcDataTable.Rows[i]["C_KHOILUONG"].ToString()) && C_KHOILUONG >= int.Parse(ctcDataTable.Rows[i - 1]["C_KHOILUONG"].ToString()))
                             {
                                 CUOCCHINH = decimal.Parse(ctcDataTable.Rows[i]["C_CUOCPHI"].ToString(), NumberStyles.Currency);
                                 check = false;
@@ -321,7 +320,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
                     }
                 }
             }
-            //CUOCCHINH = CUOCCHINH + ((CUOCCHINH * PPXD) / 100);
+            CUOCCHINH = CUOCCHINH + ((CUOCCHINH * PPXD) / 100);
         }
         if (Alarm != "")
         {
@@ -450,7 +449,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
             RadAutoCompleteBox radautoC_MAKH = (RadAutoCompleteBox)editItem.FindControl("radautoC_MAKH");
             RadAutoCompleteBox radautoC_TENKH = (RadAutoCompleteBox)editItem.FindControl("radautoC_TENKH");
             RadNumericTextBox txtC_KHOILUONG = (RadNumericTextBox)editItem.FindControl("txtC_KHOILUONG");
-            RadComboBox cmbNhomKhachHang = (RadComboBox)editItem.FindControl("cmbNhomKhachHang ");
+            RadComboBox cmbNhomKhachHang = (RadComboBox)editItem.FindControl("cmbNhomKhachHang");
             RadComboBox cmbSanPham = (RadComboBox)editItem.FindControl("cmbSanPham");
             RadNumericTextBox txtC_GIACUOC = (RadNumericTextBox)editItem.FindControl("txtC_GIACUOC");
             RadNumericTextBox txtC_DONGGOI = (RadNumericTextBox)editItem.FindControl("txtC_DONGGOI");
@@ -485,7 +484,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
                 }
                 FK_DICHVU = cmbSanPham.SelectedValue;
                 FK_QUANHUYEN = hfQuanHuyen.Value;
-                string FK_NHOMKHACHHANG = "1";//(cmbNhomKhachHang.SelectedIndex.ToString() != "Chọn nhóm") ? cmbNhomKhachHang.SelectedValue : " ";
+                string FK_NHOMKHACHHANG = (cmbNhomKhachHang.Text != "") ? cmbNhomKhachHang.SelectedValue : " ";
                 string SelectSQL2;
                 SelectSQL2 = "Select DMMABANGCUOC.PK_ID FROM DMMABANGCUOC WHERE (DMMABANGCUOC.C_VALUE ='" + FK_NHOMKHACHHANG + "') OR (DMMABANGCUOC.C_VALUE LIKE '%," + FK_NHOMKHACHHANG + ",%') OR (DMMABANGCUOC.C_VALUE LIKE '%," + FK_NHOMKHACHHANG + "') OR (DMMABANGCUOC.C_VALUE LIKE '" + FK_NHOMKHACHHANG + ",%')";
                 DataTable oDataTable2 = new DataTable();
@@ -512,7 +511,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
                 {
                     FK_MAVUNG = "0";
                 }
-                C_KHOILUONG = decimal.Parse(txtC_KHOILUONG.Text);
+                C_KHOILUONG = int.Parse(txtC_KHOILUONG.Text);
                 PPXD = decimal.Parse(txtPPXD.Text);
                 CUOCCHINH = decimal.Parse(txtC_GIACUOC.Text);
                 FK_DOITAC = "";

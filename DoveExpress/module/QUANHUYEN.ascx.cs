@@ -69,21 +69,6 @@ public partial class module_QUANHUYEN : System.Web.UI.UserControl
             args.IsValid = true;
         }
     }
-    protected void CheckName(object source, ServerValidateEventArgs args)
-    {
-        string SelectSQL = String.Format("Select DMQUANHUYEN.C_NAME FROM DMQUANHUYEN WHERE DMQUANHUYEN.C_NAME = '{0}' AND DMQUANHUYEN.PK_ID <> {1}", args.Value, Session["txtID"].ToString());
-        DataTable oDataTable = new DataTable();
-        ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
-        oDataTable = SelectQuery.query_data(SelectSQL);
-        if (oDataTable.Rows.Count != 0)
-        {
-            args.IsValid = false;
-        }
-        else
-        {
-            args.IsValid = true;
-        }
-    }
     private void DisplayMessage(string text)
     {
         RadGridQUANHUYEN.Controls.Add(new LiteralControl(string.Format("<span style='color:red'>{0}</span>", text)));
