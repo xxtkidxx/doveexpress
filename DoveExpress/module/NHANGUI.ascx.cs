@@ -201,11 +201,12 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
             oDataTable = SelectQuery.query_data(SelectSQL);
             if (oDataTable.Rows.Count != 0)
             {
-                FK_MABANGCUOC = oDataTable.Rows[0]["PK_ID"].ToString();
+                FK_MABANGCUOC = oDataTable.Rows[0]["PK_ID"].ToString();               
             }
             else
             {
-                Alarm = "Nhóm khách hàng này không nằm trong bảng cước nào";
+                FK_MABANGCUOC = "";
+                Alarm = "msg,Nhóm khách hàng này không nằm trong bảng cước nào";
             }
         }
         else if (arrayvalue[0] == "cmbQuanHuyen")
@@ -224,7 +225,8 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
                 }
                 else
                 {
-                    Alarm = "Quận huyện này không nằm trong vùng tính cước nào";
+                    FK_MAVUNG = "";
+                    Alarm = "msg,Quận huyện này không nằm trong vùng tính cước nào";
                 }
             }
         }
@@ -256,63 +258,64 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
                 }
                 else
                 {
-                    //FK_MAVUNG = "0";
-                    Alarm = "Quận huyện này không nằm trong vùng tính cước nào";
+                    FK_MAVUNG = "";
+                    Alarm = "msg,Quận huyện này không nằm trong vùng tính cước nào";
                 }
             }
         }
         else if (arrayvalue[0] == "txtC_KHOILUONG")
         {
-            C_KHOILUONG =  int.Parse(arrayvalue[1]); 
+            C_KHOILUONG = int.Parse(arrayvalue[1]);
         }
-        if ((FK_MABANGCUOC != "") && (FK_MAVUNG != ""))
+        else if (arrayvalue[0] == "cmbFK_DOITAC")
         {
+            int C_KHOILUONGLKDT = 0;
+            decimal GIACUOCLKDT = 0;
             string SelectSQL1;
-            SelectSQL1 = "Select DMCHITIETCUOC.PK_ID,DMCHITIETCUOC.C_KHOILUONG,DMCHITIETCUOC.C_CUOCPHI,DMCHITIETCUOC.C_TYPE FROM DMCHITIETCUOC WHERE FK_MABANGCUOC = " + FK_MABANGCUOC + " AND FK_MAVUNG = " + FK_MAVUNG + " AND C_TYPE <> 1 ORDER BY C_KHOILUONG  ASC";
+            SelectSQL1 = "Select DMCHITIETCUOCDT.PK_ID,DMCHITIETCUOCDT.C_KHOILUONG,DMCHITIETCUOCDT.C_CUOCPHI,DMCHITIETCUOCDT.C_TYPE FROM DMCHITIETCUOCDT WHERE FK_DOITAC = " + arrayvalue[1] + " AND FK_MAVUNG = " + FK_MAVUNG + " AND C_TYPE <> 1 ORDER BY C_KHOILUONG  ASC";
             ITCLIB.Admin.SQL SelectQuery1 = new ITCLIB.Admin.SQL();
-            ctcDataTable = SelectQuery1.query_data(SelectSQL1);
+            DataTable oDataTable1 = new DataTable();
+            oDataTable1 = SelectQuery1.query_data(SelectSQL1);
             string SelectSQL2;
-            SelectSQL2 = "Select DMCHITIETCUOC.PK_ID,DMCHITIETCUOC.C_KHOILUONG,DMCHITIETCUOC.C_CUOCPHI,DMCHITIETCUOC.C_TYPE FROM DMCHITIETCUOC WHERE FK_MABANGCUOC = " + FK_MABANGCUOC + " AND FK_MAVUNG = " + FK_MAVUNG + " AND C_TYPE = 1 ORDER BY C_KHOILUONG";
-            DataTable oDataTable = new DataTable();
+            SelectSQL2 = "Select DMCHITIETCUOCDT.PK_ID,DMCHITIETCUOCDT.C_KHOILUONG,DMCHITIETCUOCDT.C_CUOCPHI,DMCHITIETCUOCDT.C_TYPE FROM DMCHITIETCUOCDT WHERE FK_DOITAC = " + arrayvalue[1] + " AND FK_MAVUNG = " + FK_MAVUNG + " AND C_TYPE = 1 ORDER BY C_KHOILUONG";
+            DataTable oDataTable2 = new DataTable();
             ITCLIB.Admin.SQL SelectQuery2 = new ITCLIB.Admin.SQL();
-            oDataTable = SelectQuery2.query_data(SelectSQL2);
-            if (oDataTable.Rows.Count != 0)
+            oDataTable2 = SelectQuery2.query_data(SelectSQL2);
+            if (oDataTable2.Rows.Count != 0)
             {
-                C_KHOILUONGLK = int.Parse(oDataTable.Rows[0]["C_KHOILUONG"].ToString(), NumberStyles.Currency);
-                GIACUOCLK = decimal.Parse(oDataTable.Rows[0]["C_CUOCPHI"].ToString(), NumberStyles.Currency);
+                C_KHOILUONGLKDT = int.Parse(oDataTable2.Rows[0]["C_KHOILUONG"].ToString(), NumberStyles.Currency);
+                GIACUOCLKDT = decimal.Parse(oDataTable2.Rows[0]["C_CUOCPHI"].ToString(), NumberStyles.Currency);
             }
-
-        }
-        if (C_KHOILUONG != 0)
-        {
-            if (ctcDataTable.Rows.Count !=0)
+            if (oDataTable1.Rows.Count != 0)
             {
                 bool check = true;
-                for (int i = 0; i < ctcDataTable.Rows.Count; i++)
+                for (int i = 0; i < oDataTable1.Rows.Count; i++)
                 {
                     if (check)
                     {
                         if (i == 0)
                         {
-                            if (C_KHOILUONG <= int.Parse(ctcDataTable.Rows[0]["C_KHOILUONG"].ToString()))
+                            if (C_KHOILUONG <= int.Parse(oDataTable1.Rows[0]["C_KHOILUONG"].ToString()))
                             {
-                                CUOCCHINH = decimal.Parse(ctcDataTable.Rows[0]["C_CUOCPHI"].ToString(), NumberStyles.Currency);
+                                GIADOITAC = decimal.Parse(oDataTable1.Rows[0]["C_CUOCPHI"].ToString(), NumberStyles.Currency);
                             }
                         }
                         else
                         {
-                            if (C_KHOILUONG <= int.Parse(ctcDataTable.Rows[i]["C_KHOILUONG"].ToString()) && C_KHOILUONG >= int.Parse(ctcDataTable.Rows[i - 1]["C_KHOILUONG"].ToString()))
+                            if (C_KHOILUONG <= int.Parse(oDataTable1.Rows[i]["C_KHOILUONG"].ToString()) && C_KHOILUONG >= int.Parse(oDataTable1.Rows[i - 1]["C_KHOILUONG"].ToString()))
                             {
-                                CUOCCHINH = decimal.Parse(ctcDataTable.Rows[i]["C_CUOCPHI"].ToString(), NumberStyles.Currency);
+                                GIADOITAC = decimal.Parse(ctcDataTable.Rows[i]["C_CUOCPHI"].ToString(), NumberStyles.Currency);
                                 check = false;
                             }
-                            else if (C_KHOILUONG >= int.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count -1]["C_KHOILUONG"].ToString()))
+                            else if (C_KHOILUONG >= int.Parse(oDataTable1.Rows[oDataTable1.Rows.Count - 1]["C_KHOILUONG"].ToString()))
                             {
-                                if (((C_KHOILUONG - int.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_KHOILUONG"].ToString())) % C_KHOILUONGLK) == 0)
+                                if (((C_KHOILUONG - int.Parse(oDataTable1.Rows[oDataTable1.Rows.Count - 1]["C_KHOILUONG"].ToString())) % C_KHOILUONGLKDT) == 0)
                                 {
-                                    CUOCCHINH = decimal.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_CUOCPHI"].ToString(), NumberStyles.Currency) + ((C_KHOILUONG - int.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_KHOILUONG"].ToString())) / C_KHOILUONGLK) * GIACUOCLK;
-                                }else{
-                                    CUOCCHINH = decimal.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_CUOCPHI"].ToString(), NumberStyles.Currency) + (((C_KHOILUONG - int.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_KHOILUONG"].ToString())) / C_KHOILUONGLK) + 1) * GIACUOCLK;
+                                    GIADOITAC = decimal.Parse(oDataTable1.Rows[oDataTable1.Rows.Count - 1]["C_CUOCPHI"].ToString(), NumberStyles.Currency) + ((C_KHOILUONG - int.Parse(oDataTable1.Rows[oDataTable1.Rows.Count - 1]["C_KHOILUONG"].ToString())) / C_KHOILUONGLKDT) * GIACUOCLKDT;
+                                }
+                                else
+                                {
+                                    GIADOITAC = decimal.Parse(oDataTable1.Rows[oDataTable1.Rows.Count - 1]["C_CUOCPHI"].ToString(), NumberStyles.Currency) + (((C_KHOILUONG - int.Parse(oDataTable1.Rows[oDataTable1.Rows.Count - 1]["C_KHOILUONG"].ToString())) / C_KHOILUONGLKDT) + 1) * GIACUOCLKDT;
                                 }
                                 check = false;
                             }
@@ -320,18 +323,76 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
                     }
                 }
             }
-            CUOCCHINH = CUOCCHINH + ((CUOCCHINH * PPXD) / 100);
-        }
-        if (Alarm != "")
-        {
-            string script = string.Format("var result = '{0}'", Alarm);
-            ScriptManager.RegisterClientScriptBlock(Page, typeof(Page), "result", script, true);
-        }
-        else
-        {
-            string script = string.Format("var result = '{0}'",PPXD + "," + CUOCCHINH + "," + FK_DOITAC + "," + GIADOITAC);
-            ScriptManager.RegisterClientScriptBlock(Page, typeof(Page), "result", script, true);
-        }
+        }      
+       if ((FK_MABANGCUOC != "") && (FK_MAVUNG != ""))
+       {
+           string SelectSQL1;
+           SelectSQL1 = "Select DMCHITIETCUOC.PK_ID,DMCHITIETCUOC.C_KHOILUONG,DMCHITIETCUOC.C_CUOCPHI,DMCHITIETCUOC.C_TYPE FROM DMCHITIETCUOC WHERE FK_MABANGCUOC = " + FK_MABANGCUOC + " AND FK_MAVUNG = " + FK_MAVUNG + " AND C_TYPE <> 1 ORDER BY C_KHOILUONG  ASC";
+           ITCLIB.Admin.SQL SelectQuery1 = new ITCLIB.Admin.SQL();
+           ctcDataTable = SelectQuery1.query_data(SelectSQL1);
+           string SelectSQL2;
+           SelectSQL2 = "Select DMCHITIETCUOC.PK_ID,DMCHITIETCUOC.C_KHOILUONG,DMCHITIETCUOC.C_CUOCPHI,DMCHITIETCUOC.C_TYPE FROM DMCHITIETCUOC WHERE FK_MABANGCUOC = " + FK_MABANGCUOC + " AND FK_MAVUNG = " + FK_MAVUNG + " AND C_TYPE = 1 ORDER BY C_KHOILUONG";
+           DataTable oDataTable = new DataTable();
+           ITCLIB.Admin.SQL SelectQuery2 = new ITCLIB.Admin.SQL();
+           oDataTable = SelectQuery2.query_data(SelectSQL2);
+           if (oDataTable.Rows.Count != 0)
+           {
+               C_KHOILUONGLK = int.Parse(oDataTable.Rows[0]["C_KHOILUONG"].ToString(), NumberStyles.Currency);
+               GIACUOCLK = decimal.Parse(oDataTable.Rows[0]["C_CUOCPHI"].ToString(), NumberStyles.Currency);
+           }
+
+       }
+       if (C_KHOILUONG != 0)
+       {
+           if (ctcDataTable.Rows.Count != 0)
+           {
+               bool check = true;
+               for (int i = 0; i < ctcDataTable.Rows.Count; i++)
+               {
+                   if (check)
+                   {
+                       if (i == 0)
+                       {
+                           if (C_KHOILUONG <= int.Parse(ctcDataTable.Rows[0]["C_KHOILUONG"].ToString()))
+                           {
+                               CUOCCHINH = decimal.Parse(ctcDataTable.Rows[0]["C_CUOCPHI"].ToString(), NumberStyles.Currency);
+                           }
+                       }
+                       else
+                       {
+                           if (C_KHOILUONG <= int.Parse(ctcDataTable.Rows[i]["C_KHOILUONG"].ToString()) && C_KHOILUONG >= int.Parse(ctcDataTable.Rows[i - 1]["C_KHOILUONG"].ToString()))
+                           {
+                               CUOCCHINH = decimal.Parse(ctcDataTable.Rows[i]["C_CUOCPHI"].ToString(), NumberStyles.Currency);
+                               check = false;
+                           }
+                           else if (C_KHOILUONG >= int.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_KHOILUONG"].ToString()))
+                           {
+                               if (((C_KHOILUONG - int.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_KHOILUONG"].ToString())) % C_KHOILUONGLK) == 0)
+                               {
+                                   CUOCCHINH = decimal.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_CUOCPHI"].ToString(), NumberStyles.Currency) + ((C_KHOILUONG - int.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_KHOILUONG"].ToString())) / C_KHOILUONGLK) * GIACUOCLK;
+                               }
+                               else
+                               {
+                                   CUOCCHINH = decimal.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_CUOCPHI"].ToString(), NumberStyles.Currency) + (((C_KHOILUONG - int.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_KHOILUONG"].ToString())) / C_KHOILUONGLK) + 1) * GIACUOCLK;
+                               }
+                               check = false;
+                           }
+                       }
+                   }
+               }
+           }
+           CUOCCHINH = (Math.Round((CUOCCHINH + ((CUOCCHINH * PPXD) / 100)) / 1000)) * 1000;
+       }
+      if (Alarm != "")
+      {
+          string script = string.Format("var result = '{0}'", Alarm);
+          ScriptManager.RegisterClientScriptBlock(Page, typeof(Page), "result", script, true);
+      }
+      else
+      {
+          string script = string.Format("var result = '{0}'", PPXD + "," + CUOCCHINH + "," + GIADOITAC);
+          ScriptManager.RegisterClientScriptBlock(Page, typeof(Page), "result", script, true);
+      }
     }
     protected void btnShowAll_Click(object sender, System.Web.UI.ImageClickEventArgs e)
     {
@@ -440,51 +501,64 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
             QUANHUYENDataSource.SelectCommand = LoadFilteredManually(hfQuanHuyen.Value);
             RadComboBox cmbTinhThanh = (RadComboBox)editItem.FindControl("cmbTinhThanh");
             RadComboBox cmbQuanHuyen = (RadComboBox)editItem.FindControl("cmbQuanHuyen");
-            cmbTinhThanh.SelectedValue = hfTinhThanh.Value;
-            QUANHUYENDataSource.SelectCommand = LoadFilteredManually(hfTinhThanh.Value);
-            cmbQuanHuyen.DataBind();
-            cmbQuanHuyen.SelectedValue = hfQuanHuyen.Value;
+            if (hfTinhThanh.Value != "" && hfQuanHuyen.Value != "")
+            {
+                cmbTinhThanh.SelectedValue = hfTinhThanh.Value;
+                QUANHUYENDataSource.SelectCommand = LoadFilteredManually(hfTinhThanh.Value);
+                cmbQuanHuyen.DataBind();
+                cmbQuanHuyen.SelectedValue = hfQuanHuyen.Value;
+            }
             RadNumericTextBox txtPPXD = (RadNumericTextBox)editItem.FindControl("txtPPXD");
+            txtPPXD.Text = (txtPPXD.Text == "") ? "0" : txtPPXD.Text;
             RadTextBox txtCODE = (RadTextBox)editItem.FindControl("txtCODE");
+            HiddenField hfC_MAKH = (HiddenField)editItem.FindControl("hfC_MAKH");
+            HiddenField hfC_TENKH = (HiddenField)editItem.FindControl("hfC_TENKH");
             RadAutoCompleteBox radautoC_MAKH = (RadAutoCompleteBox)editItem.FindControl("radautoC_MAKH");
             RadAutoCompleteBox radautoC_TENKH = (RadAutoCompleteBox)editItem.FindControl("radautoC_TENKH");
             RadNumericTextBox txtC_KHOILUONG = (RadNumericTextBox)editItem.FindControl("txtC_KHOILUONG");
+            txtC_KHOILUONG.Text = (txtC_KHOILUONG.Text == "") ? "0" : txtC_KHOILUONG.Text;
             RadComboBox cmbNhomKhachHang = (RadComboBox)editItem.FindControl("cmbNhomKhachHang");
             RadComboBox cmbSanPham = (RadComboBox)editItem.FindControl("cmbSanPham");
             RadNumericTextBox txtC_GIACUOC = (RadNumericTextBox)editItem.FindControl("txtC_GIACUOC");
+            txtC_GIACUOC.Text = (txtC_GIACUOC.Text == "") ? "0" : txtC_GIACUOC.Text;
             RadNumericTextBox txtC_DONGGOI = (RadNumericTextBox)editItem.FindControl("txtC_DONGGOI");
+            txtC_DONGGOI.Text = (txtC_DONGGOI.Text == "") ? "0" : txtC_DONGGOI.Text;
             RadNumericTextBox txtC_KHAIGIA = (RadNumericTextBox)editItem.FindControl("txtC_KHAIGIA");
+            txtC_KHAIGIA.Text = (txtC_KHAIGIA.Text == "") ? "0" : txtC_KHAIGIA.Text;
             RadNumericTextBox txtC_COD = (RadNumericTextBox)editItem.FindControl("txtC_COD");
+            txtC_COD.Text = (txtC_COD.Text == "") ? "0" : txtC_COD.Text;
             RadNumericTextBox txtC_KHAC = (RadNumericTextBox)editItem.FindControl("txtC_KHAC");
+            txtC_KHAC.Text = (txtC_KHAC.Text == "") ? "0" : txtC_KHAC.Text;
             RadNumericTextBox txtC_TIENHANG = (RadNumericTextBox)editItem.FindControl("txtC_TIENHANG");
+            txtC_TIENHANG.Text = (txtC_TIENHANG.Text == "") ? "0" : txtC_TIENHANG.Text;
             RadNumericTextBox txtC_DATHU = (RadNumericTextBox)editItem.FindControl("txtC_DATHU");
+            txtC_DATHU.Text = (txtC_DATHU.Text == "") ? "0" : txtC_DATHU.Text;
             RadNumericTextBox txtC_CONLAI = (RadNumericTextBox)editItem.FindControl("txtC_CONLAI");
+            txtC_CONLAI.Text = (txtC_CONLAI.Text == "") ? "0" : txtC_CONLAI.Text;
+            RadNumericTextBox txtC_GIADOITAC = (RadNumericTextBox)editItem.FindControl("txtC_GIADOITAC");
+            txtC_GIADOITAC.Text = (txtC_GIADOITAC.Text == "") ? "0" : txtC_GIADOITAC.Text;
             if (e.Item is GridEditFormInsertItem || e.Item is GridDataInsertItem)
             {
                 // insert item
                 radNgaynhangui.SelectedDate = System.DateTime.Now;
                 txtCODE.Text = GetMaxBill();
-
+                FK_MABANGCUOC = "";
+                FK_MAVUNG = "";
+                FK_DICHVU = "";
+                PPXD = 0;
+                CUOCCHINH = 0;
+                GIADOITAC = 0;
+                ctcDataTable = new DataTable();
             }
             else
             {
                 // edit item
-                txtC_CONLAI.Text = (decimal.Parse(txtC_TIENHANG.Text) - decimal.Parse(txtC_DATHU.Text)).ToString();
-                string SelectSQL1;
-                SelectSQL1 = "Select DMMASANPHAM.C_PPXD FROM DMMASANPHAM WHERE DMMASANPHAM.PK_ID = " + cmbSanPham.SelectedValue + "";
-                DataTable oDataTable1 = new DataTable();
-                ITCLIB.Admin.SQL SelectQuery1 = new ITCLIB.Admin.SQL();
-                oDataTable1 = SelectQuery1.query_data(SelectSQL1);
-                if (oDataTable1.Rows.Count != 0)
-                {
-                    if (oDataTable1.Rows[0]["C_PPXD"] != DBNull.Value)
-                    {
-                        txtPPXD.Text = oDataTable1.Rows[0]["C_PPXD"].ToString();
-                    }
-                }
+                radautoC_MAKH.Entries.Add(new AutoCompleteBoxEntry(hfC_MAKH.Value));
+                radautoC_TENKH.Entries.Add(new AutoCompleteBoxEntry(hfC_TENKH.Value));
+                txtC_CONLAI.Text = (((txtC_TIENHANG.Text == "") ? 0 : decimal.Parse(txtC_TIENHANG.Text)) - ((txtC_DATHU.Text == "") ? 0 : decimal.Parse(txtC_DATHU.Text))).ToString(); 
                 FK_DICHVU = cmbSanPham.SelectedValue;
                 FK_QUANHUYEN = hfQuanHuyen.Value;
-                string FK_NHOMKHACHHANG = (cmbNhomKhachHang.Text != "") ? cmbNhomKhachHang.SelectedValue : " ";
+                string FK_NHOMKHACHHANG = cmbNhomKhachHang.SelectedValue;
                 string SelectSQL2;
                 SelectSQL2 = "Select DMMABANGCUOC.PK_ID FROM DMMABANGCUOC WHERE (DMMABANGCUOC.C_VALUE ='" + FK_NHOMKHACHHANG + "') OR (DMMABANGCUOC.C_VALUE LIKE '%," + FK_NHOMKHACHHANG + ",%') OR (DMMABANGCUOC.C_VALUE LIKE '%," + FK_NHOMKHACHHANG + "') OR (DMMABANGCUOC.C_VALUE LIKE '" + FK_NHOMKHACHHANG + ",%')";
                 DataTable oDataTable2 = new DataTable();
@@ -496,8 +570,8 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
                 }
                 else
                 {
-                    FK_MABANGCUOC = "0";
-                }               
+                    FK_MABANGCUOC = "";
+                }           
                 string SelectSQL3;
                 SelectSQL3 = "Select DMMAVUNG.PK_ID FROM DMMAVUNG WHERE FK_MASANPHAM=" + FK_DICHVU + " AND C_TYPE = 1 AND ((DMMAVUNG.C_DESC ='" + FK_QUANHUYEN + "') OR (DMMAVUNG.C_DESC LIKE '%," + FK_QUANHUYEN + ",%') OR (DMMAVUNG.C_DESC LIKE '%," + FK_QUANHUYEN + "') OR (DMMAVUNG.C_DESC LIKE '" + FK_QUANHUYEN + ",%'))";
                 DataTable oDataTable3 = new DataTable();
@@ -509,16 +583,12 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
                 }
                 else
                 {
-                    FK_MAVUNG = "0";
+                    FK_MAVUNG = "";
                 }
-                C_KHOILUONG = int.Parse(txtC_KHOILUONG.Text);
-                PPXD = decimal.Parse(txtPPXD.Text);
-                CUOCCHINH = decimal.Parse(txtC_GIACUOC.Text);
-                FK_DOITAC = "";
-                GIADOITAC = 0;
-                ctcDataTable = new DataTable();
-                C_KHOILUONGLK = 0;
-                GIACUOCLK = 0;                            
+                PPXD = (txtPPXD.Text == "") ? 0 : decimal.Parse(txtPPXD.Text);
+                CUOCCHINH = (txtC_GIACUOC.Text == "") ? 0 : decimal.Parse(txtC_GIACUOC.Text);
+                GIADOITAC = (txtC_GIADOITAC.Text == "") ? 0 : decimal.Parse(txtC_GIADOITAC.Text);
+                ctcDataTable = new DataTable();                         
             }
         }
         if (e.Item is GridDataItem)
@@ -543,7 +613,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
         return maxbill;
     }
     protected void RadGridNHANGUI_ItemCommand(object sender, GridCommandEventArgs e)
-    {
+    {     
         if (e.CommandName == "DeleteSelected")
         {
             if (RadGridNHANGUI.SelectedIndexes.Count == 0)
@@ -559,12 +629,22 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
                     RadGridNHANGUI.Rebind();
                 }
             }
-        }
+        }      
         else if (e.CommandName == RadGrid.PerformInsertCommandName)
-        {                
+        {
+            GridEditableItem editItem = (GridEditableItem)e.Item;
+            RadAutoCompleteBox radautoC_MAKH = (RadAutoCompleteBox)editItem.FindControl("radautoC_MAKH");
+            RadAutoCompleteBox radautoC_TENKH = (RadAutoCompleteBox)editItem.FindControl("radautoC_TENKH");
+            NHANGUIDataSource.InsertParameters["C_MAKH"].DefaultValue = (radautoC_MAKH.Text == "") ? radautoC_MAKH.Text : radautoC_MAKH.Text.Substring(0, radautoC_MAKH.Text.Length - 2);
+            NHANGUIDataSource.InsertParameters["C_TENKH"].DefaultValue = (radautoC_TENKH.Text == "") ? radautoC_TENKH.Text : radautoC_TENKH.Text.Substring(0, radautoC_TENKH.Text.Length - 2);
         }
         else if (e.CommandName == RadGrid.UpdateCommandName)
         {
+            GridEditableItem editItem = (GridEditableItem)e.Item;
+            RadAutoCompleteBox radautoC_MAKH = (RadAutoCompleteBox)editItem.FindControl("radautoC_MAKH");
+            RadAutoCompleteBox radautoC_TENKH = (RadAutoCompleteBox)editItem.FindControl("radautoC_TENKH");
+            NHANGUIDataSource.UpdateParameters["C_MAKH"].DefaultValue = (radautoC_MAKH.Text == "") ? radautoC_MAKH.Text : radautoC_MAKH.Text.Substring(0,radautoC_MAKH.Text.Length -2);
+            NHANGUIDataSource.UpdateParameters["C_TENKH"].DefaultValue = (radautoC_TENKH.Text == "") ? radautoC_TENKH.Text : radautoC_TENKH.Text.Substring(0, radautoC_TENKH.Text.Length - 2);
         }
     }
     protected string getmaxid(string table)
