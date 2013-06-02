@@ -160,8 +160,7 @@
                             <td>
                                 <asp:TextBox ID="txtName" Width ="400px" Text='<%# Bind( "C_NAME") %>' runat="server"></asp:TextBox>
                                <br /><span style="color:Red;">
-                                <asp:RequiredFieldValidator ID="rfvName" runat="server" ErrorMessage="Tên quận huyện không thể rỗng" ControlToValidate="txtName" SetFocusOnError="True" Display="Dynamic" ValidationGroup="G1"></asp:RequiredFieldValidator>
-                                <asp:CustomValidator ID="CustomValidator1" ControlToValidate="txtName" OnServerValidate="CheckName" runat="server" ErrorMessage="Tên quận huyện đã tồn tại" Display="Dynamic" ValidationGroup="G1"></asp:CustomValidator>
+                                <asp:RequiredFieldValidator ID="rfvName" runat="server" ErrorMessage="Tên quận huyện không thể rỗng" ControlToValidate="txtName" SetFocusOnError="True" Display="Dynamic" ValidationGroup="G1"></asp:RequiredFieldValidator>                                
                              </span> 
                             </td>
                         </tr>                    
