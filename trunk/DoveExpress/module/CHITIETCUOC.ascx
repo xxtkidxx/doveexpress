@@ -29,7 +29,6 @@
     }
     function onResponseEndCTC() {
         if (typeof (result) != "undefined" && result && result != "") {
-            //$find("<%= RadGridCHITIETCUOC.ClientID %>").get_masterTableView().rebind();
             var masterTable = $find("<%= RadGridCHITIETCUOC.ClientID %>").get_masterTableView();
             var dataItems = masterTable.get_dataItems();
             for (var i = 0; i < dataItems.length; i++) {
@@ -162,6 +161,8 @@ ShowToggleImage="True" EmptyMessage="Chọn bảng"
                             <ItemTemplate>
                                 <asp:CheckBox ID="chkDefault" runat="server" onclick='<%# String.Format("if(!onClientClickSelectedCTC({0},{1})) return false;",Eval("PK_ID"),Eval("FK_MAVUNG")) %>' Checked='<%# getstatus(Eval("C_TYPE")) %>'/>
                             </ItemTemplate>
+                            <EditItemTemplate>
+                            </EditItemTemplate>
                             </telerik:GridTemplateColumn> 
                             </Columns>
      </telerik:GridTableView>

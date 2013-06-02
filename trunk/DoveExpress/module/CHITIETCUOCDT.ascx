@@ -43,6 +43,26 @@
         return false;
     }
 </script>
+<script type="text/javascript">
+    function onClientClickSelectedCTC(sender1, sender2) {
+        $find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("SelectedCTC," + sender1 + "," + sender2);
+        return false;
+    }
+    function onResponseEndCTC() {
+        if (typeof (result) != "undefined" && result && result != "") {
+            var masterTable = $find("<%= RadGridCHITIETCUOCDT.ClientID %>").get_masterTableView();
+            var dataItems = masterTable.get_dataItems();
+            for (var i = 0; i < dataItems.length; i++) {
+                if (dataItems[i].get_nestedViews().length > 0) {
+                    var nestedView = dataItems[i].get_nestedViews()[0];
+                    nestedView.rebind();
+                }
+            }
+            result = "";
+        }
+        return false;
+    }
+</script>
 </telerik:RadScriptBlock>
 <telerik:RadAjaxLoadingPanel Skin="Vista" ID="RadAjaxLoadingPanelCHITIETCUOCDT" runat="server" />
 <div style ="width:100%; margin: 10px 10px 10px 10px; ">
@@ -157,6 +177,13 @@ ShowToggleImage="True" EmptyMessage="Chọn đối tác"
                                          <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
                                         </telerik:RadNumericTextBox>
                                 </EditItemTemplate>
+                            </telerik:GridTemplateColumn>
+                            <telerik:GridTemplateColumn UniqueName="C_TYPE" HeaderText="Luỹ kế cuối" AllowFiltering ="false">
+                            <ItemTemplate>
+                                <asp:CheckBox ID="chkDefault" runat="server" onclick='<%# String.Format("if(!onClientClickSelectedCTC({0},{1})) return false;",Eval("PK_ID"),Eval("FK_MAVUNG")) %>' Checked='<%# getstatus(Eval("C_TYPE")) %>'/>
+                            </ItemTemplate>
+                            <EditItemTemplate>
+                            </EditItemTemplate>
                             </telerik:GridTemplateColumn> 
                             </Columns>
      </telerik:GridTableView>
@@ -176,7 +203,7 @@ ShowToggleImage="True" EmptyMessage="Chọn đối tác"
     ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>" 
     DeleteCommand="DELETE FROM [DMCHITIETCUOCDT] WHERE [PK_ID] = @PK_ID" 
     InsertCommand="INSERT INTO [DMCHITIETCUOCDT] ([FK_DoiTac], [FK_MASANPHAM], [FK_MAVUNG], [C_LOAITIEN], [C_KHOILUONG], [C_CUOCPHI]) VALUES (@FK_DoiTac, @FK_MASANPHAM, @FK_MAVUNG, @C_LOAITIEN, @C_KHOILUONG, @C_CUOCPHI)" 
-    SelectCommand="SELECT [PK_ID], [FK_DoiTac], [FK_MASANPHAM], [FK_MAVUNG], [C_LOAITIEN], [C_KHOILUONG], [C_CUOCPHI] FROM [DMCHITIETCUOCDT] WHERE [FK_MAVUNG] =@FK_MAVUNG AND [FK_DoiTac] = @FK_DoiTac AND [FK_MASANPHAM] = @FK_MASANPHAM AND [C_LOAITIEN] = @C_LOAITIEN" 
+    SelectCommand="SELECT [PK_ID], [FK_DoiTac], [FK_MASANPHAM], [FK_MAVUNG], [C_LOAITIEN], [C_KHOILUONG], [C_CUOCPHI], [C_TYPE] FROM [DMCHITIETCUOCDT] WHERE [FK_MAVUNG] =@FK_MAVUNG AND [FK_DoiTac] = @FK_DoiTac AND [FK_MASANPHAM] = @FK_MASANPHAM AND [C_LOAITIEN] = @C_LOAITIEN" 
     UpdateCommand="UPDATE [DMCHITIETCUOCDT] SET [C_KHOILUONG] = @C_KHOILUONG, [C_CUOCPHI] = @C_CUOCPHI WHERE [PK_ID] = @PK_ID">
     <SelectParameters>
         <asp:Parameter Name="FK_MAVUNG" Type="Int32" />
