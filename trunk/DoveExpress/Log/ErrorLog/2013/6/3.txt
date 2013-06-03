@@ -148,3 +148,78 @@ Thời gian lỗi : 2013-06-03 00:41:28 AM
 Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
 Nội dung lỗi:Object reference not set to an instance of an object.
 __________________________
+Thời gian lỗi : 2013-06-03 21:38:30 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=BAOCAONGAY. 
+Nội dung lỗi:Could not find control 'cmbSanPham' in ControlParameter 'FK_MASANPHAM'.
+__________________________
+Thời gian lỗi : 2013-06-03 21:42:49 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=BAOCAONGAY. 
+Nội dung lỗi:Incorrect syntax near '<'.
+__________________________
+Thời gian lỗi : 2013-06-03 21:43:05 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=BAOCAONGAY. 
+Nội dung lỗi:Conversion failed when converting datetime from character string.
+__________________________
+Thời gian lỗi : 2013-06-03 21:54:37 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/images/. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-06-03 21:55:40 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Images/Grid/approval.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-06-03 21:55:40 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Images/Grid/approval.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-06-03 21:59:43 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=BAOCAONGAY. 
+Nội dung lỗi:Cannot create an object of type 'Telerik.Web.UI.GridAggregateFunction' from its string representation 'Tổng' for the 'Aggregate' property.
+__________________________
+Thời gian lỗi : 2013-06-03 22:06:51 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/Grid/Refresh.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-06-03 22:06:51 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/approval.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\6\3.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-06-03 22:06:52 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/Grid/pdf.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-06-03 22:06:52 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/Grid/word.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\6\3.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-06-03 22:06:52 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/Grid/excel.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-06-03 22:06:52 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/Grid/csv.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\6\3.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-06-03 22:41:46 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=BAOCAOKHACHHANG. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\module\BAOCAOKHACHHANG.ascx.cs(38): error CS0103: The name 'radTuNgay' does not exist in the current context
+__________________________
+Thời gian lỗi : 2013-06-03 22:42:00 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=BAOCAOKHACHHANG. 
+Nội dung lỗi:Invalid column name 'C_TYPE'.
+__________________________
