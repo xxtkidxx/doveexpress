@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data;
 using Telerik.Web.UI;
 using System.Globalization;
+using Telerik.Web.UI.GridExcelBuilder;
 
 public partial class module_BAOCAONGAY : System.Web.UI.UserControl
 {
@@ -34,6 +35,8 @@ public partial class module_BAOCAONGAY : System.Web.UI.UserControl
             string index = Request["index"].ToString();
             string Value = Request["value"].ToString();
         }
+        radTuNgay.SelectedDate = DateTime.Now;
+        radDenNgay.SelectedDate = DateTime.Now;
         Session["LastUrl"] = Request.Url.ToString();
     }
     protected void btnShowAll_Click(object sender, System.Web.UI.ImageClickEventArgs e)
@@ -74,6 +77,30 @@ public partial class module_BAOCAONGAY : System.Web.UI.UserControl
     {
         if (e.CommandName == "PrintGrid")
         {
+        }
+    }
+    protected void RadGridBAOCAONGAY_ExcelMLExportRowCreated(object sender, Telerik.Web.UI.GridExcelBuilder.GridExportExcelMLRowCreatedArgs e)
+    {
+        if (e.Worksheet.Table.Rows.Count == RadGridBAOCAONGAY.Items.Count + 1)
+        {
+            RowElement row = new RowElement();
+            GridFooterItem footer = (sender as RadGrid).MasterTableView.GetItems(GridItemType.Footer)[0] as GridFooterItem;
+            foreach (GridColumn column in (sender as RadGrid).MasterTableView.Columns)
+            {
+                CellElement cell = new CellElement();
+                string cellText = footer[column.UniqueName].Text;
+                cell.Data.DataItem = cellText == "&nbsp;" ? "" : cellText;
+                row.Cells.Add(cell);
+            }
+            e.Worksheet.Table.Rows.Add(row);
+        }
+    }
+    protected void RadGridBAOCAONGAY_ItemDataBound(object sender, GridItemEventArgs e)
+    {
+        if (e.Item is GridDataItem)
+        {
+            //Label lblSTT = (Label)e.Item.FindControl("lblSTT");
+            //lblSTT.Text = (e.Item.ItemIndex + 1).ToString();
         }
     }
 }

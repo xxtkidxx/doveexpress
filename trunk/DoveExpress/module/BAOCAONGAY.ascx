@@ -40,13 +40,15 @@ Từ ngày:&nbsp;
 </telerik:RadDatePicker>
 </div>
 <telerik:RadGrid ID="RadGridBAOCAONGAY" runat="server" Skin="Vista" 
-    AllowPaging="True" PageSize="20" AllowSorting="True" 
-    AllowFilteringByColumn="True" GridLines="None" ShowStatusBar="True"
+    AllowPaging="False" AllowSorting="True" 
+    AllowFilteringByColumn="False" GridLines="None" ShowStatusBar="True"
     AutoGenerateColumns="False" onitemcommand="RadGridBAOCAONGAY_ItemCommand" 
     AllowMultiRowEdit="True" AllowAutomaticDeletes="True" 
     AllowAutomaticInserts="True" AllowAutomaticUpdates="True" 
     DataSourceID="BAOCAONGAYDataSource" ShowFooter="True"
-    ondatabound="RadGridBAOCAONGAY_DataBound" CellSpacing="0">
+    ondatabound="RadGridBAOCAONGAY_DataBound" CellSpacing="0" 
+    onexcelmlexportrowcreated="RadGridBAOCAONGAY_ExcelMLExportRowCreated" 
+    onitemdatabound="RadGridBAOCAONGAY_ItemDataBound">
     <PagerStyle FirstPageToolTip="Trang đầu" LastPageToolTip="Trang cuối" NextPagesToolTip="Các trang tiếp" NextPageToolTip="Trang tiếp" 
     PageSizeLabelText="Số bản ghi hiển thị:" PrevPagesToolTip="Các trang sau" PrevPageToolTip="Trang sau" PagerTextFormat="Change page: {4} &nbsp;Trang <strong>{0}</strong>/<strong>{1}</strong>, Bản ghi <strong>{2}</strong> đến <strong>{3}</strong> của tất cả <strong>{5}</strong> bản ghi" />    
     <ExportSettings HideStructureColumns="true" ExportOnlyData="true" IgnorePaging="true" OpenInNewWindow="true" Excel-Format="ExcelML"></ExportSettings>   
@@ -55,7 +57,7 @@ Từ ngày:&nbsp;
         <CommandItemTemplate>
                     <div style="padding: 5px 5px;float:left;width:auto">
                        <b>Báo cáo doanh số theo ngày</b>&nbsp;&nbsp;&nbsp;&nbsp;
-                       <asp:LinkButton ID="lbPrint" runat="server" CommandName="PrintGrid"><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Refresh.gif" />Làm mới</asp:LinkButton>&nbsp;&nbsp;
+                       <asp:LinkButton ID="lbPrint" runat="server"  Visible ="false" CommandName="PrintGrid"><img style="border:0px;vertical-align:middle;" alt="" src="Images/approval.gif" />In</asp:LinkButton>&nbsp;&nbsp;&nbsp;&nbsp;
                        <asp:LinkButton ID="lblRefesh" runat="server" CommandName="RebindGrid"><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Refresh.gif" />Làm mới</asp:LinkButton>
                     </div>
                     <div style="padding: 5px 5px;float:right;width:auto">
@@ -66,21 +68,6 @@ Từ ngày:&nbsp;
                     </div>
         </CommandItemTemplate>
         <Columns>
-                <telerik:GridBoundColumn UniqueName="PK_ID" HeaderText="" DataField="PK_ID" Visible ="false"
-                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
-                </telerik:GridBoundColumn>
-                 <telerik:GridTemplateColumn HeaderText ="" ShowFilterIcon="false">   
-                 <FilterTemplate >
-                  <center>
-                    <asp:ImageButton ID="btnShowAll" runat="server" ImageUrl="../Images/Grid/filterCancel.gif" AlternateText="Xem tất" ToolTip="Xem tất" OnClick="btnShowAll_Click" Style="vertical-align: middle" />
-                  </center>
-                 </FilterTemplate>
-                  <ItemTemplate>
-                      <asp:Label ID="lblSTT" runat="server" Text=""></asp:Label>
-                </ItemTemplate>
-                 <HeaderStyle HorizontalAlign ="Center" Width ="30px" />
-                 <ItemStyle HorizontalAlign ="Center" Width ="30px" />
-               </telerik:GridTemplateColumn>
                 <telerik:GridBoundColumn UniqueName="C_NGAY" HeaderText="Ngày" DataField="C_NGAY" HeaderStyle-Width="100px" HeaderStyle-HorizontalAlign="Center"
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%" DataType="System.DateTime" DataFormatString="{0:dd/MM/yyyy}">
                 </telerik:GridBoundColumn>
@@ -115,16 +102,16 @@ Từ ngày:&nbsp;
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
                 </telerik:GridBoundColumn>
                 <telerik:GridBoundColumn UniqueName="C_TIENHANG" HeaderText="Tiền hàng" DataField="C_TIENHANG" HeaderStyle-Width="130px" HeaderStyle-HorizontalAlign="Center"
-                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
+                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%" Aggregate="Sum" FooterText="Tổng : ">
                 </telerik:GridBoundColumn>
                 <telerik:GridBoundColumn UniqueName="C_HINHTHUCTT" HeaderText="Hình thức TT" DataField="C_HINHTHUCTT" HeaderStyle-Width="130px" HeaderStyle-HorizontalAlign="Center"
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
                 </telerik:GridBoundColumn>
                  <telerik:GridBoundColumn UniqueName="C_DATHU" HeaderText="Đã thu" DataField="C_DATHU" HeaderStyle-Width="130px" HeaderStyle-HorizontalAlign="Center"
-                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
+                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%" Aggregate="Sum" FooterText="Tổng : ">
                 </telerik:GridBoundColumn>
                  <telerik:GridBoundColumn UniqueName="C_CONLAI" HeaderText="Còn lại" DataField="C_CONLAI" HeaderStyle-Width="130px" HeaderStyle-HorizontalAlign="Center"
-                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
+                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%" Aggregate="Sum" FooterText="Tổng : ">
                 </telerik:GridBoundColumn>               
                 <telerik:GridBoundColumn UniqueName="NHANVIENNHANNAME" HeaderText="Nhân viên nhận" DataField="NHANVIENNHANNAME" HeaderStyle-Width="130px" HeaderStyle-HorizontalAlign="Center"
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
@@ -147,7 +134,8 @@ Từ ngày:&nbsp;
         </Columns>
         </MasterTableView>
         <ClientSettings>
-            <Scrolling AllowScroll="True" UseStaticHeaders="True" SaveScrollPosition="True" FrozenColumnsCount="3" ScrollHeight="450px" />
+            <Selecting AllowRowSelect="True" EnableDragToSelectRows="True" />
+            <Scrolling AllowScroll="True" UseStaticHeaders="True" SaveScrollPosition="True" FrozenColumnsCount="0" ScrollHeight="450px" />
         </ClientSettings>
         <SortingSettings SortedAscToolTip="Sắp xếp tăng dần" 
             SortedDescToolTip="Sắp xếp giảm dần" SortToolTip="Click để sắp xếp" />
