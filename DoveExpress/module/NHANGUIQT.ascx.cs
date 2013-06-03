@@ -670,9 +670,4 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
             return true;
         }
     }
-    protected void Button1_Click(object sender, EventArgs e)
-    {
-        Response.Write(Session["test"].ToString());
-        ITCLIB.Admin.JavaScript.ShowMessage(Session["test"].ToString(), this);
-    }
 }

@@ -700,9 +700,4 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
         }
         return SelectSQL;
     }
-    protected void Button1_Click(object sender, EventArgs e)
-    {
-        Response.Write(Session["test"].ToString());
-        ITCLIB.Admin.JavaScript.ShowMessage(Session["test"].ToString(), this);
-    }
 }
