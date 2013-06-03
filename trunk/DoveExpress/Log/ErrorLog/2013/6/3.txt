@@ -1,177 +1,150 @@
-Thời gian lỗi : 2013-06-02 01:23:13 AM
+Thời gian lỗi : 2013-06-03 00:03:09 AM
 Địa chỉ IP : ::1
 Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
-Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\module\NHANGUI.ascx.cs(488): error CS0103: The name 'arrayvalue' does not exist in the current context
+Nội dung lỗi:Invalid column name ' C_KHAIGIA'.
 __________________________
-Thời gian lỗi : 2013-06-02 01:26:28 AM
-Địa chỉ IP : ::1
-Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
-Nội dung lỗi:Object reference not set to an instance of an object.
-__________________________
-Thời gian lỗi : 2013-06-02 01:28:06 AM
+Thời gian lỗi : 2013-06-03 00:19:22 AM
 Địa chỉ IP : ::1
 Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
 Nội dung lỗi:Object reference not set to an instance of an object.
 __________________________
-Thời gian lỗi : 2013-06-02 01:28:59 AM
+Thời gian lỗi : 2013-06-03 00:19:32 AM
 Địa chỉ IP : ::1
 Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
 Nội dung lỗi:Object reference not set to an instance of an object.
 __________________________
-Thời gian lỗi : 2013-06-02 01:29:57 AM
+Thời gian lỗi : 2013-06-03 00:19:36 AM
 Địa chỉ IP : ::1
 Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
 Nội dung lỗi:Object reference not set to an instance of an object.
 __________________________
-Thời gian lỗi : 2013-06-02 01:34:33 AM
+Thời gian lỗi : 2013-06-03 00:19:45 AM
 Địa chỉ IP : ::1
 Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
 Nội dung lỗi:Object reference not set to an instance of an object.
 __________________________
-Thời gian lỗi : 2013-06-02 01:39:40 AM
-Địa chỉ IP : ::1
-Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
-Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\module\NHANGUI.ascx.cs(493): error CS0103: The name 'FK_NHOMKHACHHANG' does not exist in the current context
-__________________________
-Thời gian lỗi : 2013-06-02 01:40:04 AM
+Thời gian lỗi : 2013-06-03 00:20:13 AM
 Địa chỉ IP : ::1
 Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
 Nội dung lỗi:Object reference not set to an instance of an object.
 __________________________
-Thời gian lỗi : 2013-06-02 21:18:45 PM
-Địa chỉ IP : ::1
-Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
-Nội dung lỗi:Decimal can only round to between 0 and 28 digits of precision.
-Parameter name: decimals
-__________________________
-Thời gian lỗi : 2013-06-02 21:20:17 PM
-Địa chỉ IP : ::1
-Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
-Nội dung lỗi:Decimal can only round to between 0 and 28 digits of precision.
-Parameter name: decimals
-__________________________
-Thời gian lỗi : 2013-06-02 22:08:37 PM
+Thời gian lỗi : 2013-06-03 00:25:49 AM
 Địa chỉ IP : ::1
 Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
 Nội dung lỗi:Object reference not set to an instance of an object.
 __________________________
-Thời gian lỗi : 2013-06-02 22:08:55 PM
+Thời gian lỗi : 2013-06-03 00:25:52 AM
 Địa chỉ IP : ::1
 Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
 Nội dung lỗi:Object reference not set to an instance of an object.
 __________________________
-Thời gian lỗi : 2013-06-02 22:12:58 PM
+Thời gian lỗi : 2013-06-03 00:25:53 AM
 Địa chỉ IP : ::1
 Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
 Nội dung lỗi:Object reference not set to an instance of an object.
 __________________________
-Thời gian lỗi : 2013-06-02 22:13:43 PM
+Thời gian lỗi : 2013-06-03 00:26:30 AM
 Địa chỉ IP : ::1
 Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
 Nội dung lỗi:Object reference not set to an instance of an object.
 __________________________
-Thời gian lỗi : 2013-06-02 22:13:47 PM
+Thời gian lỗi : 2013-06-03 00:29:35 AM
 Địa chỉ IP : ::1
 Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
 Nội dung lỗi:Object reference not set to an instance of an object.
 __________________________
-Thời gian lỗi : 2013-06-02 22:14:21 PM
+Thời gian lỗi : 2013-06-03 00:31:23 AM
 Địa chỉ IP : ::1
 Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
 Nội dung lỗi:Object reference not set to an instance of an object.
 __________________________
-Thời gian lỗi : 2013-06-02 22:14:24 PM
+Thời gian lỗi : 2013-06-03 00:31:35 AM
 Địa chỉ IP : ::1
 Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
 Nội dung lỗi:Object reference not set to an instance of an object.
 __________________________
-Thời gian lỗi : 2013-06-02 22:14:26 PM
+Thời gian lỗi : 2013-06-03 00:31:42 AM
 Địa chỉ IP : ::1
 Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
 Nội dung lỗi:Object reference not set to an instance of an object.
 __________________________
-Thời gian lỗi : 2013-06-02 22:14:28 PM
+Thời gian lỗi : 2013-06-03 00:33:19 AM
 Địa chỉ IP : ::1
 Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
 Nội dung lỗi:Object reference not set to an instance of an object.
 __________________________
-Thời gian lỗi : 2013-06-02 22:14:40 PM
+Thời gian lỗi : 2013-06-03 00:36:04 AM
 Địa chỉ IP : ::1
 Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
 Nội dung lỗi:Object reference not set to an instance of an object.
 __________________________
-Thời gian lỗi : 2013-06-02 22:14:42 PM
+Thời gian lỗi : 2013-06-03 00:36:23 AM
 Địa chỉ IP : ::1
 Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
 Nội dung lỗi:Object reference not set to an instance of an object.
 __________________________
-Thời gian lỗi : 2013-06-02 22:14:44 PM
+Thời gian lỗi : 2013-06-03 00:36:27 AM
 Địa chỉ IP : ::1
 Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
 Nội dung lỗi:Object reference not set to an instance of an object.
 __________________________
-Thời gian lỗi : 2013-06-02 22:14:51 PM
+Thời gian lỗi : 2013-06-03 00:36:55 AM
 Địa chỉ IP : ::1
 Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
 Nội dung lỗi:Object reference not set to an instance of an object.
 __________________________
-Thời gian lỗi : 2013-06-02 22:16:39 PM
+Thời gian lỗi : 2013-06-03 00:36:57 AM
 Địa chỉ IP : ::1
 Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
 Nội dung lỗi:Object reference not set to an instance of an object.
 __________________________
-Thời gian lỗi : 2013-06-02 22:16:41 PM
+Thời gian lỗi : 2013-06-03 00:37:36 AM
 Địa chỉ IP : ::1
 Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
 Nội dung lỗi:Object reference not set to an instance of an object.
 __________________________
-Thời gian lỗi : 2013-06-02 22:16:59 PM
+Thời gian lỗi : 2013-06-03 00:37:39 AM
 Địa chỉ IP : ::1
 Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
 Nội dung lỗi:Object reference not set to an instance of an object.
 __________________________
-Thời gian lỗi : 2013-06-02 22:17:01 PM
+Thời gian lỗi : 2013-06-03 00:38:28 AM
 Địa chỉ IP : ::1
 Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
 Nội dung lỗi:Object reference not set to an instance of an object.
 __________________________
-Thời gian lỗi : 2013-06-02 22:18:48 PM
+Thời gian lỗi : 2013-06-03 00:38:30 AM
 Địa chỉ IP : ::1
 Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
 Nội dung lỗi:Object reference not set to an instance of an object.
 __________________________
-Thời gian lỗi : 2013-06-02 22:18:50 PM
+Thời gian lỗi : 2013-06-03 00:39:43 AM
 Địa chỉ IP : ::1
 Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
 Nội dung lỗi:Object reference not set to an instance of an object.
 __________________________
-Thời gian lỗi : 2013-06-02 22:18:53 PM
+Thời gian lỗi : 2013-06-03 00:39:46 AM
 Địa chỉ IP : ::1
 Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
 Nội dung lỗi:Object reference not set to an instance of an object.
 __________________________
-Thời gian lỗi : 2013-06-02 22:30:31 PM
-Địa chỉ IP : ::1
-Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOCDT. 
-Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\module\CHITIETCUOCDT.ascx(53): error CS0103: The name 'RadGridCHITIETCUOC' does not exist in the current context
-__________________________
-Thời gian lỗi : 2013-06-02 22:31:11 PM
-Địa chỉ IP : ::1
-Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOCDT. 
-Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\module\CHITIETCUOCDT.ascx(53): error CS0103: The name 'RadGridCHITIETCUOC' does not exist in the current context
-__________________________
-Thời gian lỗi : 2013-06-02 22:32:00 PM
-Địa chỉ IP : ::1
-Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOCDT. 
-Nội dung lỗi:DataBinding: 'Telerik.Web.UI.GridInsertionObject' does not contain a property with the name 'C_TYPE'.
-__________________________
-Thời gian lỗi : 2013-06-02 22:32:01 PM
-Địa chỉ IP : ::1
-Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOCDT. 
-Nội dung lỗi:DataBinding: 'Telerik.Web.UI.GridInsertionObject' does not contain a property with the name 'C_TYPE'.
-__________________________
-Thời gian lỗi : 2013-06-02 23:57:43 PM
+Thời gian lỗi : 2013-06-03 00:40:25 AM
 Địa chỉ IP : ::1
 Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
-Nội dung lỗi:Operand data type nvarchar is invalid for subtract operator.
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-06-03 00:40:57 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-06-03 00:41:26 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-06-03 00:41:28 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Object reference not set to an instance of an object.
 __________________________

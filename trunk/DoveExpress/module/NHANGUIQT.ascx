@@ -1,34 +1,19 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="NHANGUI.ascx.cs" Inherits="module_NHANGUI" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="NHANGUIQT.ascx.cs" Inherits="module_NHANGUIQT" %>
 <%@ Register TagPrefix="uc1" Namespace="ITCLIB.Admin" %>
-<telerik:RadCodeBlock ID="RadCodeBlockNHANGUI" runat="server">
+<telerik:RadCodeBlock ID="RadCodeBlockNHANGUIQT" runat="server">
 <script type="text/javascript">
         function RowDblClick(sender, eventArgs) {
-            var CanEdit = "<%=ITCLIB.Security.Security.CanEditModule("NHANGUI") %>";
-            if ((eventArgs.get_tableView().get_name() == "MasterTableViewNHANGUI") && (CanEdit == "True")) {
+            var CanEdit = "<%=ITCLIB.Security.Security.CanEditModule("NHANGUIQT") %>";
+            if ((eventArgs.get_tableView().get_name() == "MasterTableViewNHANGUIQT") && (CanEdit == "True")) {
                 sender.get_masterTableView().editItem(eventArgs.get_itemIndexHierarchical());
             }
         }
-    var cmbQuanHuyen;
-    function OnClientLoadQuanHuyen(sender) {
-        cmbQuanHuyen = sender;
+    var cmbQuocGia;
+    function OnClientLoadQuocGia(sender) {
+        cmbQuocGia = sender;
     }
-    function cmbTinhThanhClientSelectedIndexChangedHandler(sender, eventArgs) {
-        cmbQuanHuyen.requestItems(eventArgs.get_item().get_value(), false);        
-    }
-    function ItemsLoadedQuanHuyen(combo, eventArqs) {
-        if (combo.get_items().get_count() > 0) {
-            combo.trackChanges();
-            combo.get_items().getItem(0).select();
-            combo.updateClientState();
-            combo.commitChanges();
-        } else {
-            combo.set_text("");
-        }
-    }
-    function cmbQuanHuyenClientSelectedIndexChangedHandler(sender, eventArgs) {
-        var hftext = GetGridServerElementNG("hfQuanHuyen");
-        hftext.value = eventArgs.get_item().get_value();
-        $find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("cmbQuanHuyen;" + eventArgs.get_item().get_value());
+    function cmbQuocGiaClientSelectedIndexChangedHandler(sender, eventArgs) {
+        $find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("cmbQuocGia;" + eventArgs.get_item().get_value());
         return false;
     }
     function cmbSanPhamClientSelectedIndexChangedHandler(sender, eventArgs) {
@@ -128,75 +113,75 @@
     } 
 </script>
 <script type="text/javascript">
-     function onResponseEndNG() {
-         if (typeof (result) != "undefined" && result && result != "") {
-             //alert(result);
-             var arrayOfStrings = result.split(",");
-             if (arrayOfStrings[0] != "msg") {
-                 txtPPXD.set_value(arrayOfStrings[0]);
-                 txtC_GIACUOC.set_value(arrayOfStrings[1]);
-                 txtC_GIADOITAC.set_value(arrayOfStrings[2]);
-             }
-             else {
-                 alert(arrayOfStrings[1]);
-             }
-             result = "";
-         }
-         return false;
-     }
+    function onResponseEndNG() {
+        if (typeof (result) != "undefined" && result && result != "") {
+            //alert(result);
+            var arrayOfStrings = result.split(",");
+            if (arrayOfStrings[0] != "msg") {
+                txtPPXD.set_value(arrayOfStrings[0]);
+                txtC_GIACUOC.set_value(arrayOfStrings[1]);
+                txtC_GIADOITAC.set_value(arrayOfStrings[2]);
+            }
+            else {
+                alert(arrayOfStrings[1]);
+            }
+            result = "";
+        }
+        return false;
+    }
 </script>
 <script type="text/javascript">
-      var registeredElementsNG = [];
-      function GetRegisteredServerElementNG(serverID) {
-          var clientID = "";
-          for (var i = 0; i < registeredElementsNG.length; i++) {
-              clientID = registeredElementsNG[i];
-              if (clientID.indexOf(serverID) >= 0)
-                  break;
-          }
-          return $get(clientID);
-      }
-      function GetGridServerElementNG(serverID, tagName) {
-          if (!tagName)
-              tagName = "*";
+    var registeredElementsNG = [];
+    function GetRegisteredServerElementNG(serverID) {
+        var clientID = "";
+        for (var i = 0; i < registeredElementsNG.length; i++) {
+            clientID = registeredElementsNG[i];
+            if (clientID.indexOf(serverID) >= 0)
+                break;
+        }
+        return $get(clientID);
+    }
+    function GetGridServerElementNG(serverID, tagName) {
+        if (!tagName)
+            tagName = "*";
 
-          var grid = $get("<%=RadGridNHANGUI.ClientID %>");
-          var elements = grid.getElementsByTagName(tagName);
-          for (var i = 0; i < elements.length; i++) {
-              var element = elements[i];
-              if (element.id.indexOf(serverID) >= 0)
-                  return element;
-          }
-      }
+        var grid = $get("<%=RadGridNHANGUIQT.ClientID %>");
+        var elements = grid.getElementsByTagName(tagName);
+        for (var i = 0; i < elements.length; i++) {
+            var element = elements[i];
+            if (element.id.indexOf(serverID) >= 0)
+                return element;
+        }
+    }
 </script>
 </telerik:RadCodeBlock>
-<telerik:RadAjaxLoadingPanel Skin="Vista" ID="RadAjaxLoadingPanelNHANGUI" runat="server" />
-<telerik:RadGrid ID="RadGridNHANGUI" runat="server" Skin="Vista" 
+<telerik:RadAjaxLoadingPanel Skin="Vista" ID="RadAjaxLoadingPanelNHANGUIQT" runat="server" />
+<telerik:RadGrid ID="RadGridNHANGUIQT" runat="server" Skin="Vista" 
     AllowPaging="True" PageSize="20" AllowSorting="True" 
     AllowFilteringByColumn="True" GridLines="None" ShowStatusBar="True"
     AutoGenerateColumns="False"  
     AllowMultiRowEdit="True" AllowAutomaticDeletes="True" 
     AllowAutomaticInserts="True" AllowAutomaticUpdates="True" 
-    DataSourceID="NHANGUIDataSource" ShowFooter="True"
-    ondatabound="RadGridNHANGUI_DataBound" 
-    onitemdeleted="RadGridNHANGUI_ItemDeleted" oniteminserted="RadGridNHANGUI_ItemInserted" 
-    onitemupdated="RadGridNHANGUI_ItemUpdated" 
-    onitemcommand="RadGridNHANGUI_ItemCommand" 
-    onitemdatabound="RadGridNHANGUI_ItemDataBound" CellSpacing="0">
+    DataSourceID="NHANGUIQTDataSource" ShowFooter="True"
+    ondatabound="RadGridNHANGUIQT_DataBound" 
+    onitemdeleted="RadGridNHANGUIQT_ItemDeleted" oniteminserted="RadGridNHANGUIQT_ItemInserted" 
+    onitemupdated="RadGridNHANGUIQT_ItemUpdated" 
+    onitemcommand="RadGridNHANGUIQT_ItemCommand" 
+    onitemdatabound="RadGridNHANGUIQT_ItemDataBound" CellSpacing="0">
     <PagerStyle FirstPageToolTip="Trang đầu" LastPageToolTip="Trang cuối" NextPagesToolTip="Các trang tiếp" NextPageToolTip="Trang tiếp" 
     PageSizeLabelText="Số bản ghi hiển thị:" PrevPagesToolTip="Các trang sau" PrevPageToolTip="Trang sau" PagerTextFormat="Change page: {4} &nbsp;Trang <strong>{0}</strong>/<strong>{1}</strong>, Bản ghi <strong>{2}</strong> đến <strong>{3}</strong> của tất cả <strong>{5}</strong> bản ghi" />    
     <ExportSettings HideStructureColumns="true" ExportOnlyData="true" IgnorePaging="true" OpenInNewWindow="true" Excel-Format="ExcelML"></ExportSettings>   
      <GroupingSettings CaseSensitive ="false"  />
-    <MasterTableView Name="MasterTableViewNHANGUI" CommandItemDisplay="Top" DataSourceID="NHANGUIDataSource" DataKeyNames="PK_ID" ClientDataKeyNames="PK_ID" EditMode="PopUp" NoMasterRecordsText="Không có dữ liệu">
+    <MasterTableView Name="MasterTableViewNHANGUIQT" CommandItemDisplay="Top" DataSourceID="NHANGUIQTDataSource" DataKeyNames="PK_ID" ClientDataKeyNames="PK_ID" EditMode="PopUp" NoMasterRecordsText="Không có dữ liệu">
         <CommandItemTemplate>
                     <div style="padding: 5px 5px;float:left;width:auto">
-                        <b>Quản lý nhận gửi trong nước</b>&nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:LinkButton ID="btnEditSelected" runat="server" CommandName="EditSelected" Visible='<%# RadGridNHANGUI.EditIndexes.Count == 0 && ITCLIB.Security.Security.CanEditModule("NHANGUI") %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Edit.gif" />Sửa</asp:LinkButton>&nbsp;&nbsp;
-                        <asp:LinkButton ID="btnUpdateEdited" runat="server" CommandName="UpdateEdited" Visible='<%# RadGridNHANGUI.EditIndexes.Count > 0 %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Update.gif" />Lưu</asp:LinkButton>&nbsp;&nbsp;
-                        <asp:LinkButton ID="btnCancel" runat="server" CommandName="CancelAll" Visible='<%# RadGridNHANGUI.EditIndexes.Count > 0 || RadGridNHANGUI.MasterTableView.IsItemInserted %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Cancel.gif" />Hủy bỏ</asp:LinkButton>&nbsp;&nbsp;
-                        <asp:LinkButton ID="LinkButton2" runat="server" CommandName="InitInsert" Visible='<%# !RadGridNHANGUI.MasterTableView.IsItemInserted && ITCLIB.Security.Security.CanAddModule("NHANGUI") %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/AddRecord.gif" />Thêm</asp:LinkButton>&nbsp;&nbsp;
-                        <asp:LinkButton ID="LinkButton3" runat="server" CommandName="PerformInsert" Visible='<%# RadGridNHANGUI.MasterTableView.IsItemInserted %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Insert.gif" />Lưu</asp:LinkButton>&nbsp;&nbsp;
-                        <asp:LinkButton ID="LinkButton1" OnClientClick="javascript:return confirm('Bạn có muốn xóa bản ghi đã chọn không?')" runat="server" CommandName="DeleteSelected" Visible='<%# ITCLIB.Security.Security.CanDeleteModule("NHANGUI") %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Delete.gif" />Xóa</asp:LinkButton>&nbsp;&nbsp;
+                        <b>Quản lý nhận gửi quốc tế</b>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <asp:LinkButton ID="btnEditSelected" runat="server" CommandName="EditSelected" Visible='<%# RadGridNHANGUIQT.EditIndexes.Count == 0 && ITCLIB.Security.Security.CanEditModule("NHANGUIQT") %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Edit.gif" />Sửa</asp:LinkButton>&nbsp;&nbsp;
+                        <asp:LinkButton ID="btnUpdateEdited" runat="server" CommandName="UpdateEdited" Visible='<%# RadGridNHANGUIQT.EditIndexes.Count > 0 %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Update.gif" />Lưu</asp:LinkButton>&nbsp;&nbsp;
+                        <asp:LinkButton ID="btnCancel" runat="server" CommandName="CancelAll" Visible='<%# RadGridNHANGUIQT.EditIndexes.Count > 0 || RadGridNHANGUIQT.MasterTableView.IsItemInserted %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Cancel.gif" />Hủy bỏ</asp:LinkButton>&nbsp;&nbsp;
+                        <asp:LinkButton ID="LinkButton2" runat="server" CommandName="InitInsert" Visible='<%# !RadGridNHANGUIQT.MasterTableView.IsItemInserted && ITCLIB.Security.Security.CanAddModule("NHANGUIQT") %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/AddRecord.gif" />Thêm</asp:LinkButton>&nbsp;&nbsp;
+                        <asp:LinkButton ID="LinkButton3" runat="server" CommandName="PerformInsert" Visible='<%# RadGridNHANGUIQT.MasterTableView.IsItemInserted %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Insert.gif" />Lưu</asp:LinkButton>&nbsp;&nbsp;
+                        <asp:LinkButton ID="LinkButton1" OnClientClick="javascript:return confirm('Bạn có muốn xóa bản ghi đã chọn không?')" runat="server" CommandName="DeleteSelected" Visible='<%# ITCLIB.Security.Security.CanDeleteModule("NHANGUIQT") %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Delete.gif" />Xóa</asp:LinkButton>&nbsp;&nbsp;
                        <asp:LinkButton ID="LinkButton4" runat="server" CommandName="RebindGrid"><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Refresh.gif" />Làm mới</asp:LinkButton>
                     </div>
                     <div style="padding: 5px 5px;float:right;width:auto">
@@ -240,10 +225,7 @@
                 <telerik:GridBoundColumn UniqueName="C_DIACHINHAN" HeaderText="Địa chỉ nhận" DataField="C_DIACHINHAN" HeaderStyle-Width="130px" HeaderStyle-HorizontalAlign="Center"
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
                 </telerik:GridBoundColumn>
-                <telerik:GridBoundColumn UniqueName="TINHTHANHNAME" HeaderText="Tỉnh thành" DataField="TINHTHANHNAME" HeaderStyle-Width="130px" HeaderStyle-HorizontalAlign="Center"
-                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
-                </telerik:GridBoundColumn>
-                <telerik:GridBoundColumn UniqueName="QUANHUYENNAME" HeaderText="Quận huyện" DataField="QUANHUYENNAME" HeaderStyle-Width="130px" HeaderStyle-HorizontalAlign="Center"
+                <telerik:GridBoundColumn UniqueName="QUOCGIANAME" HeaderText="Quốc gia" DataField="QUOCGIANAME" HeaderStyle-Width="130px" HeaderStyle-HorizontalAlign="Center"
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
                 </telerik:GridBoundColumn>
                 <telerik:GridBoundColumn UniqueName="C_NOIDUNG" HeaderText="Nội dung" DataField="C_NOIDUNG" HeaderStyle-Width="130px" HeaderStyle-HorizontalAlign="Center"
@@ -369,24 +351,14 @@
                     <telerik:RadTextBox ID="txtC_DIACHINHAN" Width ="90%" Text='<%# Bind("C_DIACHINHAN") %>' runat="server"></telerik:RadTextBox>
                 </td>
             </tr> 
-            <tr> 
-                <td style ="width:100px;"> <span class="rtsTxtnew">Tỉnh thành:</span></td>
-                <td colspan="4">
-                    <asp:HiddenField ID="hfTinhThanh" runat="server" Value ='<%# cFunction.LoadIDTinhThanhCode(Eval("FK_QUANHUYEN").ToString()) %>' />
-                    <telerik:RadComboBox ID="cmbTinhThanh" runat="server"
-                    DataTextField="C_NAME" DataValueField="PK_ID" DataSourceID="TINHTHANHDataSource"
-                    ShowToggleImage="True" EmptyMessage="Chọn tỉnh"
-                    onclientselectedindexchanged="cmbTinhThanhClientSelectedIndexChangedHandler">
-                    </telerik:RadComboBox>
-                </td>               
-                <td style =" width:100px;"> <span class="rtsTxtnew">Quận huyện:</span></td>
+            <tr>          
+                <td style =" width:100px;"> <span class="rtsTxtnew">Quốc gia:</span></td>
                 <td colspan="12">
-                    <asp:HiddenField ID="hfQuanHuyen" runat="server"  Value ='<%# Bind("FK_QUANHUYEN") %>'/>
-                    <telerik:RadComboBox ID="cmbQuanHuyen" runat="server" 
-                    DataTextField="C_NAME" DataValueField="C_CODE" DataSourceID="QUANHUYENDataSource"
-                    ShowToggleImage="True" EmptyMessage="Chọn quận huyện" 
-                    onclientitemsrequested="ItemsLoadedQuanHuyen" onclientload="OnClientLoadQuanHuyen" 
-                    onitemsrequested="cmbQuanHuyen_ItemsRequested" onclientselectedindexchanged="cmbQuanHuyenClientSelectedIndexChangedHandler">
+                    <telerik:RadComboBox ID="cmbQuocGia" runat="server" SelectedValue='<%# Bind("FK_QUOCGIA") %>'
+                    DataTextField="C_NAME" DataValueField="C_CODE" DataSourceID="QUOCGIADataSource"
+                    ShowToggleImage="True" EmptyMessage="Chọn quốc gia" 
+                    onclientload="OnClientLoadQuocGia" 
+                    onclientselectedindexchanged="cmbQuocGiaClientSelectedIndexChangedHandler">
                     </telerik:RadComboBox>
                 </td>
             </tr> 
@@ -559,12 +531,12 @@
             SortedDescToolTip="Sắp xếp giảm dần" SortToolTip="Click để sắp xếp" />
         <StatusBarSettings LoadingText="Đang tải..." ReadyText="Sẵn sàng" />
 </telerik:RadGrid>
-<asp:SqlDataSource ID="NHANGUIDataSource" runat="server" 
+<asp:SqlDataSource ID="NHANGUIQTDataSource" runat="server" 
     ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>" 
     DeleteCommand="DELETE FROM [NHANGUI] WHERE [PK_ID] = @PK_ID" 
-    InsertCommand="INSERT INTO [NHANGUI] ([C_NGAY], [C_MAKH], [C_BILL], [FK_NHOMKHACHHANG], [C_TENKH], [C_NGUOINHAN], [C_DIACHINHAN], [FK_QUANHUYEN], [C_NOIDUNG], [FK_MASANPHAM], [C_PPXD], [C_KHOILUONG], [C_GIACUOC], [C_DONGGOI], [C_KHAIGIA], [C_COD], [C_KHAC], [C_HINHTHUCTT], [C_DATHU], [C_TIENHANG], [FK_NHANVIENNHAN], [FK_DOITAC], [C_GIADOITAC], [FK_NHANVIENPHAT], [C_NGAYGIOPHAT], [C_NGUOIKYNHAN], [C_BOPHAN],[C_TYPE]) VALUES (@C_NGAY, @C_MAKH, @C_BILL, @FK_NHOMKHACHHANG, @C_TENKH, @C_NGUOINHAN, @C_DIACHINHAN, @FK_QUANHUYEN, @C_NOIDUNG, @FK_MASANPHAM, @C_PPXD, @C_KHOILUONG, @C_GIACUOC, @C_DONGGOI, @C_KHAIGIA, @C_COD, @C_KHAC, @C_HINHTHUCTT, @C_DATHU, @C_TIENHANG, @FK_NHANVIENNHAN, @FK_DOITAC, @C_GIADOITAC, @FK_NHANVIENPHAT, @C_NGAYGIOPHAT, @C_NGUOIKYNHAN, @C_BOPHAN,1)"
-    SelectCommand="SELECT [NHANGUI].[PK_ID], [NHANGUI].[C_NGAY], [NHANGUI].[C_MAKH], [NHANGUI].[FK_NHOMKHACHHANG], [NHANGUI].[C_BILL], [NHANGUI].[C_TENKH], [NHANGUI].[C_NGUOINHAN], [NHANGUI].[C_DIACHINHAN], [NHANGUI].[FK_QUANHUYEN], [NHANGUI].[C_NOIDUNG], [NHANGUI].[FK_MASANPHAM],  [NHANGUI].[C_PPXD], [NHANGUI].[C_KHOILUONG], [NHANGUI].[C_GIACUOC], [NHANGUI].[C_DONGGOI], [NHANGUI].[C_KHAIGIA], [NHANGUI].[C_COD], [NHANGUI].[C_KHAC], [NHANGUI].[C_HINHTHUCTT], [NHANGUI].[C_DATHU], ([NHANGUI].[C_TIENHANG] - [NHANGUI].[C_DATHU]) as [C_CONLAI],([NHANGUI].[C_DONGGOI] + [NHANGUI].[C_KHAIGIA] + [NHANGUI].[C_COD] + [NHANGUI].[C_KHAC]) as [C_PHUTROISUM], [NHANGUI].[C_TIENHANG], [NHANGUI].[FK_NHANVIENNHAN], [NHANGUI].[FK_DOITAC], [NHANGUI].[C_GIADOITAC], [NHANGUI].[FK_NHANVIENPHAT], [NHANGUI].[C_NGAYGIOPHAT], [NHANGUI].[FK_NHANVIENKHAITHAC], [NHANGUI].[C_NGUOIKYNHAN], [NHANGUI].[C_BOPHAN],USERSNHAN.C_NAME as NHANVIENNHANNAME,USERSPHAT.C_NAME as NHANVIENPHATNAME,USERSKHAITHAC.C_NAME as NHANVIENKHAITHACNAME,DMMASANPHAM.C_NAME as SANPHAMNAME,DMQUANHUYEN.C_NAME as QUANHUYENNAME,DMTINHTHANH.C_NAME as TINHTHANHNAME FROM [NHANGUI] LEFT OUTER JOIN USERS as USERSNHAN ON NHANGUI.FK_NHANVIENNHAN = USERSNHAN.PK_ID LEFT OUTER JOIN USERS as USERSPHAT ON NHANGUI.FK_NHANVIENPHAT = USERSPHAT.PK_ID LEFT OUTER JOIN USERS as USERSKHAITHAC ON NHANGUI.FK_NHANVIENKHAITHAC = USERSKHAITHAC.PK_ID LEFT OUTER JOIN DMMASANPHAM ON NHANGUI.FK_MASANPHAM=DMMASANPHAM.PK_ID LEFT OUTER JOIN DMQUANHUYEN ON NHANGUI.FK_QUANHUYEN = DMQUANHUYEN.C_CODE LEFT OUTER JOIN DMTINHTHANH ON DMQUANHUYEN.FK_TINHTHANH = DMTINHTHANH.PK_ID WHERE [NHANGUI].[C_TYPE] = 1" 
-    UpdateCommand="UPDATE [NHANGUI] SET [C_NGAY] = @C_NGAY, [C_MAKH] = @C_MAKH, [C_BILL] = @C_BILL, [FK_NHOMKHACHHANG] = @FK_NHOMKHACHHANG,[C_TENKH] = @C_TENKH, [C_NGUOINHAN] = @C_NGUOINHAN, [C_DIACHINHAN] = @C_DIACHINHAN, [FK_QUANHUYEN] = @FK_QUANHUYEN, [C_NOIDUNG] = @C_NOIDUNG, [FK_MASANPHAM] = @FK_MASANPHAM, [C_PPXD] = @C_PPXD, [C_KHOILUONG] = @C_KHOILUONG, [C_GIACUOC] = @C_GIACUOC, [C_DONGGOI]=@C_DONGGOI, [C_KHAIGIA]=@C_KHAIGIA, [C_COD]=@C_COD, [C_KHAC]=@C_KHAC, [C_HINHTHUCTT] = @C_HINHTHUCTT, [C_DATHU] = @C_DATHU, [C_TIENHANG] = @C_TIENHANG, [FK_NHANVIENNHAN] = @FK_NHANVIENNHAN, [FK_DOITAC] = @FK_DOITAC, [C_GIADOITAC] = @C_GIADOITAC, [FK_NHANVIENPHAT] = @FK_NHANVIENPHAT, [C_NGAYGIOPHAT] = @C_NGAYGIOPHAT, [FK_NHANVIENKHAITHAC]=@FK_NHANVIENKHAITHAC, [C_NGUOIKYNHAN] = @C_NGUOIKYNHAN, [C_BOPHAN] = @C_BOPHAN WHERE [PK_ID] = @PK_ID">
+    InsertCommand="INSERT INTO [NHANGUI] ([C_NGAY], [C_MAKH], [C_BILL], [FK_NHOMKHACHHANG], [C_TENKH], [C_NGUOINHAN], [C_DIACHINHAN], [FK_QUOCGIA], [C_NOIDUNG], [FK_MASANPHAM], [C_PPXD], [C_KHOILUONG], [C_GIACUOC], [C_DONGGOI], [C_KHAIGIA], [C_COD], [C_KHAC], [C_HINHTHUCTT], [C_DATHU], [C_TIENHANG], [FK_NHANVIENNHAN], [FK_DOITAC], [C_GIADOITAC], [FK_NHANVIENPHAT], [C_NGAYGIOPHAT], [C_NGUOIKYNHAN], [C_BOPHAN],[C_TYPE]) VALUES (@C_NGAY, @C_MAKH, @C_BILL, @FK_NHOMKHACHHANG, @C_TENKH, @C_NGUOINHAN, @C_DIACHINHAN, @FK_QUOCGIA, @C_NOIDUNG, @FK_MASANPHAM, @C_PPXD, @C_KHOILUONG, @C_GIACUOC, @C_DONGGOI, @C_KHAIGIA, @C_COD, @C_KHAC, @C_HINHTHUCTT, @C_DATHU, @C_TIENHANG, @FK_NHANVIENNHAN, @FK_DOITAC, @C_GIADOITAC, @FK_NHANVIENPHAT, @C_NGAYGIOPHAT, @C_NGUOIKYNHAN, @C_BOPHAN,2)"
+    SelectCommand="SELECT [NHANGUI].[PK_ID], [NHANGUI].[C_NGAY], [NHANGUI].[C_MAKH], [NHANGUI].[FK_NHOMKHACHHANG], [NHANGUI].[C_BILL], [NHANGUI].[C_TENKH], [NHANGUI].[C_NGUOINHAN], [NHANGUI].[C_DIACHINHAN], [NHANGUI].[FK_QUOCGIA], [NHANGUI].[C_NOIDUNG], [NHANGUI].[FK_MASANPHAM],  [NHANGUI].[C_PPXD], [NHANGUI].[C_KHOILUONG], [NHANGUI].[C_GIACUOC], [NHANGUI].[C_DONGGOI], [NHANGUI].[C_KHAIGIA], [NHANGUI].[C_COD], [NHANGUI].[C_KHAC], [NHANGUI].[C_HINHTHUCTT], [NHANGUI].[C_DATHU], ([NHANGUI].[C_TIENHANG] - [NHANGUI].[C_DATHU]) as [C_CONLAI],([NHANGUI].[C_DONGGOI] + [NHANGUI].[C_KHAIGIA] + [NHANGUI].[C_COD] + [NHANGUI].[C_KHAC]) as [C_PHUTROISUM], [NHANGUI].[C_TIENHANG], [NHANGUI].[FK_NHANVIENNHAN], [NHANGUI].[FK_DOITAC], [NHANGUI].[C_GIADOITAC], [NHANGUI].[FK_NHANVIENPHAT], [NHANGUI].[C_NGAYGIOPHAT], [NHANGUI].[FK_NHANVIENKHAITHAC], [NHANGUI].[C_NGUOIKYNHAN], [NHANGUI].[C_BOPHAN],USERSNHAN.C_NAME as NHANVIENNHANNAME,USERSPHAT.C_NAME as NHANVIENPHATNAME,USERSKHAITHAC.C_NAME as NHANVIENKHAITHACNAME,DMMASANPHAM.C_NAME as SANPHAMNAME,DMQUOCGIA.C_NAME as QUOCGIANAME,DMTINHTHANH.C_NAME as TINHTHANHNAME FROM [NHANGUI] LEFT OUTER JOIN USERS as USERSNHAN ON NHANGUI.FK_NHANVIENNHAN = USERSNHAN.PK_ID LEFT OUTER JOIN USERS as USERSPHAT ON NHANGUI.FK_NHANVIENPHAT = USERSPHAT.PK_ID LEFT OUTER JOIN USERS as USERSKHAITHAC ON NHANGUI.FK_NHANVIENKHAITHAC = USERSKHAITHAC.PK_ID LEFT OUTER JOIN DMMASANPHAM ON NHANGUI.FK_MASANPHAM=DMMASANPHAM.PK_ID LEFT OUTER JOIN DMQUOCGIA ON NHANGUI.FK_QUOCGIA = DMQUOCGIA.C_CODE LEFT OUTER JOIN DMTINHTHANH ON DMQUOCGIA.FK_TINHTHANH = DMTINHTHANH.PK_ID WHERE [NHANGUI].[C_TYPE] = 2" 
+    UpdateCommand="UPDATE [NHANGUI] SET [C_NGAY] = @C_NGAY, [C_MAKH] = @C_MAKH, [C_BILL] = @C_BILL, [FK_NHOMKHACHHANG] = @FK_NHOMKHACHHANG,[C_TENKH] = @C_TENKH, [C_NGUOINHAN] = @C_NGUOINHAN, [C_DIACHINHAN] = @C_DIACHINHAN, [FK_QUOCGIA] = @FK_QUOCGIA, [C_NOIDUNG] = @C_NOIDUNG, [FK_MASANPHAM] = @FK_MASANPHAM, [C_PPXD] = @C_PPXD, [C_KHOILUONG] = @C_KHOILUONG, [C_GIACUOC] = @C_GIACUOC, [C_DONGGOI]=@C_DONGGOI, [C_KHAIGIA]=@C_KHAIGIA, [C_COD]=@C_COD, [C_KHAC]=@C_KHAC, [C_HINHTHUCTT] = @C_HINHTHUCTT, [C_DATHU] = @C_DATHU, [C_TIENHANG] = @C_TIENHANG, [FK_NHANVIENNHAN] = @FK_NHANVIENNHAN, [FK_DOITAC] = @FK_DOITAC, [C_GIADOITAC] = @C_GIADOITAC, [FK_NHANVIENPHAT] = @FK_NHANVIENPHAT, [C_NGAYGIOPHAT] = @C_NGAYGIOPHAT, [FK_NHANVIENKHAITHAC]=@FK_NHANVIENKHAITHAC, [C_NGUOIKYNHAN] = @C_NGUOIKYNHAN, [C_BOPHAN] = @C_BOPHAN WHERE [PK_ID] = @PK_ID">
     <DeleteParameters>
         <asp:Parameter Name="PK_ID" Type="Int32" />
     </DeleteParameters>
@@ -576,7 +548,7 @@
         <asp:Parameter Name="C_TENKH" Type="String" />
         <asp:Parameter Name="C_NGUOINHAN" Type="String" />
         <asp:Parameter Name="C_DIACHINHAN" Type="String" />
-        <asp:Parameter Name="FK_QUANHUYEN" Type="String" />
+        <asp:Parameter Name="FK_QUOCGIA" Type="String" />
         <asp:Parameter Name="C_NOIDUNG" Type="String" />
         <asp:Parameter Name="FK_MASANPHAM" Type="Int32" />
         <asp:Parameter Name="C_PPXD" Type="Single" />
@@ -605,7 +577,7 @@
         <asp:Parameter Name="C_TENKH" Type="String" />
         <asp:Parameter Name="C_NGUOINHAN" Type="String" />
         <asp:Parameter Name="C_DIACHINHAN" Type="String" />
-        <asp:Parameter Name="FK_QUANHUYEN" Type="String" />
+        <asp:Parameter Name="FK_QUOCGIA" Type="String" />
         <asp:Parameter Name="C_NOIDUNG" Type="String" />
         <asp:Parameter Name="FK_MASANPHAM" Type="Int32" />
         <asp:Parameter Name="C_PPXD" Type="Single" />
@@ -640,11 +612,9 @@
 </asp:SqlDataSource>
 <asp:SqlDataSource ID="MAVUNGDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>">
 </asp:SqlDataSource>
- <asp:SqlDataSource ID="TINHTHANHDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
-    SelectCommand="SELECT [DMTINHTHANH].[PK_ID], [DMTINHTHANH].[C_CODE], [DMTINHTHANH].[C_NAME] FROM [DMTINHTHANH] LEFT OUTER JOIN DMQUOCGIA ON DMTINHTHANH.FK_QUOCGIA = DMQUOCGIA.PK_ID WHERE DMQUOCGIA.C_CODE='VN'">
+ <asp:SqlDataSource ID="QUOCGIADataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
+    SelectCommand="SELECT [DMQUOCGIA].[PK_ID], [DMQUOCGIA].[C_CODE], [DMQUOCGIA].[C_NAME] FROM [DMQUOCGIA]">
  </asp:SqlDataSource>
- <asp:SqlDataSource ID="QUANHUYENDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>">
-</asp:SqlDataSource>
 <asp:SqlDataSource ID="UserDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
     SelectCommand="SELECT USERS.PK_ID,USERS.FK_GroupUser,USERS.FK_DEPT,USERS.C_LoginName,USERS.C_Password,USERS.C_NAME,USERS.C_Address,USERS.c_Tel,USERS.C_Email,USERS.C_DESC,GROUPUSER.C_NAME AS GROUPUSERNAME FROM USERS INNER JOIN GROUPUSER ON  USERS.FK_GROUPUSER = GROUPUSER.PK_ID WHERE FK_GroupUser <> 0">
 </asp:SqlDataSource>

@@ -1,0 +1,678 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data;
+using Telerik.Web.UI;
+using System.Globalization;
+
+public partial class module_NHANGUIQT : System.Web.UI.UserControl
+{
+    private string FK_DICHVU
+    {
+        get
+        {
+            return Session["FK_DICHVU"] as string;
+        }
+        set
+        {
+            Session["FK_DICHVU"] = value;
+        }
+    }
+    private string FK_MABANGCUOC
+    {
+        get
+        {
+            return Session["FK_MABANGCUOC"] as string;
+        }
+        set
+        {
+            Session["FK_MABANGCUOC"] = value;
+        }
+    }
+    private string FK_QUOCGIA
+    {
+        get
+        {
+            return Session["FK_QUOCGIA"] as string;
+        }
+        set
+        {
+            Session["FK_QUOCGIA"] = value;
+        }
+    }
+    private string FK_MAVUNG
+    {
+        get
+        {
+            return Session["FK_MAVUNG"] as string;
+        }
+        set
+        {
+            Session["FK_MAVUNG"] = value;
+        }
+    }
+    private int C_KHOILUONG
+    {
+        get
+        {
+            return int.Parse(Session["C_KHOILUONG"].ToString());
+        }
+        set
+        {
+            Session["C_KHOILUONG"] = value;
+        }
+    }
+    private decimal PPXD
+    {
+        get
+        {
+            return decimal.Parse(Session["PPXD"].ToString());
+        }
+        set
+        {
+            Session["PPXD"] = value;
+        }
+    }
+    private decimal CUOCCHINH
+    {
+        get
+        {
+            return decimal.Parse(Session["CUOCCHINH"].ToString());
+        }
+        set
+        {
+            Session["CUOCCHINH"] = value;
+        }
+    }
+    private string FK_DOITAC
+    {
+        get
+        {
+            return Session["FK_DOITAC"] as string;
+        }
+        set
+        {
+            Session["FK_DOITAC"] = value;
+        }
+    }
+    private decimal GIADOITAC
+    {
+        get
+        {
+            return decimal.Parse(Session["GIADOITAC"].ToString());
+        }
+        set
+        {
+            Session["GIADOITAC"] = value;
+        }
+    }
+    private DataTable ctcDataTable
+    {
+        get
+        {
+            return Session["ctcDataTable"] as DataTable;
+        }
+        set
+        {
+            Session["ctcDataTable"] = value;
+        }
+    }
+    private int C_KHOILUONGLK
+    {
+        get
+        {
+            return int.Parse(Session["C_KHOILUONGLK"].ToString());
+        }
+        set
+        {
+            Session["C_KHOILUONGLK"] = value;
+        }
+    }
+    private decimal GIACUOCLK
+    {
+        get
+        {
+            return decimal.Parse(Session["GIACUOCLK"].ToString());
+        }
+        set
+        {
+            Session["GIACUOCLK"] = value;
+        }
+    }
+    string Alarm = "";
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        string sBrowserType = Request.Browser.Type;
+        switch (sBrowserType)
+        {
+            case "IE6":
+                RadGridNHANGUIQT.MasterTableView.EditFormSettings.PopUpSettings.Modal = false;
+                break;
+            case "IE7":
+                RadGridNHANGUIQT.MasterTableView.EditFormSettings.PopUpSettings.Modal = false;
+                break;
+            default:
+                RadGridNHANGUIQT.MasterTableView.EditFormSettings.PopUpSettings.Modal = true;
+                break;
+        }
+        if (!ITCLIB.Security.Security.CanViewModule("Lists"))
+        {
+            ITCLIB.Security.Security.ReturnUrl();
+        }
+        if (Request["index"] != null && Request["value"] != null)
+        {
+            string index = Request["index"].ToString();
+            string Value = Request["value"].ToString();
+        }
+        Session["LastUrl"] = Request.Url.ToString();
+        RadAjaxManager ajaxManager = RadAjaxManager.GetCurrent(Page);
+        ajaxManager.AjaxRequest += new RadAjaxControl.AjaxRequestDelegate(RadScriptManager_AjaxRequestNG);
+        ajaxManager.ClientEvents.OnResponseEnd = "onResponseEndNG";
+    }
+    protected void RadScriptManager_AjaxRequestNG(object sender, AjaxRequestEventArgs e)
+    {
+        GridEditableItem editableItem = null;
+        foreach (GridEditFormItem item in RadGridNHANGUIQT.MasterTableView.GetItems(GridItemType.EditFormItem))
+        {
+            if (item.IsInEditMode)
+            {
+                editableItem = (GridEditableItem)item;
+            }
+        }
+        RadNumericTextBox txtPPXD = (RadNumericTextBox)editableItem.FindControl("txtPPXD");
+        RadTextBox txtCODE = (RadTextBox)editableItem.FindControl("txtCODE");
+        RadAutoCompleteBox radautoC_MAKH = (RadAutoCompleteBox)editableItem.FindControl("radautoC_MAKH");
+        RadAutoCompleteBox radautoC_TENKH = (RadAutoCompleteBox)editableItem.FindControl("radautoC_TENKH");
+        RadNumericTextBox txtC_KHOILUONG = (RadNumericTextBox)editableItem.FindControl("txtC_KHOILUONG");
+        C_KHOILUONG = (txtC_KHOILUONG.Text != "") ? int.Parse(txtC_KHOILUONG.Text) : 0;
+        string[] arrayvalue = e.Argument.Split(';');
+        if (arrayvalue[0] == "cmbNhomKhachHang")
+        {
+            /*KHACHHANGDataSource.SelectCommand = "SELECT DMKHACHHANG.* FROM DMKHACHHANG WHERE FK_NHOMKHACHHANG =" + arrayvalue[1];
+            radautoC_MAKH.DataBind();
+            radautoC_TENKH.DataBind();*/
+            string SelectSQL;
+            SelectSQL = "Select DMMABANGCUOC.PK_ID FROM DMMABANGCUOC WHERE (DMMABANGCUOC.C_VALUE ='" + arrayvalue[1] + "') OR (DMMABANGCUOC.C_VALUE LIKE '%," + arrayvalue[1] + ",%') OR (DMMABANGCUOC.C_VALUE LIKE '%," + arrayvalue[1] + "') OR (DMMABANGCUOC.C_VALUE LIKE '" + arrayvalue[1] + ",%')";
+            DataTable oDataTable = new DataTable();
+            ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
+            oDataTable = SelectQuery.query_data(SelectSQL);
+            if (oDataTable.Rows.Count != 0)
+            {
+                FK_MABANGCUOC = oDataTable.Rows[0]["PK_ID"].ToString();
+            }
+            else
+            {
+                FK_MABANGCUOC = "";
+                Alarm = "msg,Nhóm khách hàng này không nằm trong bảng cước nào";
+            }
+        }
+        else if (arrayvalue[0] == "cmbQuocGia")
+        {
+            FK_QUOCGIA = arrayvalue[1];
+            if (FK_DICHVU != "")
+            {
+                string SelectSQL;
+                SelectSQL = "Select DMMAVUNG.PK_ID FROM DMMAVUNG WHERE FK_MASANPHAM=" + FK_DICHVU + " AND C_TYPE = 2 AND ((DMMAVUNG.C_DESC ='" + FK_QUOCGIA + "') OR (DMMAVUNG.C_DESC LIKE '%," + FK_QUOCGIA + ",%') OR (DMMAVUNG.C_DESC LIKE '%," + FK_QUOCGIA + "') OR (DMMAVUNG.C_DESC LIKE '" + FK_QUOCGIA + ",%'))";
+                DataTable oDataTable = new DataTable();
+                ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
+                oDataTable = SelectQuery.query_data(SelectSQL);
+                if (oDataTable.Rows.Count != 0)
+                {
+                    FK_MAVUNG = oDataTable.Rows[0]["PK_ID"].ToString();
+                }
+                else
+                {
+                    FK_MAVUNG = "";
+                    Alarm = "msg,Quốc gia này không nằm trong vùng tính cước nào";
+                }
+            }
+        }
+        else if (arrayvalue[0] == "cmbSanPham")
+        {
+            FK_DICHVU = arrayvalue[1];
+            string SelectSQL1;
+            SelectSQL1 = "Select DMMASANPHAM.C_PPXD FROM DMMASANPHAM WHERE DMMASANPHAM.PK_ID = " + arrayvalue[1] + "";
+            DataTable oDataTable1 = new DataTable();
+            ITCLIB.Admin.SQL SelectQuery1 = new ITCLIB.Admin.SQL();
+            oDataTable1 = SelectQuery1.query_data(SelectSQL1);
+            if (oDataTable1.Rows.Count != 0)
+            {
+                if (oDataTable1.Rows[0]["C_PPXD"] != DBNull.Value)
+                {
+                    PPXD = decimal.Parse(oDataTable1.Rows[0]["C_PPXD"].ToString());
+                }
+            }
+            if (FK_QUOCGIA != "")
+            {
+                string SelectSQL;
+                SelectSQL = "Select DMMAVUNG.PK_ID FROM DMMAVUNG WHERE FK_MASANPHAM=" + FK_DICHVU + " AND C_TYPE = 2 AND ((DMMAVUNG.C_DESC ='" + FK_QUOCGIA + "') OR (DMMAVUNG.C_DESC LIKE '%," + FK_QUOCGIA + ",%') OR (DMMAVUNG.C_DESC LIKE '%," + FK_QUOCGIA + "') OR (DMMAVUNG.C_DESC LIKE '" + FK_QUOCGIA + ",%'))";
+                DataTable oDataTable = new DataTable();
+                ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
+                oDataTable = SelectQuery.query_data(SelectSQL);
+                if (oDataTable.Rows.Count != 0)
+                {
+                    FK_MAVUNG = oDataTable.Rows[0]["PK_ID"].ToString();
+                }
+                else
+                {
+                    FK_MAVUNG = "";
+                    Alarm = "msg,Quốc gia này không nằm trong vùng tính cước nào";
+                }
+            }
+        }
+        else if (arrayvalue[0] == "txtC_KHOILUONG")
+        {
+            C_KHOILUONG = int.Parse(arrayvalue[1]);
+        }
+        else if (arrayvalue[0] == "cmbFK_DOITAC")
+        {
+            int C_KHOILUONGLKDT = 0;
+            decimal GIACUOCLKDT = 0;
+            string SelectSQL1;
+            SelectSQL1 = "Select DMCHITIETCUOCDT.PK_ID,DMCHITIETCUOCDT.C_KHOILUONG,DMCHITIETCUOCDT.C_CUOCPHI,DMCHITIETCUOCDT.C_TYPE FROM DMCHITIETCUOCDT WHERE FK_DOITAC = " + arrayvalue[1] + " AND FK_MAVUNG = " + FK_MAVUNG + " AND C_TYPE <> 1 ORDER BY C_KHOILUONG  ASC";
+            ITCLIB.Admin.SQL SelectQuery1 = new ITCLIB.Admin.SQL();
+            DataTable oDataTable1 = new DataTable();
+            oDataTable1 = SelectQuery1.query_data(SelectSQL1);
+            string SelectSQL2;
+            SelectSQL2 = "Select DMCHITIETCUOCDT.PK_ID,DMCHITIETCUOCDT.C_KHOILUONG,DMCHITIETCUOCDT.C_CUOCPHI,DMCHITIETCUOCDT.C_TYPE FROM DMCHITIETCUOCDT WHERE FK_DOITAC = " + arrayvalue[1] + " AND FK_MAVUNG = " + FK_MAVUNG + " AND C_TYPE = 1 ORDER BY C_KHOILUONG";
+            DataTable oDataTable2 = new DataTable();
+            ITCLIB.Admin.SQL SelectQuery2 = new ITCLIB.Admin.SQL();
+            oDataTable2 = SelectQuery2.query_data(SelectSQL2);
+            if (oDataTable2.Rows.Count != 0)
+            {
+                C_KHOILUONGLKDT = int.Parse(oDataTable2.Rows[0]["C_KHOILUONG"].ToString(), NumberStyles.Currency);
+                GIACUOCLKDT = decimal.Parse(oDataTable2.Rows[0]["C_CUOCPHI"].ToString(), NumberStyles.Currency);
+            }
+            if (oDataTable1.Rows.Count != 0)
+            {
+                bool check = true;
+                for (int i = 0; i < oDataTable1.Rows.Count; i++)
+                {
+                    if (check)
+                    {
+                        if (i == 0)
+                        {
+                            if (C_KHOILUONG <= int.Parse(oDataTable1.Rows[0]["C_KHOILUONG"].ToString()))
+                            {
+                                GIADOITAC = decimal.Parse(oDataTable1.Rows[0]["C_CUOCPHI"].ToString(), NumberStyles.Currency);
+                            }
+                        }
+                        else
+                        {
+                            if (C_KHOILUONG <= int.Parse(oDataTable1.Rows[i]["C_KHOILUONG"].ToString()) && C_KHOILUONG >= int.Parse(oDataTable1.Rows[i - 1]["C_KHOILUONG"].ToString()))
+                            {
+                                GIADOITAC = decimal.Parse(ctcDataTable.Rows[i]["C_CUOCPHI"].ToString(), NumberStyles.Currency);
+                                check = false;
+                            }
+                            else if (C_KHOILUONG >= int.Parse(oDataTable1.Rows[oDataTable1.Rows.Count - 1]["C_KHOILUONG"].ToString()))
+                            {
+                                if (((C_KHOILUONG - int.Parse(oDataTable1.Rows[oDataTable1.Rows.Count - 1]["C_KHOILUONG"].ToString())) % C_KHOILUONGLKDT) == 0)
+                                {
+                                    GIADOITAC = decimal.Parse(oDataTable1.Rows[oDataTable1.Rows.Count - 1]["C_CUOCPHI"].ToString(), NumberStyles.Currency) + ((C_KHOILUONG - int.Parse(oDataTable1.Rows[oDataTable1.Rows.Count - 1]["C_KHOILUONG"].ToString())) / C_KHOILUONGLKDT) * GIACUOCLKDT;
+                                }
+                                else
+                                {
+                                    GIADOITAC = decimal.Parse(oDataTable1.Rows[oDataTable1.Rows.Count - 1]["C_CUOCPHI"].ToString(), NumberStyles.Currency) + (((C_KHOILUONG - int.Parse(oDataTable1.Rows[oDataTable1.Rows.Count - 1]["C_KHOILUONG"].ToString())) / C_KHOILUONGLKDT) + 1) * GIACUOCLKDT;
+                                }
+                                check = false;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        if ((FK_MABANGCUOC != "") && (FK_MAVUNG != ""))
+        {
+            string SelectSQL1;
+            SelectSQL1 = "Select DMCHITIETCUOC.PK_ID,DMCHITIETCUOC.C_KHOILUONG,DMCHITIETCUOC.C_CUOCPHI,DMCHITIETCUOC.C_TYPE FROM DMCHITIETCUOC WHERE FK_MABANGCUOC = " + FK_MABANGCUOC + " AND FK_MAVUNG = " + FK_MAVUNG + " AND C_TYPE <> 1 ORDER BY C_KHOILUONG  ASC";
+            ITCLIB.Admin.SQL SelectQuery1 = new ITCLIB.Admin.SQL();
+            ctcDataTable = SelectQuery1.query_data(SelectSQL1);
+            string SelectSQL2;
+            SelectSQL2 = "Select DMCHITIETCUOC.PK_ID,DMCHITIETCUOC.C_KHOILUONG,DMCHITIETCUOC.C_CUOCPHI,DMCHITIETCUOC.C_TYPE FROM DMCHITIETCUOC WHERE FK_MABANGCUOC = " + FK_MABANGCUOC + " AND FK_MAVUNG = " + FK_MAVUNG + " AND C_TYPE = 1 ORDER BY C_KHOILUONG";
+            DataTable oDataTable = new DataTable();
+            ITCLIB.Admin.SQL SelectQuery2 = new ITCLIB.Admin.SQL();
+            oDataTable = SelectQuery2.query_data(SelectSQL2);
+            if (oDataTable.Rows.Count != 0)
+            {
+                C_KHOILUONGLK = int.Parse(oDataTable.Rows[0]["C_KHOILUONG"].ToString(), NumberStyles.Currency);
+                GIACUOCLK = decimal.Parse(oDataTable.Rows[0]["C_CUOCPHI"].ToString(), NumberStyles.Currency);
+            }
+
+        }
+        if (C_KHOILUONG != 0)
+        {
+            if (ctcDataTable.Rows.Count != 0)
+            {
+                bool check = true;
+                for (int i = 0; i < ctcDataTable.Rows.Count; i++)
+                {
+                    if (check)
+                    {
+                        if (i == 0)
+                        {
+                            if (C_KHOILUONG <= int.Parse(ctcDataTable.Rows[0]["C_KHOILUONG"].ToString()))
+                            {
+                                CUOCCHINH = decimal.Parse(ctcDataTable.Rows[0]["C_CUOCPHI"].ToString(), NumberStyles.Currency);
+                            }
+                        }
+                        else
+                        {
+                            if (C_KHOILUONG <= int.Parse(ctcDataTable.Rows[i]["C_KHOILUONG"].ToString()) && C_KHOILUONG >= int.Parse(ctcDataTable.Rows[i - 1]["C_KHOILUONG"].ToString()))
+                            {
+                                CUOCCHINH = decimal.Parse(ctcDataTable.Rows[i]["C_CUOCPHI"].ToString(), NumberStyles.Currency);
+                                check = false;
+                            }
+                            else if (C_KHOILUONG >= int.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_KHOILUONG"].ToString()))
+                            {
+                                if (((C_KHOILUONG - int.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_KHOILUONG"].ToString())) % C_KHOILUONGLK) == 0)
+                                {
+                                    CUOCCHINH = decimal.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_CUOCPHI"].ToString(), NumberStyles.Currency) + ((C_KHOILUONG - int.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_KHOILUONG"].ToString())) / C_KHOILUONGLK) * GIACUOCLK;
+                                }
+                                else
+                                {
+                                    CUOCCHINH = decimal.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_CUOCPHI"].ToString(), NumberStyles.Currency) + (((C_KHOILUONG - int.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_KHOILUONG"].ToString())) / C_KHOILUONGLK) + 1) * GIACUOCLK;
+                                }
+                                check = false;
+                            }
+                        }
+                    }
+                }
+            }
+            CUOCCHINH = (Math.Round((CUOCCHINH + ((CUOCCHINH * PPXD) / 100)) / 1000)) * 1000;
+        }
+        if (Alarm != "")
+        {
+            string script = string.Format("var result = '{0}'", Alarm);
+            ScriptManager.RegisterClientScriptBlock(Page, typeof(Page), "result", script, true);
+        }
+        else
+        {
+            string script = string.Format("var result = '{0}'", PPXD + "," + CUOCCHINH + "," + GIADOITAC);
+            ScriptManager.RegisterClientScriptBlock(Page, typeof(Page), "result", script, true);
+        }
+    }
+    protected void btnShowAll_Click(object sender, System.Web.UI.ImageClickEventArgs e)
+    {
+        RadGridNHANGUIQT.MasterTableView.FilterExpression = string.Empty;
+        foreach (GridColumn column in RadGridNHANGUIQT.MasterTableView.RenderColumns)
+        {
+            if (column is GridBoundColumn)
+            {
+                GridBoundColumn boundColumn = column as GridBoundColumn;
+                boundColumn.CurrentFilterValue = string.Empty;
+            }
+            if (column is GridTemplateColumn)
+            {
+                GridTemplateColumn boundColumn = column as GridTemplateColumn;
+                boundColumn.CurrentFilterValue = string.Empty;
+            }
+        }
+        RadGridNHANGUIQT.MasterTableView.Rebind();
+    }
+    protected void CheckBill(object source, ServerValidateEventArgs args)
+    {
+        string SelectSQL;
+        SelectSQL = "Select NHANGUI.C_BILL FROM NHANGUI WHERE NHANGUI.C_BILL = '" + args.Value + "' AND NHANGUI.PK_ID <> " + Session["txtID"].ToString();
+        DataTable oDataTable = new DataTable();
+        ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
+        oDataTable = SelectQuery.query_data(SelectSQL);
+        if (oDataTable.Rows.Count != 0)
+        {
+            args.IsValid = false;
+        }
+        else
+        {
+            args.IsValid = true;
+        }
+    }
+    private void DisplayMessage(string text)
+    {
+        RadGridNHANGUIQT.Controls.Add(new LiteralControl(string.Format("<span style='color:red'>{0}</span>", text)));
+    }
+    private void SetMessage(string message)
+    {
+        gridMessage = message;
+    }
+    private string gridMessage = null;
+    protected void RadGridNHANGUIQT_DataBound(object sender, EventArgs e)
+    {
+        if (!string.IsNullOrEmpty(gridMessage))
+        {
+            DisplayMessage(gridMessage);
+        }
+    }
+    protected void RadGridNHANGUIQT_ItemDeleted(object sender, GridDeletedEventArgs e)
+    {
+        GridDataItem dataItem = (GridDataItem)e.Item;
+        if (e.Exception != null)
+        {
+            e.ExceptionHandled = true;
+            SetMessage("Không thể xóa nhận gửi. Lý do: " + e.Exception.Message);
+        }
+        else
+        {
+            SetMessage("Xóa nhận gửi thành công!");
+            ITCLIB.ActionLog.ActionLog.WriteLog(Session["UserID"].ToString(), "Deleted NHANGUIQTs", e.Item.KeyValues);
+        }
+    }
+    protected void RadGridNHANGUIQT_ItemInserted(object sender, GridInsertedEventArgs e)
+    {
+        GridEditableItem item = (GridEditableItem)e.Item;
+        if (e.Exception != null)
+        {
+            e.ExceptionHandled = true;
+            SetMessage("Không thể tạo mới nhận gửi. Lý do: " + e.Exception.Message);
+        }
+        else
+        {
+            SetMessage("Tạo mới nhận gửi thành công!");
+            ITCLIB.ActionLog.ActionLog.WriteLog(Session["UserID"].ToString(), "Inserted NHANGUIQTs", "{PK_ID:\"" + getmaxid("NHANGUI") + "\"}");
+        }
+    }
+    protected void RadGridNHANGUIQT_ItemUpdated(object sender, GridUpdatedEventArgs e)
+    {
+        GridEditableItem item = (GridEditableItem)e.Item;
+        if (e.Exception != null)
+        {
+            e.KeepInEditMode = true;
+            e.ExceptionHandled = true;
+            SetMessage("Không thể cập nhật nhận gửi. Lý do: " + e.Exception.Message);
+        }
+        else
+        {
+            SetMessage("Cập nhật nhận gửi thành công!");
+            ITCLIB.ActionLog.ActionLog.WriteLog(Session["UserID"].ToString(), "Updated NHANGUIQTs", e.Item.KeyValues);
+        }
+    }
+    protected void RadGridNHANGUIQT_ItemDataBound(object sender, GridItemEventArgs e)
+    {
+        RadGrid grid = (RadGrid)sender;
+        if (e.Item is GridEditableItem && e.Item.IsInEditMode)
+        {
+            GridEditableItem editItem = (GridEditableItem)e.Item;
+            RadDatePicker radNgaynhangui = (RadDatePicker)editItem.FindControl("radNgaynhangui");
+            HiddenField txtID = (HiddenField)editItem.FindControl("txtID");
+            Session["txtID"] = (txtID.Value != "") ? txtID.Value : "0";
+            RadComboBox cmbQuocGia = (RadComboBox)editItem.FindControl("cmbQuocGia");
+            RadNumericTextBox txtPPXD = (RadNumericTextBox)editItem.FindControl("txtPPXD");
+            txtPPXD.Text = (txtPPXD.Text == "") ? "0" : txtPPXD.Text;
+            RadTextBox txtCODE = (RadTextBox)editItem.FindControl("txtCODE");
+            HiddenField hfC_MAKH = (HiddenField)editItem.FindControl("hfC_MAKH");
+            HiddenField hfC_TENKH = (HiddenField)editItem.FindControl("hfC_TENKH");
+            RadAutoCompleteBox radautoC_MAKH = (RadAutoCompleteBox)editItem.FindControl("radautoC_MAKH");
+            RadAutoCompleteBox radautoC_TENKH = (RadAutoCompleteBox)editItem.FindControl("radautoC_TENKH");
+            RadNumericTextBox txtC_KHOILUONG = (RadNumericTextBox)editItem.FindControl("txtC_KHOILUONG");
+            txtC_KHOILUONG.Text = (txtC_KHOILUONG.Text == "") ? "0" : txtC_KHOILUONG.Text;
+            RadComboBox cmbNhomKhachHang = (RadComboBox)editItem.FindControl("cmbNhomKhachHang");
+            RadComboBox cmbSanPham = (RadComboBox)editItem.FindControl("cmbSanPham");
+            RadNumericTextBox txtC_GIACUOC = (RadNumericTextBox)editItem.FindControl("txtC_GIACUOC");
+            txtC_GIACUOC.Text = (txtC_GIACUOC.Text == "") ? "0" : txtC_GIACUOC.Text;
+            RadNumericTextBox txtC_DONGGOI = (RadNumericTextBox)editItem.FindControl("txtC_DONGGOI");
+            txtC_DONGGOI.Text = (txtC_DONGGOI.Text == "") ? "0" : txtC_DONGGOI.Text;
+            RadNumericTextBox txtC_KHAIGIA = (RadNumericTextBox)editItem.FindControl("txtC_KHAIGIA");
+            txtC_KHAIGIA.Text = (txtC_KHAIGIA.Text == "") ? "0" : txtC_KHAIGIA.Text;
+            RadNumericTextBox txtC_COD = (RadNumericTextBox)editItem.FindControl("txtC_COD");
+            txtC_COD.Text = (txtC_COD.Text == "") ? "0" : txtC_COD.Text;
+            RadNumericTextBox txtC_KHAC = (RadNumericTextBox)editItem.FindControl("txtC_KHAC");
+            txtC_KHAC.Text = (txtC_KHAC.Text == "") ? "0" : txtC_KHAC.Text;
+            RadNumericTextBox txtC_TIENHANG = (RadNumericTextBox)editItem.FindControl("txtC_TIENHANG");
+            txtC_TIENHANG.Text = (txtC_TIENHANG.Text == "") ? "0" : txtC_TIENHANG.Text;
+            RadNumericTextBox txtC_DATHU = (RadNumericTextBox)editItem.FindControl("txtC_DATHU");
+            txtC_DATHU.Text = (txtC_DATHU.Text == "") ? "0" : txtC_DATHU.Text;
+            RadNumericTextBox txtC_CONLAI = (RadNumericTextBox)editItem.FindControl("txtC_CONLAI");
+            txtC_CONLAI.Text = (txtC_CONLAI.Text == "") ? "0" : txtC_CONLAI.Text;
+            RadNumericTextBox txtC_GIADOITAC = (RadNumericTextBox)editItem.FindControl("txtC_GIADOITAC");
+            txtC_GIADOITAC.Text = (txtC_GIADOITAC.Text == "") ? "0" : txtC_GIADOITAC.Text;
+            if (e.Item is GridEditFormInsertItem || e.Item is GridDataInsertItem)
+            {
+                // insert item
+                radNgaynhangui.SelectedDate = System.DateTime.Now;
+                txtCODE.Text = GetMaxBill();
+                FK_MABANGCUOC = "";
+                FK_MAVUNG = "";
+                FK_DICHVU = "";
+                PPXD = 0;
+                CUOCCHINH = 0;
+                GIADOITAC = 0;
+                ctcDataTable = new DataTable();
+            }
+            else
+            {
+                // edit item
+                radautoC_MAKH.Entries.Add(new AutoCompleteBoxEntry(hfC_MAKH.Value));
+                radautoC_TENKH.Entries.Add(new AutoCompleteBoxEntry(hfC_TENKH.Value));
+                txtC_CONLAI.Text = (((txtC_TIENHANG.Text == "") ? 0 : decimal.Parse(txtC_TIENHANG.Text)) - ((txtC_DATHU.Text == "") ? 0 : decimal.Parse(txtC_DATHU.Text))).ToString();
+                FK_DICHVU = cmbSanPham.SelectedValue;
+                FK_QUOCGIA = cmbQuocGia.SelectedValue;
+                string FK_NHOMKHACHHANG = cmbNhomKhachHang.SelectedValue;
+                string SelectSQL2;
+                SelectSQL2 = "Select DMMABANGCUOC.PK_ID FROM DMMABANGCUOC WHERE (DMMABANGCUOC.C_VALUE ='" + FK_NHOMKHACHHANG + "') OR (DMMABANGCUOC.C_VALUE LIKE '%," + FK_NHOMKHACHHANG + ",%') OR (DMMABANGCUOC.C_VALUE LIKE '%," + FK_NHOMKHACHHANG + "') OR (DMMABANGCUOC.C_VALUE LIKE '" + FK_NHOMKHACHHANG + ",%')";
+                DataTable oDataTable2 = new DataTable();
+                ITCLIB.Admin.SQL SelectQuery2 = new ITCLIB.Admin.SQL();
+                oDataTable2 = SelectQuery2.query_data(SelectSQL2);
+                if (oDataTable2.Rows.Count != 0)
+                {
+                    FK_MABANGCUOC = oDataTable2.Rows[0]["PK_ID"].ToString();
+                }
+                else
+                {
+                    FK_MABANGCUOC = "";
+                }
+                string SelectSQL3;
+                SelectSQL3 = "Select DMMAVUNG.PK_ID FROM DMMAVUNG WHERE FK_MASANPHAM=" + FK_DICHVU + " AND C_TYPE = 2 AND ((DMMAVUNG.C_DESC ='" + FK_QUOCGIA + "') OR (DMMAVUNG.C_DESC LIKE '%," + FK_QUOCGIA + ",%') OR (DMMAVUNG.C_DESC LIKE '%," + FK_QUOCGIA + "') OR (DMMAVUNG.C_DESC LIKE '" + FK_QUOCGIA + ",%'))";
+                DataTable oDataTable3 = new DataTable();
+                ITCLIB.Admin.SQL SelectQuery3 = new ITCLIB.Admin.SQL();
+                oDataTable3 = SelectQuery3.query_data(SelectSQL3);
+                if (oDataTable3.Rows.Count != 0)
+                {
+                    FK_MAVUNG = oDataTable3.Rows[0]["PK_ID"].ToString();
+                }
+                else
+                {
+                    FK_MAVUNG = "";
+                }
+                PPXD = (txtPPXD.Text == "") ? 0 : decimal.Parse(txtPPXD.Text);
+                CUOCCHINH = (txtC_GIACUOC.Text == "") ? 0 : decimal.Parse(txtC_GIACUOC.Text);
+                GIADOITAC = (txtC_GIADOITAC.Text == "") ? 0 : decimal.Parse(txtC_GIADOITAC.Text);
+                ctcDataTable = new DataTable();
+            }
+        }
+        if (e.Item is GridDataItem)
+        {
+            Label lblSTT = (Label)e.Item.FindControl("lblSTT");
+            lblSTT.Text = (e.Item.ItemIndex + 1).ToString();
+        }
+    }
+    protected string GetMaxBill()
+    {
+        string maxbill = "00000001";
+        string SelectSQL = "SELECT MAX(CAST(C_BILL AS Int)) as MAXBILL FROM NHANGUI";
+        DataTable oDataTable = new DataTable();
+        ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
+        oDataTable = SelectQuery.query_data(SelectSQL);
+
+        if (oDataTable.Rows[0]["MAXBILL"] != DBNull.Value)
+        {
+            int maxvalue = (int)oDataTable.Rows[0]["MAXBILL"];
+            maxbill = String.Format("{0:00000000}", maxvalue + 1);
+        }
+        return maxbill;
+    }
+    protected void RadGridNHANGUIQT_ItemCommand(object sender, GridCommandEventArgs e)
+    {
+        if (e.CommandName == "DeleteSelected")
+        {
+            if (RadGridNHANGUIQT.SelectedIndexes.Count == 0)
+            {
+                SetMessage("Không có bản ghi được chọn!");
+                RadGridNHANGUIQT.Rebind();
+            }
+            foreach (GridDataItem item in RadGridNHANGUIQT.SelectedItems)
+            {
+                if (!ValidateDeleteGroup(item["pk_id"].Text))
+                {
+                    SetMessage("Không thể xóa nhận gửi \"" + item["c_name"].Text + "\" do có tham chiếu dữ liệu khác.");
+                    RadGridNHANGUIQT.Rebind();
+                }
+            }
+        }
+        else if (e.CommandName == RadGrid.PerformInsertCommandName)
+        {
+            GridEditableItem editItem = (GridEditableItem)e.Item;
+            RadAutoCompleteBox radautoC_MAKH = (RadAutoCompleteBox)editItem.FindControl("radautoC_MAKH");
+            RadAutoCompleteBox radautoC_TENKH = (RadAutoCompleteBox)editItem.FindControl("radautoC_TENKH");
+            NHANGUIQTDataSource.InsertParameters["C_MAKH"].DefaultValue = (radautoC_MAKH.Text == "") ? radautoC_MAKH.Text : radautoC_MAKH.Text.Substring(0, radautoC_MAKH.Text.Length - 2);
+            NHANGUIQTDataSource.InsertParameters["C_TENKH"].DefaultValue = (radautoC_TENKH.Text == "") ? radautoC_TENKH.Text : radautoC_TENKH.Text.Substring(0, radautoC_TENKH.Text.Length - 2);
+        }
+        else if (e.CommandName == RadGrid.UpdateCommandName)
+        {
+            GridEditableItem editItem = (GridEditableItem)e.Item;
+            RadAutoCompleteBox radautoC_MAKH = (RadAutoCompleteBox)editItem.FindControl("radautoC_MAKH");
+            RadAutoCompleteBox radautoC_TENKH = (RadAutoCompleteBox)editItem.FindControl("radautoC_TENKH");
+            NHANGUIQTDataSource.UpdateParameters["C_MAKH"].DefaultValue = (radautoC_MAKH.Text == "") ? radautoC_MAKH.Text : radautoC_MAKH.Text.Substring(0, radautoC_MAKH.Text.Length - 2);
+            NHANGUIQTDataSource.UpdateParameters["C_TENKH"].DefaultValue = (radautoC_TENKH.Text == "") ? radautoC_TENKH.Text : radautoC_TENKH.Text.Substring(0, radautoC_TENKH.Text.Length - 2);
+        }
+    }
+    protected string getmaxid(string table)
+    {
+        int rowcount = 0;
+        string SelectSQL = "SELECT MAX(" + table + ".PK_ID) as MAXS FROM " + table;
+        DataTable oDataTable = new DataTable();
+        ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
+        oDataTable = SelectQuery.query_data(SelectSQL);
+        rowcount = oDataTable.Rows.Count;
+        if (rowcount != 0)
+        {
+            return oDataTable.Rows[0]["MAXS"].ToString();
+        }
+        else
+        {
+            return "1";
+        }
+    }
+    protected bool ValidateDeleteGroup(string pkID)
+    {
+        int rowcount = 0;
+        //string SelectSQL = "SELECT EOF_JOB.PK_ID FROM EOF_JOB WHERE EOF_JOB.fk_jobstatus = " + pkID;
+        //DataTable oDataTable = new DataTable();
+        //ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
+        //oDataTable = SelectQuery.query_data(SelectSQL);
+        //rowcount = oDataTable.Rows.Count;
+        if (rowcount != 0)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        Response.Write(Session["test"].ToString());
+        ITCLIB.Admin.JavaScript.ShowMessage(Session["test"].ToString(), this);
+    }
+}
