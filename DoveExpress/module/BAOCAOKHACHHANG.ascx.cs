@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data;
 using Telerik.Web.UI;
 using System.Globalization;
+using Telerik.Web.UI.GridExcelBuilder;
 
 public partial class module_BAOCAOKHACHHANG : System.Web.UI.UserControl
 {
@@ -75,5 +76,63 @@ public partial class module_BAOCAOKHACHHANG : System.Web.UI.UserControl
         if (e.CommandName == "PrintGrid")
         {
         }
+    }
+    protected void RadGridBAOCAOKHACHHANG_ExcelMLExportRowCreated(object sender, Telerik.Web.UI.GridExcelBuilder.GridExportExcelMLRowCreatedArgs e)
+    {
+        if (e.Worksheet.Table.Rows.Count == RadGridBAOCAOKHACHHANG.Items.Count + 1)
+        {
+            RowElement row = new RowElement();
+            GridFooterItem footer = (sender as RadGrid).MasterTableView.GetItems(GridItemType.Footer)[0] as GridFooterItem;
+            foreach (GridColumn column in (sender as RadGrid).MasterTableView.Columns)
+            {
+                CellElement cell = new CellElement();
+                string cellText = footer[column.UniqueName].Text;
+                cell.Data.DataItem = cellText == "&nbsp;" ? "" : cellText;
+                row.Cells.Add(cell);
+            }
+            e.Worksheet.Table.Rows.Add(row);
+        }
+    }
+    protected void RadGridBAOCAOKHACHHANG_ItemDataBound(object sender, GridItemEventArgs e)
+    {
+        if (e.Item is GridDataItem)
+        {
+            //Label lblSTT = (Label)e.Item.FindControl("lblSTT");
+            //lblSTT.Text = (e.Item.ItemIndex + 1).ToString();
+        }
+    }
+    protected void cmbKhachHang_ItemsRequested(object sender, RadComboBoxItemsRequestedEventArgs e)
+    {
+        KHACHHANGDataSource.SelectCommand = LoadFilteredManually(e.Text);
+        cmbKhachHang.DataBind();
+    }
+    protected string LoadFilteredManually(string ID)
+    {
+        string SelectSQL = "";
+        if (ID != "")
+        {
+            SelectSQL = "SELECT * FROM DMKHACHHANG WHERE FK_NHOMKHACHHANG = " + ID + "order by C_NAME";
+        }
+        else
+        {
+            SelectSQL = "SELECT * FROM DMKHACHHANG order by C_NAME";
+        }
+        return SelectSQL;
+    }
+    protected void cmbNhomKhachHang_PreRender(object sender, EventArgs e)
+    {
+        /*if (!IsPostBack)
+        {
+            if (cmbNhomKhachHang.Items.Count != 0)
+            {
+                cmbNhomKhachHang.SelectedIndex = 0;
+                KHACHHANGDataSource.SelectCommand = LoadFilteredManually(cmbNhomKhachHang.SelectedValue);
+                cmbKhachHang.DataBind();
+                if (cmbKhachHang.Items.Count != 0)
+                {
+                    cmbKhachHang.SelectedIndex = 0;
+                }
+            }
+        }*/
     }
 }

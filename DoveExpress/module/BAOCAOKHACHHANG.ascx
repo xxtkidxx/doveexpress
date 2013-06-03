@@ -25,16 +25,56 @@
         }
     }
 </script>
+<script type="text/javascript">
+    var cmbkhachhang;
+    function OnClientLoadKhachHang(sender) {
+        cmbkhachhang = sender;
+    }
+    function cmbNhomKhachHangClientSelectedIndexChangedHandler(sender, eventArgs) {
+        cmbkhachhang.requestItems(eventArgs.get_item().get_value(), false);        
+    }
+    function ItemsLoadedKhachHang(combo, eventArqs) {
+        if (combo.get_items().get_count() > 0) {
+            combo.trackChanges();
+            combo.get_items().getItem(0).select();
+            combo.updateClientState();
+            combo.commitChanges();
+        } else {
+            combo.set_text("");
+        }
+        $find("<%=RadGridBAOCAOKHACHHANG.ClientID %>").get_masterTableView().rebind();
+    }
+    function cmbKhachHangClientSelectedIndexChangedHandler(sender, eventArgs) {
+        $find("<%=RadGridBAOCAOKHACHHANG.ClientID %>").get_masterTableView().rebind();
+    }
+</script>
 </telerik:RadCodeBlock>
 <telerik:RadAjaxLoadingPanel Skin="Vista" ID="RadAjaxLoadingPanelBAOCAOKHACHHANG" runat="server" />
+<div style ="width:100%; margin: 10px 10px 10px 10px; ">
+Nhóm khách hàng:&nbsp; 
+<telerik:RadComboBox ID="cmbNhomKhachHang" runat="server"
+DataTextField="C_NAME" DataValueField="PK_ID" DataSourceID="NHOMKHACHHANGDataSource"
+ShowToggleImage="True" EmptyMessage="Chọn nhóm"
+onclientselectedindexchanged="cmbNhomKhachHangClientSelectedIndexChangedHandler" onprerender="cmbNhomKhachHang_PreRender">
+</telerik:RadComboBox>
+Khách hàng:&nbsp; 
+<telerik:RadComboBox ID="cmbKhachHang" runat="server" 
+DataTextField="C_NAME" DataValueField="C_CODE" DataSourceID="KHACHHANGDataSource"
+ShowToggleImage="True" EmptyMessage="Chọn khách hàng" AutoPostBack ="false"
+onclientitemsrequested="ItemsLoadedKhachHang" onclientload="OnClientLoadKhachHang" 
+onitemsrequested="cmbKhachHang_ItemsRequested" onclientselectedindexchanged="cmbKhachHangClientSelectedIndexChangedHandler">
+</telerik:RadComboBox>
+</div>
 <telerik:RadGrid ID="RadGridBAOCAOKHACHHANG" runat="server" Skin="Vista" 
-    AllowPaging="True" PageSize="20" AllowSorting="True" 
-    AllowFilteringByColumn="True" GridLines="None" ShowStatusBar="True"
+    AllowPaging="False" AllowSorting="True" 
+    AllowFilteringByColumn="False" GridLines="None" ShowStatusBar="True"
     AutoGenerateColumns="False" onitemcommand="RadGridBAOCAOKHACHHANG_ItemCommand" 
     AllowMultiRowEdit="True" AllowAutomaticDeletes="True" 
     AllowAutomaticInserts="True" AllowAutomaticUpdates="True" 
     DataSourceID="BAOCAOKHACHHANGDataSource" ShowFooter="True"
-    ondatabound="RadGridBAOCAOKHACHHANG_DataBound" CellSpacing="0">
+    ondatabound="RadGridBAOCAOKHACHHANG_DataBound" CellSpacing="0" 
+    onexcelmlexportrowcreated="RadGridBAOCAOKHACHHANG_ExcelMLExportRowCreated" 
+    onitemdatabound="RadGridBAOCAOKHACHHANG_ItemDataBound">
     <PagerStyle FirstPageToolTip="Trang đầu" LastPageToolTip="Trang cuối" NextPagesToolTip="Các trang tiếp" NextPageToolTip="Trang tiếp" 
     PageSizeLabelText="Số bản ghi hiển thị:" PrevPagesToolTip="Các trang sau" PrevPageToolTip="Trang sau" PagerTextFormat="Change page: {4} &nbsp;Trang <strong>{0}</strong>/<strong>{1}</strong>, Bản ghi <strong>{2}</strong> đến <strong>{3}</strong> của tất cả <strong>{5}</strong> bản ghi" />    
     <ExportSettings HideStructureColumns="true" ExportOnlyData="true" IgnorePaging="true" OpenInNewWindow="true" Excel-Format="ExcelML"></ExportSettings>   
@@ -43,7 +83,7 @@
         <CommandItemTemplate>
                     <div style="padding: 5px 5px;float:left;width:auto">
                        <b>Báo cáo doanh số theo ngày</b>&nbsp;&nbsp;&nbsp;&nbsp;
-                       <asp:LinkButton ID="lbPrint" runat="server" CommandName="PrintGrid"><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Refresh.gif" />Làm mới</asp:LinkButton>&nbsp;&nbsp;
+                       <asp:LinkButton ID="lbPrint" runat="server"  Visible ="false" CommandName="PrintGrid"><img style="border:0px;vertical-align:middle;" alt="" src="Images/approval.gif" />In</asp:LinkButton>&nbsp;&nbsp;&nbsp;&nbsp;
                        <asp:LinkButton ID="lblRefesh" runat="server" CommandName="RebindGrid"><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Refresh.gif" />Làm mới</asp:LinkButton>
                     </div>
                     <div style="padding: 5px 5px;float:right;width:auto">
@@ -54,21 +94,6 @@
                     </div>
         </CommandItemTemplate>
         <Columns>
-                <telerik:GridBoundColumn UniqueName="PK_ID" HeaderText="" DataField="PK_ID" Visible ="false"
-                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
-                </telerik:GridBoundColumn>
-                 <telerik:GridTemplateColumn HeaderText ="" ShowFilterIcon="false">   
-                 <FilterTemplate >
-                  <center>
-                    <asp:ImageButton ID="btnShowAll" runat="server" ImageUrl="../Images/Grid/filterCancel.gif" AlternateText="Xem tất" ToolTip="Xem tất" OnClick="btnShowAll_Click" Style="vertical-align: middle" />
-                  </center>
-                 </FilterTemplate>
-                  <ItemTemplate>
-                      <asp:Label ID="lblSTT" runat="server" Text=""></asp:Label>
-                </ItemTemplate>
-                 <HeaderStyle HorizontalAlign ="Center" Width ="30px" />
-                 <ItemStyle HorizontalAlign ="Center" Width ="30px" />
-               </telerik:GridTemplateColumn>
                 <telerik:GridBoundColumn UniqueName="C_NGAY" HeaderText="Ngày" DataField="C_NGAY" HeaderStyle-Width="100px" HeaderStyle-HorizontalAlign="Center"
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%" DataType="System.DateTime" DataFormatString="{0:dd/MM/yyyy}">
                 </telerik:GridBoundColumn>
@@ -103,16 +128,16 @@
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
                 </telerik:GridBoundColumn>
                 <telerik:GridBoundColumn UniqueName="C_TIENHANG" HeaderText="Tiền hàng" DataField="C_TIENHANG" HeaderStyle-Width="130px" HeaderStyle-HorizontalAlign="Center"
-                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
+                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%" Aggregate="Sum" FooterText="Tổng : ">
                 </telerik:GridBoundColumn>
                 <telerik:GridBoundColumn UniqueName="C_HINHTHUCTT" HeaderText="Hình thức TT" DataField="C_HINHTHUCTT" HeaderStyle-Width="130px" HeaderStyle-HorizontalAlign="Center"
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
                 </telerik:GridBoundColumn>
                  <telerik:GridBoundColumn UniqueName="C_DATHU" HeaderText="Đã thu" DataField="C_DATHU" HeaderStyle-Width="130px" HeaderStyle-HorizontalAlign="Center"
-                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
+                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%" Aggregate="Sum" FooterText="Tổng : ">
                 </telerik:GridBoundColumn>
                  <telerik:GridBoundColumn UniqueName="C_CONLAI" HeaderText="Còn lại" DataField="C_CONLAI" HeaderStyle-Width="130px" HeaderStyle-HorizontalAlign="Center"
-                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
+                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%" Aggregate="Sum" FooterText="Tổng : ">
                 </telerik:GridBoundColumn>               
                 <telerik:GridBoundColumn UniqueName="NHANVIENNHANNAME" HeaderText="Nhân viên nhận" DataField="NHANVIENNHANNAME" HeaderStyle-Width="130px" HeaderStyle-HorizontalAlign="Center"
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
@@ -135,7 +160,8 @@
         </Columns>
         </MasterTableView>
         <ClientSettings>
-            <Scrolling AllowScroll="True" UseStaticHeaders="True" SaveScrollPosition="True" FrozenColumnsCount="3" ScrollHeight="450px" />
+            <Selecting AllowRowSelect="True" EnableDragToSelectRows="True" />
+            <Scrolling AllowScroll="True" UseStaticHeaders="True" SaveScrollPosition="True" FrozenColumnsCount="0" ScrollHeight="450px" />
         </ClientSettings>
         <SortingSettings SortedAscToolTip="Sắp xếp tăng dần" 
             SortedDescToolTip="Sắp xếp giảm dần" SortToolTip="Click để sắp xếp" />
@@ -143,5 +169,14 @@
 </telerik:RadGrid>
 <asp:SqlDataSource ID="BAOCAOKHACHHANGDataSource" runat="server" 
     ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>" 
-    SelectCommand="SELECT [NHANGUI].[PK_ID], [NHANGUI].[C_NGAY], [NHANGUI].[C_MAKH], [NHANGUI].[FK_NHOMKHACHHANG], [NHANGUI].[C_BILL], [NHANGUI].[C_TENKH], [NHANGUI].[C_NGUOINHAN], [NHANGUI].[C_DIACHINHAN], [NHANGUI].[FK_MASANPHAM],  [NHANGUI].[C_PPXD], [NHANGUI].[C_KHOILUONG], [NHANGUI].[C_GIACUOC], [NHANGUI].[C_DONGGOI], [NHANGUI].[C_KHAIGIA], [NHANGUI].[C_COD], [NHANGUI].[C_KHAC], [NHANGUI].[C_HINHTHUCTT], [NHANGUI].[C_DATHU], ([NHANGUI].[C_TIENHANG] - [NHANGUI].[C_DATHU]) as [C_CONLAI],([NHANGUI].[C_DONGGOI] + [NHANGUI].[C_KHAIGIA] + [NHANGUI].[C_COD] + [NHANGUI].[C_KHAC]) as [C_PHUTROISUM], [NHANGUI].[C_TIENHANG], [NHANGUI].[FK_NHANVIENNHAN], [NHANGUI].[FK_DOITAC], [NHANGUI].[C_GIADOITAC], [NHANGUI].[FK_NHANVIENPHAT], [NHANGUI].[C_NGAYGIOPHAT], [NHANGUI].[FK_NHANVIENKHAITHAC], [NHANGUI].[C_NGUOIKYNHAN], [NHANGUI].[C_BOPHAN],USERSNHAN.C_NAME as NHANVIENNHANNAME,USERSPHAT.C_NAME as NHANVIENPHATNAME,USERSKHAITHAC.C_NAME as NHANVIENKHAITHACNAME,DMMASANPHAM.C_NAME as SANPHAMNAME,DMQUANHUYEN.C_NAME as QUANHUYENNAME,DMTINHTHANH.C_NAME as TINHTHANHNAME FROM [NHANGUI] LEFT OUTER JOIN USERS as USERSNHAN ON NHANGUI.FK_NHANVIENNHAN = USERSNHAN.PK_ID LEFT OUTER JOIN USERS as USERSPHAT ON NHANGUI.FK_NHANVIENPHAT = USERSPHAT.PK_ID LEFT OUTER JOIN USERS as USERSKHAITHAC ON NHANGUI.FK_NHANVIENKHAITHAC = USERSKHAITHAC.PK_ID LEFT OUTER JOIN DMMASANPHAM ON NHANGUI.FK_MASANPHAM=DMMASANPHAM.PK_ID LEFT OUTER JOIN DMQUANHUYEN ON NHANGUI.FK_QUANHUYEN = DMQUANHUYEN.C_CODE LEFT OUTER JOIN DMTINHTHANH ON DMQUANHUYEN.FK_TINHTHANH = DMTINHTHANH.PK_ID">        
+    SelectCommand="SELECT [NHANGUI].[PK_ID], [NHANGUI].[C_NGAY], [NHANGUI].[C_MAKH], [NHANGUI].[FK_NHOMKHACHHANG], [NHANGUI].[C_BILL], [NHANGUI].[C_TENKH], [NHANGUI].[C_NGUOINHAN], [NHANGUI].[C_DIACHINHAN], [NHANGUI].[FK_MASANPHAM],  [NHANGUI].[C_PPXD], [NHANGUI].[C_KHOILUONG], [NHANGUI].[C_GIACUOC], [NHANGUI].[C_DONGGOI], [NHANGUI].[C_KHAIGIA], [NHANGUI].[C_COD], [NHANGUI].[C_KHAC], [NHANGUI].[C_HINHTHUCTT], [NHANGUI].[C_DATHU], ([NHANGUI].[C_TIENHANG] - [NHANGUI].[C_DATHU]) as [C_CONLAI],([NHANGUI].[C_DONGGOI] + [NHANGUI].[C_KHAIGIA] + [NHANGUI].[C_COD] + [NHANGUI].[C_KHAC]) as [C_PHUTROISUM], [NHANGUI].[C_TIENHANG], [NHANGUI].[FK_NHANVIENNHAN], [NHANGUI].[FK_DOITAC], [NHANGUI].[C_GIADOITAC], [NHANGUI].[FK_NHANVIENPHAT], [NHANGUI].[C_NGAYGIOPHAT], [NHANGUI].[FK_NHANVIENKHAITHAC], [NHANGUI].[C_NGUOIKYNHAN], [NHANGUI].[C_BOPHAN],USERSNHAN.C_NAME as NHANVIENNHANNAME,USERSPHAT.C_NAME as NHANVIENPHATNAME,USERSKHAITHAC.C_NAME as NHANVIENKHAITHACNAME,DMMASANPHAM.C_NAME as SANPHAMNAME,DMQUANHUYEN.C_NAME as QUANHUYENNAME,DMTINHTHANH.C_NAME as TINHTHANHNAME FROM [NHANGUI] LEFT OUTER JOIN USERS as USERSNHAN ON NHANGUI.FK_NHANVIENNHAN = USERSNHAN.PK_ID LEFT OUTER JOIN USERS as USERSPHAT ON NHANGUI.FK_NHANVIENPHAT = USERSPHAT.PK_ID LEFT OUTER JOIN USERS as USERSKHAITHAC ON NHANGUI.FK_NHANVIENKHAITHAC = USERSKHAITHAC.PK_ID LEFT OUTER JOIN DMMASANPHAM ON NHANGUI.FK_MASANPHAM=DMMASANPHAM.PK_ID LEFT OUTER JOIN DMQUANHUYEN ON NHANGUI.FK_QUANHUYEN = DMQUANHUYEN.C_CODE LEFT OUTER JOIN DMTINHTHANH ON DMQUANHUYEN.FK_TINHTHANH = DMTINHTHANH.PK_ID WHERE ([NHANGUI].[C_MAKH] = @C_MAKH) OR ([NHANGUI].[C_TENKH] = @C_TENKH)">
+    <SelectParameters>
+         <asp:ControlParameter ControlID="cmbKhachHang" DefaultValue="0" Name="C_MAKH" PropertyName="SelectedValue" />
+         <asp:ControlParameter ControlID="cmbKhachHang" DefaultValue="0" Name="C_TENKH" PropertyName="Text"/>
+    </SelectParameters>        
+</asp:SqlDataSource>
+ <asp:SqlDataSource ID="NHOMKHACHHANGDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
+ SelectCommand="SELECT DMNHOMKHACHHANG.* FROM DMNHOMKHACHHANG" >
+</asp:SqlDataSource>
+<asp:SqlDataSource ID="KHACHHANGDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>">
 </asp:SqlDataSource>

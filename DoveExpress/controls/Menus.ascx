@@ -88,7 +88,7 @@
             </telerik:RadMenuItem> 
             <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=BAOCAOKHACHHANG" Text="Doanh thu theo khách hàng" Value="BAOCAOKHACHHANG">
             </telerik:RadMenuItem>
-            <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=BAOCAONVKD" Text="Theo nhân viên kinh doanh" Value="BAOCAONVKD">
+            <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=BAOCAONVKD" Text="Doanh thu theo nhân viên kinh doanh" Value="BAOCAONVKD">
             </telerik:RadMenuItem>
             <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="" Text="Quản lý công nợ" Value="BAOCAOCONGNO">
             </telerik:RadMenuItem>
