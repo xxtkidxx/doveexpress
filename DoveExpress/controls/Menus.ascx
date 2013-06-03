@@ -3,27 +3,7 @@
 <%@ Register namespace="ITCLIB.Security" tagprefix="Office" %>
 <telerik:RadCodeBlock ID="RadCodeBlockMenu" runat="server">
 <script type="text/javascript">
-        function OnClientUpdated(sender, args) {
-            var message = "";
-            var newMsgs = sender.get_value();
-            if (newMsgs != 0) {
-                sender.show();
-            }
-            else {
-                message += " Không có thông báo!";
-            }
-            logEvent(message);
-        }
-
-        function OnClientShowing(sender, args) {
-//            var notification = sender;
-//            if (sender.calculateOffset == false) return;
-//            var widthS = screen.width;
-//            var heigts = screen.height;       
-//            sender.set_offsetY(heigts - notification.get_height());
-//            sender.set_offsetX(widthS - notification.get_width());
-//            sender.calculateOffset = false;
-        }   
+ 
 </script>
 </telerik:RadCodeBlock>
 <telerik:RadMenu ID="Menu" Runat="server" Skin="Office2010Black" CssClass ="cssMenuNgang" Width="100%"  style="position:absolute;z-index: 1">
