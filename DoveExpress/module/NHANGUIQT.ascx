@@ -12,6 +12,10 @@
     function OnClientLoadcmbNhomKhachHang(sender) {
         cmbNhomKhachHang = sender;
     }
+    var radautoC_MAKH;
+    function OnClientLoadradautoC_MAKH(sender) {
+        radautoC_MAKH = sender;
+    }
     var radautoC_TENKH;
     function OnClientLoadradautoC_TENKH(sender) {
         radautoC_TENKH = sender;
@@ -22,22 +26,37 @@
     }
     function cmbQuocGiaClientSelectedIndexChangedHandler(sender, eventArgs) {
         $find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("cmbQuocGia;" + eventArgs.get_item().get_value());
+        var currentLoadingPanel = $find("<%= RadAjaxLoadingPanelNHANGUI.ClientID %>");
+        var currentUpdatedControl = "<%= RadGridNHANGUI.ClientID %>"; 
+        currentLoadingPanel.show(currentUpdatedControl);
         return false;
     }
     function cmbSanPhamClientSelectedIndexChangedHandler(sender, eventArgs) {
          $find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("cmbSanPham;" + eventArgs.get_item().get_value());
+         var currentLoadingPanel = $find("<%= RadAjaxLoadingPanelNHANGUI.ClientID %>");
+        var currentUpdatedControl = "<%= RadGridNHANGUI.ClientID %>"; 
+        currentLoadingPanel.show(currentUpdatedControl);
          return false;
     }
     function cmbNhomKhachHangClientSelectedIndexChangedHandler(sender, eventArgs) {
          $find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("cmbNhomKhachHang;" + eventArgs.get_item().get_value());
+         var currentLoadingPanel = $find("<%= RadAjaxLoadingPanelNHANGUI.ClientID %>");
+        var currentUpdatedControl = "<%= RadGridNHANGUI.ClientID %>"; 
+        currentLoadingPanel.show(currentUpdatedControl);
          return false;
     }
     function cmbFK_DOITACClientSelectedIndexChangedHandler(sender, eventArgs) {
          $find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("cmbFK_DOITAC;" + eventArgs.get_item().get_value());
+         var currentLoadingPanel = $find("<%= RadAjaxLoadingPanelNHANGUI.ClientID %>");
+        var currentUpdatedControl = "<%= RadGridNHANGUI.ClientID %>"; 
+        currentLoadingPanel.show(currentUpdatedControl);
          return false;
     }    
     function OnValueChangedtxtC_KHOILUONG(sender, eventArgs) {
         $find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("txtC_KHOILUONG;" + eventArgs.get_newValue());
+        var currentLoadingPanel = $find("<%= RadAjaxLoadingPanelNHANGUI.ClientID %>");
+        var currentUpdatedControl = "<%= RadGridNHANGUI.ClientID %>"; 
+        currentLoadingPanel.show(currentUpdatedControl);
         return false;
     }
     var txtC_KHOILUONG;
@@ -121,6 +140,9 @@
     }
     function radautoC_MAKHOnClientTextChanged(sender, eventArgs) {
         $find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("radautoC_MAKH;" + sender.get_text());
+        var currentLoadingPanel = $find("<%= RadAjaxLoadingPanelNHANGUI.ClientID %>");
+        var currentUpdatedControl = "<%= RadGridNHANGUI.ClientID %>"; 
+        currentLoadingPanel.show(currentUpdatedControl);
         return false;
     }
 </script>
@@ -130,12 +152,20 @@
             //alert(result);
             var arrayOfStrings = result.split(",");
             if (arrayOfStrings[0] != "msg") {
-                cmbNhomKhachHang.set_value(arrayOfStrings[0]);
-                cmbNhomKhachHang.set_text(arrayOfStrings[1]);
+                if (arrayOfStrings[1] != "") {
+                    cmbNhomKhachHang.set_value(arrayOfStrings[0]);
+                    cmbNhomKhachHang.set_text(arrayOfStrings[1]);
+                }
+                else {
+                }
                 if (arrayOfStrings[2] != "") {
                     var entry = new Telerik.Web.UI.AutoCompleteBoxEntry();
                     entry.set_text(arrayOfStrings[2]);
                     radautoC_TENKH.get_entries().add(entry);
+                }
+                else {
+                    //radautoC_MAKH.get_entries().clear();
+                    //radautoC_TENKH.get_entries().clear();
                 }
                 txtPPXD.set_value(arrayOfStrings[3]);
                 txtC_GIACUOC.set_value(arrayOfStrings[4]);
@@ -144,6 +174,9 @@
             else {
                 alert(arrayOfStrings[1]);
             }
+            var currentLoadingPanel = $find("<%= RadAjaxLoadingPanelNHANGUI.ClientID %>");
+            var currentUpdatedControl = "<%= RadGridNHANGUI.ClientID %>";
+            currentLoadingPanel.hide(currentUpdatedControl);
             result = "";
         }
         return false;
@@ -343,7 +376,7 @@
                 <td colspan="4">
                    <asp:HiddenField ID="hfC_MAKH" runat="server"  Value ='<%# Eval("C_MAKH") %>'/>
                     <telerik:RadAutoCompleteBox ID="radautoC_MAKH" Width ="90%" runat="server" 
-                        AllowCustomEntry="True" DataSourceID="KHACHHANGDataSource" 
+                        AllowCustomEntry="True" DataSourceID="KHACHHANGDataSource" onclientload="OnClientLoadradautoC_MAKH" 
                         DataTextField="C_CODE" DataValueField="PK_ID" InputType="Text" TextSettings-SelectionMode="Single" OnClientTextChanged="radautoC_MAKHOnClientTextChanged">
                     </telerik:RadAutoCompleteBox>
                     <telerik:RadTextBox ID="txtC_MAKH" Width ="90%"  Visible="false" Text='<%# Eval("C_MAKH") %>' runat="server"></telerik:RadTextBox>
