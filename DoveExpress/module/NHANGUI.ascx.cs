@@ -10,6 +10,28 @@ using System.Globalization;
 
 public partial class module_NHANGUI : System.Web.UI.UserControl
 {
+    private string FK_NHOMKHACHHANG
+    {
+        get
+        {
+            return Session["FK_NHOMKHACHHANG"] as string;
+        }
+        set
+        {
+            Session["FK_NHOMKHACHHANG"] = value;
+        }
+    }
+    private string MAKH
+    {
+        get
+        {
+            return Session["MAKH"] as string;
+        }
+        set
+        {
+            Session["MAKH"] = value;
+        }
+    }
     private string FK_DICHVU
     {
         get
@@ -209,6 +231,22 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
                 Alarm = "msg,Nhóm khách hàng này không nằm trong bảng cước nào";
             }
         }
+        else if (arrayvalue[0] == "radautoC_MAKH")
+        {
+            string SelectSQL;
+            SelectSQL = "Select DMKHACHHANG.FK_NHOMKHACHHANG, DMKHACHHANG.C_NAME as KHNAME, DMNHOMKHACHHANG.C_NAME as NHOMKHNAME FROM DMKHACHHANG LEFT OUTER JOIN DMNHOMKHACHHANG ON DMKHACHHANG.FK_NHOMKHACHHANG = DMNHOMKHACHHANG.PK_ID WHERE (DMKHACHHANG.C_CODE ='" + arrayvalue[1] + "')";
+            DataTable oDataTable = new DataTable();
+            ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
+            oDataTable = SelectQuery.query_data(SelectSQL);
+            if (oDataTable.Rows.Count != 0)
+            {
+                FK_NHOMKHACHHANG = oDataTable.Rows[0]["FK_NHOMKHACHHANG"].ToString() + "," + oDataTable.Rows[0]["NHOMKHNAME"].ToString() + "," + oDataTable.Rows[0]["KHNAME"].ToString();
+            }
+            else
+            {
+                FK_NHOMKHACHHANG = "1,Khách lẻ, ";
+            }
+        }
         else if (arrayvalue[0] == "cmbQuanHuyen")
         {
             FK_QUANHUYEN = arrayvalue[1];
@@ -390,7 +428,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
       }
       else
       {
-          string script = string.Format("var result = '{0}'", PPXD + "," + CUOCCHINH + "," + GIADOITAC);
+          string script = string.Format("var result = '{0}'", FK_NHOMKHACHHANG + "," + PPXD + "," + CUOCCHINH + "," + GIADOITAC);
           ScriptManager.RegisterClientScriptBlock(Page, typeof(Page), "result", script, true);
       }
     }

@@ -7,7 +7,15 @@
             if ((eventArgs.get_tableView().get_name() == "MasterTableViewNHANGUI") && (CanEdit == "True")) {
                 sender.get_masterTableView().editItem(eventArgs.get_itemIndexHierarchical());
             }
-        }
+    }        
+    var cmbNhomKhachHang;
+    function OnClientLoadcmbNhomKhachHang(sender) {
+        cmbNhomKhachHang = sender;
+    }
+    var radautoC_TENKH;
+    function OnClientLoadradautoC_TENKH(sender) {
+        radautoC_TENKH = sender;
+    }
     var cmbQuanHuyen;
     function OnClientLoadQuanHuyen(sender) {
         cmbQuanHuyen = sender;
@@ -125,7 +133,11 @@
         //$find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("txtC_DATHU;" + eventArgs.get_newValue());
         txtC_CONLAI.set_value(txtC_TIENHANG.get_value() - txtC_DATHU.get_value());
         return false;
-    } 
+    }
+    function radautoC_MAKHOnClientTextChanged(sender, eventArgs) {
+        $find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("radautoC_MAKH;" + sender.get_text());
+        return false;
+    }
 </script>
 <script type="text/javascript">
      function onResponseEndNG() {
@@ -133,9 +145,16 @@
              //alert(result);
              var arrayOfStrings = result.split(",");
              if (arrayOfStrings[0] != "msg") {
-                 txtPPXD.set_value(arrayOfStrings[0]);
-                 txtC_GIACUOC.set_value(arrayOfStrings[1]);
-                 txtC_GIADOITAC.set_value(arrayOfStrings[2]);
+                 cmbNhomKhachHang.set_value(arrayOfStrings[0]);
+                 cmbNhomKhachHang.set_text(arrayOfStrings[1]);
+                 if (arrayOfStrings[2] != "") {
+                     var entry = new Telerik.Web.UI.AutoCompleteBoxEntry();
+                     entry.set_text(arrayOfStrings[2]);
+                     radautoC_TENKH.get_entries().add(entry);
+                 }
+                 txtPPXD.set_value(arrayOfStrings[3]);
+                 txtC_GIACUOC.set_value(arrayOfStrings[4]);
+                 txtC_GIADOITAC.set_value(arrayOfStrings[5]);
              }
              else {
                  alert(arrayOfStrings[1]);
@@ -333,7 +352,7 @@
             <tr>
                 <td style ="width:100px;"> <span class="rtsTxtnew">Nhóm KH:</span></td>
                 <td colspan="4">
-                    <telerik:RadComboBox ID="cmbNhomKhachHang" runat="server"
+                    <telerik:RadComboBox ID="cmbNhomKhachHang" runat="server"  onclientload="OnClientLoadcmbNhomKhachHang" 
                     DataTextField="C_NAME" DataValueField="PK_ID" DataSourceID="NHOMKHACHHANGDataSource" SelectedValue='<%# Bind("FK_NHOMKHACHHANG") %>'
                     ShowToggleImage="True" EmptyMessage="Chọn nhóm" onclientselectedindexchanged="cmbNhomKhachHangClientSelectedIndexChangedHandler">
                     </telerik:RadComboBox>
@@ -343,8 +362,7 @@
                    <asp:HiddenField ID="hfC_MAKH" runat="server"  Value ='<%# Eval("C_MAKH") %>'/>
                     <telerik:RadAutoCompleteBox ID="radautoC_MAKH" Width ="90%" runat="server" 
                         AllowCustomEntry="True" DataSourceID="KHACHHANGDataSource" 
-                        DataTextField="C_CODE" DataValueField="PK_ID" InputType="Text" TextSettings-SelectionMode="Single">
-                        <TextSettings SelectionMode="Single" />
+                        DataTextField="C_CODE" DataValueField="PK_ID" InputType="Text" TextSettings-SelectionMode="Single" OnClientTextChanged="radautoC_MAKHOnClientTextChanged">
                     </telerik:RadAutoCompleteBox>
                     <telerik:RadTextBox ID="txtC_MAKH" Width ="90%"  Visible="false" Text='<%# Eval("C_MAKH") %>' runat="server"></telerik:RadTextBox>
                 </td>
@@ -352,9 +370,8 @@
                 <td colspan="8">
                     <asp:HiddenField ID="hfC_TENKH" runat="server"  Value ='<%# Eval("C_TENKH") %>'/>
                     <telerik:RadAutoCompleteBox ID="radautoC_TENKH" Width ="90%" runat="server" 
-                        AllowCustomEntry="True" DataSourceID="KHACHHANGDataSource" 
+                        AllowCustomEntry="True" DataSourceID="KHACHHANGDataSource" onclientload="OnClientLoadradautoC_TENKH" 
                         DataTextField="C_NAME" DataValueField="PK_ID" InputType="Text" TextSettings-SelectionMode="Single">
-                        <TextSettings SelectionMode="Single" />
                     </telerik:RadAutoCompleteBox>
                     <telerik:RadTextBox ID="txtC_TENKH" Width ="90%"  Visible="false" Text='<%# Eval("C_TENKH") %>' runat="server"></telerik:RadTextBox>
                 </td>               
