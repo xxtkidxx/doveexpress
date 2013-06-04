@@ -26,36 +26,36 @@
     }
     function cmbQuocGiaClientSelectedIndexChangedHandler(sender, eventArgs) {
         $find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("cmbQuocGia;" + eventArgs.get_item().get_value());
-        var currentLoadingPanel = $find("<%= RadAjaxLoadingPanelNHANGUI.ClientID %>");
-        var currentUpdatedControl = "<%= RadGridNHANGUI.ClientID %>"; 
+        var currentLoadingPanel = $find("<%= RadAjaxLoadingPanelNHANGUIQT.ClientID %>");
+        var currentUpdatedControl = "<%= RadGridNHANGUIQT.ClientID %>"; 
         currentLoadingPanel.show(currentUpdatedControl);
         return false;
     }
     function cmbSanPhamClientSelectedIndexChangedHandler(sender, eventArgs) {
          $find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("cmbSanPham;" + eventArgs.get_item().get_value());
-         var currentLoadingPanel = $find("<%= RadAjaxLoadingPanelNHANGUI.ClientID %>");
-        var currentUpdatedControl = "<%= RadGridNHANGUI.ClientID %>"; 
+         var currentLoadingPanel = $find("<%= RadAjaxLoadingPanelNHANGUIQT.ClientID %>");
+        var currentUpdatedControl = "<%= RadGridNHANGUIQT.ClientID %>"; 
         currentLoadingPanel.show(currentUpdatedControl);
          return false;
     }
     function cmbNhomKhachHangClientSelectedIndexChangedHandler(sender, eventArgs) {
          $find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("cmbNhomKhachHang;" + eventArgs.get_item().get_value());
-         var currentLoadingPanel = $find("<%= RadAjaxLoadingPanelNHANGUI.ClientID %>");
-        var currentUpdatedControl = "<%= RadGridNHANGUI.ClientID %>"; 
+         var currentLoadingPanel = $find("<%= RadAjaxLoadingPanelNHANGUIQT.ClientID %>");
+        var currentUpdatedControl = "<%= RadGridNHANGUIQT.ClientID %>"; 
         currentLoadingPanel.show(currentUpdatedControl);
          return false;
     }
     function cmbFK_DOITACClientSelectedIndexChangedHandler(sender, eventArgs) {
          $find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("cmbFK_DOITAC;" + eventArgs.get_item().get_value());
-         var currentLoadingPanel = $find("<%= RadAjaxLoadingPanelNHANGUI.ClientID %>");
-        var currentUpdatedControl = "<%= RadGridNHANGUI.ClientID %>"; 
+         var currentLoadingPanel = $find("<%= RadAjaxLoadingPanelNHANGUIQT.ClientID %>");
+        var currentUpdatedControl = "<%= RadGridNHANGUIQT.ClientID %>"; 
         currentLoadingPanel.show(currentUpdatedControl);
          return false;
     }    
     function OnValueChangedtxtC_KHOILUONG(sender, eventArgs) {
         $find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("txtC_KHOILUONG;" + eventArgs.get_newValue());
-        var currentLoadingPanel = $find("<%= RadAjaxLoadingPanelNHANGUI.ClientID %>");
-        var currentUpdatedControl = "<%= RadGridNHANGUI.ClientID %>"; 
+        var currentLoadingPanel = $find("<%= RadAjaxLoadingPanelNHANGUIQT.ClientID %>");
+        var currentUpdatedControl = "<%= RadGridNHANGUIQT.ClientID %>"; 
         currentLoadingPanel.show(currentUpdatedControl);
         return false;
     }
@@ -140,8 +140,8 @@
     }
     function radautoC_MAKHOnClientTextChanged(sender, eventArgs) {
         $find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("radautoC_MAKH;" + sender.get_text());
-        var currentLoadingPanel = $find("<%= RadAjaxLoadingPanelNHANGUI.ClientID %>");
-        var currentUpdatedControl = "<%= RadGridNHANGUI.ClientID %>"; 
+        var currentLoadingPanel = $find("<%= RadAjaxLoadingPanelNHANGUIQT.ClientID %>");
+        var currentUpdatedControl = "<%= RadGridNHANGUIQT.ClientID %>"; 
         currentLoadingPanel.show(currentUpdatedControl);
         return false;
     }
@@ -174,8 +174,8 @@
             else {
                 alert(arrayOfStrings[1]);
             }
-            var currentLoadingPanel = $find("<%= RadAjaxLoadingPanelNHANGUI.ClientID %>");
-            var currentUpdatedControl = "<%= RadGridNHANGUI.ClientID %>";
+            var currentLoadingPanel = $find("<%= RadAjaxLoadingPanelNHANGUIQT.ClientID %>");
+            var currentUpdatedControl = "<%= RadGridNHANGUIQT.ClientID %>";
             currentLoadingPanel.hide(currentUpdatedControl);
             result = "";
         }
