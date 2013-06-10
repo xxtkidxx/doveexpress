@@ -14,22 +14,22 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
     {
         get
         {
-            return Session["FK_NHOMKHACHHANG"] as string;
+            return Session["FK_KHACHHANG"] as string;
         }
         set
         {
             Session["FK_NHOMKHACHHANG"] = value;
         }
     }
-    private string TENNHOMKH
+    private string FK_KHACHHANG
     {
         get
         {
-            return Session["TENNHOMKH"] as string;
+            return Session["FK_KHACHHANG"] as string;
         }
         set
         {
-            Session["TENNHOMKH"] = value;
+            Session["FK_KHACHHANG"] = value;
         }
     }
     private string TENKH
@@ -217,51 +217,61 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
         }
         RadNumericTextBox txtPPXD = (RadNumericTextBox)editableItem.FindControl("txtPPXD");
         RadTextBox txtCODE = (RadTextBox)editableItem.FindControl("txtCODE");
-        RadAutoCompleteBox radautoC_MAKH = (RadAutoCompleteBox)editableItem.FindControl("radautoC_MAKH");
         RadAutoCompleteBox radautoC_TENKH = (RadAutoCompleteBox)editableItem.FindControl("radautoC_TENKH");
         RadNumericTextBox txtC_KHOILUONG = (RadNumericTextBox)editableItem.FindControl("txtC_KHOILUONG");
         C_KHOILUONG = (txtC_KHOILUONG.Text != "") ? int.Parse(txtC_KHOILUONG.Text) : 0;
         string[] arrayvalue = e.Argument.Split(';');
-        if (arrayvalue[0] == "cmbNhomKhachHang")
+        if (arrayvalue[0] == "cmbMaKhachHang")
         {
             /*KHACHHANGDataSource.SelectCommand = "SELECT DMKHACHHANG.* FROM DMKHACHHANG WHERE FK_NHOMKHACHHANG =" + arrayvalue[1];
             radautoC_MAKH.DataBind();
             radautoC_TENKH.DataBind();*/
-            FK_NHOMKHACHHANG = arrayvalue[1];
-            TENNHOMKH = "";
+            FK_KHACHHANG = arrayvalue[1];
             TENKH = "";
             string SelectSQL;
-            SelectSQL = "Select DMMABANGCUOC.PK_ID FROM DMMABANGCUOC WHERE (DMMABANGCUOC.C_VALUE ='" + arrayvalue[1] + "') OR (DMMABANGCUOC.C_VALUE LIKE '%," + arrayvalue[1] + ",%') OR (DMMABANGCUOC.C_VALUE LIKE '%," + arrayvalue[1] + "') OR (DMMABANGCUOC.C_VALUE LIKE '" + arrayvalue[1] + ",%')";
-            DataTable oDataTable = new DataTable();
-            ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
-            oDataTable = SelectQuery.query_data(SelectSQL);
-            if (oDataTable.Rows.Count != 0)
-            {
-                FK_MABANGCUOC = oDataTable.Rows[0]["PK_ID"].ToString();               
-            }
-            else
-            {
-                FK_MABANGCUOC = "";
-                Alarm = "msg,Nhóm khách hàng này không nằm trong bảng cước nào";
-            }
-        }
-        else if (arrayvalue[0] == "radautoC_MAKH")
-        {
-            string SelectSQL;
-            SelectSQL = "Select DMKHACHHANG.FK_NHOMKHACHHANG, DMKHACHHANG.C_NAME as KHNAME, DMNHOMKHACHHANG.C_NAME as NHOMKHNAME FROM DMKHACHHANG LEFT OUTER JOIN DMNHOMKHACHHANG ON DMKHACHHANG.FK_NHOMKHACHHANG = DMNHOMKHACHHANG.PK_ID WHERE (DMKHACHHANG.C_CODE ='" + arrayvalue[1] + "')";
+            SelectSQL = "Select DMKHACHHANG.FK_NHOMKHACHHANG FROM DMKHACHHANG WHERE DMKHACHHANG.C_CODE ='" + FK_KHACHHANG + "'";
             DataTable oDataTable = new DataTable();
             ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
             oDataTable = SelectQuery.query_data(SelectSQL);
             if (oDataTable.Rows.Count != 0)
             {
                 FK_NHOMKHACHHANG = oDataTable.Rows[0]["FK_NHOMKHACHHANG"].ToString();
-                TENNHOMKH = oDataTable.Rows[0]["NHOMKHNAME"].ToString();
+                string SelectSQL1;
+                SelectSQL1 = "Select DMMABANGCUOC.PK_ID FROM DMMABANGCUOC WHERE (DMMABANGCUOC.C_VALUE ='" + FK_NHOMKHACHHANG + "') OR (DMMABANGCUOC.C_VALUE LIKE '%," + FK_NHOMKHACHHANG + ",%') OR (DMMABANGCUOC.C_VALUE LIKE '%," + FK_NHOMKHACHHANG + "') OR (DMMABANGCUOC.C_VALUE LIKE '" + FK_NHOMKHACHHANG + ",%')";
+                DataTable oDataTable1 = new DataTable();
+                ITCLIB.Admin.SQL SelectQuery1 = new ITCLIB.Admin.SQL();
+                oDataTable1 = SelectQuery1.query_data(SelectSQL1);
+                if (oDataTable1.Rows.Count != 0)
+                {
+                    FK_MABANGCUOC = oDataTable1.Rows[0]["PK_ID"].ToString();
+                }
+                else
+                {
+                    FK_MABANGCUOC = "";
+                    Alarm = "msg,Nhóm khách hàng này không nằm trong bảng cước nào";
+                }
+            }
+            else
+            {
+                FK_NHOMKHACHHANG = "";
+                Alarm = "msg,Mã khách hàng này không nằm trong nhóm khách hàng nào";
+            }           
+        }
+        else if (arrayvalue[0] == "radautoC_TENKH")
+        {
+            string SelectSQL;
+            SelectSQL = "Select DMKHACHHANGCHITIET.FK_KHACHHANG, DMKHACHHANGCHITIET.C_NAME as KHNAME, DMKHACHHANG.C_CODE as KHCODE FROM DMKHACHHANGCHITIET LEFT OUTER JOIN DMKHACHHANG ON DMKHACHHANGCHITIET.FK_KHACHHANG = DMKHACHHANG.PK_ID WHERE (DMKHACHHANGCHITIET.PK_ID =" + arrayvalue[1] + ")";
+            DataTable oDataTable = new DataTable();
+            ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
+            oDataTable = SelectQuery.query_data(SelectSQL);
+            if (oDataTable.Rows.Count != 0)
+            {
+                FK_KHACHHANG = oDataTable.Rows[0]["KHCODE"].ToString();
                 TENKH = oDataTable.Rows[0]["KHNAME"].ToString();
             }
             else
             {
-                FK_NHOMKHACHHANG = "1";
-                TENNHOMKH = "Khách lẻ";
+                FK_KHACHHANG = "10000";
                 TENKH = "";
             }
         }
@@ -446,7 +456,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
       }
       else
       {
-          string script = string.Format("var result = '{0}'", FK_NHOMKHACHHANG + "," + TENNHOMKH + "," + TENKH + "," + PPXD + "," + CUOCCHINH + "," + GIADOITAC);
+          string script = string.Format("var result = '{0}'", FK_KHACHHANG + "," + FK_KHACHHANG + "," + TENKH + "," + PPXD + "," + CUOCCHINH + "," + GIADOITAC);
           ScriptManager.RegisterClientScriptBlock(Page, typeof(Page), "result", script, true);
       }
     }
