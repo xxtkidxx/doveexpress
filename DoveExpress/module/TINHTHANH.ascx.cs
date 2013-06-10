@@ -249,7 +249,6 @@ public partial class module_TINHTHANH : System.Web.UI.UserControl
     {
         if (!IsPostBack)
         {
-
             RadPanelItem item = (RadPanelItem)RadPanelBarListQUOCGIA.Items[0];
             if (item != null)
             {

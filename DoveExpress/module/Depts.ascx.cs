@@ -354,8 +354,16 @@ public partial class Depts : System.Web.UI.UserControl
         }
         else
         {
-            RadPanelItem item = (RadPanelItem)RadPanelBarListDept.FindItemByText("Đơn vị nội bộ");
-            if (item != null) item.Expanded = true;
+            if (!IsPostBack)
+            {
+                RadPanelItem item = (RadPanelItem)RadPanelBarListDept.Items[0];
+                if (item != null)
+                {
+                    Session["paID"] = item.Value;
+                    item.Expanded = true;
+                    item.Selected = true;
+                }
+            }
         }
     }
     protected string checkHasParent(string iddep)
