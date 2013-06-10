@@ -69,22 +69,6 @@ public partial class module_KHACHHANG : System.Web.UI.UserControl
             args.IsValid = true;
         }
     }
-    protected void CheckName(object source, ServerValidateEventArgs args)
-    {
-        string SelectSQL;
-        SelectSQL = "Select DMKHACHHANG.C_NAME FROM DMKHACHHANG WHERE DMKHACHHANG.C_NAME = '" + args.Value + "' AND DMKHACHHANG.PK_ID <> " + Session["txtID"].ToString();
-        DataTable oDataTable = new DataTable();
-        ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
-        oDataTable = SelectQuery.query_data(SelectSQL);
-        if (oDataTable.Rows.Count != 0)
-        {
-            args.IsValid = false;
-        }
-        else
-        {
-            args.IsValid = true;
-        }
-    }
     private void DisplayMessage(string text)
     {
         RadGridKHACHHANG.Controls.Add(new LiteralControl(string.Format("<span style='color:red'>{0}</span>", text)));
@@ -104,54 +88,112 @@ public partial class module_KHACHHANG : System.Web.UI.UserControl
     protected void RadGridKHACHHANG_ItemDeleted(object sender, GridDeletedEventArgs e)
     {
         GridDataItem dataItem = (GridDataItem)e.Item;
-        if (e.Exception != null)
+        if ("MasterTableViewKHACHHANG".Equals(e.Item.OwnerTableView.Name))
         {
-            e.ExceptionHandled = true;
-            SetMessage("Không thể xóa khách hàng. Lý do: " + e.Exception.Message);
+            if (e.Exception != null)
+            {
+                e.ExceptionHandled = true;
+                SetMessage("Không thể xóa khách hàng. Lý do: " + e.Exception.Message);
+            }
+            else
+            {
+                SetMessage("Xóa khách hàng thành công!");
+                ITCLIB.ActionLog.ActionLog.WriteLog(Session["UserID"].ToString(), "Deleted KHACHHANGs", e.Item.KeyValues);
+            }
         }
-        else
+        else if ("TableViewKHACHHANGCHITIET".Equals(e.Item.OwnerTableView.Name))
         {
-            SetMessage("Xóa khách hàng thành công!");
-            ITCLIB.ActionLog.ActionLog.WriteLog(Session["UserID"].ToString(), "Deleted KHACHHANGs", e.Item.KeyValues);
-        }
+            if (e.Exception != null)
+            {
+                e.ExceptionHandled = true;
+                SetMessage("Không thể xóa chi tiết khách hàng. Lý do: " + e.Exception.Message);
+            }
+            else
+            {
+                SetMessage("Xóa chi tiết khách hàng thành công!");
+                ITCLIB.ActionLog.ActionLog.WriteLog(Session["UserID"].ToString(), "Deleted KHACHHANGCHITIETs", e.Item.KeyValues);
+            }
+        }        
     }
     protected void RadGridKHACHHANG_ItemInserted(object sender, GridInsertedEventArgs e)
     {
         GridEditableItem item = (GridEditableItem)e.Item;
-        if (e.Exception != null)
+        if ("MasterTableViewKHACHHANG".Equals(e.Item.OwnerTableView.Name))
         {
-            e.ExceptionHandled = true;
-            SetMessage("Không thể tạo mới khách hàng. Lý do: " + e.Exception.Message);
+            if (e.Exception != null)
+            {
+                e.ExceptionHandled = true;
+                SetMessage("Không thể tạo mới khách hàng. Lý do: " + e.Exception.Message);
+            }
+            else
+            {
+                SetMessage("Tạo mới khách hàng thành công!");
+                ITCLIB.ActionLog.ActionLog.WriteLog(Session["UserID"].ToString(), "Inserted KHACHHANGs", "{PK_ID:\"" + getmaxid("DMKHACHHANG") + "\"}");
+            }
         }
-        else
+        else if ("TableViewKHACHHANGCHITIET".Equals(e.Item.OwnerTableView.Name))
         {
-            SetMessage("Tạo mới khách hàng thành công!");
-            ITCLIB.ActionLog.ActionLog.WriteLog(Session["UserID"].ToString(), "Inserted KHACHHANGs", "{PK_ID:\"" + getmaxid("DMKHACHHANG") + "\"}");
-        }
+            if (e.Exception != null)
+            {
+                e.ExceptionHandled = true;
+                SetMessage("Không thể tạo mới khách hàng. Lý do: " + e.Exception.Message);
+            }
+            else
+            {
+                SetMessage("Tạo mới chi tiết khách hàng thành công!");
+                ITCLIB.ActionLog.ActionLog.WriteLog(Session["UserID"].ToString(), "Inserted KHACHHANGCHITIETs", "{PK_ID:\"" + getmaxid("DMKHACHHANGCHITIET") + "\"}");
+            }
+        }       
     }
     protected void RadGridKHACHHANG_ItemUpdated(object sender, GridUpdatedEventArgs e)
     {
         GridEditableItem item = (GridEditableItem)e.Item;
-        if (e.Exception != null)
+        if ("MasterTableViewKHACHHANG".Equals(e.Item.OwnerTableView.Name))
         {
-            e.KeepInEditMode = true;
-            e.ExceptionHandled = true;
-            SetMessage("Không thể cập nhật khách hàng. Lý do: " + e.Exception.Message);
+            if (e.Exception != null)
+            {
+                e.KeepInEditMode = true;
+                e.ExceptionHandled = true;
+                SetMessage("Không thể cập nhật khách hàng. Lý do: " + e.Exception.Message);
+            }
+            else
+            {
+                SetMessage("Cập nhật khách hàng thành công!");
+                ITCLIB.ActionLog.ActionLog.WriteLog(Session["UserID"].ToString(), "Updated KHACHHANGs", e.Item.KeyValues);
+            }
         }
-        else
+        else if ("TableViewKHACHHANGCHITIET".Equals(e.Item.OwnerTableView.Name))
         {
-            SetMessage("Cập nhật khách hàng thành công!");
-            ITCLIB.ActionLog.ActionLog.WriteLog(Session["UserID"].ToString(), "Updated KHACHHANGs", e.Item.KeyValues);
+            if (e.Exception != null)
+            {
+                e.KeepInEditMode = true;
+                e.ExceptionHandled = true;
+                SetMessage("Không thể cập nhật chi tiết khách hàng. Lý do: " + e.Exception.Message);
+            }
+            else
+            {
+                SetMessage("Cập nhật chi tiết khách hàng thành công!");
+                ITCLIB.ActionLog.ActionLog.WriteLog(Session["UserID"].ToString(), "Updated KHACHHANGCHITIETs", e.Item.KeyValues);
+            }
         }
     }
     protected void RadGridKHACHHANG_ItemDataBound(object sender, GridItemEventArgs e)
     {
         RadGrid grid = (RadGrid)sender;
-        if (e.Item is GridEditableItem && e.Item.IsInEditMode)
+        if (e.Item is GridDataItem && e.Item.OwnerTableView.Name == "MasterTableViewKHACHHANG")
+        {
+            Label lblSTT = (Label)e.Item.FindControl("lblSTT");
+            lblSTT.Text = (e.Item.ItemIndex + 1).ToString();
+        }
+        if (e.Item is GridEditableItem && e.Item.IsInEditMode && e.Item.OwnerTableView.Name == "MasterTableViewKHACHHANG")
         {
             GridEditableItem editItem = (GridEditableItem)e.Item;
             HiddenField txtID = (HiddenField)editItem.FindControl("txtID");
-            Session["txtID"] = (txtID.Value != "") ? txtID.Value : "0";
+            Session["txtID"] = (txtID.Value != "") ? txtID.Value : "0";           
+        }
+        else if (e.Item is GridEditableItem && e.Item.IsInEditMode && e.Item.OwnerTableView.Name == "TableViewKHACHHANGCHITIET")
+        {
+            GridEditableItem editItem = (GridEditableItem)e.Item;
             HiddenField hfQuocGia = (HiddenField)editItem.FindControl("hfQuocGia");
             HiddenField hfTinhThanh = (HiddenField)editItem.FindControl("hfTinhThanh");
             HiddenField hfQuanHuyen = (HiddenField)editItem.FindControl("hfQuanHuyen");
@@ -167,12 +209,7 @@ public partial class module_KHACHHANG : System.Web.UI.UserControl
             QUANHUYENDataSource.SelectCommand = LoadFilteredQuanHuyenManually(hfTinhThanh.Value);
             cmbQuanHuyen.DataBind();
             cmbQuanHuyen.SelectedValue = hfQuanHuyen.Value;
-        }
-        if (e.Item is GridDataItem)
-        {
-            Label lblSTT = (Label)e.Item.FindControl("lblSTT");
-            lblSTT.Text = (e.Item.ItemIndex + 1).ToString();
-        }
+        }       
     }
     protected void RadGridKHACHHANG_ItemCommand(object sender, GridCommandEventArgs e)
     {
@@ -229,7 +266,7 @@ public partial class module_KHACHHANG : System.Web.UI.UserControl
     }
     protected void RadGridKHACHHANG_ItemCreated(object sender, GridItemEventArgs e)
     {
-        if (e.Item is GridEditableItem && e.Item.IsInEditMode)
+        if (e.Item is GridEditableItem && e.Item.IsInEditMode && e.Item.OwnerTableView.Name == "TableViewKHACHHANGCHITIET")
         {
             GridEditableItem editItem = (GridEditableItem)e.Item;
             RadComboBox cmbQuocGia = (RadComboBox)editItem.FindControl("cmbQuocGia");
