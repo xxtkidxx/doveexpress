@@ -364,7 +364,7 @@
               </ul>
             </div>               
             <div class="clearfix bgpopup"> 
-            <div style="width:900px;background:#FFFFFF" class="clearfix">      
+            <div style="width:900px; height:500px; background:#FFFFFF" class="clearfix">      
             <table id="tblEdit" class ="TableEditInGrid" cellspacing="3" cellpadding="3" style="width: 100%" border="0">
             <tr>
                 <td style ="width:100px;"> <span class="rtsTxtnew">Ngày nhận gửi:</td>
