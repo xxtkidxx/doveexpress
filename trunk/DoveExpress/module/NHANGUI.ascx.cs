@@ -14,7 +14,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
     {
         get
         {
-            return Session["FK_KHACHHANG"] as string;
+            return Session["FK_NHOMKHACHHANG"] as string;
         }
         set
         {
