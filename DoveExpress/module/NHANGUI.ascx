@@ -396,18 +396,16 @@
                    <asp:HiddenField ID="hfC_MAKH" runat="server"  Value ='<%# Eval("C_MAKH") %>'/>
                     <telerik:RadAutoCompleteBox ID="radautoC_MAKH" Width ="90%" runat="server" 
                         AllowCustomEntry="True" DataSourceID="KHACHHANGDataSource" onclientload="OnClientLoadradautoC_MAKH" 
-                        DataTextField="C_CODE" DataValueField="PK_ID" InputType="Text" TextSettings-SelectionMode="Single" OnClientTextChanged="radautoC_MAKHOnClientTextChanged">
-                    </telerik:RadAutoCompleteBox>
-                    <telerik:RadTextBox ID="txtC_MAKH" Width ="90%"  Visible="false" Text='<%# Eval("C_MAKH") %>' runat="server"></telerik:RadTextBox>
+                        DataTextField="C_CODE" DataValueField="PK_ID" InputType="Text" TextSettings-SelectionMode="Single" OnClientTextChanged="radautoC_MAKHOnClientTextChanged" DropDownHeight="100" DropDownWidth="100">
+                    </telerik:RadAutoCompleteBox>                    
                 </td>
                 <td style ="width:100px;"> <span class="rtsTxtnew">Tên khách hàng:</span></td>
                 <td colspan="8">
                     <asp:HiddenField ID="hfC_TENKH" runat="server"  Value ='<%# Eval("C_TENKH") %>'/>
                     <telerik:RadAutoCompleteBox ID="radautoC_TENKH" Width ="90%" runat="server" 
                         AllowCustomEntry="True" DataSourceID="KHACHHANGDataSource" onclientload="OnClientLoadradautoC_TENKH" 
-                        DataTextField="C_NAME" DataValueField="PK_ID" InputType="Text" TextSettings-SelectionMode="Single">
-                    </telerik:RadAutoCompleteBox>
-                    <telerik:RadTextBox ID="txtC_TENKH" Width ="90%"  Visible="false" Text='<%# Eval("C_TENKH") %>' runat="server"></telerik:RadTextBox>
+                        DataTextField="C_NAME" DataValueField="PK_ID" InputType="Text" TextSettings-SelectionMode="Single" DropDownHeight="100" DropDownWidth="100">
+                    </telerik:RadAutoCompleteBox>                    
                 </td>               
             </tr> 
             <tr> 
