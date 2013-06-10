@@ -9,13 +9,9 @@
                 sender.get_masterTableView().editItem(eventArgs.get_itemIndexHierarchical());
             }
     }        
-    var cmbNhomKhachHang;
-    function OnClientLoadcmbNhomKhachHang(sender) {
-        cmbNhomKhachHang = sender;
-    }
-    var radautoC_MAKH;
-    function OnClientLoadradautoC_MAKH(sender) {
-        radautoC_MAKH = sender;
+    var cmbMaKhachHang;
+    function OnClientLoadcmbMaKhachHang(sender) {
+        cmbMaKhachHang = sender;
     }
     var radautoC_TENKH;
     function OnClientLoadradautoC_TENKH(sender) {
@@ -54,8 +50,8 @@
          currentLoadingPanel.show(currentUpdatedControl);
          return false;
     }
-    function cmbNhomKhachHangClientSelectedIndexChangedHandler(sender, eventArgs) {
-         $find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("cmbNhomKhachHang;" + eventArgs.get_item().get_value());
+    function cmbMaKhachHangClientSelectedIndexChangedHandler(sender, eventArgs) {
+         $find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("cmbMaKhachHang;" + eventArgs.get_item().get_value());
          var currentLoadingPanel = $find("<%= RadAjaxLoadingPanelNHANGUI.ClientID %>");
          var currentUpdatedControl = "<%= RadGridNHANGUI.ClientID %>"; 
          currentLoadingPanel.show(currentUpdatedControl);
@@ -154,8 +150,8 @@
         txtC_CONLAI.set_value(txtC_TIENHANG.get_value() - txtC_DATHU.get_value());
         return false;
     }
-    function radautoC_MAKHOnClientTextChanged(sender, eventArgs) {
-        $find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("radautoC_MAKH;" + sender.get_text());
+    function radautoC_TENKHOnClientTextChanged(sender, eventArgs) {
+        $find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("radautoC_TENKH;" + sender.get_text());
         var currentLoadingPanel = $find("<%= RadAjaxLoadingPanelNHANGUI.ClientID %>");
         var currentUpdatedControl = "<%= RadGridNHANGUI.ClientID %>"; 
         currentLoadingPanel.show(currentUpdatedControl);
@@ -169,8 +165,8 @@
              var arrayOfStrings = result.split(",");
              if (arrayOfStrings[0] != "msg") {
                  if (arrayOfStrings[1] != "") {
-                     cmbNhomKhachHang.set_value(arrayOfStrings[0]);
-                     cmbNhomKhachHang.set_text(arrayOfStrings[1]);
+                     cmbMaKhachHang.set_value(arrayOfStrings[0]);
+                     cmbMaKhachHang.set_text(arrayOfStrings[1]);
                  }
                  else {
                  }
@@ -384,29 +380,25 @@
                 </td>               
             </tr>
             <tr>
-                <td style ="width:100px;"> <span class="rtsTxtnew">Nhóm KH:</span></td>
-                <td colspan="4">
-                    <telerik:RadComboBox ID="cmbNhomKhachHang" runat="server"  onclientload="OnClientLoadcmbNhomKhachHang" 
-                    DataTextField="C_NAME" DataValueField="PK_ID" DataSourceID="NHOMKHACHHANGDataSource" SelectedValue='<%# Bind("FK_NHOMKHACHHANG") %>'
-                    ShowToggleImage="True" EmptyMessage="Chọn nhóm" onclientselectedindexchanged="cmbNhomKhachHangClientSelectedIndexChangedHandler">
-                    </telerik:RadComboBox>
-                </td>
                 <td style ="width:100px;"> <span class="rtsTxtnew">Mã khách hàng:</span></td>
                 <td colspan="4">
-                   <asp:HiddenField ID="hfC_MAKH" runat="server"  Value ='<%# Eval("C_MAKH") %>'/>
-                    <telerik:RadAutoCompleteBox ID="radautoC_MAKH" Width ="90%" runat="server" 
-                        AllowCustomEntry="True" DataSourceID="KHACHHANGDataSource" onclientload="OnClientLoadradautoC_MAKH" 
-                        DataTextField="C_CODE" DataValueField="PK_ID" InputType="Text" TextSettings-SelectionMode="Single" OnClientTextChanged="radautoC_MAKHOnClientTextChanged" DropDownHeight="100" DropDownWidth="100">
-                    </telerik:RadAutoCompleteBox>                    
+                    <telerik:RadComboBox ID="cmbMaKhachHang" runat="server"  onclientload="OnClientLoadcmbMaKhachHang" 
+                    DataTextField="C_CODE" DataValueField="C_CODE" DataSourceID="KHACHHANGDataSource" SelectedValue='<%# Bind("FK_KHACHHANG") %>'
+                    ShowToggleImage="True" EmptyMessage="Chọn mã" onclientselectedindexchanged="cmbMaKhachHangClientSelectedIndexChangedHandler">
+                    </telerik:RadComboBox>
                 </td>
-                <td style ="width:100px;"> <span class="rtsTxtnew">Tên khách hàng:</span></td>
-                <td colspan="8">
+                <td style ="width:100px;"> <span class="rtsTxtnew">Tên người gửi:</span></td>
+                <td colspan="4">
                     <asp:HiddenField ID="hfC_TENKH" runat="server"  Value ='<%# Eval("C_TENKH") %>'/>
                     <telerik:RadAutoCompleteBox ID="radautoC_TENKH" Width ="90%" runat="server" 
-                        AllowCustomEntry="True" DataSourceID="KHACHHANGDataSource" onclientload="OnClientLoadradautoC_TENKH" 
+                        AllowCustomEntry="True" DataSourceID="KHACHHANGCHITIETDataSource" onclientload="OnClientLoadradautoC_TENKH" OnClientTextChanged="radautoC_TENKHOnClientTextChanged"
                         DataTextField="C_NAME" DataValueField="PK_ID" InputType="Text" TextSettings-SelectionMode="Single" DropDownHeight="100" DropDownWidth="100">
                     </telerik:RadAutoCompleteBox>                    
-                </td>               
+                </td>
+                <td style ="width:100px;"> <span class="rtsTxtnew">ĐT người gửi:</span></td>
+                <td colspan="4">
+                   <telerik:RadTextBox ID="txtC_TELGUI" Width ="90%" Text='<%# Bind("C_TELGUI") %>' runat="server"></telerik:RadTextBox>               
+                </td>            
             </tr> 
             <tr> 
                 <td style ="width:100px;"> <span class="rtsTxtnew">Người nhận:</span></td>
@@ -414,8 +406,12 @@
                     <telerik:RadTextBox ID="txtC_NGUOINHAN" Width ="90%" Text='<%# Bind("C_NGUOINHAN") %>' runat="server"></telerik:RadTextBox>
                 </td>               
                 <td style =" width:100px;"> <span class="rtsTxtnew">Địa chỉ nhận:</span></td>
-                <td colspan="12">
+                <td colspan="4">
                     <telerik:RadTextBox ID="txtC_DIACHINHAN" Width ="90%" Text='<%# Bind("C_DIACHINHAN") %>' runat="server"></telerik:RadTextBox>
+                </td>
+                <td style ="width:100px;"> <span class="rtsTxtnew">ĐT người nhận:</span></td>
+                <td colspan="4">
+                   <telerik:RadTextBox ID="RadTextBox1" Width ="90%" Text='<%# Bind("C_TELNHAN") %>' runat="server"></telerik:RadTextBox>               
                 </td>
             </tr> 
             <tr> 
@@ -611,20 +607,21 @@
 <asp:SqlDataSource ID="NHANGUIDataSource" runat="server" 
     ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>" 
     DeleteCommand="DELETE FROM [NHANGUI] WHERE [PK_ID] = @PK_ID" 
-    InsertCommand="INSERT INTO [NHANGUI] ([C_NGAY], [C_MAKH], [C_BILL], [FK_NHOMKHACHHANG], [C_TENKH], [C_NGUOINHAN], [C_DIACHINHAN], [FK_QUANHUYEN], [C_NOIDUNG], [FK_MASANPHAM], [C_PPXD], [C_KHOILUONG], [C_GIACUOC], [C_DONGGOI], [C_KHAIGIA], [C_COD], [C_KHAC], [C_HINHTHUCTT], [C_DATHU], [C_TIENHANG], [FK_NHANVIENNHAN], [FK_DOITAC], [C_GIADOITAC], [FK_NHANVIENPHAT], [C_NGAYGIOPHAT], [C_NGUOIKYNHAN], [C_BOPHAN],[C_TYPE]) VALUES (@C_NGAY, @C_MAKH, @C_BILL, @FK_NHOMKHACHHANG, @C_TENKH, @C_NGUOINHAN, @C_DIACHINHAN, @FK_QUANHUYEN, @C_NOIDUNG, @FK_MASANPHAM, @C_PPXD, @C_KHOILUONG, @C_GIACUOC, @C_DONGGOI, @C_KHAIGIA, @C_COD, @C_KHAC, @C_HINHTHUCTT, @C_DATHU, @C_TIENHANG, @FK_NHANVIENNHAN, @FK_DOITAC, @C_GIADOITAC, @FK_NHANVIENPHAT, @C_NGAYGIOPHAT, @C_NGUOIKYNHAN, @C_BOPHAN,1)"
-    SelectCommand="SELECT [NHANGUI].[PK_ID], [NHANGUI].[C_NGAY], [NHANGUI].[C_MAKH], [NHANGUI].[FK_NHOMKHACHHANG], [NHANGUI].[C_BILL], [NHANGUI].[C_TENKH], [NHANGUI].[C_NGUOINHAN], [NHANGUI].[C_DIACHINHAN], [NHANGUI].[FK_QUANHUYEN], [NHANGUI].[C_NOIDUNG], [NHANGUI].[FK_MASANPHAM],  [NHANGUI].[C_PPXD], [NHANGUI].[C_KHOILUONG], [NHANGUI].[C_GIACUOC], [NHANGUI].[C_DONGGOI], [NHANGUI].[C_KHAIGIA], [NHANGUI].[C_COD], [NHANGUI].[C_KHAC], [NHANGUI].[C_HINHTHUCTT], [NHANGUI].[C_DATHU], ([NHANGUI].[C_TIENHANG] - [NHANGUI].[C_DATHU]) as [C_CONLAI],([NHANGUI].[C_DONGGOI] + [NHANGUI].[C_KHAIGIA] + [NHANGUI].[C_COD] + [NHANGUI].[C_KHAC]) as [C_PHUTROISUM], [NHANGUI].[C_TIENHANG], [NHANGUI].[FK_NHANVIENNHAN], [NHANGUI].[FK_DOITAC], [NHANGUI].[C_GIADOITAC], [NHANGUI].[FK_NHANVIENPHAT], [NHANGUI].[C_NGAYGIOPHAT], [NHANGUI].[FK_NHANVIENKHAITHAC], [NHANGUI].[C_NGUOIKYNHAN], [NHANGUI].[C_BOPHAN],USERSNHAN.C_NAME as NHANVIENNHANNAME,USERSPHAT.C_NAME as NHANVIENPHATNAME,USERSKHAITHAC.C_NAME as NHANVIENKHAITHACNAME,DMMASANPHAM.C_NAME as SANPHAMNAME,DMQUANHUYEN.C_NAME as QUANHUYENNAME,DMTINHTHANH.C_NAME as TINHTHANHNAME FROM [NHANGUI] LEFT OUTER JOIN USERS as USERSNHAN ON NHANGUI.FK_NHANVIENNHAN = USERSNHAN.PK_ID LEFT OUTER JOIN USERS as USERSPHAT ON NHANGUI.FK_NHANVIENPHAT = USERSPHAT.PK_ID LEFT OUTER JOIN USERS as USERSKHAITHAC ON NHANGUI.FK_NHANVIENKHAITHAC = USERSKHAITHAC.PK_ID LEFT OUTER JOIN DMMASANPHAM ON NHANGUI.FK_MASANPHAM=DMMASANPHAM.PK_ID LEFT OUTER JOIN DMQUANHUYEN ON NHANGUI.FK_QUANHUYEN = DMQUANHUYEN.C_CODE LEFT OUTER JOIN DMTINHTHANH ON DMQUANHUYEN.FK_TINHTHANH = DMTINHTHANH.PK_ID WHERE [NHANGUI].[C_TYPE] = 1" 
-    UpdateCommand="UPDATE [NHANGUI] SET [C_NGAY] = @C_NGAY, [C_MAKH] = @C_MAKH, [C_BILL] = @C_BILL, [FK_NHOMKHACHHANG] = @FK_NHOMKHACHHANG,[C_TENKH] = @C_TENKH, [C_NGUOINHAN] = @C_NGUOINHAN, [C_DIACHINHAN] = @C_DIACHINHAN, [FK_QUANHUYEN] = @FK_QUANHUYEN, [C_NOIDUNG] = @C_NOIDUNG, [FK_MASANPHAM] = @FK_MASANPHAM, [C_PPXD] = @C_PPXD, [C_KHOILUONG] = @C_KHOILUONG, [C_GIACUOC] = @C_GIACUOC, [C_DONGGOI]=@C_DONGGOI, [C_KHAIGIA]=@C_KHAIGIA, [C_COD]=@C_COD, [C_KHAC]=@C_KHAC, [C_HINHTHUCTT] = @C_HINHTHUCTT, [C_DATHU] = @C_DATHU, [C_TIENHANG] = @C_TIENHANG, [FK_NHANVIENNHAN] = @FK_NHANVIENNHAN, [FK_DOITAC] = @FK_DOITAC, [C_GIADOITAC] = @C_GIADOITAC, [FK_NHANVIENPHAT] = @FK_NHANVIENPHAT, [C_NGAYGIOPHAT] = @C_NGAYGIOPHAT, [FK_NHANVIENKHAITHAC]=@FK_NHANVIENKHAITHAC, [C_NGUOIKYNHAN] = @C_NGUOIKYNHAN, [C_BOPHAN] = @C_BOPHAN WHERE [PK_ID] = @PK_ID">
+    InsertCommand="INSERT INTO [NHANGUI] ([C_NGAY], [C_BILL], [FK_KHACHHANG], [C_TENKH], [C_TELGUI], [C_NGUOINHAN], [C_DIACHINHAN], [C_TELNHAN], [FK_QUANHUYEN], [C_NOIDUNG], [FK_MASANPHAM], [C_PPXD], [C_KHOILUONG], [C_GIACUOC], [C_DONGGOI], [C_KHAIGIA], [C_COD], [C_KHAC], [C_HINHTHUCTT], [C_DATHU], [C_TIENHANG], [FK_NHANVIENNHAN], [FK_DOITAC], [C_GIADOITAC], [FK_NHANVIENPHAT], [C_NGAYGIOPHAT], [C_NGUOIKYNHAN], [C_BOPHAN],[C_TYPE]) VALUES (@C_NGAY, @C_BILL, @FK_KHACHHANG, @C_TENKH, @C_TELGUI, @C_NGUOINHAN, @C_DIACHINHAN, @C_TELNHAN, @FK_QUANHUYEN, @C_NOIDUNG, @FK_MASANPHAM, @C_PPXD, @C_KHOILUONG, @C_GIACUOC, @C_DONGGOI, @C_KHAIGIA, @C_COD, @C_KHAC, @C_HINHTHUCTT, @C_DATHU, @C_TIENHANG, @FK_NHANVIENNHAN, @FK_DOITAC, @C_GIADOITAC, @FK_NHANVIENPHAT, @C_NGAYGIOPHAT, @C_NGUOIKYNHAN, @C_BOPHAN,1)"
+    SelectCommand="SELECT [NHANGUI].[PK_ID], [NHANGUI].[C_NGAY], [NHANGUI].[FK_KHACHHANG], [NHANGUI].[C_BILL], [NHANGUI].[C_TENKH], [NHANGUI].[C_TELGUI], [NHANGUI].[C_NGUOINHAN], [NHANGUI].[C_DIACHINHAN], [NHANGUI].[C_TELNHAN], [NHANGUI].[FK_QUANHUYEN], [NHANGUI].[C_NOIDUNG], [NHANGUI].[FK_MASANPHAM],  [NHANGUI].[C_PPXD], [NHANGUI].[C_KHOILUONG], [NHANGUI].[C_GIACUOC], [NHANGUI].[C_DONGGOI], [NHANGUI].[C_KHAIGIA], [NHANGUI].[C_COD], [NHANGUI].[C_KHAC], [NHANGUI].[C_HINHTHUCTT], [NHANGUI].[C_DATHU], ([NHANGUI].[C_TIENHANG] - [NHANGUI].[C_DATHU]) as [C_CONLAI],([NHANGUI].[C_DONGGOI] + [NHANGUI].[C_KHAIGIA] + [NHANGUI].[C_COD] + [NHANGUI].[C_KHAC]) as [C_PHUTROISUM], [NHANGUI].[C_TIENHANG], [NHANGUI].[FK_NHANVIENNHAN], [NHANGUI].[FK_DOITAC], [NHANGUI].[C_GIADOITAC], [NHANGUI].[FK_NHANVIENPHAT], [NHANGUI].[C_NGAYGIOPHAT], [NHANGUI].[FK_NHANVIENKHAITHAC], [NHANGUI].[C_NGUOIKYNHAN], [NHANGUI].[C_BOPHAN],USERSNHAN.C_NAME as NHANVIENNHANNAME,USERSPHAT.C_NAME as NHANVIENPHATNAME,USERSKHAITHAC.C_NAME as NHANVIENKHAITHACNAME,DMMASANPHAM.C_NAME as SANPHAMNAME,DMQUANHUYEN.C_NAME as QUANHUYENNAME,DMTINHTHANH.C_NAME as TINHTHANHNAME FROM [NHANGUI] LEFT OUTER JOIN USERS as USERSNHAN ON NHANGUI.FK_NHANVIENNHAN = USERSNHAN.PK_ID LEFT OUTER JOIN USERS as USERSPHAT ON NHANGUI.FK_NHANVIENPHAT = USERSPHAT.PK_ID LEFT OUTER JOIN USERS as USERSKHAITHAC ON NHANGUI.FK_NHANVIENKHAITHAC = USERSKHAITHAC.PK_ID LEFT OUTER JOIN DMMASANPHAM ON NHANGUI.FK_MASANPHAM=DMMASANPHAM.PK_ID LEFT OUTER JOIN DMQUANHUYEN ON NHANGUI.FK_QUANHUYEN = DMQUANHUYEN.C_CODE LEFT OUTER JOIN DMTINHTHANH ON DMQUANHUYEN.FK_TINHTHANH = DMTINHTHANH.PK_ID WHERE [NHANGUI].[C_TYPE] = 1" 
+    UpdateCommand="UPDATE [NHANGUI] SET [C_NGAY] = @C_NGAY, [C_BILL] = @C_BILL, [FK_KHACHHANG] = @FK_KHACHHANG,[C_TENKH] = @C_TENKH, [C_TELGUI] = @C_TELGUI, [C_NGUOINHAN] = @C_NGUOINHAN, [C_DIACHINHAN] = @C_DIACHINHAN, [C_TELNHAN] = @C_TELNHAN, [FK_QUANHUYEN] = @FK_QUANHUYEN, [C_NOIDUNG] = @C_NOIDUNG, [FK_MASANPHAM] = @FK_MASANPHAM, [C_PPXD] = @C_PPXD, [C_KHOILUONG] = @C_KHOILUONG, [C_GIACUOC] = @C_GIACUOC, [C_DONGGOI]=@C_DONGGOI, [C_KHAIGIA]=@C_KHAIGIA, [C_COD]=@C_COD, [C_KHAC]=@C_KHAC, [C_HINHTHUCTT] = @C_HINHTHUCTT, [C_DATHU] = @C_DATHU, [C_TIENHANG] = @C_TIENHANG, [FK_NHANVIENNHAN] = @FK_NHANVIENNHAN, [FK_DOITAC] = @FK_DOITAC, [C_GIADOITAC] = @C_GIADOITAC, [FK_NHANVIENPHAT] = @FK_NHANVIENPHAT, [C_NGAYGIOPHAT] = @C_NGAYGIOPHAT, [FK_NHANVIENKHAITHAC]=@FK_NHANVIENKHAITHAC, [C_NGUOIKYNHAN] = @C_NGUOIKYNHAN, [C_BOPHAN] = @C_BOPHAN WHERE [PK_ID] = @PK_ID">
     <DeleteParameters>
         <asp:Parameter Name="PK_ID" Type="Int32" />
     </DeleteParameters>
     <InsertParameters>
         <asp:Parameter Name="C_NGAY" Type="DateTime" />
-        <asp:Parameter Name="C_MAKH" Type="String" />
         <asp:Parameter Name="C_BILL" Type="String" />
-        <asp:Parameter Name="FK_NHOMKHACHHANG" Type="Int32" />
+        <asp:Parameter Name="FK_KHACHHANG" Type="String" />
         <asp:Parameter Name="C_TENKH" Type="String" />
+        <asp:Parameter Name="C_TELGUI" Type="String" />
         <asp:Parameter Name="C_NGUOINHAN" Type="String" />
         <asp:Parameter Name="C_DIACHINHAN" Type="String" />
+        <asp:Parameter Name="C_TELNHAN" Type="String" />
         <asp:Parameter Name="FK_QUANHUYEN" Type="String" />
         <asp:Parameter Name="C_NOIDUNG" Type="String" />
         <asp:Parameter Name="FK_MASANPHAM" Type="Int32" />
@@ -648,12 +645,13 @@
     </InsertParameters>
     <UpdateParameters>
         <asp:Parameter Name="C_NGAY" Type="DateTime" />
-        <asp:Parameter Name="C_MAKH" Type="String" />
         <asp:Parameter Name="C_BILL" Type="String" />
-        <asp:Parameter Name="FK_NHOMKHACHHANG" Type="Int32" />
+        <asp:Parameter Name="FK_KHACHHANG" Type="Int32" />
         <asp:Parameter Name="C_TENKH" Type="String" />
+        <asp:Parameter Name="C_TELGUI" Type="String" />
         <asp:Parameter Name="C_NGUOINHAN" Type="String" />
         <asp:Parameter Name="C_DIACHINHAN" Type="String" />
+        <asp:Parameter Name="C_TELNHAN" Type="String" />
         <asp:Parameter Name="FK_QUANHUYEN" Type="String" />
         <asp:Parameter Name="C_NOIDUNG" Type="String" />
         <asp:Parameter Name="FK_MASANPHAM" Type="Int32" />
@@ -678,11 +676,11 @@
         <asp:Parameter Name="PK_ID" Type="Int32" />
     </UpdateParameters>       
 </asp:SqlDataSource>
- <asp:SqlDataSource ID="NHOMKHACHHANGDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
- SelectCommand="SELECT DMNHOMKHACHHANG.* FROM DMNHOMKHACHHANG" >
-</asp:SqlDataSource>
  <asp:SqlDataSource ID="KHACHHANGDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
  SelectCommand="SELECT DMKHACHHANG.* FROM DMKHACHHANG" >
+</asp:SqlDataSource>
+ <asp:SqlDataSource ID="KHACHHANGCHITIETDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
+ SelectCommand="SELECT DMKHACHHANGCHITIET.* FROM DMKHACHHANGCHITIET" >
 </asp:SqlDataSource>
 <asp:SqlDataSource ID="MASANPHAMDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
   SelectCommand="SELECT [PK_ID], [C_CODE], [C_NAME] FROM [DMMASANPHAM]  WHERE C_CODE <> 'QT' ORDER BY PK_ID">
