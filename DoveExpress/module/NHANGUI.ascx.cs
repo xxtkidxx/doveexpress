@@ -224,7 +224,6 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
         if (arrayvalue[0] == "cmbMaKhachHang")
         {
             /*KHACHHANGDataSource.SelectCommand = "SELECT DMKHACHHANG.* FROM DMKHACHHANG WHERE FK_NHOMKHACHHANG =" + arrayvalue[1];
-            radautoC_MAKH.DataBind();
             radautoC_TENKH.DataBind();*/
             FK_KHACHHANG = arrayvalue[1];
             TENKH = "";
@@ -577,13 +576,11 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
             RadNumericTextBox txtPPXD = (RadNumericTextBox)editItem.FindControl("txtPPXD");
             txtPPXD.Text = (txtPPXD.Text == "") ? "0" : txtPPXD.Text;
             RadTextBox txtCODE = (RadTextBox)editItem.FindControl("txtCODE");
-            HiddenField hfC_MAKH = (HiddenField)editItem.FindControl("hfC_MAKH");
             HiddenField hfC_TENKH = (HiddenField)editItem.FindControl("hfC_TENKH");
-            RadAutoCompleteBox radautoC_MAKH = (RadAutoCompleteBox)editItem.FindControl("radautoC_MAKH");
             RadAutoCompleteBox radautoC_TENKH = (RadAutoCompleteBox)editItem.FindControl("radautoC_TENKH");
             RadNumericTextBox txtC_KHOILUONG = (RadNumericTextBox)editItem.FindControl("txtC_KHOILUONG");
             txtC_KHOILUONG.Text = (txtC_KHOILUONG.Text == "") ? "0" : txtC_KHOILUONG.Text;
-            RadComboBox cmbNhomKhachHang = (RadComboBox)editItem.FindControl("cmbNhomKhachHang");
+            RadComboBox cmbMaKhachHang = (RadComboBox)editItem.FindControl("cmbMaKhachHang");
             RadComboBox cmbSanPham = (RadComboBox)editItem.FindControl("cmbSanPham");
             RadNumericTextBox txtC_GIACUOC = (RadNumericTextBox)editItem.FindControl("txtC_GIACUOC");
             txtC_GIACUOC.Text = (txtC_GIACUOC.Text == "") ? "0" : txtC_GIACUOC.Text;
@@ -619,25 +616,38 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
             else
             {
                 // edit item
-                radautoC_MAKH.Entries.Add(new AutoCompleteBoxEntry(hfC_MAKH.Value));
                 radautoC_TENKH.Entries.Add(new AutoCompleteBoxEntry(hfC_TENKH.Value));
                 txtC_CONLAI.Text = (((txtC_TIENHANG.Text == "") ? 0 : decimal.Parse(txtC_TIENHANG.Text)) - ((txtC_DATHU.Text == "") ? 0 : decimal.Parse(txtC_DATHU.Text))).ToString(); 
                 FK_DICHVU = cmbSanPham.SelectedValue;
                 FK_QUANHUYEN = hfQuanHuyen.Value;
-                string FK_NHOMKHACHHANG = cmbNhomKhachHang.SelectedValue;
-                string SelectSQL2;
-                SelectSQL2 = "Select DMMABANGCUOC.PK_ID FROM DMMABANGCUOC WHERE (DMMABANGCUOC.C_VALUE ='" + FK_NHOMKHACHHANG + "') OR (DMMABANGCUOC.C_VALUE LIKE '%," + FK_NHOMKHACHHANG + ",%') OR (DMMABANGCUOC.C_VALUE LIKE '%," + FK_NHOMKHACHHANG + "') OR (DMMABANGCUOC.C_VALUE LIKE '" + FK_NHOMKHACHHANG + ",%')";
-                DataTable oDataTable2 = new DataTable();
-                ITCLIB.Admin.SQL SelectQuery2 = new ITCLIB.Admin.SQL();
-                oDataTable2 = SelectQuery2.query_data(SelectSQL2);
-                if (oDataTable2.Rows.Count != 0)
+                string FK_KHACHHANG = cmbMaKhachHang.SelectedValue;
+                string SelectSQL;
+                SelectSQL = "Select DMKHACHHANG.FK_NHOMKHACHHANG FROM DMKHACHHANG WHERE DMKHACHHANG.C_CODE ='" + FK_KHACHHANG + "'";
+                DataTable oDataTable = new DataTable();
+                ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
+                oDataTable = SelectQuery.query_data(SelectSQL);
+                if (oDataTable.Rows.Count != 0)
                 {
-                    FK_MABANGCUOC = oDataTable2.Rows[0]["PK_ID"].ToString();
+                    FK_NHOMKHACHHANG = oDataTable.Rows[0]["FK_NHOMKHACHHANG"].ToString();
+                    string SelectSQL2;
+                    SelectSQL2 = "Select DMMABANGCUOC.PK_ID FROM DMMABANGCUOC WHERE (DMMABANGCUOC.C_VALUE ='" + FK_NHOMKHACHHANG + "') OR (DMMABANGCUOC.C_VALUE LIKE '%," + FK_NHOMKHACHHANG + ",%') OR (DMMABANGCUOC.C_VALUE LIKE '%," + FK_NHOMKHACHHANG + "') OR (DMMABANGCUOC.C_VALUE LIKE '" + FK_NHOMKHACHHANG + ",%')";
+                    DataTable oDataTable2 = new DataTable();
+                    ITCLIB.Admin.SQL SelectQuery2 = new ITCLIB.Admin.SQL();
+                    oDataTable2 = SelectQuery2.query_data(SelectSQL2);
+                    if (oDataTable2.Rows.Count != 0)
+                    {
+                        FK_MABANGCUOC = oDataTable2.Rows[0]["PK_ID"].ToString();
+                    }
+                    else
+                    {
+                        FK_MABANGCUOC = "";
+                    }
                 }
                 else
                 {
+                    FK_NHOMKHACHHANG = "";
                     FK_MABANGCUOC = "";
-                }           
+                }
                 string SelectSQL3;
                 SelectSQL3 = "Select DMMAVUNG.PK_ID FROM DMMAVUNG WHERE FK_MASANPHAM=" + FK_DICHVU + " AND C_TYPE = 1 AND ((DMMAVUNG.C_DESC ='" + FK_QUANHUYEN + "') OR (DMMAVUNG.C_DESC LIKE '%," + FK_QUANHUYEN + ",%') OR (DMMAVUNG.C_DESC LIKE '%," + FK_QUANHUYEN + "') OR (DMMAVUNG.C_DESC LIKE '" + FK_QUANHUYEN + ",%'))";
                 DataTable oDataTable3 = new DataTable();
@@ -699,17 +709,13 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
         else if (e.CommandName == RadGrid.PerformInsertCommandName)
         {
             GridEditableItem editItem = (GridEditableItem)e.Item;
-            RadAutoCompleteBox radautoC_MAKH = (RadAutoCompleteBox)editItem.FindControl("radautoC_MAKH");
-            RadAutoCompleteBox radautoC_TENKH = (RadAutoCompleteBox)editItem.FindControl("radautoC_TENKH");
-            NHANGUIDataSource.InsertParameters["C_MAKH"].DefaultValue = (radautoC_MAKH.Text == "") ? radautoC_MAKH.Text : radautoC_MAKH.Text.Substring(0, radautoC_MAKH.Text.Length - 2);
+            RadAutoCompleteBox radautoC_TENKH = (RadAutoCompleteBox)editItem.FindControl("radautoC_TENKH");           
             NHANGUIDataSource.InsertParameters["C_TENKH"].DefaultValue = (radautoC_TENKH.Text == "") ? radautoC_TENKH.Text : radautoC_TENKH.Text.Substring(0, radautoC_TENKH.Text.Length - 2);
         }
         else if (e.CommandName == RadGrid.UpdateCommandName)
         {
             GridEditableItem editItem = (GridEditableItem)e.Item;
-            RadAutoCompleteBox radautoC_MAKH = (RadAutoCompleteBox)editItem.FindControl("radautoC_MAKH");
-            RadAutoCompleteBox radautoC_TENKH = (RadAutoCompleteBox)editItem.FindControl("radautoC_TENKH");
-            NHANGUIDataSource.UpdateParameters["C_MAKH"].DefaultValue = (radautoC_MAKH.Text == "") ? radautoC_MAKH.Text : radautoC_MAKH.Text.Substring(0,radautoC_MAKH.Text.Length -2);
+            RadAutoCompleteBox radautoC_TENKH = (RadAutoCompleteBox)editItem.FindControl("radautoC_TENKH");            
             NHANGUIDataSource.UpdateParameters["C_TENKH"].DefaultValue = (radautoC_TENKH.Text == "") ? radautoC_TENKH.Text : radautoC_TENKH.Text.Substring(0, radautoC_TENKH.Text.Length - 2);
         }
     }
