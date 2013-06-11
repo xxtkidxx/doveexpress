@@ -172,3 +172,21 @@ Tài khoản : sysadmin
 Module : Login
 Kết quả : Thành công
 __________________________
+Thời gian: 2013-06-11 19:18:53 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-06-11 20:06:31 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated KHACHHANGs
+Kết quả : {PK_ID:"8"}
+__________________________
+Thời gian: 2013-06-11 20:17:22 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
