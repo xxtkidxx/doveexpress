@@ -1,0 +1,40 @@
+Thời gian lỗi : 2013-06-11 00:10:51 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-06-11 00:10:52 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-06-11 00:10:52 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-06-11 00:10:53 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-06-11 00:10:54 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-06-11 00:12:04 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-06-11 00:13:58 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-06-11 15:32:58 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'C_VAT'.
+__________________________
