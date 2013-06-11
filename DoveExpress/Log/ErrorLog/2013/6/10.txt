@@ -1,0 +1,137 @@
+Thời gian lỗi : 2013-06-10 20:17:09 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Doc/. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-06-10 20:20:11 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Selection out of range
+Parameter name: value
+__________________________
+Thời gian lỗi : 2013-06-10 20:20:12 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Selection out of range
+Parameter name: value
+__________________________
+Thời gian lỗi : 2013-06-10 20:20:13 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Selection out of range
+Parameter name: value
+__________________________
+Thời gian lỗi : 2013-06-10 20:20:14 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Selection out of range
+Parameter name: value
+__________________________
+Thời gian lỗi : 2013-06-10 20:20:19 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Selection out of range
+Parameter name: value
+__________________________
+Thời gian lỗi : 2013-06-10 20:44:39 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:The ID 'radautoC_MAKH' is already used by another control.
+__________________________
+Thời gian lỗi : 2013-06-10 21:14:39 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:The tag contains duplicate 'DropDownWidth' attributes.
+__________________________
+Thời gian lỗi : 2013-06-10 22:23:03 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=KHACHHANG. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\module\KHACHHANG.ascx(145): error CS0103: The name 'RadGridCHITIETCUOC' does not exist in the current context
+__________________________
+Thời gian lỗi : 2013-06-10 22:24:26 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=KHACHHANG. 
+Nội dung lỗi:The DataSourceID of 'Detail10' must be the ID of a control of type IDataSource.  A control with ID 'CHITIETKHACHHANGDataSource' could not be found.
+__________________________
+Thời gian lỗi : 2013-06-10 22:27:00 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=KHACHHANG. 
+Nội dung lỗi:The DataSourceID of 'Detail10' must be the ID of a control of type IDataSource.  A control with ID 'CHITIETKHACHHANGDataSource' could not be found.
+__________________________
+Thời gian lỗi : 2013-06-10 22:27:10 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=KHACHHANG. 
+Nội dung lỗi:The DataSourceID of 'Detail10' must be the ID of a control of type IDataSource.  A control with ID 'CHITIETKHACHHANGDataSource' could not be found.
+__________________________
+Thời gian lỗi : 2013-06-10 22:27:58 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=KHACHHANG. 
+Nội dung lỗi:Incorrect syntax near 'FK_KHACHHANG'.
+__________________________
+Thời gian lỗi : 2013-06-10 22:27:59 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=KHACHHANG. 
+Nội dung lỗi:Incorrect syntax near 'FK_KHACHHANG'.
+__________________________
+Thời gian lỗi : 2013-06-10 22:28:00 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=KHACHHANG. 
+Nội dung lỗi:Incorrect syntax near 'FK_KHACHHANG'.
+__________________________
+Thời gian lỗi : 2013-06-10 22:28:01 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=KHACHHANG. 
+Nội dung lỗi:Incorrect syntax near 'FK_KHACHHANG'.
+__________________________
+Thời gian lỗi : 2013-06-10 22:28:02 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=KHACHHANG. 
+Nội dung lỗi:Incorrect syntax near 'FK_KHACHHANG'.
+__________________________
+Thời gian lỗi : 2013-06-10 22:31:35 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=KHACHHANG. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-06-10 22:33:00 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=KHACHHANG. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-06-10 22:34:44 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=KHACHHANG. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-06-10 22:36:36 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=KHACHHANG. 
+Nội dung lỗi:Incorrect syntax near 'FK_KHACHHANG'.
+__________________________
+Thời gian lỗi : 2013-06-10 22:37:22 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=KHACHHANG. 
+Nội dung lỗi:The multi-part identifier "DMKHACHHANGCHITIET.FK_QUANHUYEN" could not be bound.
+Invalid column name 'FK_KHACHHANG'.
+The multi-part identifier "DMKHACHHANGCHITIET.PK_ID" could not be bound.
+The multi-part identifier "DMKHACHHANGCHITIET.FK_KHACHHANG" could not be bound.
+The multi-part identifier "DMKHACHHANGCHITIET.C_NAME" could not be bound.
+The multi-part identifier "DMKHACHHANGCHITIET.C_ADDRESS" could not be bound.
+The multi-part identifier "DMKHACHHANGCHITIET.FK_QUANHUYEN" could not be bound.
+The multi-part identifier "DMKHACHHANGCHITIET.C_TEL" could not be bound.
+The multi-part identifier "DMKHACHHANGCHITIET.C_TAIKHOAN" could not be bound.
+The multi-part identifier "DMKHACHHANGCHITIET.C_MST" could not be bound.
+The multi-part identifier "DMKHACHHANGCHITIET.C_EMAIL" could not be bound.
+The multi-part identifier "DMKHACHHANGCHITIET.C_MOBILE" could not be bound.
+The multi-part identifier "DMKHACHHANGCHITIET.C_NGUOILIENHE" could not be bound.
+__________________________
+Thời gian lỗi : 2013-06-10 23:38:00 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Invalid object name 'DMKHACHHANGHITIET'.
+__________________________
+Thời gian lỗi : 2013-06-10 23:38:03 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Invalid object name 'DMKHACHHANGHITIET'.
+__________________________

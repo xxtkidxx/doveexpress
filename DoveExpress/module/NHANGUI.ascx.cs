@@ -270,7 +270,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
             }
             else
             {
-                FK_KHACHHANG = "10000";
+                FK_KHACHHANG = "";
                 TENKH = "";
             }
         }
@@ -594,6 +594,10 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
             txtC_KHAC.Text = (txtC_KHAC.Text == "") ? "0" : txtC_KHAC.Text;
             RadNumericTextBox txtC_TIENHANG = (RadNumericTextBox)editItem.FindControl("txtC_TIENHANG");
             txtC_TIENHANG.Text = (txtC_TIENHANG.Text == "") ? "0" : txtC_TIENHANG.Text;
+            RadNumericTextBox txtC_VAT = (RadNumericTextBox)editItem.FindControl("txtC_VAT");
+            txtC_VAT.Text = (txtC_VAT.Text == "") ? "0" : txtC_VAT.Text;
+            RadNumericTextBox txtC_TIENHANGVAT = (RadNumericTextBox)editItem.FindControl("txtC_TIENHANGVAT");
+            txtC_TIENHANGVAT.Text = (txtC_TIENHANGVAT.Text == "") ? "0" : txtC_TIENHANGVAT.Text;
             RadNumericTextBox txtC_DATHU = (RadNumericTextBox)editItem.FindControl("txtC_DATHU");
             txtC_DATHU.Text = (txtC_DATHU.Text == "") ? "0" : txtC_DATHU.Text;
             RadNumericTextBox txtC_CONLAI = (RadNumericTextBox)editItem.FindControl("txtC_CONLAI");

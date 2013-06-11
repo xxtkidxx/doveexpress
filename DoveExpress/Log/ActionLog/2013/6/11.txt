@@ -1,0 +1,168 @@
+Thời gian: 2013-06-11 00:03:10 AM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-06-11 00:08:11 AM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-06-11 00:10:23 AM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-06-11 00:13:55 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted NHANGUIs
+Kết quả : {PK_ID:"1"}
+__________________________
+Thời gian: 2013-06-11 00:17:29 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {PK_ID:"1"}
+__________________________
+Thời gian: 2013-06-11 00:17:34 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted NHANGUIs
+Kết quả : {PK_ID:"2"}
+__________________________
+Thời gian: 2013-06-11 00:17:43 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {PK_ID:"2"}
+__________________________
+Thời gian: 2013-06-11 00:17:56 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted NHANGUIs
+Kết quả : {PK_ID:"3"}
+__________________________
+Thời gian: 2013-06-11 00:18:04 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {PK_ID:"3"}
+__________________________
+Thời gian: 2013-06-11 00:19:35 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted NHANGUIs
+Kết quả : {PK_ID:"4"}
+__________________________
+Thời gian: 2013-06-11 15:03:15 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-06-11 15:03:36 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted MABANGCUOCs
+Kết quả : {PK_ID:"1"}
+__________________________
+Thời gian: 2013-06-11 15:03:41 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted MABANGCUOCs
+Kết quả : {PK_ID:"4"}
+__________________________
+Thời gian: 2013-06-11 15:15:10 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted MAVUNGs
+Kết quả : {PK_ID:"4"}
+__________________________
+Thời gian: 2013-06-11 15:18:00 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated MASANPHAMs
+Kết quả : {PK_ID:"1"}
+__________________________
+Thời gian: 2013-06-11 15:23:30 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted NHANGUIs
+Kết quả : {PK_ID:"1"}
+__________________________
+Thời gian: 2013-06-11 15:37:44 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {PK_ID:"1"}
+__________________________
+Thời gian: 2013-06-11 15:39:42 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {PK_ID:"1"}
+__________________________
+Thời gian: 2013-06-11 15:41:13 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {PK_ID:"1"}
+__________________________
+Thời gian: 2013-06-11 15:42:02 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {PK_ID:"1"}
+__________________________
+Thời gian: 2013-06-11 15:43:42 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted NHANGUIs
+Kết quả : {PK_ID:"2"}
+__________________________
+Thời gian: 2013-06-11 15:44:00 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {PK_ID:"2"}
+__________________________
+Thời gian: 2013-06-11 15:44:13 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {PK_ID:"2"}
+__________________________
+Thời gian: 2013-06-11 15:46:32 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {PK_ID:"1"}
+__________________________
+Thời gian: 2013-06-11 15:47:00 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {PK_ID:"2"}
+__________________________
+Thời gian: 2013-06-11 15:47:15 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted NHANGUIs
+Kết quả : {PK_ID:"3"}
+__________________________
+Thời gian: 2013-06-11 15:48:10 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {PK_ID:"1"}
+__________________________
+Thời gian: 2013-06-11 15:50:45 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {PK_ID:"1"}
+__________________________

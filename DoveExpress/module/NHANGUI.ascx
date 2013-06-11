@@ -87,6 +87,14 @@
     function OnClientLoadtxtC_TIENHANG(sender) {
         txtC_TIENHANG = sender;
     }
+    var txtC_VAT;
+    function OnClientLoadtxtC_VAT(sender) {
+        txtC_VAT = sender;
+    }
+    var txtC_TIENHANGVAT;
+    function OnClientLoadtxtC_TIENHANGVAT(sender) {
+        txtC_TIENHANGVAT = sender;
+    }
     var txtC_DONGGOI;
     function OnClientLoadtxtC_DONGGOI(sender) {
         txtC_DONGGOI = sender;
@@ -116,38 +124,39 @@
         txtC_GIADOITAC = sender;
     }
      function OnValueChangedtxtC_GIACUOC(sender, eventArgs) {
-        //$find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("txtC_DATHU;" + eventArgs.get_newValue());
         txtC_TIENHANG.set_value(txtC_GIACUOC.get_value() + txtC_KHAC.get_value() + txtC_COD.get_value() + txtC_KHAIGIA.get_value() + txtC_DONGGOI.get_value());
         return false;
     }
      function OnValueChangedtxtC_DONGGOI(sender, eventArgs) {
-        //$find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("txtC_DATHU;" + eventArgs.get_newValue());
         txtC_TIENHANG.set_value(txtC_GIACUOC.get_value() + txtC_KHAC.get_value() + txtC_COD.get_value() + txtC_KHAIGIA.get_value() + txtC_DONGGOI.get_value());
         return false;
     }
      function OnValueChangedtxtC_KHAIGIA(sender, eventArgs) {
-        //$find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("txtC_DATHU;" + eventArgs.get_newValue());
         txtC_TIENHANG.set_value(txtC_GIACUOC.get_value() + txtC_KHAC.get_value() + txtC_COD.get_value() + txtC_KHAIGIA.get_value() + txtC_DONGGOI.get_value());
         return false;
     }
      function OnValueChangedtxtC_COD(sender, eventArgs) {
-        //$find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("txtC_DATHU;" + eventArgs.get_newValue());
         txtC_TIENHANG.set_value(txtC_GIACUOC.get_value() + txtC_KHAC.get_value() + txtC_COD.get_value() + txtC_KHAIGIA.get_value() + txtC_DONGGOI.get_value());
         return false;
     }
      function OnValueChangedtxtC_KHAC(sender, eventArgs) {
-        //$find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("txtC_DATHU;" + eventArgs.get_newValue());
         txtC_TIENHANG.set_value(txtC_GIACUOC.get_value() + txtC_KHAC.get_value() + txtC_COD.get_value() + txtC_KHAIGIA.get_value() + txtC_DONGGOI.get_value());
         return false;
     }
     function OnValueChangedtxtC_DATHU(sender, eventArgs) {
-        //$find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("txtC_DATHU;" + eventArgs.get_newValue());
         txtC_CONLAI.set_value(txtC_TIENHANG.get_value() - eventArgs.get_newValue());
         return false;
     }
     function OnValueChangedtxtC_TIENHANG(sender, eventArgs) {
-        //$find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("txtC_DATHU;" + eventArgs.get_newValue());
-        txtC_CONLAI.set_value(txtC_TIENHANG.get_value() - txtC_DATHU.get_value());
+        txtC_TIENHANGVAT.set_value(txtC_TIENHANG.get_value() + txtC_VAT.get_value() * txtC_TIENHANG.get_value()/100);
+        return false;
+    }
+     function OnValueChangedtxtC_VAT(sender, eventArgs) {
+        txtC_TIENHANGVAT.set_value(txtC_TIENHANG.get_value() + txtC_VAT.get_value() * txtC_TIENHANG.get_value()/100);
+        return false;
+    }
+    function OnValueChangedtxtC_TIENHANGVAT(sender, eventArgs) {
+        txtC_CONLAI.set_value(txtC_TIENHANGVAT.get_value() - txtC_DATHU.get_value());
         return false;
     }
     function radautoC_TENKHOnClientTextChanged(sender, eventArgs) {
@@ -314,6 +323,12 @@
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
                 </telerik:GridBoundColumn>
                 <telerik:GridBoundColumn UniqueName="C_TIENHANG" HeaderText="Tiền hàng" DataField="C_TIENHANG" HeaderStyle-Width="130px" HeaderStyle-HorizontalAlign="Center"
+                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
+                </telerik:GridBoundColumn>
+                <telerik:GridBoundColumn UniqueName="C_VAT" HeaderText="VAT" DataField="C_VAT" HeaderStyle-Width="130px" HeaderStyle-HorizontalAlign="Center"
+                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
+                </telerik:GridBoundColumn>
+                <telerik:GridBoundColumn UniqueName="C_TIENHANGVAT" HeaderText="Tiền hàng (VAT)" DataField="C_TIENHANGVAT" HeaderStyle-Width="130px" HeaderStyle-HorizontalAlign="Center"
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
                 </telerik:GridBoundColumn>
                 <telerik:GridBoundColumn UniqueName="C_HINHTHUCTT" HeaderText="Hình thức TT" DataField="C_HINHTHUCTT" HeaderStyle-Width="130px" HeaderStyle-HorizontalAlign="Center"
@@ -505,6 +520,21 @@
                     </telerik:RadNumericTextBox>
                 </td>  
             </tr>
+            <tr>                
+                <td style =" width:100px;"> <span class="rtsTxtnew">VAT:</span></td>
+                <td colspan="4">
+                    <telerik:RadNumericTextBox  ID="txtC_VAT" Width ="90%" Runat="server" Text='<%# Bind("C_VAT") %>' ClientEvents-OnLoad="OnClientLoadtxtC_VAT" ClientEvents-OnValueChanged="OnValueChangedtxtC_VAT">
+                            <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
+                            <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
+                    </telerik:RadNumericTextBox>
+                </td>                
+                <td style =" width:100px;"><span class="rtsTxtnew">Tổng cước (VAT):</span></td>
+                <td colspan="4">
+                    <telerik:RadNumericTextBox  ID="txtC_TIENHANGVAT" Width ="90%" Runat="server" Text='<%# Bind("C_TIENHANGVAT") %>' ClientEvents-OnLoad="OnClientLoadtxtC_TIENHANGVAT" ClientEvents-OnValueChanged="OnValueChangedtxtC_TIENHANGVAT">
+                            <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
+                    </telerik:RadNumericTextBox>
+                </td>  
+            </tr>
             <tr>                         
                 <td style =" width:100px;"> <span class="rtsTxtnew">HTTT:</span></td>
                 <td colspan="4">
@@ -607,9 +637,9 @@
 <asp:SqlDataSource ID="NHANGUIDataSource" runat="server" 
     ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>" 
     DeleteCommand="DELETE FROM [NHANGUI] WHERE [PK_ID] = @PK_ID" 
-    InsertCommand="INSERT INTO [NHANGUI] ([C_NGAY], [C_BILL], [FK_KHACHHANG], [C_TENKH], [C_TELGUI], [C_NGUOINHAN], [C_DIACHINHAN], [C_TELNHAN], [FK_QUANHUYEN], [C_NOIDUNG], [FK_MASANPHAM], [C_PPXD], [C_KHOILUONG], [C_GIACUOC], [C_DONGGOI], [C_KHAIGIA], [C_COD], [C_KHAC], [C_HINHTHUCTT], [C_DATHU], [C_TIENHANG], [FK_NHANVIENNHAN], [FK_DOITAC], [C_GIADOITAC], [FK_NHANVIENPHAT], [C_NGAYGIOPHAT], [C_NGUOIKYNHAN], [C_BOPHAN],[C_TYPE]) VALUES (@C_NGAY, @C_BILL, @FK_KHACHHANG, @C_TENKH, @C_TELGUI, @C_NGUOINHAN, @C_DIACHINHAN, @C_TELNHAN, @FK_QUANHUYEN, @C_NOIDUNG, @FK_MASANPHAM, @C_PPXD, @C_KHOILUONG, @C_GIACUOC, @C_DONGGOI, @C_KHAIGIA, @C_COD, @C_KHAC, @C_HINHTHUCTT, @C_DATHU, @C_TIENHANG, @FK_NHANVIENNHAN, @FK_DOITAC, @C_GIADOITAC, @FK_NHANVIENPHAT, @C_NGAYGIOPHAT, @C_NGUOIKYNHAN, @C_BOPHAN,1)"
-    SelectCommand="SELECT [NHANGUI].[PK_ID], [NHANGUI].[C_NGAY], [NHANGUI].[FK_KHACHHANG], [NHANGUI].[C_BILL], [NHANGUI].[C_TENKH], [NHANGUI].[C_TELGUI], [NHANGUI].[C_NGUOINHAN], [NHANGUI].[C_DIACHINHAN], [NHANGUI].[C_TELNHAN], [NHANGUI].[FK_QUANHUYEN], [NHANGUI].[C_NOIDUNG], [NHANGUI].[FK_MASANPHAM],  [NHANGUI].[C_PPXD], [NHANGUI].[C_KHOILUONG], [NHANGUI].[C_GIACUOC], [NHANGUI].[C_DONGGOI], [NHANGUI].[C_KHAIGIA], [NHANGUI].[C_COD], [NHANGUI].[C_KHAC], [NHANGUI].[C_HINHTHUCTT], [NHANGUI].[C_DATHU], ([NHANGUI].[C_TIENHANG] - [NHANGUI].[C_DATHU]) as [C_CONLAI],([NHANGUI].[C_DONGGOI] + [NHANGUI].[C_KHAIGIA] + [NHANGUI].[C_COD] + [NHANGUI].[C_KHAC]) as [C_PHUTROISUM], [NHANGUI].[C_TIENHANG], [NHANGUI].[FK_NHANVIENNHAN], [NHANGUI].[FK_DOITAC], [NHANGUI].[C_GIADOITAC], [NHANGUI].[FK_NHANVIENPHAT], [NHANGUI].[C_NGAYGIOPHAT], [NHANGUI].[FK_NHANVIENKHAITHAC], [NHANGUI].[C_NGUOIKYNHAN], [NHANGUI].[C_BOPHAN],USERSNHAN.C_NAME as NHANVIENNHANNAME,USERSPHAT.C_NAME as NHANVIENPHATNAME,USERSKHAITHAC.C_NAME as NHANVIENKHAITHACNAME,DMMASANPHAM.C_NAME as SANPHAMNAME,DMQUANHUYEN.C_NAME as QUANHUYENNAME,DMTINHTHANH.C_NAME as TINHTHANHNAME FROM [NHANGUI] LEFT OUTER JOIN USERS as USERSNHAN ON NHANGUI.FK_NHANVIENNHAN = USERSNHAN.PK_ID LEFT OUTER JOIN USERS as USERSPHAT ON NHANGUI.FK_NHANVIENPHAT = USERSPHAT.PK_ID LEFT OUTER JOIN USERS as USERSKHAITHAC ON NHANGUI.FK_NHANVIENKHAITHAC = USERSKHAITHAC.PK_ID LEFT OUTER JOIN DMMASANPHAM ON NHANGUI.FK_MASANPHAM=DMMASANPHAM.PK_ID LEFT OUTER JOIN DMQUANHUYEN ON NHANGUI.FK_QUANHUYEN = DMQUANHUYEN.C_CODE LEFT OUTER JOIN DMTINHTHANH ON DMQUANHUYEN.FK_TINHTHANH = DMTINHTHANH.PK_ID WHERE [NHANGUI].[C_TYPE] = 1" 
-    UpdateCommand="UPDATE [NHANGUI] SET [C_NGAY] = @C_NGAY, [C_BILL] = @C_BILL, [FK_KHACHHANG] = @FK_KHACHHANG,[C_TENKH] = @C_TENKH, [C_TELGUI] = @C_TELGUI, [C_NGUOINHAN] = @C_NGUOINHAN, [C_DIACHINHAN] = @C_DIACHINHAN, [C_TELNHAN] = @C_TELNHAN, [FK_QUANHUYEN] = @FK_QUANHUYEN, [C_NOIDUNG] = @C_NOIDUNG, [FK_MASANPHAM] = @FK_MASANPHAM, [C_PPXD] = @C_PPXD, [C_KHOILUONG] = @C_KHOILUONG, [C_GIACUOC] = @C_GIACUOC, [C_DONGGOI]=@C_DONGGOI, [C_KHAIGIA]=@C_KHAIGIA, [C_COD]=@C_COD, [C_KHAC]=@C_KHAC, [C_HINHTHUCTT] = @C_HINHTHUCTT, [C_DATHU] = @C_DATHU, [C_TIENHANG] = @C_TIENHANG, [FK_NHANVIENNHAN] = @FK_NHANVIENNHAN, [FK_DOITAC] = @FK_DOITAC, [C_GIADOITAC] = @C_GIADOITAC, [FK_NHANVIENPHAT] = @FK_NHANVIENPHAT, [C_NGAYGIOPHAT] = @C_NGAYGIOPHAT, [FK_NHANVIENKHAITHAC]=@FK_NHANVIENKHAITHAC, [C_NGUOIKYNHAN] = @C_NGUOIKYNHAN, [C_BOPHAN] = @C_BOPHAN WHERE [PK_ID] = @PK_ID">
+    InsertCommand="INSERT INTO [NHANGUI] ([C_NGAY], [C_BILL], [FK_KHACHHANG], [C_TENKH], [C_TELGUI], [C_NGUOINHAN], [C_DIACHINHAN], [C_TELNHAN], [FK_QUANHUYEN], [C_NOIDUNG], [FK_MASANPHAM], [C_PPXD], [C_KHOILUONG], [C_GIACUOC], [C_DONGGOI], [C_KHAIGIA], [C_COD], [C_KHAC], [C_HINHTHUCTT], [C_DATHU], [C_TIENHANG], [C_VAT], [C_TIENHANGVAT], [FK_NHANVIENNHAN], [FK_DOITAC], [C_GIADOITAC], [FK_NHANVIENPHAT], [C_NGAYGIOPHAT], [C_NGUOIKYNHAN], [C_BOPHAN],[C_TYPE]) VALUES (@C_NGAY, @C_BILL, @FK_KHACHHANG, @C_TENKH, @C_TELGUI, @C_NGUOINHAN, @C_DIACHINHAN, @C_TELNHAN, @FK_QUANHUYEN, @C_NOIDUNG, @FK_MASANPHAM, @C_PPXD, @C_KHOILUONG, @C_GIACUOC, @C_DONGGOI, @C_KHAIGIA, @C_COD, @C_KHAC, @C_HINHTHUCTT, @C_DATHU, @C_TIENHANG, @C_VAT, @C_TIENHANGVAT, @FK_NHANVIENNHAN, @FK_DOITAC, @C_GIADOITAC, @FK_NHANVIENPHAT, @C_NGAYGIOPHAT, @C_NGUOIKYNHAN, @C_BOPHAN,1)"
+    SelectCommand="SELECT [NHANGUI].[PK_ID], [NHANGUI].[C_NGAY], [NHANGUI].[FK_KHACHHANG], [NHANGUI].[C_BILL], [NHANGUI].[C_TENKH], [NHANGUI].[C_TELGUI], [NHANGUI].[C_NGUOINHAN], [NHANGUI].[C_DIACHINHAN], [NHANGUI].[C_TELNHAN], [NHANGUI].[FK_QUANHUYEN], [NHANGUI].[C_NOIDUNG], [NHANGUI].[FK_MASANPHAM],  [NHANGUI].[C_PPXD], [NHANGUI].[C_KHOILUONG], [NHANGUI].[C_GIACUOC], [NHANGUI].[C_DONGGOI], [NHANGUI].[C_KHAIGIA], [NHANGUI].[C_COD], [NHANGUI].[C_KHAC], [NHANGUI].[C_HINHTHUCTT], [NHANGUI].[C_DATHU], ([NHANGUI].[C_TIENHANG] - [NHANGUI].[C_DATHU]) as [C_CONLAI],([NHANGUI].[C_DONGGOI] + [NHANGUI].[C_KHAIGIA] + [NHANGUI].[C_COD] + [NHANGUI].[C_KHAC]) as [C_PHUTROISUM], [NHANGUI].[C_TIENHANG], [NHANGUI].[C_VAT], [NHANGUI].[C_TIENHANGVAT], [NHANGUI].[FK_NHANVIENNHAN], [NHANGUI].[FK_DOITAC], [NHANGUI].[C_GIADOITAC], [NHANGUI].[FK_NHANVIENPHAT], [NHANGUI].[C_NGAYGIOPHAT], [NHANGUI].[FK_NHANVIENKHAITHAC], [NHANGUI].[C_NGUOIKYNHAN], [NHANGUI].[C_BOPHAN],USERSNHAN.C_NAME as NHANVIENNHANNAME,USERSPHAT.C_NAME as NHANVIENPHATNAME,USERSKHAITHAC.C_NAME as NHANVIENKHAITHACNAME,DMMASANPHAM.C_NAME as SANPHAMNAME,DMQUANHUYEN.C_NAME as QUANHUYENNAME,DMTINHTHANH.C_NAME as TINHTHANHNAME FROM [NHANGUI] LEFT OUTER JOIN USERS as USERSNHAN ON NHANGUI.FK_NHANVIENNHAN = USERSNHAN.PK_ID LEFT OUTER JOIN USERS as USERSPHAT ON NHANGUI.FK_NHANVIENPHAT = USERSPHAT.PK_ID LEFT OUTER JOIN USERS as USERSKHAITHAC ON NHANGUI.FK_NHANVIENKHAITHAC = USERSKHAITHAC.PK_ID LEFT OUTER JOIN DMMASANPHAM ON NHANGUI.FK_MASANPHAM=DMMASANPHAM.PK_ID LEFT OUTER JOIN DMQUANHUYEN ON NHANGUI.FK_QUANHUYEN = DMQUANHUYEN.C_CODE LEFT OUTER JOIN DMTINHTHANH ON DMQUANHUYEN.FK_TINHTHANH = DMTINHTHANH.PK_ID WHERE [NHANGUI].[C_TYPE] = 1" 
+    UpdateCommand="UPDATE [NHANGUI] SET [C_NGAY] = @C_NGAY, [C_BILL] = @C_BILL, [FK_KHACHHANG] = @FK_KHACHHANG,[C_TENKH] = @C_TENKH, [C_TELGUI] = @C_TELGUI, [C_NGUOINHAN] = @C_NGUOINHAN, [C_DIACHINHAN] = @C_DIACHINHAN, [C_TELNHAN] = @C_TELNHAN, [FK_QUANHUYEN] = @FK_QUANHUYEN, [C_NOIDUNG] = @C_NOIDUNG, [FK_MASANPHAM] = @FK_MASANPHAM, [C_PPXD] = @C_PPXD, [C_KHOILUONG] = @C_KHOILUONG, [C_GIACUOC] = @C_GIACUOC, [C_DONGGOI]=@C_DONGGOI, [C_KHAIGIA]=@C_KHAIGIA, [C_COD]=@C_COD, [C_KHAC]=@C_KHAC, [C_HINHTHUCTT] = @C_HINHTHUCTT, [C_DATHU] = @C_DATHU, [C_TIENHANG] = @C_TIENHANG, [C_VAT] = @C_VAT, [C_TIENHANGVAT] = @C_TIENHANGVAT, [FK_NHANVIENNHAN] = @FK_NHANVIENNHAN, [FK_DOITAC] = @FK_DOITAC, [C_GIADOITAC] = @C_GIADOITAC, [FK_NHANVIENPHAT] = @FK_NHANVIENPHAT, [C_NGAYGIOPHAT] = @C_NGAYGIOPHAT, [FK_NHANVIENKHAITHAC]=@FK_NHANVIENKHAITHAC, [C_NGUOIKYNHAN] = @C_NGUOIKYNHAN, [C_BOPHAN] = @C_BOPHAN WHERE [PK_ID] = @PK_ID">
     <DeleteParameters>
         <asp:Parameter Name="PK_ID" Type="Int32" />
     </DeleteParameters>
@@ -635,6 +665,8 @@
         <asp:Parameter Name="C_HINHTHUCTT" Type="String" />
         <asp:Parameter Name="C_DATHU" Type="String" />
         <asp:Parameter Name="C_TIENHANG" Type="String" />
+        <asp:Parameter Name="C_VAT" Type="String" />
+        <asp:Parameter Name="C_TIENHANGVAT" Type="String" />
         <asp:Parameter Name="FK_NHANVIENNHAN" Type="Int32" />
         <asp:Parameter Name="FK_DOITAC" Type="Int32" />
         <asp:Parameter Name="C_GIADOITAC" Type="Single" />
@@ -646,7 +678,7 @@
     <UpdateParameters>
         <asp:Parameter Name="C_NGAY" Type="DateTime" />
         <asp:Parameter Name="C_BILL" Type="String" />
-        <asp:Parameter Name="FK_KHACHHANG" Type="Int32" />
+        <asp:Parameter Name="FK_KHACHHANG" Type="String" />
         <asp:Parameter Name="C_TENKH" Type="String" />
         <asp:Parameter Name="C_TELGUI" Type="String" />
         <asp:Parameter Name="C_NGUOINHAN" Type="String" />
@@ -665,6 +697,8 @@
         <asp:Parameter Name="C_HINHTHUCTT" Type="String" />
         <asp:Parameter Name="C_DATHU" Type="String" />
         <asp:Parameter Name="C_TIENHANG" Type="String" />
+        <asp:Parameter Name="C_VAT" Type="String" />
+        <asp:Parameter Name="C_TIENHANGVAT" Type="String" />
         <asp:Parameter Name="FK_NHANVIENNHAN" Type="Int32" />
         <asp:Parameter Name="FK_DOITAC" Type="Int32" />
         <asp:Parameter Name="C_GIADOITAC" Type="Single" />
