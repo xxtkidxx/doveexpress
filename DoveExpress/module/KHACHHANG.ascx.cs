@@ -189,7 +189,11 @@ public partial class module_KHACHHANG : System.Web.UI.UserControl
         {
             GridEditableItem editItem = (GridEditableItem)e.Item;
             HiddenField txtID = (HiddenField)editItem.FindControl("txtID");
-            Session["txtID"] = (txtID.Value != "") ? txtID.Value : "0";           
+            Session["txtID"] = (txtID.Value != "") ? txtID.Value : "0";
+            if (e.Item is GridEditFormInsertItem || e.Item is GridDataInsertItem)
+            {
+
+            }
         }
         else if (e.Item is GridEditableItem && e.Item.IsInEditMode && e.Item.OwnerTableView.Name == "TableViewKHACHHANGCHITIET")
         {

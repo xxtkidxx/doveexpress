@@ -38,3 +38,129 @@ Thời gian lỗi : 2013-06-11 15:32:58 PM
 Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
 Nội dung lỗi:DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'C_VAT'.
 __________________________
+Thời gian lỗi : 2013-06-11 16:16:42 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUIQT. 
+Nội dung lỗi:d:\Dropbox\Work\2013\DoveExpress\module\NHANGUIQT.ascx(39): error CS0103: The name 'RadAjaxLoadingPanelNHANGUI' does not exist in the current context
+__________________________
+Thời gian lỗi : 2013-06-11 16:17:36 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUIQT. 
+Nội dung lỗi:The DataSourceID of 'radautoC_TENKH' must be the ID of a control of type IDataSource.  A control with ID 'KHACHHANGCHITIETDataSource' could not be found.
+__________________________
+Thời gian lỗi : 2013-06-11 16:17:37 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUIQT. 
+Nội dung lỗi:The DataSourceID of 'radautoC_TENKH' must be the ID of a control of type IDataSource.  A control with ID 'KHACHHANGCHITIETDataSource' could not be found.
+__________________________
+Thời gian lỗi : 2013-06-11 16:17:38 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUIQT. 
+Nội dung lỗi:The DataSourceID of 'radautoC_TENKH' must be the ID of a control of type IDataSource.  A control with ID 'KHACHHANGCHITIETDataSource' could not be found.
+__________________________
+Thời gian lỗi : 2013-06-11 16:18:13 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUIQT. 
+Nội dung lỗi:The DataSourceID of 'radautoC_TENKH' must be the ID of a control of type IDataSource.  A control with ID 'KHACHHANGCHITIETDataSource' could not be found.
+__________________________
+Thời gian lỗi : 2013-06-11 19:20:44 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Login.aspx. 
+Nội dung lỗi:Lỗi truy vấn cơ sở dữ liệuCannot insert the value NULL into column 'PK_LOG', table 'DoveExpress.dbo.USER_LOG'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+__________________________
+Thời gian lỗi : 2013-06-11 19:24:46 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Invalid column name 'C_VAT'.
+Invalid column name 'C_TIENHANGVAT'.
+__________________________
+Thời gian lỗi : 2013-06-11 19:43:45 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=BAOCAONGAY. 
+Nội dung lỗi:Invalid column name 'C_MAKH'.
+Invalid column name 'FK_NHOMKHACHHANG'.
+__________________________
+Thời gian lỗi : 2013-06-11 19:47:16 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=BAOCAONGAY. 
+Nội dung lỗi:Incorrect syntax near 'NHANGUI'.
+__________________________
+Thời gian lỗi : 2013-06-11 19:48:16 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=BAOCAONGAY. 
+Nội dung lỗi:Invalid column name 'C_MAKH'.
+Invalid column name 'FK_NHOMKHACHHANG'.
+__________________________
+Thời gian lỗi : 2013-06-11 19:51:37 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=BAOCAOKHACHHANG. 
+Nội dung lỗi:Invalid column name 'C_MAKH'.
+Invalid column name 'C_MAKH'.
+Invalid column name 'FK_NHOMKHACHHANG'.
+__________________________
+Thời gian lỗi : 2013-06-11 19:54:24 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=BAOCAOKHACHHANG. 
+Nội dung lỗi:Incorrect syntax near the keyword 'WHERE'.
+__________________________
+Thời gian lỗi : 2013-06-11 19:54:44 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=BAOCAOKHACHHANG. 
+Nội dung lỗi:Must declare the scalar variable "@FK_KHACHHANG".
+__________________________
+Thời gian lỗi : 2013-06-11 20:04:39 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=BAOCAONVKD. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\module\BAOCAONVKD.ascx.cs(106): error CS0103: The name 'KHACHHANGDataSource' does not exist in the current context
+__________________________
+Thời gian lỗi : 2013-06-11 20:15:27 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=KHACHHANG. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-06-11 20:15:28 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=KHACHHANG. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-06-11 20:17:29 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=KHACHHANG. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-06-11 20:22:13 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=KHACHHANG. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-06-11 20:24:03 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/approval.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-06-11 20:24:03 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/Grid/Refresh.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\6\11.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-06-11 20:24:03 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/Grid/pdf.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-06-11 20:24:03 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/Grid/word.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-06-11 20:24:03 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/Grid/excel.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\6\11.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-06-11 20:24:03 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/Grid/csv.gif. 
+Nội dung lỗi:File does not exist.
+__________________________

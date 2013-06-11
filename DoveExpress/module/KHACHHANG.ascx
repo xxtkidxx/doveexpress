@@ -315,9 +315,12 @@
             <tr>
                  <td style =" width:150px;"> <span class="rtsTxtnew">Nhân viên kinh doanh:</td>
                 <td colspan="4">
-                   <telerik:RadComboBox style="width:180px" SelectedValue='<%# Bind("FK_USER") %>' ID="cmbFK_USER" runat="server" EmptyMessage="Chọn nhân viên" Filter ="Contains" 
-                    DataSourceID="USERDataSource" DataTextField="C_NAME"  DataValueField="PK_ID" EnableLoadOnDemand="true">                               
-                   </telerik:RadComboBox>                    
+                   <telerik:RadComboBox style="width:180px" SelectedValue='<%# Bind("FK_USER") %>' ID="cmbFK_USER" runat="server"
+                    DataSourceID="USERDataSource" DataTextField="C_NAME"  DataValueField="PK_ID" AppendDataBoundItems="true">
+                    <Items>
+                        <telerik:RadComboBoxItem Value ="0" Text ="Công ty Dove" />
+                    </Items>                           
+                   </telerik:RadComboBox>        
                 </td>
             </tr>
              </table>
