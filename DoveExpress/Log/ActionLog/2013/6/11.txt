@@ -190,3 +190,57 @@ Tài khoản : sysadmin
 Module : Login
 Kết quả : Thành công
 __________________________
+Thời gian: 2013-06-11 20:39:39 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated MAVUNGQTs
+Kết quả : {PK_ID:"7"}
+__________________________
+Thời gian: 2013-06-11 20:44:57 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated MAVUNGQTs
+Kết quả : {PK_ID:"7"}
+__________________________
+Thời gian: 2013-06-11 20:45:49 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted CHITIETCUOC
+Kết quả : {PK_ID:"11"}
+__________________________
+Thời gian: 2013-06-11 20:46:05 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted CHITIETCUOC
+Kết quả : {PK_ID:"12"}
+__________________________
+Thời gian: 2013-06-11 20:50:11 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated MAVUNGQTs
+Kết quả : {PK_ID:"7"}
+__________________________
+Thời gian: 2013-06-11 20:52:14 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-06-11 20:59:53 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted CHITIETCUOC
+Kết quả : {PK_ID:"13"}
+__________________________
+Thời gian: 2013-06-11 21:00:30 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Update CHITIETCUOCs
+Kết quả : {PK_ID:"13",FK_MAVUNG:"7"}
+__________________________
+Thời gian: 2013-06-11 21:03:27 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted CHITIETCUOC
+Kết quả : {PK_ID:"13",FK_MAVUNG:"7"}
+__________________________

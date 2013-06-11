@@ -164,3 +164,8 @@ Thời gian lỗi : 2013-06-11 20:24:03 PM
 Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/Grid/csv.gif. 
 Nội dung lỗi:File does not exist.
 __________________________
+Thời gian lỗi : 2013-06-11 21:00:09 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUIQT. 
+Nội dung lỗi:Input string was not in a correct format.
+__________________________
