@@ -123,7 +123,7 @@
     function OnClientLoadtxtC_GIADOITAC(sender) {
         txtC_GIADOITAC = sender;
     }
-     function OnValueChangedtxtC_GIACUOC(sender, eventArgs) {
+    function OnValueChangedtxtC_GIACUOC(sender, eventArgs) {
         txtC_TIENHANG.set_value(txtC_GIACUOC.get_value() + txtC_KHAC.get_value() + txtC_COD.get_value() + txtC_KHAIGIA.get_value() + txtC_DONGGOI.get_value());
         return false;
     }
@@ -151,7 +151,7 @@
         txtC_TIENHANGVAT.set_value(txtC_TIENHANG.get_value() + txtC_VAT.get_value() * txtC_TIENHANG.get_value()/100);
         return false;
     }
-     function OnValueChangedtxtC_VAT(sender, eventArgs) {
+    function OnValueChangedtxtC_VAT(sender, eventArgs) {
         txtC_TIENHANGVAT.set_value(txtC_TIENHANG.get_value() + txtC_VAT.get_value() * txtC_TIENHANG.get_value()/100);
         return false;
     }
@@ -292,10 +292,16 @@
                 <telerik:GridBoundColumn UniqueName="C_TENKH" HeaderText="Tên khách hàng" DataField="C_TENKH" HeaderStyle-Width="110px" HeaderStyle-HorizontalAlign="Center"
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
                 </telerik:GridBoundColumn>
+                <telerik:GridBoundColumn UniqueName="C_TELGUI" HeaderText="Điện thoại gửi" DataField="C_TELGUI" HeaderStyle-Width="110px" HeaderStyle-HorizontalAlign="Center"
+                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
+                </telerik:GridBoundColumn>
                 <telerik:GridBoundColumn UniqueName="C_NGUOINHAN" HeaderText="Người nhận" DataField="C_NGUOINHAN" HeaderStyle-Width="90px" HeaderStyle-HorizontalAlign="Center"
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
                 </telerik:GridBoundColumn>
                 <telerik:GridBoundColumn UniqueName="C_DIACHINHAN" HeaderText="Địa chỉ nhận" DataField="C_DIACHINHAN" HeaderStyle-Width="130px" HeaderStyle-HorizontalAlign="Center"
+                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
+                </telerik:GridBoundColumn>
+                <telerik:GridBoundColumn UniqueName="C_TELNHAN" HeaderText="Điện thoại nhận" DataField="C_TELNHAN" HeaderStyle-Width="130px" HeaderStyle-HorizontalAlign="Center"
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
                 </telerik:GridBoundColumn>
                 <telerik:GridBoundColumn UniqueName="TINHTHANHNAME" HeaderText="Tỉnh thành" DataField="TINHTHANHNAME" HeaderStyle-Width="130px" HeaderStyle-HorizontalAlign="Center"
