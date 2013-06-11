@@ -309,6 +309,10 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
                 {
                     PPXD = decimal.Parse(oDataTable1.Rows[0]["C_PPXD"].ToString());
                 }
+                else
+                {
+                    PPXD = 0;
+                }
             }
             if (FK_QUANHUYEN != "")
             {
@@ -616,6 +620,8 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
                 CUOCCHINH = 0;
                 GIADOITAC = 0;
                 ctcDataTable = new DataTable();
+                C_KHOILUONGLK = 0;
+                GIACUOCLK = 0;
             }
             else
             {

@@ -156,9 +156,9 @@ public partial class module_MAVUNGQT : System.Web.UI.UserControl
             GridEditableItem editItem = (GridEditableItem)e.Item;
             HiddenField txtID = (HiddenField)editItem.FindControl("txtID");
             Session["txtID"] = (txtID.Value != "") ? txtID.Value : "0";
-            RadListBox RadListBoxQuanHuyenRef = (RadListBox)editItem.FindControl("RadListBoxQuanHuyenRef");
+            RadListBox RadListBoxQuocGiaRef = (RadListBox)editItem.FindControl("RadListBoxQuocGiaRef");
             HiddenField txtC_DESC = (HiddenField)editItem.FindControl("txtC_DESC");
-            setItenforListBoxSelect(RadListBoxQuanHuyenRef, txtC_DESC.Value);
+            setItenforListBoxSelect(RadListBoxQuocGiaRef, txtC_DESC.Value);
             RadComboBox cmbSanPham = (RadComboBox)editItem.FindControl("cmbSanPham");
             cmbSanPham.SelectedIndex = 0;
         }
@@ -186,7 +186,7 @@ public partial class module_MAVUNGQT : System.Web.UI.UserControl
                     ivalueconvert += ",N'" + temp[i] + "'";
                 }
             }
-            string selectSQl = String.Format("Select C_CODE, C_NAME from DMQUANHUYEN WHERE C_CODE in ({0})", ivalueconvert);
+            string selectSQl = String.Format("Select C_CODE, C_NAME from DMQUOCGIA WHERE C_CODE in ({0})", ivalueconvert);
             ITCLIB.Admin.SQL sqlAC = new ITCLIB.Admin.SQL();
             DataTable odata = sqlAC.query_data(selectSQl);
             foreach (DataRow orow in odata.Rows)

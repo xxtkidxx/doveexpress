@@ -218,7 +218,7 @@ Skin ="Vista" DataFieldID="PK_ID" AppendDataBoundItems="True" DataSourceID="SqlD
     SelectCommand="SELECT [PK_ID], [C_CODE], [C_NAME] FROM [DMKHUVUC]">
  </asp:SqlDataSource> 
  <asp:SqlDataSource ID="QUOCGIADataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
-        SelectCommand="SELECT * FROM [DMQUOCGIA] where (@FK_KHUVUC = 0 OR FK_KHUVUC =@FK_KHUVUC) ORDER BY LTRIM([C_CODE])">
+        SelectCommand="SELECT * FROM [DMQUOCGIA] where (@FK_KHUVUC = 0 OR FK_KHUVUC =@FK_KHUVUC) ORDER BY LTRIM([PK_ID])">
         <SelectParameters>
             <asp:SessionParameter DefaultValue="0" Name="FK_KHUVUC" SessionField="ValueFilter"/>
         </SelectParameters>
