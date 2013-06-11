@@ -111,11 +111,11 @@ public partial class module_BAOCAOKHACHHANG : System.Web.UI.UserControl
         string SelectSQL = "";
         if (ID != "")
         {
-            SelectSQL = "SELECT * FROM DMKHACHHANG WHERE FK_NHOMKHACHHANG = " + ID + "order by C_NAME";
+            SelectSQL = "SELECT * FROM DMKHACHHANG WHERE FK_NHOMKHACHHANG = " + ID + "order by C_CODE";
         }
         else
         {
-            SelectSQL = "SELECT * FROM DMKHACHHANG order by C_NAME";
+            SelectSQL = "SELECT * FROM DMKHACHHANG order by C_CODE";
         }
         return SelectSQL;
     }
