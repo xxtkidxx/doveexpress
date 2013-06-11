@@ -36,8 +36,8 @@
     }
    function cmbMaKhachHangClientSelectedIndexChangedHandler(sender, eventArgs) {
          $find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("cmbMaKhachHang;" + eventArgs.get_item().get_value());
-         var currentLoadingPanel = $find("<%= RadAjaxLoadingPanelNHANGUI.ClientID %>");
-         var currentUpdatedControl = "<%= RadGridNHANGUI.ClientID %>"; 
+         var currentLoadingPanel = $find("<%= RadAjaxLoadingPanelNHANGUIQT.ClientID %>");
+         var currentUpdatedControl = "<%= RadGridNHANGUIQT.ClientID %>"; 
          currentLoadingPanel.show(currentUpdatedControl);
          return false;
     }
