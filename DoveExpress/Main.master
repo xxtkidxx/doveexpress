@@ -77,10 +77,11 @@
            </script>
         </telerik:RadCodeBlock>       
 <div class="admin_banner clearfix">
-          <div class ="admin_header">
-           <asp:Label ID="lblFullName" runat="server" Text="Người dùng:"></asp:Label>
-           </div>
-       </div>
+   <div class ="admin_header">
+           <asp:Label ID="lblFullName" runat="server" Text="Người dùng:"></asp:Label> | 
+           Vùng làm việc: <telerik:RadComboBox ID="cmbVungLamViec" runat="server" ShowToggleImage="True" EmptyMessage="Chọn vùng làm việc"></telerik:RadComboBox>
+   </div>
+</div>
 
 <div class ="admin_menu">
         <telerik:RadScriptManager ID="RadScriptManager" runat="server">
