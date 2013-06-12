@@ -166,7 +166,16 @@ public partial class module_MABANGCUOC : System.Web.UI.UserControl
             Session["txtID"] = (txtID.Value != "") ? txtID.Value : "0";
             RadListBox RadListBoxNhomKhachHangRef = (RadListBox)editItem.FindControl("RadListBoxNhomKhachHangRef");
             HiddenField txtC_VALUE = (HiddenField)editItem.FindControl("txtC_VALUE");
-            setItenforListBoxSelect(RadListBoxNhomKhachHangRef, txtC_VALUE.Value);            
+            setItenforListBoxSelect(RadListBoxNhomKhachHangRef, txtC_VALUE.Value);
+            if (e.Item is GridEditFormInsertItem || e.Item is GridDataInsertItem)
+            {
+                // insert item
+                RadComboBox cmbFK_VUNGLAMVIEC = (RadComboBox)editItem.FindControl("cmbFK_VUNGLAMVIEC");
+                if (cmbFK_VUNGLAMVIEC.Items.Count != 0)
+                {
+                    cmbFK_VUNGLAMVIEC.SelectedIndex = 0;
+                }
+            }
         }
         if (e.Item is GridDataItem)
         {

@@ -14,13 +14,13 @@ public partial class Reports_Report_CPDT : System.Web.UI.UserControl
     ReportDocument rd = new ReportDocument();
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (!ITCLIB.Security.Security.CanPrintModule("DuanCPDTs"))
+        if (!ITCLIB.Security.Security.CanPrintModule("REPORT"))
         {
             ITCLIB.Security.Security.ReturnUrl();
         }
-        if (Request.QueryString["TYPE"] != null)
+        /*if (Request.QueryString["TYPE"] != null)
         {
-            BaocaoDACPDT.ToolPanelView = CrystalDecisions.Web.ToolPanelViewType.None;
+            crvReport.ToolPanelView = CrystalDecisions.Web.ToolPanelViewType.None;
             string strtype = Request.QueryString["TYPE"].ToString().Trim();
             if (strtype == "DONVI")//Phục lục 1
                 getbaocao_Donvi();
@@ -43,7 +43,7 @@ public partial class Reports_Report_CPDT : System.Web.UI.UserControl
             else if (strtype == "NHAHANG" || strtype == "DICHVU") //Phục lục 10
                 getbaocao_Nhahang_dichvu();          
          
-        }
+        }*/
     }
 
     protected string getName(object name, string level, object header)
@@ -55,12 +55,12 @@ public partial class Reports_Report_CPDT : System.Web.UI.UserControl
         return String.Format("{0} {1}", header.ToString().Replace("&nbsp;", " "), name);
     }
 
-    protected void ThongKeChuongtrinh_Unload(object sender, EventArgs e)
+    protected void Report_Unload(object sender, EventArgs e)
     {
         rd.Close();
         rd.Dispose();
     }
-    //Phụ lục 1: Thông tin đơn vị báo cáo
+   /* //Phụ lục 1: Thông tin đơn vị báo cáo
     protected void getbaocao_Donvi()
     {
         rd.Load(Server.MapPath("Reports\\rp_duancpdt_phuluc1.rpt"));
@@ -92,8 +92,8 @@ public partial class Reports_Report_CPDT : System.Web.UI.UserControl
                 rd.SetParameterValue(para.Name, "");
             }
         }
-        BaocaoDACPDT.ReportSource = rd;
-        BaocaoDACPDT.DataBind();
+        crvReport.ReportSource = rd;
+        crvReport.DataBind();
     }
     //Phụ lục 2: Thông tin lao động
     protected void getbaocao_Laodong()
@@ -474,5 +474,5 @@ public partial class Reports_Report_CPDT : System.Web.UI.UserControl
         rd.SetDataSource(ds);
         BaocaoDACPDT.ReportSource = rd;
         BaocaoDACPDT.DataBind();
-    }
+    }*/
 }
