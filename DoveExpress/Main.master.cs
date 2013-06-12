@@ -247,4 +247,15 @@ public partial class Main : System.Web.UI.MasterPage
             Response.Redirect("Login.aspx", true);
         }
     }
+    protected void cmbVungLamViec_PreRender(object sender, EventArgs e)
+    {
+        if (!IsPostBack)
+        {
+            cmbVungLamViec.SelectedValue = Session["VUNGLAMVIEC"].ToString();
+        }
+        else
+        {
+            Session["VUNGLAMVIEC"] = cmbVungLamViec.SelectedValue;
+        }
+    }
 }

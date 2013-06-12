@@ -88,6 +88,7 @@ public partial class Login : System.Web.UI.Page
             Session["User"] = sUser;           
             Session["UserID"] = (int)oDataTable.Rows[0]["PK_ID"];
             Session["GroupUser"] = (int)oDataTable.Rows[0]["FK_GROUPUSER"];
+            Session["VUNGLAMVIEC"] = "Hà Nội";
             return true;
         }
         else
