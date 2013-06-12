@@ -79,7 +79,10 @@
 <div class="admin_banner clearfix">
    <div class ="admin_header">
            <asp:Label ID="lblFullName" runat="server" Text="Người dùng:"></asp:Label> | 
-           Vùng làm việc: <telerik:RadComboBox ID="cmbVungLamViec" runat="server" ShowToggleImage="True" EmptyMessage="Chọn vùng làm việc"></telerik:RadComboBox>
+           Vùng làm việc: <telerik:RadComboBox ID="cmbVungLamViec" DataTextField="C_NAME" 
+               DataValueField="C_CODE" DataSourceID="VUNGLAMVIECDataSource"
+           ShowToggleImage="True" runat="server" EmptyMessage="Chọn vùng làm việc" 
+               AutoPostBack="True" onprerender="cmbVungLamViec_PreRender"></telerik:RadComboBox>
    </div>
 </div>
 
@@ -110,3 +113,6 @@
     </form>
 </body>
 </html>
+ <asp:SqlDataSource ID="VUNGLAMVIECDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
+ SelectCommand="SELECT DMVUNGLAMVIEC.* FROM DMVUNGLAMVIEC" >
+</asp:SqlDataSource>
