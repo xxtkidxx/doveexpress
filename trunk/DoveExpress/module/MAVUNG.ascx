@@ -144,15 +144,16 @@
 <div class ="headerthongtin" id ="Div2">
  <span style =" width :300px; text-align:left; float:left;"> Chọn quận huyện:</span> ||<span style =" width :250px; color: Blue "> Danh sách quận huyện</span>                     
 </div>
-<div style ="width:98%; background-color:White;padding-left:2px;">
-<div style =" width :20%; float :left;"> 
-    <telerik:RadPanelBar ID="RadPanelBarTinhThanh" Width ="100%" Height ="200px" 
-                        runat="server" ExpandMode="FullExpandedItem"  OnItemClick ="RadPanelBarLoadTextfromDept_ItemClick"
+<telerik:RadSplitter ID="RadSplitterQUANHUYEN" runat="server" Width="100%" Height ="250px">
+<telerik:RadPane ID="LeftPaneQUANHUYEN" runat="server" Width="20%">
+    <telerik:RadPanelBar ID="RadPanelBarTinhThanh" Width ="100%" Height ="300px" 
+                        runat="server" ExpandMode="MultipleExpandedItems"  OnItemClick ="RadPanelBarLoadTextfromDept_ItemClick"
                         Skin ="Vista" DataFieldID="PK_ID"  
                         DataSourceID="SqlDataSourceTINHTHANH" DataTextField="C_NAME"  DataValueField="PK_ID" >
-     </telerik:RadPanelBar>    
-</div>
-<div style =" width :80%; float:right;">
+     </telerik:RadPanelBar>
+ </telerik:RadPane>
+<telerik:RadSplitBar ID="RadSplitBarQUANHUYEN" runat="server" CollapseMode="Forward" />
+<telerik:RadPane ID="MiddlePaneQUANHUYEN" runat="server" Width="79%">
     <telerik:RadListBox ID="RadListBoxQuanHuyen" runat="server" Width ="48%" Height ="200px"  
             SelectionMode="Multiple" AllowTransfer="True" TransferToID="RadListBoxQuanHuyenRef" 
             AutoPostBackOnTransfer="True" AutoPostBackOnReorder="True" EnableDragAndDrop="True" 
@@ -168,10 +169,9 @@
             <Localization Delete ="Bỏ chọn" />
             <ButtonSettings ShowDelete ="true"  />
      </telerik:RadListBox>
- </div>  
 <p style =" height: 26px; line-height :26px; color:Blue;">Ghi chú: Click vào quận huyện trên danh sách trái kéo và thả vào Box phải để chọn</p>
-<br />
-</div>    
+</telerik:RadPane>
+ </telerik:RadSplitter>
              </center> 
         <!-- end bgpopup--></div>    
              </FormTemplate>
@@ -212,10 +212,10 @@
         SelectCommand="SELECT [PK_ID], [C_CODE], [C_NAME] FROM [DMMASANPHAM]  WHERE C_CODE <> 'QT' ORDER BY PK_ID">
 </asp:SqlDataSource>
  <asp:SqlDataSource ID="SqlDataSourceTINHTHANH" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
-    SelectCommand="SELECT [DMTINHTHANH].[PK_ID], [DMTINHTHANH].[C_CODE], [DMTINHTHANH].[C_NAME] FROM [DMTINHTHANH] LEFT OUTER JOIN DMQUOCGIA ON DMTINHTHANH.FK_QUOCGIA = DMQUOCGIA.PK_ID WHERE DMQUOCGIA.C_CODE='VN'">
+    SelectCommand="SELECT [DMTINHTHANH].[PK_ID], [DMTINHTHANH].[C_CODE], [DMTINHTHANH].[C_NAME] FROM [DMTINHTHANH] LEFT OUTER JOIN DMQUOCGIA ON DMTINHTHANH.FK_QUOCGIA = DMQUOCGIA.PK_ID WHERE DMQUOCGIA.C_CODE='VN' ORDER BY DMTINHTHANH.C_ORDER ASC, DMTINHTHANH.C_NAME ASC">
  </asp:SqlDataSource>
  <asp:SqlDataSource ID="QUANHUYENDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
-        SelectCommand="SELECT * FROM [DMQUANHUYEN] where (@FK_TINHTHANH = 0 OR FK_TINHTHANH =@FK_TINHTHANH) ORDER BY LTRIM([C_NAME])">
+        SelectCommand="SELECT * FROM [DMQUANHUYEN] where (@FK_TINHTHANH = 0 OR FK_TINHTHANH =@FK_TINHTHANH) ORDER BY LTRIM([C_NAME]) ASC">
         <SelectParameters>
             <asp:SessionParameter DefaultValue="0" Name="FK_TINHTHANH" SessionField="ValueFilter"/>
         </SelectParameters>
