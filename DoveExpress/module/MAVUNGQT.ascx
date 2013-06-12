@@ -144,8 +144,8 @@
 <div class ="headerthongtin" id ="Div2">
  <span style =" width :300px; text-align:left; float:left;"> Chọn quốc gia:</span> ||<span style =" width :250px; color: Blue "> Danh sách quốc gia</span>                     
 </div>
-<div style ="width:98%; background-color:White;padding-left:2px;">
-<div style =" width :20%; float :left;"> 
+<telerik:RadSplitter ID="RadSplitterQuocGia" runat="server" Width="100%" Height ="250px">
+<telerik:RadPane ID="LeftPaneQuocGia" runat="server" Width="20%">
 <telerik:RadPanelBar ID="RadPanelBarKhuVuc" Width ="100%" Height ="200px" 
 runat="server" ExpandMode="FullExpandedItem"  OnItemClick ="RadPanelBarLoadTextfromDept_ItemClick"
 Skin ="Vista" DataFieldID="PK_ID" AppendDataBoundItems="True" DataSourceID="SqlDataSourceKHUVUC" DataTextField="C_NAME"  DataValueField="PK_ID" >
@@ -154,8 +154,9 @@ Skin ="Vista" DataFieldID="PK_ID" AppendDataBoundItems="True" DataSourceID="SqlD
 </telerik:RadPanelItem> 
 </Items> 
 </telerik:RadPanelBar>    
-</div>
-<div style =" width :80%; float:right;">
+ </telerik:RadPane>
+<telerik:RadSplitBar ID="RadSplitBarQuocGia" runat="server" CollapseMode="Forward" />
+<telerik:RadPane ID="MiddlePaneQuocGia" runat="server" Width="79%">
     <telerik:RadListBox ID="RadListBoxQuocGia" runat="server" Width ="48%" Height ="200px"  
             SelectionMode="Multiple" AllowTransfer="True" TransferToID="RadListBoxQuocGiaRef" 
             AutoPostBackOnTransfer="True" AutoPostBackOnReorder="True" EnableDragAndDrop="True" 
@@ -171,10 +172,9 @@ Skin ="Vista" DataFieldID="PK_ID" AppendDataBoundItems="True" DataSourceID="SqlD
             <Localization Delete ="Bỏ chọn" />
             <ButtonSettings ShowDelete ="true"  />
      </telerik:RadListBox>
- </div>  
 <p style =" height: 26px; line-height :26px; color:Blue;">Ghi chú: Click vào quốc gia trên danh sách trái kéo và thả vào Box phải để chọn</p>
-<br />
-</div>    
+</telerik:RadPane>
+ </telerik:RadSplitter> 
              </center> 
         <!-- end bgpopup--></div>    
              </FormTemplate>
