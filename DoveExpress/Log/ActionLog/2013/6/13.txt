@@ -1,0 +1,36 @@
+Thời gian: 2013-06-13 08:50:50 AM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-06-13 11:12:15 AM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-06-13 11:12:59 AM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-06-13 20:30:08 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-06-13 20:47:09 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated MASANPHAMs
+Kết quả : {PK_ID:"4"}
+__________________________
+Thời gian: 2013-06-13 20:47:59 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted NHANGUIQTs
+Kết quả : {PK_ID:"5"}
+__________________________
