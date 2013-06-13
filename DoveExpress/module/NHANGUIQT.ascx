@@ -127,20 +127,21 @@
         txtC_TIENHANG.set_value(txtC_GIACUOC.get_value() + txtC_KHAC.get_value() + txtC_COD.get_value() + txtC_KHAIGIA.get_value() + txtC_DONGGOI.get_value());
         return false;
     }
-    function OnValueChangedtxtC_DATHU(sender, eventArgs) {
-        txtC_CONLAI.set_value(txtC_TIENHANG.get_value() - eventArgs.get_newValue());
-        return false;
-    }
     function OnValueChangedtxtC_TIENHANG(sender, eventArgs) {
-        txtC_TIENHANGVAT.set_value(txtC_TIENHANG.get_value() + txtC_VAT.get_value() * txtC_TIENHANG.get_value()/100);
+        txtC_VAT.set_value(txtC_TIENHANG.get_value()*0.1);
+        //txtC_TIENHANGVAT.set_value(txtC_TIENHANG.get_value() + txtC_VAT.get_value() * txtC_TIENHANG.get_value()/100);
         return false;
     }
     function OnValueChangedtxtC_VAT(sender, eventArgs) {
-        txtC_TIENHANGVAT.set_value(txtC_TIENHANG.get_value() + txtC_VAT.get_value() * txtC_TIENHANG.get_value()/100);
+        txtC_TIENHANGVAT.set_value(txtC_TIENHANG.get_value() + txtC_VAT.get_value());
         return false;
     }
     function OnValueChangedtxtC_TIENHANGVAT(sender, eventArgs) {
         txtC_CONLAI.set_value(txtC_TIENHANGVAT.get_value() - txtC_DATHU.get_value());
+        return false;
+    }
+    function OnValueChangedtxtC_DATHU(sender, eventArgs) {
+        txtC_CONLAI.set_value(txtC_TIENHANGVAT.get_value() - eventArgs.get_newValue());
         return false;
     }
     function radautoC_TENKHOnClientTextChanged(sender, eventArgs) {
@@ -440,27 +441,27 @@
                     DataTextField="C_NAME" DataValueField="PK_ID" DataSourceID="MASANPHAMDataSource"
                     ShowToggleImage="True" EmptyMessage="Chọn dịch vụ" onclientselectedindexchanged="cmbSanPhamClientSelectedIndexChangedHandler">
                     </telerik:RadComboBox>
-                </td>
-                <td style =" width:100px;"><span class="rtsTxtnew">PPXD(%):</span></td>
-                <td colspan="4">
-                     <telerik:RadNumericTextBox  ID="txtPPXD" Width ="90%" Text='<%# Bind("C_PPXD") %>' Runat="server" ClientEvents-OnLoad="OnClientLoadtxtPPXD">
-                            <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="1"/>
-                    </telerik:RadNumericTextBox>
-                </td>
+                </td>                
                 <td style =" width:100px;"> <span class="rtsTxtnew">Khối lượng (g):</span></td>
                 <td colspan="4">
                      <telerik:RadNumericTextBox  ID="txtC_KHOILUONG" Width ="90%" Runat="server" Text='<%# Bind("C_KHOILUONG") %>' ClientEvents-OnValueChanged="OnValueChangedtxtC_KHOILUONG" ClientEvents-OnLoad="OnClientLoadtxtC_KHOILUONG">
                             <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
                     </telerik:RadNumericTextBox>
                 </td>
-            </tr
-            <tr>                
                 <td style =" width:100px;"> <span class="rtsTxtnew">Cước chính:</span></td>
                 <td colspan="4">
                     <telerik:RadNumericTextBox  ID="txtC_GIACUOC" Width ="90%" Runat="server" Text='<%# Bind("C_GIACUOC") %>' ClientEvents-OnLoad="OnClientLoadtxtC_GIACUOC" ClientEvents-OnValueChanged="OnValueChangedtxtC_GIACUOC">
                             <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
                     </telerik:RadNumericTextBox>
-                </td>                
+                </td>
+            </tr
+            <tr> 
+                <td style =" width:100px;"><span class="rtsTxtnew">PPXD(%):</span></td>
+                <td colspan="4">
+                     <telerik:RadNumericTextBox  ID="txtPPXD" Width ="90%" Text='<%# Bind("C_PPXD") %>' Runat="server" ClientEvents-OnLoad="OnClientLoadtxtPPXD">
+                            <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="1"/>
+                    </telerik:RadNumericTextBox>
+                </td>
                 <td style =" width:100px;"><span class="rtsTxtnew">DV đóng gói:</td>
                 <td colspan="4">
                     <telerik:RadNumericTextBox  ID="txtC_DONGGOI" Width ="90%" Runat="server" Text='<%# Bind("C_DONGGOI") %>' ClientEvents-OnLoad="OnClientLoadtxtC_DONGGOI" ClientEvents-OnValueChanged="OnValueChangedtxtC_DONGGOI">
