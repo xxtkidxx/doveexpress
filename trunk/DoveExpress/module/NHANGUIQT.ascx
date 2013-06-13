@@ -60,6 +60,7 @@
         txtC_KHOILUONG = sender;
     } 
     var txtPPXD;
+    var PPXD;
     function OnClientLoadtxtPPXD(sender) {
         txtPPXD = sender;
     }   
@@ -108,23 +109,28 @@
         txtC_GIADOITAC = sender;
     }
     function OnValueChangedtxtC_GIACUOC(sender, eventArgs) {
-        txtC_TIENHANG.set_value(txtC_GIACUOC.get_value() + txtC_KHAC.get_value() + txtC_COD.get_value() + txtC_KHAIGIA.get_value() + txtC_DONGGOI.get_value());
+        txtPPXD.set_value(txtC_GIACUOC.get_value() * PPXD/100);
+        txtC_TIENHANG.set_value(txtC_GIACUOC.get_value() + txtPPXD.get_value() + txtC_KHAC.get_value() + txtC_COD.get_value() + txtC_KHAIGIA.get_value() + txtC_DONGGOI.get_value());
+        return false;
+    }
+    function OnValueChangedtxtPPXD(sender, eventArgs) {
+        txtC_TIENHANG.set_value(txtC_GIACUOC.get_value() + txtPPXD.get_value() + txtC_KHAC.get_value() + txtC_COD.get_value() + txtC_KHAIGIA.get_value() + txtC_DONGGOI.get_value());
         return false;
     }
      function OnValueChangedtxtC_DONGGOI(sender, eventArgs) {
-        txtC_TIENHANG.set_value(txtC_GIACUOC.get_value() + txtC_KHAC.get_value() + txtC_COD.get_value() + txtC_KHAIGIA.get_value() + txtC_DONGGOI.get_value());
+        txtC_TIENHANG.set_value(txtC_GIACUOC.get_value() + txtPPXD.get_value() + txtC_KHAC.get_value() + txtC_COD.get_value() + txtC_KHAIGIA.get_value() + txtC_DONGGOI.get_value());
         return false;
     }
      function OnValueChangedtxtC_KHAIGIA(sender, eventArgs) {
-        txtC_TIENHANG.set_value(txtC_GIACUOC.get_value() + txtC_KHAC.get_value() + txtC_COD.get_value() + txtC_KHAIGIA.get_value() + txtC_DONGGOI.get_value());
+        txtC_TIENHANG.set_value(txtC_GIACUOC.get_value() + txtPPXD.get_value() + txtC_KHAC.get_value() + txtC_COD.get_value() + txtC_KHAIGIA.get_value() + txtC_DONGGOI.get_value());
         return false;
     }
      function OnValueChangedtxtC_COD(sender, eventArgs) {
-        txtC_TIENHANG.set_value(txtC_GIACUOC.get_value() + txtC_KHAC.get_value() + txtC_COD.get_value() + txtC_KHAIGIA.get_value() + txtC_DONGGOI.get_value());
+        txtC_TIENHANG.set_value(txtC_GIACUOC.get_value() + txtPPXD.get_value() + txtC_KHAC.get_value() + txtC_COD.get_value() + txtC_KHAIGIA.get_value() + txtC_DONGGOI.get_value());
         return false;
     }
      function OnValueChangedtxtC_KHAC(sender, eventArgs) {
-        txtC_TIENHANG.set_value(txtC_GIACUOC.get_value() + txtC_KHAC.get_value() + txtC_COD.get_value() + txtC_KHAIGIA.get_value() + txtC_DONGGOI.get_value());
+        txtC_TIENHANG.set_value(txtC_GIACUOC.get_value() + txtPPXD.get_value() + txtC_KHAC.get_value() + txtC_COD.get_value() + txtC_KHAIGIA.get_value() + txtC_DONGGOI.get_value());
         return false;
     }
     function OnValueChangedtxtC_TIENHANG(sender, eventArgs) {
@@ -155,7 +161,7 @@
 <script type="text/javascript">
     function onResponseEndNG() {
         if (typeof (result) != "undefined" && result && result != "") {
-            alert(result);
+            //alert(result);
             var arrayOfStrings = result.split(",");
             if (arrayOfStrings[0] != "msg") {
                 if (arrayOfStrings[1] != "") {
@@ -173,7 +179,7 @@
                     //radautoC_MAKH.get_entries().clear();
                     //radautoC_TENKH.get_entries().clear();
                 }
-                txtPPXD.set_value(arrayOfStrings[3]);
+                PPXD = arrayOfStrings[3];
                 txtC_GIACUOC.set_value(arrayOfStrings[4]);
                 txtC_GIADOITAC.set_value(arrayOfStrings[5]);
             }
@@ -458,8 +464,8 @@
             <tr> 
                 <td style =" width:100px;"><span class="rtsTxtnew">PPXD(%):</span></td>
                 <td colspan="4">
-                     <telerik:RadNumericTextBox  ID="txtPPXD" Width ="90%" Text='<%# Bind("C_PPXD") %>' Runat="server" ClientEvents-OnLoad="OnClientLoadtxtPPXD">
-                            <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="1"/>
+                     <telerik:RadNumericTextBox  ID="txtPPXD" Width ="90%" Text='<%# Bind("C_PPXD") %>' Runat="server" ClientEvents-OnLoad="OnClientLoadtxtPPXD" ClientEvents-OnValueChanged="OnValueChangedtxtPPXD">
+                            <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
                     </telerik:RadNumericTextBox>
                 </td>
                 <td style =" width:100px;"><span class="rtsTxtnew">DV đóng gói:</td>
