@@ -230,7 +230,7 @@ ShowToggleImage="True" EmptyMessage="Chọn bảng"
         </InsertParameters>
 </asp:SqlDataSource>
 <asp:SqlDataSource ID="MABANGCUOCDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
-    SelectCommand="SELECT [PK_ID], [C_CODE], [C_NAME],[C_TYPE] FROM [DMMABANGCUOC]  WHERE [C_TYPE] = 1 ORDER BY LTRIM([C_CODE])">
+    SelectCommand="SELECT [PK_ID], [C_CODE], [C_NAME],[FK_VUNGLAMVIEC] FROM [DMMABANGCUOC] ORDER BY LTRIM([C_CODE])">
 </asp:SqlDataSource>
 <asp:SqlDataSource ID="MASANPHAMDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
         SelectCommand="SELECT [PK_ID], [C_CODE], [C_NAME] FROM [DMMASANPHAM] ORDER BY LTRIM([C_CODE])">    
