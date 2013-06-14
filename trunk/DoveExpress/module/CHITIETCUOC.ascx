@@ -118,7 +118,7 @@ ShowToggleImage="True" EmptyMessage="Chọn bảng"
                 </telerik:GridBoundColumn>
                 <telerik:GridBoundColumn UniqueName="C_NAME" HeaderText="Tên mã vùng" DataField="C_NAME" AllowFiltering="false">
                 </telerik:GridBoundColumn>
-                <telerik:GridBoundColumn UniqueName="C_DESC" HeaderText="Tuyến đường thuộc vùng" DataField="C_DESC" AllowFiltering="false">
+                <telerik:GridBoundColumn UniqueName="C_DESC" HeaderText="Tuyến đường thuộc vùng" DataField="C_DESC" Visible="false" AllowFiltering="false">
                 </telerik:GridBoundColumn>
 </Columns>
 <DetailTables>
