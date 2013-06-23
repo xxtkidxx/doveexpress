@@ -134,7 +134,7 @@
         txtC_GIADOITAC = sender;
     }
     function OnValueChangedtxtC_GIACUOC(sender, eventArgs) {
-        txtPPXD.set_value(txtC_GIACUOC.get_value() * PPXD/100);
+        txtPPXD.set_value(txtC_GIACUOC.get_value() * parseFloat(PPXD)/100);
         if (!flag) {
             txtC_TIENHANG.set_value(txtC_GIACUOC.get_value() + txtPPXD.get_value() + txtC_KHAC.get_value() + txtC_COD.get_value() + txtC_KHAIGIA.get_value() + txtC_DONGGOI.get_value());
         }
@@ -204,7 +204,7 @@
 <script type="text/javascript">   
      function onResponseEndNG() {
          if (typeof (result) != "undefined" && result && result != "") {
-             //alert(result);
+             alert(result);
              var arrayOfStrings = result.split(",");
              if (arrayOfStrings[0] != "msg") {
                  if (arrayOfStrings[1] != "") {
