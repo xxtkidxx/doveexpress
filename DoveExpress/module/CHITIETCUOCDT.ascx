@@ -35,7 +35,12 @@
             for (var i = 0; i < dataItems.length; i++) {
                 if (dataItems[i].get_nestedViews().length > 0) {
                     var nestedView = dataItems[i].get_nestedViews()[0];
-                    nestedView.rebind();
+                    if (nestedView.get_dataItems().length > 0) {
+                        var firstDataItem = nestedView.get_dataItems()[0];
+                        if (firstDataItem.getDataKeyValue("FK_MAVUNG") == result) {
+                            nestedView.rebind();
+                        }
+                    }
                 }
             }
             result = "";
@@ -143,7 +148,7 @@ ShowToggleImage="True" EmptyMessage="Chọn đối tác"
                 </telerik:GridBoundColumn>
 </Columns>
 <DetailTables>
-    <telerik:GridTableView DataKeyNames="PK_ID,FK_MAVUNG" DataSourceID="CHITIETCUOCDTDataSource" Width="100%" runat="server" CommandItemDisplay="Top" Name="TableViewCHITIETCUOCDT" EditMode="InPlace" NoDetailRecordsText="Không có dữ liệu.">
+    <telerik:GridTableView DataKeyNames="PK_ID,FK_MAVUNG" ClientDataKeyNames="FK_MAVUNG" DataSourceID="CHITIETCUOCDTDataSource" Width="100%" runat="server" CommandItemDisplay="Top" Name="TableViewCHITIETCUOCDT" EditMode="InPlace" NoDetailRecordsText="Không có dữ liệu.">
            <ParentTableRelation>
                  <telerik:GridRelationFields DetailKeyField="FK_MAVUNG" MasterKeyField="PK_ID"></telerik:GridRelationFields>
            </ParentTableRelation>

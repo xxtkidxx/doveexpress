@@ -11,8 +11,8 @@
     }
 </script>
 <script type="text/javascript">
-        
-        function RowDblClick(sender, eventArgs) {
+    var flag = false;
+    function RowDblClick(sender, eventArgs) {
             var CanEdit = "<%=ITCLIB.Security.Security.CanEditModule("NHANGUI") %>";
             if ((eventArgs.get_tableView().get_name() == "MasterTableViewNHANGUI") && (CanEdit == "True")) {
                 sender.get_masterTableView().editItem(eventArgs.get_itemIndexHierarchical());
@@ -135,11 +135,15 @@
     }
     function OnValueChangedtxtC_GIACUOC(sender, eventArgs) {
         txtPPXD.set_value(txtC_GIACUOC.get_value() * PPXD/100);
-        txtC_TIENHANG.set_value(txtC_GIACUOC.get_value() + txtPPXD.get_value() + txtC_KHAC.get_value() + txtC_COD.get_value() + txtC_KHAIGIA.get_value() + txtC_DONGGOI.get_value());
+        if (!flag) {
+            txtC_TIENHANG.set_value(txtC_GIACUOC.get_value() + txtPPXD.get_value() + txtC_KHAC.get_value() + txtC_COD.get_value() + txtC_KHAIGIA.get_value() + txtC_DONGGOI.get_value());
+        }
         return false;
     }
     function OnValueChangedtxtPPXD(sender, eventArgs) {
-        txtC_TIENHANG.set_value(txtC_GIACUOC.get_value() + txtPPXD.get_value() + txtC_KHAC.get_value() + txtC_COD.get_value() + txtC_KHAIGIA.get_value() + txtC_DONGGOI.get_value());
+        if (!flag) {
+            txtC_TIENHANG.set_value(txtC_GIACUOC.get_value() + txtPPXD.get_value() + txtC_KHAC.get_value() + txtC_COD.get_value() + txtC_KHAIGIA.get_value() + txtC_DONGGOI.get_value());
+        }
         return false;
     }
      function OnValueChangedtxtC_DONGGOI(sender, eventArgs) {
@@ -160,7 +164,10 @@
     }    
     function OnValueChangedtxtC_TIENHANG(sender, eventArgs) {
         txtC_VAT.set_value(txtC_TIENHANG.get_value()*0.1);
-        //txtC_TIENHANGVAT.set_value(txtC_TIENHANG.get_value() + txtC_VAT.get_value() * txtC_TIENHANG.get_value()/100);
+        if (flag) {
+           txtC_GIACUOC.set_value(((txtC_TIENHANG.get_value() - txtC_KHAC.get_value() - txtC_COD.get_value() - txtC_KHAIGIA.get_value() - txtC_DONGGOI.get_value())/(100 + parseFloat(PPXD)))*100);
+           txtPPXD.set_value(((txtC_TIENHANG.get_value() - txtC_KHAC.get_value() - txtC_COD.get_value() - txtC_KHAIGIA.get_value() - txtC_DONGGOI.get_value())/(100 + parseFloat(PPXD)))*parseFloat(PPXD));
+        }
         return false;
     }
     function OnValueChangedtxtC_VAT(sender, eventArgs) {
@@ -174,6 +181,17 @@
     function OnValueChangedtxtC_DATHU(sender, eventArgs) {
         txtC_CONLAI.set_value(txtC_TIENHANGVAT.get_value() - eventArgs.get_newValue());
         return false;
+    }  
+    function SetGiaCuoi() {
+        flag = !flag;
+        if (flag) {
+           txtC_GIACUOC.set_value(((txtC_TIENHANG.get_value() - txtC_KHAC.get_value() - txtC_COD.get_value() - txtC_KHAIGIA.get_value() - txtC_DONGGOI.get_value())/(100 + parseFloat(PPXD)))*100);
+           txtPPXD.set_value(((txtC_TIENHANG.get_value() - txtC_KHAC.get_value() - txtC_COD.get_value() - txtC_KHAIGIA.get_value() - txtC_DONGGOI.get_value())/(100 + parseFloat(PPXD)))*parseFloat(PPXD));
+        }
+        else 
+        {
+            txtC_GIACUOC.set_value(CUOCCHINH);                  
+        }
     }
     function radautoC_TENKHOnClientTextChanged(sender, eventArgs) {
         $find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("radautoC_TENKH;" + sender.get_text());
@@ -556,7 +574,10 @@
                     <telerik:RadNumericTextBox  ID="txtC_TIENHANGVAT" Width ="90%" Runat="server" Text='<%# Bind("C_TIENHANGVAT") %>' ClientEvents-OnLoad="OnClientLoadtxtC_TIENHANGVAT" ClientEvents-OnValueChanged="OnValueChangedtxtC_TIENHANGVAT">
                             <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
                     </telerik:RadNumericTextBox>
-                </td>  
+                </td> 
+                <td colspan="4">
+                    <input id="btnGiaCuoi" type="checkbox" onclick="SetGiaCuoi();" value="false"/>Theo giá cuối
+                </td> 
             </tr>
             <tr>                         
                 <td style =" width:100px;"> <span class="rtsTxtnew">HTTT:</span></td>

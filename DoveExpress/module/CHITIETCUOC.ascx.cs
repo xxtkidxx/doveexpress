@@ -41,9 +41,9 @@ public partial class module_CHITIETCUOC : System.Web.UI.UserControl
         string[] arrayvalue = e.Argument.Split(',');
         if (arrayvalue[0] == "SelectedCTC")
         {
-            string script = string.Format("var result = '{0}'", e.Argument);
-            ScriptManager.RegisterClientScriptBlock(Page, typeof(Page), "result", script, true);
             UpdateDefault(arrayvalue[1], arrayvalue[2]);
+            string script = string.Format("var result = '{0}'", arrayvalue[2]);
+            ScriptManager.RegisterClientScriptBlock(Page, typeof(Page), "result", script, true);           
         }
     }
     protected void UpdateDefault(string ID,string FK_MAVUNG)
