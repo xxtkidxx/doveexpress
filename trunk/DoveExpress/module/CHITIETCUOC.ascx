@@ -23,7 +23,7 @@
         }
 </script>
 <script type="text/javascript">
-    function onClientClickSelectedCTC(sender1,sender2) {
+    function onClientClickSelectedCTC(sender1, sender2) {
         $find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("SelectedCTC," + sender1 + "," + sender2);
         return false;
     }
@@ -34,7 +34,12 @@
             for (var i = 0; i < dataItems.length; i++) {
                 if (dataItems[i].get_nestedViews().length > 0) {
                     var nestedView = dataItems[i].get_nestedViews()[0];
-                    nestedView.rebind();
+                    if (nestedView.get_dataItems().length > 0) {
+                        var firstDataItem = nestedView.get_dataItems()[0];
+                        if (firstDataItem.getDataKeyValue("FK_MAVUNG") == result) {
+                            nestedView.rebind();
+                        }
+                    }
                 }
             }
             result = "";
@@ -122,7 +127,7 @@ ShowToggleImage="True" EmptyMessage="Chọn bảng"
                 </telerik:GridBoundColumn>
 </Columns>
 <DetailTables>
-    <telerik:GridTableView DataKeyNames="PK_ID,FK_MAVUNG" DataSourceID="CHITIETCUOCDataSource" Width="100%" runat="server" CommandItemDisplay="Top" Name="TableViewCHITIETCUOC" EditMode="InPlace" NoDetailRecordsText="Không có dữ liệu.">
+    <telerik:GridTableView DataKeyNames="PK_ID,FK_MAVUNG"  ClientDataKeyNames="FK_MAVUNG" DataSourceID="CHITIETCUOCDataSource" Width="100%" runat="server" CommandItemDisplay="Top" Name="TableViewCHITIETCUOC" EditMode="InPlace" NoDetailRecordsText="Không có dữ liệu.">
            <ParentTableRelation>
                  <telerik:GridRelationFields DetailKeyField="FK_MAVUNG" MasterKeyField="PK_ID"></telerik:GridRelationFields>
            </ParentTableRelation>

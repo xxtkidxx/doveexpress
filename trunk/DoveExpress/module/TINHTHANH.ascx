@@ -182,7 +182,7 @@
 <asp:SqlDataSource ID="TINHTHANHDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
         DeleteCommand="DELETE FROM [DMTINHTHANH] WHERE [pk_id] = @pk_id" 
         InsertCommand="INSERT INTO [DMTINHTHANH] ([C_CODE], [C_NAME],[FK_QUOCGIA]) VALUES (@C_CODE, @C_NAME,@FK_QUOCGIA)"
-        SelectCommand="SELECT * FROM [DMTINHTHANH] where (@FK_QUOCGIA = 0 OR FK_QUOCGIA =@FK_QUOCGIA) ORDER BY LTRIM([c_name])"     
+        SelectCommand="SELECT * FROM [DMTINHTHANH] where (@FK_QUOCGIA = 0 OR FK_QUOCGIA =@FK_QUOCGIA) ORDER BY DMTINHTHANH.C_ORDER ASC, DMTINHTHANH.C_NAME ASC"     
         UpdateCommand="UPDATE [DMTINHTHANH] SET [C_CODE] = @C_CODE, [C_NAME] = @C_NAME, [FK_QUOCGIA] = @FK_QUOCGIA WHERE [pk_id] = @pk_id" >
         <SelectParameters>
             <asp:SessionParameter DefaultValue="1" Name="FK_QUOCGIA" SessionField="qgid"/>
