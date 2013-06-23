@@ -451,7 +451,7 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
                     }
                 }
             }
-            CUOCCHINH = (Math.Round((CUOCCHINH + ((CUOCCHINH * PPXD) / 100)) / 1000)) * 1000;
+            //CUOCCHINH = (Math.Round((CUOCCHINH + ((CUOCCHINH * PPXD) / 100)) / 1000)) * 1000;
         }
         if (Alarm != "")
         {
@@ -661,7 +661,22 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
                 {
                     FK_MAVUNG = "";
                 }
-                PPXD = (txtPPXD.Text == "") ? 0 : decimal.Parse(txtPPXD.Text);
+                string SelectSQL4;
+                SelectSQL4 = "Select DMMASANPHAM.C_PPXD FROM DMMASANPHAM WHERE DMMASANPHAM.PK_ID = " + FK_DICHVU + "";
+                DataTable oDataTable4 = new DataTable();
+                ITCLIB.Admin.SQL SelectQuery4 = new ITCLIB.Admin.SQL();
+                oDataTable4 = SelectQuery4.query_data(SelectSQL4);
+                if (oDataTable4.Rows.Count != 0)
+                {
+                    if (oDataTable4.Rows[0]["C_PPXD"] != DBNull.Value)
+                    {
+                        PPXD = decimal.Parse(oDataTable4.Rows[0]["C_PPXD"].ToString());
+                    }
+                    else
+                    {
+                        PPXD = 0;
+                    }
+                }
                 CUOCCHINH = (txtC_GIACUOC.Text == "") ? 0 : decimal.Parse(txtC_GIACUOC.Text);
                 GIADOITAC = (txtC_GIADOITAC.Text == "") ? 0 : decimal.Parse(txtC_GIADOITAC.Text);
                 ctcDataTable = new DataTable();
