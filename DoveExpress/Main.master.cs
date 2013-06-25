@@ -233,6 +233,14 @@ public partial class Main : System.Web.UI.MasterPage
                         RadAjaxManager.AjaxSettings.Add(_AjaxSetting);
                         control = LoadControl("module/BAOCAOCONGNO.ascx");
                         break;
+                     case "kihieutaikhoan":
+                        _AjaxSetting.AjaxControlID = "RadGridKIHIEUTAIKHOAN";
+                        _AjaxUpdatedControl.ControlID = "RadGridKIHIEUTAIKHOAN";
+                        _AjaxUpdatedControl.LoadingPanelID = "RadAjaxLoadingPanelKIHIEUTAIKHOAN";
+                        _AjaxSetting.UpdatedControls.Add(_AjaxUpdatedControl);
+                        RadAjaxManager.AjaxSettings.Add(_AjaxSetting);
+                        control = LoadControl("module/KIHIEUTAIKHOAN.ascx");
+                        break;
                 }             
             }
             else
