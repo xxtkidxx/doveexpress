@@ -94,7 +94,15 @@
             </telerik:RadMenuItem>
         </Items>                     
     </telerik:RadMenuItem>
-    <telerik:RadMenuItem runat="server" Font-Size="Small" Text="Tài chỉnh" Value="TAICHINH">                 
+    <telerik:RadMenuItem runat="server" Font-Size="Small" Text="Tài chỉnh" Value="TAICHINH">    
+       <Items>
+            <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=SOQUYTIENMAT" Text="Sổ quỹ tiền mặt" Value="SOQUYTIENMAT">
+            </telerik:RadMenuItem> 
+            <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=BAOCAOTAICHINH" Text="Báo cáo tài chính nội bộ" Value="BAOCAOTAICHINH">
+            </telerik:RadMenuItem>
+            <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=KIHIEUTAIKHOAN" Text="Kí hiệu các tài khoản" Value="KIHIEUTAIKHOAN">
+            </telerik:RadMenuItem>
+        </Items>                        
     </telerik:RadMenuItem>  
     <telerik:RadMenuItem runat="server" Text="Cá nhân" Font-Size="Small" Value="User">
             <Items>
