@@ -3,6 +3,7 @@
 <telerik:RadCodeBlock ID="RadCodeBlockNHANGUIQT" runat="server">
 <script type="text/javascript">
     var flag = false;
+    var CUOCCHINH;
     function RowDblClick(sender, eventArgs) {
             var CanEdit = "<%=ITCLIB.Security.Security.CanEditModule("NHANGUIQT") %>";
             if ((eventArgs.get_tableView().get_name() == "MasterTableViewNHANGUIQT") && (CanEdit == "True")) {
@@ -160,7 +161,13 @@
     }
     function SetGiaCuoi() {
         flag = !flag;
-        if (flag) {
+        if (typeof (PPXD) == "undefined" || PPXD == "") {
+                PPXD = (txtPPXD.get_value() / txtC_GIACUOC.get_value()) * 100;
+        }
+        if (typeof (CUOCCHINH) == "undefined" || CUOCCHINH == "") {
+                CUOCCHINH = txtC_GIACUOC.get_value();
+        }
+        if (flag) {          
            txtC_GIACUOC.set_value(((txtC_TIENHANG.get_value() - txtC_KHAC.get_value() - txtC_COD.get_value() - txtC_KHAIGIA.get_value() - txtC_DONGGOI.get_value())/(100 + parseFloat(PPXD)))*100);
            txtPPXD.set_value(((txtC_TIENHANG.get_value() - txtC_KHAC.get_value() - txtC_COD.get_value() - txtC_KHAIGIA.get_value() - txtC_DONGGOI.get_value())/(100 + parseFloat(PPXD)))*parseFloat(PPXD));
         }
@@ -200,6 +207,7 @@
                 }
                 PPXD = arrayOfStrings[3];
                 txtC_GIACUOC.set_value(arrayOfStrings[4]);
+                CUOCCHINH = arrayOfStrings[4];
                 txtC_GIADOITAC.set_value(arrayOfStrings[5]);
             }
             else {

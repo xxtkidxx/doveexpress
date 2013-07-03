@@ -1,0 +1,60 @@
+Thời gian: 2013-06-25 13:58:43 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-06-25 14:32:05 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-06-25 14:36:21 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted KIHIEUTAIKHOANs
+Kết quả : {PK_ID:"1"}
+__________________________
+Thời gian: 2013-06-25 14:36:43 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted KIHIEUTAIKHOANs
+Kết quả : {PK_ID:"2"}
+__________________________
+Thời gian: 2013-06-25 14:37:02 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted KIHIEUTAIKHOANs
+Kết quả : {PK_ID:"3"}
+__________________________
+Thời gian: 2013-06-25 14:37:44 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated KIHIEUTAIKHOANs
+Kết quả : {PK_ID:"3"}
+__________________________
+Thời gian: 2013-06-25 14:37:56 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated KIHIEUTAIKHOANs
+Kết quả : {PK_ID:"3"}
+__________________________
+Thời gian: 2013-06-25 15:08:51 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-06-25 15:09:37 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-06-25 15:11:05 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________

@@ -1,0 +1,10 @@
+Thời gian lỗi : 2013-06-25 15:07:50 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Login.aspx. 
+Nội dung lỗi:d:\Dropbox\Work\2013\DoveExpress\Login.aspx.cs(118): error CS1002: ; expected
+__________________________
+Thời gian lỗi : 2013-06-25 15:08:00 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Login.aspx. 
+Nội dung lỗi:d:\Dropbox\Work\2013\DoveExpress\Login.aspx.cs(118): error CS1002: ; expected
+__________________________

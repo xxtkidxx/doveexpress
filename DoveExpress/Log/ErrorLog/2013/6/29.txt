@@ -1,0 +1,5 @@
+Thời gian lỗi : 2013-06-29 16:11:42 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Timeout expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+__________________________

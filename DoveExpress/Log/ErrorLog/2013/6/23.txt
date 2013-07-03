@@ -1,0 +1,20 @@
+Thời gian lỗi : 2013-06-23 10:38:54 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Invalid length for a Base-64 char array.
+__________________________
+Thời gian lỗi : 2013-06-23 11:20:02 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=QUANHUYEN. 
+Nội dung lỗi:Invalid column name 'C_ORDER'.
+__________________________
+Thời gian lỗi : 2013-06-23 11:44:20 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=TINHTHANH. 
+Nội dung lỗi:Incorrect syntax near the keyword 'ORDER'.
+__________________________
+Thời gian lỗi : 2013-06-23 15:39:43 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\module\NHANGUI.ascx.cs(699): error CS1513: } expected
+__________________________
