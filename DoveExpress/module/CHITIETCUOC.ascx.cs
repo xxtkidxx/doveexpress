@@ -42,8 +42,29 @@ public partial class module_CHITIETCUOC : System.Web.UI.UserControl
         if (arrayvalue[0] == "SelectedCTC")
         {
             UpdateDefault(arrayvalue[1], arrayvalue[2]);
-            string script = string.Format("var result = '{0}'", arrayvalue[2]);
+            string script = string.Format("var result = '{0}'", "SelectedCTC," + arrayvalue[2]);
             ScriptManager.RegisterClientScriptBlock(Page, typeof(Page), "result", script, true);           
+        }
+        else if (arrayvalue[0] == "PPXDVALUE")
+        {
+            string FK_MASANPHAM = cmbSanPham.SelectedValue;
+            string FK_MABANGCUOC = cmbMaBangCuoc.SelectedValue;
+            string SelectSQL;
+            string PPXD;
+            SelectSQL = "Select DMPPXD.C_PPXD FROM DMPPXD WHERE DMPPXD.FK_MASANPHAM =" + FK_MASANPHAM + " AND FK_MABANGCUOC = " + FK_MABANGCUOC;
+            DataTable oDataTable = new DataTable();
+            ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
+            oDataTable = SelectQuery.query_data(SelectSQL);
+            if (oDataTable.Rows.Count != 0)
+            {
+                PPXD = oDataTable.Rows[0]["C_PPXD"].ToString();
+            }
+            else
+            {
+                PPXD = "0";
+            }
+            string script = string.Format("var result = '{0}'", "PPXDVALUE," + PPXD);
+            ScriptManager.RegisterClientScriptBlock(Page, typeof(Page), "result", script, true);     
         }
     }
     protected void UpdateDefault(string ID,string FK_MAVUNG)
@@ -270,6 +291,30 @@ public partial class module_CHITIETCUOC : System.Web.UI.UserControl
         if (cmbLoaiTien.Items.Count != 0)
         {
             cmbLoaiTien.SelectedIndex = 0;
+        }
+    }
+    protected void btnSave_Click(object sender, EventArgs e)
+    {
+        string FK_MASANPHAM = cmbSanPham.SelectedValue;
+        string FK_MABANGCUOC = cmbMaBangCuoc.SelectedValue;
+        decimal C_PPXD = (txtC_PPXD.Text != "") ? decimal.Parse(txtC_PPXD.Text) : 0;
+        string SQL;
+        string SelectSQL;
+        if (FK_MASANPHAM != "" && FK_MABANGCUOC != "")
+        {
+            SelectSQL = "Select DMPPXD.C_PPXD FROM DMPPXD WHERE DMPPXD.FK_MASANPHAM =" + FK_MASANPHAM + " AND FK_MABANGCUOC = " + FK_MABANGCUOC;
+            DataTable oDataTable = new DataTable();
+            ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
+            oDataTable = SelectQuery.query_data(SelectSQL);
+            if (oDataTable.Rows.Count != 0)
+            {
+                SQL = "Update DMPPXD set C_PPXD = " + C_PPXD + " WHERE DMPPXD.FK_MASANPHAM =" + FK_MASANPHAM + " AND FK_MABANGCUOC = " + FK_MABANGCUOC;
+            }
+            else
+            {
+                SQL = "Insert into DMPPXD (FK_MASANPHAM,FK_MABANGCUOC,C_PPXD) VALUES (" + FK_MASANPHAM + "," + FK_MABANGCUOC + "," + C_PPXD + ")";
+            }
+            SelectQuery.ExecuteNonQuery(SQL);
         }
     }
 }

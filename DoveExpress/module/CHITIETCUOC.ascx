@@ -2,13 +2,15 @@
 <telerik:RadScriptBlock ID="RadScriptBlockCHITIETCUOC" runat="server">   
 <script type="text/javascript"> 
     function cmbMaBangCuocClientSelectedIndexChangedHandler(sender, eventArgs) {
-        $find("<%=RadGridCHITIETCUOC.ClientID %>").get_masterTableView().rebind();
+        $find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("PPXDVALUE,2");
+        return false;
     }
     function cmbNhomKhachHangClientSelectedIndexChangedHandler(sender, eventArgs) {
         $find("<%=RadGridCHITIETCUOC.ClientID %>").get_masterTableView().rebind();
     }
     function cmbSanPhamClientSelectedIndexChangedHandler(sender, eventArgs) {
-        $find("<%=RadGridCHITIETCUOC.ClientID %>").get_masterTableView().rebind();
+        $find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("PPXDVALUE,1");
+        return false;
     }
     function cmbLoaiTienClientSelectedIndexChangedHandler(sender, eventArgs) {
         $find("<%=RadGridCHITIETCUOC.ClientID %>").get_masterTableView().rebind();
@@ -29,19 +31,27 @@
     }
     function onResponseEndCTC() {
         if (typeof (result) != "undefined" && result && result != "") {
-            var masterTable = $find("<%= RadGridCHITIETCUOC.ClientID %>").get_masterTableView();
-            var dataItems = masterTable.get_dataItems();
-            for (var i = 0; i < dataItems.length; i++) {
-                if (dataItems[i].get_nestedViews().length > 0) {
-                    var nestedView = dataItems[i].get_nestedViews()[0];
-                    if (nestedView.get_dataItems().length > 0) {
-                        var firstDataItem = nestedView.get_dataItems()[0];
-                        if (firstDataItem.getDataKeyValue("FK_MAVUNG") == result) {
-                            nestedView.rebind();
+            var arrayOfStrings = result.split(",");
+            if (arrayOfStrings[0] == "PPXDVALUE") {
+                $find("<%=txtC_PPXD.ClientID %>").set_value(arrayOfStrings[1]);
+                $find("<%=RadGridCHITIETCUOC.ClientID %>").get_masterTableView().rebind();
+            }
+            else
+            {
+                var masterTable = $find("<%= RadGridCHITIETCUOC.ClientID %>").get_masterTableView();
+                var dataItems = masterTable.get_dataItems();
+                for (var i = 0; i < dataItems.length; i++) {
+                    if (dataItems[i].get_nestedViews().length > 0) {
+                        var nestedView = dataItems[i].get_nestedViews()[0];
+                        if (nestedView.get_dataItems().length > 0) {
+                            var firstDataItem = nestedView.get_dataItems()[0];
+                            if (firstDataItem.getDataKeyValue("FK_MAVUNG") == result) {
+                                nestedView.rebind();
+                            }
                         }
                     }
                 }
-            }
+            }            
             result = "";
         }
         return false;
@@ -183,6 +193,13 @@ ShowToggleImage="True" EmptyMessage="Chọn bảng"
             SortedDescToolTip="Sắp xếp giảm dần" SortToolTip="Click để sắp xếp" />
         <StatusBarSettings LoadingText="Đang tải..." ReadyText="Sẵn sàng" />
 </telerik:RadGrid>
+<div style ="width:100%; margin: 10px 10px 10px 10px; ">
+Phụ phí xăng dầu(%):&nbsp; 
+ <telerik:RadNumericTextBox runat="server" CssClass ="csstextNum" ID="txtC_PPXD" Width="50px">
+       <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="1"/>
+ </telerik:RadNumericTextBox>
+ <asp:Button ID="btnSave" runat="server" Text="Lưu" onclick="btnSave_Click" />
+ </div>
 <asp:SqlDataSource ID="CHITIETCUOCDataSource" runat="server" 
     ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>" 
     DeleteCommand="DELETE FROM [DMCHITIETCUOC] WHERE [PK_ID] = @PK_ID" 
