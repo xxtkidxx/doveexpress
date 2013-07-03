@@ -299,7 +299,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
         {
             FK_DICHVU = arrayvalue[1];
             string SelectSQL1;
-            SelectSQL1 = "Select DMMASANPHAM.C_PPXD FROM DMMASANPHAM WHERE DMMASANPHAM.PK_ID = " + arrayvalue[1] + "";
+            SelectSQL1 = "Select DMPPXD.C_PPXD FROM DMPPXD WHERE DMPPXD.FK_MASANPHAM =" + FK_DICHVU + " AND FK_MABANGCUOC = " + FK_MABANGCUOC;
             DataTable oDataTable1 = new DataTable();
             ITCLIB.Admin.SQL SelectQuery1 = new ITCLIB.Admin.SQL();
             oDataTable1 = SelectQuery1.query_data(SelectSQL1);
@@ -672,7 +672,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
                     FK_MAVUNG = "";
                 }
                 string SelectSQL4;
-                SelectSQL4 = "Select DMMASANPHAM.C_PPXD FROM DMMASANPHAM WHERE DMMASANPHAM.PK_ID = " + FK_DICHVU + "";
+                SelectSQL4 = "Select DMPPXD.C_PPXD FROM DMPPXD WHERE DMPPXD.FK_MASANPHAM =" + FK_DICHVU + " AND FK_MABANGCUOC = " + FK_MABANGCUOC;
                 DataTable oDataTable4 = new DataTable();
                 ITCLIB.Admin.SQL SelectQuery4 = new ITCLIB.Admin.SQL();
                 oDataTable4 = SelectQuery4.query_data(SelectSQL4);
