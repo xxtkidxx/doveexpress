@@ -12,6 +12,7 @@
 </script>
 <script type="text/javascript">
     var flag = false;
+    var CUOCCHINH;
     function RowDblClick(sender, eventArgs) {
             var CanEdit = "<%=ITCLIB.Security.Security.CanEditModule("NHANGUI") %>";
             if ((eventArgs.get_tableView().get_name() == "MasterTableViewNHANGUI") && (CanEdit == "True")) {
@@ -184,7 +185,13 @@
     }  
     function SetGiaCuoi() {
         flag = !flag;
-        if (flag) {
+        if (typeof (PPXD) == "undefined" || PPXD == "") {
+                PPXD = (txtPPXD.get_value() / txtC_GIACUOC.get_value()) * 100;
+        }
+        if (typeof (CUOCCHINH) == "undefined" || CUOCCHINH == "") {
+                CUOCCHINH = txtC_GIACUOC.get_value();
+        }
+        if (flag) {          
            txtC_GIACUOC.set_value(((txtC_TIENHANG.get_value() - txtC_KHAC.get_value() - txtC_COD.get_value() - txtC_KHAIGIA.get_value() - txtC_DONGGOI.get_value())/(100 + parseFloat(PPXD)))*100);
            txtPPXD.set_value(((txtC_TIENHANG.get_value() - txtC_KHAC.get_value() - txtC_COD.get_value() - txtC_KHAIGIA.get_value() - txtC_DONGGOI.get_value())/(100 + parseFloat(PPXD)))*parseFloat(PPXD));
         }
@@ -204,7 +211,7 @@
 <script type="text/javascript">   
      function onResponseEndNG() {
          if (typeof (result) != "undefined" && result && result != "") {
-             alert(result);
+             //alert(result);
              var arrayOfStrings = result.split(",");
              if (arrayOfStrings[0] != "msg") {
                  if (arrayOfStrings[1] != "") {
@@ -224,6 +231,7 @@
                  }
                  PPXD = arrayOfStrings[3];
                  txtC_GIACUOC.set_value(arrayOfStrings[4]);
+                 CUOCCHINH = arrayOfStrings[4];
                  txtC_GIADOITAC.set_value(arrayOfStrings[5]);
              }
              else {
