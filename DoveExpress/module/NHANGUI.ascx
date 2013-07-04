@@ -2,12 +2,15 @@
 <%@ Register TagPrefix="uc1" Namespace="ITCLIB.Admin" %>
 <telerik:RadCodeBlock ID="RadCodeBlockNHANGUI" runat="server">
 <script type="text/javascript">
-    function PrintOnClientLinkClicked() {        
-        var idduan = "<%=Request.QueryString["IDDACPDT"]%>";      
-        var url = "Default.aspx?ctl=printreport&TYPE=DONVI&DONVI="+ival1;
-        if(idduan != "") url += "&IDDACPDT=" + idduan;
-        window.open(url, '_blank');
-        window.focus();
+    function PrintOnClientLinkClicked() {
+        if ($find("<%= RadGridNHANGUI.MasterTableView.ClientID %>").get_selectedItems().length != 0) {
+            var IDNHANGUI = $find("<%= RadGridNHANGUI.MasterTableView.ClientID %>").get_selectedItems()[0].getDataKeyValue("PK_ID")
+            var url = "Default.aspx?ctl=REPORT&TYPE=INBILLFULL&ID=" + IDNHANGUI;
+            window.open(url, '_blank');
+            window.focus();
+        } else {
+            alert("Không có phiếu nhận gửi được chọn");
+        }
     }
 </script>
 <script type="text/javascript">
