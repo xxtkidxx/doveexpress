@@ -1,0 +1,30 @@
+Thời gian lỗi : 2013-07-06 13:48:24 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/CrystalImageHandler.aspx?dynamicimage=cr_tmp_image_6d3b2b49-8715-4d83-9c03-68dacabf8065.png. 
+Nội dung lỗi:The file '/DoveExpress/CrystalImageHandler.aspx' does not exist.
+__________________________
+Thời gian lỗi : 2013-07-06 13:49:15 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/CrystalImageHandler.aspx?dynamicimage=cr_tmp_image_1c1ac3ba-5042-4cfd-b8ff-37b61aaf58b5.png. 
+Nội dung lỗi:The file '/DoveExpress/CrystalImageHandler.aspx' does not exist.
+__________________________
+Thời gian lỗi : 2013-07-06 13:51:11 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/CrystalImageHandler.aspx?dynamicimage=cr_tmp_image_379986d8-f7be-4b03-83b6-7e434b9af849.png. 
+Nội dung lỗi:The file '/DoveExpress/CrystalImageHandler.aspx' does not exist.
+__________________________
+Thời gian lỗi : 2013-07-06 13:51:31 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/CrystalImageHandler.aspx?dynamicimage=cr_tmp_image_a549e30a-ee55-45bb-b216-093db727493a.png. 
+Nội dung lỗi:The file '/DoveExpress/CrystalImageHandler.aspx' does not exist.
+__________________________
+Thời gian lỗi : 2013-07-06 13:52:47 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/CrystalImageHandler.aspx?dynamicimage=cr_tmp_image_547ad89b-4a93-4f38-bc3a-8e1706451c79.png. 
+Nội dung lỗi:The file '/DoveExpress/CrystalImageHandler.aspx' does not exist.
+__________________________
+Thời gian lỗi : 2013-07-06 14:30:02 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/CrystalImageHandler.aspx?dynamicimage=cr_tmp_image_ca1f4faa-5f5b-46cc-bdf5-efbc4c4c24a4.png. 
+Nội dung lỗi:The file '/DoveExpress/CrystalImageHandler.aspx' does not exist.
+__________________________
