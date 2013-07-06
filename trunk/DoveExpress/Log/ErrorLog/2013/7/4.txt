@@ -1,0 +1,75 @@
+Thời gian lỗi : 2013-07-04 20:58:29 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+__________________________
+Thời gian lỗi : 2013-07-04 21:18:00 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/Grid/Update.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-07-04 21:18:00 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/Grid/Edit.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\7\4.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-07-04 21:18:00 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/Grid/Cancel.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-07-04 21:18:00 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/Grid/AddRecord.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\7\4.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-07-04 21:18:00 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/Grid/Insert.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-07-04 21:18:00 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/Grid/Delete.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\7\4.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-07-04 21:18:01 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/Grid/img_OpenPanel.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-07-04 21:18:01 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/Grid/Refresh.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\7\4.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-07-04 21:18:01 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/Grid/pdf.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-07-04 21:18:01 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/Grid/word.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\7\4.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-07-04 21:18:01 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/Grid/excel.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-07-04 21:18:01 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/Grid/csv.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-07-04 21:18:01 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/img_save.jpg. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-07-04 21:18:01 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/Images/img_Close.jpg. 
+Nội dung lỗi:File does not exist.
+__________________________
