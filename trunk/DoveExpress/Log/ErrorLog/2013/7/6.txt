@@ -28,3 +28,8 @@ Thời gian lỗi : 2013-07-06 14:30:02 PM
 Đường dẫn lỗi: http://localhost:49652/DoveExpress/CrystalImageHandler.aspx?dynamicimage=cr_tmp_image_ca1f4faa-5f5b-46cc-bdf5-efbc4c4c24a4.png. 
 Nội dung lỗi:The file '/DoveExpress/CrystalImageHandler.aspx' does not exist.
 __________________________
+Thời gian lỗi : 2013-07-06 16:08:31 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=REPORT&TYPE=INBILLFULL&ID=5. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\module\REPORT.ascx.cs(80): error CS1061: 'CrystalDecisions.Web.CrystalReportViewer' does not contain a definition for 'PrintToPrinter' and no extension method 'PrintToPrinter' accepting a first argument of type 'CrystalDecisions.Web.CrystalReportViewer' could be found (are you missing a using directive or an assembly reference?)
+__________________________

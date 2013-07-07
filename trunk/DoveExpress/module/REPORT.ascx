@@ -4,6 +4,6 @@
 <telerik:RadAjaxLoadingPanel Skin="Vista" ID="RadAjaxLoadingPanelReport" runat="server" />
 <div style ="text-align :center ; width :100%; padding :20px;">
  <CR:CrystalReportViewer runat="server" AutoDataBind="True" ID="crvReport" 
-    GroupTreeImagesFolderUrl="" ToolbarImagesFolderUrl="" ToolPanelWidth="200px" onunload="Report_Unload" DisplayToolbar="True" DisplayStatusbar="True" HasDrilldownTabs="True" HasCrystalLogo="False" HasPageNavigationButtons="True">
+ ToolPanelWidth="200px" onunload="Report_Unload" DisplayToolbar="True" DisplayStatusbar="True" HasDrilldownTabs="True" HasCrystalLogo="True" HasPageNavigationButtons="True" PrintMode="ActiveX" DisplayPage="True" ToolPanelView="GroupTree">
 </CR:CrystalReportViewer>
 </div>
