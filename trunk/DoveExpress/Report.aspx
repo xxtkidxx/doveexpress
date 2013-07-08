@@ -11,73 +11,38 @@
     <form id="form1" runat="server">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js" language="javascript" type="text/javascript"></script>
 <script type="text/javascript">
-    function $_create(elem, tag, target) { return addElem(elem, target, tag) }
-    function $_add(elem, target) { return addElem(elem, target) }
-    function $_GB() { return GetBrowser(); }
+    function pageLoad() {
 
-    function GetBrowser() {
-
-        //JQuery Script;
-        if ($.browser.mozilla)
-            return 'FF';
-        else if ($.browser.msie)
-            return 'IE';
-        else if ($.browser.webkit)
-            return 'OP';
-        else if ($.browser.opera)
-            return 'WK';
-        else
-            return 'FF';
-
-    }
-
-    function addElem(elem, target, tag) {
-        if (typeof elem === 'string') {
-            var el = document.getElementById(elem);
-            if (!el) {
-
-                el = document.createElement(tag);
-
-                el.id = elem;
+        if ($.browser.mozilla && !$("#ff_print").length) {
+            try {
+                var ControlName = 'ReportViewer1';
+                var innerTbody = '<tbody><tr><td><input type="image" style="border-width: 0px; padding: 2px; height: 16px; width: 16px;" alt="Print" src="Reserved.ReportViewerWebControl.axd?OpType=Resource&Version=10.0.40219.329&Name=Microsoft.Reporting.WebForms.Icons.Print.gif" title="Print"></td></tr></tbody>';
+                var innerTable = '<table title="Print" onclick="PrintFunc(\'' + ControlName + '\'); return false;" id="ff_print" style="border: 1px solid rgb(236, 233, 216); background-color: rgb(236, 233, 216); cursor: default;">' + innerTbody + '</table>'
+                var outerDiv = '<div style="display: inline; font-size: 8pt; height: 30px;" class=" "><table cellspacing="0" cellpadding="0" style="display: inline;"><tbody><tr><td height="28px">' + innerTable + '</td></tr></tbody></table></div>';
+                $("#ReportViewer1_ctl05 > div").append(outerDiv);
             }
-            elem = el;
+            catch (e) { alert(e); }
         }
-
-        if (target) {
-
-            var dest;
-            if (typeof target === 'string')
-                dest = document.getElementById(target);
-            else
-                dest = target;
-
-
-            dest.appendChild(elem);
-
-        }
-
-        return elem;
     }
+    function PrintFunc() {
+        var strFrameName = ("printer-" + (new Date()).getTime());
+        var jFrame = $("<iframe name='" + strFrameName + "'>");
+        jFrame
+        .css("width", "1px")
+        .css("height", "1px")
+        .css("position", "absolute")
+        .css("left", "-2000px")
+        .appendTo($("body:first"));
+        var objFrame = window.frames[strFrameName];
+        var objDoc = objFrame.document;
+        var jStyleDiv = $("<div>").append($("style").clone());
+        objDoc.open();
+        objDoc.write($("head").html());
+        objDoc.write($("#VisibleReportContentReportViewer1_ctl09").html());
+        objDoc.close();
+        objFrame.print();
 
-    function insert(elem, target) {
-        if (typeof target === 'string')
-            target = document.getElementById(target);
-        var myDoc = target.contentWindow || target.contentDocument;
-        if (myDoc.document) {
-            myDoc = myDoc.document;
-        }
-        var headLoc = myDoc.getElementsByTagName("head").item(0);
-        var scriptObj = myDoc.createElement("script");
-        scriptObj.setAttribute("type", "text/javascript");
-        scriptObj.innerHTML = 'window.print();';
-        if (elem)
-            elem = document.getElementById(elem);
-
-        if (elem)
-            headLoc.appendChild(elem);
-        else
-            headLoc.appendChild(scriptObj);
-
+        setTimeout(function () { jFrame.remove(); }, (60 * 1000));
     }
 </script>
         <telerik:RadScriptManager ID="RadScriptManager" runat="server">
@@ -87,7 +52,6 @@
             <LocalReport EnableExternalImages="True" EnableHyperlinks="True" ReportPath="Report/ReportBill.rdlc">
             </LocalReport>
         </rsweb:ReportViewer>
-        <cc1:PrintButton ID="PrintButton1" runat="server" />
     </div>
     </form>
 </body>
