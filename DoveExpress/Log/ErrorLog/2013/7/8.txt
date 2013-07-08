@@ -1,0 +1,505 @@
+Thời gian lỗi : 2013-07-08 20:37:23 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=Resource&Version=10.0.40219.329&Name=Microsoft.Reporting.WebForms.Icons.SpinningWheel.gif. 
+Nội dung lỗi:Path '/DoveExpress/Reserved.ReportViewerWebControl.axd' was not found.
+__________________________
+Thời gian lỗi : 2013-07-08 20:37:23 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=Resource&Version=10.0.40219.329&Name=ViewerScript. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\7\8.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-07-08 20:37:23 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=Resource&Version=10.0.40219.329&Name=ViewerScript. 
+Nội dung lỗi:Path '/DoveExpress/Reserved.ReportViewerWebControl.axd' was not found.
+__________________________
+Thời gian lỗi : 2013-07-08 20:37:23 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=Resource&Version=10.0.40219.329&Name=Microsoft.Reporting.WebForms.Icons.SpinningWheel.gif. 
+Nội dung lỗi:Path '/DoveExpress/Reserved.ReportViewerWebControl.axd' was not found.
+__________________________
+Thời gian lỗi : 2013-07-08 20:37:23 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=Resource&Version=10.0.40219.329&Name=Microsoft.Reporting.WebForms.Icons.SplitterHorizCollapse.png. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\7\8.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-07-08 20:37:23 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=Resource&Version=10.0.40219.329&Name=Microsoft.Reporting.WebForms.Icons.SplitterVertCollapse.png. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\7\8.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-07-08 20:38:11 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=Resource&Version=10.0.40219.329&Name=Microsoft.Reporting.WebForms.Icons.SpinningWheel.gif. 
+Nội dung lỗi:Path '/DoveExpress/Reserved.ReportViewerWebControl.axd' was not found.
+__________________________
+Thời gian lỗi : 2013-07-08 20:38:11 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=Resource&Version=10.0.40219.329&Name=Microsoft.Reporting.WebForms.Icons.ArrowDownDisabled.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\7\8.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-07-08 20:38:11 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=Resource&Version=10.0.40219.329&Name=Microsoft.Reporting.WebForms.Icons.ExportDisabled.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\7\8.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-07-08 20:38:11 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=Resource&Version=10.0.40219.329&Name=ViewerScript. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\7\8.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-07-08 20:38:11 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=Resource&Version=10.0.40219.329&Name=ViewerScript. 
+Nội dung lỗi:Path '/DoveExpress/Reserved.ReportViewerWebControl.axd' was not found.
+__________________________
+Thời gian lỗi : 2013-07-08 20:38:12 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=Resource&Version=10.0.40219.329&Name=Microsoft.Reporting.WebForms.Icons.SplitterHorizCollapse.png. 
+Nội dung lỗi:Path '/DoveExpress/Reserved.ReportViewerWebControl.axd' was not found.
+__________________________
+Thời gian lỗi : 2013-07-08 20:38:12 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=Resource&Version=10.0.40219.329&Name=Microsoft.Reporting.WebForms.Icons.FirstPage.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\7\8.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-07-08 20:38:12 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=Resource&Version=10.0.40219.329&Name=Microsoft.Reporting.WebForms.Icons.FirstPageDisabled.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\7\8.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-07-08 20:38:12 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=Resource&Version=10.0.40219.329&Name=Microsoft.Reporting.WebForms.Icons.BackDisabled.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\7\8.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-07-08 20:38:12 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=Resource&Version=10.0.40219.329&Name=Microsoft.Reporting.WebForms.Icons.ExportDisabled.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\7\8.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-07-08 20:38:12 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=Resource&Version=10.0.40219.329&Name=Microsoft.Reporting.WebForms.Icons.SpinningWheel.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\7\8.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-07-08 20:38:12 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=Resource&Version=10.0.40219.329&Name=Microsoft.Reporting.WebForms.Icons.PrevPageDisabled.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\7\8.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-07-08 20:38:12 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=Resource&Version=10.0.40219.329&Name=Microsoft.Reporting.WebForms.Icons.LastPage.gif. 
+Nội dung lỗi:Path '/DoveExpress/Reserved.ReportViewerWebControl.axd' was not found.
+__________________________
+Thời gian lỗi : 2013-07-08 20:38:12 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=Resource&Version=10.0.40219.329&Name=Microsoft.Reporting.WebForms.Icons.ArrowDownDisabled.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\7\8.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-07-08 20:38:12 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=Resource&Version=10.0.40219.329&Name=Microsoft.Reporting.WebForms.Icons.PrevPage.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\7\8.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-07-08 20:38:12 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=Resource&Version=10.0.40219.329&Name=Microsoft.Reporting.WebForms.Icons.LastPageDisabled.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\7\8.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-07-08 20:38:12 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=Resource&Version=10.0.40219.329&Name=Microsoft.Reporting.WebForms.Icons.NextPageDisabled.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\7\8.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-07-08 20:38:12 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=Resource&Version=10.0.40219.329&Name=Microsoft.Reporting.WebForms.Icons.NextPage.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\7\8.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-07-08 20:38:12 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=Resource&Version=10.0.40219.329&Name=Microsoft.Reporting.WebForms.Icons.RefreshDisabled.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\7\8.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-07-08 20:38:12 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=Resource&Version=10.0.40219.329&Name=Microsoft.Reporting.WebForms.Icons.BackRTLEnabled.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\7\8.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-07-08 20:38:12 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=Resource&Version=10.0.40219.329&Name=Microsoft.Reporting.WebForms.Icons.BackEnabled.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\7\8.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-07-08 20:38:12 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=Resource&Version=10.0.40219.329&Name=Microsoft.Reporting.WebForms.Icons.BackRTLDisabled.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\7\8.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-07-08 20:38:12 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=Resource&Version=10.0.40219.329&Name=Microsoft.Reporting.WebForms.Icons.Refresh.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\7\8.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-07-08 20:38:12 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=Resource&Version=10.0.40219.329&Name=Microsoft.Reporting.WebForms.Icons.SplitterVertCollapse.png. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\7\8.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-07-08 20:38:12 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=BackImage&Version=10.0.40219.329&Color=%23ECE9D8&Name=Microsoft.Reporting.WebForms.Icons.toolbar_bk.png. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\7\8.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-07-08 20:39:16 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=Resource&Version=10.0.40219.329&Name=Microsoft.Reporting.WebForms.Icons.ExportDisabled.gif. 
+Nội dung lỗi:Path '/DoveExpress/Reserved.ReportViewerWebControl.axd' was not found.
+__________________________
+Thời gian lỗi : 2013-07-08 20:39:16 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=Resource&Version=10.0.40219.329&Name=Microsoft.Reporting.WebForms.Icons.ArrowDownDisabled.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\7\8.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-07-08 20:39:16 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=Resource&Version=10.0.40219.329&Name=Microsoft.Reporting.WebForms.Icons.SpinningWheel.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\7\8.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-07-08 20:39:16 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=Resource&Version=10.0.40219.329&Name=ViewerScript. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\7\8.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-07-08 20:39:17 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=Resource&Version=10.0.40219.329&Name=Microsoft.Reporting.WebForms.Icons.SpinningWheel.gif. 
+Nội dung lỗi:Path '/DoveExpress/Reserved.ReportViewerWebControl.axd' was not found.
+__________________________
+Thời gian lỗi : 2013-07-08 20:39:17 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=Resource&Version=10.0.40219.329&Name=Microsoft.Reporting.WebForms.Icons.FirstPage.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\7\8.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-07-08 20:39:17 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=Resource&Version=10.0.40219.329&Name=Microsoft.Reporting.WebForms.Icons.SplitterHorizCollapse.png. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\7\8.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-07-08 20:39:17 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=Resource&Version=10.0.40219.329&Name=Microsoft.Reporting.WebForms.Icons.LastPage.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\7\8.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-07-08 20:39:17 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=Resource&Version=10.0.40219.329&Name=Microsoft.Reporting.WebForms.Icons.FirstPageDisabled.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\7\8.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-07-08 20:39:17 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=Resource&Version=10.0.40219.329&Name=Microsoft.Reporting.WebForms.Icons.BackDisabled.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\7\8.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-07-08 20:39:17 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=Resource&Version=10.0.40219.329&Name=Microsoft.Reporting.WebForms.Icons.ExportDisabled.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\7\8.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-07-08 20:39:17 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=Resource&Version=10.0.40219.329&Name=Microsoft.Reporting.WebForms.Icons.ArrowDownDisabled.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\7\8.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-07-08 20:39:17 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=Resource&Version=10.0.40219.329&Name=Microsoft.Reporting.WebForms.Icons.RefreshDisabled.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\7\8.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-07-08 20:39:17 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=Resource&Version=10.0.40219.329&Name=Microsoft.Reporting.WebForms.Icons.LastPageDisabled.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\7\8.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-07-08 20:39:17 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=Resource&Version=10.0.40219.329&Name=Microsoft.Reporting.WebForms.Icons.PrevPageDisabled.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\7\8.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-07-08 20:39:17 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=Resource&Version=10.0.40219.329&Name=Microsoft.Reporting.WebForms.Icons.PrevPage.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\7\8.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-07-08 20:39:17 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=Resource&Version=10.0.40219.329&Name=Microsoft.Reporting.WebForms.Icons.NextPage.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\7\8.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-07-08 20:39:17 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=Resource&Version=10.0.40219.329&Name=Microsoft.Reporting.WebForms.Icons.NextPageDisabled.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\7\8.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-07-08 20:39:17 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=Resource&Version=10.0.40219.329&Name=Microsoft.Reporting.WebForms.Icons.BackRTLEnabled.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\7\8.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-07-08 20:39:17 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=Resource&Version=10.0.40219.329&Name=Microsoft.Reporting.WebForms.Icons.BackEnabled.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\7\8.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-07-08 20:39:17 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=Resource&Version=10.0.40219.329&Name=Microsoft.Reporting.WebForms.Icons.Refresh.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\7\8.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-07-08 20:39:17 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=Resource&Version=10.0.40219.329&Name=Microsoft.Reporting.WebForms.Icons.SplitterVertCollapse.png. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\7\8.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-07-08 20:39:17 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=Resource&Version=10.0.40219.329&Name=Microsoft.Reporting.WebForms.Icons.BackRTLDisabled.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\7\8.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-07-08 20:39:17 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=BackImage&Version=10.0.40219.329&Color=%23ECE9D8&Name=Microsoft.Reporting.WebForms.Icons.toolbar_bk.png. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\7\8.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-07-08 20:45:29 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=SessionKeepAlive&ControlID=5dd3c45bb62548dfaa9f37dfd9d8c901&Mode=true. 
+Nội dung lỗi:Path '/DoveExpress/Reserved.ReportViewerWebControl.axd' was not found.
+__________________________
+Thời gian lỗi : 2013-07-08 20:45:29 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=SessionKeepAlive&ControlID=046714ae9898437d9f6806643fd4f45a&Mode=true. 
+Nội dung lỗi:Path '/DoveExpress/Reserved.ReportViewerWebControl.axd' was not found.
+__________________________
+Thời gian lỗi : 2013-07-08 20:45:30 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?Culture=1033&CultureOverrides=True&UICulture=9&UICultureOverrides=True&ReportStack=1&ControlID=5dd3c45bb62548dfaa9f37dfd9d8c901&Mode=true&OpType=ReportImage&IterationId=9fd6aaed6f8543f9bcae2577fd9e9537&StreamID=dee78776a433490e9f457a9b84e6de44. 
+Nội dung lỗi:Path '/DoveExpress/Reserved.ReportViewerWebControl.axd' was not found.
+__________________________
+Thời gian lỗi : 2013-07-08 20:45:35 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?Culture=1033&CultureOverrides=True&UICulture=9&UICultureOverrides=True&ReportStack=1&ControlID=5dd3c45bb62548dfaa9f37dfd9d8c901&Mode=true&OpType=ReportImage&IterationId=57d6cc1f583449e4b7c77eeead1f7eca&StreamID=dee78776a433490e9f457a9b84e6de44. 
+Nội dung lỗi:Path '/DoveExpress/Reserved.ReportViewerWebControl.axd' was not found.
+__________________________
+Thời gian lỗi : 2013-07-08 20:45:35 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?Culture=1033&CultureOverrides=True&UICulture=9&UICultureOverrides=True&ReportStack=1&ControlID=5dd3c45bb62548dfaa9f37dfd9d8c901&Mode=true&OpType=ReportImage&IterationId=57d6cc1f583449e4b7c77eeead1f7eca&StreamID=dee78776a433490e9f457a9b84e6de44. 
+Nội dung lỗi:Path '/DoveExpress/Reserved.ReportViewerWebControl.axd' was not found.
+__________________________
+Thời gian lỗi : 2013-07-08 20:45:35 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=SessionKeepAlive&ControlID=5dd3c45bb62548dfaa9f37dfd9d8c901&Mode=true. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\7\8.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-07-08 20:45:35 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=SessionKeepAlive&ControlID=046714ae9898437d9f6806643fd4f45a&Mode=true. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\7\8.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-07-08 20:45:39 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?Culture=1033&CultureOverrides=True&UICulture=9&UICultureOverrides=True&ReportStack=1&ControlID=5dd3c45bb62548dfaa9f37dfd9d8c901&Mode=true&OpType=ReportImage&IterationId=b95e14dbb1864b4fbf8989111ce3c87b&StreamID=dee78776a433490e9f457a9b84e6de44. 
+Nội dung lỗi:Path '/DoveExpress/Reserved.ReportViewerWebControl.axd' was not found.
+__________________________
+Thời gian lỗi : 2013-07-08 20:45:39 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?Culture=1033&CultureOverrides=True&UICulture=9&UICultureOverrides=True&ReportStack=1&ControlID=5dd3c45bb62548dfaa9f37dfd9d8c901&Mode=true&OpType=ReportImage&IterationId=b95e14dbb1864b4fbf8989111ce3c87b&StreamID=dee78776a433490e9f457a9b84e6de44. 
+Nội dung lỗi:Path '/DoveExpress/Reserved.ReportViewerWebControl.axd' was not found.
+__________________________
+Thời gian lỗi : 2013-07-08 20:45:39 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=SessionKeepAlive&ControlID=046714ae9898437d9f6806643fd4f45a&Mode=true. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\7\8.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-07-08 20:45:39 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=SessionKeepAlive&ControlID=5dd3c45bb62548dfaa9f37dfd9d8c901&Mode=true. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\7\8.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-07-08 20:45:42 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=SessionKeepAlive&ControlID=5934397364fb49abb1cb57da4afed480&Mode=true. 
+Nội dung lỗi:Path '/DoveExpress/Reserved.ReportViewerWebControl.axd' was not found.
+__________________________
+Thời gian lỗi : 2013-07-08 20:45:43 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=SessionKeepAlive&ControlID=b4879310abb14326bd53555eaa1d7929&Mode=true. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\7\8.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-07-08 20:45:43 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?Culture=1033&CultureOverrides=True&UICulture=9&UICultureOverrides=True&ReportStack=1&ControlID=5934397364fb49abb1cb57da4afed480&Mode=true&OpType=ReportImage&IterationId=a732a4bda5ef4805a11a091ccc144586&StreamID=025eb28e12d2436e9bcf3a27ff913785. 
+Nội dung lỗi:Path '/DoveExpress/Reserved.ReportViewerWebControl.axd' was not found.
+__________________________
+Thời gian lỗi : 2013-07-08 20:45:45 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?Culture=1033&CultureOverrides=True&UICulture=9&UICultureOverrides=True&ReportStack=1&ControlID=5934397364fb49abb1cb57da4afed480&Mode=true&OpType=ReportImage&IterationId=28b25dc8212d4bfd8002ae1b16e3f3ff&StreamID=598a214434ad40a9ac529d154fbed94b. 
+Nội dung lỗi:Path '/DoveExpress/Reserved.ReportViewerWebControl.axd' was not found.
+__________________________
+Thời gian lỗi : 2013-07-08 20:45:49 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?Culture=1033&CultureOverrides=True&UICulture=9&UICultureOverrides=True&ReportStack=1&ControlID=5934397364fb49abb1cb57da4afed480&Mode=true&OpType=ReportImage&IterationId=181f8e173e234f34bfa330eaac711f78&StreamID=598a214434ad40a9ac529d154fbed94b. 
+Nội dung lỗi:Path '/DoveExpress/Reserved.ReportViewerWebControl.axd' was not found.
+__________________________
+Thời gian lỗi : 2013-07-08 20:45:50 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?Culture=1033&CultureOverrides=True&UICulture=9&UICultureOverrides=True&ReportStack=1&ControlID=5934397364fb49abb1cb57da4afed480&Mode=true&OpType=ReportImage&IterationId=181f8e173e234f34bfa330eaac711f78&StreamID=598a214434ad40a9ac529d154fbed94b. 
+Nội dung lỗi:Path '/DoveExpress/Reserved.ReportViewerWebControl.axd' was not found.
+__________________________
+Thời gian lỗi : 2013-07-08 20:45:50 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=SessionKeepAlive&ControlID=5934397364fb49abb1cb57da4afed480&Mode=true. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\7\8.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-07-08 20:45:50 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=SessionKeepAlive&ControlID=b4879310abb14326bd53555eaa1d7929&Mode=true. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\7\8.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-07-08 20:45:51 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?Culture=1033&CultureOverrides=True&UICulture=9&UICultureOverrides=True&ReportStack=1&ControlID=5934397364fb49abb1cb57da4afed480&Mode=true&OpType=ReportImage&IterationId=925dbb840ed14c85ad7c8bc4e8ab24e6&StreamID=598a214434ad40a9ac529d154fbed94b. 
+Nội dung lỗi:Path '/DoveExpress/Reserved.ReportViewerWebControl.axd' was not found.
+__________________________
+Thời gian lỗi : 2013-07-08 20:45:51 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?Culture=1033&CultureOverrides=True&UICulture=9&UICultureOverrides=True&ReportStack=1&ControlID=5934397364fb49abb1cb57da4afed480&Mode=true&OpType=ReportImage&IterationId=925dbb840ed14c85ad7c8bc4e8ab24e6&StreamID=598a214434ad40a9ac529d154fbed94b. 
+Nội dung lỗi:Path '/DoveExpress/Reserved.ReportViewerWebControl.axd' was not found.
+__________________________
+Thời gian lỗi : 2013-07-08 20:45:51 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=SessionKeepAlive&ControlID=5934397364fb49abb1cb57da4afed480&Mode=true. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\7\8.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-07-08 20:45:51 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=SessionKeepAlive&ControlID=b4879310abb14326bd53555eaa1d7929&Mode=true. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\7\8.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-07-08 20:46:09 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=SessionKeepAlive&ControlID=1f4bc21d67ab4d859c752812a38d5320&Mode=true. 
+Nội dung lỗi:Path '/DoveExpress/Reserved.ReportViewerWebControl.axd' was not found.
+__________________________
+Thời gian lỗi : 2013-07-08 20:46:09 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?Culture=1033&CultureOverrides=True&UICulture=9&UICultureOverrides=True&ReportStack=1&ControlID=1f4bc21d67ab4d859c752812a38d5320&Mode=true&OpType=ReportImage&IterationId=1fd2d23b94a442339afe3f923c4f9d94&StreamID=d15561fe91db4db88cf61003ed27d141. 
+Nội dung lỗi:Path '/DoveExpress/Reserved.ReportViewerWebControl.axd' was not found.
+__________________________
+Thời gian lỗi : 2013-07-08 20:46:11 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?Culture=1033&CultureOverrides=True&UICulture=9&UICultureOverrides=True&ReportStack=1&ControlID=1f4bc21d67ab4d859c752812a38d5320&Mode=true&OpType=ReportImage&IterationId=01a42599f8ad4469ba5bd388c02a90e9&StreamID=d15561fe91db4db88cf61003ed27d141. 
+Nội dung lỗi:Path '/DoveExpress/Reserved.ReportViewerWebControl.axd' was not found.
+__________________________
+Thời gian lỗi : 2013-07-08 20:46:12 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?Culture=1033&CultureOverrides=True&UICulture=9&UICultureOverrides=True&ReportStack=1&ControlID=1f4bc21d67ab4d859c752812a38d5320&Mode=true&OpType=ReportImage&IterationId=01a42599f8ad4469ba5bd388c02a90e9&StreamID=d15561fe91db4db88cf61003ed27d141. 
+Nội dung lỗi:Path '/DoveExpress/Reserved.ReportViewerWebControl.axd' was not found.
+__________________________
+Thời gian lỗi : 2013-07-08 20:46:12 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=SessionKeepAlive&ControlID=1f4bc21d67ab4d859c752812a38d5320&Mode=true. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\7\8.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-07-08 20:46:12 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?Culture=1033&CultureOverrides=True&UICulture=9&UICultureOverrides=True&ReportStack=1&ControlID=1f4bc21d67ab4d859c752812a38d5320&Mode=true&OpType=ReportImage&IterationId=480e52835e1145e7965d6dc3db5c6ce8&StreamID=d15561fe91db4db88cf61003ed27d141. 
+Nội dung lỗi:Path '/DoveExpress/Reserved.ReportViewerWebControl.axd' was not found.
+__________________________
+Thời gian lỗi : 2013-07-08 20:46:13 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?Culture=1033&CultureOverrides=True&UICulture=9&UICultureOverrides=True&ReportStack=1&ControlID=1f4bc21d67ab4d859c752812a38d5320&Mode=true&OpType=ReportImage&IterationId=480e52835e1145e7965d6dc3db5c6ce8&StreamID=d15561fe91db4db88cf61003ed27d141. 
+Nội dung lỗi:Path '/DoveExpress/Reserved.ReportViewerWebControl.axd' was not found.
+__________________________
+Thời gian lỗi : 2013-07-08 20:46:13 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=SessionKeepAlive&ControlID=1f4bc21d67ab4d859c752812a38d5320&Mode=true. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\7\8.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-07-08 20:49:27 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=REPORT&TYPE=INBILLFULL&ID=5. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\module\REPORT.ascx(77): error CS0433: The type 'Microsoft.Reporting.WebForms.ReportViewer' exists in both 'c:\WINDOWS\assembly\GAC_MSIL\Microsoft.ReportViewer.WebForms\8.0.0.0__b03f5f7f11d50a3a\Microsoft.ReportViewer.WebForms.dll' and 'c:\WINDOWS\assembly\GAC_MSIL\Microsoft.ReportViewer.WebForms\10.0.0.0__b03f5f7f11d50a3a\Microsoft.ReportViewer.WebForms.dll'
+__________________________
+Thời gian lỗi : 2013-07-08 20:50:47 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=REPORT&TYPE=INBILLFULL&ID=5. 
+Nội dung lỗi:The Report Viewer Web Control HTTP Handler has not been registered in the application's web.config file.  Add <add verb="*" path="Reserved.ReportViewerWebControl.axd" type = "Microsoft.Reporting.WebForms.HttpHandler, Microsoft.ReportViewer.WebForms, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" /> to the system.web/httpHandlers section of the web.config file.
+__________________________
+Thời gian lỗi : 2013-07-08 20:51:10 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=REPORT&TYPE=INBILLFULL&ID=5. 
+Nội dung lỗi:The Report Viewer Web Control HTTP Handler has not been registered in the application's web.config file.  Add <add verb="*" path="Reserved.ReportViewerWebControl.axd" type = "Microsoft.Reporting.WebForms.HttpHandler, Microsoft.ReportViewer.WebForms, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" /> to the system.web/httpHandlers section of the web.config file.
+__________________________
+Thời gian lỗi : 2013-07-08 20:54:10 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/REPORT.ascx. 
+Nội dung lỗi:Path '/DoveExpress/REPORT.ascx' is forbidden.
+__________________________
+Thời gian lỗi : 2013-07-08 20:54:17 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/REPORT.ascx. 
+Nội dung lỗi:Path '/DoveExpress/module/REPORT.ascx' is forbidden.
+__________________________
+Thời gian lỗi : 2013-07-08 20:54:38 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/module/REPORT.ascx. 
+Nội dung lỗi:Path '/DoveExpress/module/REPORT.ascx' is forbidden.
+__________________________
+Thời gian lỗi : 2013-07-08 20:56:26 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default2.aspx. 
+Nội dung lỗi:The control with ID 'RadAjaxLoadingPanelReport' requires a ScriptManager on the page. The ScriptManager must appear before any controls that need it.
+__________________________
+Thời gian lỗi : 2013-07-08 20:58:36 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default2.aspx. 
+Nội dung lỗi:The Report Viewer Web Control requires a System.Web.UI.ScriptManager on the web form.
+__________________________
+Thời gian lỗi : 2013-07-08 20:59:00 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default2.aspx. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\Default2.aspx(88): error CS0433: The type 'Microsoft.Reporting.WebForms.ReportViewer' exists in both 'c:\WINDOWS\assembly\GAC_MSIL\Microsoft.ReportViewer.WebForms\8.0.0.0__b03f5f7f11d50a3a\Microsoft.ReportViewer.WebForms.dll' and 'c:\WINDOWS\assembly\GAC_MSIL\Microsoft.ReportViewer.WebForms\10.0.0.0__b03f5f7f11d50a3a\Microsoft.ReportViewer.WebForms.dll'
+__________________________
+Thời gian lỗi : 2013-07-08 20:59:15 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default2.aspx. 
+Nội dung lỗi:The Report Viewer Web Control requires a System.Web.UI.ScriptManager on the web form.
+__________________________
+Thời gian lỗi : 2013-07-08 20:59:49 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default2.aspx. 
+Nội dung lỗi:The Report Viewer Web Control requires a System.Web.UI.ScriptManager on the web form.
+__________________________
+Thời gian lỗi : 2013-07-08 21:00:54 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default2.aspx. 
+Nội dung lỗi:The Report Viewer Web Control requires a System.Web.UI.ScriptManager on the web form.
+__________________________
+Thời gian lỗi : 2013-07-08 21:24:04 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Login.aspx. 
+Nội dung lỗi:Timeout expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+__________________________
+Thời gian lỗi : 2013-07-08 21:24:16 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=REPORT&TYPE=INBILLFULL&ID=5. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\module\REPORT.ascx(5): error CS0433: The type 'Microsoft.Reporting.WebForms.ReportViewer' exists in both 'c:\WINDOWS\assembly\GAC_MSIL\Microsoft.ReportViewer.WebForms\8.0.0.0__b03f5f7f11d50a3a\Microsoft.ReportViewer.WebForms.dll' and 'c:\WINDOWS\assembly\GAC_MSIL\Microsoft.ReportViewer.WebForms\10.0.0.0__b03f5f7f11d50a3a\Microsoft.ReportViewer.WebForms.dll'
+__________________________
+Thời gian lỗi : 2013-07-08 21:54:23 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=SessionKeepAlive&ControlID=f7da96bbeac14b3189299e1559dbf73b&Mode=true. 
+Nội dung lỗi:ASP.NET session has expired
+__________________________
