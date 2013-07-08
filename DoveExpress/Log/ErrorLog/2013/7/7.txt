@@ -1,0 +1,35 @@
+Thời gian lỗi : 2013-07-07 13:28:11 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=REPORT&TYPE=INBILLFULL&ID=5. 
+Nội dung lỗi:A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+__________________________
+Thời gian lỗi : 2013-07-07 13:28:16 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=REPORT&TYPE=INBILLFULL&ID=5. 
+Nội dung lỗi:A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+__________________________
+Thời gian lỗi : 2013-07-07 13:29:16 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=REPORT&TYPE=INBILLFULL&ID=5. 
+Nội dung lỗi:A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+__________________________
+Thời gian lỗi : 2013-07-07 13:40:23 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/CrystalImageHandler.aspx?dynamicimage=cr_tmp_image_96bdcad6-4b5c-4aab-98c9-3018a28ab0e9.png. 
+Nội dung lỗi:The file '/DoveExpress/CrystalImageHandler.aspx' does not exist.
+__________________________
+Thời gian lỗi : 2013-07-07 13:51:22 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/CrystalImageHandler.aspx?dynamicimage=cr_tmp_image_cddd7d59-0f4f-459d-b786-1866de72d739.png. 
+Nội dung lỗi:The file '/DoveExpress/CrystalImageHandler.aspx' does not exist.
+__________________________
+Thời gian lỗi : 2013-07-07 13:53:53 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/CrystalImageHandler.aspx?dynamicimage=cr_tmp_image_24011f3a-cacf-4d17-97a5-352786a06cd8.png. 
+Nội dung lỗi:The file '/DoveExpress/CrystalImageHandler.aspx' does not exist.
+__________________________
+Thời gian lỗi : 2013-07-07 14:42:40 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Default.aspx?ctl=REPORT&TYPE=INBILLFULL&ID=5. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\module\REPORT.ascx.cs(80): error CS1002: ; expected
+__________________________

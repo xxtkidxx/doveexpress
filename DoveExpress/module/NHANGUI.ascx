@@ -5,7 +5,7 @@
     function PrintOnClientLinkClicked() {
         if ($find("<%= RadGridNHANGUI.MasterTableView.ClientID %>").get_selectedItems().length != 0) {
             var IDNHANGUI = $find("<%= RadGridNHANGUI.MasterTableView.ClientID %>").get_selectedItems()[0].getDataKeyValue("PK_ID")
-            var url = "Default.aspx?ctl=REPORT&TYPE=INBILLFULL&ID=" + IDNHANGUI;
+            var url = "Report.aspx?TYPE=INBILLFULL&ID=" + IDNHANGUI;
             window.open(url, '_blank');
             window.focus();
         } else {
