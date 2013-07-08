@@ -83,7 +83,7 @@
         <telerik:RadScriptManager ID="RadScriptManager" runat="server">
         </telerik:RadScriptManager>
     <div>
-        <rsweb:ReportViewer ID="ReportViewer1" runat="server" Width="960px" Font-Names="Verdana" Font-Size="8pt" Height="600px">
+        <rsweb:ReportViewer ID="ReportViewer1" runat="server" Width="100%" Height="100%">
             <LocalReport EnableExternalImages="True" EnableHyperlinks="True" ReportPath="Report/ReportBill.rdlc">
             </LocalReport>
         </rsweb:ReportViewer>
