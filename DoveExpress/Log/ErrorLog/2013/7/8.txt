@@ -503,3 +503,94 @@ Thời gian lỗi : 2013-07-08 21:54:23 PM
 Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=SessionKeepAlive&ControlID=f7da96bbeac14b3189299e1559dbf73b&Mode=true. 
 Nội dung lỗi:ASP.NET session has expired
 __________________________
+Thời gian lỗi : 2013-07-08 22:19:35 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Report.aspx?TYPE=INBILLFULL&ID=5. 
+Nội dung lỗi:The Report Viewer Web Control requires a System.Web.UI.ScriptManager on the web form.
+__________________________
+Thời gian lỗi : 2013-07-08 22:51:00 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/lib/jquery.js. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-07-08 22:51:09 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/lib/jquery.js. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-07-08 22:51:09 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/lib/jquery.js. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-07-08 22:54:45 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/lib/jquery.js. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-07-08 22:54:47 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/lib/jquery.js. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-07-08 22:54:49 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/lib/jquery.js. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-07-08 22:54:49 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/lib/jquery.js. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-07-08 22:54:50 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/lib/jquery.js. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-07-08 22:55:03 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/lib/jquery.js. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-07-08 22:55:05 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/lib/jquery.js. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-07-08 23:09:37 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Report.aspx?TYPE=INBILLFULL&ID=5. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\Report.aspx(211): error CS1061: 'ASP.report_aspx' does not contain a definition for 'rrvREXReport_ReportRefresh' and no extension method 'rrvREXReport_ReportRefresh' accepting a first argument of type 'ASP.report_aspx' could be found (are you missing a using directive or an assembly reference?)
+__________________________
+Thời gian lỗi : 2013-07-08 23:10:39 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Report.aspx?TYPE=INBILLFULL&ID=5. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\Report.aspx.cs(82): error CS0246: The type or namespace name 'CancelEventArgs' could not be found (are you missing a using directive or an assembly reference?)
+__________________________
+Thời gian lỗi : 2013-07-08 23:20:43 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Report.aspx?TYPE=INBILLFULL&ID=5. 
+Nội dung lỗi:Value cannot be null.
+Parameter name: uriString
+__________________________
+Thời gian lỗi : 2013-07-08 23:21:24 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Report.aspx?TYPE=INBILLFULL&ID=5. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\Report.aspx.cs(59): error CS0103: The name '_reportName' does not exist in the current context
+__________________________
+Thời gian lỗi : 2013-07-08 23:24:49 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=SessionKeepAlive&ControlID=d56bf96fdbd048afa5f9ed6a109be696. 
+Nội dung lỗi:ASP.NET session has expired or could not be found
+__________________________
+Thời gian lỗi : 2013-07-08 23:24:52 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=SessionKeepAlive&ControlID=d56bf96fdbd048afa5f9ed6a109be696. 
+Nội dung lỗi:ASP.NET session has expired or could not be found
+__________________________
+Thời gian lỗi : 2013-07-08 23:24:56 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=SessionKeepAlive&ControlID=d56bf96fdbd048afa5f9ed6a109be696. 
+Nội dung lỗi:ASP.NET session has expired or could not be found
+__________________________

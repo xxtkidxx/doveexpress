@@ -13,7 +13,7 @@ public partial class Report : System.Web.UI.Page
     {
         if (!ITCLIB.Security.Security.CanPrintModule("REPORT"))
         {
-            ITCLIB.Security.Security.ReturnUrl();
+            //ITCLIB.Security.Security.ReturnUrl();
         }
         if (Request.QueryString["TYPE"] != null)
         {
