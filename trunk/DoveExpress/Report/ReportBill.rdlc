@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <InteractiveHeight>11in</InteractiveHeight>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>8.5in</InteractiveWidth>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <RightMargin>1in</RightMargin>
+  <LeftMargin>1in</LeftMargin>
+  <BottomMargin>1in</BottomMargin>
+  <rd:ReportID>4a8222fc-2baa-4b81-9e5c-0e32275d47f9</rd:ReportID>
+  <Width>8.25in</Width>
+  <Body>
+    <ReportItems>
+      <Textbox Name="textbox1">
+        <rd:DefaultName>textbox1</rd:DefaultName>
+        <Top>2.75in</Top>
+        <Width>6.375in</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>1</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>0.625in</Left>
+        <Height>0.875in</Height>
+        <Value>Hi This is my Report</Value>
+      </Textbox>
+      <Image Name="image1">
+        <Sizing>AutoSize</Sizing>
+        <Top>0.25in</Top>
+        <Width>7.5in</Width>
+        <Source>External</Source>
+        <Style />
+        <Left>0.125in</Left>
+        <Height>1.53125in</Height>
+        <Value>http://2.bp.blogspot.com/_itPaUdc73fs/TE6Q-HytbzI/AAAAAAAAFvw/6c6miPCiT-Q/S1600-R/37617_419755784013_677024013_4564739_4244508_n.jpg</Value>
+      </Image>
+    </ReportItems>
+    <Height>5in</Height>
+  </Body>
+  <Language>en-US</Language>
+  <TopMargin>1in</TopMargin>
+</Report>

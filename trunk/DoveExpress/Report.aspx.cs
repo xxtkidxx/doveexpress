@@ -4,14 +4,11 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Data;
-using System.Data.SqlClient;
-using CrystalDecisions.CrystalReports.Engine;
 
-public partial class Reports_Report_CPDT : System.Web.UI.UserControl
+public partial class Report : System.Web.UI.Page
 {
     ITCLIB.Admin.SQL ac = new ITCLIB.Admin.SQL();
-    ReportDocument rd = new ReportDocument();
+    //ReportDocument rd = new ReportDocument();
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!ITCLIB.Security.Security.CanPrintModule("REPORT"))
@@ -20,7 +17,7 @@ public partial class Reports_Report_CPDT : System.Web.UI.UserControl
         }
         if (Request.QueryString["TYPE"] != null)
         {
-            crvReport.ToolPanelView = CrystalDecisions.Web.ToolPanelViewType.None;
+            //crvReport.ToolPanelView = CrystalDecisions.Web.ToolPanelViewType.None;
             string strtype = Request.QueryString["TYPE"].ToString().Trim();
             if (strtype == "INBILLFULL") //In bill full
             {
@@ -40,13 +37,13 @@ public partial class Reports_Report_CPDT : System.Web.UI.UserControl
 
     protected void Report_Unload(object sender, EventArgs e)
     {
-        rd.Close();
-        rd.Dispose();
+        //rd.Close();
+        //rd.Dispose();
     }
     //In bill full
     protected void InBillFull()
     {
-        rd.Load(Server.MapPath("Report\\INBILLFULL.rpt"));
+        //rd.Load(Server.MapPath("Report\\INBILLFULL.rpt"));
         /*string sqldonvi = String.Format("SELECT DISTINCT DOANHNGHIEP_NHADAUTU.PK_ID, DOANHNGHIEP_NHADAUTU.FK_PARENT, DOANHNGHIEP_NHADAUTU.C_TYPE, DOANHNGHIEP_NHADAUTU.C_LOAIHINHDN, DOANHNGHIEP_NHADAUTU.C_MASOTHUE, DOANHNGHIEP_NHADAUTU.C_NAME, DOANHNGHIEP_NHADAUTU.C_ENAME, DOANHNGHIEP_NHADAUTU.C_TNAME, DOANHNGHIEP_NHADAUTU.C_ADRESS, DOANHNGHIEP_NHADAUTU.C_SOGIAYPHEP, DOANHNGHIEP_NHADAUTU.C_DIENTHOAI, DOANHNGHIEP_NHADAUTU.C_FAX, DOANHNGHIEP_NHADAUTU.C_SOGPKD, DOANHNGHIEP_NHADAUTU.C_DNEMAIL, DOANHNGHIEP_NHADAUTU.C_DNWEBSITE, DUANCPDT.C_CNDT, DUANCPDT.C_NGAYCAP, DMHTDAUTU.C_NAME AS NAMEHINHTHUC, DMLINHVUCDAUTU.C_NAME AS NAMELINHVUC, DMVITRIDUAN.C_NAME AS NAMEVITRI FROM DUANCPDT_VALUE INNER JOIN DUANCPDT ON DUANCPDT_VALUE.FK_DUANCPDT = DUANCPDT.PK_ID INNER JOIN DOANHNGHIEP_NHADAUTU ON DUANCPDT_VALUE.FK_DONVI = DOANHNGHIEP_NHADAUTU.PK_ID LEFT OUTER JOIN DMHTDAUTU ON DUANCPDT.C_HINHTHUCDAUTU = DMHTDAUTU.PK_ID LEFT OUTER JOIN DMLINHVUCDAUTU ON DUANCPDT.C_LINHVUCHOATDONG = DMLINHVUCDAUTU.PK_ID LEFT OUTER JOIN DMVITRIDUAN ON DUANCPDT.C_VITRI = DMVITRIDUAN.PK_ID WHERE (DUANCPDT_VALUE.FK_DUANCPDT = {0}) AND (DOANHNGHIEP_NHADAUTU.PK_ID = {1})", Request.QueryString["IDDACPDT"], Request.QueryString["DONVI"]);
         DataTable odatadonvi = ac.query_data(sqldonvi);
         if (odatadonvi.Rows.Count > 0)
@@ -75,7 +72,7 @@ public partial class Reports_Report_CPDT : System.Web.UI.UserControl
                 rd.SetParameterValue(para.Name, "");
             }
         }*/
-        crvReport.ReportSource = rd;
-        crvReport.DataBind();
+        //crvReport.ReportSource = rd;
+        //crvReport.DataBind();
     }   
 }
