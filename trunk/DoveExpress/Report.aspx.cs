@@ -11,6 +11,7 @@ using iTextSharp.text.pdf;
 using iTextSharp.text;
 using System.IO;
 using Microsoft.Reporting.WebForms;
+using System.Drawing.Printing;
 
 public partial class Report : System.Web.UI.Page
 {
@@ -33,11 +34,6 @@ public partial class Report : System.Web.UI.Page
                 InBillFull();
             }
         }  
-    }
-    protected void Report_Unload(object sender, EventArgs e)
-    {
-        //rd.Close();
-        //rd.Dispose();
     }
     //In bill full
     protected void InBillFull()
@@ -71,8 +67,6 @@ public partial class Report : System.Web.UI.Page
                 rd.SetParameterValue(para.Name, "");
             }
         }*/
-        //crvReport.ReportSource = rd;
-        //crvReport.DataBind();
     }
     protected void btnPrint_Click(object sender, EventArgs e)
     {
