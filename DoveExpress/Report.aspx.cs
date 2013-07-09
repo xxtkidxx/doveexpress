@@ -85,7 +85,7 @@ public partial class Report : System.Web.UI.Page
         fs.Close();
 
         //Open existing PDF
-        Document document = new Document(PageSize.LETTER);
+        Document document = new Document(PageSize.A5);
         PdfReader reader = new PdfReader(HttpContext.Current.Server.MapPath("output.pdf"));
         //Getting a instance of new PDF writer
         PdfWriter writer = PdfWriter.GetInstance(document, new FileStream(
