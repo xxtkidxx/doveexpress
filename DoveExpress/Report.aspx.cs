@@ -7,6 +7,8 @@ using System.Web.UI.WebControls;
 
 public partial class Report : System.Web.UI.Page
 {
+    //http://forums.asp.net/t/1796745.aspx/1
+    //www.codeproject.com/Tips/376300/Custom-Print-Functionality-for-Microsoft-Report-Vi?msg=4479672#xx4479672xx
     ITCLIB.Admin.SQL ac = new ITCLIB.Admin.SQL();
     //ReportDocument rd = new ReportDocument();
     protected void Page_Load(object sender, EventArgs e)

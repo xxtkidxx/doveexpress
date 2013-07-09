@@ -1,0 +1,20 @@
+Thời gian lỗi : 2013-07-09 00:14:10 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Report.aspx?TYPE=INBILLFULL&ID=5. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\Report.aspx(95): error CS1061: 'Microsoft.Reporting.WebForms.ReportViewer' does not contain a definition for 'id' and no extension method 'id' accepting a first argument of type 'Microsoft.Reporting.WebForms.ReportViewer' could be found (are you missing a using directive or an assembly reference?)
+__________________________
+Thời gian lỗi : 2013-07-09 00:14:49 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Report.aspx?TYPE=INBILLFULL&ID=5. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\Report.aspx(103): error CS1061: 'Microsoft.Reporting.WebForms.ReportViewer' does not contain a definition for 'actMControl' and no extension method 'actMControl' accepting a first argument of type 'Microsoft.Reporting.WebForms.ReportViewer' could be found (are you missing a using directive or an assembly reference?)
+__________________________
+Thời gian lỗi : 2013-07-09 00:15:43 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=SessionKeepAlive&ControlID=f8327a0d2bac49d199fe8fae2c0efce8&Mode=true. 
+Nội dung lỗi:ASP.NET session has expired or could not be found
+__________________________
+Thời gian lỗi : 2013-07-09 00:37:38 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=SessionKeepAlive&ControlID=7853c92867ca4c4780e6c0f4d0451b75&Mode=true. 
+Nội dung lỗi:ASP.NET session has expired or could not be found
+__________________________
