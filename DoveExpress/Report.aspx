@@ -24,24 +24,16 @@
         }
     }
     function PrintFunc() {
-        var strFrameName = ("printer-" + (new Date()).getTime());
-        var jFrame = $("<iframe name='" + strFrameName + "'>");
-        jFrame
-        .css("width", "1px")
-        .css("height", "1px")
-        .css("position", "absolute")
-        .css("left", "-2000px")
-        .appendTo($("body:first"));
-        var objFrame = window.frames[strFrameName];
-        var objDoc = objFrame.document;
-        var jStyleDiv = $("<div>").append($("style").clone());
-        objDoc.open();
-        objDoc.write($("head").html());
-        objDoc.write($("#VisibleReportContentReportViewer1_ctl09").html());
-        objDoc.close();
-        objFrame.print();
-
-        setTimeout(function () { jFrame.remove(); }, (60 * 1000));
+        $find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("PrintReport;Full");
+    }
+</script>
+<script type="text/javascript">
+    function onResponseEndReport() {
+        if (typeof (result) != "undefined" && result && result != "") {
+            alert(result);
+            result = "";
+        }
+        return false;
     }
 </script>
          <telerik:RadScriptManager ID="RadScriptManager" runat="server">
@@ -54,6 +46,9 @@
             <LocalReport EnableExternalImages="True" EnableHyperlinks="True" ReportPath="Report/ReportBill.rdlc">
             </LocalReport>
         </rsweb:ReportViewer>
+        <iframe id="frmPrint" name="IframeName" width="500" 
+          height="200" runat="server" 
+          style="display: none" runat="server"></iframe>
     </div>
     </form>
 </body>
