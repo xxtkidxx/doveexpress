@@ -18,3 +18,18 @@ Thời gian lỗi : 2013-07-09 00:37:38 AM
 Đường dẫn lỗi: http://localhost:49652/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=SessionKeepAlive&ControlID=7853c92867ca4c4780e6c0f4d0451b75&Mode=true. 
 Nội dung lỗi:ASP.NET session has expired or could not be found
 __________________________
+Thời gian lỗi : 2013-07-09 20:26:48 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=SessionKeepAlive&ControlID=d6252a66760d4511a800b7f5e3d830cf&Mode=true. 
+Nội dung lỗi:ASP.NET session has expired or could not be found
+__________________________
+Thời gian lỗi : 2013-07-09 20:57:07 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Report.aspx?TYPE=INBILLFULL&ID=5. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\output.pdf' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-07-09 20:57:27 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Report.aspx?TYPE=INBILLFULL&ID=5. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\output.pdf' because it is being used by another process.
+__________________________
