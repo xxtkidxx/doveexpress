@@ -15,13 +15,13 @@
         </telerik:RadAjaxManager>    
     <div>
         <asp:Button ID="btnPrint" runat="server" Text="In Bill" onclick="btnPrint_Click" />
-        <rsweb:ReportViewer ID="ReportViewer1" runat="server" Width="100%" 
-            Height="100%" ShowPrintButton="False">
+        <rsweb:ReportViewer ID="ReportViewer1" runat="server" Width="795px" 
+            Height="560px">
             <LocalReport EnableExternalImages="True" EnableHyperlinks="True" ReportPath="Report/ReportBill.rdlc">
             </LocalReport>
         </rsweb:ReportViewer>
-        <iframe id="frmPrint" name="IframeName" width="500" 
-          height="200" runat="server" 
+        <iframe id="frmPrint" name="IframeName" width="795px" 
+          height="560px" runat="server" 
           style="display: none" runat="server"></iframe>
     </div>
     </form>
