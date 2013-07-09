@@ -12,10 +12,8 @@
   </Body>
   <Width>8.3in</Width>
   <Page>
-    <LeftMargin>1in</LeftMargin>
-    <RightMargin>1in</RightMargin>
-    <TopMargin>1in</TopMargin>
-    <BottomMargin>1in</BottomMargin>
+    <PageHeight>5.8in</PageHeight>
+    <PageWidth>8.3in</PageWidth>
     <Style />
   </Page>
   <EmbeddedImages>
