@@ -11,15 +11,18 @@
 <script type="text/javascript">
     function pageLoad() {
 
-        if ($.browser.mozilla && !$("#ff_print").length) {
-            try {
-                var ControlName = 'ReportViewer1';
-                var innerTbody = '<tbody><tr><td><input type="image" style="border-width: 0px; padding: 2px; height: 16px; width: 16px;" alt="Print" src="Reserved.ReportViewerWebControl.axd?OpType=Resource&Version=10.0.40219.329&Name=Microsoft.Reporting.WebForms.Icons.Print.gif" title="Print"></td></tr></tbody>';
-                var innerTable = '<table title="Print" onclick="PrintFunc(\'' + ControlName + '\'); return false;" id="ff_print" style="border: 1px solid rgb(236, 233, 216); background-color: rgb(236, 233, 216); cursor: default;">' + innerTbody + '</table>'
-                var outerDiv = '<div style="display: inline; font-size: 8pt; height: 30px;" class=" "><table cellspacing="0" cellpadding="0" style="display: inline;"><tbody><tr><td height="28px">' + innerTable + '</td></tr></tbody></table></div>';
-                $("#ReportViewer1_ctl05 > div").append(outerDiv);
+        if ($.browser.mozilla) {
+            if (!$("#ff_print").length) {
+                try {
+                    var ControlName = 'ReportViewer1';
+                    var innerTbody = '<tbody><tr><td><input type="image" style="border-width: 0px; padding: 2px; height: 16px; width: 16px;" alt="Print" src="Reserved.ReportViewerWebControl.axd?OpType=Resource&Version=10.0.40219.329&Name=Microsoft.Reporting.WebForms.Icons.Print.gif" title="Print"></td></tr></tbody>';
+                    var innerTable = '<table title="Print" onclick="PrintFunc(\'' + ControlName + '\'); return false;" id="ff_print" style="border: 1px solid rgb(236, 233, 216); background-color: rgb(236, 233, 216); cursor: default;">' + innerTbody + '</table>'
+                    var outerDiv = '<div style="display: inline; font-size: 8pt; height: 30px;" class=" "><table cellspacing="0" cellpadding="0" style="display: inline;"><tbody><tr><td height="28px">' + innerTable + '</td></tr></tbody></table></div>';
+                    $("#ReportViewer1_ctl05 > div").append(outerDiv);
+                }
+                catch (e) { alert(e); }
             }
-            catch (e) { alert(e); }
+        } else {           
         }
     }
     function PrintFunc() {
@@ -46,15 +49,11 @@
         <telerik:RadScriptManager ID="RadScriptManager" runat="server">
         </telerik:RadScriptManager> 
     <div>
-        <asp:Button ID="btnPrint" runat="server" Text="In Bill" onclick="btnPrint_Click" />
-        <rsweb:ReportViewer ID="ReportViewer1" runat="server" Width="795px" 
-            Height="560px">
-            <LocalReport EnableExternalImages="True" EnableHyperlinks="True" ReportPath="Report/ReportBill.rdlc">
+        <rsweb:ReportViewer ID="ReportViewer1" runat="server" Width="820px" 
+            Height="600px">
+            <LocalReport>
             </LocalReport>
         </rsweb:ReportViewer>
-        <iframe id="frmPrint" name="IframeName" width="1px" 
-          height="1px" runat="server" 
-          style="display: none" runat="server"></iframe>
     </div>
     </form>
 </body>
