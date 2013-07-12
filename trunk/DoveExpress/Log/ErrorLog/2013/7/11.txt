@@ -1,0 +1,80 @@
+Thời gian lỗi : 2013-07-11 22:21:47 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Report.aspx?TYPE=INBILLFULL&ID=5. 
+Nội dung lỗi:The Value expression for the text box ‘txtSoBill’ refers to a non-existing report parameter ‘C_BILL’. 
+__________________________
+Thời gian lỗi : 2013-07-11 22:29:28 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Report.aspx?TYPE=INBILLFULL&ID=5. 
+Nội dung lỗi:The Value expression for the text box ‘txtSoBill’ refers to a non-existing report parameter ‘C_BILL’. 
+__________________________
+Thời gian lỗi : 2013-07-11 22:29:32 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Report.aspx?TYPE=INBILLFULL&ID=5. 
+Nội dung lỗi:The Value expression for the text box ‘txtSoBill’ refers to a non-existing report parameter ‘C_BILL’. 
+__________________________
+Thời gian lỗi : 2013-07-11 22:30:56 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Report.aspx?TYPE=INBILLFULL&ID=5. 
+Nội dung lỗi:The Value expression for the text box ‘txtSoBill’ refers to a non-existing report parameter ‘C_BILL’. 
+__________________________
+Thời gian lỗi : 2013-07-11 22:31:23 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Report.aspx?TYPE=INBILLFULL&ID=5. 
+Nội dung lỗi:The Value expression for the text box ‘txtSoBill’ refers to a non-existing report parameter ‘C_BILL’. 
+__________________________
+Thời gian lỗi : 2013-07-11 22:31:56 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Report.aspx?TYPE=INBILLFULL&ID=5. 
+Nội dung lỗi:The Value expression for the text box ‘txtSoBill’ refers to a non-existing report parameter ‘C_BILL’. 
+__________________________
+Thời gian lỗi : 2013-07-11 22:34:12 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Report.aspx?TYPE=INBILLFULL&ID=5. 
+Nội dung lỗi:The Value expression for the text box ‘txtSoBill’ refers to a non-existing report parameter ‘C_BILL’. 
+__________________________
+Thời gian lỗi : 2013-07-11 22:34:25 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Report.aspx?TYPE=INBILLFULL&ID=5. 
+Nội dung lỗi:The Value expression for the text box ‘txtSoBill’ refers to a non-existing report parameter ‘SOBILL’. 
+__________________________
+Thời gian lỗi : 2013-07-11 22:39:42 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Report.aspx?TYPE=INBILLFULL&ID=5. 
+Nội dung lỗi:The Value expression for the text box ‘txtSoBill’ refers to a non-existing report parameter ‘C_BILL’. 
+__________________________
+Thời gian lỗi : 2013-07-11 22:52:52 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=SessionKeepAlive&ControlID=d7eb231b34284f6cb16765e473bd2123&Mode=true. 
+Nội dung lỗi:ASP.NET session has expired or could not be found
+__________________________
+Thời gian lỗi : 2013-07-11 22:58:09 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Reserved.ReportViewerWebControl.axd?OpType=SessionKeepAlive&ControlID=90d617d74ea044b5adee25e46def734e&Mode=true. 
+Nội dung lỗi:ASP.NET session has expired or could not be found
+__________________________
+Thời gian lỗi : 2013-07-11 23:04:48 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Report.aspx?TYPE=INBILLFULL&ID=5. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\Report.aspx.cs(97): error CS0103: The name 'frmPrint' does not exist in the current context
+__________________________
+Thời gian lỗi : 2013-07-11 23:04:51 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Report.aspx?TYPE=INBILLFULL&ID=5. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\Report.aspx.cs(97): error CS0103: The name 'frmPrint' does not exist in the current context
+__________________________
+Thời gian lỗi : 2013-07-11 23:08:01 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Report.aspx?TYPE=INBILLFULL&ID=5. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\Report.aspx.cs(46): error CS1003: Syntax error, '(' expected
+__________________________
+Thời gian lỗi : 2013-07-11 23:09:07 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Report.aspx?TYPE=INBILLFULL&ID=5. 
+Nội dung lỗi:An attempt was made to set a report parameter 'C_BILL' that is not defined in this report.
+__________________________
+Thời gian lỗi : 2013-07-11 23:09:36 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Report.aspx?TYPE=INBILLFULL&ID=5. 
+Nội dung lỗi:An attempt was made to set a report parameter 'C_BILL' that is not defined in this report.
+__________________________
