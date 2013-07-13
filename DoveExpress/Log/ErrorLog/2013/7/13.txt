@@ -1,0 +1,20 @@
+Thời gian lỗi : 2013-07-13 13:32:15 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Report.aspx. 
+Nội dung lỗi:The http handler needed by the Report Viewer has not been registered in the application's web.config file.  Add <add verb="*" path="Telerik.ReportViewer.axd" type = "Telerik.ReportViewer.WebForms.HttpHandler, Telerik.ReportViewer.WebForms, Version=7.1.13.612, Culture=neutral, PublicKeyToken=a9d7983dfcc261be" /> to the system.web/httpHandlers section of the configuration file.
+__________________________
+Thời gian lỗi : 2013-07-13 13:34:49 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Report.aspx?TYPE=INBILLFULL&ID=5. 
+Nội dung lỗi:A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+__________________________
+Thời gian lỗi : 2013-07-13 13:37:25 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Report.aspx?TYPE=INBILLFULL&ID=5. 
+Nội dung lỗi:A connection was successfully established with the server, but then an error occurred during the pre-login handshake. (provider: TCP Provider, error: 0 - The semaphore timeout period has expired.)
+__________________________
+Thời gian lỗi : 2013-07-13 13:56:47 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Report.aspx?TYPE=INBILLFULL&ID=5. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\Report.aspx.cs(55): error CS0246: The type or namespace name 'ReportCatalog' could not be found (are you missing a using directive or an assembly reference?)
+__________________________

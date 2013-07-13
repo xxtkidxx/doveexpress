@@ -17,8 +17,7 @@
 </head>
 <body id="body">
     <form id="form1" runat="server">              
-    <div id="content"><center id="center"><telerik:ReportViewer ID="ReportViewer1" runat="server"  style="border:1px solid #ccc;" 
-			width="99%" height="99%"/></center></div>
+    <div id="content"><center id="center"><telerik:ReportViewer ID="ReportViewer1" runat="server" Height="800px" Width="100%" /></center></div>
     </form>
 </body>
 </html>
