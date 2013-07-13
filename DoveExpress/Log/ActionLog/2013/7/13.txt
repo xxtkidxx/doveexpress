@@ -22,3 +22,21 @@ Tài khoản : sysadmin
 Module : Login
 Kết quả : Thành công
 __________________________
+Thời gian: 2013-07-13 22:10:48 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-07-13 23:30:06 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-07-13 23:31:18 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {PK_ID:"5"}
+__________________________
