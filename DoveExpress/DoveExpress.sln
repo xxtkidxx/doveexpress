@@ -8,6 +8,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "DoveExpress", ".", "{5400B4
 		SccLocalPath = "Svn"
 		SccProvider = "SubversionScc"
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		ProjectReferences = "{CC5085B0-191C-49EB-AC82-79547375DEFE}|ReportLib.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/CNC"
 		Debug.AspNetCompiler.PhysicalPath = "..\DoveExpress\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\CNC\"
@@ -30,6 +31,8 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "DoveExpress", ".", "{5400B4
 		Enlist = Required
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReportLib", "..\ReportLib\ReportLib.csproj", "{CC5085B0-191C-49EB-AC82-79547375DEFE}"
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -37,10 +40,17 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{5400B45F-370B-4520-A616-240119FAFA45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5400B45F-370B-4520-A616-240119FAFA45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5400B45F-370B-4520-A616-240119FAFA45}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{5400B45F-370B-4520-A616-240119FAFA45}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{CC5085B0-191C-49EB-AC82-79547375DEFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC5085B0-191C-49EB-AC82-79547375DEFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC5085B0-191C-49EB-AC82-79547375DEFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC5085B0-191C-49EB-AC82-79547375DEFE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

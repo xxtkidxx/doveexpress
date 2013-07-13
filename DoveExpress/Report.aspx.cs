@@ -12,6 +12,8 @@ using iTextSharp.text;
 using System.IO;
 using Microsoft.Reporting.WebForms;
 using System.Drawing.Printing;
+using Telerik.Reporting;
+using ReportLib.Bill;
 
 public partial class Report : System.Web.UI.Page
 {    
@@ -39,14 +41,20 @@ public partial class Report : System.Web.UI.Page
         DataTable oDataTable = QR.query_data(SQLSELECT);
         if (oDataTable.Rows.Count > 0)
         {
-            ReportViewer1.ProcessingMode = ProcessingMode.Local;
+            /*ReportViewer1.ProcessingMode = ProcessingMode.Local;
             LocalReport localReport = ReportViewer1.LocalReport;
             ReportViewer1.LocalReport.ReportPath = "Report/ReportBill.rdlc";
             ReportParameter C_BILL = new ReportParameter("C_BILL", oDataTable.Rows[0]["C_BILL"] != DBNull.Value ? oDataTable.Rows[0]["C_BILL"].ToString() : "");
             if (!IsPostBack)
             {
                 ReportViewer1.LocalReport.SetParameters(new ReportParameter[] { C_BILL });
-            }
+            }*/
+        }
+        if (!IsPostBack)
+        {
+            InstanceReportSource reportSource = new InstanceReportSource();
+            reportSource.ReportDocument = new Bill();
+            this.ReportViewer1.ReportSource = reportSource;
         }
     }
 }
