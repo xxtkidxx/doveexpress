@@ -248,8 +248,4 @@ public partial class module_SOQUYTIENMAT : System.Web.UI.UserControl
             return true;
         }
     }
-    protected void Button1_Click(object sender, EventArgs e)
-    {
-        ITCLIB.Admin.JavaScript.ShowMessage(Session["t"].ToString(), this);
-    }
 }
