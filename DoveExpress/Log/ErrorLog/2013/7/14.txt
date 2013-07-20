@@ -1,0 +1,55 @@
+Thời gian lỗi : 2013-07-14 22:22:48 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Telerik.ReportViewer.axd?instanceID=4a9bd15d9f714d7a8e7df8bbf09ec3b0&optype=Report&PageIndex=0&RenderID=9e75fa90ed0941589cd829a6bc102648&RenderingFormat=HTML5Interactive. 
+Nội dung lỗi:Invalid value of report parameter 'C_BILL'.
+__________________________
+Thời gian lỗi : 2013-07-14 22:24:27 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Telerik.ReportViewer.axd?instanceID=c2aa5b3083c34dcdbe301450e36a2277&optype=Report&PageIndex=0&RenderID=3f78c769ef214f68b5ca712892511259&RenderingFormat=HTML5Interactive. 
+Nội dung lỗi:Invalid value of report parameter 'C_BILL'.
+__________________________
+Thời gian lỗi : 2013-07-14 22:25:07 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Telerik.ReportViewer.axd?instanceID=3a51fee443564e62848acaf99fa634c9&optype=Report&PageIndex=0&RenderID=9583fc461e89480089ba29749bbea3b8&RenderingFormat=HTML5Interactive. 
+Nội dung lỗi:Invalid value of report parameter 'C_BILL'.
+__________________________
+Thời gian lỗi : 2013-07-14 22:27:49 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Report.aspx?TYPE=INBILLFULL&ID=5. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-07-14 22:30:08 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Report.aspx?TYPE=INBILLFULL&ID=5. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-07-14 22:32:14 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Report.aspx?TYPE=INBILLFULL&ID=5. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-07-14 22:46:48 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Report.aspx?TYPE=INBILLFULL&ID=5. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-07-14 22:47:00 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Report.aspx?TYPE=INBILLFULL&ID=5. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-07-14 22:47:19 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Telerik.ReportViewer.axd?instanceID=0f3d8aa38fbe40e5be721cb056c46621&optype=Report&PageIndex=0&RenderID=cfcaef3a49a141a88148a7c0527df088&RenderingFormat=HTML5Interactive. 
+Nội dung lỗi:Invalid value of report parameter 'C_BILL'.
+__________________________
+Thời gian lỗi : 2013-07-14 22:48:52 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Report.aspx?TYPE=INBILLFULL&ID=5. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-07-14 23:13:22 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Report.aspx?TYPE=INBILLFULL&ID=5. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________

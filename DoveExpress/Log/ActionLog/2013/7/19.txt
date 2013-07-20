@@ -1,0 +1,30 @@
+Thời gian: 2013-07-19 18:48:44 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-07-19 19:12:35 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-07-19 19:16:25 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted KIHIEUTAIKHOANs
+Kết quả : {PK_ID:"1"}
+__________________________
+Thời gian: 2013-07-19 19:16:44 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted KIHIEUTAIKHOANs
+Kết quả : {PK_ID:"2"}
+__________________________
+Thời gian: 2013-07-19 19:17:16 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted KIHIEUTAIKHOANs
+Kết quả : {PK_ID:"3"}
+__________________________
