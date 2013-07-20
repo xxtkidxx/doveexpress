@@ -131,10 +131,6 @@ public partial class module_SOQUYTIENMAT : System.Web.UI.UserControl
                 // insert item
                 radNgaySOQUYTIENMAT.SelectedDate = System.DateTime.Now;
                 cmbC_TYPE.SelectedIndex = 0;
-                if (cmbFK_KIHIEUTAIKHOAN.Items.Count != 0)
-                {
-                    cmbFK_KIHIEUTAIKHOAN.SelectedIndex = 0;
-                }
             }
             else
             {
@@ -150,13 +146,30 @@ public partial class module_SOQUYTIENMAT : System.Web.UI.UserControl
             {
                 TONGTHU = TONGTHU + double.Parse(e.Item.Cells[8].Text);
                 TONCUOIKY = double.Parse(e.Item.Cells[8].Text) + TONCUOIKY;
+                e.Item.Cells[9].Text = TONCUOIKY.ToString();
             }
             else if (e.Item.Cells[5].Text == "Chi")
             {
                 TONGCHI = TONGCHI + double.Parse(e.Item.Cells[8].Text);
                 TONCUOIKY = TONCUOIKY - double.Parse(e.Item.Cells[8].Text);
+                e.Item.Cells[9].Text = TONCUOIKY.ToString();
             }
-            e.Item.Cells[9].Text = TONCUOIKY.ToString();
+            else if (e.Item.Cells[5].Text == "Tồn đầu kì")
+            {
+                TONDAUKY = double.Parse(e.Item.Cells[8].Text);
+                e.Item.Cells[9].Text = TONDAUKY.ToString();
+                TONCUOIKY = TONDAUKY;
+                e.Item.BackColor = System.Drawing.Color.Red;
+                e.Item.ForeColor = System.Drawing.Color.White;
+            }
+            else if (e.Item.Cells[5].Text == "Tồn cuối kỳ")
+            {
+                TONCUOIKY = double.Parse(e.Item.Cells[8].Text);
+                e.Item.Cells[9].Text = TONDAUKY.ToString();
+                e.Item.BackColor = System.Drawing.Color.Red;
+                e.Item.ForeColor = System.Drawing.Color.White;
+            }
+           
         }
     }
     protected void RadGridSOQUYTIENMAT_ItemCommand(object sender, GridCommandEventArgs e)
@@ -179,7 +192,22 @@ public partial class module_SOQUYTIENMAT : System.Web.UI.UserControl
         }
         else if (e.CommandName == RadGrid.PerformInsertCommandName)
         {
-            
+            GridEditableItem editItem = (GridEditableItem)e.Item;
+            RadComboBox cmbC_TYPE = (RadComboBox)editItem.FindControl("cmbC_TYPE");
+            if (cmbC_TYPE.SelectedIndex == 2)
+            {
+                SOQUYTIENMATDataSource.InsertParameters["FK_KIHIEUTAIKHOAN"].DefaultValue = "0";
+                SOQUYTIENMATDataSource.InsertParameters["C_ORDER"].DefaultValue = "0";
+            }
+            else if (cmbC_TYPE.SelectedIndex == 3)
+            {
+                SOQUYTIENMATDataSource.InsertParameters["FK_KIHIEUTAIKHOAN"].DefaultValue = "0";
+                SOQUYTIENMATDataSource.InsertParameters["C_ORDER"].DefaultValue = "2";
+            }
+            else
+            {
+                SOQUYTIENMATDataSource.InsertParameters["C_ORDER"].DefaultValue = "1";
+            }
         }
         else if (e.CommandName == RadGrid.UpdateCommandName)
         {

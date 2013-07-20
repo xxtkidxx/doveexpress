@@ -103,7 +103,7 @@
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
                 </telerik:GridBoundColumn>
         </Columns>
-        <EditFormSettings InsertCaption="Thêm nhận gửi mới" CaptionFormatString="Sửa nhận gửi: <b>{0}</b>" CaptionDataField="C_BILL" EditFormType="Template" PopUpSettings-Width="900px">
+        <EditFormSettings InsertCaption="Thêm nhận gửi mới" CaptionFormatString="Sửa nhận gửi: <b>{0}</b>" CaptionDataField="C_DESC" EditFormType="Template" PopUpSettings-Width="900px">
         <EditColumn UniqueName="EditCommandColumn1" FilterControlAltText="Filter EditCommandColumn1 column"></EditColumn>
            <FormTemplate>
             <div class="headerthongtin">
@@ -131,6 +131,8 @@
                             <Items>
                                 <telerik:RadComboBoxItem Value ="Thu" Text ="Thu" />
                                 <telerik:RadComboBoxItem Value ="Chi" Text ="Chi" />
+                                <telerik:RadComboBoxItem Value ="Tồn đầu kì" Text ="Tồn đầu kì" />
+                                <telerik:RadComboBoxItem Value ="Tồn cuối kỳ" Text ="Tồn cuối kỳ" />
                             </Items>
                    </telerik:RadComboBox>
                 </td>               
