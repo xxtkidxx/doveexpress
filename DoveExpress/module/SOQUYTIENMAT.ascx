@@ -202,4 +202,3 @@
 <asp:SqlDataSource ID="KIHIEUTAIKHOANDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
  SelectCommand="SELECT DMKIHIEUTAIKHOAN.* FROM DMKIHIEUTAIKHOAN" >
 </asp:SqlDataSource>
-<asp:Button ID="Button1" runat="server" onclick="Button1_Click" Text="Button" />
