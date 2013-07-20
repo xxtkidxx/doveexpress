@@ -1,0 +1,5 @@
+Thời gian lỗi : 2013-07-19 18:51:40 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=KIHIEUTAIKHOAN. 
+Nội dung lỗi:Invalid object name 'DMKIHIEUTAIKHOAN'.
+__________________________
