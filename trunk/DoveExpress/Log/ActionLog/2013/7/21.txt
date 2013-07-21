@@ -1,0 +1,156 @@
+Thời gian: 2013-07-21 00:38:53 AM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-07-21 00:39:58 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted SOQUYTIENMATs
+Kết quả : {PK_ID:"5"}
+__________________________
+Thời gian: 2013-07-21 00:49:20 AM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-07-21 00:50:06 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted SOQUYTIENMATs
+Kết quả : {PK_ID:"6"}
+__________________________
+Thời gian: 2013-07-21 00:55:25 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted SOQUYTIENMATs
+Kết quả : {PK_ID:"7"}
+__________________________
+Thời gian: 2013-07-21 00:59:08 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted SOQUYTIENMATs
+Kết quả : {PK_ID:"8"}
+__________________________
+Thời gian: 2013-07-21 13:29:05 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-07-21 14:22:04 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-07-21 14:34:20 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-07-21 14:51:24 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted SOQUYTIENMATs
+Kết quả : {PK_ID:"9"}
+__________________________
+Thời gian: 2013-07-21 14:52:27 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted SOQUYTIENMATs
+Kết quả : {PK_ID:"10"}
+__________________________
+Thời gian: 2013-07-21 14:57:38 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted SOQUYTIENMATs
+Kết quả : {PK_ID:"10"}
+__________________________
+Thời gian: 2013-07-21 14:58:10 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted SOQUYTIENMATs
+Kết quả : {PK_ID:"11"}
+__________________________
+Thời gian: 2013-07-21 15:02:37 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-07-21 15:02:58 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted SOQUYTIENMATs
+Kết quả : {PK_ID:"11"}
+__________________________
+Thời gian: 2013-07-21 15:05:35 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted SOQUYTIENMATs
+Kết quả : {PK_ID:"12"}
+__________________________
+Thời gian: 2013-07-21 15:18:24 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated SOQUYTIENMATs
+Kết quả : {PK_ID:"12"}
+__________________________
+Thời gian: 2013-07-21 15:21:38 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated SOQUYTIENMATs
+Kết quả : {PK_ID:"12"}
+__________________________
+Thời gian: 2013-07-21 15:22:02 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted SOQUYTIENMATs
+Kết quả : {PK_ID:"12"}
+__________________________
+Thời gian: 2013-07-21 15:22:22 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted SOQUYTIENMATs
+Kết quả : {PK_ID:"13"}
+__________________________
+Thời gian: 2013-07-21 15:22:30 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted SOQUYTIENMATs
+Kết quả : {PK_ID:"13"}
+__________________________
+Thời gian: 2013-07-21 15:33:13 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-07-21 15:52:29 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-07-21 15:53:09 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-07-21 16:27:25 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-07-21 16:29:16 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
