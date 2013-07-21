@@ -33,20 +33,99 @@
         }
     }
 </script>
+<script type="text/javascript">
+    function cmbYearClientSelectedIndexChangedHandler(sender, eventArgs) {
+        $find("<%=RadGridSOQUYTIENMAT.ClientID %>").get_masterTableView().rebind();
+        return false;
+    }
+    function cmbMonthClientSelectedIndexChangedHandler(sender, eventArgs) {
+        $find("<%=RadGridSOQUYTIENMAT.ClientID %>").get_masterTableView().rebind();
+        return false;
+    }
+</script>
+<div style ="width:100%; margin: 10px 10px 10px 10px;">
+Chọn tháng:&nbsp; 
+<telerik:RadComboBox ID="cmbMonth" runat="server" onclientselectedindexchanged="cmbMonthClientSelectedIndexChangedHandler"
+ShowToggleImage="True" EmptyMessage="Chọn tháng" onprerender="cmbMonth_PreRender">
+<Items>
+    <telerik:RadComboBoxItem Value ="1" Text ="Tháng 1" />
+    <telerik:RadComboBoxItem Value ="2" Text ="Tháng 2" />
+    <telerik:RadComboBoxItem Value ="3" Text ="Tháng 3" />
+    <telerik:RadComboBoxItem Value ="4" Text ="Tháng 4" />
+    <telerik:RadComboBoxItem Value ="5" Text ="Tháng 5" />
+    <telerik:RadComboBoxItem Value ="6" Text ="Tháng 6" />
+    <telerik:RadComboBoxItem Value ="7" Text ="Tháng 7" />
+    <telerik:RadComboBoxItem Value ="8" Text ="Tháng 8" />
+    <telerik:RadComboBoxItem Value ="9" Text ="Tháng 9" />
+    <telerik:RadComboBoxItem Value ="10" Text ="Tháng 10" />
+    <telerik:RadComboBoxItem Value ="11" Text ="Tháng 11" />
+    <telerik:RadComboBoxItem Value ="12" Text ="Tháng 12" />
+</Items>
+</telerik:RadComboBox>
+Chọn năm:&nbsp; 
+<telerik:RadComboBox ID="cmbYear" runat="server" onclientselectedindexchanged="cmbYearClientSelectedIndexChangedHandler"
+ShowToggleImage="True" EmptyMessage="Chọn năm" onprerender="cmbYear_PreRender">
+<Items>
+</Items>
+</telerik:RadComboBox>
+</div>
 </telerik:RadCodeBlock>
 <telerik:RadAjaxLoadingPanel Skin="Vista" ID="RadAjaxLoadingPanelSOQUYTIENMAT" runat="server" />
+<telerik:RadAjaxPanel ID="RadAjaxPanelSOQUYTIENMAT" runat="server" Height="200px" Width="100%">
+<style type="text/css">
+table.gridtable {
+	font-family: verdana,arial,sans-serif;
+	font-size:13px;
+	color:#333333;
+	border-width: 1px;
+	border-color: #666666;
+	border-collapse: collapse;
+	width:50%;
+	margin: 10px 10px 10px 10px;
+}
+table.gridtable th {
+	border-width: 1px;
+	padding: 8px;
+	font-weight: bold;
+	border-style: solid;
+	border-color: #666666;
+	background-color: #dedede;
+}
+table.gridtable td {
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #666666;
+	background-color: #ffffff;
+}
+</style>
+<table class="gridtable">
+<tr>
+	<th>Tồn đầu</th><th>Tổng thu</th><th>Tổng chi</th><th>Tồn cuối</th>
+</tr>
+<tr>
+	<td>
+        <telerik:RadNumericTextBox  ID="txtTONDAU" Enabled="false" ForeColor="Red" Width ="90%" Runat="server"><NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/></telerik:RadNumericTextBox>    
+    </td>
+    <td>
+        <telerik:RadNumericTextBox  ID="txtTONGTHU" Enabled="false" ForeColor="Red" Width ="90%" Runat="server"><NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/></telerik:RadNumericTextBox>    
+    </td>
+    <td>
+        <telerik:RadNumericTextBox  ID="txtTONGCHI" Enabled="false" ForeColor="Red" Width ="90%" Runat="server"><NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/></telerik:RadNumericTextBox>    
+    </td>
+    <td>
+        <telerik:RadNumericTextBox  ID="txtTONCUOI" Enabled="false" ForeColor="Red" Width ="90%" Runat="server"><NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/></telerik:RadNumericTextBox>    
+    </td>
+</tr>
+</table>
 <telerik:RadGrid ID="RadGridSOQUYTIENMAT" runat="server" Skin="Vista" 
-    AllowPaging="False" AllowSorting="True" 
-    AllowFilteringByColumn="True" GridLines="None" ShowStatusBar="True"
-    AutoGenerateColumns="False"  
-    AllowMultiRowEdit="True" AllowAutomaticDeletes="True" 
-    AllowAutomaticInserts="True" AllowAutomaticUpdates="True" 
-    DataSourceID="SOQUYTIENMATDataSource" ShowFooter="True"
-    ondatabound="RadGridSOQUYTIENMAT_DataBound" 
-    onitemdeleted="RadGridSOQUYTIENMAT_ItemDeleted" oniteminserted="RadGridSOQUYTIENMAT_ItemInserted" 
+    AllowPaging="False" AllowSorting="True" AllowFilteringByColumn="True" GridLines="None" ShowStatusBar="True"
+    AutoGenerateColumns="False" AllowMultiRowEdit="True" AllowAutomaticDeletes="True" 
+    AllowAutomaticInserts="True" AllowAutomaticUpdates="True" DataSourceID="SOQUYTIENMATDataSource" ShowFooter="True"
+    ondatabound="RadGridSOQUYTIENMAT_DataBound" onitemdeleted="RadGridSOQUYTIENMAT_ItemDeleted" oniteminserted="RadGridSOQUYTIENMAT_ItemInserted" 
     onitemupdated="RadGridSOQUYTIENMAT_ItemUpdated" 
-    onitemcommand="RadGridSOQUYTIENMAT_ItemCommand" 
-    onitemdatabound="RadGridSOQUYTIENMAT_ItemDataBound" CellSpacing="0">     
+    onitemcommand="RadGridSOQUYTIENMAT_ItemCommand" onitemdatabound="RadGridSOQUYTIENMAT_ItemDataBound" CellSpacing="0" 
+    onexcelmlexportrowcreated="RadGridSOQUYTIENMAT_ExcelMLExportRowCreated">     
     <ExportSettings HideStructureColumns="true" ExportOnlyData="true" IgnorePaging="true" OpenInNewWindow="true" Excel-Format="ExcelML"></ExportSettings>   
      <GroupingSettings CaseSensitive ="false"  />
     <MasterTableView Name="MasterTableViewSOQUYTIENMAT" CommandItemDisplay="Top" DataSourceID="SOQUYTIENMATDataSource" DataKeyNames="PK_ID" ClientDataKeyNames="PK_ID" EditMode="PopUp" NoMasterRecordsText="Không có dữ liệu">
@@ -96,12 +175,18 @@
                 <telerik:GridBoundColumn UniqueName="C_DESC" HeaderText="Diễn giải" DataField="C_DESC" HeaderStyle-Width="200px" HeaderStyle-HorizontalAlign="Center"
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
                 </telerik:GridBoundColumn>
-                <telerik:GridBoundColumn UniqueName="C_SOTIEN" HeaderText="Số tiền" DataField="C_SOTIEN" HeaderStyle-Width="110px" HeaderStyle-HorizontalAlign="Center"
-                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
-                </telerik:GridBoundColumn>
-                <telerik:GridBoundColumn UniqueName="C_TON" HeaderText="Tồn" DataField="C_TON" HeaderStyle-Width="90px" HeaderStyle-HorizontalAlign="Center"
-                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
-                </telerik:GridBoundColumn>
+                <telerik:GridTemplateColumn UniqueName="C_SOTIEN" HeaderText="Số tiền" DataField="C_SOTIEN" HeaderStyle-Width="110px" HeaderStyle-HorizontalAlign="Center"
+                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">   
+                   <ItemTemplate>
+                      <telerik:RadNumericTextBox  ID="txtC_SOTIEN" Enabled="false" Text ='<%#Bind("C_SOTIEN")%>' Width ="90%" Runat="server"><NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/></telerik:RadNumericTextBox>
+                    </ItemTemplate>
+               </telerik:GridTemplateColumn>
+               <telerik:GridTemplateColumn UniqueName="C_TON" HeaderText="Tồn" HeaderStyle-Width="90px" HeaderStyle-HorizontalAlign="Center"
+                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">   
+                   <ItemTemplate>
+                      <telerik:RadNumericTextBox  ID="txtC_TON" Enabled="false" Width ="90%" Runat="server"><NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/></telerik:RadNumericTextBox>
+                    </ItemTemplate>
+               </telerik:GridTemplateColumn>
         </Columns>
         <EditFormSettings InsertCaption="Thêm nhận gửi mới" CaptionFormatString="Sửa nhận gửi: <b>{0}</b>" CaptionDataField="C_DESC" EditFormType="Template" PopUpSettings-Width="900px">
         <EditColumn UniqueName="EditCommandColumn1" FilterControlAltText="Filter EditCommandColumn1 column"></EditColumn>
@@ -174,12 +259,17 @@
             SortedDescToolTip="Sắp xếp giảm dần" SortToolTip="Click để sắp xếp" />
         <StatusBarSettings LoadingText="Đang tải..." ReadyText="Sẵn sàng" />
 </telerik:RadGrid>
+</telerik:RadAjaxPanel>
 <asp:SqlDataSource ID="SOQUYTIENMATDataSource" runat="server" 
     ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>" 
     DeleteCommand="DELETE FROM [SOQUYTIENMAT] WHERE [PK_ID] = @PK_ID" 
     InsertCommand="INSERT INTO [SOQUYTIENMAT] ([C_NGAY], [C_TYPE], [FK_KIHIEUTAIKHOAN], [C_DESC], [C_SOTIEN], [C_TON],[C_ORDER]) VALUES (@C_NGAY, @C_TYPE, @FK_KIHIEUTAIKHOAN, @C_DESC, @C_SOTIEN, 0, @C_ORDER)"
-    SelectCommand="SELECT [SOQUYTIENMAT].[PK_ID], [SOQUYTIENMAT].[C_NGAY], [SOQUYTIENMAT].[C_TYPE], [SOQUYTIENMAT].[FK_KIHIEUTAIKHOAN], [SOQUYTIENMAT].[C_DESC], [SOQUYTIENMAT].[C_SOTIEN], [SOQUYTIENMAT].[C_TON], [SOQUYTIENMAT].[C_ORDER],DMKIHIEUTAIKHOAN.C_NAME as KIHIEUTAIKHOANNAME FROM [SOQUYTIENMAT] LEFT OUTER JOIN DMKIHIEUTAIKHOAN ON SOQUYTIENMAT.FK_KIHIEUTAIKHOAN=DMKIHIEUTAIKHOAN.C_CODE ORDER BY C_ORDER ASC, PK_ID ASC" 
+    SelectCommand="SELECT [SOQUYTIENMAT].[PK_ID], [SOQUYTIENMAT].[C_NGAY], [SOQUYTIENMAT].[C_TYPE], [SOQUYTIENMAT].[FK_KIHIEUTAIKHOAN], [SOQUYTIENMAT].[C_DESC], [SOQUYTIENMAT].[C_SOTIEN], [SOQUYTIENMAT].[C_TON], [SOQUYTIENMAT].[C_ORDER],DMKIHIEUTAIKHOAN.C_NAME as KIHIEUTAIKHOANNAME FROM [SOQUYTIENMAT] LEFT OUTER JOIN DMKIHIEUTAIKHOAN ON SOQUYTIENMAT.FK_KIHIEUTAIKHOAN=DMKIHIEUTAIKHOAN.C_CODE  WHERE month([SOQUYTIENMAT].[C_NGAY]) = @MONTH AND year([SOQUYTIENMAT].[C_NGAY]) = @YEAR ORDER BY C_ORDER ASC, C_NGAY ASC, PK_ID ASC" 
     UpdateCommand="UPDATE [SOQUYTIENMAT] SET [C_NGAY] = @C_NGAY, [C_TYPE] = @C_TYPE, [FK_KIHIEUTAIKHOAN] = @FK_KIHIEUTAIKHOAN,[C_DESC] = @C_DESC, [C_SOTIEN] = @C_SOTIEN WHERE [PK_ID] = @PK_ID">
+    <SelectParameters>
+        <asp:ControlParameter ControlID="cmbMonth" Name="MONTH" PropertyName="SelectedValue" />
+        <asp:ControlParameter ControlID="cmbYear" Name="YEAR" PropertyName="SelectedValue" />
+    </SelectParameters>
     <DeleteParameters>
         <asp:Parameter Name="PK_ID" Type="Int32" />
     </DeleteParameters>
@@ -202,3 +292,4 @@
 <asp:SqlDataSource ID="KIHIEUTAIKHOANDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
  SelectCommand="SELECT DMKIHIEUTAIKHOAN.* FROM DMKIHIEUTAIKHOAN" >
 </asp:SqlDataSource>
+<asp:Button ID="Button1" runat="server" onclick="Button1_Click" Text="Button" />
