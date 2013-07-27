@@ -374,10 +374,6 @@ public partial class module_SOQUYTIENMAT : System.Web.UI.UserControl
             SOQUYTIENMATDataSource.SelectParameters["YEAR"].DefaultValue = System.DateTime.Now.Year.ToString();
         }
     }
-    protected void Button1_Click(object sender, EventArgs e)
-    {
-        ITCLIB.Admin.JavaScript.ShowMessage(Session["t"].ToString(), this);
-    }
     protected void RadGridSOQUYTIENMAT_ExcelMLExportRowCreated(object sender, Telerik.Web.UI.GridExcelBuilder.GridExportExcelMLRowCreatedArgs e)
     {
         if (e.RowType == GridExportExcelMLRowType.HeaderRow)
@@ -440,7 +436,6 @@ public partial class module_SOQUYTIENMAT : System.Web.UI.UserControl
             NAMTRUOC = int.Parse(cmbYear.SelectedValue).ToString();
         }
         string SelectSQL = "SELECT [SOQUYTIENMAT].[PK_ID], [SOQUYTIENMAT].[C_NGAY], [SOQUYTIENMAT].[C_TYPE], [SOQUYTIENMAT].[C_DESC], [SOQUYTIENMAT].[C_SOTIEN] FROM [SOQUYTIENMAT] WHERE month([SOQUYTIENMAT].[C_NGAY]) =" + THANGTRUOC + " AND year([SOQUYTIENMAT].[C_NGAY]) =" + NAMTRUOC + " AND [SOQUYTIENMAT].[C_TYPE] = N'Tồn cuối kỳ'";
-        Session["t"] = SelectSQL;
         DataTable oDataTable = new DataTable();
         ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
         oDataTable = SelectQuery.query_data(SelectSQL);
