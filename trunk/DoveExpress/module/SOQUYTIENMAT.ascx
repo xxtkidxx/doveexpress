@@ -101,7 +101,7 @@ table.gridtable td {
 </style>
 <table class="gridtable">
 <tr>
-	<th>Tồn đầu</th><th>Tổng thu</th><th>Tổng chi</th><th>Tồn cuối</th>
+	<th>Tồn đầu</th><th>Tổng thu</th><th>Tổng chi</th><th>Tồn cuối</th><th>Tồn thực tế</th>
 </tr>
 <tr>
 	<td>
@@ -115,6 +115,9 @@ table.gridtable td {
     </td>
     <td>
         <telerik:RadNumericTextBox  ID="txtTONCUOI" Enabled="false" ForeColor="Red" Width ="90%" Runat="server"><NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/></telerik:RadNumericTextBox>    
+    </td>
+    <td>
+        <telerik:RadNumericTextBox  ID="txtTONTHUCTE" Enabled="false" ForeColor="Red" Width ="90%" Runat="server"><NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/></telerik:RadNumericTextBox>    
     </td>
 </tr>
 </table>
@@ -216,7 +219,6 @@ table.gridtable td {
                             <Items>
                                 <telerik:RadComboBoxItem Value ="Thu" Text ="Thu" />
                                 <telerik:RadComboBoxItem Value ="Chi" Text ="Chi" />
-                                <telerik:RadComboBoxItem Value ="Tồn đầu kì" Text ="Tồn đầu kì" />
                                 <telerik:RadComboBoxItem Value ="Tồn cuối kỳ" Text ="Tồn cuối kỳ" />
                             </Items>
                    </telerik:RadComboBox>
@@ -264,7 +266,7 @@ table.gridtable td {
     ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>" 
     DeleteCommand="DELETE FROM [SOQUYTIENMAT] WHERE [PK_ID] = @PK_ID" 
     InsertCommand="INSERT INTO [SOQUYTIENMAT] ([C_NGAY], [C_TYPE], [FK_KIHIEUTAIKHOAN], [C_DESC], [C_SOTIEN], [C_TON],[C_ORDER]) VALUES (@C_NGAY, @C_TYPE, @FK_KIHIEUTAIKHOAN, @C_DESC, @C_SOTIEN, 0, @C_ORDER)"
-    SelectCommand="SELECT [SOQUYTIENMAT].[PK_ID], [SOQUYTIENMAT].[C_NGAY], [SOQUYTIENMAT].[C_TYPE], [SOQUYTIENMAT].[FK_KIHIEUTAIKHOAN], [SOQUYTIENMAT].[C_DESC], [SOQUYTIENMAT].[C_SOTIEN], [SOQUYTIENMAT].[C_TON], [SOQUYTIENMAT].[C_ORDER],DMKIHIEUTAIKHOAN.C_NAME as KIHIEUTAIKHOANNAME FROM [SOQUYTIENMAT] LEFT OUTER JOIN DMKIHIEUTAIKHOAN ON SOQUYTIENMAT.FK_KIHIEUTAIKHOAN=DMKIHIEUTAIKHOAN.C_CODE  WHERE month([SOQUYTIENMAT].[C_NGAY]) = @MONTH AND year([SOQUYTIENMAT].[C_NGAY]) = @YEAR ORDER BY C_ORDER ASC, C_NGAY ASC, PK_ID ASC" 
+    SelectCommand="SELECT [SOQUYTIENMAT].[PK_ID], [SOQUYTIENMAT].[C_NGAY], [SOQUYTIENMAT].[C_TYPE], [SOQUYTIENMAT].[FK_KIHIEUTAIKHOAN], [SOQUYTIENMAT].[C_DESC], [SOQUYTIENMAT].[C_SOTIEN], [SOQUYTIENMAT].[C_TON], [SOQUYTIENMAT].[C_ORDER],DMKIHIEUTAIKHOAN.C_NAME as KIHIEUTAIKHOANNAME FROM [SOQUYTIENMAT] LEFT OUTER JOIN DMKIHIEUTAIKHOAN ON SOQUYTIENMAT.FK_KIHIEUTAIKHOAN=DMKIHIEUTAIKHOAN.C_CODE  WHERE (month([SOQUYTIENMAT].[C_NGAY]) = @MONTH AND year([SOQUYTIENMAT].[C_NGAY]) = @YEAR) OR ([SOQUYTIENMAT].[C_TYPE] = N'Tồn đầu kỳ') ORDER BY C_ORDER ASC, C_NGAY ASC, PK_ID ASC" 
     UpdateCommand="UPDATE [SOQUYTIENMAT] SET [C_NGAY] = @C_NGAY, [C_TYPE] = @C_TYPE, [FK_KIHIEUTAIKHOAN] = @FK_KIHIEUTAIKHOAN,[C_DESC] = @C_DESC, [C_SOTIEN] = @C_SOTIEN WHERE [PK_ID] = @PK_ID">
     <SelectParameters>
         <asp:ControlParameter ControlID="cmbMonth" Name="MONTH" PropertyName="SelectedValue" />
@@ -276,7 +278,7 @@ table.gridtable td {
     <InsertParameters>
         <asp:Parameter Name="C_NGAY" Type="DateTime" />
         <asp:Parameter Name="C_TYPE" Type="String" />
-        <asp:Parameter Name="FK_KIHIEUTAIKHOAN" Type="Int32" />
+        <asp:Parameter Name="FK_KIHIEUTAIKHOAN" Type="String"/>
         <asp:Parameter Name="C_DESC" Type="String" />
         <asp:Parameter Name="C_SOTIEN" Type="String" />   
         <asp:Parameter Name="C_ORDER" Type="Int32" />      
@@ -284,7 +286,7 @@ table.gridtable td {
     <UpdateParameters>
          <asp:Parameter Name="C_NGAY" Type="DateTime" />
         <asp:Parameter Name="C_TYPE" Type="String" />
-        <asp:Parameter Name="FK_KIHIEUTAIKHOAN" Type="Int32" />
+        <asp:Parameter Name="FK_KIHIEUTAIKHOAN" Type="String"/>
         <asp:Parameter Name="C_DESC" Type="String" />
         <asp:Parameter Name="C_SOTIEN" Type="String" />  
     </UpdateParameters>       
