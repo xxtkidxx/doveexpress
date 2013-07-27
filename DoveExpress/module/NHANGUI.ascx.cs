@@ -627,7 +627,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
             {
                 // edit item
                 radautoC_TENKH.Entries.Add(new AutoCompleteBoxEntry(hfC_TENKH.Value));
-                txtC_CONLAI.Text = (((txtC_TIENHANG.Text == "") ? 0 : decimal.Parse(txtC_TIENHANG.Text)) - ((txtC_DATHU.Text == "") ? 0 : decimal.Parse(txtC_DATHU.Text))).ToString(); 
+                txtC_CONLAI.Text = (((txtC_TIENHANGVAT.Text == "") ? 0 : decimal.Parse(txtC_TIENHANGVAT.Text)) - ((txtC_DATHU.Text == "") ? 0 : decimal.Parse(txtC_DATHU.Text))).ToString(); 
                 FK_DICHVU = cmbSanPham.SelectedValue;
                 FK_QUANHUYEN = hfQuanHuyen.Value;
                 string FK_KHACHHANG = cmbMaKhachHang.SelectedValue;

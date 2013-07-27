@@ -1137,21 +1137,6 @@ namespace ITCLIB
                 }
                 return result;
             }
-            public static string LoadID_PropertiesTextDefault(string property)
-            {
-                string SelectSQL = String.Format("SELECT PK_ID FROM EOF_CV_LIST where C_TYPE ='{0}' and C_PARENT IS NULL", property);
-                DataTable oDataTable = new DataTable();
-                ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
-                oDataTable = SelectQuery.query_data(SelectSQL);
-                if (oDataTable.Rows.Count != 0)
-                {
-                    return oDataTable.Rows[0]["PK_ID"].ToString();
-                }
-                else
-                {
-                    return "";
-                }
-            }
             public static bool CheckHasStrings(string ivalue, string iString)
             {
                 bool result = false;
@@ -1263,6 +1248,21 @@ namespace ITCLIB
                     }
                 }
                 return Result;
+            }
+            public static string LoadQuanHuyenName(string C_CODE)
+            {
+                string SelectSQL = "SELECT C_NAME FROM DMQUANHUYEN where C_CODE =" + C_CODE;
+                DataTable oDataTable = new DataTable();
+                ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
+                oDataTable = SelectQuery.query_data(SelectSQL);
+                if (oDataTable.Rows.Count != 0)
+                {
+                    return oDataTable.Rows[0]["C_NAME"].ToString();
+                }
+                else
+                {
+                    return "";
+                }
             }
         }
     }
