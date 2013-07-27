@@ -150,20 +150,44 @@
         }
         return false;
     }
-     function OnValueChangedtxtC_DONGGOI(sender, eventArgs) {
-        txtC_TIENHANG.set_value(txtC_GIACUOC.get_value() + txtPPXD.get_value() + txtC_KHAC.get_value() + txtC_COD.get_value() + txtC_KHAIGIA.get_value() + txtC_DONGGOI.get_value());
+    function OnValueChangedtxtC_DONGGOI(sender, eventArgs) {
+        if (flag) {
+           txtC_GIACUOC.set_value(((txtC_TIENHANG.get_value() - txtC_KHAC.get_value() - txtC_COD.get_value() - txtC_KHAIGIA.get_value() - txtC_DONGGOI.get_value())/(100 + parseFloat(PPXD)))*100);
+           txtPPXD.set_value(((txtC_TIENHANG.get_value() - txtC_KHAC.get_value() - txtC_COD.get_value() - txtC_KHAIGIA.get_value() - txtC_DONGGOI.get_value())/(100 + parseFloat(PPXD)))*parseFloat(PPXD));
+        }
+        else {
+            txtC_TIENHANG.set_value(txtC_GIACUOC.get_value() + txtPPXD.get_value() + txtC_KHAC.get_value() + txtC_COD.get_value() + txtC_KHAIGIA.get_value() + txtC_DONGGOI.get_value());
+        }        
         return false;
     }
-     function OnValueChangedtxtC_KHAIGIA(sender, eventArgs) {
-        txtC_TIENHANG.set_value(txtC_GIACUOC.get_value() + txtPPXD.get_value() + txtC_KHAC.get_value() + txtC_COD.get_value() + txtC_KHAIGIA.get_value() + txtC_DONGGOI.get_value());
+    function OnValueChangedtxtC_KHAIGIA(sender, eventArgs) {
+       if (flag) {
+           txtC_GIACUOC.set_value(((txtC_TIENHANG.get_value() - txtC_KHAC.get_value() - txtC_COD.get_value() - txtC_KHAIGIA.get_value() - txtC_DONGGOI.get_value())/(100 + parseFloat(PPXD)))*100);
+           txtPPXD.set_value(((txtC_TIENHANG.get_value() - txtC_KHAC.get_value() - txtC_COD.get_value() - txtC_KHAIGIA.get_value() - txtC_DONGGOI.get_value())/(100 + parseFloat(PPXD)))*parseFloat(PPXD));
+        }
+        else {
+            txtC_TIENHANG.set_value(txtC_GIACUOC.get_value() + txtPPXD.get_value() + txtC_KHAC.get_value() + txtC_COD.get_value() + txtC_KHAIGIA.get_value() + txtC_DONGGOI.get_value());
+        }        
         return false;
     }
-     function OnValueChangedtxtC_COD(sender, eventArgs) {
-        txtC_TIENHANG.set_value(txtC_GIACUOC.get_value() + txtPPXD.get_value() + txtC_KHAC.get_value() + txtC_COD.get_value() + txtC_KHAIGIA.get_value() + txtC_DONGGOI.get_value());
+    function OnValueChangedtxtC_COD(sender, eventArgs) {
+        if (flag) {
+           txtC_GIACUOC.set_value(((txtC_TIENHANG.get_value() - txtC_KHAC.get_value() - txtC_COD.get_value() - txtC_KHAIGIA.get_value() - txtC_DONGGOI.get_value())/(100 + parseFloat(PPXD)))*100);
+           txtPPXD.set_value(((txtC_TIENHANG.get_value() - txtC_KHAC.get_value() - txtC_COD.get_value() - txtC_KHAIGIA.get_value() - txtC_DONGGOI.get_value())/(100 + parseFloat(PPXD)))*parseFloat(PPXD));
+        }
+        else {
+            txtC_TIENHANG.set_value(txtC_GIACUOC.get_value() + txtPPXD.get_value() + txtC_KHAC.get_value() + txtC_COD.get_value() + txtC_KHAIGIA.get_value() + txtC_DONGGOI.get_value());
+        }        
         return false;
     }
-     function OnValueChangedtxtC_KHAC(sender, eventArgs) {
-        txtC_TIENHANG.set_value(txtC_GIACUOC.get_value() + txtPPXD.get_value() + txtC_KHAC.get_value() + txtC_COD.get_value() + txtC_KHAIGIA.get_value() + txtC_DONGGOI.get_value());
+    function OnValueChangedtxtC_KHAC(sender, eventArgs) {
+        if (flag) {
+           txtC_GIACUOC.set_value(((txtC_TIENHANG.get_value() - txtC_KHAC.get_value() - txtC_COD.get_value() - txtC_KHAIGIA.get_value() - txtC_DONGGOI.get_value())/(100 + parseFloat(PPXD)))*100);
+           txtPPXD.set_value(((txtC_TIENHANG.get_value() - txtC_KHAC.get_value() - txtC_COD.get_value() - txtC_KHAIGIA.get_value() - txtC_DONGGOI.get_value())/(100 + parseFloat(PPXD)))*parseFloat(PPXD));
+        }
+        else {
+            txtC_TIENHANG.set_value(txtC_GIACUOC.get_value() + txtPPXD.get_value() + txtC_KHAC.get_value() + txtC_COD.get_value() + txtC_KHAIGIA.get_value() + txtC_DONGGOI.get_value());
+        }        
         return false;
     }    
     function OnValueChangedtxtC_TIENHANG(sender, eventArgs) {
@@ -175,11 +199,16 @@
         return false;
     }
     function OnValueChangedtxtC_VAT(sender, eventArgs) {
-        txtC_TIENHANGVAT.set_value(txtC_TIENHANG.get_value() + txtC_VAT.get_value());
+        if (!flag) {
+            txtC_TIENHANGVAT.set_value(txtC_TIENHANG.get_value() + txtC_VAT.get_value());
+        }
         return false;
     }
     function OnValueChangedtxtC_TIENHANGVAT(sender, eventArgs) {
         txtC_CONLAI.set_value(txtC_TIENHANGVAT.get_value() - txtC_DATHU.get_value());
+        if (flag) {
+         txtC_TIENHANG.set_value((txtC_TIENHANGVAT.get_value()/110)*100);
+        }
         return false;
     }
     function OnValueChangedtxtC_DATHU(sender, eventArgs) {
