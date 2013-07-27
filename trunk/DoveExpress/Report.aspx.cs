@@ -63,7 +63,57 @@ public partial class Report : System.Web.UI.Page
                 reportSource.Parameters.Add("C_KHAC", oDataTable.Rows[0]["C_KHAC"] != DBNull.Value ? oDataTable.Rows[0]["C_KHAC"].ToString() : "");        
                 reportSource.Parameters.Add("C_TIENHANG", oDataTable.Rows[0]["C_TIENHANG"] != DBNull.Value ? oDataTable.Rows[0]["C_TIENHANG"].ToString() : "");
                 reportSource.Parameters.Add("C_VAT", oDataTable.Rows[0]["C_VAT"] != DBNull.Value ? oDataTable.Rows[0]["C_VAT"].ToString() : "");
-                reportSource.Parameters.Add("C_TIENHANGVAT", oDataTable.Rows[0]["C_TIENHANGVAT"] != DBNull.Value ? oDataTable.Rows[0]["C_TIENHANGVAT"].ToString() : "");                
+                reportSource.Parameters.Add("C_TIENHANGVAT", oDataTable.Rows[0]["C_TIENHANGVAT"] != DBNull.Value ? oDataTable.Rows[0]["C_TIENHANGVAT"].ToString() : "");
+                reportSource.Parameters.Add("DATHU", oDataTable.Rows[0]["C_DATHU"] != DBNull.Value ? oDataTable.Rows[0]["C_DATHU"].ToString() : "");
+                reportSource.Parameters.Add("CONLAI", oDataTable.Rows[0]["C_TIENHANGVAT"] != DBNull.Value && oDataTable.Rows[0]["C_DATHU"] != DBNull.Value ? (double.Parse(oDataTable.Rows[0]["C_TIENHANGVAT"].ToString()) - double.Parse(oDataTable.Rows[0]["C_DATHU"].ToString())).ToString() : "");
+                reportSource.Parameters.Add("TINHTHANHGUI", Session["VUNGLAMVIEC"]);
+                reportSource.Parameters.Add("QUANHUYENNHAN", oDataTable.Rows[0]["FK_QUANHUYEN"] != DBNull.Value ? ITCLIB.Admin.cFunction.LoadQuanHuyenName(oDataTable.Rows[0]["FK_QUANHUYEN"].ToString()) : "");
+                reportSource.Parameters.Add("TINHTHANHNHAN", oDataTable.Rows[0]["FK_QUANHUYEN"] != DBNull.Value ? ITCLIB.Admin.cFunction.LoadFieldfromTable(ITCLIB.Admin.cFunction.LoadIDTinhThanhCode(oDataTable.Rows[0]["FK_QUANHUYEN"].ToString()), "C_NAME", "DMTINHTHANH") : "");
+                string DICHVUCODE = ITCLIB.Admin.cFunction.LoadFieldfromTable(oDataTable.Rows[0]["FK_MASANPHAM"].ToString(), "C_CODE", "DMMASANPHAM");
+                if (DICHVUCODE == "CPN")
+                {
+                    reportSource.Parameters.Add("CPN", true);
+                    reportSource.Parameters.Add("DUONGBO", false);
+                    reportSource.Parameters.Add("QUOCTE", false);
+                    reportSource.Parameters.Add("HOATOC", false);
+                    reportSource.Parameters.Add("DVKHAC", false);
+                }
+                else if (DICHVUCODE == "DB")
+                {
+                    reportSource.Parameters.Add("CPN", false);
+                    reportSource.Parameters.Add("DUONGBO", true);
+                    reportSource.Parameters.Add("QUOCTE", false);
+                    reportSource.Parameters.Add("HOATOC", false);
+                    reportSource.Parameters.Add("DVKHAC", false);
+                }
+                else if (DICHVUCODE == "QT")
+                {
+                    reportSource.Parameters.Add("CPN", false);
+                    reportSource.Parameters.Add("DUONGBO", false);
+                    reportSource.Parameters.Add("QUOCTE", true);
+                    reportSource.Parameters.Add("HOATOC", false);
+                    reportSource.Parameters.Add("DVKHAC", false);
+                }
+                else if (DICHVUCODE == "HT")
+                {
+                    reportSource.Parameters.Add("CPN", false);
+                    reportSource.Parameters.Add("DUONGBO", false);
+                    reportSource.Parameters.Add("QUOCTE", false);
+                    reportSource.Parameters.Add("HOATOC", true);
+                    reportSource.Parameters.Add("DVKHAC", false);
+                }
+                else
+                {
+                    reportSource.Parameters.Add("CPN", false);
+                    reportSource.Parameters.Add("DUONGBO", false);
+                    reportSource.Parameters.Add("QUOCTE", false);
+                    reportSource.Parameters.Add("HOATOC", false);
+                    reportSource.Parameters.Add("DVKHAC", false);
+                }
+                reportSource.Parameters.Add("NHANVIENNHAN", oDataTable.Rows[0]["FK_NHANVIENNHAN"] != DBNull.Value ? ITCLIB.Admin.cFunction.LoadUserName(oDataTable.Rows[0]["FK_NHANVIENNHAN"].ToString()) : "");
+                reportSource.Parameters.Add("NHANVIENPHAT", oDataTable.Rows[0]["FK_NHANVIENPHAT"] != DBNull.Value ? ITCLIB.Admin.cFunction.LoadUserName(oDataTable.Rows[0]["FK_NHANVIENPHAT"].ToString()) : "");
+                reportSource.Parameters.Add("C_NGAYGIOPHAT", oDataTable.Rows[0]["C_NGAYGIOPHAT"] != DBNull.Value ? String.Format("{0:dd/MM/yyyy hh:mm:ss tt}", DateTime.Parse(oDataTable.Rows[0]["C_NGAYGIOPHAT"].ToString())) : "");
+
             }
             
         }

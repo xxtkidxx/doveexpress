@@ -212,7 +212,7 @@
         return false;
     }
     function OnValueChangedtxtC_DATHU(sender, eventArgs) {
-        txtC_CONLAI.set_value(txtC_TIENHANGVAT.get_value() - eventArgs.get_newValue());
+        txtC_CONLAI.set_value(txtC_TIENHANGVAT.get_value() - txtC_DATHU.get_value());
         return false;
     }  
     function SetGiaCuoi() {
