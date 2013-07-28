@@ -220,14 +220,12 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
         RadAutoCompleteBox radautoC_MAKH = (RadAutoCompleteBox)editableItem.FindControl("radautoC_MAKH");
         RadAutoCompleteBox radautoC_TENKH = (RadAutoCompleteBox)editableItem.FindControl("radautoC_TENKH");
         RadNumericTextBox txtC_KHOILUONG = (RadNumericTextBox)editableItem.FindControl("txtC_KHOILUONG");
-        C_KHOILUONG = (txtC_KHOILUONG.Text != "") ? int.Parse(txtC_KHOILUONG.Text) : 0;
         string[] arrayvalue = e.Argument.Split(';');
         if (arrayvalue[0] == "cmbMaKhachHang")
         {
             /*KHACHHANGDataSource.SelectCommand = "SELECT DMKHACHHANG.* FROM DMKHACHHANG WHERE FK_NHOMKHACHHANG =" + arrayvalue[1];
             radautoC_TENKH.DataBind();*/
             FK_KHACHHANG = arrayvalue[1];
-            TENKH = "";
             string SelectSQL;
             SelectSQL = "Select DMKHACHHANG.FK_NHOMKHACHHANG FROM DMKHACHHANG WHERE DMKHACHHANG.C_CODE ='" + FK_KHACHHANG + "'";
             DataTable oDataTable = new DataTable();
@@ -616,6 +614,7 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
             else
             {
                 // edit item
+                TENKH = hfC_TENKH.Value;
                 radautoC_TENKH.Entries.Add(new AutoCompleteBoxEntry(hfC_TENKH.Value));
                 txtC_CONLAI.Text = (((txtC_TIENHANGVAT.Text == "") ? 0 : decimal.Parse(txtC_TIENHANGVAT.Text)) - ((txtC_DATHU.Text == "") ? 0 : decimal.Parse(txtC_DATHU.Text))).ToString();
                 FK_DICHVU = cmbSanPham.SelectedValue;
@@ -677,6 +676,7 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
                         PPXD = 0;
                     }
                 }
+                C_KHOILUONG = (txtC_KHOILUONG.Text != "") ? int.Parse(txtC_KHOILUONG.Text) : 0;
                 CUOCCHINH = (txtC_GIACUOC.Text == "") ? 0 : decimal.Parse(txtC_GIACUOC.Text);
                 GIADOITAC = (txtC_GIADOITAC.Text == "") ? 0 : decimal.Parse(txtC_GIADOITAC.Text);
                 ctcDataTable = new DataTable();
