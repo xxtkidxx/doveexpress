@@ -374,7 +374,7 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
                         {
                             if (C_KHOILUONG <= int.Parse(oDataTable1.Rows[i]["C_KHOILUONG"].ToString()) && C_KHOILUONG >= int.Parse(oDataTable1.Rows[i - 1]["C_KHOILUONG"].ToString()))
                             {
-                                GIADOITAC = decimal.Parse(ctcDataTable.Rows[i]["C_CUOCPHI"].ToString(), NumberStyles.Currency);
+                                GIADOITAC = decimal.Parse(oDataTable1.Rows[i]["C_CUOCPHI"].ToString(), NumberStyles.Currency);
                                 check = false;
                             }
                             else if (C_KHOILUONG >= int.Parse(oDataTable1.Rows[oDataTable1.Rows.Count - 1]["C_KHOILUONG"].ToString()))
