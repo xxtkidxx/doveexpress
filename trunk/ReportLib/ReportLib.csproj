@@ -53,11 +53,20 @@
     <Compile Include="Bill\Bill.Designer.cs">
       <DependentUpon>Bill.cs</DependentUpon>
     </Compile>
+    <Compile Include="Bill\BillQT.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Bill\BillQT.Designer.cs">
+      <DependentUpon>BillQT.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Bill\Bill.resx">
       <DependentUpon>Bill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bill\BillQT.resx">
+      <DependentUpon>BillQT.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
