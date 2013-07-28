@@ -2,6 +2,18 @@
 <%@ Register TagPrefix="uc1" Namespace="ITCLIB.Admin" %>
 <telerik:RadCodeBlock ID="RadCodeBlockNHANGUIQT" runat="server">
 <script type="text/javascript">
+    function PrintOnClientLinkClicked() {
+        if ($find("<%= RadGridNHANGUIQT.MasterTableView.ClientID %>").get_selectedItems().length != 0) {
+            var IDNHANGUI = $find("<%= RadGridNHANGUIQT.MasterTableView.ClientID %>").get_selectedItems()[0].getDataKeyValue("PK_ID")
+            var url = "Report.aspx?TYPE=INBILLQT&ID=" + IDNHANGUI;
+            window.open(url, '_blank');
+            window.focus();
+        } else {
+            alert("Không có phiếu nhận gửi được chọn");
+        }
+    }
+</script>
+<script type="text/javascript">
     var flag = false;
     var CUOCCHINH;
     function RowDblClick(sender, eventArgs) {
@@ -302,6 +314,7 @@
                         <asp:LinkButton ID="LinkButton2" runat="server" CommandName="InitInsert" Visible='<%# !RadGridNHANGUIQT.MasterTableView.IsItemInserted && ITCLIB.Security.Security.CanAddModule("NHANGUIQT") %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/AddRecord.gif" />Thêm</asp:LinkButton>&nbsp;&nbsp;
                         <asp:LinkButton ID="LinkButton3" runat="server" CommandName="PerformInsert" Visible='<%# RadGridNHANGUIQT.MasterTableView.IsItemInserted %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Insert.gif" />Lưu</asp:LinkButton>&nbsp;&nbsp;
                         <asp:LinkButton ID="LinkButton1" OnClientClick="javascript:return confirm('Bạn có muốn xóa bản ghi đã chọn không?')" runat="server" CommandName="DeleteSelected" Visible='<%# ITCLIB.Security.Security.CanDeleteModule("NHANGUIQT") %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Delete.gif" />Xóa</asp:LinkButton>&nbsp;&nbsp;
+                        <asp:LinkButton ID="btXuatbaocao" runat="server" OnClientClick ='<%# String.Format("javascript:return PrintOnClientLinkClicked()")%>' ><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/img_OpenPanel.gif" />Xuất phiếu</asp:LinkButton>&nbsp;&nbsp;
                        <asp:LinkButton ID="LinkButton4" runat="server" CommandName="RebindGrid"><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Refresh.gif" />Làm mới</asp:LinkButton>
                     </div>
                     <div style="padding: 5px 5px;float:right;width:auto">
