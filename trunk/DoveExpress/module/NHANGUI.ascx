@@ -29,6 +29,10 @@
     var radautoC_TENKH;
     function OnClientLoadradautoC_TENKH(sender) {
         radautoC_TENKH = sender;
+    }    
+    var txtC_TELGUI;
+    function OnClientLoadtxtC_TELGUI(sender) {
+        txtC_TELGUI = sender;
     }
     var cmbQuanHuyen;
     function OnClientLoadQuanHuyen(sender) {
@@ -246,21 +250,22 @@
              //alert(result);
              var arrayOfStrings = result.split(",");
              if (arrayOfStrings[0] != "msg") {
-                 if (arrayOfStrings[1] != "") {
-                     cmbMaKhachHang.set_value(arrayOfStrings[0]);
-                     cmbMaKhachHang.set_text(arrayOfStrings[1]);
+                 if (arrayOfStrings[0] != "") {
+                     //cmbMaKhachHang.set_value(arrayOfStrings[0]);
+                     //cmbMaKhachHang.set_text(arrayOfStrings[0]);
                  }
                  else {
                  }
-                 if (arrayOfStrings[2] != "") {
+                 if (arrayOfStrings[1] != "") {
                      var entry = new Telerik.Web.UI.AutoCompleteBoxEntry();
-                     entry.set_text(arrayOfStrings[2]);
+                     entry.set_text(arrayOfStrings[1]);
                      radautoC_TENKH.get_entries().add(entry);
                  }
                  else {
                      //radautoC_MAKH.get_entries().clear();
                      //radautoC_TENKH.get_entries().clear();
                  }
+                 txtC_TELGUI.set_value(arrayOfStrings[2]);
                  PPXD = arrayOfStrings[3];
                  txtC_GIACUOC.set_value(arrayOfStrings[4]);
                  CUOCCHINH = arrayOfStrings[4];
@@ -493,7 +498,7 @@
                 </td>
                 <td style ="width:100px;"> <span class="rtsTxtnew">ĐT người gửi:</span></td>
                 <td colspan="4">
-                   <telerik:RadTextBox ID="txtC_TELGUI" Width ="90%" Text='<%# Bind("C_TELGUI") %>' runat="server"></telerik:RadTextBox>               
+                   <telerik:RadTextBox ID="txtC_TELGUI" Width ="90%" Text='<%# Bind("C_TELGUI") %>' ClientEvents-OnLoad="OnClientLoadtxtC_TELGUI" runat="server"></telerik:RadTextBox>               
                 </td>            
             </tr> 
             <tr> 
@@ -816,3 +821,4 @@
 <asp:SqlDataSource ID="DOITACDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>" 
     SelectCommand="SELECT [DMDOITAC].[PK_ID], [DMDOITAC].[C_CODE], [DMDOITAC].[C_NAME], [DMDOITAC].[C_ADDRESS], [DMDOITAC].[C_TEL], [DMDOITAC].[C_NGUOILIENHE] FROM [DMDOITAC]">
 </asp:SqlDataSource>
+<asp:Button ID="Button1" runat="server" onclick="Button1_Click" Text="Button" />

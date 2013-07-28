@@ -43,6 +43,17 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
             Session["TENKH"] = value;
         }
     }
+    private string DIENTHOAIKH
+    {
+        get
+        {
+            return Session["DIENTHOAIKH"] as string;
+        }
+        set
+        {
+            Session["DIENTHOAIKH"] = value;
+        }
+    }
     private string FK_DICHVU
     {
         get
@@ -257,7 +268,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
         else if (arrayvalue[0] == "radautoC_TENKH")
         {
             string SelectSQL;
-            SelectSQL = "Select DMKHACHHANGCHITIET.FK_KHACHHANG, DMKHACHHANGCHITIET.C_NAME as KHNAME, DMKHACHHANG.C_CODE as KHCODE FROM DMKHACHHANGCHITIET LEFT OUTER JOIN DMKHACHHANG ON DMKHACHHANGCHITIET.FK_KHACHHANG = DMKHACHHANG.PK_ID WHERE (DMKHACHHANGCHITIET.PK_ID =" + arrayvalue[1] + ")";
+            SelectSQL = "Select DMKHACHHANGCHITIET.FK_KHACHHANG, DMKHACHHANGCHITIET.C_NAME as KHNAME,DMKHACHHANGCHITIET.C_TEL, DMKHACHHANG.C_CODE as KHCODE FROM DMKHACHHANGCHITIET LEFT OUTER JOIN DMKHACHHANG ON DMKHACHHANGCHITIET.FK_KHACHHANG = DMKHACHHANG.PK_ID WHERE (DMKHACHHANGCHITIET.C_NAME =N'" + arrayvalue[1] + "')";
             DataTable oDataTable = new DataTable();
             ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
             oDataTable = SelectQuery.query_data(SelectSQL);
@@ -265,11 +276,12 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
             {
                 FK_KHACHHANG = oDataTable.Rows[0]["KHCODE"].ToString();
                 TENKH = oDataTable.Rows[0]["KHNAME"].ToString();
+                DIENTHOAIKH = oDataTable.Rows[0]["C_TEL"].ToString();
             }
             else
             {
-                FK_KHACHHANG = "";
                 TENKH = "";
+                DIENTHOAIKH = "";
             }
         }
         else if (arrayvalue[0] == "cmbQuanHuyen")
@@ -450,6 +462,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
            }
            //CUOCCHINH = (Math.Round((CUOCCHINH + ((CUOCCHINH * PPXD) / 100)) / 1000)) * 1000;
        }
+       //Session["t"] = FK_KHACHHANG + "-" + TENKH + "-" + DIENTHOAIKH + "-" + PPXD + "-" + CUOCCHINH + "-" + GIADOITAC + "-" + FK_MABANGCUOC + "-" + FK_MAVUNG;
       if (Alarm != "")
       {
           string script = string.Format("var result = '{0}'", Alarm);
@@ -457,7 +470,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
       }
       else
       {
-          string script = string.Format("var result = '{0}'", FK_KHACHHANG + "," + FK_KHACHHANG + "," + TENKH + "," + PPXD + "," + CUOCCHINH + "," + GIADOITAC + "," + FK_MABANGCUOC + "," + FK_MAVUNG);
+          string script = string.Format("var result = '{0}'", FK_KHACHHANG + "," + TENKH + "," + DIENTHOAIKH + "," + PPXD + "," + CUOCCHINH + "," + GIADOITAC + "," + FK_MABANGCUOC + "," + FK_MAVUNG);
           
           ScriptManager.RegisterClientScriptBlock(Page, typeof(Page), "result", script, true);
       }
@@ -612,11 +625,14 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
                 // insert item
                 radNgaynhangui.SelectedDate = System.DateTime.Now;
                 txtCODE.Text = GetMaxBill();
+                TENKH = "";
+                DIENTHOAIKH = "";
                 FK_MABANGCUOC = "";
                 FK_MAVUNG = "";
                 FK_DICHVU = "";
                 PPXD = 0;
                 CUOCCHINH = 0;
+                C_KHOILUONG = 0; 
                 GIADOITAC = 0;
                 ctcDataTable = new DataTable();
                 C_KHOILUONGLK = 0;
@@ -797,5 +813,9 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
             SelectSQL = "SELECT * FROM DMQUANHUYEN order by LTRIM(C_NAME)";
         }
         return SelectSQL;
+    }
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        ITCLIB.Admin.JavaScript.ShowMessage(Session["t"].ToString(), this);
     }
 }
