@@ -1264,6 +1264,21 @@ namespace ITCLIB
                     return "";
                 }
             }
+            public static string LoadQuocGiaName(string C_CODE)
+            {
+                string SelectSQL = "SELECT C_NAME FROM DMQUOCGIA where C_CODE ='" + C_CODE +"'";
+                DataTable oDataTable = new DataTable();
+                ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
+                oDataTable = SelectQuery.query_data(SelectSQL);
+                if (oDataTable.Rows.Count != 0)
+                {
+                    return oDataTable.Rows[0]["C_NAME"].ToString();
+                }
+                else
+                {
+                    return "";
+                }
+            }
         }
     }
     namespace Controls
