@@ -187,9 +187,12 @@
 </telerik:RadGrid>
 <asp:SqlDataSource ID="MAVUNGDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
         DeleteCommand="DELETE FROM [DMMAVUNG] WHERE [PK_ID] = @PK_ID" 
-        InsertCommand="INSERT INTO [DMMAVUNG] ([FK_MASANPHAM],[C_CODE], [C_NAME], [C_DESC],[C_TYPE]) VALUES (@FK_MASANPHAM,@C_CODE, @C_NAME, @C_DESC,1)"
-        SelectCommand="SELECT [DMMAVUNG].[PK_ID], [DMMAVUNG].[FK_MASANPHAM], [DMMAVUNG].[C_CODE], [DMMAVUNG].[C_NAME], [DMMAVUNG].[C_DESC],DMMASANPHAM.C_NAME as MASANPHAMNAME FROM [DMMAVUNG] LEFT OUTER JOIN DMMASANPHAM ON DMMAVUNG.FK_MASANPHAM = DMMASANPHAM.PK_ID WHERE DMMAVUNG.C_TYPE = 1 ORDER BY DMMAVUNG.PK_ID"      
+        InsertCommand="INSERT INTO [DMMAVUNG] ([FK_MASANPHAM],[C_CODE], [C_NAME], [C_DESC],[C_TYPE],[FK_VUNGLAMVIEC]) VALUES (@FK_MASANPHAM,@C_CODE, @C_NAME, @C_DESC,1,@FK_VUNGLAMVIEC)"
+        SelectCommand="SELECT [DMMAVUNG].[PK_ID], [DMMAVUNG].[FK_MASANPHAM], [DMMAVUNG].[C_CODE], [DMMAVUNG].[C_NAME], [DMMAVUNG].[C_DESC],DMMASANPHAM.C_NAME as MASANPHAMNAME FROM [DMMAVUNG] LEFT OUTER JOIN DMMASANPHAM ON DMMAVUNG.FK_MASANPHAM = DMMASANPHAM.PK_ID WHERE DMMAVUNG.C_TYPE = 1 AND DMMAVUNG.FK_VUNGLAMVIEC = @FK_VUNGLAMVIEC ORDER BY DMMAVUNG.PK_ID"      
         UpdateCommand="UPDATE [DMMAVUNG] SET [FK_MASANPHAM] = @FK_MASANPHAM,[C_CODE] = @C_CODE, [C_NAME] = @C_NAME,[C_DESC] = @C_DESC WHERE [PK_ID] = @PK_ID" >
+        <SelectParameters>
+            <asp:SessionParameter Name="FK_VUNGLAMVIEC" Type="String" SessionField="VUNGLAMVIEC" />
+        </SelectParameters>
         <UpdateParameters>
             <asp:Parameter Name="FK_MASANPHAM" Type="Int32" />
             <asp:Parameter Name="C_CODE" Type="String" />
@@ -204,6 +207,7 @@
             <asp:Parameter Name="C_CODE" Type="String" />
             <asp:Parameter Name="C_NAME" Type="String" />
             <asp:Parameter Name="C_DESC" Type="String" />
+            <asp:SessionParameter Name="FK_VUNGLAMVIEC" Type="String" SessionField="VUNGLAMVIEC" />
         </InsertParameters>
 </asp:SqlDataSource>
 <asp:SqlDataSource ID="MASANPHAMDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"

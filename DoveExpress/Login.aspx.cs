@@ -88,7 +88,7 @@ public partial class Login : System.Web.UI.Page
             Session["User"] = sUser;           
             Session["UserID"] = (int)oDataTable.Rows[0]["PK_ID"];
             Session["GroupUser"] = (int)oDataTable.Rows[0]["FK_GROUPUSER"];
-            Session["VUNGLAMVIEC"] = "Hà Nội";
+            Session["VUNGLAMVIEC"] = cmbVungLamViec.SelectedValue;
             return true;
         }
         else
@@ -120,5 +120,12 @@ public partial class Login : System.Web.UI.Page
         string InsertSQL = "INSERT INTO USER_LOG (FK_USER, C_IP, LOGTIME) VALUES (" + sUser.Userid + ",'" + strIP + "','" + String.Format("{0:yyyy-MM-dd hh:mm:ss tt}", System.DateTime.Now.ToUniversalTime().AddHours(7)) + "')";
         ITCLIB.Admin.SQL InsertQuery = new ITCLIB.Admin.SQL();
         InsertQuery.ExecuteNonQuery(InsertSQL);
-    }    
+    }
+    protected void cmbVungLamViec_PreRender(object sender, EventArgs e)
+    {
+        if (!IsPostBack)
+        {
+            cmbVungLamViec.SelectedValue = "Hà Nội";
+        }
+    }
 }

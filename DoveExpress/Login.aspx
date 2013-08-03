@@ -18,6 +18,11 @@
 </head>
 <body style="background:#c4c4c4">
 <form id="form1" runat="server">
+<telerik:RadScriptManager ID="RadScriptManager" runat="server">
+</telerik:RadScriptManager>
+<telerik:RadAjaxManager ID="RadAjaxManager" runat="server" 
+               UpdatePanelsRenderMode="Inline">
+</telerik:RadAjaxManager> 
 <div id ="divlayout">
 <div id ="divheader" class ="clearfix"></div>
 <div id ="divcontent" class ="clearfix">
@@ -47,6 +52,21 @@
                            <asp:TextBox ID="txtPass" Width="200px" TextMode="Password" runat="server"  Height="15px"></asp:TextBox>
                            <asp:RequiredFieldValidator id="rfvPass" runat="server" ErrorMessage="Bạn chưa nhập mật khẩu" ControlToValidate="txtPass" ValidationGroup="G1" Display="Dynamic">*</asp:RequiredFieldValidator>
                            <asp:RegularExpressionValidator id="regPass" ControlToValidate="txtPass" ValidationExpression="^([\u0080-\ua7ffa-zA-Z0-9'\s])+$" Display="Dynamic" ErrorMessage="Không thể nhập kí tự đặc biệt" ValidationGroup="G1" runat="server"></asp:RegularExpressionValidator>
+                         </span>
+                       </td>
+                   </tr>
+                   <tr>
+                   <td></td>
+                       <td>
+                         <span class="rtsTxtnew"><strong>Vùng làm việc</strong> </span>
+                       </td>
+                       <td>
+                         <span class="txtleft">
+                           <telerik:RadComboBox ID="cmbVungLamViec" DataTextField="C_NAME" 
+                               DataValueField="C_CODE" DataSourceID="VUNGLAMVIECDataSource"
+                           ShowToggleImage="True" runat="server" EmptyMessage="Chọn vùng làm việc" 
+                               nprerender="cmbVungLamViec_PreRender" 
+                               onprerender="cmbVungLamViec_PreRender"></telerik:RadComboBox>
                          </span>
                        </td>
                    </tr>
@@ -101,3 +121,6 @@
 </form>
 </body>
 </html>
+ <asp:SqlDataSource ID="VUNGLAMVIECDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
+ SelectCommand="SELECT DMVUNGLAMVIEC.* FROM DMVUNGLAMVIEC" >
+</asp:SqlDataSource>
