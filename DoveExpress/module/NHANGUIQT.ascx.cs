@@ -675,6 +675,7 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
                 {
                     FK_MAVUNG = "";
                 }
+                PPXD = 0;
                 string SelectSQL4;
                 SelectSQL4 = "Select DMPPXD.C_PPXD FROM DMPPXD WHERE DMPPXD.FK_MASANPHAM =" + FK_DICHVU + " AND FK_MABANGCUOC = " + FK_MABANGCUOC;
                 DataTable oDataTable4 = new DataTable();
@@ -685,10 +686,6 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
                     if (oDataTable4.Rows[0]["C_PPXD"] != DBNull.Value)
                     {
                         PPXD = decimal.Parse(oDataTable4.Rows[0]["C_PPXD"].ToString());
-                    }
-                    else
-                    {
-                        PPXD = 0;
                     }
                 }
                 C_KHOILUONG = (txtC_KHOILUONG.Text != "") ? int.Parse(txtC_KHOILUONG.Text) : 0;
