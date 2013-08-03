@@ -78,11 +78,7 @@
         </telerik:RadCodeBlock>       
 <div class="admin_banner clearfix">
    <div class ="admin_header">
-           <asp:Label ID="lblFullName" runat="server" Text="Người dùng:"></asp:Label> | 
-           Vùng làm việc: <telerik:RadComboBox ID="cmbVungLamViec" DataTextField="C_NAME" 
-               DataValueField="C_CODE" DataSourceID="VUNGLAMVIECDataSource"
-           ShowToggleImage="True" runat="server" EmptyMessage="Chọn vùng làm việc" 
-               AutoPostBack="True" onprerender="cmbVungLamViec_PreRender"></telerik:RadComboBox>
+           <asp:Label ID="lblFullName" runat="server" Text="Người dùng:"></asp:Label>
    </div>
 </div>
 
@@ -97,7 +93,7 @@
 </div>
 <div class ="clearfix" style =" height:0px; clear:both; visibility:hidden;"></div>
 <div class ="admin_cms clearfix">     
-            <asp:ContentPlaceHolder id="ContentPlaceHolder" runat="server">
+            <asp:ContentPlaceHolder id="ContentPlaceHolderMain" runat="server">
         
             </asp:ContentPlaceHolder>         
 </div>
@@ -113,6 +109,3 @@
     </form>
 </body>
 </html>
- <asp:SqlDataSource ID="VUNGLAMVIECDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
- SelectCommand="SELECT DMVUNGLAMVIEC.* FROM DMVUNGLAMVIEC" >
-</asp:SqlDataSource>

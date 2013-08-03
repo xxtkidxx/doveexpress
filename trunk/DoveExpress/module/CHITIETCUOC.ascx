@@ -232,10 +232,11 @@ Phụ phí xăng dầu(%):&nbsp;
 <asp:SqlDataSource ID="MAVUNGDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
         DeleteCommand="DELETE FROM [DMMAVUNG] WHERE [PK_ID] = @PK_ID" 
         InsertCommand="INSERT INTO [DMMAVUNG] ([C_CODE], [C_NAME], [C_DESC]) VALUES (@C_CODE, @C_NAME, @C_DESC)"
-        SelectCommand="SELECT [PK_ID], [C_CODE], [C_NAME], [C_DESC] FROM [DMMAVUNG] WHERE FK_MASANPHAM = @FK_MASANPHAM ORDER BY LTRIM([C_CODE])"      
+        SelectCommand="SELECT [PK_ID], [C_CODE], [C_NAME], [C_DESC] FROM [DMMAVUNG] WHERE FK_MASANPHAM = @FK_MASANPHAM AND DMMAVUNG.FK_VUNGLAMVIEC = @FK_VUNGLAMVIEC ORDER BY LTRIM([C_CODE])"      
         UpdateCommand="UPDATE [DMMAVUNG] SET [C_CODE] = @C_CODE, [C_NAME] = @C_NAME,[C_DESC] = @C_DESC WHERE [PK_ID] = @PK_ID" >
         <SelectParameters>
             <asp:ControlParameter ControlID="cmbSanPham" DefaultValue="0" Name="FK_MASANPHAM" PropertyName="SelectedValue" />
+            <asp:SessionParameter Name="FK_VUNGLAMVIEC" Type="String" SessionField="VUNGLAMVIEC" />
         </SelectParameters>
         <UpdateParameters>
             <asp:Parameter Name="C_CODE" Type="String" />

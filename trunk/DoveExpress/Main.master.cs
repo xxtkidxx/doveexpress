@@ -21,7 +21,7 @@ public partial class Main : System.Web.UI.MasterPage
                 RadAjaxManager.Dispose();
                 RadAjaxManager.ClientEvents.OnRequestStart = "onRequestStart";
                 AjaxSetting _AjaxSetting = new AjaxSetting();
-                AjaxUpdatedControl _AjaxUpdatedControl = new AjaxUpdatedControl();                
+                AjaxUpdatedControl _AjaxUpdatedControl = new AjaxUpdatedControl();               
                 switch ((string)Request.QueryString["ctl"].ToLower())
                 {
                     case "groupuser":
@@ -190,7 +190,7 @@ public partial class Main : System.Web.UI.MasterPage
                         _AjaxUpdatedControl.ControlID = "RadGridNHANGUI";
                         _AjaxUpdatedControl.LoadingPanelID = "RadAjaxLoadingPanelNHANGUI";
                         _AjaxSetting.UpdatedControls.Add(_AjaxUpdatedControl);
-                        RadAjaxManager.AjaxSettings.Add(_AjaxSetting);
+                        //RadAjaxManager.AjaxSettings.Add(_AjaxSetting);
                         control = LoadControl("module/NHANGUI.ascx");
                         break;
                      case "nhanguiqt":
@@ -255,23 +255,12 @@ public partial class Main : System.Web.UI.MasterPage
             {
                 
             }
-            ContentPlaceHolder.Controls.Add(control);
+            ContentPlaceHolderMain.Controls.Add(control);
         }
         else
         {
             Session["LastUrl"] = Request.Url.ToString();
             Response.Redirect("Login.aspx", true);
-        }
-    }
-    protected void cmbVungLamViec_PreRender(object sender, EventArgs e)
-    {
-        if (!IsPostBack)
-        {
-            cmbVungLamViec.SelectedValue = Session["VUNGLAMVIEC"].ToString();
-        }
-        else
-        {
-            Session["VUNGLAMVIEC"] = cmbVungLamViec.SelectedValue;
         }
     }
 }
