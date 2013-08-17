@@ -258,10 +258,6 @@ public partial class module_SOQUYTIENMAT : System.Web.UI.UserControl
             RadComboBox cmbC_TYPE = (RadComboBox)editItem.FindControl("cmbC_TYPE");
             if (cmbC_TYPE.SelectedIndex == 2)
             {
-                SOQUYTIENMATDataSource.InsertParameters["C_ORDER"].DefaultValue = "0";
-            }
-            else if (cmbC_TYPE.SelectedIndex == 3)
-            {
                 SOQUYTIENMATDataSource.InsertParameters["C_ORDER"].DefaultValue = "2";
             }
             else
