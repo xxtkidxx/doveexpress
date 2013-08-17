@@ -535,6 +535,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
         }
         else
         {
+            ClearSession();
             SetMessage("Xóa nhận gửi thành công!");
             ITCLIB.ActionLog.ActionLog.WriteLog(Session["UserID"].ToString(), "Deleted NHANGUIs", e.Item.KeyValues);
         }
@@ -549,6 +550,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
         }
         else
         {
+            ClearSession();
             SetMessage("Tạo mới nhận gửi thành công!");
             ITCLIB.ActionLog.ActionLog.WriteLog(Session["UserID"].ToString(), "Inserted NHANGUIs", "{PK_ID:\"" + getmaxid("NHANGUI") + "\"}");
         }
@@ -564,6 +566,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
         }
         else
         {
+            ClearSession();
             SetMessage("Cập nhật nhận gửi thành công!");
             ITCLIB.ActionLog.ActionLog.WriteLog(Session["UserID"].ToString(), "Updated NHANGUIs", e.Item.KeyValues);
         }
@@ -814,5 +817,26 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
     protected void Button1_Click(object sender, EventArgs e)
     {
         ITCLIB.Admin.JavaScript.ShowMessage(Session["t"].ToString(), this);
+    }
+
+    protected void ClearSession()
+    {
+        FK_NHOMKHACHHANG = "";
+        FK_KHACHHANG = "";
+        TENKH = "";
+        DIENTHOAIKH = "";
+        FK_DICHVU = "";
+        FK_MABANGCUOC = "";
+        FK_QUANHUYEN = "";
+        FK_MAVUNG = "";
+        C_KHOILUONG = 0;
+        PPXD = 0;
+        CUOCCHINH = 0;
+        FK_DOITAC = "";
+        GIADOITAC = 0;
+        ctcDataTable = new DataTable();
+        C_KHOILUONGLK = 0;
+        GIACUOCLK = 0;
+        Alarm = "";
     }
 }
