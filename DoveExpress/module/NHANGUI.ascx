@@ -26,9 +26,9 @@
     function OnClientLoadcmbMaKhachHang(sender) {
         cmbMaKhachHang = sender;
     }
-    var radautoC_TENKH;
-    function OnClientLoadradautoC_TENKH(sender) {
-        radautoC_TENKH = sender;
+    var txtC_TENKH;
+    function OnClientLoadtxtC_TENKH(sender) {
+        txtC_TENKH = sender;
     }    
     var txtC_TELGUI;
     function OnClientLoadtxtC_TELGUI(sender) {
@@ -236,19 +236,12 @@
             txtC_GIACUOC.set_value(CUOCCHINH);                  
         }
     }
-    function radautoC_TENKHOnClientTextChanged(sender, eventArgs) {
-        $find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("radautoC_TENKH;" + sender.get_text());
-        var currentLoadingPanel = $find("<%= RadAjaxLoadingPanelNHANGUI.ClientID %>");
-        var currentUpdatedControl = "<%= RadGridNHANGUI.ClientID %>"; 
-        currentLoadingPanel.show(currentUpdatedControl);
-        return false;
-    }
 </script>
 <script type="text/javascript">   
      function onResponseEndNG() {
          if (typeof (result) != "undefined" && result && result != "") {
              //alert(result);
-             var arrayOfStrings = result.split(",");
+             var arrayOfStrings = result.split(",-,");
              if (arrayOfStrings[0] != "msg") {
                  if (arrayOfStrings[0] != "") {
                      //cmbMaKhachHang.set_value(arrayOfStrings[0]);
@@ -256,15 +249,7 @@
                  }
                  else {
                  }
-                 if (arrayOfStrings[1] != "") {
-                     var entry = new Telerik.Web.UI.AutoCompleteBoxEntry();
-                     entry.set_text(arrayOfStrings[1]);
-                     radautoC_TENKH.get_entries().add(entry);
-                 }
-                 else {
-                     //radautoC_MAKH.get_entries().clear();
-                     //radautoC_TENKH.get_entries().clear();
-                 }
+                 txtC_TENKH.set_value(arrayOfStrings[1]);
                  txtC_TELGUI.set_value(arrayOfStrings[2]);
                  PPXD = arrayOfStrings[3];
                  txtC_GIACUOC.set_value(arrayOfStrings[4]);
@@ -490,11 +475,7 @@
                 </td>
                 <td style ="width:100px;"> <span class="rtsTxtnew">Tên người gửi:</span></td>
                 <td colspan="4">
-                    <asp:HiddenField ID="hfC_TENKH" runat="server"  Value ='<%# Eval("C_TENKH") %>'/>
-                    <telerik:RadAutoCompleteBox ID="radautoC_TENKH" Width ="90%" runat="server" 
-                        AllowCustomEntry="True" DataSourceID="KHACHHANGCHITIETDataSource" onclientload="OnClientLoadradautoC_TENKH" OnClientTextChanged="radautoC_TENKHOnClientTextChanged"
-                        DataTextField="C_NAME" DataValueField="PK_ID" InputType="Text" TextSettings-SelectionMode="Single" DropDownHeight="100" DropDownWidth="100">
-                    </telerik:RadAutoCompleteBox>                    
+                    <telerik:RadTextBox ID="txtC_TENKH" Width ="90%" Text='<%# Bind("C_TENKH") %>' ClientEvents-OnLoad="OnClientLoadtxtC_TENKH" runat="server"></telerik:RadTextBox>                               
                 </td>
                 <td style ="width:100px;"> <span class="rtsTxtnew">ĐT người gửi:</span></td>
                 <td colspan="4">
@@ -806,9 +787,6 @@
 </asp:SqlDataSource>
 <asp:SqlDataSource ID="KHACHHANGDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
  SelectCommand="SELECT DMKHACHHANG.* FROM DMKHACHHANG" >
-</asp:SqlDataSource>
- <asp:SqlDataSource ID="KHACHHANGCHITIETDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
- SelectCommand="SELECT DMKHACHHANGCHITIET.* FROM DMKHACHHANGCHITIET" >
 </asp:SqlDataSource>
 <asp:SqlDataSource ID="MASANPHAMDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
   SelectCommand="SELECT [PK_ID], [C_CODE], [C_NAME] FROM [DMMASANPHAM]  WHERE C_CODE <> ' ' ORDER BY PK_ID">

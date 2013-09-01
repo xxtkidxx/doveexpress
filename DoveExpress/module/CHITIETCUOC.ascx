@@ -29,6 +29,10 @@
         $find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("SelectedCTC," + sender1 + "," + sender2);
         return false;
     }
+    function onClientClickSelectedCTC1(sender1, sender2, sender3) {
+        $find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("SelectedCTC1," + sender1 + "," + sender2 + "," + sender3);
+        return false;
+    }
     function onResponseEndCTC() {
         if (typeof (result) != "undefined" && result && result != "") {
             var arrayOfStrings = result.split(",");
@@ -36,8 +40,7 @@
                 $find("<%=txtC_PPXD.ClientID %>").set_value(arrayOfStrings[1]);
                 $find("<%=RadGridCHITIETCUOC.ClientID %>").get_masterTableView().rebind();
             }
-            else
-            {
+            else {               
                 var masterTable = $find("<%= RadGridCHITIETCUOC.ClientID %>").get_masterTableView();
                 var dataItems = masterTable.get_dataItems();
                 for (var i = 0; i < dataItems.length; i++) {
@@ -45,8 +48,8 @@
                         var nestedView = dataItems[i].get_nestedViews()[0];
                         if (nestedView.get_dataItems().length > 0) {
                             var firstDataItem = nestedView.get_dataItems()[0];
-                            if (firstDataItem.getDataKeyValue("FK_MAVUNG") == result) {
-                                nestedView.rebind();
+                            if (firstDataItem.getDataKeyValue("FK_MAVUNG") == arrayOfStrings[1]) {
+                                nestedView.rebind();                               
                             }
                         }
                     }
@@ -178,6 +181,13 @@ ShowToggleImage="True" EmptyMessage="Chọn bảng"
                             </ItemTemplate>
                             <EditItemTemplate>
                             </EditItemTemplate>
+                            </telerik:GridTemplateColumn>
+                             <telerik:GridTemplateColumn UniqueName="C_TYPE1" HeaderText="Mức tính theo Kg" AllowFiltering ="false">
+                            <ItemTemplate>
+                                <asp:CheckBox ID="chkDefault1" runat="server" onclick='<%# String.Format("if(!onClientClickSelectedCTC1({0},{1},{2})) return false;",Eval("PK_ID"),Eval("FK_MAVUNG"),Eval("C_TYPE1")) %>' Checked='<%# getstatus(Eval("C_TYPE1")) %>'/>
+                            </ItemTemplate>
+                            <EditItemTemplate>
+                            </EditItemTemplate>
                             </telerik:GridTemplateColumn> 
                             </Columns>
      </telerik:GridTableView>
@@ -203,8 +213,8 @@ Phụ phí xăng dầu(%):&nbsp;
 <asp:SqlDataSource ID="CHITIETCUOCDataSource" runat="server" 
     ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>" 
     DeleteCommand="DELETE FROM [DMCHITIETCUOC] WHERE [PK_ID] = @PK_ID" 
-    InsertCommand="INSERT INTO [DMCHITIETCUOC] ([FK_MABANGCUOC], [FK_MASANPHAM], [FK_MAVUNG], [C_LOAITIEN], [C_KHOILUONG], [C_CUOCPHI]) VALUES (@FK_MABANGCUOC, @FK_MASANPHAM, @FK_MAVUNG, @C_LOAITIEN, @C_KHOILUONG, @C_CUOCPHI)" 
-    SelectCommand="SELECT [PK_ID], [FK_MABANGCUOC], [FK_MASANPHAM], [FK_MAVUNG], [C_LOAITIEN], [C_KHOILUONG], [C_CUOCPHI], [C_TYPE] FROM [DMCHITIETCUOC] WHERE [FK_MAVUNG] =@FK_MAVUNG AND [FK_MABANGCUOC] = @FK_MABANGCUOC AND [FK_MASANPHAM] = @FK_MASANPHAM AND [C_LOAITIEN] = @C_LOAITIEN" 
+    InsertCommand="INSERT INTO [DMCHITIETCUOC] ([FK_MABANGCUOC], [FK_MASANPHAM], [FK_MAVUNG], [C_LOAITIEN], [C_KHOILUONG], [C_CUOCPHI], [C_TYPE], [C_TYPE1]) VALUES (@FK_MABANGCUOC, @FK_MASANPHAM, @FK_MAVUNG, @C_LOAITIEN, @C_KHOILUONG, @C_CUOCPHI,0,0)" 
+    SelectCommand="SELECT [PK_ID], [FK_MABANGCUOC], [FK_MASANPHAM], [FK_MAVUNG], [C_LOAITIEN], [C_KHOILUONG], [C_CUOCPHI], [C_TYPE], [C_TYPE1] FROM [DMCHITIETCUOC] WHERE [FK_MAVUNG] =@FK_MAVUNG AND [FK_MABANGCUOC] = @FK_MABANGCUOC AND [FK_MASANPHAM] = @FK_MASANPHAM AND [C_LOAITIEN] = @C_LOAITIEN" 
     UpdateCommand="UPDATE [DMCHITIETCUOC] SET [C_KHOILUONG] = @C_KHOILUONG, [C_CUOCPHI] = @C_CUOCPHI WHERE [PK_ID] = @PK_ID">
     <SelectParameters>
         <asp:Parameter Name="FK_MAVUNG" Type="Int32" />
@@ -256,5 +266,5 @@ Phụ phí xăng dầu(%):&nbsp;
     SelectCommand="SELECT [PK_ID], [C_CODE], [C_NAME],[FK_VUNGLAMVIEC] FROM [DMMABANGCUOC] ORDER BY LTRIM([C_CODE])">
 </asp:SqlDataSource>
 <asp:SqlDataSource ID="MASANPHAMDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
-        SelectCommand="SELECT [PK_ID], [C_CODE], [C_NAME] FROM [DMMASANPHAM] ORDER BY LTRIM([C_CODE])">    
+        SelectCommand="SELECT [PK_ID], [C_CODE], [C_NAME] FROM [DMMASANPHAM]  WHERE [C_CODE] <> 'QT' ORDER BY LTRIM([C_CODE])">    
 </asp:SqlDataSource>

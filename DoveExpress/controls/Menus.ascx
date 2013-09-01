@@ -36,7 +36,9 @@
                     </telerik:RadMenuItem>
                     <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=MAVUNGQT" Text="Vùng tính cước quốc tế (Khách hàng)" Value="MAVUNGQT">
                     </telerik:RadMenuItem>
-                    <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=CHITIETCUOC" Text="Chi tiết cước khách hàng" Value="CHITIETCUOC">
+                    <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=CHITIETCUOC" Text="Chi tiết cước (khách hàng)" Value="CHITIETCUOC">
+                    </telerik:RadMenuItem>
+                    <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=CHITIETCUOCQT" Text="Chi tiết cước quốc tế (khách hàng)" Value="CHITIETCUOCQT">
                     </telerik:RadMenuItem> 
                  </Items>
             </telerik:RadMenuItem>
