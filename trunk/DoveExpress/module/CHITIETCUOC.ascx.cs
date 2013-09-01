@@ -45,6 +45,12 @@ public partial class module_CHITIETCUOC : System.Web.UI.UserControl
             string script = string.Format("var result = '{0}'", "SelectedCTC," + arrayvalue[2]);
             ScriptManager.RegisterClientScriptBlock(Page, typeof(Page), "result", script, true);           
         }
+        else if (arrayvalue[0] == "SelectedCTC1")
+        {
+            UpdateDefault1(arrayvalue[1], arrayvalue[2], arrayvalue[3]);
+            string script = string.Format("var result = '{0}'", "SelectedCTC1," + arrayvalue[2]);
+            ScriptManager.RegisterClientScriptBlock(Page, typeof(Page), "result", script, true);
+        }
         else if (arrayvalue[0] == "PPXDVALUE")
         {
             string FK_MASANPHAM = cmbSanPham.SelectedValue;
@@ -71,6 +77,20 @@ public partial class module_CHITIETCUOC : System.Web.UI.UserControl
     {
         ITCLIB.Admin.SQL rs = new ITCLIB.Admin.SQL();
         string Querry = "Update DMCHITIETCUOC set C_TYPE = 1 WHERE PK_ID =" + ID + ";Update DMCHITIETCUOC set C_TYPE = 0 WHERE PK_ID <>" + ID + " AND FK_MAVUNG = " + FK_MAVUNG + " AND FK_MABANGCUOC=" + cmbMaBangCuoc.SelectedValue + " AND FK_MASANPHAM=" + cmbSanPham.SelectedValue + " AND C_LOAITIEN ='" + cmbLoaiTien.SelectedValue +"'";
+        rs.ExecuteNonQuery(Querry);
+    }
+    protected void UpdateDefault1(string ID, string FK_MAVUNG, string C_TYPE1)
+    {
+        ITCLIB.Admin.SQL rs = new ITCLIB.Admin.SQL();
+        string Querry = "";
+        if (C_TYPE1 == "1")
+        {
+            Querry = "Update DMCHITIETCUOC set C_TYPE1 = 0 WHERE PK_ID =" + ID;
+        }
+        else if (C_TYPE1 == "0")
+        {
+            Querry = "Update DMCHITIETCUOC set C_TYPE1 = 1 WHERE PK_ID =" + ID;
+        }
         rs.ExecuteNonQuery(Querry);
     }
     protected bool getstatus(object status)
