@@ -668,6 +668,12 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
             RadNumericTextBox txtPPXD = (RadNumericTextBox)editItem.FindControl("txtPPXD");
             txtPPXD.Text = (txtPPXD.Text == "") ? "0" : txtPPXD.Text;
             RadTextBox txtCODE = (RadTextBox)editItem.FindControl("txtCODE");
+            RadNumericTextBox txtC_GIATRIHANGHOA = (RadNumericTextBox)editItem.FindControl("txtC_GIATRIHANGHOA");
+            txtC_GIATRIHANGHOA.Text = (txtC_GIATRIHANGHOA.Text == "") ? "0" : txtC_GIATRIHANGHOA.Text;
+            RadNumericTextBox txtC_KHOILUONGTHUC = (RadNumericTextBox)editItem.FindControl("txtC_KHOILUONGTHUC");
+            txtC_KHOILUONGTHUC.Text = (txtC_KHOILUONGTHUC.Text == "") ? "0" : txtC_KHOILUONGTHUC.Text;
+            RadNumericTextBox txtC_KHOILUONGQD = (RadNumericTextBox)editItem.FindControl("txtC_KHOILUONGQD");
+            txtC_KHOILUONGQD.Text = (txtC_KHOILUONGQD.Text == "") ? "0" : txtC_KHOILUONGQD.Text;
             RadNumericTextBox txtC_KHOILUONG = (RadNumericTextBox)editItem.FindControl("txtC_KHOILUONG");
             txtC_KHOILUONG.Text = (txtC_KHOILUONG.Text == "") ? "0" : txtC_KHOILUONG.Text;
             RadComboBox cmbMaKhachHang = (RadComboBox)editItem.FindControl("cmbMaKhachHang");

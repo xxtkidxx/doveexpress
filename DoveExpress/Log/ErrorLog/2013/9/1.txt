@@ -1,0 +1,49 @@
+Thời gian lỗi : 2013-09-01 13:16:31 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=KHACHHANG. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\module\KHACHHANG.ascx(199): error CS1061: 'ASP.module_khachhang_ascx' does not contain a definition for 'CheckName' and no extension method 'CheckName' accepting a first argument of type 'ASP.module_khachhang_ascx' could be found (are you missing a using directive or an assembly reference?)
+__________________________
+Thời gian lỗi : 2013-09-01 13:17:22 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=KHACHHANG. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\module\KHACHHANG.ascx.cs(154): error CS1525: Invalid expression term '<<'
+__________________________
+Thời gian lỗi : 2013-09-01 13:18:40 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=KHACHHANG. 
+Nội dung lỗi:Invalid column name 'C_TAIKHOAN'.
+__________________________
+Thời gian lỗi : 2013-09-01 13:24:20 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=KHACHHANG. 
+Nội dung lỗi:Selection out of range
+Parameter name: value
+__________________________
+Thời gian lỗi : 2013-09-01 13:24:22 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=KHACHHANG. 
+Nội dung lỗi:Selection out of range
+Parameter name: value
+__________________________
+Thời gian lỗi : 2013-09-01 13:24:24 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=KHACHHANG. 
+Nội dung lỗi:Selection out of range
+Parameter name: value
+__________________________
+Thời gian lỗi : 2013-09-01 13:24:25 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=KHACHHANG. 
+Nội dung lỗi:Selection out of range
+Parameter name: value
+__________________________
+Thời gian lỗi : 2013-09-01 14:02:27 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Failed to load viewstate.  The control tree into which viewstate is being loaded must match the control tree that was used to save viewstate during the previous request.  For example, when adding controls dynamically, the controls added during a post-back must match the type and position of the controls added during the initial request.
+__________________________
+Thời gian lỗi : 2013-09-01 14:02:33 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
