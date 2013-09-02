@@ -651,6 +651,8 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
         {
             GridEditableItem editItem = (GridEditableItem)e.Item;
             RadDatePicker radNgaynhangui = (RadDatePicker)editItem.FindControl("radNgaynhangui");
+            RadTextBox txtC_TENKH = (RadTextBox)editItem.FindControl("txtC_TENKH");
+            RadTextBox txtC_TELGUI = (RadTextBox)editItem.FindControl("txtC_TELGUI");            
             HiddenField txtID = (HiddenField)editItem.FindControl("txtID");
             Session["txtID"] = (txtID.Value != "") ? txtID.Value : "0";
             HiddenField hfTinhThanh = (HiddenField)editItem.FindControl("hfTinhThanh");
@@ -713,14 +715,16 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
                 FK_DICHVU = cmbSanPham.SelectedValue;
                 FK_QUANHUYEN = hfQuanHuyen.Value;
                 FK_KHACHHANG = cmbMaKhachHang.SelectedValue;
+                TENKH = txtC_TENKH.Text;
+                DIENTHOAIKH = txtC_TELGUI.Text;
                 string SelectSQL;
-                SelectSQL = "Select DMKHACHHANG.FK_NHOMKHACHHANG FROM DMKHACHHANG WHERE DMKHACHHANG.C_CODE ='" + FK_KHACHHANG + "'";
+                SelectSQL = "Select DMKHACHHANG.FK_NHOMKHACHHANG,DMKHACHHANG.C_NAME,DMKHACHHANG.C_TEL FROM DMKHACHHANG WHERE DMKHACHHANG.C_CODE ='" + FK_KHACHHANG + "'";
                 DataTable oDataTable = new DataTable();
                 ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
                 oDataTable = SelectQuery.query_data(SelectSQL);
                 if (oDataTable.Rows.Count != 0)
                 {
-                    FK_NHOMKHACHHANG = oDataTable.Rows[0]["FK_NHOMKHACHHANG"].ToString();
+                    FK_NHOMKHACHHANG = oDataTable.Rows[0]["FK_NHOMKHACHHANG"].ToString();                  
                     string SelectSQL2;
                     SelectSQL2 = "Select DMMABANGCUOC.PK_ID FROM DMMABANGCUOC WHERE ((DMMABANGCUOC.C_VALUE ='" + FK_NHOMKHACHHANG + "') OR (DMMABANGCUOC.C_VALUE LIKE '%," + FK_NHOMKHACHHANG + ",%') OR (DMMABANGCUOC.C_VALUE LIKE '%," + FK_NHOMKHACHHANG + "') OR (DMMABANGCUOC.C_VALUE LIKE '" + FK_NHOMKHACHHANG + ",%')) AND (DMMABANGCUOC.FK_VUNGLAMVIEC = N'" + Session["VUNGLAMVIEC"].ToString() + "')";
                     DataTable oDataTable2 = new DataTable();
