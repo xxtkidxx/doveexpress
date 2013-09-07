@@ -2,13 +2,10 @@
 <telerik:RadScriptBlock ID="RadScriptBlockCHITIETCUOCDT" runat="server">   
 <script type="text/javascript">
     function cmbDoiTacClientSelectedIndexChangedHandler(sender, eventArgs) {
-        $find("<%=RadGridCHITIETCUOCDT.ClientID %>").get_masterTableView().rebind();
-    }
-    function cmbNhomKhachHangClientSelectedIndexChangedHandler(sender, eventArgs) {
-        $find("<%=RadGridCHITIETCUOCDT.ClientID %>").get_masterTableView().rebind();
+        $find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("PPXDVALUE,2");
     }
     function cmbSanPhamClientSelectedIndexChangedHandler(sender, eventArgs) {
-        $find("<%=RadGridCHITIETCUOCDT.ClientID %>").get_masterTableView().rebind();
+        $find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("PPXDVALUE,1");
     }
     function cmbLoaiTienClientSelectedIndexChangedHandler(sender, eventArgs) {
         $find("<%=RadGridCHITIETCUOCDT.ClientID %>").get_masterTableView().rebind();
@@ -27,40 +24,30 @@
         $find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("SelectedCTC," + sender1 + "," + sender2);
         return false;
     }
+    function onClientClickSelectedCTC1(sender1, sender2, sender3) {
+        $find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("SelectedCTC1," + sender1 + "," + sender2 + "," + sender3);
+        return false;
+    }
     function onResponseEndCTC() {
         if (typeof (result) != "undefined" && result && result != "") {
-            //$find("<%= RadGridCHITIETCUOCDT.ClientID %>").get_masterTableView().rebind();
-            var masterTable = $find("<%= RadGridCHITIETCUOCDT.ClientID %>").get_masterTableView();
-            var dataItems = masterTable.get_dataItems();
-            for (var i = 0; i < dataItems.length; i++) {
-                if (dataItems[i].get_nestedViews().length > 0) {
-                    var nestedView = dataItems[i].get_nestedViews()[0];
-                    if (nestedView.get_dataItems().length > 0) {
-                        var firstDataItem = nestedView.get_dataItems()[0];
-                        if (firstDataItem.getDataKeyValue("FK_MAVUNG") == result) {
-                            nestedView.rebind();
+            var arrayOfStrings = result.split(",");
+            if (arrayOfStrings[0] == "PPXDVALUE") {
+                $find("<%=txtC_PPXD.ClientID %>").set_value(arrayOfStrings[1]);
+                $find("<%=RadGridCHITIETCUOCDT.ClientID %>").get_masterTableView().rebind();
+            }
+            else {
+                var masterTable = $find("<%= RadGridCHITIETCUOCDT.ClientID %>").get_masterTableView();
+                var dataItems = masterTable.get_dataItems();
+                for (var i = 0; i < dataItems.length; i++) {
+                    if (dataItems[i].get_nestedViews().length > 0) {
+                        var nestedView = dataItems[i].get_nestedViews()[0];
+                        if (nestedView.get_dataItems().length > 0) {
+                            var firstDataItem = nestedView.get_dataItems()[0];
+                            if (firstDataItem.getDataKeyValue("FK_MAVUNG") == arrayOfStrings[1]) {
+                                nestedView.rebind();
+                            }
                         }
                     }
-                }
-            }
-            result = "";
-        }
-        return false;
-    }
-</script>
-<script type="text/javascript">
-    function onClientClickSelectedCTC(sender1, sender2) {
-        $find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("SelectedCTC," + sender1 + "," + sender2);
-        return false;
-    }
-    function onResponseEndCTC() {
-        if (typeof (result) != "undefined" && result && result != "") {
-            var masterTable = $find("<%= RadGridCHITIETCUOCDT.ClientID %>").get_masterTableView();
-            var dataItems = masterTable.get_dataItems();
-            for (var i = 0; i < dataItems.length; i++) {
-                if (dataItems[i].get_nestedViews().length > 0) {
-                    var nestedView = dataItems[i].get_nestedViews()[0];
-                    nestedView.rebind();
                 }
             }
             result = "";
@@ -189,6 +176,13 @@ ShowToggleImage="True" EmptyMessage="Chọn đối tác"
                             </ItemTemplate>
                             <EditItemTemplate>
                             </EditItemTemplate>
+                            </telerik:GridTemplateColumn>
+                            <telerik:GridTemplateColumn UniqueName="C_TYPE1" HeaderText="Mức tính theo Kg" AllowFiltering ="false">
+                            <ItemTemplate>
+                                <asp:CheckBox ID="chkDefault1" runat="server" onclick='<%# String.Format("if(!onClientClickSelectedCTC1({0},{1},{2})) return false;",Eval("PK_ID"),Eval("FK_MAVUNG"),Eval("C_TYPE1")) %>' Checked='<%# getstatus(Eval("C_TYPE1")) %>'/>
+                            </ItemTemplate>
+                            <EditItemTemplate>
+                            </EditItemTemplate>
                             </telerik:GridTemplateColumn> 
                             </Columns>
      </telerik:GridTableView>
@@ -204,11 +198,18 @@ ShowToggleImage="True" EmptyMessage="Chọn đối tác"
             SortedDescToolTip="Sắp xếp giảm dần" SortToolTip="Click để sắp xếp" />
         <StatusBarSettings LoadingText="Đang tải..." ReadyText="Sẵn sàng" />
 </telerik:RadGrid>
+<div style ="width:100%; margin: 10px 10px 10px 10px; ">
+Phụ phí xăng dầu(%):&nbsp; 
+ <telerik:RadNumericTextBox runat="server" CssClass ="csstextNum" ID="txtC_PPXD" Width="50px">
+       <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="1"/>
+ </telerik:RadNumericTextBox>
+ <asp:Button ID="btnSave" runat="server" Text="Lưu" onclick="btnSave_Click" />
+ </div>
 <asp:SqlDataSource ID="CHITIETCUOCDTDataSource" runat="server" 
     ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>" 
     DeleteCommand="DELETE FROM [DMCHITIETCUOCDT] WHERE [PK_ID] = @PK_ID" 
-    InsertCommand="INSERT INTO [DMCHITIETCUOCDT] ([FK_DoiTac], [FK_MASANPHAM], [FK_MAVUNG], [C_LOAITIEN], [C_KHOILUONG], [C_CUOCPHI]) VALUES (@FK_DoiTac, @FK_MASANPHAM, @FK_MAVUNG, @C_LOAITIEN, @C_KHOILUONG, @C_CUOCPHI)" 
-    SelectCommand="SELECT [PK_ID], [FK_DoiTac], [FK_MASANPHAM], [FK_MAVUNG], [C_LOAITIEN], [C_KHOILUONG], [C_CUOCPHI], [C_TYPE] FROM [DMCHITIETCUOCDT] WHERE [FK_MAVUNG] =@FK_MAVUNG AND [FK_DoiTac] = @FK_DoiTac AND [FK_MASANPHAM] = @FK_MASANPHAM AND [C_LOAITIEN] = @C_LOAITIEN" 
+    InsertCommand="INSERT INTO [DMCHITIETCUOCDT] ([FK_DoiTac], [FK_MASANPHAM], [FK_MAVUNG], [C_LOAITIEN], [C_KHOILUONG], [C_CUOCPHI], [C_TYPE], [C_TYPE1]) VALUES (@FK_DoiTac, @FK_MASANPHAM, @FK_MAVUNG, @C_LOAITIEN, @C_KHOILUONG, @C_CUOCPHI,0,0)" 
+    SelectCommand="SELECT [PK_ID], [FK_DoiTac], [FK_MASANPHAM], [FK_MAVUNG], [C_LOAITIEN], [C_KHOILUONG], [C_CUOCPHI], [C_TYPE], [C_TYPE1] FROM [DMCHITIETCUOCDT] WHERE [FK_MAVUNG] =@FK_MAVUNG AND [FK_DoiTac] = @FK_DoiTac AND [FK_MASANPHAM] = @FK_MASANPHAM AND [C_LOAITIEN] = @C_LOAITIEN" 
     UpdateCommand="UPDATE [DMCHITIETCUOCDT] SET [C_KHOILUONG] = @C_KHOILUONG, [C_CUOCPHI] = @C_CUOCPHI WHERE [PK_ID] = @PK_ID">
     <SelectParameters>
         <asp:Parameter Name="FK_MAVUNG" Type="Int32" />
@@ -236,10 +237,11 @@ ShowToggleImage="True" EmptyMessage="Chọn đối tác"
 <asp:SqlDataSource ID="MAVUNGDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
         DeleteCommand="DELETE FROM [DMMAVUNG] WHERE [PK_ID] = @PK_ID" 
         InsertCommand="INSERT INTO [DMMAVUNG] ([C_CODE], [C_NAME], [C_DESC]) VALUES (@C_CODE, @C_NAME, @C_DESC)"
-        SelectCommand="SELECT [PK_ID], [C_CODE], [C_NAME], [C_DESC] FROM [DMMAVUNG] WHERE FK_MASANPHAM = @FK_MASANPHAM ORDER BY LTRIM([C_CODE])"      
+        SelectCommand="SELECT [PK_ID], [C_CODE], [C_NAME], [C_DESC] FROM [DMMAVUNG] WHERE FK_MASANPHAM = @FK_MASANPHAM AND DMMAVUNG.FK_VUNGLAMVIEC = @FK_VUNGLAMVIEC ORDER BY LTRIM([C_CODE])"      
         UpdateCommand="UPDATE [DMMAVUNG] SET [C_CODE] = @C_CODE, [C_NAME] = @C_NAME,[C_DESC] = @C_DESC WHERE [PK_ID] = @PK_ID" >
         <SelectParameters>
             <asp:ControlParameter ControlID="cmbSanPham" DefaultValue="0" Name="FK_MASANPHAM" PropertyName="SelectedValue" />
+             <asp:SessionParameter Name="FK_VUNGLAMVIEC" Type="String" SessionField="VUNGLAMVIEC" />
         </SelectParameters>
         <UpdateParameters>
             <asp:Parameter Name="C_CODE" Type="String" />
