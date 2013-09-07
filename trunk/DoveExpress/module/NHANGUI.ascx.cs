@@ -688,8 +688,10 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
             txtC_KHAIGIA.Text = (txtC_KHAIGIA.Text == "") ? "0" : txtC_KHAIGIA.Text;
             RadNumericTextBox txtC_COD = (RadNumericTextBox)editItem.FindControl("txtC_COD");
             txtC_COD.Text = (txtC_COD.Text == "") ? "0" : txtC_COD.Text;
-            RadNumericTextBox txtC_KHAC = (RadNumericTextBox)editItem.FindControl("txtC_KHAC");
-            txtC_KHAC.Text = (txtC_KHAC.Text == "") ? "0" : txtC_KHAC.Text;
+            RadNumericTextBox txtC_BAOPHAT = (RadNumericTextBox)editItem.FindControl("txtC_BAOPHAT");
+            txtC_BAOPHAT.Text = (txtC_BAOPHAT.Text == "") ? "0" : txtC_BAOPHAT.Text;
+            RadNumericTextBox txtC_HENGIO = (RadNumericTextBox)editItem.FindControl("txtC_HENGIO");
+            txtC_HENGIO.Text = (txtC_HENGIO.Text == "") ? "0" : txtC_HENGIO.Text;
             RadNumericTextBox txtC_TIENHANG = (RadNumericTextBox)editItem.FindControl("txtC_TIENHANG");
             txtC_TIENHANG.Text = (txtC_TIENHANG.Text == "") ? "0" : txtC_TIENHANG.Text;
             RadNumericTextBox txtC_VAT = (RadNumericTextBox)editItem.FindControl("txtC_VAT");

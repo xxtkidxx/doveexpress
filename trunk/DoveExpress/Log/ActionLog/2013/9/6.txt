@@ -1,0 +1,48 @@
+Thời gian: 2013-09-06 17:53:39 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-09-06 19:47:28 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-09-06 19:51:23 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {PK_ID:"88",C_BILL:"00375305"}
+__________________________
+Thời gian: 2013-09-06 19:51:31 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {PK_ID:"88",C_BILL:"00375305"}
+__________________________
+Thời gian: 2013-09-06 19:55:02 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {PK_ID:"88",C_BILL:"00375305"}
+__________________________
+Thời gian: 2013-09-06 19:55:22 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {PK_ID:"88",C_BILL:"00375305"}
+__________________________
+Thời gian: 2013-09-06 19:58:58 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {PK_ID:"88",C_BILL:"00375305"}
+__________________________
+Thời gian: 2013-09-06 20:01:22 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
