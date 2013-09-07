@@ -42,14 +42,55 @@ public partial class module_CHITIETCUOCDT : System.Web.UI.UserControl
         if (arrayvalue[0] == "SelectedCTC")
         {
             UpdateDefault(arrayvalue[1], arrayvalue[2]);
-            string script = string.Format("var result = '{0}'", arrayvalue[2]);
-            ScriptManager.RegisterClientScriptBlock(Page, typeof(Page), "result", script, true);  
+            string script = string.Format("var result = '{0}'", "SelectedCTC," + arrayvalue[2]);
+            ScriptManager.RegisterClientScriptBlock(Page, typeof(Page), "result", script, true);
+        }
+        else if (arrayvalue[0] == "SelectedCTC1")
+        {
+            UpdateDefault1(arrayvalue[1], arrayvalue[2], arrayvalue[3]);
+            string script = string.Format("var result = '{0}'", "SelectedCTC1," + arrayvalue[2]);
+            ScriptManager.RegisterClientScriptBlock(Page, typeof(Page), "result", script, true);
+        }
+        else if (arrayvalue[0] == "PPXDVALUE")
+        {
+            string FK_MASANPHAM = cmbSanPham.SelectedValue;
+            string FK_DOITAC = cmbDoiTac.SelectedValue;
+            string SelectSQL;
+            string PPXD;
+            SelectSQL = "Select DMPPXDDT.C_PPXD FROM DMPPXDDT WHERE DMPPXDDT.FK_MASANPHAM =" + FK_MASANPHAM + " AND FK_DOITAC = " + FK_DOITAC;
+            DataTable oDataTable = new DataTable();
+            ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
+            oDataTable = SelectQuery.query_data(SelectSQL);
+            if (oDataTable.Rows.Count != 0)
+            {
+                PPXD = oDataTable.Rows[0]["C_PPXD"].ToString();
+            }
+            else
+            {
+                PPXD = "0";
+            }
+            string script = string.Format("var result = '{0}'", "PPXDVALUE," + PPXD);
+            ScriptManager.RegisterClientScriptBlock(Page, typeof(Page), "result", script, true);
         }
     }
     protected void UpdateDefault(string ID, string FK_MAVUNG)
     {
         ITCLIB.Admin.SQL rs = new ITCLIB.Admin.SQL();
         string Querry = "Update DMCHITIETCUOCDT set C_TYPE = 1 WHERE PK_ID =" + ID + ";Update DMCHITIETCUOCDT set C_TYPE = 0 WHERE PK_ID <>" + ID + " AND FK_MAVUNG = " + FK_MAVUNG + " AND FK_DOITAC =" + cmbDoiTac.SelectedValue + " AND FK_MASANPHAM=" + cmbSanPham.SelectedValue + " AND C_LOAITIEN ='" + cmbLoaiTien.SelectedValue + "'";
+        rs.ExecuteNonQuery(Querry);
+    }
+    protected void UpdateDefault1(string ID, string FK_MAVUNG, string C_TYPE1)
+    {
+        ITCLIB.Admin.SQL rs = new ITCLIB.Admin.SQL();
+        string Querry = "";
+        if (C_TYPE1 == "1")
+        {
+            Querry = "Update DMCHITIETCUOCDT set C_TYPE1 = 0 WHERE PK_ID =" + ID;
+        }
+        else if (C_TYPE1 == "0")
+        {
+            Querry = "Update DMCHITIETCUOCDT set C_TYPE1 = 1 WHERE PK_ID =" + ID;
+        }
         rs.ExecuteNonQuery(Querry);
     }
     protected bool getstatus(object status)
@@ -270,6 +311,30 @@ public partial class module_CHITIETCUOCDT : System.Web.UI.UserControl
         if (cmbLoaiTien.Items.Count != 0)
         {
             cmbLoaiTien.SelectedIndex = 0;
+        }
+    }
+    protected void btnSave_Click(object sender, EventArgs e)
+    {
+        string FK_MASANPHAM = cmbSanPham.SelectedValue;
+        string FK_DOITAC = cmbDoiTac.SelectedValue;
+        decimal C_PPXD = (txtC_PPXD.Text != "") ? decimal.Parse(txtC_PPXD.Text) : 0;
+        string SQL;
+        string SelectSQL;
+        if (FK_MASANPHAM != "" && FK_DOITAC != "")
+        {
+            SelectSQL = "Select DMPPXDDT.C_PPXD FROM DMPPXDDT WHERE DMPPXDDT.FK_MASANPHAM =" + FK_MASANPHAM + " AND FK_DOITAC = " + FK_DOITAC;
+            DataTable oDataTable = new DataTable();
+            ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
+            oDataTable = SelectQuery.query_data(SelectSQL);
+            if (oDataTable.Rows.Count != 0)
+            {
+                SQL = "Update DMPPXDDT set C_PPXD = " + C_PPXD + " WHERE DMPPXDDT.FK_MASANPHAM =" + FK_MASANPHAM + " AND FK_DOITAC = " + FK_DOITAC;
+            }
+            else
+            {
+                SQL = "Insert into DMPPXDDT (FK_MASANPHAM,FK_DOITAC,C_PPXD) VALUES (" + FK_MASANPHAM + "," + FK_DOITAC + "," + C_PPXD + ")";
+            }
+            SelectQuery.ExecuteNonQuery(SQL);
         }
     }
 }

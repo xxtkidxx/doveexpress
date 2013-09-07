@@ -5,9 +5,6 @@
         $find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("PPXDVALUE,2");
         return false;
     }
-    function cmbNhomKhachHangClientSelectedIndexChangedHandler(sender, eventArgs) {
-        $find("<%=RadGridCHITIETCUOC.ClientID %>").get_masterTableView().rebind();
-    }
     function cmbSanPhamClientSelectedIndexChangedHandler(sender, eventArgs) {
         $find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("PPXDVALUE,1");
         return false;
@@ -182,7 +179,7 @@ ShowToggleImage="True" EmptyMessage="Chọn bảng"
                             <EditItemTemplate>
                             </EditItemTemplate>
                             </telerik:GridTemplateColumn>
-                             <telerik:GridTemplateColumn UniqueName="C_TYPE1" HeaderText="Mức tính theo Kg" AllowFiltering ="false">
+                            <telerik:GridTemplateColumn UniqueName="C_TYPE1" HeaderText="Mức tính theo Kg" AllowFiltering ="false">
                             <ItemTemplate>
                                 <asp:CheckBox ID="chkDefault1" runat="server" onclick='<%# String.Format("if(!onClientClickSelectedCTC1({0},{1},{2})) return false;",Eval("PK_ID"),Eval("FK_MAVUNG"),Eval("C_TYPE1")) %>' Checked='<%# getstatus(Eval("C_TYPE1")) %>'/>
                             </ItemTemplate>
