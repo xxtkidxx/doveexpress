@@ -1,0 +1,240 @@
+Thời gian: 2013-09-07 12:53:58 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-09-07 13:14:21 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated DOITACs
+Kết quả : {PK_ID:"2"}
+__________________________
+Thời gian: 2013-09-07 13:14:34 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted DOITACs
+Kết quả : {PK_ID:"3"}
+__________________________
+Thời gian: 2013-09-07 13:14:43 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted DOITACs
+Kết quả : {PK_ID:"4"}
+__________________________
+Thời gian: 2013-09-07 13:40:35 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-09-07 13:49:29 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted CHITIETCUOCDT
+Kết quả : {PK_ID:"2"}
+__________________________
+Thời gian: 2013-09-07 13:50:49 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted CHITIETCUOCDT
+Kết quả : {PK_ID:"2",FK_MAVUNG:"19"}
+__________________________
+Thời gian: 2013-09-07 13:51:46 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted CHITIETCUOCDT
+Kết quả : {PK_ID:"3"}
+__________________________
+Thời gian: 2013-09-07 13:52:02 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted CHITIETCUOCDT
+Kết quả : {PK_ID:"4"}
+__________________________
+Thời gian: 2013-09-07 13:52:09 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted CHITIETCUOCDT
+Kết quả : {PK_ID:"5"}
+__________________________
+Thời gian: 2013-09-07 13:52:19 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted CHITIETCUOCDT
+Kết quả : {PK_ID:"6"}
+__________________________
+Thời gian: 2013-09-07 13:52:24 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted CHITIETCUOCDT
+Kết quả : {PK_ID:"7"}
+__________________________
+Thời gian: 2013-09-07 13:52:30 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted CHITIETCUOCDT
+Kết quả : {PK_ID:"8"}
+__________________________
+Thời gian: 2013-09-07 13:52:40 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted CHITIETCUOCDT
+Kết quả : {PK_ID:"9"}
+__________________________
+Thời gian: 2013-09-07 13:52:52 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted CHITIETCUOCDT
+Kết quả : {PK_ID:"10"}
+__________________________
+Thời gian: 2013-09-07 13:53:01 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted CHITIETCUOCDT
+Kết quả : {PK_ID:"11"}
+__________________________
+Thời gian: 2013-09-07 13:53:06 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted CHITIETCUOCDT
+Kết quả : {PK_ID:"12"}
+__________________________
+Thời gian: 2013-09-07 13:53:15 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted CHITIETCUOCDT
+Kết quả : {PK_ID:"13"}
+__________________________
+Thời gian: 2013-09-07 13:53:21 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted CHITIETCUOCDT
+Kết quả : {PK_ID:"14"}
+__________________________
+Thời gian: 2013-09-07 13:53:32 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Update CHITIETCUOCDTs
+Kết quả : {PK_ID:"5",FK_MAVUNG:"3"}
+__________________________
+Thời gian: 2013-09-07 13:53:37 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Update CHITIETCUOCDTs
+Kết quả : {PK_ID:"6",FK_MAVUNG:"3"}
+__________________________
+Thời gian: 2013-09-07 13:53:49 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Update CHITIETCUOCDTs
+Kết quả : {PK_ID:"7",FK_MAVUNG:"3"}
+__________________________
+Thời gian: 2013-09-07 13:53:57 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Update CHITIETCUOCDTs
+Kết quả : {PK_ID:"8",FK_MAVUNG:"3"}
+__________________________
+Thời gian: 2013-09-07 13:54:04 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Update CHITIETCUOCDTs
+Kết quả : {PK_ID:"9",FK_MAVUNG:"3"}
+__________________________
+Thời gian: 2013-09-07 13:54:09 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Update CHITIETCUOCDTs
+Kết quả : {PK_ID:"10",FK_MAVUNG:"3"}
+__________________________
+Thời gian: 2013-09-07 13:54:19 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Update CHITIETCUOCDTs
+Kết quả : {PK_ID:"11",FK_MAVUNG:"3"}
+__________________________
+Thời gian: 2013-09-07 13:54:29 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Update CHITIETCUOCDTs
+Kết quả : {PK_ID:"12",FK_MAVUNG:"3"}
+__________________________
+Thời gian: 2013-09-07 13:54:35 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Update CHITIETCUOCDTs
+Kết quả : {PK_ID:"13",FK_MAVUNG:"3"}
+__________________________
+Thời gian: 2013-09-07 13:54:45 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Update CHITIETCUOCDTs
+Kết quả : {PK_ID:"14",FK_MAVUNG:"3"}
+__________________________
+Thời gian: 2013-09-07 14:20:30 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {PK_ID:"88",C_BILL:"00375305"}
+__________________________
+Thời gian: 2013-09-07 14:21:18 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Update CHITIETCUOCDTs
+Kết quả : {PK_ID:"13",FK_MAVUNG:"3"}
+__________________________
+Thời gian: 2013-09-07 14:45:28 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {PK_ID:"88",C_BILL:"00375305"}
+__________________________
+Thời gian: 2013-09-07 14:46:26 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-09-07 15:00:31 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {PK_ID:"88",C_BILL:"00375305"}
+__________________________
+Thời gian: 2013-09-07 15:03:35 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {PK_ID:"88",C_BILL:"00375305"}
+__________________________
+Thời gian: 2013-09-07 15:03:57 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {PK_ID:"88",C_BILL:"00375305"}
+__________________________
+Thời gian: 2013-09-07 15:11:53 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-09-07 15:30:04 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-09-07 16:00:07 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-09-07 16:01:57 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted MABANGCUOCQTs
+Kết quả : {PK_ID:"1"}
+__________________________

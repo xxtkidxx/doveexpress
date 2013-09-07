@@ -30,16 +30,24 @@
                     </telerik:RadMenuItem> 
                     <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=KHACHHANG" Text="Khách hàng" Value="KHACHHANG">
                     </telerik:RadMenuItem>
-                    <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=MABANGCUOC" Text="Mã bảng cước (khách hàng)" Value="MABANGCUOC">                 
-                    </telerik:RadMenuItem>                    
-                    <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=MAVUNG" Text="Vùng tính cước (Khách hàng)" Value="MAVUNG">
+                    <telerik:RadMenuItem runat="server" Font-Size="Small" Text="Cước trong nước" Value="CUOCTRONGNUOC">
+                        <Items>
+                            <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=MABANGCUOC" Text="Mã bảng cước (khách hàng)" Value="MABANGCUOC">                 
+                            </telerik:RadMenuItem>
+                            <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=MAVUNG" Text="Vùng tính cước (Khách hàng)" Value="MAVUNG">
+                            </telerik:RadMenuItem>
+                            <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=CHITIETCUOC" Text="Chi tiết cước (khách hàng)" Value="CHITIETCUOC">
+                            </telerik:RadMenuItem>         
+                        </Items>
                     </telerik:RadMenuItem>
-                    <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=MAVUNGQT" Text="Vùng tính cước quốc tế (Khách hàng)" Value="MAVUNGQT">
+                    <telerik:RadMenuItem runat="server" Font-Size="Small" Text="Cước quốc tế" Value="CUOCQUOCTE">
+                        <Items>
+                            <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=MABANGCUOCQT" Text="Mã bảng cước quốc tế (khách hàng)" Value="MABANGCUOCQT">
+                            </telerik:RadMenuItem>              
+                            <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=MAVUNGQT" Text="Vùng tính cước quốc tế (Khách hàng)" Value="MAVUNGQT">
+                            </telerik:RadMenuItem>
+                        </Items>
                     </telerik:RadMenuItem>
-                    <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=CHITIETCUOC" Text="Chi tiết cước (khách hàng)" Value="CHITIETCUOC">
-                    </telerik:RadMenuItem>
-                    <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=CHITIETCUOCQT" Text="Chi tiết cước quốc tế (khách hàng)" Value="CHITIETCUOCQT">
-                    </telerik:RadMenuItem> 
                  </Items>
             </telerik:RadMenuItem>
             <telerik:RadMenuItem runat="server" Font-Size="Small" Text="Đối tác" Value="DOITACMENU">

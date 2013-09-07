@@ -684,22 +684,19 @@
                 <td colspan="4">
                     <telerik:RadNumericTextBox  ID="txtC_DONGGOI" Width ="90%" Runat="server" Text='<%# Bind("C_DONGGOI") %>' ClientEvents-OnLoad="OnClientLoadtxtC_DONGGOI" ClientEvents-OnValueChanged="OnValueChangedtxtC_DONGGOI">
                             <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
-                            <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
                     </telerik:RadNumericTextBox>
                 </td>
                 <td style =" width:100px;"><span class="rtsTxtnew"><input id="btnC_KHAIGIA" type="checkbox" onclick="SetC_KHAIGIA();" value="false"/>Khai giá:</td>
                 <td colspan="4">
                     <telerik:RadNumericTextBox  ID="txtC_KHAIGIA" Width ="90%" Runat="server" Text='<%# Bind("C_KHAIGIA") %>' ClientEvents-OnLoad="OnClientLoadtxtC_KHAIGIA" ClientEvents-OnValueChanged="OnValueChangedtxtC_KHAIGIA">
                             <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
-                            <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
-                    </telerik:RadNumericTextBox>
+                     </telerik:RadNumericTextBox>
                 </td>
             </tr>
             <tr>                
                 <td style =" width:100px;"> <span class="rtsTxtnew"><input id="btnC_COD" type="checkbox" onclick="SetC_COD();" value="false"/>COD:</span></td>
                 <td colspan="4">
                     <telerik:RadNumericTextBox  ID="txtC_COD" Width ="90%" Runat="server" Text='<%# Bind("C_COD") %>' ClientEvents-OnLoad="OnClientLoadtxtC_COD" ClientEvents-OnValueChanged="OnValueChangedtxtC_COD">
-                            <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
                             <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
                     </telerik:RadNumericTextBox>
                 </td>                
