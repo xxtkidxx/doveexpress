@@ -124,10 +124,13 @@
                 <telerik:GridBoundColumn UniqueName="NHOMKHACHHANGNAME" HeaderText="Nhóm KH" DataField="NHOMKHACHHANGNAME" 
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
                 </telerik:GridBoundColumn>
-                <telerik:GridBoundColumn UniqueName="C_CODE" HeaderText="Mã khách hàng" DataField="C_CODE" 
+                <telerik:GridBoundColumn UniqueName="NHOMKHACHHANGNAMEQT" HeaderText="Nhóm KH QT" DataField="NHOMKHACHHANGNAMEQT" 
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
                 </telerik:GridBoundColumn>
-                <telerik:GridBoundColumn UniqueName="C_NAME" HeaderText="Tên khách hàng" DataField="C_NAME" 
+                <telerik:GridBoundColumn UniqueName="C_CODE" HeaderText="Mã KH" DataField="C_CODE" 
+                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
+                </telerik:GridBoundColumn>
+                <telerik:GridBoundColumn UniqueName="C_NAME" HeaderText="Tên KH" DataField="C_NAME" 
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
                 </telerik:GridBoundColumn>
                 <telerik:GridBoundColumn UniqueName="C_ADDRESS" HeaderText="Địa chỉ" DataField="C_ADDRESS" 
@@ -180,6 +183,15 @@
                     DataSourceID="NHOMKHACHHANGDataSource" DataTextField="C_NAME"  DataValueField="PK_ID" EnableLoadOnDemand="true">                               
                    </telerik:RadComboBox>
                    <asp:RequiredFieldValidator ID="rfvFK_NHOMKHACHHANG" runat="server" ErrorMessage="Hãy chọn nhóm khách hàng" ControlToValidate="cmbFK_NHOMKHACHHANG" SetFocusOnError="True" Display="Dynamic" ValidationGroup="G1"></asp:RequiredFieldValidator>                   
+                </td>
+            </tr>
+            <tr>
+                 <td style =" width:150px;"> <span class="rtsTxtnew">Nhóm khách hàng QT:</td>
+                <td colspan="4">
+                   <telerik:RadComboBox style="width:180px" SelectedValue='<%# Bind("FK_NHOMKHACHHANGQT") %>' ID="cmbFK_NHOMKHACHHANGQT" runat="server" EmptyMessage="Chọn nhóm khách hàng QT" Filter ="Contains" 
+                    DataSourceID="NHOMKHACHHANGQTDataSource" DataTextField="C_NAME"  DataValueField="PK_ID" EnableLoadOnDemand="true">                               
+                   </telerik:RadComboBox>
+                   <asp:RequiredFieldValidator ID="rfvFK_NHOMKHACHHANGQT" runat="server" ErrorMessage="Hãy chọn nhóm khách hàng quốc tế" ControlToValidate="cmbFK_NHOMKHACHHANGQT" SetFocusOnError="True" Display="Dynamic" ValidationGroup="G1"></asp:RequiredFieldValidator>                   
                 </td>
             </tr>
             <tr>
@@ -298,11 +310,12 @@
 <asp:SqlDataSource ID="KHACHHANGDataSource" runat="server" 
     ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>" 
     DeleteCommand="DELETE FROM [DMKHACHHANG] WHERE [PK_ID] = @PK_ID" 
-    InsertCommand="INSERT INTO [DMKHACHHANG] ([FK_NHOMKHACHHANG], [C_CODE], [C_NAME], [C_ADDRESS], [FK_QUANHUYEN], [C_TEL], [FK_USER], [C_TAIKHOAN], [C_MST], [C_EMAIL], [C_MOBILE], [C_NGUOILIENHE]) VALUES (@FK_NHOMKHACHHANG, @C_CODE, @C_NAME, @C_ADDRESS, @FK_QUANHUYEN, @C_TEL, @FK_USER, @C_TAIKHOAN, @C_MST, @C_EMAIL, @C_MOBILE, @C_NGUOILIENHE)" 
-    SelectCommand="SELECT [DMKHACHHANG].[PK_ID], [DMKHACHHANG].[FK_NHOMKHACHHANG], [DMKHACHHANG].[C_CODE], [DMKHACHHANG].[C_NAME], [DMKHACHHANG].[C_ADDRESS], [DMKHACHHANG].[FK_QUANHUYEN], [DMKHACHHANG].[C_TEL], [DMKHACHHANG].[FK_USER], [DMKHACHHANG].[C_TAIKHOAN], [DMKHACHHANG].[C_MST], [DMKHACHHANG].[C_EMAIL], [DMKHACHHANG].[C_MOBILE], [DMKHACHHANG].[C_NGUOILIENHE],DMQUANHUYEN.C_NAME as QUANHUYENNAME,DMTINHTHANH.C_NAME as TINHTHANHNAME,USERS.C_NAME as USERNAME,DMNHOMKHACHHANG.C_NAME as NHOMKHACHHANGNAME FROM [DMKHACHHANG] LEFT OUTER JOIN DMQUANHUYEN ON DMKHACHHANG.FK_QUANHUYEN = DMQUANHUYEN.PK_ID LEFT OUTER JOIN DMTINHTHANH ON DMQUANHUYEN.FK_TINHTHANH = DMTINHTHANH.PK_ID LEFT OUTER JOIN USERS ON DMKHACHHANG.FK_USER =USERS.PK_ID LEFT OUTER JOIN DMNHOMKHACHHANG ON DMKHACHHANG.FK_NHOMKHACHHANG =DMNHOMKHACHHANG.PK_ID" 
-    UpdateCommand="UPDATE [DMKHACHHANG] SET [FK_NHOMKHACHHANG] = @FK_NHOMKHACHHANG, [C_CODE] = @C_CODE, [C_NAME] = @C_NAME, [C_ADDRESS] = @C_ADDRESS, [FK_QUANHUYEN] = @FK_QUANHUYEN, [C_TEL] = @C_TEL, [FK_USER] = @FK_USER, [C_TAIKHOAN] = @C_TAIKHOAN, [C_MST] = @C_MST, [C_EMAIL] = @C_EMAIL, [C_MOBILE] = @C_MOBILE, [C_NGUOILIENHE] = @C_NGUOILIENHE WHERE [PK_ID] = @PK_ID">
+    InsertCommand="INSERT INTO [DMKHACHHANG] ([FK_NHOMKHACHHANG], [FK_NHOMKHACHHANGQT], [C_CODE], [C_NAME], [C_ADDRESS], [FK_QUANHUYEN], [C_TEL], [FK_USER], [C_TAIKHOAN], [C_MST], [C_EMAIL], [C_MOBILE], [C_NGUOILIENHE]) VALUES (@FK_NHOMKHACHHANG, FK_NHOMKHACHHANGQT, @C_CODE, @C_NAME, @C_ADDRESS, @FK_QUANHUYEN, @C_TEL, @FK_USER, @C_TAIKHOAN, @C_MST, @C_EMAIL, @C_MOBILE, @C_NGUOILIENHE)" 
+    SelectCommand="SELECT [DMKHACHHANG].[PK_ID], [DMKHACHHANG].[FK_NHOMKHACHHANG], [DMKHACHHANG].[FK_NHOMKHACHHANGQT], [DMKHACHHANG].[C_CODE], [DMKHACHHANG].[C_NAME], [DMKHACHHANG].[C_ADDRESS], [DMKHACHHANG].[FK_QUANHUYEN], [DMKHACHHANG].[C_TEL], [DMKHACHHANG].[FK_USER], [DMKHACHHANG].[C_TAIKHOAN], [DMKHACHHANG].[C_MST], [DMKHACHHANG].[C_EMAIL], [DMKHACHHANG].[C_MOBILE], [DMKHACHHANG].[C_NGUOILIENHE],DMQUANHUYEN.C_NAME as QUANHUYENNAME,DMTINHTHANH.C_NAME as TINHTHANHNAME,USERS.C_NAME as USERNAME,a.C_NAME as NHOMKHACHHANGNAME,b.C_NAME as NHOMKHACHHANGNAMEQT FROM [DMKHACHHANG] LEFT OUTER JOIN DMQUANHUYEN ON DMKHACHHANG.FK_QUANHUYEN = DMQUANHUYEN.PK_ID LEFT OUTER JOIN DMTINHTHANH ON DMQUANHUYEN.FK_TINHTHANH = DMTINHTHANH.PK_ID LEFT OUTER JOIN USERS ON DMKHACHHANG.FK_USER =USERS.PK_ID LEFT OUTER JOIN DMNHOMKHACHHANG a ON DMKHACHHANG.FK_NHOMKHACHHANG =a.PK_ID LEFT OUTER JOIN DMNHOMKHACHHANG b ON DMKHACHHANG.FK_NHOMKHACHHANGQT =b.PK_ID" 
+    UpdateCommand="UPDATE [DMKHACHHANG] SET [FK_NHOMKHACHHANG] = @FK_NHOMKHACHHANG, [FK_NHOMKHACHHANGQT] = @FK_NHOMKHACHHANGQT, [C_CODE] = @C_CODE, [C_NAME] = @C_NAME, [C_ADDRESS] = @C_ADDRESS, [FK_QUANHUYEN] = @FK_QUANHUYEN, [C_TEL] = @C_TEL, [FK_USER] = @FK_USER, [C_TAIKHOAN] = @C_TAIKHOAN, [C_MST] = @C_MST, [C_EMAIL] = @C_EMAIL, [C_MOBILE] = @C_MOBILE, [C_NGUOILIENHE] = @C_NGUOILIENHE WHERE [PK_ID] = @PK_ID">
         <UpdateParameters>
             <asp:Parameter Name="FK_NHOMKHACHHANG" Type="Int32" />
+            <asp:Parameter Name="FK_NHOMKHACHHANGQT" Type="Int32" />
             <asp:Parameter Name="C_CODE" Type="String" />
             <asp:Parameter Name="C_NAME" Type="String" />
             <asp:Parameter Name="C_ADDRESS" Type="String" />
@@ -321,6 +334,7 @@
         </DeleteParameters>
         <InsertParameters>
             <asp:Parameter Name="FK_NHOMKHACHHANG" Type="Int32" />
+            <asp:Parameter Name="FK_NHOMKHACHHANGQT" Type="Int32" />
             <asp:Parameter Name="C_CODE" Type="String" />
             <asp:Parameter Name="C_NAME" Type="String" />
             <asp:Parameter Name="C_ADDRESS" Type="String" />
@@ -345,6 +359,9 @@
  SelectCommand="SELECT USERS.* FROM USERS WHERE FK_GROUPUSER NOT IN (0,1)" >
 </asp:SqlDataSource>
  <asp:SqlDataSource ID="NHOMKHACHHANGDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
- SelectCommand="SELECT DMNHOMKHACHHANG.* FROM DMNHOMKHACHHANG" >
+ SelectCommand="SELECT DMNHOMKHACHHANG.* FROM DMNHOMKHACHHANG WHERE C_TYPE = N'Trong nước'" >
+</asp:SqlDataSource>
+ <asp:SqlDataSource ID="NHOMKHACHHANGQTDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
+ SelectCommand="SELECT DMNHOMKHACHHANG.* FROM DMNHOMKHACHHANG WHERE C_TYPE = N'Quốc tế'" >
 </asp:SqlDataSource>
 

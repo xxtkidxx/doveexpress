@@ -136,11 +136,33 @@ public partial class module_MABANGCUOCQT : System.Web.UI.UserControl
             GridEditableItem editItem = (GridEditableItem)e.Item;
             HiddenField txtID = (HiddenField)editItem.FindControl("txtID");
             Session["txtID"] = (txtID.Value != "") ? txtID.Value : "0";
+            RadListBox RadListBoxNhomKhachHangRef = (RadListBox)editItem.FindControl("RadListBoxNhomKhachHangRef");
+            HiddenField txtC_VALUE = (HiddenField)editItem.FindControl("txtC_VALUE");
+            setItenforListBoxSelect(RadListBoxNhomKhachHangRef, txtC_VALUE.Value);
         }
         if (e.Item is GridDataItem)
         {
             Label lblSTT = (Label)e.Item.FindControl("lblSTT");
             lblSTT.Text = (e.Item.ItemIndex + 1).ToString();
+        }
+    }
+    protected static void setItenforListBoxSelect(RadListBox control, string ivalue)
+    {
+        if (ivalue != "")
+        {
+            string selectSQl = String.Format("Select PK_ID, C_NAME from DMNHOMKHACHHANG WHERE PK_ID in ({0})", ivalue);
+            ITCLIB.Admin.SQL sqlAC = new ITCLIB.Admin.SQL();
+            DataTable odata = sqlAC.query_data(selectSQl);
+            foreach (DataRow orow in odata.Rows)
+            {
+                if (control.FindItemByValue(orow["PK_ID"].ToString()) == null)
+                {
+                    RadListBoxItem item = new RadListBoxItem();
+                    item.Value = orow["PK_ID"] != null ? orow["PK_ID"].ToString() : "";
+                    item.Text = orow["C_NAME"] != null ? orow["C_NAME"].ToString() : "";
+                    control.Items.Add(item);
+                }
+            }
         }
     }
     protected void RadGridMABANGCUOCQT_ItemCommand(object sender, GridCommandEventArgs e)
@@ -161,6 +183,36 @@ public partial class module_MABANGCUOCQT : System.Web.UI.UserControl
                 }
             }
         }
+        else if (e.CommandName == RadGrid.PerformInsertCommandName)
+        {
+            GridEditableItem editItem = (GridEditableItem)e.Item;
+            RadListBox RadListBoxNhomKhachHangRef = (RadListBox)editItem.FindControl("RadListBoxNhomKhachHangRef");
+            if (getStringSelect(RadListBoxNhomKhachHangRef) != "")
+            {
+                MABANGCUOCQTDataSource.InsertParameters["C_VALUE"].DefaultValue = getStringSelect(RadListBoxNhomKhachHangRef);
+            }
+        }
+        else if (e.CommandName == RadGrid.UpdateCommandName)
+        {
+            GridEditableItem editItem = (GridEditableItem)e.Item;
+            RadListBox RadListBoxNhomKhachHangRef = (RadListBox)editItem.FindControl("RadListBoxNhomKhachHangRef");
+            if (getStringSelect(RadListBoxNhomKhachHangRef) != "")
+            {
+                MABANGCUOCQTDataSource.UpdateParameters["C_VALUE"].DefaultValue = getStringSelect(RadListBoxNhomKhachHangRef);
+            }
+        }
+    }
+    protected static string getStringSelect(RadListBox control)
+    {
+        string result = "";
+        if (control.Items.Count != 0)
+        {
+            foreach (RadListBoxItem item in control.Items)
+            {
+                result = ITCLIB.Admin.cFunction.GetStringForList(item.Value, result, ',');
+            }
+        }
+        return result;
     }
     protected string getmaxid(string table)
     {
