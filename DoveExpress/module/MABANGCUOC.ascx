@@ -9,16 +9,6 @@
         }
 </script>
 <script type="text/javascript">
-    function onResponseEndMBC() {
-        if (typeof (result) != "undefined" && result && result != "") {
-            $find("<%= RadGridMABANGCUOC.ClientID %>").get_masterTableView().rebind();
-            result = "";
-        }
-        return false;
-    }
-
-</script>
-<script type="text/javascript">
     var ListBoxNhomKhachHang;
     function OnClientLoadListBoxNhomKhachHang(sender) {
         ListBoxNhomKhachHang = sender;
@@ -212,7 +202,7 @@
         </InsertParameters>
 </asp:SqlDataSource>
  <asp:SqlDataSource ID="NHOMKHACHHANGDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
- SelectCommand="SELECT DMNHOMKHACHHANG.* FROM DMNHOMKHACHHANG" >
+ SelectCommand="SELECT DMNHOMKHACHHANG.* FROM DMNHOMKHACHHANG WHERE C_TYPE = N'Trong nước'" >
 </asp:SqlDataSource>
  <asp:SqlDataSource ID="VUNGLAMVIECDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
  SelectCommand="SELECT DMVUNGLAMVIEC.* FROM DMVUNGLAMVIEC" >

@@ -170,6 +170,18 @@ ShowToggleImage="True" EmptyMessage="Chọn đối tác"
                                         </telerik:RadNumericTextBox>
                                 </EditItemTemplate>
                             </telerik:GridTemplateColumn>
+                            <telerik:GridTemplateColumn DataField="C_CUOCPHITL" DataType="System.Decimal" HeaderText="Cước phí (Tài liệu)" AllowFiltering="false" UniqueName="C_CUOCPHITL">
+                                <ItemTemplate>
+                                 <telerik:RadNumericTextBox runat="server"  CssClass ="csstextNum" ID="txtC_CUOCPHITL" Width="100px" Enabled = "false"  DbValue='<%# Eval("C_CUOCPHITL") %>'>
+                                    <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
+                                  </telerik:RadNumericTextBox>
+                                </ItemTemplate>
+                                <EditItemTemplate>
+                                        <telerik:RadNumericTextBox runat="server" ID="txtC_CUOCPHITL" DbValue='<%# Bind("C_CUOCPHITL") %>'>
+                                         <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
+                                        </telerik:RadNumericTextBox>
+                                </EditItemTemplate>
+                            </telerik:GridTemplateColumn>
                             <telerik:GridTemplateColumn UniqueName="C_TYPE" HeaderText="Luỹ kế cuối" AllowFiltering ="false">
                             <ItemTemplate>
                                 <asp:CheckBox ID="chkDefault" runat="server" onclick='<%# String.Format("if(!onClientClickSelectedCTC({0},{1})) return false;",Eval("PK_ID"),Eval("FK_MAVUNG")) %>' Checked='<%# getstatus(Eval("C_TYPE")) %>'/>
@@ -208,9 +220,9 @@ Phụ phí xăng dầu(%):&nbsp;
 <asp:SqlDataSource ID="CHITIETCUOCDTDataSource" runat="server" 
     ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>" 
     DeleteCommand="DELETE FROM [DMCHITIETCUOCDT] WHERE [PK_ID] = @PK_ID" 
-    InsertCommand="INSERT INTO [DMCHITIETCUOCDT] ([FK_DoiTac], [FK_MASANPHAM], [FK_MAVUNG], [C_LOAITIEN], [C_KHOILUONG], [C_CUOCPHI], [C_TYPE], [C_TYPE1]) VALUES (@FK_DoiTac, @FK_MASANPHAM, @FK_MAVUNG, @C_LOAITIEN, @C_KHOILUONG, @C_CUOCPHI,0,0)" 
-    SelectCommand="SELECT [PK_ID], [FK_DoiTac], [FK_MASANPHAM], [FK_MAVUNG], [C_LOAITIEN], [C_KHOILUONG], [C_CUOCPHI], [C_TYPE], [C_TYPE1] FROM [DMCHITIETCUOCDT] WHERE [FK_MAVUNG] =@FK_MAVUNG AND [FK_DoiTac] = @FK_DoiTac AND [FK_MASANPHAM] = @FK_MASANPHAM AND [C_LOAITIEN] = @C_LOAITIEN" 
-    UpdateCommand="UPDATE [DMCHITIETCUOCDT] SET [C_KHOILUONG] = @C_KHOILUONG, [C_CUOCPHI] = @C_CUOCPHI WHERE [PK_ID] = @PK_ID">
+    InsertCommand="INSERT INTO [DMCHITIETCUOCDT] ([FK_DoiTac], [FK_MASANPHAM], [FK_MAVUNG], [C_LOAITIEN], [C_KHOILUONG], [C_CUOCPHI], [C_CUOCPHITL], [C_TYPE], [C_TYPE1]) VALUES (@FK_DoiTac, @FK_MASANPHAM, @FK_MAVUNG, @C_LOAITIEN, @C_KHOILUONG, @C_CUOCPHI,@C_CUOCPHITL,0,0)" 
+    SelectCommand="SELECT [PK_ID], [FK_DoiTac], [FK_MASANPHAM], [FK_MAVUNG], [C_LOAITIEN], [C_KHOILUONG], [C_CUOCPHI], [C_CUOCPHITL], [C_TYPE], [C_TYPE1] FROM [DMCHITIETCUOCDT] WHERE [FK_MAVUNG] =@FK_MAVUNG AND [FK_DoiTac] = @FK_DoiTac AND [FK_MASANPHAM] = @FK_MASANPHAM AND [C_LOAITIEN] = @C_LOAITIEN" 
+    UpdateCommand="UPDATE [DMCHITIETCUOCDT] SET [C_KHOILUONG] = @C_KHOILUONG, [C_CUOCPHI] = @C_CUOCPHI, [C_CUOCPHITL] = @C_CUOCPHITL WHERE [PK_ID] = @PK_ID">
     <SelectParameters>
         <asp:Parameter Name="FK_MAVUNG" Type="Int32" />
         <asp:ControlParameter ControlID="cmbDoiTac" DefaultValue="0" Name="FK_DoiTac" PropertyName="SelectedValue" />
@@ -227,10 +239,12 @@ Phụ phí xăng dầu(%):&nbsp;
          <asp:ControlParameter ControlID="cmbLoaiTien" DefaultValue="0" Name="C_LOAITIEN" PropertyName="SelectedValue" />
         <asp:Parameter Name="C_KHOILUONG" Type="String" />
         <asp:Parameter Name="C_CUOCPHI" Type="Decimal" />
+        <asp:Parameter Name="C_CUOCPHITL" Type="Decimal" />
     </InsertParameters>
     <UpdateParameters>
         <asp:Parameter Name="C_KHOILUONG" Type="String" />
         <asp:Parameter Name="C_CUOCPHI" Type="Decimal" />
+        <asp:Parameter Name="C_CUOCPHITL" Type="Decimal" />
         <asp:Parameter Name="PK_ID" Type="Int32" />
     </UpdateParameters>
 </asp:SqlDataSource>

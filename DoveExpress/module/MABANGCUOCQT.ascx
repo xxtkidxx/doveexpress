@@ -8,6 +8,31 @@
             }
         }
 </script>
+<script type="text/javascript">
+    var ListBoxNhomKhachHang;
+    function OnClientLoadListBoxNhomKhachHang(sender) {
+        ListBoxNhomKhachHang = sender;
+    }
+    var ListBoxNhomKhachHangSelect;
+    function OnClientLoadListBoxNhomKhachHangSelect(sender) {
+        ListBoxNhomKhachHangSelect = sender;
+    }
+    var panelControl;
+    function OnClientLoadPanelControl(sender) {
+        panelControl = sender;
+    }
+    function onClientTransferringHandler(sender, e) {
+        var itemvalue = e.get_item().get_value();
+        if (ListBoxNhomKhachHangSelect.findItemByValue(itemvalue) != null) {
+            e.set_cancel(true);
+        }
+    }
+    function OnClientDeleteNhomKhachHang(sender, e) {
+        if (!confirm("Bạn thực sự muốn xóa nhóm khách hàng khỏi danh sách chọn?")) {
+            e.set_cancel(true);
+        }
+    }  
+</script>
 </telerik:RadCodeBlock>
 <telerik:RadAjaxLoadingPanel Skin="Vista" ID="RadAjaxLoadingPanelMABANGCUOCQT" runat="server" />
 <telerik:RadGrid ID="RadGridMABANGCUOCQT" runat="server" Skin="Vista" 
@@ -71,6 +96,12 @@
                 </telerik:GridBoundColumn>
                 <telerik:GridBoundColumn UniqueName="C_VALUE2" HeaderText="% chênh lệch" DataField="C_VALUE2"  AllowFiltering="false">
                 </telerik:GridBoundColumn>
+                <telerik:GridTemplateColumn UniqueName="C_VALUE" HeaderText="Nhóm khách hàng" DataField="C_VALUE" 
+                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
+                    <ItemTemplate>
+                         <%# ITCLIB.Admin.cFunction.getnamefix(Eval("C_VALUE").ToString(), "DMNHOMKHACHHANG")%>
+                    </ItemTemplate>
+                </telerik:GridTemplateColumn>
                 <telerik:GridBoundColumn UniqueName="VUNGLAMVIECNAME" HeaderText="Vùng làm việc" DataField="VUNGLAMVIECNAME" 
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
                 </telerik:GridBoundColumn>
@@ -91,6 +122,7 @@
                  <td style =" width:150px;"> <span class="rtsTxtnew">Mã bảng cước:</td>
                 <td colspan="4">
                     <asp:HiddenField ID="txtID" Value ='<%# Eval( "PK_ID") %>' runat="server" />
+                    <asp:HiddenField ID="txtC_VALUE" Value ='<%# Eval( "C_VALUE") %>' runat="server" />
                     <telerik:RadTextBox ID="txtCODE" Width ="90%" Text='<%# Bind( "C_CODE") %>' runat="server"></telerik:RadTextBox>
                     <asp:RequiredFieldValidator ID="rfvCODE" runat="server" ErrorMessage="Mã bảng cước không thể rỗng" ControlToValidate="txtCODE" SetFocusOnError="True" Display="Dynamic" ValidationGroup="G1"></asp:RequiredFieldValidator>
                     <asp:CustomValidator ID="cuvCODE" ControlToValidate="txtCODE" OnServerValidate="CheckCode" runat="server" ErrorMessage="Mã bảng cước đã tồn tại" Display="Dynamic" ValidationGroup="G1"></asp:CustomValidator>
@@ -131,7 +163,29 @@
                 </td>
             </tr>
              </table>
-            </div> 
+            </div>
+            <div class ="headerthongtin" id ="Div2">
+             <span style =" width :300px; text-align:left; float:left;"> Chọn nhóm khách hàng:</span> ||<span style =" width :250px; color: Blue "> Danh sách nhóm khách hàng</span>                     
+            </div>
+            <div style ="width:98%; background-color:White;padding-left:2px;">
+                <telerik:RadListBox ID="RadListBoxNhomKhachHang" runat="server" Width ="48%" Height ="100px"  
+                        SelectionMode="Multiple" AllowTransfer="True" TransferToID="RadListBoxNhomKhachHangRef" 
+                        AutoPostBackOnTransfer="True" AutoPostBackOnReorder="True" EnableDragAndDrop="True" 
+                        DataKeyField="pk_id" DataSortField="c_signer"  OnClientLoad ="OnClientLoadListBoxNhomKhachHang"
+                        DataSourceID="NHOMKHACHHANGDataSource" DataTextField="C_NAME" DataValueField="PK_ID" Skin="Vista" 
+                       TransferMode="Copy" OnClientTransferring ="onClientTransferringHandler">
+                       <Localization AllToLeft ="Bỏ chọn tất cả" AllToRight ="Chọn tất cả" Delete ="Xóa" ToLeft ="Bỏ chọn" ToRight ="Chọn"  />
+                       <ButtonSettings TransferButtons ="TransferFrom,TransferAllFrom" />
+                    </telerik:RadListBox>
+                <telerik:RadListBox ID="RadListBoxNhomKhachHangRef" runat="server" Width ="48%" Height ="100px" AllowDelete ="true"  
+                        SelectionMode="Multiple" AutoPostBackOnReorder="true" EnableDragAndDrop="true"
+                        OnClientLoad="OnClientLoadListBoxNhomKhachHangSelect" Skin="Vista" OnClientDeleting ="OnClientDeleteNhomKhachHang">
+                        <Localization Delete ="Bỏ chọn" />
+                        <ButtonSettings ShowDelete ="true"  />
+                 </telerik:RadListBox>     
+            <p style =" height: 26px; line-height :26px; color:Blue;">Ghi chú: Click vào nhóm khách hàng trên danh sách trái kéo và thả vào Box phải để chọn</p>
+            <br />
+            </div>  
              </center> 
         <!-- end bgpopup--></div>    
              </FormTemplate>
@@ -149,14 +203,15 @@
 </telerik:RadGrid>
 <asp:SqlDataSource ID="MABANGCUOCQTDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
         DeleteCommand="DELETE FROM [DMMABANGCUOCQT] WHERE [PK_ID] = @PK_ID" 
-        InsertCommand="INSERT INTO [DMMABANGCUOCQT] ([C_CODE], [FK_DOITAC],[C_VALUE1],[C_VALUE2],[FK_VUNGLAMVIEC]) VALUES (@C_CODE, @FK_DOITAC,@C_VALUE1,@C_VALUE2,@FK_VUNGLAMVIEC)"
-        SelectCommand="SELECT [DMMABANGCUOCQT].[PK_ID], [DMMABANGCUOCQT].[C_CODE], [DMMABANGCUOCQT].[FK_DOITAC], [DMMABANGCUOCQT].[C_VALUE1], [DMMABANGCUOCQT].[C_VALUE2],[DMMABANGCUOCQT].[FK_VUNGLAMVIEC], [DMDOITAC].[C_NAME] as [DOITACNAME], [DMVUNGLAMVIEC].[C_NAME] as [VUNGLAMVIECNAME] FROM [DMMABANGCUOCQT] LEFT OUTER JOIN [DMDOITAC] ON [DMMABANGCUOCQT].[FK_DOITAC] = [DMDOITAC].[PK_ID] LEFT OUTER JOIN [DMVUNGLAMVIEC] ON [DMMABANGCUOCQT].[FK_VUNGLAMVIEC] = [DMVUNGLAMVIEC].[C_CODE] ORDER BY LTRIM([DMMABANGCUOCQT].[C_CODE])"      
-        UpdateCommand="UPDATE [DMMABANGCUOCQT] SET [C_CODE] = @C_CODE, [FK_DOITAC] = @FK_DOITAC, [C_VALUE1] = @C_VALUE1, [C_VALUE2] = @C_VALUE2, [FK_VUNGLAMVIEC] = @FK_VUNGLAMVIEC WHERE [PK_ID] = @PK_ID" >
+        InsertCommand="INSERT INTO [DMMABANGCUOCQT] ([C_CODE], [FK_DOITAC],[C_VALUE1],[C_VALUE2],[C_VALUE],[FK_VUNGLAMVIEC]) VALUES (@C_CODE, @FK_DOITAC,@C_VALUE1,@C_VALUE2,@C_VALUE,@FK_VUNGLAMVIEC)"
+        SelectCommand="SELECT [DMMABANGCUOCQT].[PK_ID], [DMMABANGCUOCQT].[C_CODE], [DMMABANGCUOCQT].[FK_DOITAC], [DMMABANGCUOCQT].[C_VALUE1], [DMMABANGCUOCQT].[C_VALUE2], [DMMABANGCUOCQT].[C_VALUE], [DMMABANGCUOCQT].[FK_VUNGLAMVIEC], [DMDOITAC].[C_NAME] as [DOITACNAME], [DMVUNGLAMVIEC].[C_NAME] as [VUNGLAMVIECNAME] FROM [DMMABANGCUOCQT] LEFT OUTER JOIN [DMDOITAC] ON [DMMABANGCUOCQT].[FK_DOITAC] = [DMDOITAC].[PK_ID] LEFT OUTER JOIN [DMVUNGLAMVIEC] ON [DMMABANGCUOCQT].[FK_VUNGLAMVIEC] = [DMVUNGLAMVIEC].[C_CODE] ORDER BY LTRIM([DMMABANGCUOCQT].[C_CODE])"      
+        UpdateCommand="UPDATE [DMMABANGCUOCQT] SET [C_CODE] = @C_CODE, [FK_DOITAC] = @FK_DOITAC, [C_VALUE1] = @C_VALUE1, [C_VALUE2] = @C_VALUE2, [C_VALUE] = @C_VALUE, [FK_VUNGLAMVIEC] = @FK_VUNGLAMVIEC WHERE [PK_ID] = @PK_ID" >
         <UpdateParameters>
             <asp:Parameter Name="C_CODE" Type="String" />
             <asp:Parameter Name="FK_DOITAC" Type="String" />
             <asp:Parameter Name="C_VALUE1" Type="String" DefaultValue="0" />
             <asp:Parameter Name="C_VALUE2" Type="String" DefaultValue="0" />
+            <asp:Parameter Name="C_VALUE" Type="String" />
             <asp:Parameter Name="FK_VUNGLAMVIEC" Type="String" />
         </UpdateParameters>
         <DeleteParameters>
@@ -167,11 +222,15 @@
             <asp:Parameter Name="FK_DOITAC" Type="String" />
             <asp:Parameter Name="C_VALUE1" Type="String" DefaultValue="0" />
             <asp:Parameter Name="C_VALUE2" Type="String" DefaultValue="0" />
+            <asp:Parameter Name="C_VALUE" Type="String" />
             <asp:Parameter Name="FK_VUNGLAMVIEC" Type="String" />
         </InsertParameters>
 </asp:SqlDataSource>
 <asp:SqlDataSource ID="DoiTacDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
     SelectCommand="SELECT [PK_ID], [C_CODE], [C_NAME] FROM [DMDoiTac] ORDER BY LTRIM([C_CODE])">
+</asp:SqlDataSource>
+ <asp:SqlDataSource ID="NHOMKHACHHANGDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
+ SelectCommand="SELECT DMNHOMKHACHHANG.* FROM DMNHOMKHACHHANG WHERE C_TYPE = N'Quốc tế'" >
 </asp:SqlDataSource>
  <asp:SqlDataSource ID="VUNGLAMVIECDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
  SelectCommand="SELECT DMVUNGLAMVIEC.* FROM DMVUNGLAMVIEC" >

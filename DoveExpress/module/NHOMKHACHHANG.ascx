@@ -67,6 +67,9 @@
                 <telerik:GridBoundColumn UniqueName="C_NAME" HeaderText="Tên nhóm khách hàng" DataField="C_NAME" 
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
                 </telerik:GridBoundColumn>
+                <telerik:GridBoundColumn UniqueName="C_TYPE" HeaderText="Loại nhóm khách hàng" DataField="C_TYPE" 
+                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
+                </telerik:GridBoundColumn>
         </Columns>
         <EditFormSettings InsertCaption="Thêm nhóm khách hàng mới" CaptionFormatString="Sửa nhóm khách hàng: <b>{0}</b>" CaptionDataField="C_NAME" EditFormType="Template" PopUpSettings-Width="600px">
         <EditColumn UniqueName="EditCommandColumn1" FilterControlAltText="Filter EditCommandColumn1 column"></EditColumn>
@@ -97,7 +100,19 @@
                    <asp:CustomValidator ID="CustomValidator1" ControlToValidate="txtName" OnServerValidate="CheckName" runat="server" ErrorMessage="Tên nhóm khách hàng đã tồn tại" Display="Dynamic" ValidationGroup="G1"></asp:CustomValidator>
                 </td>
             </tr>
-             </table>
+            <tr>
+                 <td style =" width:150px;"> <span class="rtsTxtnew">Loại nhóm:</td>
+                <td colspan="4">
+                    <telerik:RadComboBox ID="cmbC_TYPE" runat="server"
+                    ShowToggleImage="True" EmptyMessage="Chọn loại" SelectedValue='<%# Bind("C_TYPE") %>'>
+                    <Items>
+                        <telerik:RadComboBoxItem Value ="Trong nước" Text ="Trong nước" />
+                        <telerik:RadComboBoxItem Value ="Quốc tế" Text ="Quốc tế" />
+                    </Items>
+                    </telerik:RadComboBox>
+                </td>
+            </tr>
+            </table>
             </div> 
              </center> 
         <!-- end bgpopup--></div>    
@@ -116,12 +131,13 @@
 </telerik:RadGrid>
 <asp:SqlDataSource ID="NHOMKHACHHANGDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
         DeleteCommand="DELETE FROM [DMNHOMKHACHHANG] WHERE [PK_ID] = @PK_ID" 
-        InsertCommand="INSERT INTO [DMNHOMKHACHHANG] ([C_CODE], [C_NAME]) VALUES (@C_CODE, @C_NAME)"
-        SelectCommand="SELECT [PK_ID], [C_CODE], [C_NAME] FROM [DMNHOMKHACHHANG] ORDER BY LTRIM([C_CODE])"      
-        UpdateCommand="UPDATE [DMNHOMKHACHHANG] SET [C_CODE] = @C_CODE, [C_NAME] = @C_NAME WHERE [PK_ID] = @PK_ID" >
+        InsertCommand="INSERT INTO [DMNHOMKHACHHANG] ([C_CODE], [C_NAME],[C_TYPE]) VALUES (@C_CODE, @C_NAME,@C_TYPE)"
+        SelectCommand="SELECT [PK_ID], [C_CODE], [C_NAME], [C_TYPE] FROM [DMNHOMKHACHHANG] ORDER BY LTRIM([C_CODE])"      
+        UpdateCommand="UPDATE [DMNHOMKHACHHANG] SET [C_CODE] = @C_CODE, [C_NAME] = @C_NAME, C_TYPE = @C_TYPE WHERE [PK_ID] = @PK_ID" >
         <UpdateParameters>
             <asp:Parameter Name="C_CODE" Type="String" />
             <asp:Parameter Name="C_NAME" Type="String" />
+            <asp:Parameter Name="C_TYPE" Type="String" />
         </UpdateParameters>
         <DeleteParameters>
             <asp:Parameter Name="PK_ID" Type="Int32" />
@@ -129,6 +145,7 @@
         <InsertParameters>
             <asp:Parameter Name="C_CODE" Type="String" />
             <asp:Parameter Name="C_NAME" Type="String" />
+            <asp:Parameter Name="C_TYPE" Type="String" />
         </InsertParameters>
 </asp:SqlDataSource>
 
