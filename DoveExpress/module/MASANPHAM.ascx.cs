@@ -152,6 +152,17 @@ public partial class module_MASANPHAM : System.Web.UI.UserControl
             GridEditableItem editItem = (GridEditableItem)e.Item;
             HiddenField txtID = (HiddenField)editItem.FindControl("txtID");
             Session["txtID"] = (txtID.Value != "") ? txtID.Value : "0";
+            RadComboBox cmbC_TYPE = (RadComboBox)editItem.FindControl("cmbC_TYPE");
+            if (e.Item is GridEditFormInsertItem || e.Item is GridDataInsertItem)
+            {
+                // insert item
+                cmbC_TYPE.SelectedIndex = 0;
+            }
+            else
+            {
+                // edit item
+
+            }
         }
         if (e.Item is GridDataItem)
         {

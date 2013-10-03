@@ -1,0 +1,102 @@
+Thời gian: 2013-09-14 13:53:54 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-09-14 14:27:30 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-09-14 14:28:35 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Update CHITIETCUOCDTs
+Kết quả : {PK_ID:"3",FK_MAVUNG:"1"}
+__________________________
+Thời gian: 2013-09-14 14:28:42 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Update CHITIETCUOCDTs
+Kết quả : {PK_ID:"3",FK_MAVUNG:"1"}
+__________________________
+Thời gian: 2013-09-14 14:36:37 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHOMKHACHHANGs
+Kết quả : {PK_ID:"4"}
+__________________________
+Thời gian: 2013-09-14 14:36:43 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHOMKHACHHANGs
+Kết quả : {PK_ID:"7"}
+__________________________
+Thời gian: 2013-09-14 14:36:48 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHOMKHACHHANGs
+Kết quả : {PK_ID:"6"}
+__________________________
+Thời gian: 2013-09-14 14:36:52 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHOMKHACHHANGs
+Kết quả : {PK_ID:"9"}
+__________________________
+Thời gian: 2013-09-14 14:36:55 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHOMKHACHHANGs
+Kết quả : {PK_ID:"10"}
+__________________________
+Thời gian: 2013-09-14 14:36:59 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHOMKHACHHANGs
+Kết quả : {PK_ID:"5"}
+__________________________
+Thời gian: 2013-09-14 14:37:03 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHOMKHACHHANGs
+Kết quả : {PK_ID:"8"}
+__________________________
+Thời gian: 2013-09-14 14:38:11 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted NHOMKHACHHANGs
+Kết quả : {PK_ID:"11"}
+__________________________
+Thời gian: 2013-09-14 14:52:20 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated KHACHHANGs
+Kết quả : {PK_ID:"2"}
+__________________________
+Thời gian: 2013-09-14 15:04:29 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated MABANGCUOCs
+Kết quả : {PK_ID:"9"}
+__________________________
+Thời gian: 2013-09-14 15:04:40 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated MABANGCUOCs
+Kết quả : {PK_ID:"9"}
+__________________________
+Thời gian: 2013-09-14 15:07:02 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-09-14 15:07:11 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated MABANGCUOCQTs
+Kết quả : {PK_ID:"1"}
+__________________________

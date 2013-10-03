@@ -213,7 +213,7 @@ Skin ="Vista" DataFieldID="PK_ID" AppendDataBoundItems="True" DataSourceID="SqlD
         </InsertParameters>
 </asp:SqlDataSource>
 <asp:SqlDataSource ID="MASANPHAMDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
-        SelectCommand="SELECT [PK_ID], [C_CODE], [C_NAME] FROM [DMMASANPHAM]  WHERE C_CODE = 'QT' ORDER BY PK_ID">
+        SelectCommand="SELECT [PK_ID], [C_CODE], [C_NAME] FROM [DMMASANPHAM]  WHERE C_TYPE = N'Quốc tế' ORDER BY PK_ID">
 </asp:SqlDataSource>
  <asp:SqlDataSource ID="SqlDataSourceKHUVUC" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
     SelectCommand="SELECT [PK_ID], [C_CODE], [C_NAME] FROM [DMKHUVUC]">
