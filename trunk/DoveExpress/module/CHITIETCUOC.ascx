@@ -260,8 +260,11 @@ Phụ phí xăng dầu(%):&nbsp;
         </InsertParameters>
 </asp:SqlDataSource>
 <asp:SqlDataSource ID="MABANGCUOCDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
-    SelectCommand="SELECT [PK_ID], [C_CODE], [C_NAME],[FK_VUNGLAMVIEC] FROM [DMMABANGCUOC] ORDER BY LTRIM([C_CODE])">
+    SelectCommand="SELECT [PK_ID], [C_CODE], [C_NAME],[FK_VUNGLAMVIEC] FROM [DMMABANGCUOC] WHERE [DMMABANGCUOC].FK_VUNGLAMVIEC = @FK_VUNGLAMVIEC ORDER BY LTRIM([C_CODE])">
+    <SelectParameters>
+            <asp:SessionParameter Name="FK_VUNGLAMVIEC" Type="String" SessionField="VUNGLAMVIEC" />
+    </SelectParameters>
 </asp:SqlDataSource>
 <asp:SqlDataSource ID="MASANPHAMDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
-        SelectCommand="SELECT [PK_ID], [C_CODE], [C_NAME] FROM [DMMASANPHAM]  WHERE [C_CODE] <> 'QT' ORDER BY LTRIM([C_CODE])">    
+        SelectCommand="SELECT [PK_ID], [C_CODE], [C_NAME] FROM [DMMASANPHAM]  WHERE [C_TYPE] = N'Trong nước' ORDER BY LTRIM([C_CODE])">    
 </asp:SqlDataSource>

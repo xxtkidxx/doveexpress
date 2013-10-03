@@ -66,7 +66,10 @@
                 </telerik:GridBoundColumn>
                 <telerik:GridBoundColumn UniqueName="C_NAME" HeaderText="Tên dịch vụ" DataField="C_NAME" 
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
-                </telerik:GridBoundColumn>               
+                </telerik:GridBoundColumn>
+                <telerik:GridBoundColumn UniqueName="C_TYPE" HeaderText="Loại dịch vụ" DataField="C_TYPE" 
+                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
+                </telerik:GridBoundColumn>                  
         </Columns>
         <EditFormSettings InsertCaption="Thêm dịch vụ mới" CaptionFormatString="Sửa dịch vụ: <b>{0}</b>" CaptionDataField="C_NAME" EditFormType="Template" PopUpSettings-Width="600px">
         <EditColumn UniqueName="EditCommandColumn1" FilterControlAltText="Filter EditCommandColumn1 column"></EditColumn>
@@ -96,6 +99,17 @@
                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Tên dịch vụ không thể rỗng" ControlToValidate="txtName" SetFocusOnError="True" Display="Dynamic" ValidationGroup="G1"></asp:RequiredFieldValidator>
                    <asp:CustomValidator ID="CustomValidator1" ControlToValidate="txtName" OnServerValidate="CheckName" runat="server" ErrorMessage="Tên dịch vụ đã tồn tại" Display="Dynamic" ValidationGroup="G1"></asp:CustomValidator>
                 </td>
+            </tr>
+            <tr>
+                 <td style =" width:150px;"> <span class="rtsTxtnew">Loại dịch vụ:</td>
+                <td colspan="4">
+                    <telerik:RadComboBox ID="cmbC_TYPE" SelectedValue='<%# Bind("C_TYPE") %>' runat="server" EmptyMessage="Chọn">
+                            <Items>
+                                <telerik:RadComboBoxItem Value ="Trong nước" Text ="Trong nước" />
+                                <telerik:RadComboBoxItem Value ="Quốc tế" Text ="Quốc tế" />
+                            </Items>
+                   </telerik:RadComboBox>                  
+                </td>
             </tr>           
             </table>
             </div> 
@@ -116,12 +130,13 @@
 </telerik:RadGrid>
 <asp:SqlDataSource ID="MASANPHAMDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
         DeleteCommand="DELETE FROM [DMMASANPHAM] WHERE [PK_ID] = @PK_ID" 
-        InsertCommand="INSERT INTO [DMMASANPHAM] ([C_CODE], [C_NAME]) VALUES (@C_CODE, @C_NAME)"
-        SelectCommand="SELECT [PK_ID], [C_CODE], [C_NAME] FROM [DMMASANPHAM] ORDER BY LTRIM([C_CODE])"      
-        UpdateCommand="UPDATE [DMMASANPHAM] SET [C_CODE] = @C_CODE, [C_NAME] = @C_NAME WHERE [PK_ID] = @PK_ID" >
+        InsertCommand="INSERT INTO [DMMASANPHAM] ([C_CODE], [C_NAME], [C_TYPE]) VALUES (@C_CODE, @C_NAME, @C_TYPE)"
+        SelectCommand="SELECT [PK_ID], [C_CODE], [C_NAME], [C_TYPE] FROM [DMMASANPHAM] ORDER BY LTRIM([C_CODE])"      
+        UpdateCommand="UPDATE [DMMASANPHAM] SET [C_CODE] = @C_CODE, [C_NAME] = @C_NAME, [C_TYPE] = @C_TYPE WHERE [PK_ID] = @PK_ID" >
         <UpdateParameters>
             <asp:Parameter Name="C_CODE" Type="String" />
-            <asp:Parameter Name="C_NAME" Type="String" />          
+            <asp:Parameter Name="C_NAME" Type="String" />
+            <asp:Parameter Name="C_TYPE" Type="String" />
         </UpdateParameters>
         <DeleteParameters>
             <asp:Parameter Name="PK_ID" Type="Int32" />
@@ -129,6 +144,7 @@
         <InsertParameters>
             <asp:Parameter Name="C_CODE" Type="String" />
             <asp:Parameter Name="C_NAME" Type="String" />
+            <asp:Parameter Name="C_TYPE" Type="String" />
         </InsertParameters>
 </asp:SqlDataSource>
 

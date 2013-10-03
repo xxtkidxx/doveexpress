@@ -795,6 +795,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
                 // insert item
                 radNgaynhangui.SelectedDate = System.DateTime.Now;
                 txtCODE.Text = GetMaxBill();
+                ClearSession();
             }
             else
             {

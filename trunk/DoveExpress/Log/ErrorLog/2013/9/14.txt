@@ -1,0 +1,25 @@
+Thời gian lỗi : 2013-09-14 14:51:38 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=KHACHHANG. 
+Nội dung lỗi:Literal content ('<asp:Parameter Name="FK_NHOMKHACHHANG" Type="Int32"') is not allowed within a 'System.Web.UI.WebControls.ParameterCollection'.
+__________________________
+Thời gian lỗi : 2013-09-14 15:04:51 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=MABANGCUOCQT. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-09-14 15:04:53 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=MABANGCUOCQT. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-09-14 15:04:54 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=MABANGCUOCQT. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-09-14 15:05:43 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=MABANGCUOCQT. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
