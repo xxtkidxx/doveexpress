@@ -1,0 +1,84 @@
+Thời gian: 2013-10-03 21:31:38 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-10-03 21:41:28 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-10-03 21:58:58 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-10-03 21:59:21 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated MASANPHAMs
+Kết quả : {PK_ID:"4"}
+__________________________
+Thời gian: 2013-10-03 21:59:25 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated MASANPHAMs
+Kết quả : {PK_ID:"4"}
+__________________________
+Thời gian: 2013-10-03 22:00:16 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted MASANPHAMs
+Kết quả : {PK_ID:"5"}
+__________________________
+Thời gian: 2013-10-03 22:05:55 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated DOITACs
+Kết quả : {PK_ID:"1"}
+__________________________
+Thời gian: 2013-10-03 22:06:01 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated DOITACs
+Kết quả : {PK_ID:"2"}
+__________________________
+Thời gian: 2013-10-03 22:06:08 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated DOITACs
+Kết quả : {PK_ID:"3"}
+__________________________
+Thời gian: 2013-10-03 22:06:15 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated DOITACs
+Kết quả : {PK_ID:"4"}
+__________________________
+Thời gian: 2013-10-03 22:06:32 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted MASANPHAMs
+Kết quả : {PK_ID:"6"}
+__________________________
+Thời gian: 2013-10-03 22:06:43 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted MASANPHAMs
+Kết quả : {PK_ID:"7"}
+__________________________
+Thời gian: 2013-10-03 22:13:28 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated MABANGCUOCs
+Kết quả : {PK_ID:"9"}
+__________________________
+Thời gian: 2013-10-03 22:33:02 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
