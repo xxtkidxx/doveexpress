@@ -181,8 +181,7 @@
                 <td colspan="4">
                    <telerik:RadComboBox style="width:180px" SelectedValue='<%# Bind("FK_NHOMKHACHHANG") %>' ID="cmbFK_NHOMKHACHHANG" runat="server" EmptyMessage="Chọn nhóm khách hàng" Filter ="Contains" 
                     DataSourceID="NHOMKHACHHANGDataSource" DataTextField="C_NAME"  DataValueField="PK_ID" EnableLoadOnDemand="true">                               
-                   </telerik:RadComboBox>
-                   <asp:RequiredFieldValidator ID="rfvFK_NHOMKHACHHANG" runat="server" ErrorMessage="Hãy chọn nhóm khách hàng" ControlToValidate="cmbFK_NHOMKHACHHANG" SetFocusOnError="True" Display="Dynamic" ValidationGroup="G1"></asp:RequiredFieldValidator>                   
+                   </telerik:RadComboBox>                   
                 </td>
             </tr>
             <tr>
@@ -190,8 +189,7 @@
                 <td colspan="4">
                    <telerik:RadComboBox style="width:180px" SelectedValue='<%# Bind("FK_NHOMKHACHHANGQT") %>' ID="cmbFK_NHOMKHACHHANGQT" runat="server" EmptyMessage="Chọn nhóm khách hàng QT" Filter ="Contains" 
                     DataSourceID="NHOMKHACHHANGQTDataSource" DataTextField="C_NAME"  DataValueField="PK_ID" EnableLoadOnDemand="true">                               
-                   </telerik:RadComboBox>
-                   <asp:RequiredFieldValidator ID="rfvFK_NHOMKHACHHANGQT" runat="server" ErrorMessage="Hãy chọn nhóm khách hàng quốc tế" ControlToValidate="cmbFK_NHOMKHACHHANGQT" SetFocusOnError="True" Display="Dynamic" ValidationGroup="G1"></asp:RequiredFieldValidator>                   
+                   </telerik:RadComboBox>                   
                 </td>
             </tr>
             <tr>
@@ -310,7 +308,7 @@
 <asp:SqlDataSource ID="KHACHHANGDataSource" runat="server" 
     ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>" 
     DeleteCommand="DELETE FROM [DMKHACHHANG] WHERE [PK_ID] = @PK_ID" 
-    InsertCommand="INSERT INTO [DMKHACHHANG] ([FK_NHOMKHACHHANG], [FK_NHOMKHACHHANGQT], [C_CODE], [C_NAME], [C_ADDRESS], [FK_QUANHUYEN], [C_TEL], [FK_USER], [C_TAIKHOAN], [C_MST], [C_EMAIL], [C_MOBILE], [C_NGUOILIENHE]) VALUES (@FK_NHOMKHACHHANG, FK_NHOMKHACHHANGQT, @C_CODE, @C_NAME, @C_ADDRESS, @FK_QUANHUYEN, @C_TEL, @FK_USER, @C_TAIKHOAN, @C_MST, @C_EMAIL, @C_MOBILE, @C_NGUOILIENHE)" 
+    InsertCommand="INSERT INTO [DMKHACHHANG] ([FK_NHOMKHACHHANG], [FK_NHOMKHACHHANGQT], [C_CODE], [C_NAME], [C_ADDRESS], [FK_QUANHUYEN], [C_TEL], [FK_USER], [C_TAIKHOAN], [C_MST], [C_EMAIL], [C_MOBILE], [C_NGUOILIENHE]) VALUES (@FK_NHOMKHACHHANG, @FK_NHOMKHACHHANGQT, @C_CODE, @C_NAME, @C_ADDRESS, @FK_QUANHUYEN, @C_TEL, @FK_USER, @C_TAIKHOAN, @C_MST, @C_EMAIL, @C_MOBILE, @C_NGUOILIENHE)" 
     SelectCommand="SELECT [DMKHACHHANG].[PK_ID], [DMKHACHHANG].[FK_NHOMKHACHHANG], [DMKHACHHANG].[FK_NHOMKHACHHANGQT], [DMKHACHHANG].[C_CODE], [DMKHACHHANG].[C_NAME], [DMKHACHHANG].[C_ADDRESS], [DMKHACHHANG].[FK_QUANHUYEN], [DMKHACHHANG].[C_TEL], [DMKHACHHANG].[FK_USER], [DMKHACHHANG].[C_TAIKHOAN], [DMKHACHHANG].[C_MST], [DMKHACHHANG].[C_EMAIL], [DMKHACHHANG].[C_MOBILE], [DMKHACHHANG].[C_NGUOILIENHE],DMQUANHUYEN.C_NAME as QUANHUYENNAME,DMTINHTHANH.C_NAME as TINHTHANHNAME,USERS.C_NAME as USERNAME,a.C_NAME as NHOMKHACHHANGNAME,b.C_NAME as NHOMKHACHHANGNAMEQT FROM [DMKHACHHANG] LEFT OUTER JOIN DMQUANHUYEN ON DMKHACHHANG.FK_QUANHUYEN = DMQUANHUYEN.PK_ID LEFT OUTER JOIN DMTINHTHANH ON DMQUANHUYEN.FK_TINHTHANH = DMTINHTHANH.PK_ID LEFT OUTER JOIN USERS ON DMKHACHHANG.FK_USER =USERS.PK_ID LEFT OUTER JOIN DMNHOMKHACHHANG a ON DMKHACHHANG.FK_NHOMKHACHHANG =a.PK_ID LEFT OUTER JOIN DMNHOMKHACHHANG b ON DMKHACHHANG.FK_NHOMKHACHHANGQT =b.PK_ID" 
     UpdateCommand="UPDATE [DMKHACHHANG] SET [FK_NHOMKHACHHANG] = @FK_NHOMKHACHHANG, [FK_NHOMKHACHHANGQT] = @FK_NHOMKHACHHANGQT, [C_CODE] = @C_CODE, [C_NAME] = @C_NAME, [C_ADDRESS] = @C_ADDRESS, [FK_QUANHUYEN] = @FK_QUANHUYEN, [C_TEL] = @C_TEL, [FK_USER] = @FK_USER, [C_TAIKHOAN] = @C_TAIKHOAN, [C_MST] = @C_MST, [C_EMAIL] = @C_EMAIL, [C_MOBILE] = @C_MOBILE, [C_NGUOILIENHE] = @C_NGUOILIENHE WHERE [PK_ID] = @PK_ID">
         <UpdateParameters>
