@@ -358,8 +358,12 @@
                  }
                  else {
                  }
-                 txtC_TENKH.set_value(arrayOfStrings[1]);
-                 txtC_TELGUI.set_value(arrayOfStrings[2]);
+                 if (txtC_TENKH.get_value() == '') {
+                     txtC_TENKH.set_value(arrayOfStrings[1]);
+                 }
+                 if (txtC_TELGUI.get_value() == '') {
+                     txtC_TELGUI.set_value(arrayOfStrings[2]);
+                 }                 
                  PPXD = arrayOfStrings[3];
                  txtC_GIACUOC.set_value(arrayOfStrings[4]);
                  CUOCCHINH = arrayOfStrings[4];
@@ -713,7 +717,13 @@
                     </telerik:RadNumericTextBox>
                 </td>                
             </tr>
-            <tr>                
+            <tr>  
+                <td style =" width:110px;"><span class="rtsTxtnew">Tổng cước:<br /><input id="btnGiaCuoi" type="checkbox" onclick="SetGiaCuoi();" value="false"/>Theo giá cuối</span></td>
+                <td colspan="4">
+                    <telerik:RadNumericTextBox  ID="txtC_TIENHANG" Width ="90%" Runat="server" Text='<%# Bind("C_TIENHANG") %>' ClientEvents-OnLoad="OnClientLoadtxtC_TIENHANG" ClientEvents-OnValueChanged="OnValueChangedtxtC_TIENHANG">
+                            <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
+                    </telerik:RadNumericTextBox>                 
+                </td>                
                 <td style =" width:100px;"> <span class="rtsTxtnew">VAT:</span></td>
                 <td colspan="4">
                     <telerik:RadNumericTextBox  ID="txtC_VAT" Width ="90%" Runat="server" Text='<%# Bind("C_VAT") %>' ClientEvents-OnLoad="OnClientLoadtxtC_VAT" ClientEvents-OnValueChanged="OnValueChangedtxtC_VAT">
@@ -726,13 +736,7 @@
                     <telerik:RadNumericTextBox  ID="txtC_TIENHANGVAT" Width ="90%" Runat="server" Text='<%# Bind("C_TIENHANGVAT") %>' ClientEvents-OnLoad="OnClientLoadtxtC_TIENHANGVAT" ClientEvents-OnValueChanged="OnValueChangedtxtC_TIENHANGVAT">
                             <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
                     </telerik:RadNumericTextBox>
-                </td>
-                <td style =" width:110px;"><span class="rtsTxtnew">Tổng cước:<br /><input id="btnGiaCuoi" type="checkbox" onclick="SetGiaCuoi();" value="false"/>Theo giá cuối</span></td>
-                <td colspan="4">
-                    <telerik:RadNumericTextBox  ID="txtC_TIENHANG" Width ="90%" Runat="server" Text='<%# Bind("C_TIENHANG") %>' ClientEvents-OnLoad="OnClientLoadtxtC_TIENHANG" ClientEvents-OnValueChanged="OnValueChangedtxtC_TIENHANG">
-                            <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
-                    </telerik:RadNumericTextBox>                 
-                </td>  
+                </td>                
             </tr>
             <tr>                         
                 <td style =" width:100px;"> <span class="rtsTxtnew">HTTT:</span></td>
