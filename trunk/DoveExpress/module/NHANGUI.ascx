@@ -67,7 +67,9 @@
          currentLoadingPanel.show(currentUpdatedControl);
          return false;
     }
+    var checkKH = false;
     function cmbMaKhachHangClientSelectedIndexChangedHandler(sender, eventArgs) {
+         checkKH = true;
          $find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("cmbMaKhachHang;" + eventArgs.get_item().get_value());
          var currentLoadingPanel = $find("<%= RadAjaxLoadingPanelNHANGUI.ClientID %>");
          var currentUpdatedControl = "<%= RadGridNHANGUI.ClientID %>"; 
@@ -346,8 +348,7 @@
         return false;
     }    
 </script>
-<script type="text/javascript">  
-     var checkKH = '', checkDTKH = '';
+<script type="text/javascript">
      function onResponseEndNG() {
          if (typeof (result) != "undefined" && result && result != "") {
              //alert(result);
@@ -359,14 +360,11 @@
                  }
                  else {
                  }
-                 if (checkKH != arrayOfStrings[1]) {
+                 if (checkKH) {
                      txtC_TENKH.set_value(arrayOfStrings[1]);
-                     checkKH = arrayOfStrings[1];
-                 }
-                 if (checkDTKH != arrayOfStrings[2]) {
                      txtC_TELGUI.set_value(arrayOfStrings[2]);
-                     checkDTKH = arrayOfStrings[2]
-                 }                 
+                     checkKH = false;
+                 }             
                  PPXD = arrayOfStrings[3];
                  txtC_GIACUOC.set_value(arrayOfStrings[4]);
                  CUOCCHINH = arrayOfStrings[4];
@@ -374,13 +372,10 @@
              }
              else {
                  alert(arrayOfStrings[1]);
-                 if (checkKH != arrayOfStrings[2]) {
+                 if (checkKH) {
                      txtC_TENKH.set_value(arrayOfStrings[2]);
-                     checkKH = arrayOfStrings[2];
-                 }
-                 if (checkDTKH != arrayOfStrings[3]) {
                      txtC_TELGUI.set_value(arrayOfStrings[3]);
-                     checkDTKH = arrayOfStrings[3]
+                     checkKH = false;
                  }   
              }
              var currentLoadingPanel = $find("<%= RadAjaxLoadingPanelNHANGUI.ClientID %>");
