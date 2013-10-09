@@ -346,7 +346,8 @@
         return false;
     }    
 </script>
-<script type="text/javascript">   
+<script type="text/javascript">  
+     var checkKH = '', checkDTKH = '';
      function onResponseEndNG() {
          if (typeof (result) != "undefined" && result && result != "") {
              //alert(result);
@@ -358,11 +359,13 @@
                  }
                  else {
                  }
-                 if (txtC_TENKH.get_value() == '') {
+                 if (checkKH != arrayOfStrings[1]) {
                      txtC_TENKH.set_value(arrayOfStrings[1]);
+                     checkKH = arrayOfStrings[1];
                  }
-                 if (txtC_TELGUI.get_value() == '') {
+                 if (checkDTKH != arrayOfStrings[2]) {
                      txtC_TELGUI.set_value(arrayOfStrings[2]);
+                     checkDTKH = arrayOfStrings[2]
                  }                 
                  PPXD = arrayOfStrings[3];
                  txtC_GIACUOC.set_value(arrayOfStrings[4]);
@@ -371,6 +374,14 @@
              }
              else {
                  alert(arrayOfStrings[1]);
+                 if (checkKH != arrayOfStrings[2]) {
+                     txtC_TENKH.set_value(arrayOfStrings[2]);
+                     checkKH = arrayOfStrings[2];
+                 }
+                 if (checkDTKH != arrayOfStrings[3]) {
+                     txtC_TELGUI.set_value(arrayOfStrings[3]);
+                     checkDTKH = arrayOfStrings[3]
+                 }   
              }
              var currentLoadingPanel = $find("<%= RadAjaxLoadingPanelNHANGUI.ClientID %>");
              var currentUpdatedControl = "<%= RadGridNHANGUI.ClientID %>"; 
