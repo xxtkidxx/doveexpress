@@ -26,11 +26,11 @@
     function OnClientLoadcmbMaKhachHang(sender) {
         cmbMaKhachHang = sender;
     }
-    var radautoC_TENKH;
-    function OnClientLoadradautoC_TENKH(sender) {
-        radautoC_TENKH = sender;
-    }
-     var txtC_TELGUI;
+    var txtC_TENKH;
+    function OnClientLoadtxtC_TENKH(sender) {
+        txtC_TENKH = sender;
+    }    
+    var txtC_TELGUI;
     function OnClientLoadtxtC_TELGUI(sender) {
         txtC_TELGUI = sender;
     }
@@ -220,13 +220,6 @@
         {
             txtC_GIACUOC.set_value(CUOCCHINH);                  
         }
-    }
-    function radautoC_TENKHOnClientTextChanged(sender, eventArgs) {
-        $find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("radautoC_TENKH;" + sender.get_text());
-        var currentLoadingPanel = $find("<%= RadAjaxLoadingPanelNHANGUIQT.ClientID %>");
-        var currentUpdatedControl = "<%= RadGridNHANGUIQT.ClientID %>"; 
-        currentLoadingPanel.show(currentUpdatedControl);
-        return false;
     }
 </script>
 <script type="text/javascript">
@@ -472,16 +465,12 @@
                 </td>
                 <td style ="width:100px;"> <span class="rtsTxtnew">Tên người gửi:</span></td>
                 <td colspan="4">
-                    <asp:HiddenField ID="hfC_TENKH" runat="server"  Value ='<%# Eval("C_TENKH") %>'/>
-                    <telerik:RadAutoCompleteBox ID="radautoC_TENKH" Width ="90%" runat="server" 
-                        AllowCustomEntry="True" DataSourceID="KHACHHANGCHITIETDataSource" onclientload="OnClientLoadradautoC_TENKH" OnClientTextChanged="radautoC_TENKHOnClientTextChanged"
-                        DataTextField="C_NAME" DataValueField="PK_ID" InputType="Text" TextSettings-SelectionMode="Single" DropDownHeight="100" DropDownWidth="100">
-                    </telerik:RadAutoCompleteBox>                    
+                    <telerik:RadTextBox ID="txtC_TENKH" Width ="90%" Text='<%# Bind("C_TENKH") %>' ClientEvents-OnLoad="OnClientLoadtxtC_TENKH" runat="server"></telerik:RadTextBox>                               
                 </td>
                 <td style ="width:100px;"> <span class="rtsTxtnew">ĐT người gửi:</span></td>
                 <td colspan="4">
-                   <telerik:RadTextBox ID="txtC_TELGUI" Width ="90%" Text='<%# Bind("C_TELGUI") %>' ClientEvents-OnLoad="OnClientLoadtxtC_TELGUI" runat="server"></telerik:RadTextBox>
-                </td>            
+                   <telerik:RadTextBox ID="txtC_TELGUI" Width ="90%" Text='<%# Bind("C_TELGUI") %>' ClientEvents-OnLoad="OnClientLoadtxtC_TELGUI" runat="server"></telerik:RadTextBox>               
+                </td>    
             </tr> 
             <tr> 
                 <td style ="width:100px;"> <span class="rtsTxtnew">Người nhận:</span></td>
@@ -779,11 +768,8 @@
 <asp:SqlDataSource ID="KHACHHANGDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
  SelectCommand="SELECT DMKHACHHANG.* FROM DMKHACHHANG" >
 </asp:SqlDataSource>
- <asp:SqlDataSource ID="KHACHHANGCHITIETDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
- SelectCommand="SELECT DMKHACHHANGCHITIET.* FROM DMKHACHHANGCHITIET" >
-</asp:SqlDataSource>
 <asp:SqlDataSource ID="MASANPHAMDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
-  SelectCommand="SELECT [PK_ID], [C_CODE], [C_NAME] FROM [DMMASANPHAM]  WHERE WHERE C_TYPE = N'Quốc tế' ORDER BY PK_ID">
+  SelectCommand="SELECT [PK_ID], [C_CODE], [C_NAME] FROM [DMMASANPHAM]  WHERE C_TYPE = N'Quốc tế' ORDER BY PK_ID">
 </asp:SqlDataSource>
 <asp:SqlDataSource ID="MAVUNGDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>">
 </asp:SqlDataSource>
