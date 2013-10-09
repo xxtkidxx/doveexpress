@@ -266,7 +266,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
                 else
                 {
                     FK_MABANGCUOC = "";
-                    Alarm = "msg,Nhóm khách hàng này không nằm trong bảng cước nào trong khu vực làm việc " + Session["VUNGLAMVIEC"].ToString();
+                    Alarm = "msg,-,Nhóm khách hàng này không nằm trong bảng cước nào trong khu vực làm việc " + Session["VUNGLAMVIEC"].ToString() + ",-," + TENKH + ",-," + DIENTHOAIKH; 
                 }
             }
             else
@@ -274,7 +274,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
                 FK_NHOMKHACHHANG = "";
                 TENKH = "";
                 DIENTHOAIKH = "";
-                Alarm = "msg,Mã khách hàng này không nằm trong nhóm khách hàng nào";
+                Alarm = "msg,-,Mã khách hàng này không nằm trong nhóm khách hàng nào";
             }
         }
         else if (arrayvalue[0] == "cmbQuanHuyen")
@@ -294,7 +294,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
                 else
                 {
                     FK_MAVUNG = "";
-                    Alarm = "msg,Quận huyện này không nằm trong vùng tính cước nào";
+                    Alarm = "msg,-,Quận huyện này không nằm trong vùng tính cước nào";
                 }
             }
         }
@@ -331,7 +331,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
                 else
                 {
                     FK_MAVUNG = "";
-                    Alarm = "msg,Quận huyện này không nằm trong vùng tính cước nào";
+                    Alarm = "msg,-,Quận huyện này không nằm trong vùng tính cước nào";
                 }
             }
         }
