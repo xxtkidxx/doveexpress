@@ -560,14 +560,21 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
         {
             GridEditableItem editItem = (GridEditableItem)e.Item;
             RadDatePicker radNgaynhangui = (RadDatePicker)editItem.FindControl("radNgaynhangui");
+            RadTextBox txtC_TENKH = (RadTextBox)editItem.FindControl("txtC_TENKH");
+            RadTextBox txtC_TELGUI = (RadTextBox)editItem.FindControl("txtC_TELGUI");
             HiddenField txtID = (HiddenField)editItem.FindControl("txtID");
             Session["txtID"] = (txtID.Value != "") ? txtID.Value : "0";
             RadComboBox cmbQuocGia = (RadComboBox)editItem.FindControl("cmbQuocGia");
+            RadComboBox cmbC_TAILIEU = (RadComboBox)editItem.FindControl("cmbC_TAILIEU");
             RadNumericTextBox txtPPXD = (RadNumericTextBox)editItem.FindControl("txtPPXD");
             txtPPXD.Text = (txtPPXD.Text == "") ? "0" : txtPPXD.Text;
             RadTextBox txtCODE = (RadTextBox)editItem.FindControl("txtCODE");
-            HiddenField hfC_TENKH = (HiddenField)editItem.FindControl("hfC_TENKH");
-            RadAutoCompleteBox radautoC_TENKH = (RadAutoCompleteBox)editItem.FindControl("radautoC_TENKH");
+            RadNumericTextBox txtC_GIATRIHANGHOA = (RadNumericTextBox)editItem.FindControl("txtC_GIATRIHANGHOA");
+            txtC_GIATRIHANGHOA.Text = (txtC_GIATRIHANGHOA.Text == "") ? "0" : txtC_GIATRIHANGHOA.Text;
+            RadNumericTextBox txtC_KHOILUONGTHUC = (RadNumericTextBox)editItem.FindControl("txtC_KHOILUONGTHUC");
+            txtC_KHOILUONGTHUC.Text = (txtC_KHOILUONGTHUC.Text == "") ? "0" : txtC_KHOILUONGTHUC.Text;
+            RadNumericTextBox txtC_KHOILUONGQD = (RadNumericTextBox)editItem.FindControl("txtC_KHOILUONGQD");
+            txtC_KHOILUONGQD.Text = (txtC_KHOILUONGQD.Text == "") ? "0" : txtC_KHOILUONGQD.Text;
             RadNumericTextBox txtC_KHOILUONG = (RadNumericTextBox)editItem.FindControl("txtC_KHOILUONG");
             txtC_KHOILUONG.Text = (txtC_KHOILUONG.Text == "") ? "0" : txtC_KHOILUONG.Text;
             RadComboBox cmbMaKhachHang = (RadComboBox)editItem.FindControl("cmbMaKhachHang");
@@ -582,8 +589,8 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
             txtC_COD.Text = (txtC_COD.Text == "") ? "0" : txtC_COD.Text;
             RadNumericTextBox txtC_BAOPHAT = (RadNumericTextBox)editItem.FindControl("txtC_BAOPHAT");
             txtC_BAOPHAT.Text = (txtC_BAOPHAT.Text == "") ? "0" : txtC_BAOPHAT.Text;
-            RadNumericTextBox txtC_TIENHANG = (RadNumericTextBox)editItem.FindControl("txtC_TIENHANG");
-            txtC_TIENHANG.Text = (txtC_TIENHANG.Text == "") ? "0" : txtC_TIENHANG.Text;
+            RadNumericTextBox txtC_HENGIO = (RadNumericTextBox)editItem.FindControl("txtC_HENGIO");
+            txtC_HENGIO.Text = (txtC_HENGIO.Text == "") ? "0" : txtC_HENGIO.Text;
             RadNumericTextBox txtC_VAT = (RadNumericTextBox)editItem.FindControl("txtC_VAT");
             txtC_VAT.Text = (txtC_VAT.Text == "") ? "0" : txtC_VAT.Text;
             RadNumericTextBox txtC_TIENHANGVAT = (RadNumericTextBox)editItem.FindControl("txtC_TIENHANGVAT");
@@ -598,6 +605,7 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
             {
                 // insert item
                 radNgaynhangui.SelectedDate = System.DateTime.Now;
+                cmbC_TAILIEU.SelectedIndex = 1;
                 TENKH = "";
                 DIENTHOAIKH = "";
                 txtCODE.Text = GetMaxBill();
@@ -614,9 +622,7 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
             }
             else
             {
-                // edit item
-                TENKH = hfC_TENKH.Value;
-                radautoC_TENKH.Entries.Add(new AutoCompleteBoxEntry(hfC_TENKH.Value));
+                // edit item                
                 txtC_CONLAI.Text = (((txtC_TIENHANGVAT.Text == "") ? 0 : decimal.Parse(txtC_TIENHANGVAT.Text)) - ((txtC_DATHU.Text == "") ? 0 : decimal.Parse(txtC_DATHU.Text))).ToString();
                 FK_DICHVU = cmbSanPham.SelectedValue;
                 FK_QUOCGIA = cmbQuocGia.SelectedValue;
