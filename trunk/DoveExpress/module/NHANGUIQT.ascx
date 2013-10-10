@@ -73,6 +73,30 @@
         currentLoadingPanel.show(currentUpdatedControl);
         return false;
     }
+    function OnValueChangedtxtC_KHOILUONGTHUC(sender, eventArgs) {
+        txtC_KHOILUONG.set_value(Math.max(txtC_KHOILUONGQD.get_value(),txtC_KHOILUONGTHUC.get_value())); 
+        return false;
+    } 
+    function OnValueChangedtxtC_KHOILUONGQD(sender, eventArgs) {
+        txtC_KHOILUONG.set_value(Math.max(txtC_KHOILUONGTHUC.get_value(),txtC_KHOILUONGQD.get_value())); 
+        return false;
+    }
+    function OnValueChangedtxtC_GIATRIHANGHOA(sender, eventArgs) {
+        
+        return false;
+    }
+    var txtC_GIATRIHANGHOA;
+    function OnClientLoadtxtC_GIATRIHANGHOA(sender) {
+        txtC_GIATRIHANGHOA = sender;
+    } 
+    var txtC_KHOILUONGTHUC;
+    function OnClientLoadtxtC_KHOILUONGTHUC(sender) {
+        txtC_KHOILUONGTHUC = sender;
+    } 
+    var txtC_KHOILUONGQD;
+    function OnClientLoadtxtC_KHOILUONGQD(sender) {
+        txtC_KHOILUONGQD = sender;
+    }
     var txtC_KHOILUONG;
     function OnClientLoadtxtC_KHOILUONG(sender) {
         txtC_KHOILUONG = sender;
@@ -114,6 +138,10 @@
     function OnClientLoadtxtC_BAOPHAT(sender) {
         txtC_BAOPHAT = sender;
     }
+    var txtC_HENGIO;
+    function OnClientLoadtxtC_HENGIO(sender) {
+        txtC_HENGIO = sender;
+    }
     var txtC_DATHU;
     function OnClientLoadtxtC_DATHU(sender) {
         txtC_DATHU = sender;
@@ -126,46 +154,57 @@
     function OnClientLoadtxtC_GIADOITAC(sender) {
         txtC_GIADOITAC = sender;
     }
+    function cmbFK_DICHVUDOITACSelectedIndexChangedHandler(sender, eventArgs) {
+        $find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("cmbFK_DICHVUDOITAC;" + eventArgs.get_item().get_value());
+        var currentLoadingPanel = $find("<%= RadAjaxLoadingPanelNHANGUIQT.ClientID %>");
+        var currentUpdatedControl = "<%= RadGridNHANGUIQT.ClientID %>"; 
+        currentLoadingPanel.show(currentUpdatedControl);
+        return false;
+    }
+    var txtC_PHUPHIDOITAC;
+    function OnClientLoadC_PHUPHIDOITAC(sender) {
+        txtC_GIADOITAC = sender;
+    }
     function OnValueChangedtxtC_GIACUOC(sender, eventArgs) {
-        txtPPXD.set_value(txtC_GIACUOC.get_value() * PPXD/100);
+        txtPPXD.set_value(txtC_GIACUOC.get_value() * parseFloat(PPXD)/100);
         if (!flag) {
-            txtC_TIENHANG.set_value(txtC_GIACUOC.get_value() + txtPPXD.get_value() + txtC_BAOPHAT.get_value() + txtC_COD.get_value() + txtC_KHAIGIA.get_value() + txtC_DONGGOI.get_value());
+            txtC_TIENHANG.set_value(txtC_GIACUOC.get_value() + txtPPXD.get_value() + txtC_BAOPHAT.get_value() + txtC_HENGIO.get_value() + txtC_COD.get_value() + txtC_KHAIGIA.get_value() + txtC_DONGGOI.get_value());
         }
         return false;
     }
     function OnValueChangedtxtPPXD(sender, eventArgs) {
         if (!flag) {
-            txtC_TIENHANG.set_value(txtC_GIACUOC.get_value() + txtPPXD.get_value() + txtC_BAOPHAT.get_value() + txtC_COD.get_value() + txtC_KHAIGIA.get_value() + txtC_DONGGOI.get_value());
+            txtC_TIENHANG.set_value(txtC_GIACUOC.get_value() + txtPPXD.get_value() + txtC_BAOPHAT.get_value()  + txtC_HENGIO.get_value() + txtC_COD.get_value() + txtC_KHAIGIA.get_value() + txtC_DONGGOI.get_value());
         }
         return false;
     }
     function OnValueChangedtxtC_DONGGOI(sender, eventArgs) {
         if (flag) {
-           txtC_GIACUOC.set_value(((txtC_TIENHANG.get_value() - txtC_BAOPHAT.get_value() - txtC_COD.get_value() - txtC_KHAIGIA.get_value() - txtC_DONGGOI.get_value())/(100 + parseFloat(PPXD)))*100);
-           txtPPXD.set_value(((txtC_TIENHANG.get_value() - txtC_BAOPHAT.get_value() - txtC_COD.get_value() - txtC_KHAIGIA.get_value() - txtC_DONGGOI.get_value())/(100 + parseFloat(PPXD)))*parseFloat(PPXD));
+           txtC_GIACUOC.set_value(((txtC_TIENHANG.get_value() - txtC_BAOPHAT.get_value() - txtC_HENGIO.get_value() - txtC_COD.get_value() - txtC_KHAIGIA.get_value() - txtC_DONGGOI.get_value())/(100 + parseFloat(PPXD)))*100);
+           txtPPXD.set_value(((txtC_TIENHANG.get_value() - txtC_BAOPHAT.get_value() - txtC_HENGIO.get_value() - txtC_COD.get_value() - txtC_KHAIGIA.get_value() - txtC_DONGGOI.get_value())/(100 + parseFloat(PPXD)))*parseFloat(PPXD));
         }
         else {
-            txtC_TIENHANG.set_value(txtC_GIACUOC.get_value() + txtPPXD.get_value() + txtC_BAOPHAT.get_value() + txtC_COD.get_value() + txtC_KHAIGIA.get_value() + txtC_DONGGOI.get_value());
+            txtC_TIENHANG.set_value(txtC_GIACUOC.get_value() + txtPPXD.get_value() + txtC_BAOPHAT.get_value() + txtC_HENGIO.get_value()  + txtC_COD.get_value() + txtC_KHAIGIA.get_value() + txtC_DONGGOI.get_value());
         }        
         return false;
     }
     function OnValueChangedtxtC_KHAIGIA(sender, eventArgs) {
        if (flag) {
-           txtC_GIACUOC.set_value(((txtC_TIENHANG.get_value() - txtC_BAOPHAT.get_value() - txtC_COD.get_value() - txtC_KHAIGIA.get_value() - txtC_DONGGOI.get_value())/(100 + parseFloat(PPXD)))*100);
-           txtPPXD.set_value(((txtC_TIENHANG.get_value() - txtC_BAOPHAT.get_value() - txtC_COD.get_value() - txtC_KHAIGIA.get_value() - txtC_DONGGOI.get_value())/(100 + parseFloat(PPXD)))*parseFloat(PPXD));
+           txtC_GIACUOC.set_value(((txtC_TIENHANG.get_value() - txtC_BAOPHAT.get_value() - txtC_HENGIO.get_value()  - txtC_COD.get_value() - txtC_KHAIGIA.get_value() - txtC_DONGGOI.get_value())/(100 + parseFloat(PPXD)))*100);
+           txtPPXD.set_value(((txtC_TIENHANG.get_value() - txtC_BAOPHAT.get_value() - txtC_HENGIO.get_value()  - txtC_COD.get_value() - txtC_KHAIGIA.get_value() - txtC_DONGGOI.get_value())/(100 + parseFloat(PPXD)))*parseFloat(PPXD));
         }
         else {
-            txtC_TIENHANG.set_value(txtC_GIACUOC.get_value() + txtPPXD.get_value() + txtC_BAOPHAT.get_value() + txtC_COD.get_value() + txtC_KHAIGIA.get_value() + txtC_DONGGOI.get_value());
+            txtC_TIENHANG.set_value(txtC_GIACUOC.get_value() + txtPPXD.get_value() + txtC_BAOPHAT.get_value() + txtC_HENGIO.get_value()  + txtC_COD.get_value() + txtC_KHAIGIA.get_value() + txtC_DONGGOI.get_value());
         }        
         return false;
     }
     function OnValueChangedtxtC_COD(sender, eventArgs) {
         if (flag) {
-           txtC_GIACUOC.set_value(((txtC_TIENHANG.get_value() - txtC_BAOPHAT.get_value() - txtC_COD.get_value() - txtC_KHAIGIA.get_value() - txtC_DONGGOI.get_value())/(100 + parseFloat(PPXD)))*100);
-           txtPPXD.set_value(((txtC_TIENHANG.get_value() - txtC_BAOPHAT.get_value() - txtC_COD.get_value() - txtC_KHAIGIA.get_value() - txtC_DONGGOI.get_value())/(100 + parseFloat(PPXD)))*parseFloat(PPXD));
+           txtC_GIACUOC.set_value(((txtC_TIENHANG.get_value() - txtC_BAOPHAT.get_value() - txtC_HENGIO.get_value()  - txtC_COD.get_value() - txtC_KHAIGIA.get_value() - txtC_DONGGOI.get_value())/(100 + parseFloat(PPXD)))*100);
+           txtPPXD.set_value(((txtC_TIENHANG.get_value() - txtC_BAOPHAT.get_value() - txtC_HENGIO.get_value()  - txtC_COD.get_value() - txtC_KHAIGIA.get_value() - txtC_DONGGOI.get_value())/(100 + parseFloat(PPXD)))*parseFloat(PPXD));
         }
         else {
-            txtC_TIENHANG.set_value(txtC_GIACUOC.get_value() + txtPPXD.get_value() + txtC_BAOPHAT.get_value() + txtC_COD.get_value() + txtC_KHAIGIA.get_value() + txtC_DONGGOI.get_value());
+            txtC_TIENHANG.set_value(txtC_GIACUOC.get_value() + txtPPXD.get_value() + txtC_BAOPHAT.get_value() + txtC_HENGIO.get_value() + txtC_COD.get_value() + txtC_KHAIGIA.get_value() + txtC_DONGGOI.get_value());
         }        
         return false;
     }
@@ -179,11 +218,21 @@
         }        
         return false;
     }
+    function OnValueChangedtxtC_HENGIO(sender, eventArgs) {
+        if (flag) {
+           txtC_GIACUOC.set_value(((txtC_TIENHANG.get_value() - txtC_BAOPHAT.get_value() - txtC_HENGIO.get_value() - txtC_COD.get_value() - txtC_KHAIGIA.get_value() - txtC_DONGGOI.get_value())/(100 + parseFloat(PPXD)))*100);
+           txtPPXD.set_value(((txtC_TIENHANG.get_value() - txtC_BAOPHAT.get_value() - txtC_HENGIO.get_value() - txtC_COD.get_value() - txtC_KHAIGIA.get_value() - txtC_DONGGOI.get_value())/(100 + parseFloat(PPXD)))*parseFloat(PPXD));
+        }
+        else {
+            txtC_TIENHANG.set_value(txtC_GIACUOC.get_value() + txtPPXD.get_value() + txtC_BAOPHAT.get_value() + txtC_HENGIO.get_value() + txtC_COD.get_value() + txtC_KHAIGIA.get_value() + txtC_DONGGOI.get_value());
+        }        
+        return false;
+    }     
     function OnValueChangedtxtC_TIENHANG(sender, eventArgs) {
         txtC_VAT.set_value(txtC_TIENHANG.get_value()*0.1);
         if (flag) {
-           txtC_GIACUOC.set_value(((txtC_TIENHANG.get_value() - txtC_BAOPHAT.get_value() - txtC_COD.get_value() - txtC_KHAIGIA.get_value() - txtC_DONGGOI.get_value())/(100 + parseFloat(PPXD)))*100);
-           txtPPXD.set_value(((txtC_TIENHANG.get_value() - txtC_BAOPHAT.get_value() - txtC_COD.get_value() - txtC_KHAIGIA.get_value() - txtC_DONGGOI.get_value())/(100 + parseFloat(PPXD)))*parseFloat(PPXD));
+           txtC_GIACUOC.set_value(((txtC_TIENHANG.get_value() - txtC_BAOPHAT.get_value() - txtC_HENGIO.get_value() - txtC_COD.get_value() - txtC_KHAIGIA.get_value() - txtC_DONGGOI.get_value())/(100 + parseFloat(PPXD)))*100);
+           txtPPXD.set_value(((txtC_TIENHANG.get_value() - txtC_BAOPHAT.get_value() - txtC_HENGIO.get_value() - txtC_COD.get_value() - txtC_KHAIGIA.get_value() - txtC_DONGGOI.get_value())/(100 + parseFloat(PPXD)))*parseFloat(PPXD));
         }
         return false;
     }
@@ -204,6 +253,61 @@
         txtC_CONLAI.set_value(txtC_TIENHANGVAT.get_value() - eventArgs.get_newValue());
         return false;
     }
+    var isCOD = false;
+    function SetC_COD() {
+        isCOD = !isCOD;
+        if (isCOD) {          
+           txtC_COD.set_value(20000 + txtC_GIATRIHANGHOA.get_value()*0.02);
+        }
+        else 
+        {
+            txtC_COD.set_value(0);            
+        }      
+    }
+    var isKHAIGIA = false;
+    function SetC_KHAIGIA() {
+        isKHAIGIA = !isKHAIGIA;
+        if (isKHAIGIA) {          
+           txtC_KHAIGIA.set_value(Math.max(50000,txtC_GIATRIHANGHOA.get_value()*0.02)); 
+        }
+        else 
+        {
+            txtC_KHAIGIA.set_value(0);            
+        }    
+    }
+    var isHENGIO = false;
+    function SetC_HENGIO() {
+        isHENGIO = !isHENGIO;
+        if (isHENGIO) {          
+           txtC_HENGIO.set_value(Math.max(50000,txtC_GIACUOC.get_value()*0.2)); 
+        }
+        else 
+        {
+            txtC_HENGIO.set_value(0);            
+        }    
+    }
+    var isBAOPHAT = false;
+    function SetC_BAOPHAT() {
+        isBAOPHAT = !isBAOPHAT;
+        if (isBAOPHAT) {          
+           txtC_BAOPHAT.set_value(5000); 
+        }
+        else 
+        {
+            txtC_BAOPHAT.set_value(0);            
+        }    
+    }
+    var isDONGGOI = false;
+    function SetC_DONGGOI() {
+        isDONGGOI = !isDONGGOI;
+        if (isDONGGOI) {          
+           //txtC_DONGGOI.set_value(0); 
+        }
+        else 
+        {
+            txtC_DONGGOI.set_value(0);            
+        }   
+    }
     function SetGiaCuoi() {
         flag = !flag;
         if (typeof (PPXD) == "undefined" || PPXD == "") {
@@ -213,13 +317,29 @@
                 CUOCCHINH = txtC_GIACUOC.get_value();
         }
         if (flag) {          
-           txtC_GIACUOC.set_value(((txtC_TIENHANG.get_value() - txtC_BAOPHAT.get_value() - txtC_COD.get_value() - txtC_KHAIGIA.get_value() - txtC_DONGGOI.get_value())/(100 + parseFloat(PPXD)))*100);
-           txtPPXD.set_value(((txtC_TIENHANG.get_value() - txtC_BAOPHAT.get_value() - txtC_COD.get_value() - txtC_KHAIGIA.get_value() - txtC_DONGGOI.get_value())/(100 + parseFloat(PPXD)))*parseFloat(PPXD));
+           txtC_GIACUOC.set_value(((txtC_TIENHANG.get_value() - txtC_BAOPHAT.get_value() - txtC_HENGIO.get_value() - txtC_COD.get_value() - txtC_KHAIGIA.get_value() - txtC_DONGGOI.get_value())/(100 + parseFloat(PPXD)))*100);
+           txtPPXD.set_value(((txtC_TIENHANG.get_value() - txtC_BAOPHAT.get_value() - txtC_HENGIO.get_value() - txtC_COD.get_value() - txtC_KHAIGIA.get_value() - txtC_DONGGOI.get_value())/(100 + parseFloat(PPXD)))*parseFloat(PPXD));
         }
         else 
         {
             txtC_GIACUOC.set_value(CUOCCHINH);                  
         }
+    }
+    function cmbC_HINHTHUCTTClientSelectedIndexChangedHandler(sender, eventArgs) {
+        if ( eventArgs.get_item().get_value() == 'Thanh toán ngay')
+        {
+            txtC_DATHU.set_value(txtC_TIENHANGVAT.get_value());
+        } else if ( eventArgs.get_item().get_value() == 'Thanh toán sau')
+        {
+            txtC_DATHU.set_value(0);
+        } else if ( eventArgs.get_item().get_value() == 'Thanh toán đầu nhận')
+        {
+            txtC_DATHU.set_value(0);
+        } else
+        {
+            txtC_DATHU.set_value(0);
+        }
+        return false;
     }
 </script>
 <script type="text/javascript">
@@ -471,6 +591,16 @@
                 <td colspan="4">
                    <telerik:RadTextBox ID="txtC_TELGUI" Width ="90%" Text='<%# Bind("C_TELGUI") %>' ClientEvents-OnLoad="OnClientLoadtxtC_TELGUI" runat="server"></telerik:RadTextBox>               
                 </td>    
+            </tr>
+            <tr>
+                <td style ="width:100px;"> <span class="rtsTxtnew">Liên hệ:</span></td>
+                <td colspan="9">
+                    <telerik:RadTextBox ID="txtC_LIENHE" Width ="96%" Text='<%# Bind("C_LIENHE") %>' runat="server"></telerik:RadTextBox>                               
+                </td>
+                <td style ="width:100px;"> <span class="rtsTxtnew">Mã bưu chính:</span></td>
+                <td colspan="4">
+                   <telerik:RadTextBox ID="txtC_POSTCODE" Width ="90%" Text='<%# Bind("C_POSTCODE") %>' runat="server"></telerik:RadTextBox>               
+                </td>    
             </tr> 
             <tr> 
                 <td style ="width:100px;"> <span class="rtsTxtnew">Người nhận:</span></td>
@@ -499,8 +629,37 @@
             </tr> 
             <tr> 
                 <td style =" width:100px;"> <span class="rtsTxtnew">Nội dung:</span></td>
-                <td colspan="16">
-                    <telerik:RadTextBox ID="txtC_NOIDUNG" Width ="90%" Text='<%# Bind("C_NOIDUNG") %>' runat="server"></telerik:RadTextBox>
+                <td colspan="9">
+                    <telerik:RadTextBox ID="txtC_NOIDUNG" Width ="96%" Text='<%# Bind("C_NOIDUNG") %>' runat="server"></telerik:RadTextBox>
+                </td>
+                 <td style =" width:100px;"> <span class="rtsTxtnew">Loại hàng hoá:</span></td>
+                <td colspan="4">
+                 <telerik:RadComboBox ID="cmbC_TAILIEU" SelectedValue='<%# Bind("C_TAILIEU") %>' runat="server" EmptyMessage="Chọn">
+                            <Items>
+                                <telerik:RadComboBoxItem Value ="Tài liệu" Text ="Tài liệu" />
+                                <telerik:RadComboBoxItem Value ="Không phải tài liệu" Text ="Không phải tài liệu" />
+                            </Items>
+                 </telerik:RadComboBox>
+                </td> 
+            </tr>
+             <tr>                
+                <td style =" width:100px;"> <span class="rtsTxtnew">Giá trị hàng hoá:</span></td>
+                <td colspan="4">
+                    <telerik:RadNumericTextBox  ID="txtC_GIATRIHANGHOA" Width ="90%" Runat="server" Text='<%# Bind("C_GIATRIHANGHOA") %>' ClientEvents-OnLoad="OnClientLoadtxtC_GIATRIHANGHOA" ClientEvents-OnValueChanged="OnValueChangedtxtC_GIATRIHANGHOA">
+                            <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
+                    </telerik:RadNumericTextBox>
+                </td>               
+                <td style =" width:100px;"> <span class="rtsTxtnew">KL thực (g):</span></td>
+                <td colspan="4">
+                    <telerik:RadNumericTextBox  ID="txtC_KHOILUONGTHUC" Width ="90%" Runat="server" Text='<%# Bind("C_KHOILUONGTHUC") %>' ClientEvents-OnValueChanged="OnValueChangedtxtC_KHOILUONGTHUC" ClientEvents-OnLoad="OnClientLoadtxtC_KHOILUONGTHUC">
+                            <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
+                    </telerik:RadNumericTextBox>
+                </td>
+                <td style =" width:100px;"> <span class="rtsTxtnew">KL quy đổi (g):</span></td>
+                <td colspan="4">
+                    <telerik:RadNumericTextBox  ID="txtC_KHOILUONGQD" Width ="90%" Runat="server" Text='<%# Bind("C_KHOILUONGQD") %>' ClientEvents-OnValueChanged="OnValueChangedtxtC_KHOILUONGQD" ClientEvents-OnLoad="OnClientLoadtxtC_KHOILUONGQD">
+                            <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
+                    </telerik:RadNumericTextBox>
                 </td>
             </tr
             <tr>                
@@ -531,14 +690,14 @@
                             <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
                     </telerik:RadNumericTextBox>
                 </td>
-                <td style =" width:100px;"><span class="rtsTxtnew">DV đóng gói:</td>
+                <td style =" width:100px;"><span class="rtsTxtnew"><input id="btnC_DONGGOI" type="checkbox" onclick="SetC_DONGGOI();" value="false"/>Đóng gói:</td>
                 <td colspan="4">
                     <telerik:RadNumericTextBox  ID="txtC_DONGGOI" Width ="90%" Runat="server" Text='<%# Bind("C_DONGGOI") %>' ClientEvents-OnLoad="OnClientLoadtxtC_DONGGOI" ClientEvents-OnValueChanged="OnValueChangedtxtC_DONGGOI">
                             <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
                             <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
                     </telerik:RadNumericTextBox>
                 </td>
-                <td style =" width:100px;"><span class="rtsTxtnew">DV khai giá:</td>
+                <td style =" width:100px;"><span class="rtsTxtnew"><input id="btnC_KHAIGIA" type="checkbox" onclick="SetC_KHAIGIA();" value="false"/>Khai giá:</td>
                 <td colspan="4">
                     <telerik:RadNumericTextBox  ID="txtC_KHAIGIA" Width ="90%" Runat="server" Text='<%# Bind("C_KHAIGIA") %>' ClientEvents-OnLoad="OnClientLoadtxtC_KHAIGIA" ClientEvents-OnValueChanged="OnValueChangedtxtC_KHAIGIA">
                             <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
@@ -547,27 +706,33 @@
                 </td>
             </tr>
             <tr>                
-                <td style =" width:100px;"> <span class="rtsTxtnew">DV COD:</span></td>
+                <td style =" width:100px;"> <span class="rtsTxtnew"><input id="btnC_COD" type="checkbox" onclick="SetC_COD();" value="false"/>Hun trùng:</span></td>
                 <td colspan="4">
                     <telerik:RadNumericTextBox  ID="txtC_COD" Width ="90%" Runat="server" Text='<%# Bind("C_COD") %>' ClientEvents-OnLoad="OnClientLoadtxtC_COD" ClientEvents-OnValueChanged="OnValueChangedtxtC_COD">
                             <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
                             <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
                     </telerik:RadNumericTextBox>
                 </td>                
-                <td style =" width:100px;"><span class="rtsTxtnew">DV khác:</td>
+                <td style =" width:100px;"><span class="rtsTxtnew"><input id="btnC_BAOPHAT" type="checkbox" onclick="SetC_BAOPHAT();" value="false"/>Hải quan:</td>
                 <td colspan="4">
                     <telerik:RadNumericTextBox  ID="txtC_BAOPHAT" Width ="90%" Runat="server" Text='<%# Bind("C_BAOPHAT") %>' ClientEvents-OnLoad="OnClientLoadtxtC_BAOPHAT" ClientEvents-OnValueChanged="OnValueChangedtxtC_BAOPHAT">
                             <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
                     </telerik:RadNumericTextBox>
                 </td>
-                <td style =" width:100px;"><span class="rtsTxtnew">Tổng cước:</span></td>
+                <td style =" width:100px;"><span class="rtsTxtnew"><input id="btnC_HENGIO" type="checkbox" onclick="SetC_HENGIO();" value="false"/>Hẹn giờ:</span></td>
+                <td colspan="4">
+                    <telerik:RadNumericTextBox  ID="txtC_HENGIO" Width ="90%" Runat="server" Text='<%# Bind("C_HENGIO") %>' ClientEvents-OnLoad="OnClientLoadtxtC_HENGIO" ClientEvents-OnValueChanged="OnValueChangedtxtC_HENGIO">
+                            <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
+                    </telerik:RadNumericTextBox>
+                </td> 
+            </tr>
+            <tr>
+                <td style =" width:110px;"><span class="rtsTxtnew">Tổng cước:<br /><input id="Checkbox1" type="checkbox" onclick="SetGiaCuoi();" value="false"/>Theo giá cuối</span></td>
                 <td colspan="4">
                     <telerik:RadNumericTextBox  ID="txtC_TIENHANG" Width ="90%" Runat="server" Text='<%# Bind("C_TIENHANG") %>' ClientEvents-OnLoad="OnClientLoadtxtC_TIENHANG" ClientEvents-OnValueChanged="OnValueChangedtxtC_TIENHANG">
                             <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
                     </telerik:RadNumericTextBox>
-                </td>  
-            </tr>
-            <tr>                
+                </td>              
                 <td style =" width:100px;"> <span class="rtsTxtnew">VAT:</span></td>
                 <td colspan="4">
                     <telerik:RadNumericTextBox  ID="txtC_VAT" Width ="90%" Runat="server" Text='<%# Bind("C_VAT") %>' ClientEvents-OnLoad="OnClientLoadtxtC_VAT" ClientEvents-OnValueChanged="OnValueChangedtxtC_VAT">
@@ -581,9 +746,6 @@
                             <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
                     </telerik:RadNumericTextBox>
                 </td>
-                 <td colspan="4">
-                    <input id="btnGiaCuoi" type="checkbox" onclick="SetGiaCuoi();" value="false"/>Theo giá cuối
-                </td> 
             </tr>
             <tr>                         
                 <td style =" width:100px;"> <span class="rtsTxtnew">HTTT:</span></td>
@@ -610,19 +772,19 @@
                     </telerik:RadNumericTextBox>
                 </td>
             </tr
-            <tr>                
-                <td style =" width:100px;"><span class="rtsTxtnew">Nhân viên nhận:</span></td>
-                <td colspan="4">
-                    <telerik:RadComboBox ID="cmbFK_NHANVIENNHAN" runat="server" SelectedValue='<%# Bind("FK_NHANVIENNHAN") %>'
-                    DataTextField="C_NAME" DataValueField="PK_ID" DataSourceID="UserDataSource"
-                    ShowToggleImage="True" EmptyMessage="Chọn">
-                    </telerik:RadComboBox>
-                </td>
+            <tr>           
                 <td style =" width:100px;"><span class="rtsTxtnew">Đối tác:</span></td>
                 <td colspan="4">
                     <telerik:RadComboBox ID="cmbFK_DOITAC" runat="server" SelectedValue='<%# Bind("FK_DOITAC") %>'
                     DataTextField="C_NAME" DataValueField="PK_ID" DataSourceID="DoitacDataSource" onclientselectedindexchanged="cmbFK_DOITACClientSelectedIndexChangedHandler"
                     ShowToggleImage="True" EmptyMessage="Chọn">
+                    </telerik:RadComboBox>
+                </td>
+                <td style =" width:100px;"> <span class="rtsTxtnew">Dịch vụ đối tác:</span></td>
+                <td colspan="4">
+                    <telerik:RadComboBox ID="cmbFK_DICHVUDOITAC" runat="server" SelectedValue='<%# Bind("FK_DICHVUDOITAC") %>'
+                    DataTextField="C_NAME" DataValueField="PK_ID" DataSourceID="MASANPHAMDataSource"
+                    ShowToggleImage="True" EmptyMessage="Chọn dịch vụ" onclientselectedindexchanged="cmbFK_DICHVUDOITACSelectedIndexChangedHandler">
                     </telerik:RadComboBox>
                 </td>
                 <td style =" width:100px;"><span class="rtsTxtnew">Giá đối tác:</span></td>
@@ -632,7 +794,32 @@
                     </telerik:RadNumericTextBox>
                 </td>
             </tr>
+            <tr>                         
+                <td style =" width:100px;"> <span class="rtsTxtnew">Phụ phí đối tác:</span></td>
+                <td colspan="4">      
+                    <telerik:RadNumericTextBox  ID="txtC_PHUPHIDOITAC" Width ="90%" Runat="server" Text='<%# Eval("C_PHUPHIDOITAC") %>' ClientEvents-OnLoad="OnClientLoadC_PHUPHIDOITAC">
+                            <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
+                    </telerik:RadNumericTextBox>          
+                </td>               
+                <td style =" width:100px;"> <span class="rtsTxtnew">Diễn giải:</span></td>
+                <td colspan="4">
+                    <telerik:RadTextBox ID="txtC_DIENGIAIDOITAC" Width ="90%" Text='<%# Bind("C_DIENGIAIDOITAC") %>' runat="server"></telerik:RadTextBox>
+                </td>
+                <td style =" width:100px;"> <span class="rtsTxtnew">Lợi nhuận:</span></td>
+                <td colspan="4">
+                    <telerik:RadNumericTextBox  ID="txtC_LOINHUAN" Width ="90%" Runat="server" Text='<%# Eval("C_LOINHUAN") %>'>
+                            <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
+                    </telerik:RadNumericTextBox>
+                </td>
+            </tr
             <tr>
+                <td style =" width:100px;"><span class="rtsTxtnew">Nhân viên nhận:</span></td>
+                <td colspan="4">
+                    <telerik:RadComboBox ID="cmbFK_NHANVIENNHAN" runat="server" SelectedValue='<%# Bind("FK_NHANVIENNHAN") %>'
+                    DataTextField="C_NAME" DataValueField="PK_ID" DataSourceID="UserDataSource"
+                    ShowToggleImage="True" EmptyMessage="Chọn">
+                    </telerik:RadComboBox>
+                </td>
                 <td style =" width:100px;"> <span class="rtsTxtnew">Nhân viên phát:</span></td>
                 <td colspan="4">
                     <telerik:RadComboBox ID="cmbFK_NHANVIENPHAT" runat="server" SelectedValue='<%# Bind("FK_NHANVIENPHAT") %>'
@@ -647,17 +834,17 @@
                         <ClientEvents  OnKeyPress ="controlkeypress"/>
                         </DateInput>
                     </telerik:RadDateTimePicker>
-                </td>
+                </td>                
+            </tr>
+             <tr>      
                 <td style =" width:100px;"><span class="rtsTxtnew">Nhân viên KT:</span></td>
                 <td colspan="4">
                     <telerik:RadComboBox ID="cmbFK_NHANVIENKHAITHAC" runat="server" SelectedValue='<%# Bind("FK_NHANVIENKHAITHAC") %>'
                     DataTextField="C_NAME" DataValueField="PK_ID" DataSourceID="UserDataSource"
                     ShowToggleImage="True" EmptyMessage="Chọn">
                     </telerik:RadComboBox>
-             </td>
-            </tr>
-             <tr>             
-             <td style =" width:100px;"><span class="rtsTxtnew">Người ký nhận:</span></td>
+                </td>       
+                <td style =" width:100px;"><span class="rtsTxtnew">Người ký nhận:</span></td>
                 <td colspan="4">
                      <telerik:RadTextBox ID="txtC_NGUOIKYNHAN" Width ="90%" Text='<%# Bind("C_NGUOIKYNHAN") %>' runat="server"></telerik:RadTextBox>
                 </td>
@@ -687,9 +874,9 @@
 <asp:SqlDataSource ID="NHANGUIQTDataSource" runat="server" 
     ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>" 
     DeleteCommand="DELETE FROM [NHANGUI] WHERE [PK_ID] = @PK_ID;DELETE FROM [SOQUYTIENMAT] WHERE [C_BILL] = @C_BILL" 
-    InsertCommand="INSERT INTO [NHANGUI] ([C_NGAY], [C_BILL], [FK_KHACHHANG], [C_TENKH], [C_TELGUI], [C_NGUOINHAN], [C_DIACHINHAN], [C_TELNHAN], [FK_QUOCGIA], [C_NOIDUNG], [FK_MASANPHAM], [C_PPXD], [C_KHOILUONG], [C_GIACUOC], [C_DONGGOI], [C_KHAIGIA], [C_COD], [C_BAOPHAT], [C_HINHTHUCTT], [C_DATHU], [C_TIENHANG], [C_VAT], [C_TIENHANGVAT], [FK_NHANVIENNHAN], [FK_DOITAC], [C_GIADOITAC], [FK_NHANVIENPHAT], [C_NGAYGIOPHAT], [C_NGUOIKYNHAN], [C_BOPHAN],[C_TYPE],[FK_VUNGLAMVIEC]) VALUES (@C_NGAY, @C_BILL, @FK_KHACHHANG, @C_TENKH, @C_TELGUI, @C_NGUOINHAN, @C_DIACHINHAN, @C_TELNHAN, @FK_QUOCGIA, @C_NOIDUNG, @FK_MASANPHAM, @C_PPXD, @C_KHOILUONG, @C_GIACUOC, @C_DONGGOI, @C_KHAIGIA, @C_COD, @C_BAOPHAT, @C_HINHTHUCTT, @C_DATHU, @C_TIENHANG, @C_VAT, @C_TIENHANGVAT, @FK_NHANVIENNHAN, @FK_DOITAC, @C_GIADOITAC, @FK_NHANVIENPHAT, @C_NGAYGIOPHAT, @C_NGUOIKYNHAN, @C_BOPHAN,2,@FK_VUNGLAMVIEC);INSERT INTO [SOQUYTIENMAT] ([C_NGAY], [C_TYPE], [FK_KIHIEUTAIKHOAN], [C_DESC], [C_SOTIEN], [C_BILL],[C_TON],[C_ORDER],[FK_VUNGLAMVIEC]) VALUES (@C_NGAY,N'Thu',NULL, N'Bill ' + @C_BILL, @C_DATHU,@C_BILL,0,1,@FK_VUNGLAMVIEC)"
-    SelectCommand="SELECT [NHANGUI].[PK_ID], [NHANGUI].[C_NGAY], [NHANGUI].[FK_KHACHHANG], [NHANGUI].[C_BILL], [NHANGUI].[C_TENKH], [NHANGUI].[C_TELGUI], [NHANGUI].[C_NGUOINHAN], [NHANGUI].[C_DIACHINHAN], [NHANGUI].[C_TELNHAN], [NHANGUI].[FK_QUOCGIA], [NHANGUI].[C_NOIDUNG], [NHANGUI].[FK_MASANPHAM],  [NHANGUI].[C_PPXD], [NHANGUI].[C_KHOILUONG], [NHANGUI].[C_GIACUOC], [NHANGUI].[C_DONGGOI], [NHANGUI].[C_KHAIGIA], [NHANGUI].[C_COD], [NHANGUI].[C_BAOPHAT], [NHANGUI].[C_HINHTHUCTT], [NHANGUI].[C_DATHU], ([NHANGUI].[C_TIENHANG] - [NHANGUI].[C_DATHU]) as [C_CONLAI],([NHANGUI].[C_DONGGOI] + [NHANGUI].[C_KHAIGIA] + [NHANGUI].[C_COD] + [NHANGUI].[C_BAOPHAT]) as [C_PHUTROISUM], [NHANGUI].[C_TIENHANG], [NHANGUI].[C_VAT], [NHANGUI].[C_TIENHANGVAT], [NHANGUI].[FK_NHANVIENNHAN], [NHANGUI].[FK_DOITAC], [NHANGUI].[C_GIADOITAC], [NHANGUI].[FK_NHANVIENPHAT], [NHANGUI].[C_NGAYGIOPHAT], [NHANGUI].[FK_NHANVIENKHAITHAC], [NHANGUI].[C_NGUOIKYNHAN], [NHANGUI].[C_BOPHAN],USERSNHAN.C_NAME as NHANVIENNHANNAME,USERSPHAT.C_NAME as NHANVIENPHATNAME,USERSKHAITHAC.C_NAME as NHANVIENKHAITHACNAME,DMMASANPHAM.C_NAME as SANPHAMNAME,DMQUOCGIA.C_NAME as QUOCGIANAME FROM [NHANGUI] LEFT OUTER JOIN USERS as USERSNHAN ON NHANGUI.FK_NHANVIENNHAN = USERSNHAN.PK_ID LEFT OUTER JOIN USERS as USERSPHAT ON NHANGUI.FK_NHANVIENPHAT = USERSPHAT.PK_ID LEFT OUTER JOIN USERS as USERSKHAITHAC ON NHANGUI.FK_NHANVIENKHAITHAC = USERSKHAITHAC.PK_ID LEFT OUTER JOIN DMMASANPHAM ON NHANGUI.FK_MASANPHAM=DMMASANPHAM.PK_ID LEFT OUTER JOIN DMQUOCGIA ON NHANGUI.FK_QUOCGIA = DMQUOCGIA.C_CODE WHERE [NHANGUI].[C_TYPE] = 2 AND [NHANGUI].FK_VUNGLAMVIEC = @FK_VUNGLAMVIEC ORDER BY [NHANGUI].C_NGAY DESC" 
-    UpdateCommand="UPDATE [NHANGUI] SET [C_NGAY] = @C_NGAY, [C_BILL] = @C_BILL, [FK_KHACHHANG] = @FK_KHACHHANG,[C_TENKH] = @C_TENKH, [C_TELGUI] = @C_TELGUI, [C_NGUOINHAN] = @C_NGUOINHAN, [C_DIACHINHAN] = @C_DIACHINHAN, [C_TELNHAN] = @C_TELNHAN, [FK_QUOCGIA] = @FK_QUOCGIA, [C_NOIDUNG] = @C_NOIDUNG, [FK_MASANPHAM] = @FK_MASANPHAM, [C_PPXD] = @C_PPXD, [C_KHOILUONG] = @C_KHOILUONG, [C_GIACUOC] = @C_GIACUOC, [C_DONGGOI]=@C_DONGGOI, [C_KHAIGIA]=@C_KHAIGIA, [C_COD]=@C_COD, [C_BAOPHAT]=@C_BAOPHAT, [C_HINHTHUCTT] = @C_HINHTHUCTT, [C_DATHU] = @C_DATHU, [C_TIENHANG] = @C_TIENHANG, [C_VAT] = @C_VAT, [C_TIENHANGVAT] = @C_TIENHANGVAT, [FK_NHANVIENNHAN] = @FK_NHANVIENNHAN, [FK_DOITAC] = @FK_DOITAC, [C_GIADOITAC] = @C_GIADOITAC, [FK_NHANVIENPHAT] = @FK_NHANVIENPHAT, [C_NGAYGIOPHAT] = @C_NGAYGIOPHAT, [FK_NHANVIENKHAITHAC]=@FK_NHANVIENKHAITHAC, [C_NGUOIKYNHAN] = @C_NGUOIKYNHAN, [C_BOPHAN] = @C_BOPHAN WHERE [PK_ID] = @PK_ID;UPDATE [SOQUYTIENMAT] SET [C_SOTIEN] = @C_DATHU WHERE [C_BILL]=@C_BILL">
+    InsertCommand="INSERT INTO [NHANGUI] ([C_NGAY], [C_BILL], [FK_KHACHHANG], [C_TENKH], [C_TELGUI], [C_LIENHE], [C_POSTCODE], [C_NGUOINHAN], [C_DIACHINHAN], [C_TELNHAN], [FK_QUOCGIA], [C_NOIDUNG], [C_TAILIEU], [C_GIATRIHANGHOA], [FK_MASANPHAM], [C_PPXD], [C_KHOILUONGTHUC], [C_KHOILUONGQD], [C_KHOILUONG], [C_GIACUOC], [C_DONGGOI], [C_KHAIGIA], [C_COD], [C_BAOPHAT], [C_HENGIO], [C_HINHTHUCTT], [C_DATHU], [C_TIENHANG], [C_VAT], [C_TIENHANGVAT], [FK_NHANVIENNHAN], [FK_DOITAC], [FK_DICHVUDOITAC], [C_GIADOITAC], [C_PHUPHIDOITAC], [C_DIENGIAIDOITAC], [C_LOINHUAN], [FK_NHANVIENPHAT], [C_NGAYGIOPHAT], [C_NGUOIKYNHAN], [C_BOPHAN],[C_TYPE],[FK_VUNGLAMVIEC]) VALUES (@C_NGAY, @C_BILL, @FK_KHACHHANG, @C_TENKH, @C_TELGUI, @C_LIENHE, @C_POSTCODE, @C_NGUOINHAN, @C_DIACHINHAN, @C_TELNHAN, @FK_QUOCGIA, @C_NOIDUNG, @C_TAILIEU, @C_GIATRIHANGHOA, @FK_MASANPHAM, @C_PPXD, @C_KHOILUONGTHUC, @C_KHOILUONGQD, @C_KHOILUONG, @C_GIACUOC, @C_DONGGOI, @C_KHAIGIA, @C_COD, @C_BAOPHAT, @C_HENGIO, @C_HINHTHUCTT, @C_DATHU, @C_TIENHANG, @C_VAT, @C_TIENHANGVAT, @FK_NHANVIENNHAN, @FK_DOITAC, @FK_DICHVUDOITAC, @C_GIADOITAC, @C_PHUPHIDOITAC, @C_DIENGIAIDOITAC, @C_LOINHUAN, @FK_NHANVIENPHAT, @C_NGAYGIOPHAT, @C_NGUOIKYNHAN, @C_BOPHAN,2,@FK_VUNGLAMVIEC);INSERT INTO [SOQUYTIENMAT] ([C_NGAY], [C_TYPE], [FK_KIHIEUTAIKHOAN], [C_DESC], [C_SOTIEN], [C_BILL],[C_TON],[C_ORDER],[FK_VUNGLAMVIEC]) VALUES (@C_NGAY,N'Thu',NULL, N'Bill ' + @C_BILL, @C_DATHU,@C_BILL,0,1,@FK_VUNGLAMVIEC)"
+    SelectCommand="SELECT [NHANGUI].[PK_ID], [NHANGUI].[C_NGAY], [NHANGUI].[FK_KHACHHANG], [NHANGUI].[C_BILL], [NHANGUI].[C_TENKH], [NHANGUI].[C_TELGUI], [NHANGUI].[C_LIENHE], [NHANGUI].[C_POSTCODE], [NHANGUI].[C_NGUOINHAN], [NHANGUI].[C_DIACHINHAN], [NHANGUI].[C_TELNHAN], [NHANGUI].[FK_QUOCGIA], [NHANGUI].[C_NOIDUNG], [NHANGUI].[C_TAILIEU], [NHANGUI].[C_GIATRIHANGHOA], [NHANGUI].[FK_MASANPHAM],  [NHANGUI].[C_PPXD], [NHANGUI].[C_KHOILUONGTHUC], [NHANGUI].[C_KHOILUONGQD], [NHANGUI].[C_KHOILUONG], [NHANGUI].[C_GIACUOC], [NHANGUI].[C_DONGGOI], [NHANGUI].[C_KHAIGIA], [NHANGUI].[C_COD], [NHANGUI].[C_BAOPHAT], [NHANGUI].[C_HENGIO], [NHANGUI].[C_HINHTHUCTT], [NHANGUI].[C_DATHU], ([NHANGUI].[C_TIENHANG] - [NHANGUI].[C_DATHU]) as [C_CONLAI],([NHANGUI].[C_DONGGOI] + [NHANGUI].[C_KHAIGIA] + [NHANGUI].[C_COD] + [NHANGUI].[C_BAOPHAT] + [NHANGUI].[C_HENGIO]) as [C_PHUTROISUM], [NHANGUI].[C_TIENHANG], [NHANGUI].[C_VAT], [NHANGUI].[C_TIENHANGVAT], [NHANGUI].[FK_NHANVIENNHAN], [NHANGUI].[FK_DOITAC], [NHANGUI].[FK_DICHVUDOITAC], [NHANGUI].[C_GIADOITAC], [NHANGUI].[C_PHUPHIDOITAC], [NHANGUI].[C_DIENGIAIDOITAC], [NHANGUI].[C_LOINHUAN], [NHANGUI].[FK_NHANVIENPHAT], [NHANGUI].[C_NGAYGIOPHAT], [NHANGUI].[FK_NHANVIENKHAITHAC], [NHANGUI].[C_NGUOIKYNHAN], [NHANGUI].[C_BOPHAN],USERSNHAN.C_NAME as NHANVIENNHANNAME,USERSPHAT.C_NAME as NHANVIENPHATNAME,USERSKHAITHAC.C_NAME as NHANVIENKHAITHACNAME,DMMASANPHAM.C_NAME as SANPHAMNAME,DMQUOCGIA.C_NAME as QUOCGIANAME FROM [NHANGUI] LEFT OUTER JOIN USERS as USERSNHAN ON NHANGUI.FK_NHANVIENNHAN = USERSNHAN.PK_ID LEFT OUTER JOIN USERS as USERSPHAT ON NHANGUI.FK_NHANVIENPHAT = USERSPHAT.PK_ID LEFT OUTER JOIN USERS as USERSKHAITHAC ON NHANGUI.FK_NHANVIENKHAITHAC = USERSKHAITHAC.PK_ID LEFT OUTER JOIN DMMASANPHAM ON NHANGUI.FK_MASANPHAM=DMMASANPHAM.PK_ID LEFT OUTER JOIN DMQUOCGIA ON NHANGUI.FK_QUOCGIA = DMQUOCGIA.C_CODE WHERE [NHANGUI].[C_TYPE] = 2 AND [NHANGUI].FK_VUNGLAMVIEC = @FK_VUNGLAMVIEC ORDER BY [NHANGUI].C_NGAY DESC" 
+    UpdateCommand="UPDATE [NHANGUI] SET [C_NGAY] = @C_NGAY, [C_BILL] = @C_BILL, [FK_KHACHHANG] = @FK_KHACHHANG,[C_TENKH] = @C_TENKH, [C_TELGUI] = @C_TELGUI, [C_LIENHE] = @C_LIENHE, [C_POSTCODE] = @C_POSTCODE, [C_NGUOINHAN] = @C_NGUOINHAN, [C_DIACHINHAN] = @C_DIACHINHAN, [C_TELNHAN] = @C_TELNHAN, [FK_QUOCGIA] = @FK_QUOCGIA, [C_NOIDUNG] = @C_NOIDUNG, [C_TAILIEU] = @C_TAILIEU, [C_GIATRIHANGHOA] = @C_GIATRIHANGHOA, [FK_MASANPHAM] = @FK_MASANPHAM, [C_PPXD] = @C_PPXD, [C_KHOILUONGTHUC] = @C_KHOILUONGTHUC, [C_KHOILUONGQD] = @C_KHOILUONGQD, [C_KHOILUONG] = @C_KHOILUONG, [C_GIACUOC] = @C_GIACUOC, [C_DONGGOI]=@C_DONGGOI, [C_KHAIGIA]=@C_KHAIGIA, [C_COD]=@C_COD, [C_BAOPHAT]=@C_BAOPHAT, [C_HENGIO] = @C_HENGIO, [C_HINHTHUCTT] = @C_HINHTHUCTT, [C_DATHU] = @C_DATHU, [C_TIENHANG] = @C_TIENHANG, [C_VAT] = @C_VAT, [C_TIENHANGVAT] = @C_TIENHANGVAT, [FK_NHANVIENNHAN] = @FK_NHANVIENNHAN, [FK_DOITAC] = @FK_DOITAC, [FK_DICHVUDOITAC] = @FK_DICHVUDOITAC, [C_GIADOITAC] = @C_GIADOITAC, [C_PHUPHIDOITAC] = @C_PHUPHIDOITAC, [C_DIENGIAIDOITAC] = @C_DIENGIAIDOITAC, [C_LOINHUAN] = @C_LOINHUAN, [FK_NHANVIENPHAT] = @FK_NHANVIENPHAT, [C_NGAYGIOPHAT] = @C_NGAYGIOPHAT, [FK_NHANVIENKHAITHAC]=@FK_NHANVIENKHAITHAC, [C_NGUOIKYNHAN] = @C_NGUOIKYNHAN, [C_BOPHAN] = @C_BOPHAN WHERE [PK_ID] = @PK_ID;UPDATE [SOQUYTIENMAT] SET [C_SOTIEN] = @C_DATHU WHERE [C_BILL]=@C_BILL">
     <SelectParameters>
         <asp:SessionParameter Name="FK_VUNGLAMVIEC" Type="String" SessionField="VUNGLAMVIEC" />
     </SelectParameters>
@@ -703,19 +890,26 @@
         <asp:Parameter Name="FK_KHACHHANG" Type="String" />
         <asp:Parameter Name="C_TENKH" Type="String" />
         <asp:Parameter Name="C_TELGUI" Type="String" />
+        <asp:Parameter Name="C_LIENHE" Type="String" />
+        <asp:Parameter Name="C_POSTCODE" Type="String" />
         <asp:Parameter Name="C_NGUOINHAN" Type="String" />
         <asp:Parameter Name="C_DIACHINHAN" Type="String" />
         <asp:Parameter Name="C_TELNHAN" Type="String" />
         <asp:Parameter Name="FK_QUOCGIA" Type="String" />
         <asp:Parameter Name="C_NOIDUNG" Type="String" />
+        <asp:Parameter Name="C_TAILIEU" Type="String" />
+        <asp:Parameter Name="C_GIATRIHANGHOA" Type="String" />
         <asp:Parameter Name="FK_MASANPHAM" Type="Int32" />
         <asp:Parameter Name="C_PPXD" Type="Single" />
+        <asp:Parameter Name="C_KHOILUONGTHUC" Type="Single" />
+        <asp:Parameter Name="C_KHOILUONGQD" Type="Single" />
         <asp:Parameter Name="C_KHOILUONG" Type="Single" />
         <asp:Parameter Name="C_GIACUOC" Type="Single" />
         <asp:Parameter Name="C_DONGGOI" Type="String" />
         <asp:Parameter Name="C_KHAIGIA" Type="String" />
         <asp:Parameter Name="C_COD" Type="String" />
         <asp:Parameter Name="C_BAOPHAT" Type="String" />
+        <asp:Parameter Name="C_HENGIO" Type="String" />
         <asp:Parameter Name="C_HINHTHUCTT" Type="String" />
         <asp:Parameter Name="C_DATHU" Type="String" />
         <asp:Parameter Name="C_TIENHANG" Type="String" />
@@ -723,7 +917,11 @@
         <asp:Parameter Name="C_TIENHANGVAT" Type="String" />
         <asp:Parameter Name="FK_NHANVIENNHAN" Type="Int32" />
         <asp:Parameter Name="FK_DOITAC" Type="Int32" />
+        <asp:Parameter Name="FK_DICHVUDOITAC" Type="Int32" />
         <asp:Parameter Name="C_GIADOITAC" Type="Single" />
+        <asp:Parameter Name="C_PHUPHIDOITAC" Type="Single" />
+        <asp:Parameter Name="C_DIENGIAIDOITAC" Type="String" />
+        <asp:Parameter Name="C_LOINHUAN" Type="Single" />
         <asp:Parameter Name="FK_NHANVIENPHAT" Type="Int32" />
         <asp:Parameter Name="C_NGAYGIOPHAT" Type="DateTime" />
         <asp:Parameter Name="C_NGUOIKYNHAN" Type="String" />
@@ -736,19 +934,26 @@
         <asp:Parameter Name="FK_KHACHHANG" Type="String" />
         <asp:Parameter Name="C_TENKH" Type="String" />
         <asp:Parameter Name="C_TELGUI" Type="String" />
+        <asp:Parameter Name="C_LIENHE" Type="String" />
+        <asp:Parameter Name="C_POSTCODE" Type="String" />
         <asp:Parameter Name="C_NGUOINHAN" Type="String" />
         <asp:Parameter Name="C_DIACHINHAN" Type="String" />
         <asp:Parameter Name="C_TELNHAN" Type="String" />
         <asp:Parameter Name="FK_QUOCGIA" Type="String" />
         <asp:Parameter Name="C_NOIDUNG" Type="String" />
+        <asp:Parameter Name="C_TAILIEU" Type="String" />
+        <asp:Parameter Name="C_GIATRIHANGHOA" Type="String" />
         <asp:Parameter Name="FK_MASANPHAM" Type="Int32" />
         <asp:Parameter Name="C_PPXD" Type="Single" />
+        <asp:Parameter Name="C_KHOILUONGTHUC" Type="Single" />
+        <asp:Parameter Name="C_KHOILUONGQD" Type="Single" />
         <asp:Parameter Name="C_KHOILUONG" Type="Single" />
         <asp:Parameter Name="C_GIACUOC" Type="Single" />
         <asp:Parameter Name="C_DONGGOI" Type="String" />
         <asp:Parameter Name="C_KHAIGIA" Type="String" />
         <asp:Parameter Name="C_COD" Type="String" />
         <asp:Parameter Name="C_BAOPHAT" Type="String" />
+        <asp:Parameter Name="C_HENGIO" Type="String" />
         <asp:Parameter Name="C_HINHTHUCTT" Type="String" />
         <asp:Parameter Name="C_DATHU" Type="String" />
         <asp:Parameter Name="C_TIENHANG" Type="String" />
@@ -756,7 +961,11 @@
         <asp:Parameter Name="C_TIENHANGVAT" Type="String" />
         <asp:Parameter Name="FK_NHANVIENNHAN" Type="Int32" />
         <asp:Parameter Name="FK_DOITAC" Type="Int32" />
+        <asp:Parameter Name="FK_DICHVUDOITAC" Type="Int32" />
         <asp:Parameter Name="C_GIADOITAC" Type="Single" />
+        <asp:Parameter Name="C_PHUPHIDOITAC" Type="Single" />
+        <asp:Parameter Name="C_DIENGIAIDOITAC" Type="String" />
+        <asp:Parameter Name="C_LOINHUAN" Type="Single" />
         <asp:Parameter Name="FK_NHANVIENPHAT" Type="Int32" />
         <asp:Parameter Name="C_NGAYGIOPHAT" Type="DateTime" />
         <asp:Parameter Name="FK_NHANVIENKHAITHAC" Type="Int32" />
