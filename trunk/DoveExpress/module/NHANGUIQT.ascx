@@ -52,7 +52,9 @@
         currentLoadingPanel.show(currentUpdatedControl);
          return false;
     }
-   function cmbMaKhachHangClientSelectedIndexChangedHandler(sender, eventArgs) {
+    var checkKH = false;
+    function cmbMaKhachHangClientSelectedIndexChangedHandler(sender, eventArgs) {
+         checkKH = true;
          $find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("cmbMaKhachHang;" + eventArgs.get_item().get_value());
          var currentLoadingPanel = $find("<%= RadAjaxLoadingPanelNHANGUIQT.ClientID %>");
          var currentUpdatedControl = "<%= RadGridNHANGUIQT.ClientID %>"; 
@@ -346,24 +348,19 @@
     function onResponseEndNG() {
         if (typeof (result) != "undefined" && result && result != "") {
             //alert(result);
-            var arrayOfStrings = result.split(",");
+            var arrayOfStrings = result.split(",-,");
             if (arrayOfStrings[0] != "msg") {
-                if (arrayOfStrings[1] != "") {
+                if (arrayOfStrings[0] != "") {
                     //cmbMaKhachHang.set_value(arrayOfStrings[0]);
                     //cmbMaKhachHang.set_text(arrayOfStrings[0]);
                 }
                 else {
                 }
-                if (arrayOfStrings[1] != "") {
-                    var entry = new Telerik.Web.UI.AutoCompleteBoxEntry();
-                    entry.set_text(arrayOfStrings[1]);
-                    radautoC_TENKH.get_entries().add(entry);
+                if (checkKH) {
+                    txtC_TENKH.set_value(arrayOfStrings[1]);
+                    txtC_TELGUI.set_value(arrayOfStrings[2]);
+                    checkKH = false;
                 }
-                else {
-                    //radautoC_MAKH.get_entries().clear();
-                    //radautoC_TENKH.get_entries().clear();
-                }
-                txtC_TELGUI.set_value(arrayOfStrings[2]);
                 PPXD = arrayOfStrings[3];
                 txtC_GIACUOC.set_value(arrayOfStrings[4]);
                 CUOCCHINH = arrayOfStrings[4];
@@ -371,6 +368,11 @@
             }
             else {
                 alert(arrayOfStrings[1]);
+                if (checkKH) {
+                    txtC_TENKH.set_value(arrayOfStrings[2]);
+                    txtC_TELGUI.set_value(arrayOfStrings[3]);
+                    checkKH = false;
+                }
             }
             var currentLoadingPanel = $find("<%= RadAjaxLoadingPanelNHANGUIQT.ClientID %>");
             var currentUpdatedControl = "<%= RadGridNHANGUIQT.ClientID %>";

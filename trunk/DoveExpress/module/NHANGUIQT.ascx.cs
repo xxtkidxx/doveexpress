@@ -453,7 +453,7 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
         }
         else
         {
-            string script = string.Format("var result = '{0}'", FK_KHACHHANG + "," + TENKH + "," + DIENTHOAIKH + "," + PPXD + "," + CUOCCHINH + "," + GIADOITAC);
+            string script = string.Format("var result = '{0}'", FK_KHACHHANG + ",-," + TENKH + ",-," + DIENTHOAIKH + ",-," + PPXD + ",-," + CUOCCHINH + ",-," + GIADOITAC + ",-," + FK_MABANGCUOC + ",-," + FK_MAVUNG);
             ScriptManager.RegisterClientScriptBlock(Page, typeof(Page), "result", script, true);
         }
     }
@@ -727,15 +727,11 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
         }
         else if (e.CommandName == RadGrid.PerformInsertCommandName)
         {
-            GridEditableItem editItem = (GridEditableItem)e.Item;
-            RadAutoCompleteBox radautoC_TENKH = (RadAutoCompleteBox)editItem.FindControl("radautoC_TENKH");
-            NHANGUIQTDataSource.InsertParameters["C_TENKH"].DefaultValue = (radautoC_TENKH.Text == "") ? radautoC_TENKH.Text : radautoC_TENKH.Text.Substring(0, radautoC_TENKH.Text.Length - 2);
+            GridEditableItem editItem = (GridEditableItem)e.Item;            
         }
         else if (e.CommandName == RadGrid.UpdateCommandName)
         {
-            GridEditableItem editItem = (GridEditableItem)e.Item;
-            RadAutoCompleteBox radautoC_TENKH = (RadAutoCompleteBox)editItem.FindControl("radautoC_TENKH");
-            NHANGUIQTDataSource.UpdateParameters["C_TENKH"].DefaultValue = (radautoC_TENKH.Text == "") ? radautoC_TENKH.Text : radautoC_TENKH.Text.Substring(0, radautoC_TENKH.Text.Length - 2);
+            GridEditableItem editItem = (GridEditableItem)e.Item;          
         }
     }
     protected string getmaxid(string table)
