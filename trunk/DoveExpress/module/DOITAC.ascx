@@ -172,8 +172,11 @@
     ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>" 
     DeleteCommand="DELETE FROM [DMDOITAC] WHERE [PK_ID] = @PK_ID" 
     InsertCommand="INSERT INTO [DMDOITAC] ([C_CODE], [C_NAME], [C_ADDRESS], [C_TEL], [C_NGUOILIENHE]) VALUES (@C_CODE, @C_NAME, @C_ADDRESS, @C_TEL, @C_NGUOILIENHE)" 
-    SelectCommand="SELECT [DMDOITAC].[PK_ID], [DMDOITAC].[C_CODE], [DMDOITAC].[C_NAME], [DMDOITAC].[C_ADDRESS], [DMDOITAC].[C_TEL], [DMDOITAC].[C_NGUOILIENHE] FROM [DMDOITAC]" 
+    SelectCommand="SELECT [DMDOITAC].[PK_ID], [DMDOITAC].[C_CODE], [DMDOITAC].[C_NAME], [DMDOITAC].[C_ADDRESS], [DMDOITAC].[C_TEL], [DMDOITAC].[C_NGUOILIENHE] FROM [DMDOITAC] WHERE [DMDOITAC].FK_VUNGLAMVIEC = @FK_VUNGLAMVIEC" 
     UpdateCommand="UPDATE [DMDOITAC] SET [C_CODE] = @C_CODE, [C_NAME] = @C_NAME, [C_ADDRESS] = @C_ADDRESS,[C_TEL] = @C_TEL,[C_NGUOILIENHE] = @C_NGUOILIENHE WHERE [PK_ID] = @PK_ID">
+        <SelectParameters>
+            <asp:SessionParameter Name="FK_VUNGLAMVIEC" Type="String" SessionField="VUNGLAMVIEC" />
+        </SelectParameters>
         <UpdateParameters>
             <asp:Parameter Name="C_CODE" Type="String" />
             <asp:Parameter Name="C_NAME" Type="String" />

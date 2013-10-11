@@ -1,0 +1,30 @@
+Thời gian lỗi : 2013-10-09 20:52:33 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUIQT. 
+Nội dung lỗi:Invalid object name 'DMKHACHHANGCHITIET'.
+__________________________
+Thời gian lỗi : 2013-10-09 20:52:34 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUIQT. 
+Nội dung lỗi:Invalid object name 'DMKHACHHANGCHITIET'.
+__________________________
+Thời gian lỗi : 2013-10-09 20:55:23 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUIQT. 
+Nội dung lỗi:Invalid object name 'DMKHACHHANGCHITIET'.
+__________________________
+Thời gian lỗi : 2013-10-09 21:28:30 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUIQT. 
+Nội dung lỗi:Invalid object name 'DMKHACHHANGCHITIET'.
+__________________________
+Thời gian lỗi : 2013-10-09 21:28:41 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUIQT. 
+Nội dung lỗi:Invalid object name 'DMKHACHHANGCHITIET'.
+__________________________
+Thời gian lỗi : 2013-10-09 21:32:00 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUIQT. 
+Nội dung lỗi:Incorrect syntax near the keyword 'WHERE'.
+__________________________

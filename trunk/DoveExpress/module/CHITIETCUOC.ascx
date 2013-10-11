@@ -72,7 +72,7 @@ ShowToggleImage="True" EmptyMessage="Chọn loại" onclientselectedindexchanged
 onprerender="cmbLoaiTien_PreRender">
 <Items>
     <telerik:RadComboBoxItem Value ="VND" Text ="VND" />
-    <telerik:RadComboBoxItem Value ="USD" Text ="USD" />
+    <telerik:RadComboBoxItem Value ="USD" Text ="USD" Visible = "false"/>
 </Items>
 </telerik:RadComboBox>
 Bảng cước:&nbsp; 

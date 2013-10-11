@@ -42,13 +42,13 @@ public partial class module_CHITIETCUOCDT : System.Web.UI.UserControl
         if (arrayvalue[0] == "SelectedCTC")
         {
             UpdateDefault(arrayvalue[1], arrayvalue[2]);
-            string script = string.Format("var result = '{0}'", "SelectedCTC," + arrayvalue[2]);
+            string script = string.Format("var result = '{0}'", "SelectedCTC-,-" + arrayvalue[2]);
             ScriptManager.RegisterClientScriptBlock(Page, typeof(Page), "result", script, true);
         }
         else if (arrayvalue[0] == "SelectedCTC1")
         {
             UpdateDefault1(arrayvalue[1], arrayvalue[2], arrayvalue[3]);
-            string script = string.Format("var result = '{0}'", "SelectedCTC1," + arrayvalue[2]);
+            string script = string.Format("var result = '{0}'", "SelectedCTC1-,-" + arrayvalue[2]);
             ScriptManager.RegisterClientScriptBlock(Page, typeof(Page), "result", script, true);
         }
         else if (arrayvalue[0] == "PPXDVALUE")
@@ -69,7 +69,20 @@ public partial class module_CHITIETCUOCDT : System.Web.UI.UserControl
             {
                 PPXD = "0";
             }
-            string script = string.Format("var result = '{0}'", "PPXDVALUE," + PPXD);
+            string LOAITIEN = "0";
+            if (arrayvalue[1] == "1")
+            {
+                string SelectSQL1;
+                SelectSQL1 = "Select DMMASANPHAM.C_TYPE FROM DMMASANPHAM WHERE DMMASANPHAM.PK_ID =" + FK_MASANPHAM;
+                DataTable oDataTable1 = new DataTable();
+                ITCLIB.Admin.SQL SelectQuery1 = new ITCLIB.Admin.SQL();
+                oDataTable1 = SelectQuery1.query_data(SelectSQL1);
+                if (oDataTable1.Rows.Count != 0)
+                {
+                    LOAITIEN = oDataTable1.Rows[0]["C_TYPE"].ToString();
+                }               
+            }
+            string script = string.Format("var result = '{0}'", "PPXDVALUE-,-" + PPXD + "-,-" + LOAITIEN);
             ScriptManager.RegisterClientScriptBlock(Page, typeof(Page), "result", script, true);
         }
     }

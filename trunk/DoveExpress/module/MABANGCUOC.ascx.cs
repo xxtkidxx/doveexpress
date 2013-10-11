@@ -68,7 +68,7 @@ public partial class module_MABANGCUOC : System.Web.UI.UserControl
     protected void CheckCode(object source, ServerValidateEventArgs args)
     {
         string SelectSQL;
-        SelectSQL = "Select DMMABANGCUOC.C_CODE FROM DMMABANGCUOC WHERE DMMABANGCUOC.C_CODE = '" + args.Value + "' AND DMMABANGCUOC.PK_ID <> " + Session["txtID"].ToString();
+        SelectSQL = "Select DMMABANGCUOC.C_CODE FROM DMMABANGCUOC WHERE DMMABANGCUOC.C_CODE = '" + args.Value + "' AND DMMABANGCUOC.PK_ID <> " + Session["txtID"].ToString() + " AND DMMABANGCUOC.FK_VUNGLAMVIEC = N'" + Session["VUNGLAMVIEC"].ToString() + "'";
         DataTable oDataTable = new DataTable();
         ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
         oDataTable = SelectQuery.query_data(SelectSQL);
@@ -84,7 +84,7 @@ public partial class module_MABANGCUOC : System.Web.UI.UserControl
     protected void CheckName(object source, ServerValidateEventArgs args)
     {
         string SelectSQL;
-        SelectSQL = "Select DMMABANGCUOC.C_NAME FROM DMMABANGCUOC WHERE DMMABANGCUOC.C_NAME = '" + args.Value + "' AND DMMABANGCUOC.PK_ID <> " + Session["txtID"].ToString();
+        SelectSQL = "Select DMMABANGCUOC.C_NAME FROM DMMABANGCUOC WHERE DMMABANGCUOC.C_NAME = '" + args.Value + "' AND DMMABANGCUOC.PK_ID <> " + Session["txtID"].ToString() + " AND DMMABANGCUOC.FK_VUNGLAMVIEC = N'" + Session["VUNGLAMVIEC"].ToString() + "'";
         DataTable oDataTable = new DataTable();
         ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
         oDataTable = SelectQuery.query_data(SelectSQL);
@@ -170,11 +170,6 @@ public partial class module_MABANGCUOC : System.Web.UI.UserControl
             if (e.Item is GridEditFormInsertItem || e.Item is GridDataInsertItem)
             {
                 // insert item
-                RadComboBox cmbFK_VUNGLAMVIEC = (RadComboBox)editItem.FindControl("cmbFK_VUNGLAMVIEC");
-                if (cmbFK_VUNGLAMVIEC.Items.Count != 0)
-                {
-                    cmbFK_VUNGLAMVIEC.SelectedIndex = 0;
-                }
             }
         }
         if (e.Item is GridDataItem)

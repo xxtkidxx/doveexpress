@@ -56,7 +56,7 @@ public partial class module_DOITAC : System.Web.UI.UserControl
     protected void CheckCode(object source, ServerValidateEventArgs args)
     {
         string SelectSQL;
-        SelectSQL = "Select DMDOITAC.C_CODE FROM DMDOITAC WHERE DMDOITAC.C_CODE = '" + args.Value + "' AND DMDOITAC.PK_ID <> " + Session["txtID"].ToString();
+        SelectSQL = "Select DMDOITAC.C_CODE FROM DMDOITAC WHERE DMDOITAC.C_CODE = '" + args.Value + "' AND DMDOITAC.PK_ID <> " + Session["txtID"].ToString() + " AND DMDOITAC.FK_VUNGLAMVIEC = N'" + Session["VUNGLAMVIEC"].ToString() + "'";
         DataTable oDataTable = new DataTable();
         ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
         oDataTable = SelectQuery.query_data(SelectSQL);
@@ -72,7 +72,7 @@ public partial class module_DOITAC : System.Web.UI.UserControl
     protected void CheckName(object source, ServerValidateEventArgs args)
     {
         string SelectSQL;
-        SelectSQL = "Select DMDOITAC.C_NAME FROM DMDOITAC WHERE DMDOITAC.C_NAME = '" + args.Value + "' AND DMDOITAC.PK_ID <> " + Session["txtID"].ToString();
+        SelectSQL = "Select DMDOITAC.C_NAME FROM DMDOITAC WHERE DMDOITAC.C_NAME = '" + args.Value + "' AND DMDOITAC.PK_ID <> " + Session["txtID"].ToString() + " AND DMDOITAC.FK_VUNGLAMVIEC = N'" + Session["VUNGLAMVIEC"].ToString() + "'";
         DataTable oDataTable = new DataTable();
         ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
         oDataTable = SelectQuery.query_data(SelectSQL);

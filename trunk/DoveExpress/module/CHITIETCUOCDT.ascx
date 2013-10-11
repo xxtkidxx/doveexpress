@@ -30,8 +30,24 @@
     }
     function onResponseEndCTC() {
         if (typeof (result) != "undefined" && result && result != "") {
-            var arrayOfStrings = result.split(",");
+            //alert(result);
+            var arrayOfStrings = result.split("-,-");
             if (arrayOfStrings[0] == "PPXDVALUE") {
+                if (arrayOfStrings[2] == "Trong nước")
+                {
+                    var cmbLoaiTien = $find("<%= cmbLoaiTien.ClientID %>");
+                    cmbLoaiTien.trackChanges();
+                    cmbLoaiTien.get_items().getItem(0).select();
+                    cmbLoaiTien.updateClientState();
+                    cmbLoaiTien.commitChanges();
+                }
+                else if (arrayOfStrings[2] == "Quốc tế") {
+                    var cmbLoaiTien = $find("<%= cmbLoaiTien.ClientID %>");
+                    cmbLoaiTien.trackChanges();
+                    cmbLoaiTien.get_items().getItem(1).select();
+                    cmbLoaiTien.updateClientState();
+                    cmbLoaiTien.commitChanges();
+                }
                 $find("<%=txtC_PPXD.ClientID %>").set_value(arrayOfStrings[1]);
                 $find("<%=RadGridCHITIETCUOCDT.ClientID %>").get_masterTableView().rebind();
             }
@@ -161,24 +177,24 @@ ShowToggleImage="True" EmptyMessage="Chọn đối tác"
                             <telerik:GridTemplateColumn DataField="C_CUOCPHI" DataType="System.Decimal" HeaderText="Cước phí" AllowFiltering="false" UniqueName="C_CUOCPHI">
                                 <ItemTemplate>
                                  <telerik:RadNumericTextBox runat="server"  CssClass ="csstextNum" ID="txtC_CUOCPHI" Width="100px" Enabled = "false"  DbValue='<%# Eval("C_CUOCPHI") %>'>
-                                    <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
+                                    <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="2"/>
                                   </telerik:RadNumericTextBox>
                                 </ItemTemplate>
                                 <EditItemTemplate>
                                         <telerik:RadNumericTextBox runat="server" ID="txtC_CUOCPHI" DbValue='<%# Bind("C_CUOCPHI") %>'>
-                                         <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
+                                         <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="2"/>
                                         </telerik:RadNumericTextBox>
                                 </EditItemTemplate>
                             </telerik:GridTemplateColumn>
                             <telerik:GridTemplateColumn DataField="C_CUOCPHITL" DataType="System.Decimal" HeaderText="Cước phí (Tài liệu)" AllowFiltering="false" UniqueName="C_CUOCPHITL">
                                 <ItemTemplate>
                                  <telerik:RadNumericTextBox runat="server"  CssClass ="csstextNum" ID="txtC_CUOCPHITL" Width="100px" Enabled = "false"  DbValue='<%# Eval("C_CUOCPHITL") %>'>
-                                    <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
+                                    <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="2"/>
                                   </telerik:RadNumericTextBox>
                                 </ItemTemplate>
                                 <EditItemTemplate>
                                         <telerik:RadNumericTextBox runat="server" ID="txtC_CUOCPHITL" DbValue='<%# Bind("C_CUOCPHITL") %>'>
-                                         <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
+                                         <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="2"/>
                                         </telerik:RadNumericTextBox>
                                 </EditItemTemplate>
                             </telerik:GridTemplateColumn>
@@ -272,7 +288,10 @@ Phụ phí xăng dầu(%):&nbsp;
         </InsertParameters>
 </asp:SqlDataSource>
 <asp:SqlDataSource ID="DoiTacDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
-    SelectCommand="SELECT [PK_ID], [C_CODE], [C_NAME] FROM [DMDoiTac] ORDER BY LTRIM([C_CODE])">
+    SelectCommand="SELECT [PK_ID], [C_CODE], [C_NAME] FROM [DMDoiTac] WHERE [DMDOITAC].FK_VUNGLAMVIEC = @FK_VUNGLAMVIEC ORDER BY LTRIM([C_CODE])">
+    <SelectParameters>
+            <asp:SessionParameter Name="FK_VUNGLAMVIEC" Type="String" SessionField="VUNGLAMVIEC" />
+    </SelectParameters>
 </asp:SqlDataSource>
 <asp:SqlDataSource ID="MASANPHAMDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
         SelectCommand="SELECT [PK_ID], [C_CODE], [C_NAME] FROM [DMMASANPHAM] ORDER BY LTRIM([C_CODE])">    

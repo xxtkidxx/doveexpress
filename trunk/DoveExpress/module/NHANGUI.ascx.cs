@@ -628,8 +628,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
       }
       else
       {
-          string script = string.Format("var result = '{0}'", FK_KHACHHANG + ",-," + TENKH + ",-," + DIENTHOAIKH + ",-," + PPXD + ",-," + CUOCCHINH + ",-," + GIADOITAC + ",-," + FK_MABANGCUOC + ",-," + FK_MAVUNG);
-          
+          string script = string.Format("var result = '{0}'", FK_KHACHHANG + ",-," + TENKH + ",-," + DIENTHOAIKH + ",-," + PPXD + ",-," + CUOCCHINH + ",-," + GIADOITAC + ",-," + FK_MABANGCUOC + ",-," + FK_MAVUNG);          
           ScriptManager.RegisterClientScriptBlock(Page, typeof(Page), "result", script, true);
       }
     }

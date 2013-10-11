@@ -76,6 +76,28 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
             Session["FK_MABANGCUOC"] = value;
         }
     }
+    private decimal C_VALUE1
+    {
+        get
+        {
+            return decimal.Parse(Session["C_VALUE1"].ToString());
+        }
+        set
+        {
+            Session["C_VALUE1"] = value;
+        }
+    }
+    private decimal C_VALUE2
+    {
+        get
+        {
+            return decimal.Parse(Session["C_VALUE2"].ToString());
+        }
+        set
+        {
+            Session["C_VALUE2"] = value;
+        }
+    }
     private string FK_QUOCGIA
     {
         get
@@ -164,6 +186,17 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
             Session["ctcDataTable"] = value;
         }
     }
+    private DataTable ctcDataTable1
+    {
+        get
+        {
+            return Session["ctcDataTable1"] as DataTable;
+        }
+        set
+        {
+            Session["ctcDataTable1"] = value;
+        }
+    }
     private int C_KHOILUONGLK
     {
         get
@@ -246,13 +279,13 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
                 TENKH = oDataTable.Rows[0]["C_NAME"].ToString();
                 DIENTHOAIKH = oDataTable.Rows[0]["C_TEL"].ToString();
                 string SelectSQL1;
-                SelectSQL1 = "Select DMMABANGCUOCQT.PK_ID FROM DMMABANGCUOCQT WHERE ((DMMABANGCUOCQT.C_VALUE ='" + FK_NHOMKHACHHANGQT + "') OR (DMMABANGCUOCQT.C_VALUE LIKE '%," + FK_NHOMKHACHHANGQT + ",%') OR (DMMABANGCUOCQT.C_VALUE LIKE '%," + FK_NHOMKHACHHANGQT + "') OR (DMMABANGCUOCQT.C_VALUE LIKE '" + FK_NHOMKHACHHANGQT + ",%')) AND (DMMABANGCUOCQT.FK_VUNGLAMVIEC = N'" + Session["VUNGLAMVIEC"].ToString() + "')";
+                SelectSQL1 = "Select DMMABANGCUOCQT.FK_DOITAC FROM DMMABANGCUOCQT WHERE ((DMMABANGCUOCQT.C_VALUE ='" + FK_NHOMKHACHHANGQT + "') OR (DMMABANGCUOCQT.C_VALUE LIKE '%," + FK_NHOMKHACHHANGQT + ",%') OR (DMMABANGCUOCQT.C_VALUE LIKE '%," + FK_NHOMKHACHHANGQT + "') OR (DMMABANGCUOCQT.C_VALUE LIKE '" + FK_NHOMKHACHHANGQT + ",%')) AND (DMMABANGCUOCQT.FK_VUNGLAMVIEC = N'" + Session["VUNGLAMVIEC"].ToString() + "')";
                 DataTable oDataTable1 = new DataTable();
                 ITCLIB.Admin.SQL SelectQuery1 = new ITCLIB.Admin.SQL();
                 oDataTable1 = SelectQuery1.query_data(SelectSQL1);
                 if (oDataTable1.Rows.Count != 0)
                 {
-                    FK_MABANGCUOC = oDataTable1.Rows[0]["PK_ID"].ToString();
+                    FK_MABANGCUOC = oDataTable1.Rows[0]["FK_DOITAC"].ToString();
                 }
                 else
                 {
@@ -285,7 +318,7 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
                 else
                 {
                     FK_MAVUNG = "";
-                    Alarm = "msg,Quốc gia này không nằm trong vùng tính cước nào";
+                    Alarm = "msg,-,Quốc gia này không nằm trong vùng tính cước nào";
                 }
             }
         }
@@ -293,7 +326,7 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
         {
             FK_DICHVU = arrayvalue[1];
             string SelectSQL1;
-            SelectSQL1 = "Select DMPPXD.C_PPXD FROM DMPPXD WHERE DMPPXD.FK_MASANPHAM =" + FK_DICHVU + " AND FK_MABANGCUOC = " + FK_MABANGCUOC;
+            SelectSQL1 = "Select DMPPXDDT.C_PPXD FROM DMPPXDDT WHERE DMPPXDDT.FK_MASANPHAM =" + FK_DICHVU + " AND FK_DOITAC = " + FK_MABANGCUOC;
             DataTable oDataTable1 = new DataTable();
             ITCLIB.Admin.SQL SelectQuery1 = new ITCLIB.Admin.SQL();
             oDataTable1 = SelectQuery1.query_data(SelectSQL1);
@@ -322,7 +355,7 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
                 else
                 {
                     FK_MAVUNG = "";
-                    Alarm = "msg,Quốc gia này không nằm trong vùng tính cước nào";
+                    Alarm = "msg,-,Quốc gia này không nằm trong vùng tính cước nào";
                 }
             }
         }
@@ -332,69 +365,16 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
         }
         else if (arrayvalue[0] == "cmbFK_DOITAC")
         {
-            int C_KHOILUONGLKDT = 0;
-            decimal GIACUOCLKDT = 0;
-            string SelectSQL1;
-            SelectSQL1 = "Select DMCHITIETCUOCDT.PK_ID,DMCHITIETCUOCDT.C_KHOILUONG,DMCHITIETCUOCDT.C_CUOCPHI,DMCHITIETCUOCDT.C_TYPE FROM DMCHITIETCUOCDT WHERE FK_DOITAC = " + arrayvalue[1] + " AND FK_MAVUNG = " + FK_MAVUNG + " AND C_TYPE <> 1 ORDER BY C_KHOILUONG  ASC";
-            ITCLIB.Admin.SQL SelectQuery1 = new ITCLIB.Admin.SQL();
-            DataTable oDataTable1 = new DataTable();
-            oDataTable1 = SelectQuery1.query_data(SelectSQL1);
-            string SelectSQL2;
-            SelectSQL2 = "Select DMCHITIETCUOCDT.PK_ID,DMCHITIETCUOCDT.C_KHOILUONG,DMCHITIETCUOCDT.C_CUOCPHI,DMCHITIETCUOCDT.C_TYPE FROM DMCHITIETCUOCDT WHERE FK_DOITAC = " + arrayvalue[1] + " AND FK_MAVUNG = " + FK_MAVUNG + " AND C_TYPE = 1 ORDER BY C_KHOILUONG";
-            DataTable oDataTable2 = new DataTable();
-            ITCLIB.Admin.SQL SelectQuery2 = new ITCLIB.Admin.SQL();
-            oDataTable2 = SelectQuery2.query_data(SelectSQL2);
-            if (oDataTable2.Rows.Count != 0)
-            {
-                C_KHOILUONGLKDT = int.Parse(oDataTable2.Rows[0]["C_KHOILUONG"].ToString(), NumberStyles.Currency);
-                GIACUOCLKDT = decimal.Parse(oDataTable2.Rows[0]["C_CUOCPHI"].ToString(), NumberStyles.Currency);
-            }
-            if (oDataTable1.Rows.Count != 0)
-            {
-                bool check = true;
-                for (int i = 0; i < oDataTable1.Rows.Count; i++)
-                {
-                    if (check)
-                    {
-                        if (i == 0)
-                        {
-                            if (C_KHOILUONG <= int.Parse(oDataTable1.Rows[0]["C_KHOILUONG"].ToString()))
-                            {
-                                GIADOITAC = decimal.Parse(oDataTable1.Rows[0]["C_CUOCPHI"].ToString(), NumberStyles.Currency);
-                            }
-                        }
-                        else
-                        {
-                            if (C_KHOILUONG <= int.Parse(oDataTable1.Rows[i]["C_KHOILUONG"].ToString()) && C_KHOILUONG >= int.Parse(oDataTable1.Rows[i - 1]["C_KHOILUONG"].ToString()))
-                            {
-                                GIADOITAC = decimal.Parse(oDataTable1.Rows[i]["C_CUOCPHI"].ToString(), NumberStyles.Currency);
-                                check = false;
-                            }
-                            else if (C_KHOILUONG >= int.Parse(oDataTable1.Rows[oDataTable1.Rows.Count - 1]["C_KHOILUONG"].ToString()))
-                            {
-                                if (((C_KHOILUONG - int.Parse(oDataTable1.Rows[oDataTable1.Rows.Count - 1]["C_KHOILUONG"].ToString())) % C_KHOILUONGLKDT) == 0)
-                                {
-                                    GIADOITAC = decimal.Parse(oDataTable1.Rows[oDataTable1.Rows.Count - 1]["C_CUOCPHI"].ToString(), NumberStyles.Currency) + ((C_KHOILUONG - int.Parse(oDataTable1.Rows[oDataTable1.Rows.Count - 1]["C_KHOILUONG"].ToString())) / C_KHOILUONGLKDT) * GIACUOCLKDT;
-                                }
-                                else
-                                {
-                                    GIADOITAC = decimal.Parse(oDataTable1.Rows[oDataTable1.Rows.Count - 1]["C_CUOCPHI"].ToString(), NumberStyles.Currency) + (((C_KHOILUONG - int.Parse(oDataTable1.Rows[oDataTable1.Rows.Count - 1]["C_KHOILUONG"].ToString())) / C_KHOILUONGLKDT) + 1) * GIACUOCLKDT;
-                                }
-                                check = false;
-                            }
-                        }
-                    }
-                }
-            }
+            FK_DOITAC = arrayvalue[1];
         }
         if ((FK_MABANGCUOC != "") && (FK_MAVUNG != ""))
         {
             string SelectSQL1;
-            SelectSQL1 = "Select DMCHITIETCUOC.PK_ID,DMCHITIETCUOC.C_KHOILUONG,DMCHITIETCUOC.C_CUOCPHI,DMCHITIETCUOC.C_TYPE FROM DMCHITIETCUOC WHERE FK_MABANGCUOC = " + FK_MABANGCUOC + " AND FK_MAVUNG = " + FK_MAVUNG + " AND C_TYPE <> 1 ORDER BY C_KHOILUONG  ASC";
+            SelectSQL1 = "Select DMCHITIETCUOCDT.PK_ID,DMCHITIETCUOCDT.C_KHOILUONG,DMCHITIETCUOCDT.C_CUOCPHI,DMCHITIETCUOCDT.C_TYPE FROM DMCHITIETCUOCDT WHERE C_LOAITIEN = N'USD' AND FK_DOITAC = " + FK_MABANGCUOC + " AND FK_MAVUNG = " + FK_MAVUNG + " AND C_TYPE <> 1 AND C_TYPE1 <> 1 ORDER BY C_KHOILUONG  ASC";
             ITCLIB.Admin.SQL SelectQuery1 = new ITCLIB.Admin.SQL();
             ctcDataTable = SelectQuery1.query_data(SelectSQL1);
             string SelectSQL2;
-            SelectSQL2 = "Select DMCHITIETCUOC.PK_ID,DMCHITIETCUOC.C_KHOILUONG,DMCHITIETCUOC.C_CUOCPHI,DMCHITIETCUOC.C_TYPE FROM DMCHITIETCUOC WHERE FK_MABANGCUOC = " + FK_MABANGCUOC + " AND FK_MAVUNG = " + FK_MAVUNG + " AND C_TYPE = 1 ORDER BY C_KHOILUONG";
+            SelectSQL2 = "Select DMCHITIETCUOCDT.PK_ID,DMCHITIETCUOCDT.C_KHOILUONG,DMCHITIETCUOCDT.C_CUOCPHI,DMCHITIETCUOCDT.C_TYPE FROM DMCHITIETCUOCDT WHERE C_LOAITIEN = N'USD' AND FK_DOITAC = " + FK_MABANGCUOC + " AND FK_MAVUNG = " + FK_MAVUNG + " AND C_TYPE = 1 AND C_TYPE1 <> 1 ORDER BY C_KHOILUONG";
             DataTable oDataTable = new DataTable();
             ITCLIB.Admin.SQL SelectQuery2 = new ITCLIB.Admin.SQL();
             oDataTable = SelectQuery2.query_data(SelectSQL2);
@@ -403,48 +383,267 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
                 C_KHOILUONGLK = int.Parse(oDataTable.Rows[0]["C_KHOILUONG"].ToString(), NumberStyles.Currency);
                 GIACUOCLK = decimal.Parse(oDataTable.Rows[0]["C_CUOCPHI"].ToString(), NumberStyles.Currency);
             }
+            string SelectSQL3;
+            SelectSQL3 = "Select DMCHITIETCUOCDT.PK_ID,DMCHITIETCUOCDT.C_KHOILUONG,DMCHITIETCUOCDT.C_CUOCPHI,DMCHITIETCUOCDT.C_TYPE FROM DMCHITIETCUOCDT WHERE C_LOAITIEN = N'USD' AND FK_DOITAC = " + FK_MABANGCUOC + " AND FK_MAVUNG = " + FK_MAVUNG + " AND C_TYPE1 = 1 ORDER BY C_KHOILUONG  ASC";
+            ITCLIB.Admin.SQL SelectQuery3 = new ITCLIB.Admin.SQL();
+            ctcDataTable1 = SelectQuery3.query_data(SelectSQL3);
 
         }
         if (C_KHOILUONG != 0)
         {
-            if (ctcDataTable.Rows.Count != 0)
+            if (ctcDataTable1.Rows.Count != 0)
             {
-                bool check = true;
-                for (int i = 0; i < ctcDataTable.Rows.Count; i++)
+                if (C_KHOILUONG <= int.Parse(ctcDataTable1.Rows[0]["C_KHOILUONG"].ToString()))
                 {
-                    if (check)
+                    if (ctcDataTable.Rows.Count != 0)
                     {
-                        if (i == 0)
+
+                        bool check = true;
+                        for (int i = 0; i < ctcDataTable.Rows.Count; i++)
                         {
-                            if (C_KHOILUONG <= int.Parse(ctcDataTable.Rows[0]["C_KHOILUONG"].ToString()))
+                            if (check)
                             {
-                                CUOCCHINH = decimal.Parse(ctcDataTable.Rows[0]["C_CUOCPHI"].ToString(), NumberStyles.Currency);
-                            }
-                        }
-                        else
-                        {
-                            if (C_KHOILUONG <= int.Parse(ctcDataTable.Rows[i]["C_KHOILUONG"].ToString()) && C_KHOILUONG >= int.Parse(ctcDataTable.Rows[i - 1]["C_KHOILUONG"].ToString()))
-                            {
-                                CUOCCHINH = decimal.Parse(ctcDataTable.Rows[i]["C_CUOCPHI"].ToString(), NumberStyles.Currency);
-                                check = false;
-                            }
-                            else if (C_KHOILUONG >= int.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_KHOILUONG"].ToString()))
-                            {
-                                if (((C_KHOILUONG - int.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_KHOILUONG"].ToString())) % C_KHOILUONGLK) == 0)
+                                if (i == 0)
                                 {
-                                    CUOCCHINH = decimal.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_CUOCPHI"].ToString(), NumberStyles.Currency) + ((C_KHOILUONG - int.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_KHOILUONG"].ToString())) / C_KHOILUONGLK) * GIACUOCLK;
+                                    if (C_KHOILUONG <= int.Parse(ctcDataTable.Rows[0]["C_KHOILUONG"].ToString()))
+                                    {
+                                        CUOCCHINH = decimal.Parse(ctcDataTable.Rows[0]["C_CUOCPHI"].ToString(), NumberStyles.Currency);
+                                    }
                                 }
                                 else
                                 {
-                                    CUOCCHINH = decimal.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_CUOCPHI"].ToString(), NumberStyles.Currency) + (((C_KHOILUONG - int.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_KHOILUONG"].ToString())) / C_KHOILUONGLK) + 1) * GIACUOCLK;
+                                    if (C_KHOILUONG <= int.Parse(ctcDataTable.Rows[i]["C_KHOILUONG"].ToString()) && C_KHOILUONG >= int.Parse(ctcDataTable.Rows[i - 1]["C_KHOILUONG"].ToString()))
+                                    {
+                                        CUOCCHINH = decimal.Parse(ctcDataTable.Rows[i]["C_CUOCPHI"].ToString(), NumberStyles.Currency);
+                                        check = false;
+                                    }
+                                    else if (C_KHOILUONG > int.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_KHOILUONG"].ToString()))
+                                    {
+                                        if (((C_KHOILUONG - int.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_KHOILUONG"].ToString())) % C_KHOILUONGLK) == 0)
+                                        {
+                                            CUOCCHINH = decimal.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_CUOCPHI"].ToString(), NumberStyles.Currency) + ((C_KHOILUONG - int.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_KHOILUONG"].ToString())) / C_KHOILUONGLK) * GIACUOCLK;
+                                        }
+                                        else
+                                        {
+                                            CUOCCHINH = decimal.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_CUOCPHI"].ToString(), NumberStyles.Currency) + (((C_KHOILUONG - int.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_KHOILUONG"].ToString())) / C_KHOILUONGLK) + 1) * GIACUOCLK;
+                                        }
+                                        check = false;
+                                    }
                                 }
-                                check = false;
+                            }
+                        }
+                    }
+
+                }
+                else
+                {
+                    if (ctcDataTable1.Rows.Count == 1)
+                    {
+                        CUOCCHINH = decimal.Parse(ctcDataTable.Rows[0]["C_CUOCPHI"].ToString(), NumberStyles.Currency) * C_KHOILUONG / 1000;
+                    }
+                    else
+                    {
+                        bool check1 = true;
+                        for (int i = 0; i < ctcDataTable1.Rows.Count; i++)
+                        {
+                            if (check1)
+                            {
+                                if (C_KHOILUONG <= int.Parse(ctcDataTable1.Rows[i]["C_KHOILUONG"].ToString()) && C_KHOILUONG >= int.Parse(ctcDataTable1.Rows[i - 1]["C_KHOILUONG"].ToString()))
+                                {
+                                    CUOCCHINH = decimal.Parse(ctcDataTable1.Rows[i]["C_CUOCPHI"].ToString(), NumberStyles.Currency) * C_KHOILUONG / 1000;
+                                    check1 = false;
+                                }
+                                else if (C_KHOILUONG > int.Parse(ctcDataTable1.Rows[ctcDataTable1.Rows.Count - 1]["C_KHOILUONG"].ToString()))
+                                {
+                                    CUOCCHINH = decimal.Parse(ctcDataTable1.Rows[ctcDataTable1.Rows.Count - 1]["C_CUOCPHI"].ToString(), NumberStyles.Currency) * C_KHOILUONG / 1000;
+                                    check1 = false;
+                                }
+                            }
+                        }
+
+                    }
+                }
+            }
+            else
+            {
+                if (ctcDataTable.Rows.Count != 0)
+                {
+
+                    bool check = true;
+                    for (int i = 0; i < ctcDataTable.Rows.Count; i++)
+                    {
+                        if (check)
+                        {
+                            if (i == 0)
+                            {
+                                if (C_KHOILUONG <= int.Parse(ctcDataTable.Rows[0]["C_KHOILUONG"].ToString()))
+                                {
+                                    CUOCCHINH = decimal.Parse(ctcDataTable.Rows[0]["C_CUOCPHI"].ToString(), NumberStyles.Currency);
+                                }
+                            }
+                            else
+                            {
+                                if (C_KHOILUONG <= int.Parse(ctcDataTable.Rows[i]["C_KHOILUONG"].ToString()) && C_KHOILUONG >= int.Parse(ctcDataTable.Rows[i - 1]["C_KHOILUONG"].ToString()))
+                                {
+                                    CUOCCHINH = decimal.Parse(ctcDataTable.Rows[i]["C_CUOCPHI"].ToString(), NumberStyles.Currency);
+                                    check = false;
+                                }
+                                else if (C_KHOILUONG > int.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_KHOILUONG"].ToString()))
+                                {
+                                    if (((C_KHOILUONG - int.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_KHOILUONG"].ToString())) % C_KHOILUONGLK) == 0)
+                                    {
+                                        CUOCCHINH = decimal.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_CUOCPHI"].ToString(), NumberStyles.Currency) + ((C_KHOILUONG - int.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_KHOILUONG"].ToString())) / C_KHOILUONGLK) * GIACUOCLK;
+                                    }
+                                    else
+                                    {
+                                        CUOCCHINH = decimal.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_CUOCPHI"].ToString(), NumberStyles.Currency) + (((C_KHOILUONG - int.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_KHOILUONG"].ToString())) / C_KHOILUONGLK) + 1) * GIACUOCLK;
+                                    }
+                                    check = false;
+                                }
                             }
                         }
                     }
                 }
             }
             //CUOCCHINH = (Math.Round((CUOCCHINH + ((CUOCCHINH * PPXD) / 100)) / 1000)) * 1000;
+            if (FK_DOITAC != "")
+            {
+                int C_KHOILUONGLKDT = 0;
+                decimal GIACUOCLKDT = 0;
+                string SelectSQL1;
+                SelectSQL1 = "Select DMCHITIETCUOCDT.PK_ID,DMCHITIETCUOCDT.C_KHOILUONG,DMCHITIETCUOCDT.C_CUOCPHI,DMCHITIETCUOCDT.C_TYPE FROM DMCHITIETCUOCDT WHERE C_LOAITIEN = N'USD' AND FK_DOITAC = " + FK_DOITAC + " AND FK_MAVUNG = " + FK_MAVUNG + " AND C_TYPE <> 1 AND C_TYPE1 <> 1 ORDER BY C_KHOILUONG  ASC";
+                ITCLIB.Admin.SQL SelectQuery1 = new ITCLIB.Admin.SQL();
+                DataTable oDataTable1 = new DataTable();
+                oDataTable1 = SelectQuery1.query_data(SelectSQL1);
+                string SelectSQL2;
+                SelectSQL2 = "Select DMCHITIETCUOCDT.PK_ID,DMCHITIETCUOCDT.C_KHOILUONG,DMCHITIETCUOCDT.C_CUOCPHI,DMCHITIETCUOCDT.C_TYPE FROM DMCHITIETCUOCDT WHERE C_LOAITIEN = N'USD' AND FK_DOITAC = " + FK_DOITAC + " AND FK_MAVUNG = " + FK_MAVUNG + " AND C_TYPE = 1 AND C_TYPE1 <> 1 ORDER BY C_KHOILUONG  ASC";
+                DataTable oDataTable2 = new DataTable();
+                ITCLIB.Admin.SQL SelectQuery2 = new ITCLIB.Admin.SQL();
+                oDataTable2 = SelectQuery2.query_data(SelectSQL2);
+                if (oDataTable2.Rows.Count != 0)
+                {
+                    C_KHOILUONGLKDT = int.Parse(oDataTable2.Rows[0]["C_KHOILUONG"].ToString(), NumberStyles.Currency);
+                    GIACUOCLKDT = decimal.Parse(oDataTable2.Rows[0]["C_CUOCPHI"].ToString(), NumberStyles.Currency);
+                }
+                string SelectSQL3;
+                SelectSQL3 = "Select DMCHITIETCUOCDT.PK_ID,DMCHITIETCUOCDT.C_KHOILUONG,DMCHITIETCUOCDT.C_CUOCPHI,DMCHITIETCUOCDT.C_TYPE FROM DMCHITIETCUOCDT WHERE C_LOAITIEN = N'USD' AND FK_DOITAC = " + FK_DOITAC + " AND FK_MAVUNG = " + FK_MAVUNG + " AND C_TYPE1 = 1 ORDER BY C_KHOILUONG  ASC";
+                ITCLIB.Admin.SQL SelectQuery3 = new ITCLIB.Admin.SQL();
+                DataTable oDataTable3 = new DataTable();
+                oDataTable3 = SelectQuery3.query_data(SelectSQL3);
+                if (oDataTable3.Rows.Count != 0)
+                {
+                    if (C_KHOILUONG <= int.Parse(oDataTable3.Rows[0]["C_KHOILUONG"].ToString()))
+                    {
+                        if (oDataTable1.Rows.Count != 0)
+                        {
+                            bool check = true;
+                            for (int i = 0; i < oDataTable1.Rows.Count; i++)
+                            {
+                                if (check)
+                                {
+                                    if (i == 0)
+                                    {
+                                        if (C_KHOILUONG <= int.Parse(oDataTable1.Rows[0]["C_KHOILUONG"].ToString()))
+                                        {
+                                            GIADOITAC = decimal.Parse(oDataTable1.Rows[0]["C_CUOCPHI"].ToString(), NumberStyles.Currency);
+                                        }
+                                    }
+                                    else
+                                    {
+                                        if (C_KHOILUONG <= int.Parse(oDataTable1.Rows[i]["C_KHOILUONG"].ToString()) && C_KHOILUONG >= int.Parse(oDataTable1.Rows[i - 1]["C_KHOILUONG"].ToString()))
+                                        {
+                                            GIADOITAC = decimal.Parse(oDataTable1.Rows[i]["C_CUOCPHI"].ToString(), NumberStyles.Currency);
+                                            check = false;
+                                        }
+                                        else if (C_KHOILUONG > int.Parse(oDataTable1.Rows[oDataTable1.Rows.Count - 1]["C_KHOILUONG"].ToString()))
+                                        {
+                                            if (((C_KHOILUONG - int.Parse(oDataTable1.Rows[oDataTable1.Rows.Count - 1]["C_KHOILUONG"].ToString())) % C_KHOILUONGLKDT) == 0)
+                                            {
+                                                GIADOITAC = decimal.Parse(oDataTable1.Rows[oDataTable1.Rows.Count - 1]["C_CUOCPHI"].ToString(), NumberStyles.Currency) + ((C_KHOILUONG - int.Parse(oDataTable1.Rows[oDataTable1.Rows.Count - 1]["C_KHOILUONG"].ToString())) / C_KHOILUONGLKDT) * GIACUOCLKDT;
+                                            }
+                                            else
+                                            {
+                                                GIADOITAC = decimal.Parse(oDataTable1.Rows[oDataTable1.Rows.Count - 1]["C_CUOCPHI"].ToString(), NumberStyles.Currency) + (((C_KHOILUONG - int.Parse(oDataTable1.Rows[oDataTable1.Rows.Count - 1]["C_KHOILUONG"].ToString())) / C_KHOILUONGLKDT) + 1) * GIACUOCLKDT;
+                                            }
+                                            check = false;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                    }
+                    else
+                    {
+                        if (oDataTable3.Rows.Count == 1)
+                        {
+                            GIADOITAC = decimal.Parse(oDataTable1.Rows[0]["C_CUOCPHI"].ToString(), NumberStyles.Currency) * C_KHOILUONG / 1000;
+                        }
+                        else
+                        {
+                            bool check1 = true;
+                            for (int i = 0; i < oDataTable3.Rows.Count; i++)
+                            {
+                                if (check1)
+                                {
+                                    if (C_KHOILUONG <= int.Parse(oDataTable3.Rows[i]["C_KHOILUONG"].ToString()) && C_KHOILUONG >= int.Parse(oDataTable3.Rows[i - 1]["C_KHOILUONG"].ToString()))
+                                    {
+                                        GIADOITAC = decimal.Parse(oDataTable3.Rows[i]["C_CUOCPHI"].ToString(), NumberStyles.Currency) * C_KHOILUONG / 1000;
+                                        check1 = false;
+                                    }
+                                    else if (C_KHOILUONG > int.Parse(oDataTable3.Rows[oDataTable3.Rows.Count - 1]["C_KHOILUONG"].ToString()))
+                                    {
+                                        GIADOITAC = decimal.Parse(oDataTable3.Rows[oDataTable3.Rows.Count - 1]["C_CUOCPHI"].ToString(), NumberStyles.Currency) * C_KHOILUONG / 1000;
+                                        check1 = false;
+                                    }
+                                }
+                            }
+
+                        }
+                    }
+                }
+                else
+                {
+                    if (oDataTable1.Rows.Count != 0)
+                    {
+
+                        bool check = true;
+                        for (int i = 0; i < oDataTable1.Rows.Count; i++)
+                        {
+                            if (check)
+                            {
+                                if (i == 0)
+                                {
+                                    if (C_KHOILUONG <= int.Parse(oDataTable1.Rows[0]["C_KHOILUONG"].ToString()))
+                                    {
+                                        GIADOITAC = decimal.Parse(oDataTable1.Rows[0]["C_CUOCPHI"].ToString(), NumberStyles.Currency);
+                                    }
+                                }
+                                else
+                                {
+                                    if (C_KHOILUONG <= int.Parse(oDataTable1.Rows[i]["C_KHOILUONG"].ToString()) && C_KHOILUONG >= int.Parse(oDataTable1.Rows[i - 1]["C_KHOILUONG"].ToString()))
+                                    {
+                                        GIADOITAC = decimal.Parse(oDataTable1.Rows[i]["C_CUOCPHI"].ToString(), NumberStyles.Currency);
+                                        check = false;
+                                    }
+                                    else if (C_KHOILUONG > int.Parse(oDataTable1.Rows[oDataTable1.Rows.Count - 1]["C_KHOILUONG"].ToString()))
+                                    {
+                                        if (((C_KHOILUONG - int.Parse(oDataTable1.Rows[oDataTable1.Rows.Count - 1]["C_KHOILUONG"].ToString())) % C_KHOILUONGLKDT) == 0)
+                                        {
+                                            GIADOITAC = decimal.Parse(oDataTable1.Rows[oDataTable1.Rows.Count - 1]["C_CUOCPHI"].ToString(), NumberStyles.Currency) + ((C_KHOILUONG - int.Parse(oDataTable1.Rows[oDataTable1.Rows.Count - 1]["C_KHOILUONG"].ToString())) / C_KHOILUONGLKDT) * GIACUOCLKDT;
+                                        }
+                                        else
+                                        {
+                                            GIADOITAC = decimal.Parse(oDataTable1.Rows[oDataTable1.Rows.Count - 1]["C_CUOCPHI"].ToString(), NumberStyles.Currency) + (((C_KHOILUONG - int.Parse(oDataTable1.Rows[oDataTable1.Rows.Count - 1]["C_KHOILUONG"].ToString())) / C_KHOILUONGLKDT) + 1) * GIACUOCLKDT;
+                                        }
+                                        check = false;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
         if (Alarm != "")
         {
@@ -606,19 +805,8 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
                 // insert item
                 radNgaynhangui.SelectedDate = System.DateTime.Now;
                 cmbC_TAILIEU.SelectedIndex = 1;
-                TENKH = "";
-                DIENTHOAIKH = "";
                 txtCODE.Text = GetMaxBill();
-                FK_MABANGCUOC = "";
-                FK_MAVUNG = "";
-                FK_DICHVU = "";
-                PPXD = 0;
-                C_KHOILUONG = 0;
-                CUOCCHINH = 0;
-                GIADOITAC = 0;
-                ctcDataTable = new DataTable();
-                C_KHOILUONGLK = 0;
-                GIACUOCLK = 0;
+                ClearSession();
             }
             else
             {
@@ -785,6 +973,7 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
         FK_DOITAC = "";
         GIADOITAC = 0;
         ctcDataTable = new DataTable();
+        ctcDataTable1 = new DataTable();
         C_KHOILUONGLK = 0;
         GIACUOCLK = 0;
         Alarm = "";
