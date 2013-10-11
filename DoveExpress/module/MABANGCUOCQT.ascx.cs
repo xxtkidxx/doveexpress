@@ -56,7 +56,7 @@ public partial class module_MABANGCUOCQT : System.Web.UI.UserControl
     protected void CheckCode(object source, ServerValidateEventArgs args)
     {
         string SelectSQL;
-        SelectSQL = "Select DMMABANGCUOCQT.C_CODE FROM DMMABANGCUOCQT WHERE DMMABANGCUOCQT.C_CODE = '" + args.Value + "' AND DMMABANGCUOCQT.PK_ID <> " + Session["txtID"].ToString();
+        SelectSQL = "Select DMMABANGCUOCQT.C_CODE FROM DMMABANGCUOCQT WHERE DMMABANGCUOCQT.C_CODE = '" + args.Value + "' AND DMMABANGCUOCQT.PK_ID <> " + Session["txtID"].ToString() + " AND DMMABANGCUOCQT.FK_VUNGLAMVIEC = N'" + Session["VUNGLAMVIEC"].ToString() + "'";
         DataTable oDataTable = new DataTable();
         ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
         oDataTable = SelectQuery.query_data(SelectSQL);

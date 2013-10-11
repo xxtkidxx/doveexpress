@@ -1,0 +1,30 @@
+Thời gian lỗi : 2013-10-10 21:19:02 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUIQT. 
+Nội dung lỗi:DataBinding: 'Telerik.Web.UI.GridInsertionObject' does not contain a property with the name 'C_LIENHE'.
+__________________________
+Thời gian lỗi : 2013-10-10 21:35:34 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUIQT. 
+Nội dung lỗi:DataBinding: 'Telerik.Web.UI.GridInsertionObject' does not contain a property with the name 'C_TALIEU'.
+__________________________
+Thời gian lỗi : 2013-10-10 21:36:08 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUIQT. 
+Nội dung lỗi:DataBinding: 'Telerik.Web.UI.GridInsertionObject' does not contain a property with the name 'C_GIATRIHANGHOA'.
+__________________________
+Thời gian lỗi : 2013-10-10 21:38:39 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUIQT. 
+Nội dung lỗi:DataBinding: 'Telerik.Web.UI.GridInsertionObject' does not contain a property with the name 'C_HENGIO'.
+__________________________
+Thời gian lỗi : 2013-10-10 21:42:05 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUIQT. 
+Nội dung lỗi:Unable to cast object of type 'Telerik.Web.UI.GridCommandItem' to type 'Telerik.Web.UI.GridEditableItem'.
+__________________________
+Thời gian lỗi : 2013-10-10 22:13:35 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUIQT. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________

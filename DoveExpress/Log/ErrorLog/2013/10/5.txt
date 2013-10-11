@@ -1,0 +1,70 @@
+Thời gian lỗi : 2013-10-05 12:18:26 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/Update.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-10-05 12:18:26 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/Edit.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\10\5.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-10-05 12:18:27 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/Cancel.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-10-05 12:18:27 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/AddRecord.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\10\5.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-10-05 12:18:27 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/Insert.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-10-05 12:18:27 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/Delete.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\10\5.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-10-05 12:18:27 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/img_OpenPanel.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-10-05 12:18:27 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/Refresh.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\10\5.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-10-05 12:18:28 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/pdf.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-10-05 12:18:28 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/word.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-10-05 12:18:28 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/excel.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-10-05 12:18:28 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/csv.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-10-05 12:18:28 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/img_save.jpg. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-10-05 12:18:28 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/img_Close.jpg. 
+Nội dung lỗi:File does not exist.
+__________________________

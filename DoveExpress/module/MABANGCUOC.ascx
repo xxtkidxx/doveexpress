@@ -114,15 +114,6 @@
             <div class="clearfix bgpopup"> 
             <div style="width:600px;background:#FFFFFF" class="clearfix">      
             <table id="tblEdit" class ="TableEditInGrid" cellspacing="3" cellpadding="3" style="width: 100%" border="0">
-             <tr>
-                 <td style =" width:150px;"> <span class="rtsTxtnew">Vùng làm việc:</td>
-                <td colspan="4">
-                    <telerik:RadComboBox ID="cmbFK_VUNGLAMVIEC" runat="server" SelectedValue='<%# Bind("FK_VUNGLAMVIEC") %>'
-                    DataTextField="C_NAME" DataValueField="C_CODE" DataSourceID="VUNGLAMVIECDataSource"
-                    ShowToggleImage="True" EmptyMessage="Chọn">
-                    </telerik:RadComboBox>
-                </td>
-            </tr>
             <tr>
                  <td style =" width:150px;"> <span class="rtsTxtnew">Mã bảng cước:</td>
                 <td colspan="4">
@@ -183,13 +174,15 @@
 <asp:SqlDataSource ID="MABANGCUOCDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
         DeleteCommand="DELETE FROM [DMMABANGCUOC] WHERE [PK_ID] = @PK_ID" 
         InsertCommand="INSERT INTO [DMMABANGCUOC] ([C_CODE], [C_NAME],[C_VALUE],[FK_VUNGLAMVIEC]) VALUES (@C_CODE, @C_NAME,@C_VALUE,@FK_VUNGLAMVIEC)"
-        SelectCommand="SELECT [DMMABANGCUOC].[PK_ID], [DMMABANGCUOC].[C_CODE],  [DMMABANGCUOC].[C_NAME],  [DMMABANGCUOC].[FK_VUNGLAMVIEC], [DMMABANGCUOC].[C_VALUE], DMVUNGLAMVIEC.C_NAME as VUNGLAMVIECNAME FROM [DMMABANGCUOC] LEFT OUTER JOIN DMVUNGLAMVIEC ON DMMABANGCUOC.FK_VUNGLAMVIEC = DMVUNGLAMVIEC.C_CODE ORDER BY LTRIM([DMMABANGCUOC].[C_CODE])"      
-        UpdateCommand="UPDATE [DMMABANGCUOC] SET [C_CODE] = @C_CODE, [C_NAME] = @C_NAME,[C_VALUE] = @C_VALUE,[FK_VUNGLAMVIEC] = @FK_VUNGLAMVIEC WHERE [PK_ID] = @PK_ID" >
+        SelectCommand="SELECT [DMMABANGCUOC].[PK_ID], [DMMABANGCUOC].[C_CODE],  [DMMABANGCUOC].[C_NAME],  [DMMABANGCUOC].[FK_VUNGLAMVIEC], [DMMABANGCUOC].[C_VALUE], DMVUNGLAMVIEC.C_NAME as VUNGLAMVIECNAME FROM [DMMABANGCUOC] LEFT OUTER JOIN DMVUNGLAMVIEC ON DMMABANGCUOC.FK_VUNGLAMVIEC = DMVUNGLAMVIEC.C_CODE WHERE [DMMABANGCUOC].FK_VUNGLAMVIEC = @FK_VUNGLAMVIEC ORDER BY LTRIM([DMMABANGCUOC].[C_CODE])"      
+        UpdateCommand="UPDATE [DMMABANGCUOC] SET [C_CODE] = @C_CODE, [C_NAME] = @C_NAME,[C_VALUE] = @C_VALUE WHERE [PK_ID] = @PK_ID" >
+        <SelectParameters>
+            <asp:SessionParameter Name="FK_VUNGLAMVIEC" Type="String" SessionField="VUNGLAMVIEC" />
+        </SelectParameters>
         <UpdateParameters>
             <asp:Parameter Name="C_CODE" Type="String" />
             <asp:Parameter Name="C_NAME" Type="String" />
             <asp:Parameter Name="C_VALUE" Type="String" />
-            <asp:Parameter Name="FK_VUNGLAMVIEC" Type="String" />
         </UpdateParameters>
         <DeleteParameters>
             <asp:Parameter Name="PK_ID" Type="Int32" />
@@ -198,12 +191,9 @@
             <asp:Parameter Name="C_CODE" Type="String" />
             <asp:Parameter Name="C_NAME" Type="String" />
             <asp:Parameter Name="C_VALUE" Type="String" />
-            <asp:Parameter Name="FK_VUNGLAMVIEC" Type="String" />
+            <asp:SessionParameter Name="FK_VUNGLAMVIEC" Type="String" SessionField="VUNGLAMVIEC" />
         </InsertParameters>
 </asp:SqlDataSource>
  <asp:SqlDataSource ID="NHOMKHACHHANGDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
  SelectCommand="SELECT DMNHOMKHACHHANG.* FROM DMNHOMKHACHHANG WHERE C_TYPE = N'Trong nước'" >
-</asp:SqlDataSource>
- <asp:SqlDataSource ID="VUNGLAMVIECDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
- SelectCommand="SELECT DMVUNGLAMVIEC.* FROM DMVUNGLAMVIEC" >
 </asp:SqlDataSource>

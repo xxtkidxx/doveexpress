@@ -1,0 +1,72 @@
+Thời gian: 2013-10-10 20:50:26 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-10-10 21:18:58 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-10-10 21:35:31 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-10-10 21:42:50 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-10-10 21:43:50 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-10-10 21:46:25 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-10-10 21:49:54 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-10-10 21:54:41 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-10-10 21:55:44 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-10-10 21:57:58 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-10-10 22:15:09 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted NHANGUIQTs
+Kết quả : {PK_ID:"89"}
+__________________________
+Thời gian: 2013-10-10 22:15:14 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIQTs
+Kết quả : {PK_ID:"89",C_BILL:"00375306"}
+__________________________

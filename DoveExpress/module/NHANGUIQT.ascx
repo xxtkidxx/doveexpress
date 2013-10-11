@@ -347,7 +347,7 @@
 <script type="text/javascript">
     function onResponseEndNG() {
         if (typeof (result) != "undefined" && result && result != "") {
-            //alert(result);
+            alert(result);
             var arrayOfStrings = result.split(",-,");
             if (arrayOfStrings[0] != "msg") {
                 if (arrayOfStrings[0] != "") {
@@ -681,7 +681,7 @@
                 <td style =" width:100px;"> <span class="rtsTxtnew">Cước chính:</span></td>
                 <td colspan="4">
                     <telerik:RadNumericTextBox  ID="txtC_GIACUOC" Width ="90%" Runat="server" Text='<%# Bind("C_GIACUOC") %>' ClientEvents-OnLoad="OnClientLoadtxtC_GIACUOC" ClientEvents-OnValueChanged="OnValueChangedtxtC_GIACUOC">
-                            <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
+                            <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="2"/>
                     </telerik:RadNumericTextBox>
                 </td>
             </tr
@@ -689,21 +689,19 @@
                 <td style =" width:100px;"><span class="rtsTxtnew">PPXD(%):</span></td>
                 <td colspan="4">
                      <telerik:RadNumericTextBox  ID="txtPPXD" Width ="90%" Text='<%# Bind("C_PPXD") %>' Runat="server" ClientEvents-OnLoad="OnClientLoadtxtPPXD" ClientEvents-OnValueChanged="OnValueChangedtxtPPXD">
-                            <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
+                            <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="2"/>
                     </telerik:RadNumericTextBox>
                 </td>
                 <td style =" width:100px;"><span class="rtsTxtnew"><input id="btnC_DONGGOI" type="checkbox" onclick="SetC_DONGGOI();" value="false"/>Đóng gói:</td>
                 <td colspan="4">
                     <telerik:RadNumericTextBox  ID="txtC_DONGGOI" Width ="90%" Runat="server" Text='<%# Bind("C_DONGGOI") %>' ClientEvents-OnLoad="OnClientLoadtxtC_DONGGOI" ClientEvents-OnValueChanged="OnValueChangedtxtC_DONGGOI">
-                            <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
-                            <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
+                            <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="2"/>
                     </telerik:RadNumericTextBox>
                 </td>
                 <td style =" width:100px;"><span class="rtsTxtnew"><input id="btnC_KHAIGIA" type="checkbox" onclick="SetC_KHAIGIA();" value="false"/>Khai giá:</td>
                 <td colspan="4">
                     <telerik:RadNumericTextBox  ID="txtC_KHAIGIA" Width ="90%" Runat="server" Text='<%# Bind("C_KHAIGIA") %>' ClientEvents-OnLoad="OnClientLoadtxtC_KHAIGIA" ClientEvents-OnValueChanged="OnValueChangedtxtC_KHAIGIA">
-                            <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
-                            <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
+                            <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="2"/>
                     </telerik:RadNumericTextBox>
                 </td>
             </tr>
@@ -711,20 +709,19 @@
                 <td style =" width:100px;"> <span class="rtsTxtnew"><input id="btnC_COD" type="checkbox" onclick="SetC_COD();" value="false"/>Hun trùng:</span></td>
                 <td colspan="4">
                     <telerik:RadNumericTextBox  ID="txtC_COD" Width ="90%" Runat="server" Text='<%# Bind("C_COD") %>' ClientEvents-OnLoad="OnClientLoadtxtC_COD" ClientEvents-OnValueChanged="OnValueChangedtxtC_COD">
-                            <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
-                            <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
+                            <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="2"/>
                     </telerik:RadNumericTextBox>
                 </td>                
                 <td style =" width:100px;"><span class="rtsTxtnew"><input id="btnC_BAOPHAT" type="checkbox" onclick="SetC_BAOPHAT();" value="false"/>Hải quan:</td>
                 <td colspan="4">
                     <telerik:RadNumericTextBox  ID="txtC_BAOPHAT" Width ="90%" Runat="server" Text='<%# Bind("C_BAOPHAT") %>' ClientEvents-OnLoad="OnClientLoadtxtC_BAOPHAT" ClientEvents-OnValueChanged="OnValueChangedtxtC_BAOPHAT">
-                            <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
+                            <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="2"/>
                     </telerik:RadNumericTextBox>
                 </td>
                 <td style =" width:100px;"><span class="rtsTxtnew"><input id="btnC_HENGIO" type="checkbox" onclick="SetC_HENGIO();" value="false"/>Hẹn giờ:</span></td>
                 <td colspan="4">
                     <telerik:RadNumericTextBox  ID="txtC_HENGIO" Width ="90%" Runat="server" Text='<%# Bind("C_HENGIO") %>' ClientEvents-OnLoad="OnClientLoadtxtC_HENGIO" ClientEvents-OnValueChanged="OnValueChangedtxtC_HENGIO">
-                            <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
+                            <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="2"/>
                     </telerik:RadNumericTextBox>
                 </td> 
             </tr>
@@ -732,20 +729,19 @@
                 <td style =" width:110px;"><span class="rtsTxtnew">Tổng cước:<br /><input id="Checkbox1" type="checkbox" onclick="SetGiaCuoi();" value="false"/>Theo giá cuối</span></td>
                 <td colspan="4">
                     <telerik:RadNumericTextBox  ID="txtC_TIENHANG" Width ="90%" Runat="server" Text='<%# Bind("C_TIENHANG") %>' ClientEvents-OnLoad="OnClientLoadtxtC_TIENHANG" ClientEvents-OnValueChanged="OnValueChangedtxtC_TIENHANG">
-                            <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
+                            <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="2"/>
                     </telerik:RadNumericTextBox>
                 </td>              
                 <td style =" width:100px;"> <span class="rtsTxtnew">VAT:</span></td>
                 <td colspan="4">
                     <telerik:RadNumericTextBox  ID="txtC_VAT" Width ="90%" Runat="server" Text='<%# Bind("C_VAT") %>' ClientEvents-OnLoad="OnClientLoadtxtC_VAT" ClientEvents-OnValueChanged="OnValueChangedtxtC_VAT">
-                            <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
-                            <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
+                            <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="2"/>
                     </telerik:RadNumericTextBox>
                 </td>                
                 <td style =" width:100px;"><span class="rtsTxtnew">Tổng cước (VAT):</span></td>
                 <td colspan="4">
                     <telerik:RadNumericTextBox  ID="txtC_TIENHANGVAT" Width ="90%" Runat="server" Text='<%# Bind("C_TIENHANGVAT") %>' ClientEvents-OnLoad="OnClientLoadtxtC_TIENHANGVAT" ClientEvents-OnValueChanged="OnValueChangedtxtC_TIENHANGVAT">
-                            <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
+                            <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="2"/>
                     </telerik:RadNumericTextBox>
                 </td>
             </tr>
@@ -764,13 +760,13 @@
                 <td style =" width:100px;"> <span class="rtsTxtnew">Đã thu:</span></td>
                 <td colspan="4">
                     <telerik:RadNumericTextBox  ID="txtC_DATHU" Width ="90%" Runat="server" Text='<%# Bind("C_DATHU") %>' ClientEvents-OnValueChanged="OnValueChangedtxtC_DATHU" ClientEvents-OnLoad="OnClientLoadtxtC_DATHU">
-                            <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
+                            <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="2"/>
                     </telerik:RadNumericTextBox>
                 </td>
                 <td style =" width:100px;"> <span class="rtsTxtnew">Còn lại:</span></td>
                 <td colspan="4">
                     <telerik:RadNumericTextBox  ID="txtC_CONLAI" Width ="90%" Runat="server" Text='<%# Eval("C_CONLAI") %>' ClientEvents-OnLoad="OnClientLoadtxtC_CONLAI">
-                            <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
+                            <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="2"/>
                     </telerik:RadNumericTextBox>
                 </td>
             </tr
@@ -792,7 +788,7 @@
                 <td style =" width:100px;"><span class="rtsTxtnew">Giá đối tác:</span></td>
                 <td colspan="4">
                      <telerik:RadNumericTextBox  ID="txtC_GIADOITAC" Width ="90%" Runat="server" Text='<%# Bind("C_GIADOITAC") %>' ClientEvents-OnLoad="OnClientLoadtxtC_GIADOITAC">
-                            <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
+                            <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="2"/>
                     </telerik:RadNumericTextBox>
                 </td>
             </tr>
@@ -800,7 +796,7 @@
                 <td style =" width:100px;"> <span class="rtsTxtnew">Phụ phí đối tác:</span></td>
                 <td colspan="4">      
                     <telerik:RadNumericTextBox  ID="txtC_PHUPHIDOITAC" Width ="90%" Runat="server" Text='<%# Eval("C_PHUPHIDOITAC") %>' ClientEvents-OnLoad="OnClientLoadC_PHUPHIDOITAC">
-                            <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
+                            <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="2"/>
                     </telerik:RadNumericTextBox>          
                 </td>               
                 <td style =" width:100px;"> <span class="rtsTxtnew">Diễn giải:</span></td>
@@ -810,7 +806,7 @@
                 <td style =" width:100px;"> <span class="rtsTxtnew">Lợi nhuận:</span></td>
                 <td colspan="4">
                     <telerik:RadNumericTextBox  ID="txtC_LOINHUAN" Width ="90%" Runat="server" Text='<%# Eval("C_LOINHUAN") %>'>
-                            <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
+                            <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="2"/>
                     </telerik:RadNumericTextBox>
                 </td>
             </tr
