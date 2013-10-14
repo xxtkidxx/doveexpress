@@ -343,6 +343,22 @@
         }
         return false;
     }
+    function cmbC_HINHTHUCTTClientSelectedIndexChangedHandler(sender, eventArgs) {
+        if ( eventArgs.get_item().get_value() == 'Thanh toán ngay')
+        {
+            txtC_DATHU.set_value(txtC_TIENHANGVAT.get_value());
+        } else if ( eventArgs.get_item().get_value() == 'Thanh toán sau')
+        {
+            txtC_DATHU.set_value(0);
+        } else if ( eventArgs.get_item().get_value() == 'Thanh toán đầu nhận')
+        {
+            txtC_DATHU.set_value(0);
+        } else
+        {
+            txtC_DATHU.set_value(0);
+        }
+        return false;
+    }
 </script>
 <script type="text/javascript">
     function onResponseEndNG() {
@@ -572,7 +588,9 @@
                 <td style ="width:100px;"> <span class="rtsTxtnew">Số Bill:</span></td>
                 <td colspan="4">
                     <asp:HiddenField ID="txtID" Value ='<%# Eval( "PK_ID") %>' runat="server" />
-                    <telerik:RadNumericTextBox ID="txtCODE" Width ="90%" Text='<%# Bind("C_BILL") %>' runat="server"></telerik:RadNumericTextBox>
+                    <telerik:RadNumericTextBox ID="txtCODE" Width ="90%" Text='<%# Bind("C_BILL") %>' runat="server">
+                        <NumberFormat DecimalSeparator ="." GroupSeparator ="" DecimalDigits="0"/>
+                    </telerik:RadNumericTextBox>
                     <asp:RequiredFieldValidator ID="rfvCODE" runat="server" ErrorMessage="Số Bill không thể rỗng" ControlToValidate="txtCODE" SetFocusOnError="True" Display="Dynamic" ValidationGroup="G1"></asp:RequiredFieldValidator>
                     <asp:CustomValidator ID="cuvCODE" ControlToValidate="txtCODE" OnServerValidate="CheckBill" runat="server" ErrorMessage="Số Bill đã tồn tại" Display="Dynamic" ValidationGroup="G1"></asp:CustomValidator>
                 </td>               
@@ -748,7 +766,7 @@
             <tr>                         
                 <td style =" width:100px;"> <span class="rtsTxtnew">HTTT:</span></td>
                 <td colspan="4">
-                 <telerik:RadComboBox ID="cmbC_HINHTHUCTT" SelectedValue='<%# Bind("C_HINHTHUCTT") %>' runat="server" EmptyMessage="Chọn">
+                 <telerik:RadComboBox ID="cmbC_HINHTHUCTT" SelectedValue='<%# Bind("C_HINHTHUCTT") %>' runat="server" EmptyMessage="Chọn" onclientselectedindexchanged="cmbC_HINHTHUCTTClientSelectedIndexChangedHandler">
                             <Items>
                                 <telerik:RadComboBoxItem Value ="Thanh toán ngay" Text ="Thanh toán ngay" />
                                 <telerik:RadComboBoxItem Value ="Thanh toán sau" Text ="Thanh toán sau" />
