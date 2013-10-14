@@ -260,7 +260,7 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
             }
         }
         RadNumericTextBox txtPPXD = (RadNumericTextBox)editableItem.FindControl("txtPPXD");
-        RadTextBox txtCODE = (RadTextBox)editableItem.FindControl("txtCODE");
+        RadNumericTextBox txtCODE = (RadNumericTextBox)editableItem.FindControl("txtCODE");
         RadAutoCompleteBox radautoC_MAKH = (RadAutoCompleteBox)editableItem.FindControl("radautoC_MAKH");
         RadAutoCompleteBox radautoC_TENKH = (RadAutoCompleteBox)editableItem.FindControl("radautoC_TENKH");
         RadNumericTextBox txtC_KHOILUONG = (RadNumericTextBox)editableItem.FindControl("txtC_KHOILUONG");
@@ -767,7 +767,7 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
             RadComboBox cmbC_TAILIEU = (RadComboBox)editItem.FindControl("cmbC_TAILIEU");
             RadNumericTextBox txtPPXD = (RadNumericTextBox)editItem.FindControl("txtPPXD");
             txtPPXD.Text = (txtPPXD.Text == "") ? "0" : txtPPXD.Text;
-            RadTextBox txtCODE = (RadTextBox)editItem.FindControl("txtCODE");
+            RadNumericTextBox txtCODE = (RadNumericTextBox)editItem.FindControl("txtCODE");
             RadNumericTextBox txtC_GIATRIHANGHOA = (RadNumericTextBox)editItem.FindControl("txtC_GIATRIHANGHOA");
             txtC_GIATRIHANGHOA.Text = (txtC_GIATRIHANGHOA.Text == "") ? "0" : txtC_GIATRIHANGHOA.Text;
             RadNumericTextBox txtC_KHOILUONGTHUC = (RadNumericTextBox)editItem.FindControl("txtC_KHOILUONGTHUC");
@@ -883,15 +883,17 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
     protected string GetMaxBill()
     {
         string maxbill = "00000001";
-        string SelectSQL = "SELECT MAX(CAST(C_BILL AS Int)) as MAXBILL FROM NHANGUI";
+        string SelectSQL = "SELECT MAX(CAST(C_BILL AS BIGINT)) as MAXBILL FROM NHANGUI";
         DataTable oDataTable = new DataTable();
         ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
         oDataTable = SelectQuery.query_data(SelectSQL);
-
-        if (oDataTable.Rows[0]["MAXBILL"] != DBNull.Value)
+        if (oDataTable.Rows.Count != 0)
         {
-            int maxvalue = (int)oDataTable.Rows[0]["MAXBILL"];
-            maxbill = String.Format("{0:00000000}", maxvalue + 1);
+            if (oDataTable.Rows[0]["MAXBILL"] != DBNull.Value)
+            {
+                Int64 maxvalue = (Int64)oDataTable.Rows[0]["MAXBILL"];
+                maxbill = String.Format("{0:00000000}", maxvalue + 1);
+            }
         }
         return maxbill;
     }

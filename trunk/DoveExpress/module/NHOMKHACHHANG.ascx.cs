@@ -198,11 +198,11 @@ public partial class module_NHOMKHACHHANG : System.Web.UI.UserControl
     protected bool ValidateDeleteGroup(string pkID)
     {
         int rowcount = 0;
-        //string SelectSQL = "SELECT EOF_JOB.PK_ID FROM EOF_JOB WHERE EOF_JOB.fk_jobstatus = " + pkID;
-        //DataTable oDataTable = new DataTable();
-        //ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
-        //oDataTable = SelectQuery.query_data(SelectSQL);
-        //rowcount = oDataTable.Rows.Count;
+        string SelectSQL = "SELECT DMKHACHHANG.PK_ID FROM DMKHACHHANG WHERE (DMKHACHHANG.FK_NHOMKHACHHANG = " + pkID + ") OR DMKHACHHANG.FK_NHOMKHACHHANGQT = " + pkID;
+        DataTable oDataTable = new DataTable();
+        ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
+        oDataTable = SelectQuery.query_data(SelectSQL);
+        rowcount = oDataTable.Rows.Count;
         if (rowcount != 0)
         {
             return false;
