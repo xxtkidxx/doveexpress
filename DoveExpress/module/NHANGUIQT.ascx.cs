@@ -311,7 +311,7 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
             if (FK_DICHVU != "")
             {
                 string SelectSQL;
-                SelectSQL = "Select DMMAVUNG.PK_ID FROM DMMAVUNG WHERE FK_MASANPHAM=" + FK_DICHVU + " AND C_TYPE = 2 AND ((DMMAVUNG.C_DESC ='" + FK_QUOCGIA + "') OR (DMMAVUNG.C_DESC LIKE '%," + FK_QUOCGIA + ",%') OR (DMMAVUNG.C_DESC LIKE '%," + FK_QUOCGIA + "') OR (DMMAVUNG.C_DESC LIKE '" + FK_QUOCGIA + ",%'))";
+                SelectSQL = "Select DMMAVUNG.PK_ID FROM DMMAVUNG WHERE FK_MASANPHAM=" + FK_DICHVU + " AND C_TYPE = 2 AND ((DMMAVUNG.C_DESC ='" + FK_QUOCGIA + "') OR (DMMAVUNG.C_DESC LIKE '%," + FK_QUOCGIA + ",%') OR (DMMAVUNG.C_DESC LIKE '%," + FK_QUOCGIA + "') OR (DMMAVUNG.C_DESC LIKE '" + FK_QUOCGIA + ",%')) AND (DMMAVUNG.FK_VUNGLAMVIEC = N'" + Session["VUNGLAMVIEC"].ToString() + "')";
                 DataTable oDataTable = new DataTable();
                 ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
                 oDataTable = SelectQuery.query_data(SelectSQL);
@@ -348,7 +348,7 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
             if (FK_QUOCGIA != "")
             {
                 string SelectSQL;
-                SelectSQL = "Select DMMAVUNG.PK_ID FROM DMMAVUNG WHERE FK_MASANPHAM=" + FK_DICHVU + " AND C_TYPE = 2 AND ((DMMAVUNG.C_DESC ='" + FK_QUOCGIA + "') OR (DMMAVUNG.C_DESC LIKE '%," + FK_QUOCGIA + ",%') OR (DMMAVUNG.C_DESC LIKE '%," + FK_QUOCGIA + "') OR (DMMAVUNG.C_DESC LIKE '" + FK_QUOCGIA + ",%'))";
+                SelectSQL = "Select DMMAVUNG.PK_ID FROM DMMAVUNG WHERE FK_MASANPHAM=" + FK_DICHVU + " AND C_TYPE = 2 AND ((DMMAVUNG.C_DESC ='" + FK_QUOCGIA + "') OR (DMMAVUNG.C_DESC LIKE '%," + FK_QUOCGIA + ",%') OR (DMMAVUNG.C_DESC LIKE '%," + FK_QUOCGIA + "') OR (DMMAVUNG.C_DESC LIKE '" + FK_QUOCGIA + ",%')) AND (DMMAVUNG.FK_VUNGLAMVIEC = N'" + Session["VUNGLAMVIEC"].ToString() + "')";
                 DataTable oDataTable = new DataTable();
                 ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
                 oDataTable = SelectQuery.query_data(SelectSQL);
@@ -835,34 +835,41 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
                 FK_QUOCGIA = cmbQuocGia.SelectedValue;
                 string FK_KHACHHANG = cmbMaKhachHang.SelectedValue;
                 string SelectSQL;
-                SelectSQL = "Select DMKHACHHANG.FK_NHOMKHACHHANGQT FROM DMKHACHHANG WHERE DMKHACHHANG.C_CODE ='" + FK_KHACHHANG + "'";
+                SelectSQL = "Select DMKHACHHANG.FK_NHOMKHACHHANGQT,DMKHACHHANG.C_NAME,DMKHACHHANG.C_TEL FROM DMKHACHHANG WHERE DMKHACHHANG.C_CODE ='" + FK_KHACHHANG + "'";
                 DataTable oDataTable = new DataTable();
                 ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
                 oDataTable = SelectQuery.query_data(SelectSQL);
                 if (oDataTable.Rows.Count != 0)
                 {
                     FK_NHOMKHACHHANGQT = oDataTable.Rows[0]["FK_NHOMKHACHHANGQT"].ToString();
-                    string SelectSQL2;
-                    SelectSQL2 = "Select DMMABANGCUOCQT.PK_ID FROM DMMABANGCUOCQT WHERE ((DMMABANGCUOCQT.C_VALUE ='" + FK_NHOMKHACHHANGQT + "') OR (DMMABANGCUOCQT.C_VALUE LIKE '%," + FK_NHOMKHACHHANGQT + ",%') OR (DMMABANGCUOCQT.C_VALUE LIKE '%," + FK_NHOMKHACHHANGQT + "') OR (DMMABANGCUOCQT.C_VALUE LIKE '" + FK_NHOMKHACHHANGQT + ",%')) AND (DMMABANGCUOCQT.FK_VUNGLAMVIEC = N'" + Session["VUNGLAMVIEC"].ToString() + "')";
-                    DataTable oDataTable2 = new DataTable();
-                    ITCLIB.Admin.SQL SelectQuery2 = new ITCLIB.Admin.SQL();
-                    oDataTable2 = SelectQuery2.query_data(SelectSQL2);
-                    if (oDataTable2.Rows.Count != 0)
+                    TENKH = oDataTable.Rows[0]["C_NAME"].ToString();
+                    DIENTHOAIKH = oDataTable.Rows[0]["C_TEL"].ToString();
+                    string SelectSQL1;
+                    SelectSQL1 = "Select DMMABANGCUOCQT.FK_DOITAC,DMMABANGCUOCQT.C_VALUE1,DMMABANGCUOCQT.C_VALUE2 FROM DMMABANGCUOCQT WHERE ((DMMABANGCUOCQT.C_VALUE ='" + FK_NHOMKHACHHANGQT + "') OR (DMMABANGCUOCQT.C_VALUE LIKE '%," + FK_NHOMKHACHHANGQT + ",%') OR (DMMABANGCUOCQT.C_VALUE LIKE '%," + FK_NHOMKHACHHANGQT + "') OR (DMMABANGCUOCQT.C_VALUE LIKE '" + FK_NHOMKHACHHANGQT + ",%')) AND (DMMABANGCUOCQT.FK_VUNGLAMVIEC = N'" + Session["VUNGLAMVIEC"].ToString() + "')";
+                    DataTable oDataTable1 = new DataTable();
+                    ITCLIB.Admin.SQL SelectQuery1 = new ITCLIB.Admin.SQL();
+                    oDataTable1 = SelectQuery1.query_data(SelectSQL1);
+                    if (oDataTable1.Rows.Count != 0)
                     {
-                        FK_MABANGCUOC = oDataTable2.Rows[0]["PK_ID"].ToString();
+                        FK_MABANGCUOC = oDataTable1.Rows[0]["FK_DOITAC"].ToString();
+                        C_VALUE1 = decimal.Parse(oDataTable1.Rows[0]["C_VALUE1"].ToString());
+                        C_VALUE2 = decimal.Parse(oDataTable1.Rows[0]["C_VALUE2"].ToString());
                     }
                     else
                     {
                         FK_MABANGCUOC = "";
+                        C_VALUE1 = 0;
+                        C_VALUE2 = 0;                        
                     }
                 }
                 else
                 {
                     FK_NHOMKHACHHANGQT = "";
-                    FK_MABANGCUOC = "";
+                    TENKH = "";
+                    DIENTHOAIKH = "";
                 }
                 string SelectSQL3;
-                SelectSQL3 = "Select DMMAVUNG.PK_ID FROM DMMAVUNG WHERE FK_MASANPHAM=" + FK_DICHVU + " AND C_TYPE = 2 AND ((DMMAVUNG.C_DESC ='" + FK_QUOCGIA + "') OR (DMMAVUNG.C_DESC LIKE '%," + FK_QUOCGIA + ",%') OR (DMMAVUNG.C_DESC LIKE '%," + FK_QUOCGIA + "') OR (DMMAVUNG.C_DESC LIKE '" + FK_QUOCGIA + ",%'))";
+                SelectSQL3 = "Select DMMAVUNG.PK_ID FROM DMMAVUNG WHERE FK_MASANPHAM=" + FK_DICHVU + " AND C_TYPE = 2 AND ((DMMAVUNG.C_DESC ='" + FK_QUOCGIA + "') OR (DMMAVUNG.C_DESC LIKE '%," + FK_QUOCGIA + ",%') OR (DMMAVUNG.C_DESC LIKE '%," + FK_QUOCGIA + "') OR (DMMAVUNG.C_DESC LIKE '" + FK_QUOCGIA + ",%')) AND (DMMAVUNG.FK_VUNGLAMVIEC = N'" + Session["VUNGLAMVIEC"].ToString() + "')";
                 DataTable oDataTable3 = new DataTable();
                 ITCLIB.Admin.SQL SelectQuery3 = new ITCLIB.Admin.SQL();
                 oDataTable3 = SelectQuery3.query_data(SelectSQL3);
@@ -876,7 +883,7 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
                 }
                 PPXD = 0;
                 string SelectSQL4;
-                SelectSQL4 = "Select DMPPXD.C_PPXD FROM DMPPXD WHERE DMPPXD.FK_MASANPHAM =" + FK_DICHVU + " AND FK_MABANGCUOC = " + FK_MABANGCUOC;
+                SelectSQL4 = "Select DMPPXDDT.C_PPXD FROM DMPPXDDT WHERE DMPPXDDT.FK_MASANPHAM =" + FK_DICHVU + " AND FK_DOITAC = " + FK_MABANGCUOC;
                 DataTable oDataTable4 = new DataTable();
                 ITCLIB.Admin.SQL SelectQuery4 = new ITCLIB.Admin.SQL();
                 oDataTable4 = SelectQuery4.query_data(SelectSQL4);
