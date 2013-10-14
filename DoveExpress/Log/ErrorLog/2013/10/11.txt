@@ -1,0 +1,37 @@
+Thời gian lỗi : 2013-10-11 22:19:47 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=MABANGCUOCQT. 
+Nội dung lỗi:'ddlDoitac' has a SelectedValue which is invalid because it does not exist in the list of items.
+Parameter name: value
+__________________________
+Thời gian lỗi : 2013-10-11 22:19:49 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=MABANGCUOCQT. 
+Nội dung lỗi:'ddlDoitac' has a SelectedValue which is invalid because it does not exist in the list of items.
+Parameter name: value
+__________________________
+Thời gian lỗi : 2013-10-11 22:27:04 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=MABANGCUOC. 
+Nội dung lỗi:The multi-part identifier "DMMABANGCUOCQT.FK_VUNGLAMVIEC" could not be bound.
+__________________________
+Thời gian lỗi : 2013-10-11 22:27:39 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=MABANGCUOC. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-10-11 22:27:40 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=MABANGCUOC. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-10-11 22:27:40 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=MABANGCUOC. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-10-11 22:28:43 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=MABANGCUOC. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________

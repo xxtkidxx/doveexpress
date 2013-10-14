@@ -131,9 +131,12 @@
 </telerik:RadGrid>
 <asp:SqlDataSource ID="NHOMKHACHHANGDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
         DeleteCommand="DELETE FROM [DMNHOMKHACHHANG] WHERE [PK_ID] = @PK_ID" 
-        InsertCommand="INSERT INTO [DMNHOMKHACHHANG] ([C_CODE], [C_NAME],[C_TYPE]) VALUES (@C_CODE, @C_NAME,@C_TYPE)"
-        SelectCommand="SELECT [PK_ID], [C_CODE], [C_NAME], [C_TYPE] FROM [DMNHOMKHACHHANG] ORDER BY LTRIM([C_CODE])"      
+        InsertCommand="INSERT INTO [DMNHOMKHACHHANG] ([C_CODE], [C_NAME], [C_TYPE], [FK_VUNGLAMVIEC]) VALUES (@C_CODE, @C_NAME, @C_TYPE, @FK_VUNGLAMVIEC)"
+        SelectCommand="SELECT [PK_ID], [C_CODE], [C_NAME], [C_TYPE] FROM [DMNHOMKHACHHANG] WHERE [DMNHOMKHACHHANG].FK_VUNGLAMVIEC = @FK_VUNGLAMVIEC ORDER BY LTRIM([C_CODE])"      
         UpdateCommand="UPDATE [DMNHOMKHACHHANG] SET [C_CODE] = @C_CODE, [C_NAME] = @C_NAME, C_TYPE = @C_TYPE WHERE [PK_ID] = @PK_ID" >
+        <SelectParameters>
+            <asp:SessionParameter Name="FK_VUNGLAMVIEC" Type="String" SessionField="VUNGLAMVIEC" />
+        </SelectParameters>
         <UpdateParameters>
             <asp:Parameter Name="C_CODE" Type="String" />
             <asp:Parameter Name="C_NAME" Type="String" />
@@ -146,6 +149,7 @@
             <asp:Parameter Name="C_CODE" Type="String" />
             <asp:Parameter Name="C_NAME" Type="String" />
             <asp:Parameter Name="C_TYPE" Type="String" />
+            <asp:SessionParameter Name="FK_VUNGLAMVIEC" Type="String" SessionField="VUNGLAMVIEC" />
         </InsertParameters>
 </asp:SqlDataSource>
 
