@@ -279,17 +279,21 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
                 TENKH = oDataTable.Rows[0]["C_NAME"].ToString();
                 DIENTHOAIKH = oDataTable.Rows[0]["C_TEL"].ToString();
                 string SelectSQL1;
-                SelectSQL1 = "Select DMMABANGCUOCQT.FK_DOITAC FROM DMMABANGCUOCQT WHERE ((DMMABANGCUOCQT.C_VALUE ='" + FK_NHOMKHACHHANGQT + "') OR (DMMABANGCUOCQT.C_VALUE LIKE '%," + FK_NHOMKHACHHANGQT + ",%') OR (DMMABANGCUOCQT.C_VALUE LIKE '%," + FK_NHOMKHACHHANGQT + "') OR (DMMABANGCUOCQT.C_VALUE LIKE '" + FK_NHOMKHACHHANGQT + ",%')) AND (DMMABANGCUOCQT.FK_VUNGLAMVIEC = N'" + Session["VUNGLAMVIEC"].ToString() + "')";
+                SelectSQL1 = "Select DMMABANGCUOCQT.FK_DOITAC,DMMABANGCUOCQT.C_VALUE1,DMMABANGCUOCQT.C_VALUE2 FROM DMMABANGCUOCQT WHERE ((DMMABANGCUOCQT.C_VALUE ='" + FK_NHOMKHACHHANGQT + "') OR (DMMABANGCUOCQT.C_VALUE LIKE '%," + FK_NHOMKHACHHANGQT + ",%') OR (DMMABANGCUOCQT.C_VALUE LIKE '%," + FK_NHOMKHACHHANGQT + "') OR (DMMABANGCUOCQT.C_VALUE LIKE '" + FK_NHOMKHACHHANGQT + ",%')) AND (DMMABANGCUOCQT.FK_VUNGLAMVIEC = N'" + Session["VUNGLAMVIEC"].ToString() + "')";
                 DataTable oDataTable1 = new DataTable();
                 ITCLIB.Admin.SQL SelectQuery1 = new ITCLIB.Admin.SQL();
                 oDataTable1 = SelectQuery1.query_data(SelectSQL1);
                 if (oDataTable1.Rows.Count != 0)
                 {
                     FK_MABANGCUOC = oDataTable1.Rows[0]["FK_DOITAC"].ToString();
+                    C_VALUE1 = decimal.Parse(oDataTable1.Rows[0]["C_VALUE1"].ToString());
+                    C_VALUE2 = decimal.Parse(oDataTable1.Rows[0]["C_VALUE2"].ToString());
                 }
                 else
                 {
                     FK_MABANGCUOC = "";
+                    C_VALUE1 = 0;
+                    C_VALUE2 = 0;
                     Alarm = "msg,-,Nhóm khách hàng này không nằm trong bảng cước nào trong khu vực làm việc " + Session["VUNGLAMVIEC"].ToString() + ",-," + TENKH + ",-," + DIENTHOAIKH;
                 }
             }
@@ -391,10 +395,12 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
         }
         if (C_KHOILUONG != 0)
         {
+            // Có tính theo kg
             if (ctcDataTable1.Rows.Count != 0)
             {
                 if (C_KHOILUONG <= int.Parse(ctcDataTable1.Rows[0]["C_KHOILUONG"].ToString()))
                 {
+                    //Theo luỹ kế
                     if (ctcDataTable.Rows.Count != 0)
                     {
 
@@ -408,6 +414,7 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
                                     if (C_KHOILUONG <= int.Parse(ctcDataTable.Rows[0]["C_KHOILUONG"].ToString()))
                                     {
                                         CUOCCHINH = decimal.Parse(ctcDataTable.Rows[0]["C_CUOCPHI"].ToString(), NumberStyles.Currency);
+                                        CUOCCHINH = CUOCCHINH + ((decimal)C_KHOILUONG / 1000) + C_VALUE1;
                                     }
                                 }
                                 else
@@ -415,6 +422,7 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
                                     if (C_KHOILUONG <= int.Parse(ctcDataTable.Rows[i]["C_KHOILUONG"].ToString()) && C_KHOILUONG >= int.Parse(ctcDataTable.Rows[i - 1]["C_KHOILUONG"].ToString()))
                                     {
                                         CUOCCHINH = decimal.Parse(ctcDataTable.Rows[i]["C_CUOCPHI"].ToString(), NumberStyles.Currency);
+                                        CUOCCHINH = CUOCCHINH + ((decimal)C_KHOILUONG / 1000) + C_VALUE1;
                                         check = false;
                                     }
                                     else if (C_KHOILUONG > int.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_KHOILUONG"].ToString()))
@@ -422,10 +430,12 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
                                         if (((C_KHOILUONG - int.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_KHOILUONG"].ToString())) % C_KHOILUONGLK) == 0)
                                         {
                                             CUOCCHINH = decimal.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_CUOCPHI"].ToString(), NumberStyles.Currency) + ((C_KHOILUONG - int.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_KHOILUONG"].ToString())) / C_KHOILUONGLK) * GIACUOCLK;
+                                            CUOCCHINH = CUOCCHINH + ((decimal)C_KHOILUONG / 1000) + C_VALUE1;
                                         }
                                         else
                                         {
                                             CUOCCHINH = decimal.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_CUOCPHI"].ToString(), NumberStyles.Currency) + (((C_KHOILUONG - int.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_KHOILUONG"].ToString())) / C_KHOILUONGLK) + 1) * GIACUOCLK;
+                                            CUOCCHINH = CUOCCHINH + ((decimal)C_KHOILUONG / 1000) + C_VALUE1;
                                         }
                                         check = false;
                                     }
@@ -437,9 +447,11 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
                 }
                 else
                 {
+                    //Theo KG
                     if (ctcDataTable1.Rows.Count == 1)
                     {
                         CUOCCHINH = decimal.Parse(ctcDataTable.Rows[0]["C_CUOCPHI"].ToString(), NumberStyles.Currency) * C_KHOILUONG / 1000;
+                        CUOCCHINH = CUOCCHINH + (CUOCCHINH * C_VALUE2)/100;
                     }
                     else
                     {
@@ -451,11 +463,13 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
                                 if (C_KHOILUONG <= int.Parse(ctcDataTable1.Rows[i]["C_KHOILUONG"].ToString()) && C_KHOILUONG >= int.Parse(ctcDataTable1.Rows[i - 1]["C_KHOILUONG"].ToString()))
                                 {
                                     CUOCCHINH = decimal.Parse(ctcDataTable1.Rows[i]["C_CUOCPHI"].ToString(), NumberStyles.Currency) * C_KHOILUONG / 1000;
+                                    CUOCCHINH = CUOCCHINH + (CUOCCHINH * C_VALUE2) / 100;
                                     check1 = false;
                                 }
                                 else if (C_KHOILUONG > int.Parse(ctcDataTable1.Rows[ctcDataTable1.Rows.Count - 1]["C_KHOILUONG"].ToString()))
                                 {
                                     CUOCCHINH = decimal.Parse(ctcDataTable1.Rows[ctcDataTable1.Rows.Count - 1]["C_CUOCPHI"].ToString(), NumberStyles.Currency) * C_KHOILUONG / 1000;
+                                    CUOCCHINH = CUOCCHINH + (CUOCCHINH * C_VALUE2) / 100;
                                     check1 = false;
                                 }
                             }
@@ -466,6 +480,7 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
             }
             else
             {
+                // Không có tính theo kg chỉ luỹ kế
                 if (ctcDataTable.Rows.Count != 0)
                 {
 
@@ -479,6 +494,7 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
                                 if (C_KHOILUONG <= int.Parse(ctcDataTable.Rows[0]["C_KHOILUONG"].ToString()))
                                 {
                                     CUOCCHINH = decimal.Parse(ctcDataTable.Rows[0]["C_CUOCPHI"].ToString(), NumberStyles.Currency);
+                                    CUOCCHINH = CUOCCHINH + ((decimal)C_KHOILUONG / 1000) + C_VALUE1;
                                 }
                             }
                             else
@@ -486,6 +502,7 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
                                 if (C_KHOILUONG <= int.Parse(ctcDataTable.Rows[i]["C_KHOILUONG"].ToString()) && C_KHOILUONG >= int.Parse(ctcDataTable.Rows[i - 1]["C_KHOILUONG"].ToString()))
                                 {
                                     CUOCCHINH = decimal.Parse(ctcDataTable.Rows[i]["C_CUOCPHI"].ToString(), NumberStyles.Currency);
+                                    CUOCCHINH = CUOCCHINH + ((decimal)C_KHOILUONG / 1000) + C_VALUE1;
                                     check = false;
                                 }
                                 else if (C_KHOILUONG > int.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_KHOILUONG"].ToString()))
@@ -493,10 +510,12 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
                                     if (((C_KHOILUONG - int.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_KHOILUONG"].ToString())) % C_KHOILUONGLK) == 0)
                                     {
                                         CUOCCHINH = decimal.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_CUOCPHI"].ToString(), NumberStyles.Currency) + ((C_KHOILUONG - int.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_KHOILUONG"].ToString())) / C_KHOILUONGLK) * GIACUOCLK;
+                                        CUOCCHINH = CUOCCHINH + ((decimal)C_KHOILUONG / 1000) + C_VALUE1;
                                     }
                                     else
                                     {
                                         CUOCCHINH = decimal.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_CUOCPHI"].ToString(), NumberStyles.Currency) + (((C_KHOILUONG - int.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_KHOILUONG"].ToString())) / C_KHOILUONGLK) + 1) * GIACUOCLK;
+                                        CUOCCHINH = CUOCCHINH + ((decimal)C_KHOILUONG / 1000) + C_VALUE1;
                                     }
                                     check = false;
                                 }
@@ -967,6 +986,8 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
         DIENTHOAIKH = "";
         FK_DICHVU = "";
         FK_MABANGCUOC = "";
+        C_VALUE1 = 0;
+        C_VALUE2 = 0;
         FK_QUOCGIA = "";
         FK_MAVUNG = "";
         C_KHOILUONG = 0;

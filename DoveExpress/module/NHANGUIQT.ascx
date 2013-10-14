@@ -259,7 +259,7 @@
     function SetC_COD() {
         isCOD = !isCOD;
         if (isCOD) {          
-           txtC_COD.set_value(20000 + txtC_GIATRIHANGHOA.get_value()*0.02);
+           //txtC_COD.set_value(0);
         }
         else 
         {
@@ -270,7 +270,7 @@
     function SetC_KHAIGIA() {
         isKHAIGIA = !isKHAIGIA;
         if (isKHAIGIA) {          
-           txtC_KHAIGIA.set_value(Math.max(50000,txtC_GIATRIHANGHOA.get_value()*0.02)); 
+           txtC_KHAIGIA.set_value(Math.max(2.5,txtC_GIATRIHANGHOA.get_value()*0.02)); 
         }
         else 
         {
@@ -281,7 +281,7 @@
     function SetC_HENGIO() {
         isHENGIO = !isHENGIO;
         if (isHENGIO) {          
-           txtC_HENGIO.set_value(Math.max(50000,txtC_GIACUOC.get_value()*0.2)); 
+           //txtC_HENGIO.set_value(0); 
         }
         else 
         {
@@ -292,7 +292,7 @@
     function SetC_BAOPHAT() {
         isBAOPHAT = !isBAOPHAT;
         if (isBAOPHAT) {          
-           txtC_BAOPHAT.set_value(5000); 
+           //txtC_BAOPHAT.set_value(0); 
         }
         else 
         {
@@ -347,7 +347,7 @@
 <script type="text/javascript">
     function onResponseEndNG() {
         if (typeof (result) != "undefined" && result && result != "") {
-            alert(result);
+            //alert(result);
             var arrayOfStrings = result.split(",-,");
             if (arrayOfStrings[0] != "msg") {
                 if (arrayOfStrings[0] != "") {
@@ -989,6 +989,9 @@
 <asp:SqlDataSource ID="UserDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
     SelectCommand="SELECT USERS.PK_ID,USERS.FK_GroupUser,USERS.FK_DEPT,USERS.C_LoginName,USERS.C_Password,USERS.C_NAME,USERS.C_Address,USERS.c_Tel,USERS.C_Email,USERS.C_DESC,GROUPUSER.C_NAME AS GROUPUSERNAME FROM USERS INNER JOIN GROUPUSER ON  USERS.FK_GROUPUSER = GROUPUSER.PK_ID WHERE FK_GROUPUSER NOT IN (0,1)">
 </asp:SqlDataSource>
-<asp:SqlDataSource ID="DOITACDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>" 
-    SelectCommand="SELECT [DMDOITAC].[PK_ID], [DMDOITAC].[C_CODE], [DMDOITAC].[C_NAME], [DMDOITAC].[C_ADDRESS], [DMDOITAC].[C_TEL], [DMDOITAC].[C_NGUOILIENHE] FROM [DMDOITAC]">
+<asp:SqlDataSource ID="DoiTacDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
+    SelectCommand="SELECT [PK_ID], [C_CODE], [C_NAME] FROM [DMDoiTac] WHERE [DMDOITAC].FK_VUNGLAMVIEC = @FK_VUNGLAMVIEC ORDER BY LTRIM([C_CODE])">
+    <SelectParameters>
+            <asp:SessionParameter Name="FK_VUNGLAMVIEC" Type="String" SessionField="VUNGLAMVIEC" />
+    </SelectParameters>
 </asp:SqlDataSource>

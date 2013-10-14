@@ -143,14 +143,16 @@
                     <telerik:RadNumericTextBox  ID="txtC_VALUE1" Width ="90%" Runat="server" Text='<%# Bind("C_VALUE1") %>'>
                             <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="1"/>
                     </telerik:RadNumericTextBox>            
+                    <asp:RequiredFieldValidator ID="rfvtxtC_VALUE1" runat="server" ErrorMessage="Mức chênh lệch không thể rỗng" ControlToValidate="txtC_VALUE1" SetFocusOnError="True" Display="Dynamic" ValidationGroup="G1"></asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
                  <td style =" width:150px;"> <span class="rtsTxtnew">% chênh lệch:</td>
                 <td colspan="4">
-                    <telerik:RadNumericTextBox  ID="RadNumericTextBox1" Width ="90%" Runat="server" Text='<%# Bind("C_VALUE2") %>'>
+                    <telerik:RadNumericTextBox  ID="txtC_VALUE2" Width ="90%" Runat="server" Text='<%# Bind("C_VALUE2") %>'>
                             <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="1"/>
-                    </telerik:RadNumericTextBox>            
+                    </telerik:RadNumericTextBox>
+                    <asp:RequiredFieldValidator ID="rfvtxtC_VALUE2" runat="server" ErrorMessage="% chênh lệch không thể rỗng" ControlToValidate="txtC_VALUE2" SetFocusOnError="True" Display="Dynamic" ValidationGroup="G1"></asp:RequiredFieldValidator>          
                 </td>
             </tr>
             </table>
@@ -225,7 +227,7 @@
             <asp:SessionParameter Name="FK_VUNGLAMVIEC" Type="String" SessionField="VUNGLAMVIEC" />
     </SelectParameters>
 </asp:SqlDataSource>
- <asp:SqlDataSource ID="NHOMKHACHHANGQTDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
+ <asp:SqlDataSource ID="NHOMKHACHHANGDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
  SelectCommand="SELECT DMNHOMKHACHHANG.* FROM DMNHOMKHACHHANG WHERE C_TYPE = N'Quốc tế' AND FK_VUNGLAMVIEC = @FK_VUNGLAMVIEC">
  <SelectParameters>
      <asp:SessionParameter Name="FK_VUNGLAMVIEC" Type="String" SessionField="VUNGLAMVIEC" />

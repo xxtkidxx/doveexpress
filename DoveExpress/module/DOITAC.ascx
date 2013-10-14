@@ -171,7 +171,7 @@
 <asp:SqlDataSource ID="DOITACDataSource" runat="server" 
     ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>" 
     DeleteCommand="DELETE FROM [DMDOITAC] WHERE [PK_ID] = @PK_ID" 
-    InsertCommand="INSERT INTO [DMDOITAC] ([C_CODE], [C_NAME], [C_ADDRESS], [C_TEL], [C_NGUOILIENHE]) VALUES (@C_CODE, @C_NAME, @C_ADDRESS, @C_TEL, @C_NGUOILIENHE)" 
+    InsertCommand="INSERT INTO [DMDOITAC] ([C_CODE], [C_NAME], [C_ADDRESS], [C_TEL], [C_NGUOILIENHE], [FK_VUNGLAMVIEC]) VALUES (@C_CODE, @C_NAME, @C_ADDRESS, @C_TEL, @C_NGUOILIENHE, @FK_VUNGLAMVIEC)" 
     SelectCommand="SELECT [DMDOITAC].[PK_ID], [DMDOITAC].[C_CODE], [DMDOITAC].[C_NAME], [DMDOITAC].[C_ADDRESS], [DMDOITAC].[C_TEL], [DMDOITAC].[C_NGUOILIENHE] FROM [DMDOITAC] WHERE [DMDOITAC].FK_VUNGLAMVIEC = @FK_VUNGLAMVIEC" 
     UpdateCommand="UPDATE [DMDOITAC] SET [C_CODE] = @C_CODE, [C_NAME] = @C_NAME, [C_ADDRESS] = @C_ADDRESS,[C_TEL] = @C_TEL,[C_NGUOILIENHE] = @C_NGUOILIENHE WHERE [PK_ID] = @PK_ID">
         <SelectParameters>
@@ -194,5 +194,6 @@
             <asp:Parameter Name="C_ADDRESS" Type="String" />
             <asp:Parameter Name="C_TEL" Type="String" />
             <asp:Parameter Name="C_NGUOILIENHE" Type="String" />
+            <asp:SessionParameter Name="FK_VUNGLAMVIEC" Type="String" SessionField="VUNGLAMVIEC" />
         </InsertParameters>
 </asp:SqlDataSource>

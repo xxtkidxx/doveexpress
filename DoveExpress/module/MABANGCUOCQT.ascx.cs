@@ -138,7 +138,15 @@ public partial class module_MABANGCUOCQT : System.Web.UI.UserControl
             Session["txtID"] = (txtID.Value != "") ? txtID.Value : "0";
             RadListBox RadListBoxNhomKhachHangRef = (RadListBox)editItem.FindControl("RadListBoxNhomKhachHangRef");
             HiddenField txtC_VALUE = (HiddenField)editItem.FindControl("txtC_VALUE");
+            RadNumericTextBox txtC_VALUE1 = (RadNumericTextBox)editItem.FindControl("txtC_VALUE1");
+            RadNumericTextBox txtC_VALUE2 = (RadNumericTextBox)editItem.FindControl("txtC_VALUE2");
             setItenforListBoxSelect(RadListBoxNhomKhachHangRef, txtC_VALUE.Value);
+            if (e.Item is GridEditFormInsertItem || e.Item is GridDataInsertItem)
+            {
+                // insert item
+                txtC_VALUE1.Text = "0";
+                txtC_VALUE2.Text = "0";
+            }
         }
         if (e.Item is GridDataItem)
         {
