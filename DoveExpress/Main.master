@@ -40,7 +40,7 @@
                    var popUpWidth = popUp.style.width.substr(0, popUp.style.width.indexOf("px"));
                    var popUpHeight = popUp.style.height.substr(0, popUp.style.height.indexOf("px"));
                    popUp.style.left = ((gridWidth - popUpWidth) / 2 + sender.get_element().offsetLeft).toString() + "px";
-                   popUp.style.top = "80px";
+                   popUp.style.top = "50px";
                }
                function PopUpShowingSmall(sender, eventArgs) {
                    var popUp = eventArgs.get_popUp();
@@ -49,7 +49,7 @@
                    var popUpWidth = popUp.style.width.substr(0, popUp.style.width.indexOf("px"));
                    var popUpHeight = popUp.style.height.substr(0, popUp.style.height.indexOf("px"));
                    popUp.style.left = ((gridWidth - popUpWidth) / 2 + sender.get_element().offsetLeft).toString() + "px";
-                   popUp.style.top = ((gridHeight - popUpHeight) / 2 + sender.get_element().offsetTop).toString() + "px";
+                   popUp.style.top = "50px"; //((gridHeight - popUpHeight) / 2 + sender.get_element().offsetTop).toString() + "px";
                }
                function controlkeypress(source, eventArgs) {
                    var c = eventArgs.get_keyCode();

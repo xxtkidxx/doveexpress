@@ -16,6 +16,9 @@
 <script type="text/javascript">
     var flag = false;
     var CUOCCHINH;
+    var CUOCCHINHTL;
+    var GIADOITAC;
+    var GIADOITACTL;
     function RowDblClick(sender, eventArgs) {
             var CanEdit = "<%=ITCLIB.Security.Security.CanEditModule("NHANGUIQT") %>";
             if ((eventArgs.get_tableView().get_name() == "MasterTableViewNHANGUIQT") && (CanEdit == "True")) {
@@ -165,7 +168,7 @@
     }
     var txtC_PHUPHIDOITAC;
     function OnClientLoadC_PHUPHIDOITAC(sender) {
-        txtC_GIADOITAC = sender;
+        txtC_PHUPHIDOITAC = sender;
     }
     function OnValueChangedtxtC_GIACUOC(sender, eventArgs) {
         txtPPXD.set_value(txtC_GIACUOC.get_value() * parseFloat(PPXD)/100);
@@ -312,11 +315,17 @@
     }
     function SetGiaCuoi() {
         flag = !flag;
+        var GIACHUAN;
+        if (!isTAILIEU) {
+            GIACHUAN = CUOCCHINH;                    
+        } else {
+            GIACHUAN = CUOCCHINHTL;     
+        }
         if (typeof (PPXD) == "undefined" || PPXD == "") {
                 PPXD = (txtPPXD.get_value() / txtC_GIACUOC.get_value()) * 100;
         }
-        if (typeof (CUOCCHINH) == "undefined" || CUOCCHINH == "") {
-                CUOCCHINH = txtC_GIACUOC.get_value();
+        if (typeof (GIACHUAN) == "undefined" || GIACHUAN == "") {
+                GIACHUAN = txtC_GIACUOC.get_value();
         }
         if (flag) {          
            txtC_GIACUOC.set_value(((txtC_TIENHANG.get_value() - txtC_BAOPHAT.get_value() - txtC_HENGIO.get_value() - txtC_COD.get_value() - txtC_KHAIGIA.get_value() - txtC_DONGGOI.get_value())/(100 + parseFloat(PPXD)))*100);
@@ -324,7 +333,7 @@
         }
         else 
         {
-            txtC_GIACUOC.set_value(CUOCCHINH);                  
+            txtC_GIACUOC.set_value(GIACHUAN);                  
         }
     }
     function cmbC_HINHTHUCTTClientSelectedIndexChangedHandler(sender, eventArgs) {
@@ -356,6 +365,27 @@
         } else
         {
             txtC_DATHU.set_value(0);
+        }
+        return false;
+    }
+    var isTAILIEU = false;
+    function cmbC_TAILIEUClientSelectedIndexChangedHandler(sender, eventArgs) {
+        if ( eventArgs.get_item().get_value() == 'Tài liệu')
+        {
+            isTAILIEU = true;
+            txtC_GIACUOC.set_value(CUOCCHINHTL);
+            txtC_GIADOITAC.set_value(GIADOITACTL);  
+
+        } else if ( eventArgs.get_item().get_value() == 'Không phải tài liệu')
+        {
+            isTAILIEU = false;
+            txtC_GIACUOC.set_value(CUOCCHINH);
+            txtC_GIADOITAC.set_value(GIADOITAC);  
+        } else
+        {
+            isTAILIEU = false;
+            txtC_GIACUOC.set_value(CUOCCHINH);
+            txtC_GIADOITAC.set_value(GIADOITAC);  
         }
         return false;
     }
@@ -363,7 +393,7 @@
 <script type="text/javascript">
     function onResponseEndNG() {
         if (typeof (result) != "undefined" && result && result != "") {
-            //alert(result);
+            //alert(result);           
             var arrayOfStrings = result.split(",-,");
             if (arrayOfStrings[0] != "msg") {
                 if (arrayOfStrings[0] != "") {
@@ -378,12 +408,22 @@
                     checkKH = false;
                 }
                 PPXD = arrayOfStrings[3];
-                txtC_GIACUOC.set_value(arrayOfStrings[4]);
                 CUOCCHINH = arrayOfStrings[4];
-                txtC_GIADOITAC.set_value(arrayOfStrings[5]);
+                CUOCCHINHTL = arrayOfStrings[5];
+                GIADOITAC = arrayOfStrings[6];
+                GIADOITACTL = arrayOfStrings[7];
+                if (!isTAILIEU) {
+                    txtC_GIACUOC.set_value(CUOCCHINH);
+                    txtC_GIADOITAC.set_value(GIADOITAC);
+                } else {
+                    txtC_GIACUOC.set_value(CUOCCHINHTL);
+                    txtC_GIADOITAC.set_value(GIADOITACTL);
+                }
             }
             else {
                 alert(arrayOfStrings[1]);
+                txtC_GIACUOC.set_value(0);
+                txtC_GIADOITAC.set_value(0);
                 if (checkKH) {
                     txtC_TENKH.set_value(arrayOfStrings[2]);
                     txtC_TELGUI.set_value(arrayOfStrings[3]);
@@ -593,7 +633,13 @@
                     </telerik:RadNumericTextBox>
                     <asp:RequiredFieldValidator ID="rfvCODE" runat="server" ErrorMessage="Số Bill không thể rỗng" ControlToValidate="txtCODE" SetFocusOnError="True" Display="Dynamic" ValidationGroup="G1"></asp:RequiredFieldValidator>
                     <asp:CustomValidator ID="cuvCODE" ControlToValidate="txtCODE" OnServerValidate="CheckBill" runat="server" ErrorMessage="Số Bill đã tồn tại" Display="Dynamic" ValidationGroup="G1"></asp:CustomValidator>
-                </td>               
+                </td> 
+                <td style ="width:100px;"> <span class="rtsTxtnew">Tỷ giá:</span></td>
+                <td colspan="4">
+                    <telerik:RadNumericTextBox ID="txtTYGIA" Width ="90%" runat="server">
+                        <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
+                    </telerik:RadNumericTextBox>
+                </td>              
             </tr>
             <tr>
                 <td style ="width:100px;"> <span class="rtsTxtnew">Mã khách hàng:</span></td>
@@ -654,7 +700,7 @@
                 </td>
                  <td style =" width:100px;"> <span class="rtsTxtnew">Loại hàng hoá:</span></td>
                 <td colspan="4">
-                 <telerik:RadComboBox ID="cmbC_TAILIEU" SelectedValue='<%# Bind("C_TAILIEU") %>' runat="server" EmptyMessage="Chọn">
+                 <telerik:RadComboBox ID="cmbC_TAILIEU" SelectedValue='<%# Bind("C_TAILIEU") %>' runat="server" EmptyMessage="Chọn" onclientselectedindexchanged="cmbC_TAILIEUClientSelectedIndexChangedHandler">
                             <Items>
                                 <telerik:RadComboBoxItem Value ="Tài liệu" Text ="Tài liệu" />
                                 <telerik:RadComboBoxItem Value ="Không phải tài liệu" Text ="Không phải tài liệu" />
