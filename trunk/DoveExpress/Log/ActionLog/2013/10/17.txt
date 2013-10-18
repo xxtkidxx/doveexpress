@@ -1,0 +1,66 @@
+Thời gian: 2013-10-17 21:42:32 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-10-17 21:42:53 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted NHANGUIQTs
+Kết quả : {PK_ID:"416"}
+__________________________
+Thời gian: 2013-10-17 21:43:09 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIQTs
+Kết quả : {PK_ID:"416",C_BILL:"378862"}
+__________________________
+Thời gian: 2013-10-17 21:51:13 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted NHANGUIQTs
+Kết quả : {PK_ID:"417"}
+__________________________
+Thời gian: 2013-10-17 21:51:22 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIQTs
+Kết quả : {PK_ID:"417",C_BILL:"378862"}
+__________________________
+Thời gian: 2013-10-17 21:51:34 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIQTs
+Kết quả : {PK_ID:"417",C_BILL:"378862"}
+__________________________
+Thời gian: 2013-10-17 22:28:00 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-10-17 23:01:54 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-10-17 23:03:11 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted NHANGUIQTs
+Kết quả : {PK_ID:"418"}
+__________________________
+Thời gian: 2013-10-17 23:22:37 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIQTs
+Kết quả : {PK_ID:"418",C_BILL:"378862"}
+__________________________
+Thời gian: 2013-10-17 23:22:54 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIQTs
+Kết quả : {PK_ID:"418",C_BILL:"378862"}
+__________________________
