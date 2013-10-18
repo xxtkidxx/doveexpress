@@ -16,9 +16,6 @@
 <script type="text/javascript">
     var flag = false;
     var CUOCCHINH;
-    var CUOCCHINHTL;
-    var GIADOITAC;
-    var GIADOITACTL;
     function RowDblClick(sender, eventArgs) {
             var CanEdit = "<%=ITCLIB.Security.Security.CanEditModule("NHANGUIQT") %>";
             if ((eventArgs.get_tableView().get_name() == "MasterTableViewNHANGUIQT") && (CanEdit == "True")) {
@@ -353,17 +350,11 @@
     }
     function SetGiaCuoi() {
         flag = !flag;
-        var GIACHUAN;
-        if (!isTAILIEU) {
-            GIACHUAN = CUOCCHINH;                    
-        } else {
-            GIACHUAN = CUOCCHINHTL;     
-        }
         if (typeof (PPXD) == "undefined" || PPXD == "") {
                 PPXD = (txtPPXD.get_value() / txtC_GIACUOC.get_value()) * 100;
         }
-        if (typeof (GIACHUAN) == "undefined" || GIACHUAN == "") {
-                GIACHUAN = txtC_GIACUOC.get_value();
+        if (typeof (CUOCCHINH) == "undefined" || CUOCCHINH == "") {
+                CUOCCHINH = txtC_GIACUOC.get_value();
         }
         if (flag) {          
            txtC_GIACUOC.set_value(((txtC_TIENHANG.get_value() - txtC_BAOPHAT.get_value() - txtC_HENGIO.get_value() - txtC_COD.get_value() - txtC_KHAIGIA.get_value() - txtC_DONGGOI.get_value())/(100 + parseFloat(PPXD)))*100);
@@ -371,7 +362,7 @@
         }
         else 
         {
-            txtC_GIACUOC.set_value(GIACHUAN);                  
+            txtC_GIACUOC.set_value(CUOCCHINH);                  
         }
     }
     function cmbC_HINHTHUCTTClientSelectedIndexChangedHandler(sender, eventArgs) {
@@ -390,25 +381,11 @@
         }
         return false;
     }
-    var isTAILIEU = false;
     function cmbC_TAILIEUClientSelectedIndexChangedHandler(sender, eventArgs) {
-        if ( eventArgs.get_item().get_value() == 'Tài liệu')
-        {
-            isTAILIEU = true;
-            txtC_GIACUOC.set_value(CUOCCHINHTL);
-            txtC_GIADOITAC.set_value(GIADOITACTL);  
-
-        } else if ( eventArgs.get_item().get_value() == 'Không phải tài liệu')
-        {
-            isTAILIEU = false;
-            txtC_GIACUOC.set_value(CUOCCHINH);
-            txtC_GIADOITAC.set_value(GIADOITAC);  
-        } else
-        {
-            isTAILIEU = false;
-            txtC_GIACUOC.set_value(CUOCCHINH);
-            txtC_GIADOITAC.set_value(GIADOITAC);  
-        }
+        $find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("cmbC_TAILIEU;" + eventArgs.get_item().get_value());
+        var currentLoadingPanel = $find("<%= RadAjaxLoadingPanelNHANGUIQT.ClientID %>");
+        var currentUpdatedControl = "<%= RadGridNHANGUIQT.ClientID %>"; 
+        currentLoadingPanel.show(currentUpdatedControl);
         return false;
     }
 </script>
@@ -431,16 +408,8 @@
                 }
                 PPXD = arrayOfStrings[3];
                 CUOCCHINH = arrayOfStrings[4];
-                CUOCCHINHTL = arrayOfStrings[5];
-                GIADOITAC = arrayOfStrings[6];
-                GIADOITACTL = arrayOfStrings[7];
-                if (!isTAILIEU) {
-                    txtC_GIACUOC.set_value(CUOCCHINH);
-                    txtC_GIADOITAC.set_value(GIADOITAC);
-                } else {
-                    txtC_GIACUOC.set_value(CUOCCHINHTL);
-                    txtC_GIADOITAC.set_value(GIADOITACTL);
-                }
+                txtC_GIACUOC.set_value(arrayOfStrings[4]);
+                txtC_GIADOITAC.set_value(arrayOfStrings[5]);
             }
             else {
                 alert(arrayOfStrings[1]);
@@ -898,7 +867,7 @@
                             <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="2"/>
                     </telerik:RadNumericTextBox> = 
                     <telerik:RadNumericTextBox  ID="txtC_LOINHUANVND" Width ="45%" Runat="server" ClientEvents-OnLoad="OnClientLoadtxtC_LOINHUANVND">
-                            <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="2"/>
+                            <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
                     </telerik:RadNumericTextBox> VNĐ
                 </td>
             </tr
