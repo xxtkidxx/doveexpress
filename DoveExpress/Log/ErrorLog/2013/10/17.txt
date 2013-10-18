@@ -1,0 +1,15 @@
+Thời gian lỗi : 2013-10-17 22:48:23 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUIQT. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\module\NHANGUIQT.ascx.cs(743): error CS1519: Invalid token 'if' in class, struct, or interface member declaration
+__________________________
+Thời gian lỗi : 2013-10-17 22:59:42 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUIQT. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-10-17 23:00:20 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUIQT. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\module\NHANGUIQT.ascx.cs(924): error CS0103: The name 'txtTYGIA' does not exist in the current context
+__________________________
