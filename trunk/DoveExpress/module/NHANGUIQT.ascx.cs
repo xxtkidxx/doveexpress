@@ -655,7 +655,7 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
             RadNumericTextBox txtC_LOINHUAN = (RadNumericTextBox)editItem.FindControl("txtC_LOINHUAN");
             txtC_LOINHUAN.Text = (txtC_LOINHUAN.Text == "") ? "0" : txtC_LOINHUAN.Text;
             RadNumericTextBox txtC_LOINHUANVND = (RadNumericTextBox)editItem.FindControl("txtC_LOINHUANVND");
-            txtC_LOINHUANVND.Text = (txtC_LOINHUAN.Text == "") ? "0" : txtC_LOINHUANVND.Text;
+            txtC_LOINHUANVND.Text = (txtC_LOINHUANVND.Text == "") ? "0" : txtC_LOINHUANVND.Text;
             RadComboBox cmbFK_DOITAC = (RadComboBox)editItem.FindControl("cmbFK_DOITAC");
             RadComboBox cmbFK_DICHVUDOITAC = (RadComboBox)editItem.FindControl("cmbFK_DICHVUDOITAC");
             if (e.Item is GridEditFormInsertItem || e.Item is GridDataInsertItem)
