@@ -64,7 +64,8 @@ public partial class Report : System.Web.UI.Page
                 reportSource.Parameters.Add("C_DONGGOI", oDataTable.Rows[0]["C_DONGGOI"] != DBNull.Value ? oDataTable.Rows[0]["C_DONGGOI"].ToString() : "");
                 reportSource.Parameters.Add("C_KHAIGIA", oDataTable.Rows[0]["C_KHAIGIA"] != DBNull.Value ? oDataTable.Rows[0]["C_KHAIGIA"].ToString() : "");
                 reportSource.Parameters.Add("C_COD", oDataTable.Rows[0]["C_COD"] != DBNull.Value ? oDataTable.Rows[0]["C_COD"].ToString() : "");
-                reportSource.Parameters.Add("C_KHAC", oDataTable.Rows[0]["C_KHAC"] != DBNull.Value ? oDataTable.Rows[0]["C_KHAC"].ToString() : "");        
+                reportSource.Parameters.Add("C_BAOPHAT", oDataTable.Rows[0]["C_BAOPHAT"] != DBNull.Value ? oDataTable.Rows[0]["C_BAOPHAT"].ToString() : "");
+                reportSource.Parameters.Add("C_HENGIO", oDataTable.Rows[0]["C_HENGIO"] != DBNull.Value ? oDataTable.Rows[0]["C_HENGIO"].ToString() : "");        
                 reportSource.Parameters.Add("C_TIENHANG", oDataTable.Rows[0]["C_TIENHANG"] != DBNull.Value ? oDataTable.Rows[0]["C_TIENHANG"].ToString() : "");
                 reportSource.Parameters.Add("C_VAT", oDataTable.Rows[0]["C_VAT"] != DBNull.Value ? oDataTable.Rows[0]["C_VAT"].ToString() : "");
                 reportSource.Parameters.Add("C_TIENHANGVAT", oDataTable.Rows[0]["C_TIENHANGVAT"] != DBNull.Value ? oDataTable.Rows[0]["C_TIENHANGVAT"].ToString() : "");
@@ -148,7 +149,8 @@ public partial class Report : System.Web.UI.Page
                 reportSource.Parameters.Add("C_DONGGOI", oDataTable.Rows[0]["C_DONGGOI"] != DBNull.Value ? oDataTable.Rows[0]["C_DONGGOI"].ToString() : "");
                 reportSource.Parameters.Add("C_KHAIGIA", oDataTable.Rows[0]["C_KHAIGIA"] != DBNull.Value ? oDataTable.Rows[0]["C_KHAIGIA"].ToString() : "");
                 reportSource.Parameters.Add("C_COD", oDataTable.Rows[0]["C_COD"] != DBNull.Value ? oDataTable.Rows[0]["C_COD"].ToString() : "");
-                reportSource.Parameters.Add("C_KHAC", oDataTable.Rows[0]["C_KHAC"] != DBNull.Value ? oDataTable.Rows[0]["C_KHAC"].ToString() : "");
+                reportSource.Parameters.Add("C_BAOPHAT", oDataTable.Rows[0]["C_BAOPHAT"] != DBNull.Value ? oDataTable.Rows[0]["C_BAOPHAT"].ToString() : "");
+                reportSource.Parameters.Add("C_HENGIO", oDataTable.Rows[0]["C_HENGIO"] != DBNull.Value ? oDataTable.Rows[0]["C_HENGIO"].ToString() : "");   
                 reportSource.Parameters.Add("C_TIENHANG", oDataTable.Rows[0]["C_TIENHANG"] != DBNull.Value ? oDataTable.Rows[0]["C_TIENHANG"].ToString() : "");
                 reportSource.Parameters.Add("C_VAT", oDataTable.Rows[0]["C_VAT"] != DBNull.Value ? oDataTable.Rows[0]["C_VAT"].ToString() : "");
                 reportSource.Parameters.Add("C_TIENHANGVAT", oDataTable.Rows[0]["C_TIENHANGVAT"] != DBNull.Value ? oDataTable.Rows[0]["C_TIENHANGVAT"].ToString() : "");

@@ -12,6 +12,11 @@
             alert("Không có phiếu nhận gửi được chọn");
         }
     }
+    function PrintOnClientLinkClickedEdit(IDNHANGUI) {
+        var url = "Report.aspx?TYPE=INBILL&ID=" + IDNHANGUI;
+        window.open(url, '_blank');
+        window.focus();
+    }
 </script>
 <script type="text/javascript">
     var flag = false;
@@ -471,11 +476,11 @@ table.gridtable {
 	border-color: #666666;
 	border-collapse: collapse;
 	width:20%;
-	margin: 10px 10px 10px 10px;
+	margin: 5px 5px 5px 5px;
 }
 table.gridtable th {
 	border-width: 1px;
-	padding: 8px;
+	padding: 5px;
 	font-weight: bold;
 	border-style: solid;
 	border-color: #666666;
@@ -483,7 +488,7 @@ table.gridtable th {
 }
 table.gridtable td {
 	border-width: 1px;
-	padding: 8px;
+	padding: 5px;
 	border-style: solid;
 	border-color: #666666;
 	background-color: #ffffff;
@@ -506,7 +511,7 @@ table.gridtable td {
 <telerik:RadGrid ID="RadGridNHANGUIQT" runat="server" Skin="Vista" 
     AllowPaging="True" PageSize="20" AllowSorting="True" 
     AllowFilteringByColumn="True" GridLines="None" ShowStatusBar="True"
-    AutoGenerateColumns="False"  
+    AutoGenerateColumns="False"  AllowMultiRowSelection="True"
     AllowMultiRowEdit="True" AllowAutomaticDeletes="True" 
     AllowAutomaticInserts="True" AllowAutomaticUpdates="True" 
     DataSourceID="NHANGUIQTDataSource" ShowFooter="True"
@@ -530,6 +535,7 @@ table.gridtable td {
                         <asp:LinkButton ID="LinkButton3" runat="server" CommandName="PerformInsert" Visible='<%# RadGridNHANGUIQT.MasterTableView.IsItemInserted %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Insert.gif" />Lưu</asp:LinkButton>&nbsp;&nbsp;
                         <asp:LinkButton ID="LinkButton1" OnClientClick="javascript:return confirm('Bạn có muốn xóa bản ghi đã chọn không?')" runat="server" CommandName="DeleteSelected" Visible='<%# ITCLIB.Security.Security.CanDeleteModule("NHANGUIQT") %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Delete.gif" />Xóa</asp:LinkButton>&nbsp;&nbsp;
                         <asp:LinkButton ID="btXuatbaocao" runat="server" OnClientClick ='<%# String.Format("javascript:return PrintOnClientLinkClicked()")%>' ><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/img_OpenPanel.gif" />Xuất phiếu</asp:LinkButton>&nbsp;&nbsp;
+                        <asp:LinkButton ID="LinkButton5" runat="server" OnClientClick="javascript:return confirm('Bạn có muốn xác nhận các Bill này đã thanh toán không?')" CommandName="ConfirmPayment"><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/img_OpenPanel.gif" />Xác nhận đã thanh toán</asp:LinkButton>&nbsp;&nbsp;
                        <asp:LinkButton ID="LinkButton4" runat="server" CommandName="RebindGrid"><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Refresh.gif" />Làm mới</asp:LinkButton>
                     </div>
                     <div style="padding: 5px 5px;float:right;width:auto">
@@ -540,6 +546,7 @@ table.gridtable td {
                     </div>
         </CommandItemTemplate>
         <Columns>
+                <telerik:GridClientSelectColumn UniqueName="ClientSelectColumn" HeaderStyle-Width="40px" HeaderStyle-HorizontalAlign="Center" ItemStyle-HorizontalAlign="Center"></telerik:GridClientSelectColumn>
                 <telerik:GridBoundColumn UniqueName="PK_ID" HeaderText="" DataField="PK_ID" Visible ="false"
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
                 </telerik:GridBoundColumn>
@@ -649,7 +656,8 @@ table.gridtable td {
             <div class="headerthongtin">
               <ul>
                 <li class="lifirst"><asp:LinkButton ID="btnSave" runat="server" CommandName='<%# (Container is GridEditFormInsertItem) ? "PerformInsert" : "Update" %>'><img src="Images/img_save.jpg" /><%# (Container is GridEditFormInsertItem) ? "Lưu" : "Lưu" %></asp:LinkButton></li>
-                     <li><asp:LinkButton ID="btnClose" runat="server" CommandName="Cancel"><img src="Images/img_Close.jpg" />Đóng</asp:LinkButton></li>                     
+                <li><asp:LinkButton ID="btnClose" runat="server" CommandName="Cancel"><img src="Images/img_Close.jpg" />Đóng</asp:LinkButton></li>                     
+                <li><asp:LinkButton ID="btXuatbaocao" runat="server"  Visible='<%# !(Container is GridEditFormInsertItem) %>' OnClientClick ='<%# String.Format("javascript:return PrintOnClientLinkClickedEdit({0})",Eval("PK_ID")) %>' ><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/img_OpenPanel.gif" />Xuất phiếu</asp:LinkButton></li> 
               </ul>
             </div>               
             <div class="clearfix bgpopup"> 
@@ -972,7 +980,7 @@ table.gridtable td {
             <Selecting AllowRowSelect="True" EnableDragToSelectRows="True" />
             <ClientEvents OnPopUpShowing="PopUpShowing" />
             <ClientEvents OnRowDblClick="RowDblClick" />
-            <Scrolling AllowScroll="True" UseStaticHeaders="True" SaveScrollPosition="True" FrozenColumnsCount="3" ScrollHeight="450px" />
+            <Scrolling AllowScroll="True" UseStaticHeaders="True" SaveScrollPosition="True" FrozenColumnsCount="3" ScrollHeight="400px" />
         </ClientSettings>
         <SortingSettings SortedAscToolTip="Sắp xếp tăng dần" 
             SortedDescToolTip="Sắp xếp giảm dần" SortToolTip="Click để sắp xếp" />
