@@ -653,6 +653,27 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
         {
             GridEditableItem editItem = (GridEditableItem)e.Item;
         }
+        if (e.CommandName == "ConfirmPayment")
+        {
+            if (RadGridNHANGUI.SelectedIndexes.Count == 0)
+            {
+                SetMessage("Không có bản ghi được chọn!");
+            }
+            else
+            {
+                string UpdateSQL = "";
+                foreach (GridDataItem item in RadGridNHANGUI.SelectedItems)
+                {
+                    string TIENHANG = (item["C_TIENHANGVAT"].Text.Trim() == "") ? "0" : item["C_TIENHANGVAT"].Text.Trim();
+                    TIENHANG = TIENHANG.Replace(" ", "");
+                    UpdateSQL += "UPDATE [NHANGUI] SET [C_DATHU] = " + TIENHANG + " WHERE [C_BILL] = '" + item["C_BILL"].Text.Trim() + "';UPDATE [SOQUYTIENMAT] SET [C_SOTIEN] = " + TIENHANG + " WHERE [C_BILL] = '" + item["C_BILL"].Text.Trim() + "';";
+                }
+                ITCLIB.Admin.SQL UpdateQuery = new ITCLIB.Admin.SQL();
+                UpdateQuery.ExecuteNonQuery(UpdateSQL);
+            }
+            SetMessage("Cập nhật tình trạng thanh toán thành công");
+            RadGridNHANGUI.Rebind();
+        }
     }
     protected string getmaxid(string table)
     {
@@ -1003,7 +1024,8 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
     }
     protected void Button1_Click(object sender, EventArgs e)
     {
-        ITCLIB.Admin.JavaScript.ShowMessage(Session["t"].ToString(), this);
+        //TextBox1.Text = Session["t"].ToString();
+        //ITCLIB.Admin.JavaScript.ShowMessage(Session["t"].ToString(), this);
     }
     protected void txtBillNhanh_TextChanged(object sender, EventArgs e)
     {
