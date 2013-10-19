@@ -1005,4 +1005,10 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
     {
         ITCLIB.Admin.JavaScript.ShowMessage(Session["t"].ToString(), this);
     }
+    protected void txtBillNhanh_TextChanged(object sender, EventArgs e)
+    {
+        string InsertSQL = "INSERT INTO [NHANGUI] ([C_NGAY], [C_BILL], [C_TYPE],[FK_VUNGLAMVIEC]) VALUES ('" + System.DateTime.Now + "','" + txtBillNhanh.Text + "', 1,N'" + Session["VUNGLAMVIEC"].ToString() + "');INSERT INTO [SOQUYTIENMAT] ([C_NGAY], [C_TYPE], [FK_KIHIEUTAIKHOAN], [C_DESC], [C_SOTIEN], [C_BILL],[C_TON],[C_ORDER],[FK_VUNGLAMVIEC]) VALUES ('" + System.DateTime.Now + "',N'Thu',NULL, N'Bill ' + '" + txtBillNhanh.Text + "',0 ,'" + txtBillNhanh.Text + "',0,1,N'" + Session["VUNGLAMVIEC"].ToString() + "')";
+        ITCLIB.Admin.SQL InsertQuery = new ITCLIB.Admin.SQL();
+        InsertQuery.ExecuteNonQuery(InsertSQL);
+    }
 }
