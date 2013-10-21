@@ -1,0 +1,115 @@
+Thời gian lỗi : 2013-10-20 00:02:29 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUIQT. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\module\NHANGUIQT.ascx.cs(836): error CS1002: ; expected
+__________________________
+Thời gian lỗi : 2013-10-20 00:02:48 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUIQT. 
+Nội dung lỗi:Input string was not in a correct format.
+__________________________
+Thời gian lỗi : 2013-10-20 00:18:34 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:The server tag is not well formed.
+__________________________
+Thời gian lỗi : 2013-10-20 00:18:35 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:The server tag is not well formed.
+__________________________
+Thời gian lỗi : 2013-10-20 00:18:36 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:The server tag is not well formed.
+__________________________
+Thời gian lỗi : 2013-10-20 00:18:38 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:The server tag is not well formed.
+__________________________
+Thời gian lỗi : 2013-10-20 00:20:30 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Report.aspx?TYPE=INBILLQT&ID=418. 
+Nội dung lỗi:Column 'C_KHAC' does not belong to table .
+__________________________
+Thời gian lỗi : 2013-10-20 00:21:41 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Report.aspx?TYPE=INBILL&ID=249. 
+Nội dung lỗi:Column 'C_KHAC' does not belong to table .
+__________________________
+Thời gian lỗi : 2013-10-20 00:21:54 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Report.aspx?TYPE=INBILL&ID=249. 
+Nội dung lỗi:Column 'C_KHAC' does not belong to table .
+__________________________
+Thời gian lỗi : 2013-10-20 00:39:52 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/Update.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-10-20 00:39:52 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/Edit.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\10\20.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-10-20 00:39:52 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/Cancel.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-10-20 00:39:52 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/AddRecord.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\10\20.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-10-20 00:39:52 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/Insert.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-10-20 00:39:52 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/Delete.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\10\20.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-10-20 00:39:52 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/img_OpenPanel.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-10-20 00:39:52 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/Refresh.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-10-20 00:39:52 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/pdf.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-10-20 00:39:52 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/word.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-10-20 00:39:52 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/excel.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-10-20 00:39:52 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/csv.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-10-20 00:39:52 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/img_save.jpg. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-10-20 00:39:52 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/img_Close.jpg. 
+Nội dung lỗi:File does not exist.
+__________________________

@@ -14,7 +14,7 @@ public partial class Main : System.Web.UI.MasterPage
         {
             ITCLIB.Security.User user = new ITCLIB.Security.User();
             user = (ITCLIB.Security.User)Session["User"];
-            lblFullName.Text = "Người dùng: <b>" + user.UserName + "</b>";
+            lblFullName.Text = "Người dùng: <b>" + user.UserName + "</b>" + " | " + "Vùng làm việc: <b>" + Session["VUNGLAMVIEC"] + "</b>";
             Control control = new Control();
             if (Request.QueryString["ctl"] != null)
             {
