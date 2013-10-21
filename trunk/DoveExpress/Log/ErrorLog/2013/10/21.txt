@@ -1,0 +1,30 @@
+Thời gian lỗi : 2013-10-21 21:02:53 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Incorrect syntax near ','.
+__________________________
+Thời gian lỗi : 2013-10-21 21:02:54 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Incorrect syntax near ','.
+__________________________
+Thời gian lỗi : 2013-10-21 21:02:54 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Incorrect syntax near ','.
+__________________________
+Thời gian lỗi : 2013-10-21 21:02:55 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Incorrect syntax near ','.
+__________________________
+Thời gian lỗi : 2013-10-21 21:03:27 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Incorrect syntax near ','.
+__________________________
+Thời gian lỗi : 2013-10-21 21:06:47 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Attempted to divide by zero.
+__________________________
