@@ -1,0 +1,186 @@
+Thời gian lỗi : 2013-10-19 13:46:14 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/Edit.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-10-19 13:46:14 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/Update.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\10\19.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-10-19 13:46:15 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/Cancel.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-10-19 13:46:15 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/AddRecord.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\10\19.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-10-19 13:46:15 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/Insert.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-10-19 13:46:15 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/Delete.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\10\19.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-10-19 13:46:15 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/img_OpenPanel.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-10-19 13:46:15 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/Refresh.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-10-19 13:46:15 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/pdf.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-10-19 13:46:15 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/word.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\10\19.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-10-19 13:46:15 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/excel.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-10-19 13:46:15 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/csv.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-10-19 13:46:15 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/img_save.jpg. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-10-19 13:46:15 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/img_Close.jpg. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\Log\ErrorLog\2013\10\19.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-10-19 14:18:55 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Lỗi truy vấn cơ sở dữ liệuIncorrect syntax near '2'.
+Incorrect syntax near '2'.
+__________________________
+Thời gian lỗi : 2013-10-19 14:19:00 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Lỗi truy vấn cơ sở dữ liệuIncorrect syntax near '2'.
+Incorrect syntax near '2'.
+__________________________
+Thời gian lỗi : 2013-10-19 14:19:09 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Lỗi truy vấn cơ sở dữ liệuIncorrect syntax near '2'.
+Incorrect syntax near '2'.
+__________________________
+Thời gian lỗi : 2013-10-19 14:19:13 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Lỗi truy vấn cơ sở dữ liệuIncorrect syntax near '2'.
+Incorrect syntax near '2'.
+__________________________
+Thời gian lỗi : 2013-10-19 14:19:18 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Lỗi truy vấn cơ sở dữ liệuIncorrect syntax near '2'.
+Incorrect syntax near '2'.
+__________________________
+Thời gian lỗi : 2013-10-19 14:19:26 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Lỗi truy vấn cơ sở dữ liệuIncorrect syntax near '2'.
+Incorrect syntax near '2'.
+__________________________
+Thời gian lỗi : 2013-10-19 14:19:27 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Lỗi truy vấn cơ sở dữ liệuIncorrect syntax near '2'.
+Incorrect syntax near '2'.
+__________________________
+Thời gian lỗi : 2013-10-19 14:19:28 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Lỗi truy vấn cơ sở dữ liệuIncorrect syntax near '2'.
+Incorrect syntax near '2'.
+__________________________
+Thời gian lỗi : 2013-10-19 14:20:00 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Lỗi truy vấn cơ sở dữ liệuIncorrect syntax near '2'.
+Incorrect syntax near '2'.
+__________________________
+Thời gian lỗi : 2013-10-19 14:20:46 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Lỗi truy vấn cơ sở dữ liệuIncorrect syntax near '2'.
+Incorrect syntax near '2'.
+__________________________
+Thời gian lỗi : 2013-10-19 23:31:45 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Lỗi truy vấn cơ sở dữ liệuIncorrect syntax near '000'.
+Incorrect syntax near '000'.
+__________________________
+Thời gian lỗi : 2013-10-19 23:32:21 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Lỗi truy vấn cơ sở dữ liệuIncorrect syntax near '000'.
+Incorrect syntax near '000'.
+__________________________
+Thời gian lỗi : 2013-10-19 23:33:08 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Lỗi truy vấn cơ sở dữ liệuIncorrect syntax near '&'.
+__________________________
+Thời gian lỗi : 2013-10-19 23:34:29 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Lỗi truy vấn cơ sở dữ liệuIncorrect syntax near '&'.
+__________________________
+Thời gian lỗi : 2013-10-19 23:45:47 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Lỗi truy vấn cơ sở dữ liệuCannot convert a char value to money. The char value has incorrect syntax.
+__________________________
+Thời gian lỗi : 2013-10-19 23:46:40 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Lỗi truy vấn cơ sở dữ liệuIncorrect syntax near '000'.
+Incorrect syntax near '000'.
+__________________________
+Thời gian lỗi : 2013-10-19 23:47:44 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Input string was not in a correct format.
+__________________________
+Thời gian lỗi : 2013-10-19 23:58:10 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUIQT. 
+Nội dung lỗi:Lỗi truy vấn cơ sở dữ liệuIncorrect syntax near 'USD'.
+Incorrect syntax near 'USD'.
+__________________________
+Thời gian lỗi : 2013-10-19 23:58:28 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUIQT. 
+Nội dung lỗi:Lỗi truy vấn cơ sở dữ liệuIncorrect syntax near 'USD'.
+Incorrect syntax near 'USD'.
+__________________________
+Thời gian lỗi : 2013-10-19 23:59:15 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUIQT. 
+Nội dung lỗi:Lỗi truy vấn cơ sở dữ liệuIncorrect syntax near 'USD'.
+Incorrect syntax near 'USD'.
+__________________________

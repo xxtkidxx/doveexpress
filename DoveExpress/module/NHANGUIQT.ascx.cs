@@ -816,6 +816,16 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
         {
             GridEditableItem editItem = (GridEditableItem)e.Item;          
         }
+        else if (e.CommandName == RadGrid.CancelAllCommandName)
+        {
+            GridEditableItem editItem = (GridEditableItem)e.Item;
+            ClearSession();
+        }
+        else if (e.CommandName == RadGrid.CancelCommandName)
+        {
+            GridEditableItem editItem = (GridEditableItem)e.Item;
+            ClearSession();
+        }
         else if (e.CommandName == "ConfirmPayment")
         {
             if (RadGridNHANGUIQT.SelectedIndexes.Count == 0)
@@ -963,7 +973,7 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
                 //Theo KG
                 if (ctcDataTable1.Rows.Count == 1)
                 {
-                    CUOCCHINH = decimal.Parse(ctcDataTable.Rows[0]["C_CUOCPHI"].ToString(), NumberStyles.Currency) * C_KHOILUONG / 1000;
+                    CUOCCHINH = decimal.Parse(ctcDataTable1.Rows[0]["C_CUOCPHI"].ToString(), NumberStyles.Currency) * C_KHOILUONG / 1000;
                     CUOCCHINH = CUOCCHINH + (CUOCCHINH * C_VALUE2) / 100;
                 }
                 else
