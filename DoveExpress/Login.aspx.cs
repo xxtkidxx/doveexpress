@@ -84,7 +84,7 @@ public partial class Login : System.Web.UI.Page
             sUser.Userid = (int)oDataTable.Rows[0]["PK_ID"];
             sUser.LoginName = user;
             sUser.UserName = oDataTable.Rows[0]["C_NAME"].ToString();
-            Session.Timeout = 15;
+            //Session.Timeout = 5;
             Session["User"] = sUser;           
             Session["UserID"] = (int)oDataTable.Rows[0]["PK_ID"];
             Session["GroupUser"] = (int)oDataTable.Rows[0]["FK_GROUPUSER"];

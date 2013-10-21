@@ -75,6 +75,14 @@
               }
             }
            </script>
+           <script type="text/javascript">
+                function heartBeat() {
+                    $.get("KeepAlive.aspx?", function (data) {});
+                }
+                $(function () {
+                    setInterval("heartBeat()", 1000 * 30); // 38s gửi request một lần
+                });
+        </script>
         </telerik:RadCodeBlock>       
 <div class="admin_banner clearfix">
    <div class ="admin_header">
