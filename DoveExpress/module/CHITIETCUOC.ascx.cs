@@ -41,7 +41,7 @@ public partial class module_CHITIETCUOC : System.Web.UI.UserControl
         string[] arrayvalue = e.Argument.Split(',');
         if (arrayvalue[0] == "SelectedCTC")
         {
-            UpdateDefault(arrayvalue[1], arrayvalue[2]);
+            UpdateDefault(arrayvalue[1], arrayvalue[2], arrayvalue[3]);
             string script = string.Format("var result = '{0}'", "SelectedCTC," + arrayvalue[2]);
             ScriptManager.RegisterClientScriptBlock(Page, typeof(Page), "result", script, true);           
         }
@@ -73,10 +73,18 @@ public partial class module_CHITIETCUOC : System.Web.UI.UserControl
             ScriptManager.RegisterClientScriptBlock(Page, typeof(Page), "result", script, true);     
         }
     }
-    protected void UpdateDefault(string ID,string FK_MAVUNG)
+    protected void UpdateDefault(string ID, string FK_MAVUNG, string C_TYPE)
     {
         ITCLIB.Admin.SQL rs = new ITCLIB.Admin.SQL();
-        string Querry = "Update DMCHITIETCUOC set C_TYPE = 1 WHERE PK_ID =" + ID + ";Update DMCHITIETCUOC set C_TYPE = 0 WHERE PK_ID <>" + ID + " AND FK_MAVUNG = " + FK_MAVUNG + " AND FK_MABANGCUOC=" + cmbMaBangCuoc.SelectedValue + " AND FK_MASANPHAM=" + cmbSanPham.SelectedValue + " AND C_LOAITIEN ='" + cmbLoaiTien.SelectedValue +"'";
+        string Querry = "";
+        if (C_TYPE == "1")
+        {
+            Querry = "Update DMCHITIETCUOC set C_TYPE = 0 WHERE PK_ID =" + ID + ";Update DMCHITIETCUOC set C_TYPE = 0 WHERE PK_ID <>" + ID + " AND FK_MAVUNG = " + FK_MAVUNG + " AND FK_MABANGCUOC=" + cmbMaBangCuoc.SelectedValue + " AND FK_MASANPHAM=" + cmbSanPham.SelectedValue + " AND C_LOAITIEN ='" + cmbLoaiTien.SelectedValue + "'";
+        }
+        else if (C_TYPE == "0")
+        {
+            Querry = "Update DMCHITIETCUOC set C_TYPE = 1 WHERE PK_ID =" + ID + ";Update DMCHITIETCUOC set C_TYPE = 0 WHERE PK_ID <>" + ID + " AND FK_MAVUNG = " + FK_MAVUNG + " AND FK_MABANGCUOC=" + cmbMaBangCuoc.SelectedValue + " AND FK_MASANPHAM=" + cmbSanPham.SelectedValue + " AND C_LOAITIEN ='" + cmbLoaiTien.SelectedValue + "'";
+        }
         rs.ExecuteNonQuery(Querry);
     }
     protected void UpdateDefault1(string ID, string FK_MAVUNG, string C_TYPE1)
