@@ -20,8 +20,8 @@
         }
 </script>
 <script type="text/javascript">
-    function onClientClickSelectedCTC(sender1, sender2) {
-        $find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("SelectedCTC," + sender1 + "," + sender2);
+    function onClientClickSelectedCTC(sender1, sender2, sender3) {
+        $find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("SelectedCTC," + sender1 + "," + sender2 + "," + sender3);
         return false;
     }
     function onClientClickSelectedCTC1(sender1, sender2, sender3) {
@@ -200,7 +200,7 @@ ShowToggleImage="True" EmptyMessage="Chọn đối tác"
                             </telerik:GridTemplateColumn>
                             <telerik:GridTemplateColumn UniqueName="C_TYPE" HeaderText="Luỹ kế cuối" AllowFiltering ="false">
                             <ItemTemplate>
-                                <asp:CheckBox ID="chkDefault" runat="server" onclick='<%# String.Format("if(!onClientClickSelectedCTC({0},{1})) return false;",Eval("PK_ID"),Eval("FK_MAVUNG")) %>' Checked='<%# getstatus(Eval("C_TYPE")) %>'/>
+                                <asp:CheckBox ID="chkDefault" runat="server" onclick='<%# String.Format("if(!onClientClickSelectedCTC({0},{1},{2})) return false;",Eval("PK_ID"),Eval("FK_MAVUNG"),Eval("C_TYPE")) %>' Checked='<%# getstatus(Eval("C_TYPE")) %>'/>
                             </ItemTemplate>
                             <EditItemTemplate>
                             </EditItemTemplate>
