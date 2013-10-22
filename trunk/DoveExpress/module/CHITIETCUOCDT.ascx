@@ -3,12 +3,15 @@
 <script type="text/javascript">
     function cmbDoiTacClientSelectedIndexChangedHandler(sender, eventArgs) {
         $find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("PPXDVALUE,2");
+        return false;
     }
     function cmbSanPhamClientSelectedIndexChangedHandler(sender, eventArgs) {
         $find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("PPXDVALUE,1");
+        return false;
     }
     function cmbLoaiTienClientSelectedIndexChangedHandler(sender, eventArgs) {
         $find("<%=RadGridCHITIETCUOCDT.ClientID %>").get_masterTableView().rebind();
+        return false;
     }
 </script>
 <script type="text/javascript">
@@ -32,6 +35,8 @@
         if (typeof (result) != "undefined" && result && result != "") {
             //alert(result);
             var arrayOfStrings = result.split("-,-");
+            $find("<%=txtC_PPXD.ClientID %>").set_value(arrayOfStrings[1]);
+            $find("<%=RadGridCHITIETCUOCDT.ClientID %>").get_masterTableView().rebind();
             if (arrayOfStrings[0] == "PPXDVALUE") {
                 if (arrayOfStrings[2] == "Trong nước")
                 {
@@ -47,9 +52,7 @@
                     cmbLoaiTien.get_items().getItem(1).select();
                     cmbLoaiTien.updateClientState();
                     cmbLoaiTien.commitChanges();
-                }
-                $find("<%=txtC_PPXD.ClientID %>").set_value(arrayOfStrings[1]);
-                $find("<%=RadGridCHITIETCUOCDT.ClientID %>").get_masterTableView().rebind();
+                }                
             }
             else {
                 var masterTable = $find("<%= RadGridCHITIETCUOCDT.ClientID %>").get_masterTableView();

@@ -11,6 +11,7 @@
     }
     function cmbLoaiTienClientSelectedIndexChangedHandler(sender, eventArgs) {
         $find("<%=RadGridCHITIETCUOC.ClientID %>").get_masterTableView().rebind();
+        return false;
     }
 </script>
 <script type="text/javascript">
