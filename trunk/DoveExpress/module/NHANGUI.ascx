@@ -647,7 +647,7 @@ table.gridtable td {
                 <td colspan="4">
                     <telerik:RadComboBox ID="cmbMaKhachHang" runat="server"  onclientload="OnClientLoadcmbMaKhachHang" 
                     DataTextField="C_CODE" DataValueField="C_CODE" DataSourceID="KHACHHANGDataSource" SelectedValue='<%# Bind("FK_KHACHHANG") %>'
-                    ShowToggleImage="True" EmptyMessage="Chọn mã" onclientselectedindexchanged="cmbMaKhachHangClientSelectedIndexChangedHandler">
+                    ShowToggleImage="True" EmptyMessage="Chọn mã" onclientselectedindexchanged="cmbMaKhachHangClientSelectedIndexChangedHandler" AllowCustomText="True" Filter="Contains">
                     </telerik:RadComboBox>
                 </td>
                 <td style ="width:100px;"> <span class="rtsTxtnew">Tên người gửi:</span></td>
