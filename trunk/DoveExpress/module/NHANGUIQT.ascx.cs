@@ -917,7 +917,7 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
         // Có tính theo kg
         if (ctcDataTable1.Rows.Count != 0)
         {
-            if (C_KHOILUONG <= int.Parse(ctcDataTable1.Rows[0]["C_KHOILUONG"].ToString()))
+            if (C_KHOILUONG < int.Parse(ctcDataTable1.Rows[0]["C_KHOILUONG"].ToString()))
             {
                 //Theo luỹ kế
                 if (ctcDataTable.Rows.Count != 0)
@@ -999,15 +999,15 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
                     {
                         if (check1)
                         {
-                            if (C_KHOILUONG <= int.Parse(ctcDataTable1.Rows[i]["C_KHOILUONG"].ToString()) && C_KHOILUONG >= int.Parse(ctcDataTable1.Rows[i - 1]["C_KHOILUONG"].ToString()))
+                            if (C_KHOILUONG < int.Parse(ctcDataTable1.Rows[i]["C_KHOILUONG"].ToString()) && C_KHOILUONG >= int.Parse(ctcDataTable1.Rows[i - 1]["C_KHOILUONG"].ToString()))
                             {
-                                CUOCCHINH = decimal.Parse(ctcDataTable1.Rows[i]["C_CUOCPHI"].ToString(), NumberStyles.Currency) * C_KHOILUONG / 1000;
+                                CUOCCHINH = decimal.Parse(ctcDataTable1.Rows[i - 1]["C_CUOCPHI"].ToString(), NumberStyles.Currency) * C_KHOILUONG / 1000;
                                 CUOCCHINH = CUOCCHINH + (CUOCCHINH * C_VALUE2) / 100;
-                                CUOCCHINHTL = decimal.Parse(ctcDataTable1.Rows[i]["C_CUOCPHITL"].ToString(), NumberStyles.Currency) * C_KHOILUONG / 1000;
+                                CUOCCHINHTL = decimal.Parse(ctcDataTable1.Rows[i - 1]["C_CUOCPHITL"].ToString(), NumberStyles.Currency) * C_KHOILUONG / 1000;
                                 CUOCCHINHTL = CUOCCHINHTL + (CUOCCHINHTL * C_VALUE2) / 100;
                                 check1 = false;
                             }
-                            else if (C_KHOILUONG > int.Parse(ctcDataTable1.Rows[ctcDataTable1.Rows.Count - 1]["C_KHOILUONG"].ToString()))
+                            else if (C_KHOILUONG >= int.Parse(ctcDataTable1.Rows[ctcDataTable1.Rows.Count - 1]["C_KHOILUONG"].ToString()))
                             {
                                 CUOCCHINH = decimal.Parse(ctcDataTable1.Rows[ctcDataTable1.Rows.Count - 1]["C_CUOCPHI"].ToString(), NumberStyles.Currency) * C_KHOILUONG / 1000;
                                 CUOCCHINH = CUOCCHINH + (CUOCCHINH * C_VALUE2) / 100;
@@ -1159,7 +1159,7 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
         oDataTable3 = SelectQuery3.query_data(SelectSQL3);
         if (oDataTable3.Rows.Count != 0)
         {
-            if (C_KHOILUONG <= int.Parse(oDataTable3.Rows[0]["C_KHOILUONG"].ToString()))
+            if (C_KHOILUONG < int.Parse(oDataTable3.Rows[0]["C_KHOILUONG"].ToString()))
             {
                 if (oDataTable1.Rows.Count != 0)
                 {
@@ -1226,13 +1226,13 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
                     {
                         if (check1)
                         {
-                            if (C_KHOILUONG <= int.Parse(oDataTable3.Rows[i]["C_KHOILUONG"].ToString()) && C_KHOILUONG >= int.Parse(oDataTable3.Rows[i - 1]["C_KHOILUONG"].ToString()))
+                            if (C_KHOILUONG < int.Parse(oDataTable3.Rows[i]["C_KHOILUONG"].ToString()) && C_KHOILUONG >= int.Parse(oDataTable3.Rows[i - 1]["C_KHOILUONG"].ToString()))
                             {
-                                GIADOITAC = decimal.Parse(oDataTable3.Rows[i]["C_CUOCPHI"].ToString(), NumberStyles.Currency) * C_KHOILUONG / 1000;
-                                GIADOITACTL = decimal.Parse(oDataTable3.Rows[i]["C_CUOCPHITL"].ToString(), NumberStyles.Currency) * C_KHOILUONG / 1000;
+                                GIADOITAC = decimal.Parse(oDataTable3.Rows[i - 1]["C_CUOCPHI"].ToString(), NumberStyles.Currency) * C_KHOILUONG / 1000;
+                                GIADOITACTL = decimal.Parse(oDataTable3.Rows[i - 1]["C_CUOCPHITL"].ToString(), NumberStyles.Currency) * C_KHOILUONG / 1000;
                                 check1 = false;
                             }
-                            else if (C_KHOILUONG > int.Parse(oDataTable3.Rows[oDataTable3.Rows.Count - 1]["C_KHOILUONG"].ToString()))
+                            else if (C_KHOILUONG >= int.Parse(oDataTable3.Rows[oDataTable3.Rows.Count - 1]["C_KHOILUONG"].ToString()))
                             {
                                 GIADOITAC = decimal.Parse(oDataTable3.Rows[oDataTable3.Rows.Count - 1]["C_CUOCPHI"].ToString(), NumberStyles.Currency) * C_KHOILUONG / 1000;
                                 GIADOITACTL = decimal.Parse(oDataTable3.Rows[oDataTable3.Rows.Count - 1]["C_CUOCPHITL"].ToString(), NumberStyles.Currency) * C_KHOILUONG / 1000;
