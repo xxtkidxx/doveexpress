@@ -397,7 +397,7 @@
 <script type="text/javascript">
     function onResponseEndNG() {
         if (typeof (result) != "undefined" && result && result != "") {
-            alert(result);           
+            //alert(result);           
             var arrayOfStrings = result.split(",-,");
             if (arrayOfStrings[0] != "msg") {
                 if (arrayOfStrings[0] != "") {
