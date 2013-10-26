@@ -11,55 +11,55 @@ using Telerik.Web.UI.GridExcelBuilder;
 
 public partial class module_SOQUYTIENMAT : System.Web.UI.UserControl
 {
-    private double TONDAUKY
+    private decimal TONDAUKY
     {
         get
         {
-            return double.Parse(Session["TONDAUKY"].ToString());
+            return decimal.Parse(Session["TONDAUKY"].ToString());
         }
         set
         {
             Session["TONDAUKY"] = value;
         }
     }
-    private double TONGTHU
+    private decimal TONGTHU
     {
         get
         {
-            return double.Parse(Session["TONGTHU"].ToString());
+            return decimal.Parse(Session["TONGTHU"].ToString());
         }
         set
         {
             Session["TONGTHU"] = value;
         }
     }
-    private double TONGCHI
+    private decimal TONGCHI
     {
         get
         {
-            return double.Parse(Session["TONGCHI"].ToString());
+            return decimal.Parse(Session["TONGCHI"].ToString());
         }
         set
         {
             Session["TONGCHI"] = value;
         }
     }
-    private double TONCUOIKY
+    private decimal TONCUOIKY
     {
         get
         {
-            return double.Parse(Session["TONCUOIKY"].ToString());
+            return decimal.Parse(Session["TONCUOIKY"].ToString());
         }
         set
         {
             Session["TONCUOIKY"] = value;
         }
     }
-    private double TONTHUCTE
+    private decimal TONTHUCTE
     {
         get
         {
-            return double.Parse(Session["TONTHUCTE"].ToString());
+            return decimal.Parse(Session["TONTHUCTE"].ToString());
         }
         set
         {
@@ -203,15 +203,15 @@ public partial class module_SOQUYTIENMAT : System.Web.UI.UserControl
             lblSTT.Text = (e.Item.ItemIndex + 1).ToString();
             if (e.Item.Cells[5].Text == "Thu")
             {
-                TONGTHU = TONGTHU + double.Parse(txtC_SOTIEN.Text);
-                TONCUOIKY = double.Parse(txtC_SOTIEN.Text) + TONCUOIKY;
+                TONGTHU = TONGTHU + decimal.Parse(txtC_SOTIEN.Text);
+                TONCUOIKY = decimal.Parse(txtC_SOTIEN.Text) + TONCUOIKY;
                 txtC_TON.Text = TONCUOIKY.ToString();
                 TONTHUCTE = TONCUOIKY;
             }
             else if (e.Item.Cells[5].Text == "Chi")
             {
-                TONGCHI = TONGCHI + double.Parse(txtC_SOTIEN.Text);
-                TONCUOIKY = TONCUOIKY - double.Parse(txtC_SOTIEN.Text);
+                TONGCHI = TONGCHI + decimal.Parse(txtC_SOTIEN.Text);
+                TONCUOIKY = TONCUOIKY - decimal.Parse(txtC_SOTIEN.Text);
                 txtC_TON.Text = TONCUOIKY.ToString();
                 TONTHUCTE = TONCUOIKY;
             }
@@ -227,7 +227,7 @@ public partial class module_SOQUYTIENMAT : System.Web.UI.UserControl
             }
             else if (e.Item.Cells[5].Text == "Tồn cuối kỳ")
             {
-                TONTHUCTE = double.Parse(txtC_SOTIEN.Text);
+                TONTHUCTE = decimal.Parse(txtC_SOTIEN.Text);
                 txtC_TON.Text = txtC_SOTIEN.Text;
                 e.Item.BackColor = System.Drawing.Color.Red;
                 e.Item.ForeColor = System.Drawing.Color.White;
@@ -395,14 +395,14 @@ public partial class module_SOQUYTIENMAT : System.Web.UI.UserControl
             RadNumericTextBox txtC_SOTIEN = (RadNumericTextBox)RadGridSOQUYTIENMAT.MasterTableView.Items[currentRow].FindControl("txtC_SOTIEN");
             if (RadGridSOQUYTIENMAT.MasterTableView.Items[currentRow].Cells[5].Text == "Thu")
             {
-                TONGTHU = TONGTHU + double.Parse(txtC_SOTIEN.Text);
-                TONCUOIKY = double.Parse(txtC_SOTIEN.Text) + TONCUOIKY;
+                TONGTHU = TONGTHU + decimal.Parse(txtC_SOTIEN.Text);
+                TONCUOIKY = decimal.Parse(txtC_SOTIEN.Text) + TONCUOIKY;
                 cell.Data.DataItem = TONCUOIKY.ToString();
             }
             else if (RadGridSOQUYTIENMAT.MasterTableView.Items[currentRow].Cells[5].Text == "Chi")
             {
-                TONGCHI = TONGCHI + double.Parse(txtC_SOTIEN.Text);
-                TONCUOIKY = TONCUOIKY - double.Parse(txtC_SOTIEN.Text);
+                TONGCHI = TONGCHI + decimal.Parse(txtC_SOTIEN.Text);
+                TONCUOIKY = TONCUOIKY - decimal.Parse(txtC_SOTIEN.Text);
                 cell.Data.DataItem = TONCUOIKY.ToString();
             }
             else if (RadGridSOQUYTIENMAT.MasterTableView.Items[currentRow].Cells[5].Text == "Tồn đầu kỳ")
@@ -443,7 +443,7 @@ public partial class module_SOQUYTIENMAT : System.Web.UI.UserControl
             }
             else
             {
-                TONDAUKY = int.Parse(oDataTable.Rows[0]["C_SOTIEN"].ToString());
+                TONDAUKY = decimal.Parse(oDataTable.Rows[0]["C_SOTIEN"].ToString());
             }
         }
         else
