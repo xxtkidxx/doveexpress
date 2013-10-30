@@ -974,8 +974,8 @@ table.gridtable td {
         <asp:Parameter Name="C_BAOPHAT" Type="String" />
         <asp:Parameter Name="C_HENGIO" Type="String" />
         <asp:Parameter Name="C_HINHTHUCTT" Type="String" />
-        <asp:Parameter Name="C_DATHU" Type="String" />
-        <asp:Parameter Name="C_TIENHANG" Type="String" />
+        <asp:Parameter Name="C_DATHU" Type="String" DefaultValue="0" />
+        <asp:Parameter Name="C_TIENHANG" Type="String" DefaultValue="0" />
         <asp:Parameter Name="C_VAT" Type="String" />
         <asp:Parameter Name="C_TIENHANGVAT" Type="String" />
         <asp:Parameter Name="FK_NHANVIENNHAN" Type="Int32" />
