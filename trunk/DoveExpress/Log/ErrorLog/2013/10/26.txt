@@ -1,0 +1,20 @@
+Thời gian lỗi : 2013-10-26 21:58:34 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=SOQUYTIENMAT. 
+Nội dung lỗi:Input string was not in a correct format.
+__________________________
+Thời gian lỗi : 2013-10-26 22:00:15 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=SOQUYTIENMAT. 
+Nội dung lỗi:Input string was not in a correct format.
+__________________________
+Thời gian lỗi : 2013-10-26 22:00:16 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=SOQUYTIENMAT. 
+Nội dung lỗi:Input string was not in a correct format.
+__________________________
+Thời gian lỗi : 2013-10-26 22:00:19 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=SOQUYTIENMAT. 
+Nội dung lỗi:Input string was not in a correct format.
+__________________________

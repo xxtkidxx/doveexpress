@@ -1,0 +1,12 @@
+Thời gian: 2013-10-26 21:57:22 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-10-26 21:58:04 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted SOQUYTIENMATs
+Kết quả : {PK_ID:"401"}
+__________________________
