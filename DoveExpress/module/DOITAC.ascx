@@ -102,6 +102,9 @@
                 <telerik:GridBoundColumn UniqueName="C_NGUOILIENHE" HeaderText="Người liên hệ" DataField="C_NGUOILIENHE" 
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
                 </telerik:GridBoundColumn>
+                <telerik:GridBoundColumn UniqueName="C_TYPE" HeaderText="Loại đối tác" DataField="C_TYPE" 
+                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
+                </telerik:GridBoundColumn>
         </Columns>
         <EditFormSettings InsertCaption="Thêm đối tác mới" CaptionFormatString="Sửa đối tác: <b>{0}</b>" CaptionDataField="C_NAME" EditFormType="Template" PopUpSettings-Width="600px">
         <EditColumn UniqueName="EditCommandColumn1" FilterControlAltText="Filter EditCommandColumn1 column"></EditColumn>
@@ -150,6 +153,17 @@
                    <telerik:RadTextBox ID="txtC_NGUOILIENHE" Text='<%# Bind( "C_NGUOILIENHE") %>' runat="server" Width="90%"></telerik:RadTextBox>                   
                 </td>
             </tr>
+            <tr>
+                 <td style =" width:150px;"> <span class="rtsTxtnew">Loại đối tác:</td>
+                <td colspan="4">
+                    <telerik:RadComboBox ID="cmbC_TYPE" SelectedValue='<%# Bind("C_TYPE") %>' runat="server" EmptyMessage="Chọn">
+                            <Items>
+                                <telerik:RadComboBoxItem Value ="Nhập nhanh BILL" Text ="Nhập nhanh BILL" />
+                                <telerik:RadComboBoxItem Value ="Bình thường" Text ="Bình thường" />
+                            </Items>
+                    </telerik:RadComboBox>                   
+                </td>
+            </tr>
              </table>
             </div> 
              </center> 
@@ -171,9 +185,9 @@
 <asp:SqlDataSource ID="DOITACDataSource" runat="server" 
     ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>" 
     DeleteCommand="DELETE FROM [DMDOITAC] WHERE [PK_ID] = @PK_ID" 
-    InsertCommand="INSERT INTO [DMDOITAC] ([C_CODE], [C_NAME], [C_ADDRESS], [C_TEL], [C_NGUOILIENHE], [FK_VUNGLAMVIEC]) VALUES (@C_CODE, @C_NAME, @C_ADDRESS, @C_TEL, @C_NGUOILIENHE, @FK_VUNGLAMVIEC)" 
-    SelectCommand="SELECT [DMDOITAC].[PK_ID], [DMDOITAC].[C_CODE], [DMDOITAC].[C_NAME], [DMDOITAC].[C_ADDRESS], [DMDOITAC].[C_TEL], [DMDOITAC].[C_NGUOILIENHE] FROM [DMDOITAC] WHERE [DMDOITAC].FK_VUNGLAMVIEC = @FK_VUNGLAMVIEC" 
-    UpdateCommand="UPDATE [DMDOITAC] SET [C_CODE] = @C_CODE, [C_NAME] = @C_NAME, [C_ADDRESS] = @C_ADDRESS,[C_TEL] = @C_TEL,[C_NGUOILIENHE] = @C_NGUOILIENHE WHERE [PK_ID] = @PK_ID">
+    InsertCommand="INSERT INTO [DMDOITAC] ([C_CODE], [C_NAME], [C_ADDRESS], [C_TEL], [C_NGUOILIENHE], [C_TYPE], [FK_VUNGLAMVIEC]) VALUES (@C_CODE, @C_NAME, @C_ADDRESS, @C_TEL, @C_NGUOILIENHE, @C_TYPE, @FK_VUNGLAMVIEC)" 
+    SelectCommand="SELECT [DMDOITAC].[PK_ID], [DMDOITAC].[C_CODE], [DMDOITAC].[C_NAME], [DMDOITAC].[C_ADDRESS], [DMDOITAC].[C_TEL], [DMDOITAC].[C_NGUOILIENHE], [DMDOITAC].[C_TYPE] FROM [DMDOITAC] WHERE [DMDOITAC].FK_VUNGLAMVIEC = @FK_VUNGLAMVIEC" 
+    UpdateCommand="UPDATE [DMDOITAC] SET [C_CODE] = @C_CODE, [C_NAME] = @C_NAME, [C_ADDRESS] = @C_ADDRESS,[C_TEL] = @C_TEL,[C_NGUOILIENHE] = @C_NGUOILIENHE,[C_TYPE] = @C_TYPE WHERE [PK_ID] = @PK_ID">
         <SelectParameters>
             <asp:SessionParameter Name="FK_VUNGLAMVIEC" Type="String" SessionField="VUNGLAMVIEC" />
         </SelectParameters>
@@ -183,6 +197,7 @@
             <asp:Parameter Name="C_ADDRESS" Type="String" />
             <asp:Parameter Name="C_TEL" Type="String" />
             <asp:Parameter Name="C_NGUOILIENHE" Type="String" />
+            <asp:Parameter Name="C_TYPE" Type="String"/>
             <asp:Parameter Name="PK_ID" Type="Int32" />
         </UpdateParameters>
         <DeleteParameters>
@@ -194,6 +209,7 @@
             <asp:Parameter Name="C_ADDRESS" Type="String" />
             <asp:Parameter Name="C_TEL" Type="String" />
             <asp:Parameter Name="C_NGUOILIENHE" Type="String" />
+            <asp:Parameter Name="C_TYPE" Type="String"/>
             <asp:SessionParameter Name="FK_VUNGLAMVIEC" Type="String" SessionField="VUNGLAMVIEC" />
         </InsertParameters>
 </asp:SqlDataSource>

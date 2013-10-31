@@ -152,6 +152,12 @@ public partial class module_DOITAC : System.Web.UI.UserControl
             GridEditableItem editItem = (GridEditableItem)e.Item;
             HiddenField txtID = (HiddenField)editItem.FindControl("txtID");
             Session["txtID"] = (txtID.Value != "") ? txtID.Value : "0";
+            if (e.Item is GridEditFormInsertItem || e.Item is GridDataInsertItem)
+            {
+                // insert item
+                RadComboBox cmbC_TYPE = (RadComboBox)editItem.FindControl("cmbC_TYPE");
+                cmbC_TYPE.SelectedIndex =1;
+            }
         }
         if (e.Item is GridDataItem)
         {

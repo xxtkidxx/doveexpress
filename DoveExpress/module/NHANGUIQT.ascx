@@ -475,7 +475,7 @@ table.gridtable {
 	border-width: 1px;
 	border-color: #666666;
 	border-collapse: collapse;
-	width:20%;
+	width:30%;
 	margin: 5px 5px 5px 5px;
 }
 table.gridtable th {
@@ -497,6 +497,7 @@ table.gridtable td {
 <table class="gridtable">
 <tr>
 	<th>Nhập nhanh bằng số Bill</th>
+    <th>Đối tác</th>
 </tr>
 <tr>
 	<td>
@@ -505,6 +506,12 @@ table.gridtable td {
             <NumberFormat DecimalSeparator ="." GroupSeparator ="" DecimalDigits="0"/>
             <ClientEvents OnKeyPress ="OnKeyPresstxtBillNhanh"/>
         </telerik:RadNumericTextBox>    
+    </td>
+    <td>
+        <telerik:RadComboBox ID="cmbDoiTac" runat="server" Width ="95%" 
+            DataTextField="C_NAME" DataValueField="PK_ID" DataSourceID="DoiTacDataSourceFix"
+            ShowToggleImage="True" EmptyMessage="Chọn đối tác" >
+        </telerik:RadComboBox>    
     </td>
 </tr>
 </table>
@@ -1107,6 +1114,12 @@ table.gridtable td {
 </asp:SqlDataSource>
 <asp:SqlDataSource ID="DoiTacDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
     SelectCommand="SELECT [PK_ID], [C_CODE], [C_NAME] FROM [DMDoiTac] WHERE [DMDOITAC].FK_VUNGLAMVIEC = @FK_VUNGLAMVIEC ORDER BY LTRIM([C_CODE])">
+    <SelectParameters>
+            <asp:SessionParameter Name="FK_VUNGLAMVIEC" Type="String" SessionField="VUNGLAMVIEC" />
+    </SelectParameters>
+</asp:SqlDataSource>
+<asp:SqlDataSource ID="DoiTacDataSourceFix" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
+    SelectCommand="SELECT [PK_ID], [C_CODE], [C_NAME] FROM [DMDoiTac] WHERE [DMDOITAC].FK_VUNGLAMVIEC = @FK_VUNGLAMVIEC AND [DMDOITAC].C_TYPE = N'Nhập nhanh BILL' ORDER BY LTRIM([C_CODE])">
     <SelectParameters>
             <asp:SessionParameter Name="FK_VUNGLAMVIEC" Type="String" SessionField="VUNGLAMVIEC" />
     </SelectParameters>
