@@ -1,0 +1,186 @@
+Thời gian: 2013-10-30 21:12:27 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-10-30 21:12:48 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-10-30 21:14:16 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {PK_ID:"1785",C_BILL:"3788881"}
+__________________________
+Thời gian: 2013-10-30 21:14:22 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {PK_ID:"1785",C_BILL:"3788881"}
+__________________________
+Thời gian: 2013-10-30 21:15:38 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {PK_ID:"1785",C_BILL:"3788881"}
+__________________________
+Thời gian: 2013-10-30 21:15:44 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {PK_ID:"1785",C_BILL:"3788881"}
+__________________________
+Thời gian: 2013-10-30 21:16:01 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {PK_ID:"1785",C_BILL:"3788881"}
+__________________________
+Thời gian: 2013-10-30 21:16:07 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {PK_ID:"1785",C_BILL:"3788881"}
+__________________________
+Thời gian: 2013-10-30 21:17:37 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {PK_ID:"1785"}
+__________________________
+Thời gian: 2013-10-30 21:17:45 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {PK_ID:"1785"}
+__________________________
+Thời gian: 2013-10-30 21:17:59 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {PK_ID:"1785"}
+__________________________
+Thời gian: 2013-10-30 21:18:05 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {PK_ID:"1785"}
+__________________________
+Thời gian: 2013-10-30 21:26:38 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {PK_ID:"1785"}
+__________________________
+Thời gian: 2013-10-30 21:29:49 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {PK_ID:"1783"}
+__________________________
+Thời gian: 2013-10-30 21:31:05 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {PK_ID:"1783"}
+__________________________
+Thời gian: 2013-10-30 21:31:52 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {PK_ID:"1783"}
+__________________________
+Thời gian: 2013-10-30 21:34:10 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {PK_ID:"1800"}
+__________________________
+Thời gian: 2013-10-30 21:47:44 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-10-30 21:48:15 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-10-30 21:53:43 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted SOQUYTIENMATs
+Kết quả : {PK_ID:"1786"}
+__________________________
+Thời gian: 2013-10-30 21:54:00 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted SOQUYTIENMATs
+Kết quả : {PK_ID:"1787"}
+__________________________
+Thời gian: 2013-10-30 21:59:06 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-10-30 22:00:16 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-10-30 22:16:40 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-10-30 22:21:45 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-10-30 22:29:03 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-10-30 22:30:30 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-10-30 22:40:13 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-10-30 23:05:49 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIQTs
+Kết quả : {PK_ID:"584",C_BILL:"12988"}
+__________________________
+Thời gian: 2013-10-30 23:10:41 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {PK_ID:"224"}
+__________________________
+Thời gian: 2013-10-30 23:11:25 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {PK_ID:"224"}
+__________________________
