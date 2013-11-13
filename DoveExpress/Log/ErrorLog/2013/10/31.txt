@@ -1,0 +1,10 @@
+Thời gian lỗi : 2013-10-31 20:31:35 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:The server tag is not well formed.
+__________________________
+Thời gian lỗi : 2013-10-31 21:01:56 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUIQT. 
+Nội dung lỗi:The DataSourceID of 'cmbDoiTac' must be the ID of a control of type IDataSource.  A control with ID 'DoiTacDataSourceFix' could not be found.
+__________________________
