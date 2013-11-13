@@ -1,0 +1,42 @@
+Thời gian: 2013-10-31 20:29:01 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-10-31 20:58:41 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-10-31 20:59:04 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-10-31 20:59:17 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated DOITACs
+Kết quả : {PK_ID:"22"}
+__________________________
+Thời gian: 2013-10-31 20:59:23 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated DOITACs
+Kết quả : {PK_ID:"23"}
+__________________________
+Thời gian: 2013-10-31 21:00:15 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {PK_ID:"1863"}
+__________________________
+Thời gian: 2013-10-31 21:00:15 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {PK_ID:"1864"}
+__________________________
