@@ -663,7 +663,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
             GridEditableItem editItem = (GridEditableItem)e.Item;
             ClearSession();
         }
-        if (e.CommandName == "ConfirmPayment")
+        else if (e.CommandName == "ConfirmPayment")
         {
             if (RadGridNHANGUI.SelectedIndexes.Count == 0)
             {
@@ -677,6 +677,27 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
                     string TIENHANG = (item["C_TIENHANGVAT"].Text.Trim() == "") ? "0" : item["C_TIENHANGVAT"].Text.Trim();
                     TIENHANG = TIENHANG.Replace(" ", "");
                     UpdateSQL += "UPDATE [NHANGUI] SET [C_DATHU] = " + TIENHANG + " WHERE [C_BILL] = '" + item["C_BILL"].Text.Trim() + "';UPDATE [SOQUYTIENMAT] SET [C_SOTIEN] = " + TIENHANG + " WHERE [C_BILL] = '" + item["C_BILL"].Text.Trim() + "';";
+                }
+                ITCLIB.Admin.SQL UpdateQuery = new ITCLIB.Admin.SQL();
+                UpdateQuery.ExecuteNonQuery(UpdateSQL);
+            }
+            SetMessage("Cập nhật tình trạng thanh toán thành công");
+            RadGridNHANGUI.Rebind();
+        }
+        else if (e.CommandName == "ConfirmUnPayment")
+        {
+            if (RadGridNHANGUI.SelectedIndexes.Count == 0)
+            {
+                SetMessage("Không có bản ghi được chọn!");
+            }
+            else
+            {
+                string UpdateSQL = "";
+                foreach (GridDataItem item in RadGridNHANGUI.SelectedItems)
+                {
+                    string TIENHANG = (item["C_TIENHANGVAT"].Text.Trim() == "") ? "0" : item["C_TIENHANGVAT"].Text.Trim();
+                    TIENHANG = TIENHANG.Replace(" ", "");
+                    UpdateSQL += "UPDATE [NHANGUI] SET [C_DATHU] = " + "0" + " WHERE [C_BILL] = '" + item["C_BILL"].Text.Trim() + "';UPDATE [SOQUYTIENMAT] SET [C_SOTIEN] = " + "0" + " WHERE [C_BILL] = '" + item["C_BILL"].Text.Trim() + "';";
                 }
                 ITCLIB.Admin.SQL UpdateQuery = new ITCLIB.Admin.SQL();
                 UpdateQuery.ExecuteNonQuery(UpdateSQL);

@@ -852,6 +852,32 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
             SetMessage("Cập nhật tình trạng thanh toán thành công");
             RadGridNHANGUIQT.Rebind();
         }
+        else if (e.CommandName == "ConfirmUnPayment")
+        {
+            if (RadGridNHANGUIQT.SelectedIndexes.Count == 0)
+            {
+                SetMessage("Không có bản ghi được chọn!");
+            }
+            else
+            {
+                string UpdateSQL = "";
+                foreach (GridDataItem item in RadGridNHANGUIQT.SelectedItems)
+                {
+                    string TIENHANGDATHU = (item["C_DATHU"].Text.Trim() == "VNĐ") ? "0" : item["C_DATHU"].Text.Trim();
+                    TIENHANGDATHU = TIENHANGDATHU.Replace(" ", "");
+                    TIENHANGDATHU = TIENHANGDATHU.Replace("VNĐ", "");
+                    string TIENHANGCONLAI = (item["C_CONLAI"].Text.Trim() == "VNĐ") ? "0" : item["C_CONLAI"].Text.Trim();
+                    TIENHANGCONLAI = TIENHANGCONLAI.Replace(" ", "");
+                    TIENHANGCONLAI = TIENHANGCONLAI.Replace("VNĐ", "");
+                    string TIENHANG = (decimal.Parse(TIENHANGDATHU) + decimal.Parse(TIENHANGCONLAI)).ToString();
+                    UpdateSQL += "UPDATE [NHANGUI] SET [C_DATHU] = " + "0" + " WHERE [C_BILL] = '" + item["C_BILL"].Text.Trim() + "';UPDATE [SOQUYTIENMAT] SET [C_SOTIEN] = " + "0" + " WHERE [C_BILL] = '" + item["C_BILL"].Text.Trim() + "';";
+                }
+                ITCLIB.Admin.SQL UpdateQuery = new ITCLIB.Admin.SQL();
+                UpdateQuery.ExecuteNonQuery(UpdateSQL);
+            }
+            SetMessage("Cập nhật tình trạng thanh toán thành công");
+            RadGridNHANGUIQT.Rebind();
+        }
     }
     protected string getmaxid(string table)
     {

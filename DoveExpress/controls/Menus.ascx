@@ -100,6 +100,8 @@
             </telerik:RadMenuItem>
             <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=BAOCAONVKD" Text="Doanh thu theo nhân viên kinh doanh" Value="BAOCAONVKD">
             </telerik:RadMenuItem>
+            <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=BAOCAOTTTT" Text="Tình trạng thanh toán" Value="BAOCAOTTTT">
+            </telerik:RadMenuItem>
             <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=BAOCAOCONGNO" Text="Quản lý công nợ" Value="BAOCAOCONGNO">
             </telerik:RadMenuItem>
         </Items>                     
