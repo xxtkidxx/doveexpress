@@ -1,6 +1,6 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="BAOCAONGAY.ascx.cs" Inherits="module_BAOCAONGAY" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="BAOCAOTTTT.ascx.cs" Inherits="module_BAOCAOTTTT" %>
 <%@ Register TagPrefix="uc1" Namespace="ITCLIB.Admin" %>
-<telerik:RadCodeBlock ID="RadCodeBlockBAOCAONGAY" runat="server">
+<telerik:RadCodeBlock ID="RadCodeBlockBAOCAOTTTT" runat="server">
 <script type="text/javascript">
     var registeredElementsNG = [];
     function GetRegisteredServerElementNG(serverID) {
@@ -16,7 +16,7 @@
         if (!tagName)
             tagName = "*";
 
-        var grid = $get("<%=RadGridBAOCAONGAY.ClientID %>");
+        var grid = $get("<%=RadGridBAOCAOTTTT.ClientID %>");
         var elements = grid.getElementsByTagName(tagName);
         for (var i = 0; i < elements.length; i++) {
             var element = elements[i];
@@ -25,35 +25,59 @@
         }
     }
 </script>
+<script type="text/javascript">
+    function cmbYearClientSelectedIndexChangedHandler(sender, eventArgs) {
+        $find("<%=RadGridBAOCAOTTTT.ClientID %>").get_masterTableView().rebind();
+        return false;
+    }
+    function cmbMonthClientSelectedIndexChangedHandler(sender, eventArgs) {
+        $find("<%=RadGridBAOCAOTTTT.ClientID %>").get_masterTableView().rebind();
+        return false;
+    }
+</script>
 </telerik:RadCodeBlock>
-<telerik:RadAjaxLoadingPanel Skin="Vista" ID="RadAjaxLoadingPanelBAOCAONGAY" runat="server" />
-<div style ="width:100%; margin: 10px 10px 10px 10px; ">
-Từ ngày:&nbsp; 
-<telerik:RadDatePicker ID="radTuNgay" Width ="150px" runat="server" AutoPostBack ="true" >
-<DateInput ID ="DateInput1" runat ="server" DateFormat ="dd/MM/yyyy" MinDate="1/1/1890 12:00:00 AM">
-</DateInput>
-</telerik:RadDatePicker>
-Đến ngày:&nbsp; 
-<telerik:RadDatePicker ID="radDenNgay" Width ="150px" runat="server" AutoPostBack ="true" >
-<DateInput ID ="DateInput2" runat ="server" DateFormat ="dd/MM/yyyy" MinDate="1/1/1890 12:00:00 AM">
-</DateInput>
-</telerik:RadDatePicker>
+<telerik:RadAjaxLoadingPanel Skin="Vista" ID="RadAjaxLoadingPanelBAOCAOTTTT" runat="server" />
+<div style ="width:100%; margin: 10px 10px 10px 10px;">
+Chọn tháng:&nbsp; 
+<telerik:RadComboBox ID="cmbMonth" runat="server" onclientselectedindexchanged="cmbMonthClientSelectedIndexChangedHandler"
+ShowToggleImage="True" EmptyMessage="Chọn tháng" onprerender="cmbMonth_PreRender">
+<Items>
+    <telerik:RadComboBoxItem Value ="1" Text ="Tháng 1" />
+    <telerik:RadComboBoxItem Value ="2" Text ="Tháng 2" />
+    <telerik:RadComboBoxItem Value ="3" Text ="Tháng 3" />
+    <telerik:RadComboBoxItem Value ="4" Text ="Tháng 4" />
+    <telerik:RadComboBoxItem Value ="5" Text ="Tháng 5" />
+    <telerik:RadComboBoxItem Value ="6" Text ="Tháng 6" />
+    <telerik:RadComboBoxItem Value ="7" Text ="Tháng 7" />
+    <telerik:RadComboBoxItem Value ="8" Text ="Tháng 8" />
+    <telerik:RadComboBoxItem Value ="9" Text ="Tháng 9" />
+    <telerik:RadComboBoxItem Value ="10" Text ="Tháng 10" />
+    <telerik:RadComboBoxItem Value ="11" Text ="Tháng 11" />
+    <telerik:RadComboBoxItem Value ="12" Text ="Tháng 12" />
+</Items>
+</telerik:RadComboBox>
+Chọn năm:&nbsp; 
+<telerik:RadComboBox ID="cmbYear" runat="server" onclientselectedindexchanged="cmbYearClientSelectedIndexChangedHandler"
+ShowToggleImage="True" EmptyMessage="Chọn năm" onprerender="cmbYear_PreRender">
+<Items>
+</Items>
+</telerik:RadComboBox>
 </div>
-<telerik:RadGrid ID="RadGridBAOCAONGAY" runat="server" Skin="Vista" 
+<telerik:RadGrid ID="RadGridBAOCAOTTTT" runat="server" Skin="Vista" 
     AllowPaging="False" AllowSorting="True" 
     AllowFilteringByColumn="False" GridLines="None" ShowStatusBar="True"
-    AutoGenerateColumns="False" onitemcommand="RadGridBAOCAONGAY_ItemCommand" 
+    AutoGenerateColumns="False" onitemcommand="RadGridBAOCAOTTTT_ItemCommand" 
     AllowMultiRowEdit="True" AllowAutomaticDeletes="True" 
     AllowAutomaticInserts="True" AllowAutomaticUpdates="True" 
-    DataSourceID="BAOCAONGAYDataSource" ShowFooter="True"
-    ondatabound="RadGridBAOCAONGAY_DataBound" CellSpacing="0" 
-    onexcelmlexportrowcreated="RadGridBAOCAONGAY_ExcelMLExportRowCreated" 
-    onitemdatabound="RadGridBAOCAONGAY_ItemDataBound">
+    DataSourceID="BAOCAOTTTTDataSource" ShowFooter="True"
+    ondatabound="RadGridBAOCAOTTTT_DataBound" CellSpacing="0" 
+    onexcelmlexportrowcreated="RadGridBAOCAOTTTT_ExcelMLExportRowCreated" 
+    onitemdatabound="RadGridBAOCAOTTTT_ItemDataBound">
     <PagerStyle FirstPageToolTip="Trang đầu" LastPageToolTip="Trang cuối" NextPagesToolTip="Các trang tiếp" NextPageToolTip="Trang tiếp" 
     PageSizeLabelText="Số bản ghi hiển thị:" PrevPagesToolTip="Các trang sau" PrevPageToolTip="Trang sau" PagerTextFormat="Change page: {4} &nbsp;Trang <strong>{0}</strong>/<strong>{1}</strong>, Bản ghi <strong>{2}</strong> đến <strong>{3}</strong> của tất cả <strong>{5}</strong> bản ghi" />    
     <ExportSettings HideStructureColumns="true" ExportOnlyData="true" IgnorePaging="true" OpenInNewWindow="true" Excel-Format="ExcelML"></ExportSettings>   
      <GroupingSettings CaseSensitive ="false"  />
-    <MasterTableView Name="MasterTableViewBAOCAONGAY" CommandItemDisplay="Top" DataSourceID="BAOCAONGAYDataSource" DataKeyNames="PK_ID" ClientDataKeyNames="PK_ID" EditMode="PopUp" NoMasterRecordsText="Không có dữ liệu">
+    <MasterTableView Name="MasterTableViewBAOCAOTTTT" CommandItemDisplay="Top" DataSourceID="BAOCAOTTTTDataSource" DataKeyNames="PK_ID" ClientDataKeyNames="PK_ID" EditMode="PopUp" NoMasterRecordsText="Không có dữ liệu">
         <CommandItemTemplate>
                     <div style="padding: 5px 5px;float:left;width:auto">
                        <b>Báo cáo doanh số theo ngày</b>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -127,12 +151,12 @@ Từ ngày:&nbsp;
             SortedDescToolTip="Sắp xếp giảm dần" SortToolTip="Click để sắp xếp" />
         <StatusBarSettings LoadingText="Đang tải..." ReadyText="Sẵn sàng" />
 </telerik:RadGrid>
-<asp:SqlDataSource ID="BAOCAONGAYDataSource" runat="server" 
+<asp:SqlDataSource ID="BAOCAOTTTTDataSource" runat="server" 
     ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>" 
-    SelectCommand="SELECT [NHANGUI].[PK_ID], [NHANGUI].[C_NGAY], [NHANGUI].[FK_KHACHHANG], [NHANGUI].[C_BILL], [NHANGUI].[C_TENKH], [NHANGUI].[C_TELGUI], [NHANGUI].[C_NGUOINHAN], [NHANGUI].[C_DIACHINHAN], [NHANGUI].[C_TELNHAN], [NHANGUI].[FK_QUANHUYEN], [NHANGUI].[C_NOIDUNG], [NHANGUI].[FK_MASANPHAM],  [NHANGUI].[C_PPXD], [NHANGUI].[C_KHOILUONG], [NHANGUI].[C_GIACUOC], [NHANGUI].[C_HINHTHUCTT], [NHANGUI].[C_DATHU], ([NHANGUI].[C_TIENHANGVAT] - [NHANGUI].[C_DATHU]) as [C_CONLAI],([NHANGUI].[C_DONGGOI] + [NHANGUI].[C_KHAIGIA] + [NHANGUI].[C_COD] + [NHANGUI].[C_BAOPHAT] + [NHANGUI].[C_HENGIO]) as [C_PHUTROISUM], [NHANGUI].[C_TIENHANG], [NHANGUI].[C_VAT], [NHANGUI].[C_TIENHANGVAT], [NHANGUI].[FK_NHANVIENNHAN], [NHANGUI].[FK_DOITAC], [NHANGUI].[C_GIADOITAC], [NHANGUI].[FK_NHANVIENPHAT], [NHANGUI].[C_NGAYGIOPHAT], [NHANGUI].[FK_NHANVIENKHAITHAC], [NHANGUI].[C_NGUOIKYNHAN], [NHANGUI].[C_BOPHAN], [NHANGUI].[FK_VUNGLAMVIEC], USERSNHAN.C_NAME as NHANVIENNHANNAME,USERSPHAT.C_NAME as NHANVIENPHATNAME,USERSKHAITHAC.C_NAME as NHANVIENKHAITHACNAME,DMMASANPHAM.C_NAME as SANPHAMNAME,DMQUANHUYEN.C_NAME as QUANHUYENNAME,DMTINHTHANH.C_NAME as TINHTHANHNAME FROM [NHANGUI] LEFT OUTER JOIN USERS as USERSNHAN ON NHANGUI.FK_NHANVIENNHAN = USERSNHAN.PK_ID LEFT OUTER JOIN USERS as USERSPHAT ON NHANGUI.FK_NHANVIENPHAT = USERSPHAT.PK_ID LEFT OUTER JOIN USERS as USERSKHAITHAC ON NHANGUI.FK_NHANVIENKHAITHAC = USERSKHAITHAC.PK_ID LEFT OUTER JOIN DMMASANPHAM ON NHANGUI.FK_MASANPHAM=DMMASANPHAM.PK_ID LEFT OUTER JOIN DMQUANHUYEN ON NHANGUI.FK_QUANHUYEN = DMQUANHUYEN.C_CODE LEFT OUTER JOIN DMTINHTHANH ON DMQUANHUYEN.FK_TINHTHANH = DMTINHTHANH.PK_ID WHERE ([NHANGUI].[C_NGAY] >= @TUNGAY) AND ([NHANGUI].[C_NGAY] <= @DENNGAY) AND [NHANGUI].[FK_VUNGLAMVIEC] = @FK_VUNGLAMVIEC">
+    SelectCommand="SELECT [NHANGUI].[PK_ID], [NHANGUI].[C_NGAY], [NHANGUI].[FK_KHACHHANG], [NHANGUI].[C_BILL], [NHANGUI].[C_TENKH], [NHANGUI].[C_TELGUI], [NHANGUI].[C_NGUOINHAN], [NHANGUI].[C_DIACHINHAN], [NHANGUI].[C_TELNHAN], [NHANGUI].[FK_QUANHUYEN], [NHANGUI].[C_NOIDUNG], [NHANGUI].[FK_MASANPHAM],  [NHANGUI].[C_PPXD], [NHANGUI].[C_KHOILUONG], [NHANGUI].[C_GIACUOC], [NHANGUI].[C_HINHTHUCTT], [NHANGUI].[C_DATHU], ([NHANGUI].[C_TIENHANGVAT] - [NHANGUI].[C_DATHU]) as [C_CONLAI],([NHANGUI].[C_DONGGOI] + [NHANGUI].[C_KHAIGIA] + [NHANGUI].[C_COD] + [NHANGUI].[C_BAOPHAT] + [NHANGUI].[C_HENGIO]) as [C_PHUTROISUM], [NHANGUI].[C_TIENHANG], [NHANGUI].[C_VAT], [NHANGUI].[C_TIENHANGVAT], [NHANGUI].[FK_NHANVIENNHAN], [NHANGUI].[FK_DOITAC], [NHANGUI].[C_GIADOITAC], [NHANGUI].[FK_NHANVIENPHAT], [NHANGUI].[C_NGAYGIOPHAT], [NHANGUI].[FK_NHANVIENKHAITHAC], [NHANGUI].[C_NGUOIKYNHAN], [NHANGUI].[C_BOPHAN], [NHANGUI].[FK_VUNGLAMVIEC], USERSNHAN.C_NAME as NHANVIENNHANNAME,USERSPHAT.C_NAME as NHANVIENPHATNAME,USERSKHAITHAC.C_NAME as NHANVIENKHAITHACNAME,DMMASANPHAM.C_NAME as SANPHAMNAME,DMQUANHUYEN.C_NAME as QUANHUYENNAME,DMTINHTHANH.C_NAME as TINHTHANHNAME FROM [NHANGUI] LEFT OUTER JOIN USERS as USERSNHAN ON NHANGUI.FK_NHANVIENNHAN = USERSNHAN.PK_ID LEFT OUTER JOIN USERS as USERSPHAT ON NHANGUI.FK_NHANVIENPHAT = USERSPHAT.PK_ID LEFT OUTER JOIN USERS as USERSKHAITHAC ON NHANGUI.FK_NHANVIENKHAITHAC = USERSKHAITHAC.PK_ID LEFT OUTER JOIN DMMASANPHAM ON NHANGUI.FK_MASANPHAM=DMMASANPHAM.PK_ID LEFT OUTER JOIN DMQUANHUYEN ON NHANGUI.FK_QUANHUYEN = DMQUANHUYEN.C_CODE LEFT OUTER JOIN DMTINHTHANH ON DMQUANHUYEN.FK_TINHTHANH = DMTINHTHANH.PK_ID WHERE (month([NHANGUI].[C_NGAY]) = @MONTH AND year([NHANGUI].[C_NGAY]) = @YEAR) AND ([NHANGUI].[C_DATHU] < [NHANGUI].[C_TIENHANGVAT]) AND [NHANGUI].[FK_VUNGLAMVIEC] = @FK_VUNGLAMVIEC">
     <SelectParameters>
-         <asp:ControlParameter ControlID="radTuNgay" DefaultValue="0" Name="TUNGAY" PropertyName="SelectedDate" />
-         <asp:ControlParameter ControlID="radDenNgay" DefaultValue="0" Name="DENNGAY" PropertyName="SelectedDate" />
-         <asp:SessionParameter Name="FK_VUNGLAMVIEC" Type="String" SessionField="VUNGLAMVIEC" />
+        <asp:ControlParameter ControlID="cmbMonth" Name="MONTH" PropertyName="SelectedValue" />
+        <asp:ControlParameter ControlID="cmbYear" Name="YEAR" PropertyName="SelectedValue" />
+        <asp:SessionParameter Name="FK_VUNGLAMVIEC" Type="String" SessionField="VUNGLAMVIEC" />
     </SelectParameters>        
 </asp:SqlDataSource>

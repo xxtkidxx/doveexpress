@@ -542,6 +542,7 @@ table.gridtable td {
                         <asp:LinkButton ID="LinkButton1" OnClientClick="javascript:return confirm('Bạn có muốn xóa bản ghi đã chọn không?')" runat="server" CommandName="DeleteSelected" Visible='<%# ITCLIB.Security.Security.CanDeleteModule("NHANGUIQT") %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Delete.gif" />Xóa</asp:LinkButton>&nbsp;&nbsp;
                         <asp:LinkButton ID="btXuatbaocao" runat="server" OnClientClick ='<%# String.Format("javascript:return PrintOnClientLinkClicked()")%>' ><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/img_OpenPanel.gif" />Xuất phiếu</asp:LinkButton>&nbsp;&nbsp;
                         <asp:LinkButton ID="LinkButton5" runat="server" OnClientClick="javascript:return confirm('Bạn có muốn xác nhận các Bill này đã thanh toán không?')" CommandName="ConfirmPayment"><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/img_OpenPanel.gif" />Xác nhận đã thanh toán</asp:LinkButton>&nbsp;&nbsp;
+                        <asp:LinkButton ID="LinkButton6" runat="server" OnClientClick="javascript:return confirm('Bạn có muốn xác nhận các Bill này chưa thanh toán không?')" CommandName="ConfirmUnPayment"><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/img_OpenPanel.gif" />Xác nhận chưa thanh toán</asp:LinkButton>&nbsp;&nbsp;
                        <asp:LinkButton ID="LinkButton4" runat="server" CommandName="RebindGrid"><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Refresh.gif" />Làm mới</asp:LinkButton>
                     </div>
                     <div style="padding: 5px 5px;float:right;width:auto">
@@ -571,9 +572,12 @@ table.gridtable td {
                 <telerik:GridBoundColumn UniqueName="C_NGAY" HeaderText="Ngày" DataField="C_NGAY" HeaderStyle-Width="100px" HeaderStyle-HorizontalAlign="Center"
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%" DataType="System.DateTime" DataFormatString="{0:dd/MM/yyyy}">
                 </telerik:GridBoundColumn>
-                <telerik:GridBoundColumn UniqueName="C_BILL" HeaderText="Số Bill" DataField="C_BILL" HeaderStyle-Width="100px" HeaderStyle-HorizontalAlign="Center"
+                <telerik:GridTemplateColumn UniqueName="C_BILL" HeaderText="Số Bill" DataField="C_BILL" HeaderStyle-Width="100px" HeaderStyle-HorizontalAlign="Center"
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
-                </telerik:GridBoundColumn>
+                    <ItemTemplate>
+                        <%# String.Format("BC_{0}", Eval("C_BILL").ToString())%>
+                    </ItemTemplate>
+                </telerik:GridTemplateColumn>
                 <telerik:GridBoundColumn UniqueName="FK_KHACHHANG" HeaderText="Mã khách hàng" DataField="FK_KHACHHANG" HeaderStyle-Width="100px" HeaderStyle-HorizontalAlign="Center"
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
                 </telerik:GridBoundColumn>
@@ -627,7 +631,7 @@ table.gridtable td {
                 <td style ="width:100px;"> <span class="rtsTxtnew">Số Bill:</span></td>
                 <td colspan="4">
                     <asp:HiddenField ID="txtID" Value ='<%# Eval( "PK_ID") %>' runat="server" />
-                    <telerik:RadNumericTextBox ID="txtCODE" Width ="90%" Text='<%# Bind("C_BILL") %>' runat="server">
+                    BC_<telerik:RadNumericTextBox ID="txtCODE" Width ="80%" Text='<%# Bind("C_BILL") %>' runat="server">
                         <NumberFormat DecimalSeparator ="." GroupSeparator ="" DecimalDigits="0"/>
                     </telerik:RadNumericTextBox>
                     <asp:RequiredFieldValidator ID="rfvCODE" runat="server" ErrorMessage="Số Bill không thể rỗng" ControlToValidate="txtCODE" SetFocusOnError="True" Display="Dynamic" ValidationGroup="G1"></asp:RequiredFieldValidator>
