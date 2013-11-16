@@ -122,7 +122,7 @@ table.gridtable td {
 </tr>
 </table>
 <telerik:RadGrid ID="RadGridSOQUYTIENMAT" runat="server" Skin="Vista" 
-    AllowPaging="True" PageSize="100" AllowSorting="True" AllowFilteringByColumn="True" GridLines="None" ShowStatusBar="True"
+    AllowPaging="False" PageSize="100" AllowSorting="True" AllowFilteringByColumn="True" GridLines="None" ShowStatusBar="True"
     AutoGenerateColumns="False" AllowMultiRowEdit="True" AllowAutomaticDeletes="True" 
     AllowAutomaticInserts="True" AllowAutomaticUpdates="True" DataSourceID="SOQUYTIENMATDataSource" ShowFooter="True"
     ondatabound="RadGridSOQUYTIENMAT_DataBound" onitemdeleted="RadGridSOQUYTIENMAT_ItemDeleted" oniteminserted="RadGridSOQUYTIENMAT_ItemInserted" 
