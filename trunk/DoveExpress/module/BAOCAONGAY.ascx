@@ -40,8 +40,8 @@ Từ ngày:&nbsp;
 </telerik:RadDatePicker>
 </div>
 <telerik:RadGrid ID="RadGridBAOCAONGAY" runat="server" Skin="Vista" 
-    AllowPaging="False" AllowSorting="True" 
-    AllowFilteringByColumn="False" GridLines="None" ShowStatusBar="True"
+    AllowPaging="True" PageSize="50" AllowSorting="True" 
+    AllowFilteringByColumn="True" GridLines="None" ShowStatusBar="True"
     AutoGenerateColumns="False" onitemcommand="RadGridBAOCAONGAY_ItemCommand" 
     AllowMultiRowEdit="True" AllowAutomaticDeletes="True" 
     AllowAutomaticInserts="True" AllowAutomaticUpdates="True" 
@@ -67,19 +67,6 @@ Từ ngày:&nbsp;
                         <asp:LinkButton ID="ExportToCsvButton" runat="server" CommandName="ExportToCsv"><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/csv.gif" /></asp:LinkButton>&nbsp;&nbsp;
                     </div>
         </CommandItemTemplate>
-        <GroupByExpressions>
-          <telerik:GridGroupByExpression>
-            <SelectFields>
-              <telerik:GridGroupByField FieldAlias="C_KHOILUONG" Aggregate="Sum" FieldName="C_KHOILUONG" FormatString=" {0} g" HeaderText="Khối lượng" />
-              <telerik:GridGroupByField FieldAlias="C_TIENHANGVAT" Aggregate="Sum" FieldName="C_TIENHANGVAT" FormatString="{0:### ### ### VNĐ}" HeaderText="Tiền hàng (VAT)" />
-              <telerik:GridGroupByField FieldAlias="C_DATHU" Aggregate="Sum" FieldName="C_DATHU" FormatString="{0:### ### ### VNĐ}" HeaderText="Đã thu" />
-              <telerik:GridGroupByField FieldAlias="C_CONLAI" Aggregate="Sum" FieldName="C_CONLAI" FormatString="{0:### ### ### VNĐ}" HeaderText="Còn lại" />
-            </SelectFields>
-            <GroupByFields>
-              <telerik:GridGroupByField FieldAlias="FK_VUNGLAMVIEC" FieldName="FK_VUNGLAMVIEC" />
-            </GroupByFields>
-          </telerik:GridGroupByExpression>
-        </GroupByExpressions>
         <Columns>
                 <telerik:GridBoundColumn UniqueName="C_NGAY" HeaderText="Ngày" DataField="C_NGAY" HeaderStyle-Width="100px" HeaderStyle-HorizontalAlign="Center"
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%" DataType="System.DateTime" DataFormatString="{0:dd/MM/yyyy}">
@@ -100,22 +87,22 @@ Từ ngày:&nbsp;
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
                 </telerik:GridBoundColumn>
                 <telerik:GridBoundColumn UniqueName="C_KHOILUONG" HeaderText="Khối lượng" DataField="C_KHOILUONG" HeaderStyle-Width="80px" HeaderStyle-HorizontalAlign="Center"
-                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%" Aggregate="Sum" FooterText="Tổng : ">
+                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" FilterControlWidth="75%" Aggregate="Sum" FooterText="Tổng : ">
                 </telerik:GridBoundColumn>
                 <telerik:GridBoundColumn UniqueName="C_GIACUOC" HeaderText="Cước chính" DataField="C_GIACUOC" HeaderStyle-Width="100px" HeaderStyle-HorizontalAlign="Center"
-                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%" DataType="System.Decimal" DataFormatString="{0:### ### ###}">
+                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" FilterControlWidth="75%" DataType="System.Decimal" DataFormatString="{0:### ### ###}">
                 </telerik:GridBoundColumn>
                 <telerik:GridBoundColumn UniqueName="C_VAT" HeaderText="VAT" DataField="C_VAT" HeaderStyle-Width="130px" HeaderStyle-HorizontalAlign="Center"
-                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%" DataType="System.Decimal" DataFormatString="{0:### ### ###}">
+                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" FilterControlWidth="75%" DataType="System.Decimal" DataFormatString="{0:### ### ###}">
                 </telerik:GridBoundColumn>
                 <telerik:GridBoundColumn UniqueName="C_TIENHANGVAT" HeaderText="Tiền hàng (VAT)" DataField="C_TIENHANGVAT" HeaderStyle-Width="130px" HeaderStyle-HorizontalAlign="Center"
-                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%" Aggregate="Sum" FooterText="Tổng : " DataType="System.Decimal" DataFormatString="{0:### ### ###}">
+                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" FilterControlWidth="75%" Aggregate="Sum" FooterText="Tổng : " DataType="System.Decimal" DataFormatString="{0:### ### ###}">
                 </telerik:GridBoundColumn>
                  <telerik:GridBoundColumn UniqueName="C_DATHU" HeaderText="Đã thu" DataField="C_DATHU" HeaderStyle-Width="130px" HeaderStyle-HorizontalAlign="Center"
-                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%" Aggregate="Sum" FooterText="Tổng : " DataType="System.Decimal" DataFormatString="{0:### ### ###}">
+                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" FilterControlWidth="75%" Aggregate="Sum" FooterText="Tổng : " DataType="System.Decimal" DataFormatString="{0:### ### ###}">
                 </telerik:GridBoundColumn>
                  <telerik:GridBoundColumn UniqueName="C_CONLAI" HeaderText="Còn lại" DataField="C_CONLAI" HeaderStyle-Width="130px" HeaderStyle-HorizontalAlign="Center"
-                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%" Aggregate="Sum" FooterText="Tổng : " DataType="System.Decimal" DataFormatString="{0:### ### ###}">
+                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" FilterControlWidth="75%" Aggregate="Sum" FooterText="Tổng : " DataType="System.Decimal" DataFormatString="{0:### ### ###}">
                 </telerik:GridBoundColumn>
             </Columns>
         </MasterTableView>
