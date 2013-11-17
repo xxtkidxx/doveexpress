@@ -255,7 +255,7 @@ table.gridtable td {
             <Selecting AllowRowSelect="True" EnableDragToSelectRows="True" />
             <ClientEvents OnPopUpShowing="PopUpShowing" />
             <ClientEvents OnRowDblClick="RowDblClick" />
-            <Scrolling AllowScroll="True" UseStaticHeaders="True" SaveScrollPosition="True" FrozenColumnsCount="3" ScrollHeight="450px" />
+            <Scrolling AllowScroll="True" UseStaticHeaders="True" ScrollHeight="600px" />
         </ClientSettings>
         <SortingSettings SortedAscToolTip="Sắp xếp tăng dần" 
             SortedDescToolTip="Sắp xếp giảm dần" SortToolTip="Click để sắp xếp" />
