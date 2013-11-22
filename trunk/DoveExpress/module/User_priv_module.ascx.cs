@@ -50,7 +50,7 @@ public partial class Admin_Modules_User_priv : System.Web.UI.UserControl
                     CheckBox chk5 = (CheckBox)item.FindControl("chkPrint");
                     ITCLIB.Security.Security security = new ITCLIB.Security.Security();
                     int value = security.ConvertPermissionToDB(chk1.Checked, chk2.Checked, chk3.Checked, chk4.Checked, chk5.Checked);
-                    UpdateSQL += ";UPDATE GROUPUSER_MODULE SET C_LEVELPERMISSION=" + value + " WHERE FK_MODULE=" + item["FK_MODULE"].Text + " AND FK_GROUPUSER=" + guID;
+                    UpdateSQL += ";UPDATE GROUPUSER_MODULE SET C_LEVELPERMISSION=" + value + " WHERE FK_MODULE=" + (item.FindControl("hfModule") as HiddenField).Value + " AND FK_GROUPUSER=" + guID;
                 }
                 ITCLIB.Admin.SQL result = new ITCLIB.Admin.SQL();
                 if (result.ExecuteNonQuery(UpdateSQL) != 0)
