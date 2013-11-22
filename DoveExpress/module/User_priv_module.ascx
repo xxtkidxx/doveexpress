@@ -1,5 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="User_Priv_Module.ascx.cs" Inherits="Admin_Modules_User_priv" %>
-<%@ Register namespace="ITCLIB.Security" tagprefix="Office" %>
+<%@ Register namespace="ITCLIB.Security" tagprefix="Security" %>
 <telerik:RadCodeBlock ID="RadCodeBlock1" runat="server">
 <script type="text/javascript">
             function CloseAndRebind(args) {
@@ -70,6 +70,11 @@
 <HeaderStyle HorizontalAlign ="Center" Width ="50px"/>
 <ItemTemplate>
               <asp:CheckBox ID="chkPrint" name="chkPrint" class="checkbox" Checked = <%# Security.ConvertPermissionToView((int)Eval("C_LEVELPERMISSION"),5) %> runat="server" />
+</ItemTemplate>
+</telerik:GridTemplateColumn>
+<telerik:GridTemplateColumn Visible ="false">
+<ItemTemplate>
+        <asp:HiddenField ID="hfModule" runat="server" Value ='<%#Eval("FK_MODULE") %>' />
 </ItemTemplate>
 </telerik:GridTemplateColumn>
 <telerik:GridBoundColumn DataField="FK_MODULE" UniqueName ="FK_MODULE" Visible ="false" ></telerik:GridBoundColumn>

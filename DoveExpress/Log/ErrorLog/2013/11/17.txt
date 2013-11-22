@@ -1,0 +1,40 @@
+Thời gian lỗi : 2013-11-17 13:35:29 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=SOQUYTIENMAT. 
+Nội dung lỗi:Operation is not valid due to the current state of the object.
+__________________________
+Thời gian lỗi : 2013-11-17 13:35:31 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=SOQUYTIENMAT. 
+Nội dung lỗi:Operation is not valid due to the current state of the object.
+__________________________
+Thời gian lỗi : 2013-11-17 13:35:32 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=SOQUYTIENMAT. 
+Nội dung lỗi:Operation is not valid due to the current state of the object.
+__________________________
+Thời gian lỗi : 2013-11-17 13:35:47 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=SOQUYTIENMAT. 
+Nội dung lỗi:Operation is not valid due to the current state of the object.
+__________________________
+Thời gian lỗi : 2013-11-17 14:03:16 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=SOQUYTIENMAT. 
+Nội dung lỗi:A RadAjaxLoadingPanel with ID of RadAjaxLoadingPanel1 was not found. Please ensure the control exists.
+__________________________
+Thời gian lỗi : 2013-11-17 14:06:04 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=SOQUYTIENMAT. 
+Nội dung lỗi:RadGrid.ClientSettings.Virtualization.RetrievedItemsPerRequest value should be bigger or equal to RadGrid.ClientSettings.Virtualization.ItemsPerView
+__________________________
+Thời gian lỗi : 2013-11-17 14:07:30 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=SOQUYTIENMAT. 
+Nội dung lỗi:RadGrid.ClientSettings.Virtualization.RetrievedItemsPerRequest value should be bigger or equal to RadGrid.ClientSettings.Virtualization.ItemsPerView
+__________________________
+Thời gian lỗi : 2013-11-17 14:08:11 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=SOQUYTIENMAT. 
+Nội dung lỗi:Literal content ('d') is not allowed within a 'Telerik.Web.UI.RadGrid'.
+__________________________
