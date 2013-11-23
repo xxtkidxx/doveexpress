@@ -194,9 +194,7 @@
                             <script type="text/javascript">
                                 var div1 = document.getElementById("div1");
                                 div1.onclick = StopPropagation;
-                            </script>
-                           <br />
-                                <asp:RequiredFieldValidator ForeColor ="Red"  ID="RequiredFieldValidator1" runat="server" ErrorMessage="Tên phòng ban, bộ phận không thể rỗng" ControlToValidate="rcbParent" SetFocusOnError="True" Display="Dynamic" ValidationGroup="G1"></asp:RequiredFieldValidator>
+                            </script>                           
                    </td>
                </tr>
                         <tr>
