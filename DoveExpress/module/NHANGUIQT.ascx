@@ -500,7 +500,7 @@ table.gridtable td {
 </tr>
 <tr>
 	<td>
-        <telerik:RadNumericTextBox  ID="txtBillNhanh" ForeColor="Red" Width ="95%" 
+        <telerik:RadNumericTextBox  ID="txtBillNhanh" ForeColor="Red" Width ="200px" 
             Runat="server" ontextchanged="txtBillNhanh_TextChanged">
             <NumberFormat DecimalSeparator ="." GroupSeparator ="" DecimalDigits="0"/>
             <ClientEvents OnKeyPress ="OnKeyPresstxtBillNhanh"/>

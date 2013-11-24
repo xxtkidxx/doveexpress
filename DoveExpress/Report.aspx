@@ -20,18 +20,11 @@
     <div id="content"><center id="center">
         <telerik:ReportViewer ID="ReportViewer1" runat="server" Height="800px" Width="100%" />
         <script type="text/javascript">
-            ReportViewer.OnReportLoadedOld = ReportViewer.OnReportLoaded; 
-            ReportViewer.prototype.OnReportLoaded = function()
-            {
-                this.OnReportLoadedOld();            
-                var printButton = document.getElementById("PrintButton"); 
-                printButton.disabled = false; 
-            } 
-            function MyPrint()
-            {
-                <%=ReportViewer1.ClientID %>.PrintReport();
+            FireFoxHelper.prototype.PDFPluginPrintEnabled = function () {
+                alert("Firefox");
+                return true;
             }
-        </script>
+     </script>
     </center></div>
     <asp:Button ID="PrintButton" runat="server" Text="Print Report" OnClientClick="MyPrint(); return false;" />
     </form>
