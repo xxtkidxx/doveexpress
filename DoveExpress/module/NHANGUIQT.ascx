@@ -13,7 +13,7 @@
         }
     }
     function PrintOnClientLinkClickedEdit(IDNHANGUI) {
-        var url = "Report.aspx?TYPE=INBILL&ID=" + IDNHANGUI;
+        var url = "Report.aspx?TYPE=INBILLQT&ID=" + IDNHANGUI;
         window.open(url, '_blank');
         window.focus();
     }
