@@ -79,41 +79,89 @@ public partial class Report : System.Web.UI.Page
                 {
                     reportSource.Parameters.Add("CPN", true);
                     reportSource.Parameters.Add("DUONGBO", false);
-                    reportSource.Parameters.Add("QUOCTE", false);
                     reportSource.Parameters.Add("HOATOC", false);
                     reportSource.Parameters.Add("DVKHAC", false);
+                    reportSource.Parameters.Add("DHL", false);
+                    reportSource.Parameters.Add("FEDEX", false);
+                    reportSource.Parameters.Add("UPS", false);
+                    reportSource.Parameters.Add("TNT", false);
                 }
                 else if (DICHVUCODE == "DB")
                 {
                     reportSource.Parameters.Add("CPN", false);
                     reportSource.Parameters.Add("DUONGBO", true);
-                    reportSource.Parameters.Add("QUOCTE", false);
                     reportSource.Parameters.Add("HOATOC", false);
                     reportSource.Parameters.Add("DVKHAC", false);
-                }
-                else if (DICHVUCODE == "QT")
-                {
-                    reportSource.Parameters.Add("CPN", false);
-                    reportSource.Parameters.Add("DUONGBO", false);
-                    reportSource.Parameters.Add("QUOCTE", true);
-                    reportSource.Parameters.Add("HOATOC", false);
-                    reportSource.Parameters.Add("DVKHAC", false);
+                    reportSource.Parameters.Add("DHL", false);
+                    reportSource.Parameters.Add("FEDEX", false);
+                    reportSource.Parameters.Add("UPS", false);
+                    reportSource.Parameters.Add("TNT", false);
                 }
                 else if (DICHVUCODE == "HT")
                 {
                     reportSource.Parameters.Add("CPN", false);
                     reportSource.Parameters.Add("DUONGBO", false);
-                    reportSource.Parameters.Add("QUOCTE", false);
                     reportSource.Parameters.Add("HOATOC", true);
                     reportSource.Parameters.Add("DVKHAC", false);
+                    reportSource.Parameters.Add("DHL", false);
+                    reportSource.Parameters.Add("FEDEX", false);
+                    reportSource.Parameters.Add("UPS", false);
+                    reportSource.Parameters.Add("TNT", false);
+                }
+                else if (DICHVUCODE == "DHL")
+                {
+                    reportSource.Parameters.Add("CPN", false);
+                    reportSource.Parameters.Add("DUONGBO", false);
+                    reportSource.Parameters.Add("HOATOC", false);
+                    reportSource.Parameters.Add("DVKHAC", false);
+                    reportSource.Parameters.Add("DHL", true);
+                    reportSource.Parameters.Add("FEDEX", false);
+                    reportSource.Parameters.Add("UPS", false);
+                    reportSource.Parameters.Add("TNT", false);
+                }
+                else if (DICHVUCODE == "FEDEX")
+                {
+                    reportSource.Parameters.Add("CPN", false);
+                    reportSource.Parameters.Add("DUONGBO", false);
+                    reportSource.Parameters.Add("HOATOC", false);
+                    reportSource.Parameters.Add("DVKHAC", false);
+                    reportSource.Parameters.Add("DHL", false);
+                    reportSource.Parameters.Add("FEDEX", false);
+                    reportSource.Parameters.Add("UPS", false);
+                    reportSource.Parameters.Add("TNT", false);
+                }
+                else if (DICHVUCODE == "UPS")
+                {
+                    reportSource.Parameters.Add("CPN", false);
+                    reportSource.Parameters.Add("DUONGBO", false);
+                    reportSource.Parameters.Add("HOATOC", false);
+                    reportSource.Parameters.Add("DVKHAC", false);
+                    reportSource.Parameters.Add("DHL", false);
+                    reportSource.Parameters.Add("FEDEX", false);
+                    reportSource.Parameters.Add("UPS", true);
+                    reportSource.Parameters.Add("TNT", false);
+                }
+                else if (DICHVUCODE == "TNT")
+                {
+                    reportSource.Parameters.Add("CPN", false);
+                    reportSource.Parameters.Add("DUONGBO", false);
+                    reportSource.Parameters.Add("HOATOC", false);
+                    reportSource.Parameters.Add("DVKHAC", false);
+                    reportSource.Parameters.Add("DHL", false);
+                    reportSource.Parameters.Add("FEDEX", false);
+                    reportSource.Parameters.Add("UPS", false);
+                    reportSource.Parameters.Add("TNT", true);
                 }
                 else
                 {
                     reportSource.Parameters.Add("CPN", false);
                     reportSource.Parameters.Add("DUONGBO", false);
-                    reportSource.Parameters.Add("QUOCTE", false);
                     reportSource.Parameters.Add("HOATOC", false);
-                    reportSource.Parameters.Add("DVKHAC", false);
+                    reportSource.Parameters.Add("DVKHAC", true);
+                    reportSource.Parameters.Add("DHL", false);
+                    reportSource.Parameters.Add("FEDEX", false);
+                    reportSource.Parameters.Add("UPS", false);
+                    reportSource.Parameters.Add("TNT", false);
                 }
                 reportSource.Parameters.Add("NHANVIENNHAN", oDataTable.Rows[0]["FK_NHANVIENNHAN"] != DBNull.Value ? ITCLIB.Admin.cFunction.LoadUserName(oDataTable.Rows[0]["FK_NHANVIENNHAN"].ToString()) : "");
                 reportSource.Parameters.Add("NHANVIENPHAT", oDataTable.Rows[0]["FK_NHANVIENPHAT"] != DBNull.Value ? ITCLIB.Admin.cFunction.LoadUserName(oDataTable.Rows[0]["FK_NHANVIENPHAT"].ToString()) : "");
