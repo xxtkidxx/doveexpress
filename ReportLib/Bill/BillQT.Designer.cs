@@ -43,7 +43,6 @@
             Telerik.Reporting.ReportParameter reportParameter31 = new Telerik.Reporting.ReportParameter();
             Telerik.Reporting.ReportParameter reportParameter32 = new Telerik.Reporting.ReportParameter();
             Telerik.Reporting.ReportParameter reportParameter33 = new Telerik.Reporting.ReportParameter();
-            Telerik.Reporting.ReportParameter reportParameter34 = new Telerik.Reporting.ReportParameter();
             Telerik.Reporting.Drawing.StyleRule styleRule1 = new Telerik.Reporting.Drawing.StyleRule();
             this.detail = new Telerik.Reporting.DetailSection();
             this.barcode1 = new Telerik.Reporting.Barcode();
@@ -347,7 +346,7 @@
             this.textBox10.Style.Padding.Right = Telerik.Reporting.Drawing.Unit.Point(1D);
             this.textBox10.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Left;
             this.textBox10.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
-            this.textBox10.Value = "Quóc gia:";
+            this.textBox10.Value = "Tỉnh thành:";
             // 
             // textBox11
             // 
@@ -386,7 +385,7 @@
             this.textBox13.Style.Padding.Right = Telerik.Reporting.Drawing.Unit.Point(1D);
             this.textBox13.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Center;
             this.textBox13.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
-            this.textBox13.Value = "= Parameters.TINHTHANHNHAN.Value";
+            this.textBox13.Value = "= Parameters.QUOCGIANHAN.Value";
             // 
             // textBox14
             // 
@@ -1399,31 +1398,30 @@
             reportParameter17.Name = "C_HENGIO";
             reportParameter17.Value = "0";
             reportParameter18.Name = "TINHTHANHGUI";
-            reportParameter19.Name = "QUANHUYENNHAN";
-            reportParameter20.Name = "TINHTHANHNHAN";
-            reportParameter21.Name = "CPN";
+            reportParameter19.Name = "CPN";
+            reportParameter19.Type = Telerik.Reporting.ReportParameterType.Boolean;
+            reportParameter20.Name = "DHL";
+            reportParameter20.Type = Telerik.Reporting.ReportParameterType.Boolean;
+            reportParameter21.Name = "DUONGBO";
             reportParameter21.Type = Telerik.Reporting.ReportParameterType.Boolean;
-            reportParameter22.Name = "DHL";
+            reportParameter22.Name = "HOATOC";
             reportParameter22.Type = Telerik.Reporting.ReportParameterType.Boolean;
-            reportParameter23.Name = "DUONGBO";
+            reportParameter23.Name = "DVKHAC";
             reportParameter23.Type = Telerik.Reporting.ReportParameterType.Boolean;
-            reportParameter24.Name = "HOATOC";
-            reportParameter24.Type = Telerik.Reporting.ReportParameterType.Boolean;
-            reportParameter25.Name = "DVKHAC";
-            reportParameter25.Type = Telerik.Reporting.ReportParameterType.Boolean;
-            reportParameter26.Name = "DATHU";
-            reportParameter27.Name = "CONLAI";
-            reportParameter28.Name = "NHANVIENNHAN";
-            reportParameter29.Name = "NHANVIENPHAT";
-            reportParameter30.Name = "C_NGAYGIOPHAT";
-            reportParameter31.Name = "FEDEX";
+            reportParameter24.Name = "DATHU";
+            reportParameter25.Name = "CONLAI";
+            reportParameter26.Name = "NHANVIENNHAN";
+            reportParameter27.Name = "NHANVIENPHAT";
+            reportParameter28.Name = "C_NGAYGIOPHAT";
+            reportParameter29.Name = "FEDEX";
+            reportParameter29.Type = Telerik.Reporting.ReportParameterType.Boolean;
+            reportParameter30.Name = "UPS";
+            reportParameter30.Type = Telerik.Reporting.ReportParameterType.Boolean;
+            reportParameter31.Name = "TNT";
             reportParameter31.Type = Telerik.Reporting.ReportParameterType.Boolean;
-            reportParameter32.Name = "UPS";
-            reportParameter32.Type = Telerik.Reporting.ReportParameterType.Boolean;
-            reportParameter33.Name = "TNT";
-            reportParameter33.Type = Telerik.Reporting.ReportParameterType.Boolean;
-            reportParameter34.Name = "KHOILUONGQD";
-            reportParameter34.Value = "0";
+            reportParameter32.Name = "C_KHOILUONGQD";
+            reportParameter32.Value = "0";
+            reportParameter33.Name = "QUOCGIANHAN";
             this.ReportParameters.Add(reportParameter1);
             this.ReportParameters.Add(reportParameter2);
             this.ReportParameters.Add(reportParameter3);
@@ -1457,7 +1455,6 @@
             this.ReportParameters.Add(reportParameter31);
             this.ReportParameters.Add(reportParameter32);
             this.ReportParameters.Add(reportParameter33);
-            this.ReportParameters.Add(reportParameter34);
             styleRule1.Selectors.AddRange(new Telerik.Reporting.Drawing.ISelector[] {
             new Telerik.Reporting.Drawing.TypeSelector(typeof(Telerik.Reporting.TextItemBase)),
             new Telerik.Reporting.Drawing.TypeSelector(typeof(Telerik.Reporting.HtmlTextBox))});
