@@ -1462,9 +1462,9 @@
             this.ReportParameters.Add(reportParameter32);
             this.ReportParameters.Add(reportParameter33);
             this.ReportParameters.Add(reportParameter34);
-            this.Style.Padding.Left = Telerik.Reporting.Drawing.Unit.Mm(2D);
-            this.Style.Padding.Right = Telerik.Reporting.Drawing.Unit.Mm(2D);
-            this.Style.Padding.Top = Telerik.Reporting.Drawing.Unit.Mm(2D);
+            this.Style.Padding.Left = Telerik.Reporting.Drawing.Unit.Inch(0D);
+            this.Style.Padding.Right = Telerik.Reporting.Drawing.Unit.Inch(0D);
+            this.Style.Padding.Top = Telerik.Reporting.Drawing.Unit.Inch(0D);
             styleRule1.Selectors.AddRange(new Telerik.Reporting.Drawing.ISelector[] {
             new Telerik.Reporting.Drawing.TypeSelector(typeof(Telerik.Reporting.TextItemBase)),
             new Telerik.Reporting.Drawing.TypeSelector(typeof(Telerik.Reporting.HtmlTextBox))});
