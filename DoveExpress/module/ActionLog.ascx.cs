@@ -13,7 +13,7 @@ public partial class Admin_ActionLog : System.Web.UI.UserControl
     public string Error = "";
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (!ITCLIB.Security.Security.CanViewModule("ActionLog"))
+        if (!ITCLIB.Security.Security.IsSysAdmin())
         {
             ITCLIB.Security.Security.ReturnUrl();
         }

@@ -24,7 +24,7 @@ public partial class module_KHACHHANG : System.Web.UI.UserControl
                 RadGridKHACHHANG.MasterTableView.EditFormSettings.PopUpSettings.Modal = true;
                 break;
         }
-        if (!ITCLIB.Security.Security.CanViewModule("Lists"))
+        if (!ITCLIB.Security.Security.CanViewModule("KHACHHANG"))
         {
             ITCLIB.Security.Security.ReturnUrl();
         }

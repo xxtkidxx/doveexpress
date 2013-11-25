@@ -24,7 +24,7 @@ public partial class module_QUANHUYEN : System.Web.UI.UserControl
                 RadGridQUANHUYEN.MasterTableView.EditFormSettings.PopUpSettings.Modal = true;
                 break;
         }
-        if (!ITCLIB.Security.Security.CanViewModule("Lists"))
+        if (!ITCLIB.Security.Security.CanViewModule("VUNGDIALY"))
         {
             ITCLIB.Security.Security.ReturnUrl();
         }

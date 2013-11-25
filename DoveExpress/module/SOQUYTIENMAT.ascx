@@ -3,7 +3,7 @@
 <telerik:RadCodeBlock ID="RadCodeBlockSOQUYTIENMAT" runat="server">
 <script type="text/javascript">
     function RowDblClick(sender, eventArgs) {
-            var CanEdit = "<%=ITCLIB.Security.Security.CanEditModule("SOQUYTIENMAT") %>";
+            var CanEdit = "<%=ITCLIB.Security.Security.CanEditModule("TAICHINH") %>";
             if ((eventArgs.get_tableView().get_name() == "MasterTableViewSOQUYTIENMAT") && (CanEdit == "True")) {
                 sender.get_masterTableView().editItem(eventArgs.get_itemIndexHierarchical());
             }
@@ -135,12 +135,12 @@ table.gridtable td {
         <CommandItemTemplate>
                     <div style="padding: 5px 5px;float:left;width:auto">
                         <b>Quản lý sổ quỹ tiền mặt</b>&nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:LinkButton ID="btnEditSelected" runat="server" CommandName="EditSelected" Visible='<%# RadGridSOQUYTIENMAT.EditIndexes.Count == 0 && ITCLIB.Security.Security.CanEditModule("SOQUYTIENMAT") %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Edit.gif" />Sửa</asp:LinkButton>&nbsp;&nbsp;
+                        <asp:LinkButton ID="btnEditSelected" runat="server" CommandName="EditSelected" Visible='<%# RadGridSOQUYTIENMAT.EditIndexes.Count == 0 && ITCLIB.Security.Security.CanEditModule("TAICHINH") %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Edit.gif" />Sửa</asp:LinkButton>&nbsp;&nbsp;
                         <asp:LinkButton ID="btnUpdateEdited" runat="server" CommandName="UpdateEdited" Visible='<%# RadGridSOQUYTIENMAT.EditIndexes.Count > 0 %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Update.gif" />Lưu</asp:LinkButton>&nbsp;&nbsp;
                         <asp:LinkButton ID="btnCancel" runat="server" CommandName="CancelAll" Visible='<%# RadGridSOQUYTIENMAT.EditIndexes.Count > 0 || RadGridSOQUYTIENMAT.MasterTableView.IsItemInserted %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Cancel.gif" />Hủy bỏ</asp:LinkButton>&nbsp;&nbsp;
-                        <asp:LinkButton ID="LinkButton2" runat="server" CommandName="InitInsert" Visible='<%# !RadGridSOQUYTIENMAT.MasterTableView.IsItemInserted && ITCLIB.Security.Security.CanAddModule("SOQUYTIENMAT") %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/AddRecord.gif" />Thêm</asp:LinkButton>&nbsp;&nbsp;
+                        <asp:LinkButton ID="LinkButton2" runat="server" CommandName="InitInsert" Visible='<%# !RadGridSOQUYTIENMAT.MasterTableView.IsItemInserted && ITCLIB.Security.Security.CanAddModule("TAICHINH") %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/AddRecord.gif" />Thêm</asp:LinkButton>&nbsp;&nbsp;
                         <asp:LinkButton ID="LinkButton3" runat="server" CommandName="PerformInsert" Visible='<%# RadGridSOQUYTIENMAT.MasterTableView.IsItemInserted %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Insert.gif" />Lưu</asp:LinkButton>&nbsp;&nbsp;
-                        <asp:LinkButton ID="LinkButton1" OnClientClick="javascript:return confirm('Bạn có muốn xóa bản ghi đã chọn không?')" runat="server" CommandName="DeleteSelected" Visible='<%# ITCLIB.Security.Security.CanDeleteModule("SOQUYTIENMAT") %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Delete.gif" />Xóa</asp:LinkButton>&nbsp;&nbsp;
+                        <asp:LinkButton ID="LinkButton1" OnClientClick="javascript:return confirm('Bạn có muốn xóa bản ghi đã chọn không?')" runat="server" CommandName="DeleteSelected" Visible='<%# ITCLIB.Security.Security.CanDeleteModule("TAICHINH") %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Delete.gif" />Xóa</asp:LinkButton>&nbsp;&nbsp;
                        <asp:LinkButton ID="LinkButton4" runat="server" CommandName="RebindGrid"><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Refresh.gif" />Làm mới</asp:LinkButton>
                     </div>
                     <div style="padding: 5px 5px;float:right;width:auto">

@@ -26,7 +26,7 @@ public partial class module_BAOCAONVKD : System.Web.UI.UserControl
                 RadGridBAOCAONVKD.MasterTableView.EditFormSettings.PopUpSettings.Modal = true;
                 break;
         }
-        if (!ITCLIB.Security.Security.CanViewModule("Lists"))
+        if (!ITCLIB.Security.Security.CanViewModule("BAOCAO"))
         {
             ITCLIB.Security.Security.ReturnUrl();
         }

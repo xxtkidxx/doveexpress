@@ -24,7 +24,7 @@ public partial class module_CHITIETCUOCDT : System.Web.UI.UserControl
                 RadGridCHITIETCUOCDT.MasterTableView.EditFormSettings.PopUpSettings.Modal = true;
                 break;
         }
-        if (!ITCLIB.Security.Security.CanViewModule("DANHMUCCHUNG"))
+        if (!ITCLIB.Security.Security.CanViewModule("BANGCUOC"))
         {
             ITCLIB.Security.Security.ReturnUrl();
         }

@@ -215,7 +215,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
                 RadGridNHANGUI.MasterTableView.EditFormSettings.PopUpSettings.Modal = true;
                 break;
         }
-        if (!ITCLIB.Security.Security.CanViewModule("Lists"))
+        if (!ITCLIB.Security.Security.CanViewModule("NHANGUI"))
         {
             ITCLIB.Security.Security.ReturnUrl();
         }

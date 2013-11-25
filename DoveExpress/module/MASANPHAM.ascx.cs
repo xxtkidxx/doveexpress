@@ -24,7 +24,7 @@ public partial class module_MASANPHAM : System.Web.UI.UserControl
                 RadGridMASANPHAM.MasterTableView.EditFormSettings.PopUpSettings.Modal = true;
                 break;
         }
-        if (!ITCLIB.Security.Security.CanViewModule("Lists"))
+        if (!ITCLIB.Security.Security.IsSysAdmin())
         {
             ITCLIB.Security.Security.ReturnUrl();
         }

@@ -24,7 +24,7 @@ public partial class Modules_UserAdmins : System.Web.UI.UserControl
                 RadGridUserAdmin.MasterTableView.EditFormSettings.PopUpSettings.Modal = true;
                 break;
         }
-        if (!ITCLIB.Security.Security.CanViewModule("UserAdmins"))
+        if (!ITCLIB.Security.Security.CanViewModule("NHANVIEN"))
         {
             ITCLIB.Security.Security.ReturnUrl();
         }

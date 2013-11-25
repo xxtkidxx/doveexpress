@@ -65,7 +65,7 @@
               <asp:CheckBox ID="chkDelete" name="chkDelete" class="checkbox" Checked = <%# Security.ConvertPermissionToView((int)Eval("C_LEVELPERMISSION"),4) %> runat="server" />
 </ItemTemplate>
 </telerik:GridTemplateColumn>
-<telerik:GridTemplateColumn HeaderText ="In">
+<telerik:GridTemplateColumn HeaderText ="Khác">
 <ItemStyle HorizontalAlign ="Center" Width ="50px" />
 <HeaderStyle HorizontalAlign ="Center" Width ="50px"/>
 <ItemTemplate>

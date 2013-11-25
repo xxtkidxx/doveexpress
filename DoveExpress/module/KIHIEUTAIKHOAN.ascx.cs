@@ -24,7 +24,7 @@ public partial class module_KIHIEUTAIKHOAN : System.Web.UI.UserControl
                 RadGridKIHIEUTAIKHOAN.MasterTableView.EditFormSettings.PopUpSettings.Modal = true;
                 break;
         }
-        if (!ITCLIB.Security.Security.CanViewModule("Lists"))
+        if (!ITCLIB.Security.Security.CanViewModule("TAICHINH"))
         {
             ITCLIB.Security.Security.ReturnUrl();
         }

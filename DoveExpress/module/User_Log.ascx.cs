@@ -9,7 +9,7 @@ public partial class Admin_Modules_User_Log : System.Web.UI.UserControl
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (!ITCLIB.Security.Security.CanViewModule("User_Log"))
+        if (!ITCLIB.Security.Security.IsSysAdmin())
         {
             ITCLIB.Security.Security.ReturnUrl();
         }

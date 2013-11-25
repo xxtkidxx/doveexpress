@@ -2,7 +2,7 @@
 <telerik:RadCodeBlock ID="RadCodeBlockTINHTHANH"  runat ="server" >
 <script type="text/javascript">
          function RowDblClickTINHTHANH(sender, eventArgs) {
-            var CanEdit = "<%=ITCLIB.Security.Security.CanEditModule("Lists") %>";
+            var CanEdit = "<%=ITCLIB.Security.Security.CanEditModule("VUNGDIALY") %>";
             if ((eventArgs.get_tableView().get_name() == "MasterTableViewTINHTHANH") && (CanEdit == "True")) {
                 sender.get_masterTableView().editItem(eventArgs.get_itemIndexHierarchical());
             }
@@ -75,9 +75,9 @@
                         <b>
                            Quản lý tỉnh thành: <asp:Label ID="lblcap" runat="server" 
                             Text="Label" onprerender="lblcap_PreRender"></asp:Label></b>&nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:LinkButton ID="btnEditSelected" runat="server" CommandName="EditSelected" Visible='<%# RadGridTINHTHANH.EditIndexes.Count == 0  && ITCLIB.Security.Security.CanEditModule("TINHTHANHs") %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Edit.gif" />Sửa</asp:LinkButton>&nbsp;&nbsp;
-                        <asp:LinkButton ID="LinkButton2" runat="server" CommandName="InitInsert" Visible='<%# !RadGridTINHTHANH.MasterTableView.IsItemInserted && ITCLIB.Security.Security.CanAddModule("TINHTHANHs") %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/AddRecord.gif" />Thêm</asp:LinkButton>&nbsp;&nbsp;
-                        <asp:LinkButton ID="LinkButton1" OnClientClick="javascript:return confirm('Bạn có muốn xóa bản ghi đã chọn không?')" Visible ='<%# ITCLIB.Security.Security.CanDeleteModule("TINHTHANHs") %>' runat="server" CommandName="DeleteSelected"><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Delete.gif" />Xóa</asp:LinkButton>&nbsp;&nbsp;
+                        <asp:LinkButton ID="btnEditSelected" runat="server" CommandName="EditSelected" Visible='<%# RadGridTINHTHANH.EditIndexes.Count == 0  && ITCLIB.Security.Security.CanEditModule("VUNGDIALY") %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Edit.gif" />Sửa</asp:LinkButton>&nbsp;&nbsp;
+                        <asp:LinkButton ID="LinkButton2" runat="server" CommandName="InitInsert" Visible='<%# !RadGridTINHTHANH.MasterTableView.IsItemInserted && ITCLIB.Security.Security.CanAddModule("VUNGDIALY") %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/AddRecord.gif" />Thêm</asp:LinkButton>&nbsp;&nbsp;
+                        <asp:LinkButton ID="LinkButton1" OnClientClick="javascript:return confirm('Bạn có muốn xóa bản ghi đã chọn không?')" Visible ='<%# ITCLIB.Security.Security.CanDeleteModule("VUNGDIALY") %>' runat="server" CommandName="DeleteSelected"><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Delete.gif" />Xóa</asp:LinkButton>&nbsp;&nbsp;
                         <asp:LinkButton ID="LinkButton4" runat="server" CommandName="RebindGrid"><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Refresh.gif" />Làm mới</asp:LinkButton>
                     </div>
                     <div style="padding: 5px 5px;float:right;width:auto">
