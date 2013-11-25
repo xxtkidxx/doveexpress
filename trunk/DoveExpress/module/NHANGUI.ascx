@@ -5,7 +5,20 @@
     function PrintOnClientLinkClicked() {
         if ($find("<%= RadGridNHANGUI.MasterTableView.ClientID %>").get_selectedItems().length != 0) {
             var IDNHANGUI = $find("<%= RadGridNHANGUI.MasterTableView.ClientID %>").get_selectedItems()[0].getDataKeyValue("PK_ID")
-            var url = "Report.aspx?TYPE=INBILL&ID=" + IDNHANGUI;
+            var url = "";
+            if (confirm("In phiếu bằng máy in kim?")) {
+                url = "Report.aspx?TYPE=INBILLKIM&ID=" + IDNHANGUI;
+
+            } else {
+                if (confirm("In máy in thường 2 bản?")) {
+
+                    url = "Report.aspx?TYPE=INBILL2&ID=" + IDNHANGUI;
+                } else {
+                    url = "Report.aspx?TYPE=INBILL&ID=" + IDNHANGUI;
+
+
+                }
+            }
             window.open(url, '_blank');
             window.focus();
         } else {
@@ -13,9 +26,22 @@
         }
     }
     function PrintOnClientLinkClickedEdit(IDNHANGUI) {
-            var url = "Report.aspx?TYPE=INBILL&ID=" + IDNHANGUI;
-            window.open(url, '_blank');
-            window.focus();
+        var url = "";
+        if (confirm("In phiếu bằng máy in kim?")) {
+            url = "Report.aspx?TYPE=INBILLKIM&ID=" + IDNHANGUI;
+
+        } else {
+            if (confirm("In máy in thường 2 bản?")) {
+
+                url = "Report.aspx?TYPE=INBILL2&ID=" + IDNHANGUI;
+            } else {
+                url = "Report.aspx?TYPE=INBILL&ID=" + IDNHANGUI;
+
+
+            }
+        }
+        window.open(url, '_blank');
+        window.focus();
     }    
 </script>
 <script type="text/javascript">
@@ -336,7 +362,7 @@
         }
     }
     function cmbC_HINHTHUCTTClientSelectedIndexChangedHandler(sender, eventArgs) {
-        if ( eventArgs.get_item().get_value() == 'Thanh toán ngay')
+        if ( eventArgs.get_item().get_value() == 'Thanh toán ngay' || eventArgs.get_item().get_value() == 'Đã thanh toán')
         {
             txtC_DATHU.set_value(txtC_TIENHANGVAT.get_value());
         } else if ( eventArgs.get_item().get_value() == 'Thanh toán sau')
@@ -532,7 +558,7 @@ table.gridtable td {
                 <telerik:GridTemplateColumn UniqueName="C_BILL" HeaderText="Số Bill" DataField="C_BILL" HeaderStyle-Width="100px" HeaderStyle-HorizontalAlign="Center"
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
                     <ItemTemplate>
-                        <%# String.Format("BC_{0}", Eval("C_BILL").ToString())%>
+                        <asp:Label ID="lblC_BILL" runat="server" Text='<%# String.Format("BC{0}", Eval("C_BILL").ToString())%>'></asp:Label>                        
                     </ItemTemplate>
                 </telerik:GridTemplateColumn>
                 <telerik:GridBoundColumn UniqueName="FK_KHACHHANG" HeaderText="Mã khách hàng" DataField="FK_KHACHHANG" HeaderStyle-Width="100px" HeaderStyle-HorizontalAlign="Center"
@@ -588,7 +614,7 @@ table.gridtable td {
                 <td style ="width:100px;"> <span class="rtsTxtnew">Số Bill:</span></td>
                 <td colspan="4">
                     <asp:HiddenField ID="txtID" Value ='<%# Eval( "PK_ID") %>' runat="server" />
-                    BC_<telerik:RadNumericTextBox ID="txtCODE" Width ="80%" Text='<%# Bind("C_BILL") %>' runat="server">
+                    BC<telerik:RadNumericTextBox ID="txtCODE" Width ="80%" Text='<%# Bind("C_BILL") %>' runat="server">
                         <NumberFormat DecimalSeparator ="." GroupSeparator ="" DecimalDigits="0"/>
                     </telerik:RadNumericTextBox>
                     <asp:RequiredFieldValidator ID="rfvCODE" runat="server" ErrorMessage="Số Bill không thể rỗng" ControlToValidate="txtCODE" SetFocusOnError="True" Display="Dynamic" ValidationGroup="G1"></asp:RequiredFieldValidator>
@@ -762,6 +788,7 @@ table.gridtable td {
                                 <telerik:RadComboBoxItem Value ="Thanh toán ngay" Text ="Thanh toán ngay" />
                                 <telerik:RadComboBoxItem Value ="Thanh toán sau" Text ="Thanh toán sau" />
                                 <telerik:RadComboBoxItem Value ="Thanh toán đầu nhận" Text ="Thanh toán đầu nhận" />
+                                <telerik:RadComboBoxItem Value ="Đã thanh toán" Text ="Đã thanh toán" />
                                 <telerik:RadComboBoxItem Value ="Khác" Text ="Khác" />
                             </Items>
                  </telerik:RadComboBox>
@@ -865,7 +892,7 @@ table.gridtable td {
     DeleteCommand="DELETE FROM [NHANGUI] WHERE [PK_ID] = @PK_ID;DELETE FROM [SOQUYTIENMAT] WHERE [C_BILL] = (SELECT [NHANGUI].[C_BILL] FROM [NHANGUI] WHERE [NHANGUI].[PK_ID] = @PK_ID)" 
     InsertCommand="INSERT INTO [NHANGUI] ([C_NGAY], [C_BILL], [FK_KHACHHANG], [C_TENKH], [C_TELGUI], [C_NGUOINHAN], [C_DIACHINHAN], [C_TELNHAN], [FK_QUANHUYEN], [C_NOIDUNG], [C_GIATRIHANGHOA], [FK_MASANPHAM], [C_PPXD], [C_KHOILUONGTHUC], [C_KHOILUONGQD], [C_KHOILUONG], [C_GIACUOC], [C_DONGGOI], [C_KHAIGIA], [C_COD], [C_BAOPHAT], [C_HENGIO], [C_HINHTHUCTT], [C_DATHU], [C_TIENHANG], [C_VAT], [C_TIENHANGVAT], [FK_NHANVIENNHAN], [FK_DOITAC], [C_GIADOITAC], [FK_NHANVIENPHAT], [C_NGAYGIOPHAT], [FK_NHANVIENKHAITHAC], [C_NGUOIKYNHAN], [C_BOPHAN],[C_TYPE],[FK_VUNGLAMVIEC],[FK_TRANGTHAI]) VALUES (@C_NGAY, @C_BILL, @FK_KHACHHANG, @C_TENKH, @C_TELGUI, @C_NGUOINHAN, @C_DIACHINHAN, @C_TELNHAN, @FK_QUANHUYEN, @C_NOIDUNG,@C_GIATRIHANGHOA, @FK_MASANPHAM, @C_PPXD, @C_KHOILUONGTHUC, @C_KHOILUONGQD, @C_KHOILUONG, @C_GIACUOC, @C_DONGGOI, @C_KHAIGIA, @C_COD, @C_BAOPHAT, @C_HENGIO, @C_HINHTHUCTT, @C_DATHU, @C_TIENHANG, @C_VAT, @C_TIENHANGVAT, @FK_NHANVIENNHAN, @FK_DOITAC, @C_GIADOITAC, @FK_NHANVIENPHAT, @C_NGAYGIOPHAT, @FK_NHANVIENKHAITHAC, @C_NGUOIKYNHAN, @C_BOPHAN,1,@FK_VUNGLAMVIEC,@FK_TRANGTHAI);INSERT INTO [SOQUYTIENMAT] ([C_NGAY], [C_TYPE], [FK_KIHIEUTAIKHOAN], [C_DESC], [C_SOTIEN], [C_BILL],[C_TON],[C_ORDER],[FK_VUNGLAMVIEC]) VALUES (@C_NGAY,N'Thu',NULL, N'Bill ' + @C_BILL, @C_DATHU,@C_BILL,0,1,@FK_VUNGLAMVIEC)"
     SelectCommand="SELECT [NHANGUI].[PK_ID], [NHANGUI].[C_NGAY], [NHANGUI].[FK_KHACHHANG], [NHANGUI].[C_BILL], [NHANGUI].[C_TENKH], [NHANGUI].[C_TELGUI], [NHANGUI].[C_NGUOINHAN], [NHANGUI].[C_DIACHINHAN], [NHANGUI].[C_TELNHAN], [NHANGUI].[FK_QUANHUYEN], [NHANGUI].[C_NOIDUNG], [NHANGUI].[C_GIATRIHANGHOA], [NHANGUI].[FK_MASANPHAM],  [NHANGUI].[C_PPXD], [NHANGUI].[C_KHOILUONGTHUC], [NHANGUI].[C_KHOILUONGQD], [NHANGUI].[C_KHOILUONG], [NHANGUI].[C_GIACUOC], [NHANGUI].[C_DONGGOI], [NHANGUI].[C_KHAIGIA], [NHANGUI].[C_COD], [NHANGUI].[C_BAOPHAT], [NHANGUI].[C_HENGIO], [NHANGUI].[C_HINHTHUCTT], [NHANGUI].[C_DATHU], ([NHANGUI].[C_TIENHANGVAT] - [NHANGUI].[C_DATHU]) as [C_CONLAI],([NHANGUI].[C_DONGGOI] + [NHANGUI].[C_KHAIGIA] + [NHANGUI].[C_COD] + [NHANGUI].[C_BAOPHAT] + [NHANGUI].[C_HENGIO]) as [C_PHUTROISUM], [NHANGUI].[C_TIENHANG], [NHANGUI].[C_VAT], [NHANGUI].[C_TIENHANGVAT], [NHANGUI].[FK_NHANVIENNHAN], [NHANGUI].[FK_DOITAC], [NHANGUI].[C_GIADOITAC], [NHANGUI].[FK_NHANVIENPHAT], [NHANGUI].[C_NGAYGIOPHAT], [NHANGUI].[FK_NHANVIENKHAITHAC], [NHANGUI].[C_NGUOIKYNHAN], [NHANGUI].[C_BOPHAN],[NHANGUI].FK_TRANGTHAI, USERSNHAN.C_NAME as NHANVIENNHANNAME,USERSPHAT.C_NAME as NHANVIENPHATNAME,USERSKHAITHAC.C_NAME as NHANVIENKHAITHACNAME,DMMASANPHAM.C_NAME as SANPHAMNAME,DMQUANHUYEN.C_NAME as QUANHUYENNAME,DMTINHTHANH.C_NAME as TINHTHANHNAME FROM [NHANGUI] LEFT OUTER JOIN USERS as USERSNHAN ON NHANGUI.FK_NHANVIENNHAN = USERSNHAN.PK_ID LEFT OUTER JOIN USERS as USERSPHAT ON NHANGUI.FK_NHANVIENPHAT = USERSPHAT.PK_ID LEFT OUTER JOIN USERS as USERSKHAITHAC ON NHANGUI.FK_NHANVIENKHAITHAC = USERSKHAITHAC.PK_ID LEFT OUTER JOIN DMMASANPHAM ON NHANGUI.FK_MASANPHAM=DMMASANPHAM.PK_ID LEFT OUTER JOIN DMQUANHUYEN ON NHANGUI.FK_QUANHUYEN = DMQUANHUYEN.C_CODE LEFT OUTER JOIN DMTINHTHANH ON DMQUANHUYEN.FK_TINHTHANH = DMTINHTHANH.PK_ID WHERE [NHANGUI].[C_TYPE] = 1 AND [NHANGUI].FK_VUNGLAMVIEC = @FK_VUNGLAMVIEC ORDER BY [NHANGUI].C_NGAY DESC" 
-    UpdateCommand="UPDATE [SOQUYTIENMAT] SET [C_SOTIEN] = @C_DATHU, [C_DESC] = N'Bill ' + @C_BILL, [C_BILL] = @C_BILL WHERE [C_BILL]= (SELECT [NHANGUI].[C_BILL] FROM [NHANGUI] WHERE [PK_ID] = @PK_ID);UPDATE [NHANGUI] SET [C_NGAY] = @C_NGAY, [C_BILL] = @C_BILL, [FK_KHACHHANG] = @FK_KHACHHANG,[C_TENKH] = @C_TENKH, [C_TELGUI] = @C_TELGUI, [C_NGUOINHAN] = @C_NGUOINHAN, [C_DIACHINHAN] = @C_DIACHINHAN, [C_TELNHAN] = @C_TELNHAN, [FK_QUANHUYEN] = @FK_QUANHUYEN, [C_NOIDUNG] = @C_NOIDUNG, [C_GIATRIHANGHOA] = @C_GIATRIHANGHOA, [FK_MASANPHAM] = @FK_MASANPHAM, [C_PPXD] = @C_PPXD, [C_KHOILUONGTHUC] = @C_KHOILUONGTHUC, [C_KHOILUONGQD] = @C_KHOILUONGQD, [C_KHOILUONG] = @C_KHOILUONG, [C_GIACUOC] = @C_GIACUOC, [C_DONGGOI]=@C_DONGGOI, [C_KHAIGIA]=@C_KHAIGIA, [C_COD]=@C_COD, [C_BAOPHAT]=@C_BAOPHAT, [C_HENGIO]=@C_HENGIO, [C_HINHTHUCTT] = @C_HINHTHUCTT, [C_DATHU] = @C_DATHU, [C_TIENHANG] = @C_TIENHANG, [C_VAT] = @C_VAT, [C_TIENHANGVAT] = @C_TIENHANGVAT, [FK_NHANVIENNHAN] = @FK_NHANVIENNHAN, [FK_DOITAC] = @FK_DOITAC, [C_GIADOITAC] = @C_GIADOITAC, [FK_NHANVIENPHAT] = @FK_NHANVIENPHAT, [C_NGAYGIOPHAT] = @C_NGAYGIOPHAT, [FK_NHANVIENKHAITHAC]=@FK_NHANVIENKHAITHAC, [C_NGUOIKYNHAN] = @C_NGUOIKYNHAN, [C_BOPHAN] = @C_BOPHAN, [FK_TRANGTHAI] = @FK_TRANGTHAI WHERE [PK_ID] = @PK_ID">
+    UpdateCommand="UPDATE [SOQUYTIENMAT] SET [C_NGAY]=CASE WHEN @C_HINHTHUCTT = N'Đã thanh toán' THEN GETDATE() ELSE C_NGAY END,[C_SOTIEN] = @C_DATHU, [C_DESC] = N'Bill ' + @C_BILL, [C_BILL] = @C_BILL WHERE [C_BILL]= (SELECT [NHANGUI].[C_BILL] FROM [NHANGUI] WHERE [PK_ID] = @PK_ID);UPDATE [NHANGUI] SET [C_NGAY] = @C_NGAY, [C_BILL] = @C_BILL, [FK_KHACHHANG] = @FK_KHACHHANG,[C_TENKH] = @C_TENKH, [C_TELGUI] = @C_TELGUI, [C_NGUOINHAN] = @C_NGUOINHAN, [C_DIACHINHAN] = @C_DIACHINHAN, [C_TELNHAN] = @C_TELNHAN, [FK_QUANHUYEN] = @FK_QUANHUYEN, [C_NOIDUNG] = @C_NOIDUNG, [C_GIATRIHANGHOA] = @C_GIATRIHANGHOA, [FK_MASANPHAM] = @FK_MASANPHAM, [C_PPXD] = @C_PPXD, [C_KHOILUONGTHUC] = @C_KHOILUONGTHUC, [C_KHOILUONGQD] = @C_KHOILUONGQD, [C_KHOILUONG] = @C_KHOILUONG, [C_GIACUOC] = @C_GIACUOC, [C_DONGGOI]=@C_DONGGOI, [C_KHAIGIA]=@C_KHAIGIA, [C_COD]=@C_COD, [C_BAOPHAT]=@C_BAOPHAT, [C_HENGIO]=@C_HENGIO, [C_HINHTHUCTT] = @C_HINHTHUCTT, [C_DATHU] = @C_DATHU, [C_TIENHANG] = @C_TIENHANG, [C_VAT] = @C_VAT, [C_TIENHANGVAT] = @C_TIENHANGVAT, [FK_NHANVIENNHAN] = @FK_NHANVIENNHAN, [FK_DOITAC] = @FK_DOITAC, [C_GIADOITAC] = @C_GIADOITAC, [FK_NHANVIENPHAT] = @FK_NHANVIENPHAT, [C_NGAYGIOPHAT] = @C_NGAYGIOPHAT, [FK_NHANVIENKHAITHAC]=@FK_NHANVIENKHAITHAC, [C_NGUOIKYNHAN] = @C_NGUOIKYNHAN, [C_BOPHAN] = @C_BOPHAN, [FK_TRANGTHAI] = @FK_TRANGTHAI WHERE [PK_ID] = @PK_ID">
     <SelectParameters>
         <asp:SessionParameter Name="FK_VUNGLAMVIEC" Type="String" SessionField="VUNGLAMVIEC" />
     </SelectParameters>

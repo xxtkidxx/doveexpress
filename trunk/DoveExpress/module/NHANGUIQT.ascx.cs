@@ -844,7 +844,7 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
                     TIENHANGCONLAI = TIENHANGCONLAI.Replace(" ", "");
                     TIENHANGCONLAI = TIENHANGCONLAI.Replace("VNĐ", "");
                     string TIENHANG = (decimal.Parse(TIENHANGDATHU) + decimal.Parse(TIENHANGCONLAI)).ToString();
-                    UpdateSQL += "UPDATE [NHANGUI] SET [C_DATHU] = " + TIENHANG + " WHERE [C_BILL] = '" + item["C_BILL"].Text.Trim() + "';UPDATE [SOQUYTIENMAT] SET [C_SOTIEN] = " + TIENHANG + " WHERE [C_BILL] = '" + item["C_BILL"].Text.Trim() + "';";
+                    UpdateSQL += "UPDATE [NHANGUI] SET [C_DATHU] = " + TIENHANG + ",[C_HINHTHUCTT] = N'Đã thanh toán' WHERE [C_BILL] = '" + (item["C_BILL"].FindControl("lblC_BILL") as Label).Text.Replace("BC", "").Trim() + "';UPDATE [SOQUYTIENMAT] SET [C_NGAY] = '" + String.Format("{0:yyyy-MM-dd hh:mm:ss tt}", System.DateTime.Now.ToUniversalTime().AddHours(7)) + "',[C_SOTIEN] = " + TIENHANG + " WHERE [C_BILL] = '" + (item["C_BILL"].FindControl("lblC_BILL") as Label).Text.Replace("BC", "").Trim() + "';";
                 }
                 ITCLIB.Admin.SQL UpdateQuery = new ITCLIB.Admin.SQL();
                 UpdateQuery.ExecuteNonQuery(UpdateSQL);
@@ -870,7 +870,7 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
                     TIENHANGCONLAI = TIENHANGCONLAI.Replace(" ", "");
                     TIENHANGCONLAI = TIENHANGCONLAI.Replace("VNĐ", "");
                     string TIENHANG = (decimal.Parse(TIENHANGDATHU) + decimal.Parse(TIENHANGCONLAI)).ToString();
-                    UpdateSQL += "UPDATE [NHANGUI] SET [C_DATHU] = " + "0" + " WHERE [C_BILL] = '" + item["C_BILL"].Text.Trim() + "';UPDATE [SOQUYTIENMAT] SET [C_SOTIEN] = " + "0" + " WHERE [C_BILL] = '" + item["C_BILL"].Text.Trim() + "';";
+                    UpdateSQL += "UPDATE [NHANGUI] SET [C_DATHU] = " + "0" + ",[C_HINHTHUCTT] = N'Thanh toán sau' WHERE [C_BILL] = '" + (item["C_BILL"].FindControl("lblC_BILL") as Label).Text.Replace("BC", "").Trim() + "';UPDATE [SOQUYTIENMAT] SET [C_SOTIEN] = " + "0" + " WHERE [C_BILL] = '" + (item["C_BILL"].FindControl("lblC_BILL") as Label).Text.Replace("BC", "").Trim() + "';";
                 }
                 ITCLIB.Admin.SQL UpdateQuery = new ITCLIB.Admin.SQL();
                 UpdateQuery.ExecuteNonQuery(UpdateSQL);

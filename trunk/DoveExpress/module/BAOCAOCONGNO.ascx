@@ -100,7 +100,7 @@ onitemsrequested="cmbKhachHang_ItemsRequested" onclientselectedindexchanged="cmb
                <telerik:GridTemplateColumn UniqueName="C_BILL" HeaderText="Số Bill" DataField="C_BILL" HeaderStyle-Width="100px" HeaderStyle-HorizontalAlign="Center"
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
                     <ItemTemplate>
-                        <%# String.Format("BC_{0}", Eval("C_BILL").ToString())%>
+                        <%# String.Format("BC{0}", Eval("C_BILL").ToString())%>
                     </ItemTemplate>
                 </telerik:GridTemplateColumn>
                 <telerik:GridBoundColumn UniqueName="C_DIACHINHAN" HeaderText="Địa chỉ nhận" DataField="C_DIACHINHAN" HeaderStyle-Width="130px" HeaderStyle-HorizontalAlign="Center"

@@ -3,7 +3,12 @@
 <%@ Register namespace="ITCLIB.Security" tagprefix="Office" %>
 <telerik:RadCodeBlock ID="RadCodeBlockMenu" runat="server">
 <script type="text/javascript">
- 
+    function Logout() {
+        if (confirm("Bạn chắc chắn muốn thoát phần mềm?")) {
+            var url = "Default.aspx?ctl=logout";
+            $(location).attr('href', url);
+        }
+    }
 </script>
 </telerik:RadCodeBlock>
 <telerik:RadMenu ID="Menu" Runat="server" Skin="Office2010Black" CssClass ="cssMenuNgang" Width="99.9%"  style="position:absolute;z-index: 1">
@@ -124,7 +129,7 @@
                 </telerik:RadMenuItem>
             </Items>
     </telerik:RadMenuItem>        
-    <telerik:RadMenuItem runat="server" NavigateUrl="../Default.aspx?ctl=Logout" Text="Thoát" Font-Size="Small">
+    <telerik:RadMenuItem runat="server" NavigateUrl="javascript:Logout()" Text="Thoát" Font-Size="Small">
     </telerik:RadMenuItem>
     </Items>
 </telerik:RadMenu>
