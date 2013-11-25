@@ -24,7 +24,7 @@ public partial class Depts : System.Web.UI.UserControl
                 RadGridDefts.MasterTableView.EditFormSettings.PopUpSettings.Modal = true;
                 break;
         }
-        if (!ITCLIB.Security.Security.CanViewModule("Depts"))
+        if (!ITCLIB.Security.Security.CanViewModule("PHONGBAN"))
         {
             ITCLIB.Security.Security.ReturnUrl();
         }

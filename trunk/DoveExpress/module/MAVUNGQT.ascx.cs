@@ -24,7 +24,7 @@ public partial class module_MAVUNGQT : System.Web.UI.UserControl
                 RadGridMAVUNGQT.MasterTableView.EditFormSettings.PopUpSettings.Modal = true;
                 break;
         }
-        if (!ITCLIB.Security.Security.CanViewModule("Lists"))
+        if (!ITCLIB.Security.Security.CanViewModule("BANGCUOC"))
         {
             ITCLIB.Security.Security.ReturnUrl();
         }

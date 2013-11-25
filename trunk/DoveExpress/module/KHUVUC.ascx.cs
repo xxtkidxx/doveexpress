@@ -24,7 +24,7 @@ public partial class module_KHUVUC : System.Web.UI.UserControl
                 RadGridKHUVUC.MasterTableView.EditFormSettings.PopUpSettings.Modal = true;
                 break;
         }
-        if (!ITCLIB.Security.Security.CanViewModule("Lists"))
+        if (!ITCLIB.Security.Security.CanViewModule("VUNGDIALY"))
         {
             ITCLIB.Security.Security.ReturnUrl();
         }

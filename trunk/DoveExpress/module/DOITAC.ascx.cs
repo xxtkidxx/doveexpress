@@ -24,7 +24,7 @@ public partial class module_DOITAC : System.Web.UI.UserControl
                 RadGridDOITAC.MasterTableView.EditFormSettings.PopUpSettings.Modal = true;
                 break;
         }
-        if (!ITCLIB.Security.Security.CanViewModule("Lists"))
+        if (!ITCLIB.Security.Security.CanViewModule("DOITAC"))
         {
             ITCLIB.Security.Security.ReturnUrl();
         }

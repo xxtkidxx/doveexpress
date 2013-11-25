@@ -24,7 +24,7 @@ public partial class JobTitles : System.Web.UI.UserControl
                 RadGridJobTitle.MasterTableView.EditFormSettings.PopUpSettings.Modal = true;
                 break;
         }
-        if (!ITCLIB.Security.Security.CanViewModule("JobLists"))
+        if (!ITCLIB.Security.Security.CanViewModule("PHONGBAN"))
         {
             ITCLIB.Security.Security.ReturnUrl();
         }

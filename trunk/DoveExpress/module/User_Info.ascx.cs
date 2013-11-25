@@ -11,14 +11,14 @@ public partial class Admin_Modules_User_Info : System.Web.UI.UserControl
     private int UserID;
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (!ITCLIB.Security.Security.CanViewModule("User_Info"))
+        /*if (!ITCLIB.Security.Security.CanViewModule("User_Info"))
         {
             ITCLIB.Security.Security.ReturnUrl();
         }
         if (!ITCLIB.Security.Security.CanEditModule("User_Info"))
         {
             dvUser_Info.DefaultMode = DetailsViewMode.ReadOnly;
-        }
+        }*/
         UserID = (int)Session["UserID"];
         Session["LastUrl"] = Request.Url.ToString();
     }

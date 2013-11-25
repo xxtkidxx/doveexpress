@@ -24,7 +24,7 @@ public partial class module_MABANGCUOC : System.Web.UI.UserControl
                 RadGridMABANGCUOC.MasterTableView.EditFormSettings.PopUpSettings.Modal = true;
                 break;
         }
-        if (!ITCLIB.Security.Security.CanViewModule("Lists"))
+        if (!ITCLIB.Security.Security.CanViewModule("BANGCUOC"))
         {
             ITCLIB.Security.Security.ReturnUrl();
         }
