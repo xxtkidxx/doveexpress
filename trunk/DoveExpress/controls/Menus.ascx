@@ -6,7 +6,7 @@
  
 </script>
 </telerik:RadCodeBlock>
-<telerik:RadMenu ID="Menu" Runat="server" Skin="Office2010Black" CssClass ="cssMenuNgang" Width="100%"  style="position:absolute;z-index: 1">
+<telerik:RadMenu ID="Menu" Runat="server" Skin="Office2010Black" CssClass ="cssMenuNgang" Width="99.9%"  style="position:absolute;z-index: 1">
     <CollapseAnimation Type="Linear" />
     <DefaultGroupSettings OffsetX="2" OffsetY="2" />
     <Items>

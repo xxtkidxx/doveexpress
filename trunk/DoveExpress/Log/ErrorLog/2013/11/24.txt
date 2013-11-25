@@ -1,0 +1,65 @@
+Thời gian lỗi : 2013-11-24 16:10:56 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Telerik.ReportViewer.axd?instanceID=6f3a7b148e5c4a0c8f8c77ca5b214c34&optype=Report&PageIndex=0&RenderID=63801630cc4149ad9067f7f1fae87013&RenderingFormat=HTML5Interactive. 
+Nội dung lỗi:Invalid value of report parameter 'DHL'.
+__________________________
+Thời gian lỗi : 2013-11-24 16:15:36 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Telerik.ReportViewer.axd?instanceID=30f0441b5ab242fc95afb269a6b7b912&optype=Report&PageIndex=0&RenderID=d061f89a2b3c4e398420963c91df9ebc&RenderingFormat=HTML5Interactive. 
+Nội dung lỗi:Invalid value of report parameter 'C_NGAYGIONHAN'.
+__________________________
+Thời gian lỗi : 2013-11-24 16:16:23 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Report.aspx?TYPE=INBILL&ID=1773. 
+Nội dung lỗi:Column 'C_NGAYGIONHAN' does not belong to table .
+__________________________
+Thời gian lỗi : 2013-11-24 16:18:18 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Telerik.ReportViewer.axd?instanceID=656ccfd3ec0a4413a1083809e5926904&optype=Report&PageIndex=0&RenderID=6e4c09c2072e444f8294db120e9263a8&RenderingFormat=HTML5Interactive. 
+Nội dung lỗi:Invalid value of report parameter 'C_NGAYGIONHAN'.
+__________________________
+Thời gian lỗi : 2013-11-24 16:24:50 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Telerik.ReportViewer.axd?instanceID=fa409656199749c1a76e50a6c609c027&optype=Report&PageIndex=0&RenderID=43ff1a61a0434e7f8529b10e9c9a5f0d&RenderingFormat=HTML5Interactive. 
+Nội dung lỗi:Invalid value of report parameter 'TINHTHANHGUI'.
+__________________________
+Thời gian lỗi : 2013-11-24 19:33:36 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Telerik.ReportViewer.axd?instanceID=732a2fbe75ca47a8a80b73290223a55d&optype=Report&PageIndex=0&RenderID=abda73abe09d4c5eb1979575c8f20714&RenderingFormat=HTML5Interactive. 
+Nội dung lỗi:Invalid value of report parameter 'TINHTHANHGUI'.
+__________________________
+Thời gian lỗi : 2013-11-24 21:11:45 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Telerik.ReportViewer.axd?instanceID=02f3888a97294e159a0b815420a50e1d&optype=Report&PageIndex=0&RenderID=94f6754d8c6f4744972240768f43a9d0&RenderingFormat=HTML5Interactive. 
+Nội dung lỗi:Invalid value of report parameter 'QUANHUYENNHAN'.
+__________________________
+Thời gian lỗi : 2013-11-24 21:14:47 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Telerik.ReportViewer.axd?instanceID=6552cb711f64457db7e445e8bf850922&optype=Report&PageIndex=0&RenderID=ff024607a3fe48cab482a8c058107f7d&RenderingFormat=HTML5Interactive. 
+Nội dung lỗi:Invalid value of report parameter 'TINHTHANHGUI'.
+__________________________
+Thời gian lỗi : 2013-11-24 21:17:13 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Telerik.ReportViewer.axd?instanceID=e6e2afa345eb43d49fae631610ad7c64&optype=Report&PageIndex=0&RenderID=e38c672bfcab48e08a5612ae8b1592bc&RenderingFormat=HTML5Interactive. 
+Nội dung lỗi:Invalid value of report parameter 'QUOCGIANHAN'.
+__________________________
+Thời gian lỗi : 2013-11-24 21:17:26 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Telerik.ReportViewer.axd?instanceID=6f773c05afd943f6b3e156112c587504&optype=Report&PageIndex=0&RenderID=dc7e9735b8c243298f670f752b572b27&RenderingFormat=HTML5Interactive. 
+Nội dung lỗi:Invalid value of report parameter 'QUOCGIANHAN'.
+__________________________
+Thời gian lỗi : 2013-11-24 21:32:24 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Report.aspx?TYPE=INBILL&ID=1458. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\Report.aspx.cs(208): error CS1026: ) expected
+__________________________
+Thời gian lỗi : 2013-11-24 22:23:22 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'FK_TRANGTHAI'.
+__________________________
+Thời gian lỗi : 2013-11-24 22:24:11 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'FK_TRANGTHAI'.
+__________________________
