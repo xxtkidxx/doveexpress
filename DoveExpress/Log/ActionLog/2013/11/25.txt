@@ -1,0 +1,132 @@
+Thời gian: 2013-11-25 15:30:36 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-11-25 20:53:55 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-11-25 21:06:26 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-11-25 21:31:38 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted SOQUYTIENMATs
+Kết quả : {PK_ID:"680"}
+__________________________
+Thời gian: 2013-11-25 21:31:43 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted SOQUYTIENMATs
+Kết quả : {PK_ID:"959"}
+__________________________
+Thời gian: 2013-11-25 21:31:46 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted SOQUYTIENMATs
+Kết quả : {PK_ID:"1110"}
+__________________________
+Thời gian: 2013-11-25 21:31:49 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted SOQUYTIENMATs
+Kết quả : {PK_ID:"1350"}
+__________________________
+Thời gian: 2013-11-25 21:44:00 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-11-25 22:01:32 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {PK_ID:"1796"}
+__________________________
+Thời gian: 2013-11-25 22:01:43 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {PK_ID:"1796"}
+__________________________
+Thời gian: 2013-11-25 22:04:28 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-11-25 22:05:47 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-11-25 22:21:11 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-11-25 22:48:22 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-11-25 22:49:27 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Permission GroupUsers
+Kết quả : Successed
+__________________________
+Thời gian: 2013-11-25 22:49:42 PM
+Địa chỉ IP : ::1
+Tài khoản : admin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-11-25 23:09:33 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-11-25 23:17:17 PM
+Địa chỉ IP : ::1
+Tài khoản : admin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-11-25 23:18:25 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-11-25 23:18:43 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Permission GroupUsers
+Kết quả : Successed
+__________________________
+Thời gian: 2013-11-25 23:21:19 PM
+Địa chỉ IP : ::1
+Tài khoản : admin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-11-25 23:30:43 PM
+Địa chỉ IP : ::1
+Tài khoản : admin
+Module : Login
+Kết quả : Thành công
+__________________________

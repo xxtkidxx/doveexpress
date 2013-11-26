@@ -82,6 +82,7 @@ public partial class Report : System.Web.UI.Page
                     reportSource.Parameters.Add("DUONGBO", false);
                     reportSource.Parameters.Add("HOATOC", false);
                     reportSource.Parameters.Add("DVKHAC", false);
+                    reportSource.Parameters.Add("DVKHACQT", false);
                     reportSource.Parameters.Add("DHL", false);
                     reportSource.Parameters.Add("FEDEX", false);
                     reportSource.Parameters.Add("UPS", false);
@@ -93,6 +94,7 @@ public partial class Report : System.Web.UI.Page
                     reportSource.Parameters.Add("DUONGBO", true);
                     reportSource.Parameters.Add("HOATOC", false);
                     reportSource.Parameters.Add("DVKHAC", false);
+                    reportSource.Parameters.Add("DVKHACQT", false);
                     reportSource.Parameters.Add("DHL", false);
                     reportSource.Parameters.Add("FEDEX", false);
                     reportSource.Parameters.Add("UPS", false);
@@ -104,6 +106,7 @@ public partial class Report : System.Web.UI.Page
                     reportSource.Parameters.Add("DUONGBO", false);
                     reportSource.Parameters.Add("HOATOC", true);
                     reportSource.Parameters.Add("DVKHAC", false);
+                    reportSource.Parameters.Add("DVKHACQT", false);
                     reportSource.Parameters.Add("DHL", false);
                     reportSource.Parameters.Add("FEDEX", false);
                     reportSource.Parameters.Add("UPS", false);
@@ -115,6 +118,7 @@ public partial class Report : System.Web.UI.Page
                     reportSource.Parameters.Add("DUONGBO", false);
                     reportSource.Parameters.Add("HOATOC", false);
                     reportSource.Parameters.Add("DVKHAC", false);
+                    reportSource.Parameters.Add("DVKHACQT", false);
                     reportSource.Parameters.Add("DHL", true);
                     reportSource.Parameters.Add("FEDEX", false);
                     reportSource.Parameters.Add("UPS", false);
@@ -126,6 +130,7 @@ public partial class Report : System.Web.UI.Page
                     reportSource.Parameters.Add("DUONGBO", false);
                     reportSource.Parameters.Add("HOATOC", false);
                     reportSource.Parameters.Add("DVKHAC", false);
+                    reportSource.Parameters.Add("DVKHACQT", false);
                     reportSource.Parameters.Add("DHL", false);
                     reportSource.Parameters.Add("FEDEX", false);
                     reportSource.Parameters.Add("UPS", false);
@@ -137,6 +142,7 @@ public partial class Report : System.Web.UI.Page
                     reportSource.Parameters.Add("DUONGBO", false);
                     reportSource.Parameters.Add("HOATOC", false);
                     reportSource.Parameters.Add("DVKHAC", false);
+                    reportSource.Parameters.Add("DVKHACQT", false);
                     reportSource.Parameters.Add("DHL", false);
                     reportSource.Parameters.Add("FEDEX", false);
                     reportSource.Parameters.Add("UPS", true);
@@ -148,6 +154,7 @@ public partial class Report : System.Web.UI.Page
                     reportSource.Parameters.Add("DUONGBO", false);
                     reportSource.Parameters.Add("HOATOC", false);
                     reportSource.Parameters.Add("DVKHAC", false);
+                    reportSource.Parameters.Add("DVKHACQT", false);
                     reportSource.Parameters.Add("DHL", false);
                     reportSource.Parameters.Add("FEDEX", false);
                     reportSource.Parameters.Add("UPS", false);
@@ -158,6 +165,7 @@ public partial class Report : System.Web.UI.Page
                     reportSource.Parameters.Add("CPN", false);
                     reportSource.Parameters.Add("DUONGBO", false);
                     reportSource.Parameters.Add("HOATOC", false);
+                    reportSource.Parameters.Add("DVKHACQT", false);
                     reportSource.Parameters.Add("DVKHAC", true);
                     reportSource.Parameters.Add("DHL", false);
                     reportSource.Parameters.Add("FEDEX", false);
@@ -215,6 +223,7 @@ public partial class Report : System.Web.UI.Page
                     reportSource.Parameters.Add("DUONGBO", false);
                     reportSource.Parameters.Add("HOATOC", false);
                     reportSource.Parameters.Add("DVKHAC", false);
+                    reportSource.Parameters.Add("DVKHACQT", false);
                     reportSource.Parameters.Add("DHL", false);
                     reportSource.Parameters.Add("FEDEX", false);
                     reportSource.Parameters.Add("UPS", false);
@@ -226,6 +235,7 @@ public partial class Report : System.Web.UI.Page
                     reportSource.Parameters.Add("DUONGBO", true);
                     reportSource.Parameters.Add("HOATOC", false);
                     reportSource.Parameters.Add("DVKHAC", false);
+                    reportSource.Parameters.Add("DVKHACQT", false);
                     reportSource.Parameters.Add("DHL", false);
                     reportSource.Parameters.Add("FEDEX", false);
                     reportSource.Parameters.Add("UPS", false);
@@ -237,6 +247,7 @@ public partial class Report : System.Web.UI.Page
                     reportSource.Parameters.Add("DUONGBO", false);
                     reportSource.Parameters.Add("HOATOC", true);
                     reportSource.Parameters.Add("DVKHAC", false);
+                    reportSource.Parameters.Add("DVKHACQT", false);
                     reportSource.Parameters.Add("DHL", false);
                     reportSource.Parameters.Add("FEDEX", false);
                     reportSource.Parameters.Add("UPS", false);
@@ -248,6 +259,7 @@ public partial class Report : System.Web.UI.Page
                     reportSource.Parameters.Add("DUONGBO", false);
                     reportSource.Parameters.Add("HOATOC", false);
                     reportSource.Parameters.Add("DVKHAC", false);
+                    reportSource.Parameters.Add("DVKHACQT", false);
                     reportSource.Parameters.Add("DHL", true);
                     reportSource.Parameters.Add("FEDEX", false);
                     reportSource.Parameters.Add("UPS", false);
@@ -259,6 +271,7 @@ public partial class Report : System.Web.UI.Page
                     reportSource.Parameters.Add("DUONGBO", false);
                     reportSource.Parameters.Add("HOATOC", false);
                     reportSource.Parameters.Add("DVKHAC", false);
+                    reportSource.Parameters.Add("DVKHACQT", false);
                     reportSource.Parameters.Add("DHL", false);
                     reportSource.Parameters.Add("FEDEX", false);
                     reportSource.Parameters.Add("UPS", false);
@@ -270,6 +283,7 @@ public partial class Report : System.Web.UI.Page
                     reportSource.Parameters.Add("DUONGBO", false);
                     reportSource.Parameters.Add("HOATOC", false);
                     reportSource.Parameters.Add("DVKHAC", false);
+                    reportSource.Parameters.Add("DVKHACQT", false);
                     reportSource.Parameters.Add("DHL", false);
                     reportSource.Parameters.Add("FEDEX", false);
                     reportSource.Parameters.Add("UPS", true);
@@ -281,6 +295,7 @@ public partial class Report : System.Web.UI.Page
                     reportSource.Parameters.Add("DUONGBO", false);
                     reportSource.Parameters.Add("HOATOC", false);
                     reportSource.Parameters.Add("DVKHAC", false);
+                    reportSource.Parameters.Add("DVKHACQT", false);
                     reportSource.Parameters.Add("DHL", false);
                     reportSource.Parameters.Add("FEDEX", false);
                     reportSource.Parameters.Add("UPS", false);
@@ -291,7 +306,8 @@ public partial class Report : System.Web.UI.Page
                     reportSource.Parameters.Add("CPN", false);
                     reportSource.Parameters.Add("DUONGBO", false);
                     reportSource.Parameters.Add("HOATOC", false);
-                    reportSource.Parameters.Add("DVKHAC", true);
+                    reportSource.Parameters.Add("DVKHACQT", true);
+                    reportSource.Parameters.Add("DVKHAC", false);
                     reportSource.Parameters.Add("DHL", false);
                     reportSource.Parameters.Add("FEDEX", false);
                     reportSource.Parameters.Add("UPS", false);
