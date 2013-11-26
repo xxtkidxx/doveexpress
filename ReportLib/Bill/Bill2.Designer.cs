@@ -141,7 +141,7 @@
             // 
             // detail
             // 
-            this.detail.Height = Telerik.Reporting.Drawing.Unit.Mm(137.16102600097656D);
+            this.detail.Height = Telerik.Reporting.Drawing.Unit.Mm(289D);
             this.detail.Items.AddRange(new Telerik.Reporting.ReportItemBase[] {
             this.barcode1,
             this.textBox1,
@@ -179,7 +179,7 @@
             this.barcode1.BarAlign = Telerik.Reporting.Drawing.HorizontalAlign.Center;
             this.barcode1.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Inch(6.0064072608947754D), Telerik.Reporting.Drawing.Unit.Inch(0.099999986588954926D));
             this.barcode1.Name = "barcode1";
-            this.barcode1.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Mm(40.475246429443359D), Telerik.Reporting.Drawing.Unit.Mm(14.996618270874023D));
+            this.barcode1.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Mm(40.475250244140625D), Telerik.Reporting.Drawing.Unit.Mm(14.996623992919922D));
             this.barcode1.Stretch = true;
             this.barcode1.Style.Font.Size = Telerik.Reporting.Drawing.Unit.Point(10D);
             this.barcode1.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Left;
