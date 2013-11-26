@@ -61,6 +61,12 @@
     <Compile Include="Bill\BillQT.Designer.cs">
       <DependentUpon>BillQT.cs</DependentUpon>
     </Compile>
+    <Compile Include="Bill\Bill2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Bill\Bill2.Designer.cs">
+      <DependentUpon>Bill2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -70,6 +76,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Bill\BillQT.resx">
       <DependentUpon>BillQT.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bill\Bill2.resx">
+      <DependentUpon>Bill2.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
