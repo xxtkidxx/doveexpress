@@ -20,7 +20,6 @@
     <div id="content"><center id="center">
         <telerik:ReportViewer ID="ReportViewer1" runat="server" Height="800px" Width="100%" />
     </center></div>
-    <asp:Button ID="PrintButton" runat="server" Text="Print Report" OnClientClick="MyPrint(); return false;" />
     </form>
 </body>
 </html>

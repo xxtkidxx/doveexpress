@@ -2652,7 +2652,7 @@
             this.barcode2.BarAlign = Telerik.Reporting.Drawing.HorizontalAlign.Center;
             this.barcode2.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Inch(5.9981532096862793D), Telerik.Reporting.Drawing.Unit.Inch(5.4958338737487793D));
             this.barcode2.Name = "barcode2";
-            this.barcode2.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Mm(40.684906005859375D), Telerik.Reporting.Drawing.Unit.Mm(12.805817604064941D));
+            this.barcode2.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Mm(40.680000305175781D), Telerik.Reporting.Drawing.Unit.Mm(15D));
             this.barcode2.Stretch = true;
             this.barcode2.Style.Font.Size = Telerik.Reporting.Drawing.Unit.Point(10D);
             this.barcode2.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Left;
