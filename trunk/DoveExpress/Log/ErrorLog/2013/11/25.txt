@@ -1,0 +1,36 @@
+Thời gian lỗi : 2013-11-25 15:28:55 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Login.aspx. 
+Nội dung lỗi:Cannot open database "DOVEEXPRESS" requested by the login. The login failed.
+Login failed for user 'sa'.
+__________________________
+Thời gian lỗi : 2013-11-25 21:15:57 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=SOQUYTIENMAT. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-11-25 21:27:43 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Lỗi truy vấn cơ sở dữ liệuIncorrect syntax near '9'.
+__________________________
+Thời gian lỗi : 2013-11-25 21:29:00 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Lỗi truy vấn cơ sở dữ liệuIncorrect syntax near '9'.
+__________________________
+Thời gian lỗi : 2013-11-25 21:37:16 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\module\NHANGUI.ascx.cs(684): error CS0103: The name 'UpdateSQL' does not exist in the current context
+__________________________
+Thời gian lỗi : 2013-11-25 23:17:20 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\module\NHANGUI.ascx(527): error CS1002: ; expected
+__________________________
+Thời gian lỗi : 2013-11-25 23:23:12 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
