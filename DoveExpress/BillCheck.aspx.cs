@@ -27,10 +27,14 @@ public partial class BillCheck : System.Web.UI.Page
                 lblNgaygui.Text = String.Format("{0:dd/MM/yyyy}", DateTime.Parse(oDataTable.Rows[0]["C_NGAY"].ToString()));
                 lblNguoinhan.Text = oDataTable.Rows[0]["C_NGUOINHAN"].ToString();
                 lblDiachinhan.Text = oDataTable.Rows[0]["C_DIACHINHAN"].ToString();
-                //if (oDataTable.Rows[0]["C_NGAY"] != DBNull.Value)
-                //{
+                if (oDataTable.Rows[0]["C_NGAYGIOPHAT"] != DBNull.Value)
+                {
                     lblNgaynhan.Text = String.Format("{0:dd/MM/yyyy hh:mm:ss tt}", DateTime.Parse(oDataTable.Rows[0]["C_NGAYGIOPHAT"].ToString()));
-                //}
+                }
+                else
+                {
+                    lblNgaynhan.Text = "-";
+                }
                 if (oDataTable.Rows[0]["C_TYPE"] == "2")
                 {
                     lblQuanhuyen.Text = "Quốc gia";
@@ -40,7 +44,14 @@ public partial class BillCheck : System.Web.UI.Page
                 {
                     lblQuanhuyenValue.Text = ITCLIB.Admin.cFunction.LoadTinhThanhName(oDataTable.Rows[0]["FK_QUANHUYEN"].ToString()) + " / " + ITCLIB.Admin.cFunction.LoadQuanHuyenName(oDataTable.Rows[0]["FK_QUANHUYEN"].ToString());
                 }
-                lblC_STATUS.Text = oDataTable.Rows[0]["FK_TRANGTHAI"].ToString();
+                if (oDataTable.Rows[0]["FK_TRANGTHAI"].ToString() != "")
+                {
+                    lblC_STATUS.Text = oDataTable.Rows[0]["FK_TRANGTHAI"].ToString();
+                }
+                else
+                {
+                    lblC_STATUS.Text = "Đang chờ xử lý";
+                }
             }
             else
             {

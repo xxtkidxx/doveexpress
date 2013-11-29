@@ -1,0 +1,5 @@
+Thời gian lỗi : 2013-11-27 20:44:02 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/PriceCheck.aspx. 
+Nội dung lỗi:The control with ID 'cmbTinhThanh' requires a ScriptManager on the page. The ScriptManager must appear before any controls that need it.
+__________________________
