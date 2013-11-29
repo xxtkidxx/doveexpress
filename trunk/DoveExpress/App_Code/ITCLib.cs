@@ -1248,6 +1248,32 @@ namespace ITCLIB
                 }
                 return Result;
             }
+            public static string LoadTinhThanhName(string QuanHuyenCode)
+            {
+                string Result = "";
+                if (QuanHuyenCode != "")
+                {
+                    string SelectSQL = "SELECT DMTINHTHANH.C_NAME FROM DMTINHTHANH LEFT OUTER JOIN DMQUANHUYEN ON DMTINHTHANH.PK_ID = DMQUANHUYEN.FK_TINHTHANH WHERE DMQUANHUYEN.C_CODE = '" + QuanHuyenCode + "'";
+                    ITCLIB.Admin.SQL rs = new ITCLIB.Admin.SQL();
+                    DataTable oDataTable = rs.query_data(SelectSQL);
+
+                    if (oDataTable.Rows.Count != 0)
+                    {
+                        for (int i = 0; i < oDataTable.Rows.Count; i++)
+                        {
+                            if (i == 0)
+                            {
+                                Result += oDataTable.Rows[i]["C_NAME"].ToString();
+                            }
+                            else
+                            {
+                                Result += "-" + oDataTable.Rows[i]["C_NAME"].ToString();
+                            }
+                        }
+                    }
+                }
+                return Result;
+            }
             public static string LoadQuanHuyenName(string C_CODE)
             {
                 string SelectSQL = "SELECT C_NAME FROM DMQUANHUYEN where C_CODE =" + C_CODE;
