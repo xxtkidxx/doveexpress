@@ -177,7 +177,7 @@
                 <tfoot>
                     <tr>
                         <th scope="row">
-                            TRẠNG THÁI BILL
+                            TRẠNG THÁI
                         </th>
                         <td>
                             <asp:Label ID="lblC_STATUS" runat="server" Text="Label"></asp:Label>

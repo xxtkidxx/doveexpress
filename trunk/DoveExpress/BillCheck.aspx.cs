@@ -22,11 +22,11 @@ public partial class BillCheck : System.Web.UI.Page
             oDataTable = SelectQuery.query_data(SelectSQL);
             if (oDataTable.Rows.Count != 0)
             {
-                lblDichvu.Text = oDataTable.Rows[0]["DICHVUNAME"].ToString();
-                lblNguoigui.Text = oDataTable.Rows[0]["C_TENKH"].ToString();
+                lblDichvu.Text = (oDataTable.Rows[0]["DICHVUNAME"].ToString() == "") ? "-" : oDataTable.Rows[0]["DICHVUNAME"].ToString();
+                lblNguoigui.Text = (oDataTable.Rows[0]["C_TENKH"].ToString() == "") ? "-" : oDataTable.Rows[0]["C_TENKH"].ToString();
                 lblNgaygui.Text = String.Format("{0:dd/MM/yyyy}", DateTime.Parse(oDataTable.Rows[0]["C_NGAY"].ToString()));
-                lblNguoinhan.Text = oDataTable.Rows[0]["C_NGUOINHAN"].ToString();
-                lblDiachinhan.Text = oDataTable.Rows[0]["C_DIACHINHAN"].ToString();
+                lblNguoinhan.Text = (oDataTable.Rows[0]["C_NGUOINHAN"].ToString() == "") ? "-" : oDataTable.Rows[0]["C_NGUOINHAN"].ToString();
+                lblDiachinhan.Text = (oDataTable.Rows[0]["C_DIACHINHAN"].ToString() == "") ? "-" : oDataTable.Rows[0]["C_DIACHINHAN"].ToString();
                 if (oDataTable.Rows[0]["C_NGAYGIOPHAT"] != DBNull.Value)
                 {
                     lblNgaynhan.Text = String.Format("{0:dd/MM/yyyy hh:mm:ss tt}", DateTime.Parse(oDataTable.Rows[0]["C_NGAYGIOPHAT"].ToString()));
@@ -35,7 +35,7 @@ public partial class BillCheck : System.Web.UI.Page
                 {
                     lblNgaynhan.Text = "-";
                 }
-                if (oDataTable.Rows[0]["C_TYPE"] == "2")
+                if (oDataTable.Rows[0]["C_TYPE"].ToString() == "2")
                 {
                     lblQuanhuyen.Text = "Quốc gia";
                     lblQuanhuyenValue.Text = ITCLIB.Admin.cFunction.LoadQuocGiaName(oDataTable.Rows[0]["FK_QUOCGIA"].ToString());
