@@ -2,47 +2,58 @@
 <%@ Register TagPrefix="uc1" Namespace="ITCLIB.Admin" %>
 <telerik:RadCodeBlock ID="RadCodeBlockNHANGUI" runat="server">
 <script type="text/javascript">
-    function PrintOnClientLinkClicked() {
+    function PrintOnClientLinkClicked3() {
         if ($find("<%= RadGridNHANGUI.MasterTableView.ClientID %>").get_selectedItems().length != 0) {
-            var IDNHANGUI = $find("<%= RadGridNHANGUI.MasterTableView.ClientID %>").get_selectedItems()[0].getDataKeyValue("PK_ID")
+            var IDNHANGUI = $find("<%= RadGridNHANGUI.MasterTableView.ClientID %>").get_selectedItems()[0].getDataKeyValue("PK_ID");
             var url = "";
-            if (confirm("In phiếu bằng máy in kim?")) {
-                url = "Report.aspx?TYPE=INBILLKIM&ID=" + IDNHANGUI;
+            url = "Report.aspx?TYPE=INBILLKIM&ID=" + IDNHANGUI;
+            window.open(url, '_blank');
+            window.focus();
+        } else {
+            alert("Không có phiếu nhận gửi được chọn");
+        }
 
-            } else {
-                if (confirm("In máy in thường 2 bản?")) {
-
-                    url = "Report.aspx?TYPE=INBILL2&ID=" + IDNHANGUI;
-                } else {
-                    url = "Report.aspx?TYPE=INBILL&ID=" + IDNHANGUI;
-
-
-                }
-            }
+    }
+    function PrintOnClientLinkClicked2() {
+        if ($find("<%= RadGridNHANGUI.MasterTableView.ClientID %>").get_selectedItems().length != 0) {
+            var IDNHANGUI = $find("<%= RadGridNHANGUI.MasterTableView.ClientID %>").get_selectedItems()[0].getDataKeyValue("PK_ID");
+            var url = "";
+            url = "Report.aspx?TYPE=INBILL2&ID=" + IDNHANGUI;
             window.open(url, '_blank');
             window.focus();
         } else {
             alert("Không có phiếu nhận gửi được chọn");
         }
     }
-    function PrintOnClientLinkClickedEdit(IDNHANGUI) {
-        var url = "";
-        if (confirm("In phiếu bằng máy in kim?")) {
-            url = "Report.aspx?TYPE=INBILLKIM&ID=" + IDNHANGUI;
-
+    function PrintOnClientLinkClicked1() {
+        if ($find("<%= RadGridNHANGUI.MasterTableView.ClientID %>").get_selectedItems().length != 0) {
+            var IDNHANGUI = $find("<%= RadGridNHANGUI.MasterTableView.ClientID %>").get_selectedItems()[0].getDataKeyValue("PK_ID");
+            var url = "";
+            url = "Report.aspx?TYPE=INBILL&ID=" + IDNHANGUI;
+            window.open(url, '_blank');
+            window.focus();
         } else {
-            if (confirm("In máy in thường 2 bản?")) {
-
-                url = "Report.aspx?TYPE=INBILL2&ID=" + IDNHANGUI;
-            } else {
-                url = "Report.aspx?TYPE=INBILL&ID=" + IDNHANGUI;
-
-
-            }
+            alert("Không có phiếu nhận gửi được chọn");
         }
+    }
+    function PrintOnClientLinkClickedEdit3(IDNHANGUI) {
+        var url = "";
+        url = "Report.aspx?TYPE=INBILLKIM&ID=" + IDNHANGUI;
         window.open(url, '_blank');
         window.focus();
-    }    
+    }
+    function PrintOnClientLinkClickedEdit2(IDNHANGUI) {
+        var url = "";
+        url = "Report.aspx?TYPE=INBILL2&ID=" + IDNHANGUI;
+        window.open(url, '_blank');
+        window.focus();
+    }
+    function PrintOnClientLinkClickedEdit1(IDNHANGUI) {
+        var url = "";
+        url = "Report.aspx?TYPE=INBILL&ID=" + IDNHANGUI;
+        window.open(url, '_blank');
+        window.focus();
+    }
 </script>
 <script type="text/javascript">
     var flag = false;
@@ -523,7 +534,9 @@ table.gridtable td {
                         <asp:LinkButton ID="LinkButton2" runat="server" CommandName="InitInsert" Visible='<%# !RadGridNHANGUI.MasterTableView.IsItemInserted && ITCLIB.Security.Security.CanAddModule("NHANGUI") %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/AddRecord.gif" />Thêm</asp:LinkButton>&nbsp;&nbsp;
                         <asp:LinkButton ID="LinkButton3" runat="server" CommandName="PerformInsert" Visible='<%# RadGridNHANGUI.MasterTableView.IsItemInserted %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Insert.gif" />Lưu</asp:LinkButton>&nbsp;&nbsp;
                         <asp:LinkButton ID="LinkButton1" OnClientClick="javascript:return confirm('Bạn có muốn xóa bản ghi đã chọn không?')" runat="server" CommandName="DeleteSelected" Visible='<%# ITCLIB.Security.Security.CanDeleteModule("NHANGUI") %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Delete.gif" />Xóa</asp:LinkButton>&nbsp;&nbsp;
-                        <asp:LinkButton ID="btXuatbaocao" runat="server" OnClientClick ='<%# String.Format("javascript:return PrintOnClientLinkClicked()")%>' ><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/img_OpenPanel.gif" />Xuất phiếu</asp:LinkButton>&nbsp;&nbsp;
+                        <asp:LinkButton ID="btXuatbaocao" runat="server" OnClientClick ='<%# String.Format("javascript:return PrintOnClientLinkClicked1()")%>' ><img style="border:0px;vertical-align:middle;" alt="" src="Images/print.gif" />In 1 bản</asp:LinkButton>&nbsp;&nbsp;
+                        <asp:LinkButton ID="LinkButton7" runat="server" OnClientClick ='<%# String.Format("javascript:return PrintOnClientLinkClicked2()")%>' ><img style="border:0px;vertical-align:middle;" alt="" src="Images/print.gif" />In 2 bản</asp:LinkButton>&nbsp;&nbsp;
+                        <asp:LinkButton ID="LinkButton8" runat="server" OnClientClick ='<%# String.Format("javascript:return PrintOnClientLinkClicked3()")%>' ><img style="border:0px;vertical-align:middle;" alt="" src="Images/print.gif" />In kim</asp:LinkButton>&nbsp;&nbsp;
                         <asp:LinkButton ID="LinkButton5" runat="server" OnClientClick="javascript:return confirm('Bạn có muốn xác nhận các Bill này đã thanh toán không?')" CommandName="ConfirmPayment" Visible='<%# ITCLIB.Security.Security.CanPrintModule("NHANGUI") %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/img_OpenPanel.gif" />Xác nhận đã thanh toán</asp:LinkButton>&nbsp;&nbsp;
                         <asp:LinkButton ID="LinkButton6" runat="server" OnClientClick="javascript:return confirm('Bạn có muốn xác nhận các Bill này chưa thanh toán không?')" CommandName="ConfirmUnPayment" Visible='<%# ITCLIB.Security.Security.CanPrintModule("NHANGUI") %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/img_OpenPanel.gif" />Xác nhận chưa thanh toán</asp:LinkButton>&nbsp;&nbsp;
                        <asp:LinkButton ID="LinkButton4" runat="server" CommandName="RebindGrid"><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Refresh.gif" />Làm mới</asp:LinkButton>
@@ -596,7 +609,9 @@ table.gridtable td {
               <ul>
                 <li class="lifirst"><asp:LinkButton ID="btnSave" runat="server" CommandName='<%# (Container is GridEditFormInsertItem) ? "PerformInsert" : "Update" %>'><img src="Images/img_save.jpg" /><%# (Container is GridEditFormInsertItem) ? "Lưu" : "Lưu" %></asp:LinkButton></li>
                 <li><asp:LinkButton ID="btnClose" runat="server" CommandName="Cancel"><img src="Images/img_Close.jpg" />Đóng</asp:LinkButton></li>
-                <li><asp:LinkButton ID="btXuatbaocao" runat="server"  Visible='<%# !(Container is GridEditFormInsertItem) %>' OnClientClick ='<%# String.Format("javascript:return PrintOnClientLinkClickedEdit({0})",Eval("PK_ID")) %>' ><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/img_OpenPanel.gif" />Xuất phiếu</asp:LinkButton></li>                    
+                <li><asp:LinkButton ID="btXuatbaocao" runat="server"  Visible='<%# !(Container is GridEditFormInsertItem) %>' OnClientClick ='<%# String.Format("javascript:return PrintOnClientLinkClickedEdit1({0})",Eval("PK_ID")) %>' ><img style="border:0px;vertical-align:middle;" alt="" src="Images/print.gif"/>In 1 bản</asp:LinkButton></li>
+                <li><asp:LinkButton ID="LinkButton9" runat="server"  Visible='<%# !(Container is GridEditFormInsertItem) %>' OnClientClick ='<%# String.Format("javascript:return PrintOnClientLinkClickedEdit2({0})",Eval("PK_ID")) %>' ><img style="border:0px;vertical-align:middle;" alt="" src="Images/print.gif"/>In 2 bản</asp:LinkButton></li>
+                <li><asp:LinkButton ID="LinkButton10" runat="server"  Visible='<%# !(Container is GridEditFormInsertItem) %>' OnClientClick ='<%# String.Format("javascript:return PrintOnClientLinkClickedEdit3({0})",Eval("PK_ID")) %>' ><img style="border:0px;vertical-align:middle;" alt="" src="Images/print.gif"/>In kim</asp:LinkButton></li>
               </ul>
             </div>               
             <div class="clearfix bgpopup"> 
@@ -605,11 +620,11 @@ table.gridtable td {
             <tr>
                 <td style ="width:100px;"> <span class="rtsTxtnew">Ngày nhận gửi:</td>
                 <td colspan="4">
-                    <telerik:RadDatePicker ID="radNgaynhangui" Width ="150px" DbSelectedDate ='<%# Bind("C_NGAY") %>' runat="server" AutoPostBack ="false" >
-                        <DateInput ID ="DateInput1" runat ="server" DateFormat ="dd/MM/yyyy" MinDate="1/1/1890 12:00:00 AM">
+                    <telerik:RadDateTimePicker ID="radNgaynhangui" Width ="95%" DbSelectedDate ='<%# Bind("C_NGAY") %>' runat="server" AutoPostBack ="false" >
+                        <DateInput ID ="DateInput1" runat ="server" DateFormat ="dd/MM/yyyy hh:mm tt" MinDate="1/1/1890 12:00:00 AM">
                         <ClientEvents  OnKeyPress ="controlkeypress"/>
                         </DateInput>
-                    </telerik:RadDatePicker>
+                    </telerik:RadDateTimePicker>
                 </td>
                 <td style ="width:100px;"> <span class="rtsTxtnew">Số Bill:</span></td>
                 <td colspan="4">
@@ -838,7 +853,7 @@ table.gridtable td {
                 </td>
                 <td style =" width:100px;"> <span class="rtsTxtnew">Ngày giờ phát:</span></td>
                 <td colspan="4">
-                    <telerik:RadDateTimePicker ID="radC_NGAYGIOPHAT"  Width ="90%" DbSelectedDate ='<%# Bind("C_NGAYGIOPHAT") %>' runat="server" AutoPostBack ="false">
+                    <telerik:RadDateTimePicker ID="radC_NGAYGIOPHAT"  Width ="95%" DbSelectedDate ='<%# Bind("C_NGAYGIOPHAT") %>' runat="server" AutoPostBack ="false">
                         <DateInput ID ="DateInput2" runat ="server" DateFormat ="dd/MM/yyyy hh:mm tt" MinDate="1/1/1890 12:00:00 AM">
                         <ClientEvents  OnKeyPress ="controlkeypress"/>
                         </DateInput>
