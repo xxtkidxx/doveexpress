@@ -1,0 +1,90 @@
+Thời gian lỗi : 2013-11-29 22:18:57 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/checkbill.aspx. 
+Nội dung lỗi:The file '/DoveExpress/checkbill.aspx' does not exist.
+__________________________
+Thời gian lỗi : 2013-11-29 22:39:19 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/BillCheck.aspx. 
+Nội dung lỗi:Unexpected end of file looking for </asp:Label> tag.
+__________________________
+Thời gian lỗi : 2013-11-29 22:40:07 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/BillCheck.aspx. 
+Nội dung lỗi:The control with ID 'txtBILL' requires a ScriptManager on the page. The ScriptManager must appear before any controls that need it.
+__________________________
+Thời gian lỗi : 2013-11-29 23:32:44 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/BillCheck.aspx. 
+Nội dung lỗi:String was not recognized as a valid DateTime.
+__________________________
+Thời gian lỗi : 2013-11-29 23:32:45 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/BillCheck.aspx. 
+Nội dung lỗi:String was not recognized as a valid DateTime.
+__________________________
+Thời gian lỗi : 2013-11-29 23:32:46 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/BillCheck.aspx. 
+Nội dung lỗi:String was not recognized as a valid DateTime.
+__________________________
+Thời gian lỗi : 2013-11-29 23:32:46 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/BillCheck.aspx. 
+Nội dung lỗi:String was not recognized as a valid DateTime.
+__________________________
+Thời gian lỗi : 2013-11-29 23:32:46 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/BillCheck.aspx. 
+Nội dung lỗi:String was not recognized as a valid DateTime.
+__________________________
+Thời gian lỗi : 2013-11-29 23:32:49 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/BillCheck.aspx. 
+Nội dung lỗi:String was not recognized as a valid DateTime.
+__________________________
+Thời gian lỗi : 2013-11-29 23:32:49 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/BillCheck.aspx. 
+Nội dung lỗi:String was not recognized as a valid DateTime.
+__________________________
+Thời gian lỗi : 2013-11-29 23:32:50 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/BillCheck.aspx. 
+Nội dung lỗi:String was not recognized as a valid DateTime.
+__________________________
+Thời gian lỗi : 2013-11-29 23:46:17 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/BillCheck.aspx. 
+Nội dung lỗi:String was not recognized as a valid DateTime.
+__________________________
+Thời gian lỗi : 2013-11-29 23:46:18 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/BillCheck.aspx. 
+Nội dung lỗi:String was not recognized as a valid DateTime.
+__________________________
+Thời gian lỗi : 2013-11-29 23:46:19 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/BillCheck.aspx. 
+Nội dung lỗi:String was not recognized as a valid DateTime.
+__________________________
+Thời gian lỗi : 2013-11-29 23:46:19 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/BillCheck.aspx. 
+Nội dung lỗi:String was not recognized as a valid DateTime.
+__________________________
+Thời gian lỗi : 2013-11-29 23:46:19 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/BillCheck.aspx. 
+Nội dung lỗi:String was not recognized as a valid DateTime.
+__________________________
+Thời gian lỗi : 2013-11-29 23:46:20 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/BillCheck.aspx. 
+Nội dung lỗi:String was not recognized as a valid DateTime.
+__________________________
+Thời gian lỗi : 2013-11-29 23:46:51 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/BillCheck.aspx. 
+Nội dung lỗi:String was not recognized as a valid DateTime.
+__________________________
