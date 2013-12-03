@@ -46,6 +46,7 @@
             Telerik.Reporting.ReportParameter reportParameter34 = new Telerik.Reporting.ReportParameter();
             Telerik.Reporting.ReportParameter reportParameter35 = new Telerik.Reporting.ReportParameter();
             Telerik.Reporting.ReportParameter reportParameter36 = new Telerik.Reporting.ReportParameter();
+            Telerik.Reporting.ReportParameter reportParameter37 = new Telerik.Reporting.ReportParameter();
             Telerik.Reporting.Drawing.StyleRule styleRule1 = new Telerik.Reporting.Drawing.StyleRule();
             this.detail = new Telerik.Reporting.DetailSection();
             this.barcode1 = new Telerik.Reporting.Barcode();
@@ -1053,7 +1054,7 @@
             this.textBox23.Style.Padding.Right = Telerik.Reporting.Drawing.Unit.Point(1D);
             this.textBox23.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Left;
             this.textBox23.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
-            this.textBox23.Value = ".................................";
+            this.textBox23.Value = "= Parameters.C_SOKIEN.Label";
             // 
             // textBox71
             // 
@@ -1429,6 +1430,7 @@
             reportParameter34.Type = Telerik.Reporting.ReportParameterType.Boolean;
             reportParameter35.Name = "C_NGAY";
             reportParameter36.Name = "C_GIATRIHANGHOA";
+            reportParameter37.Name = "C_SOKIEN";
             this.ReportParameters.Add(reportParameter1);
             this.ReportParameters.Add(reportParameter2);
             this.ReportParameters.Add(reportParameter3);
@@ -1465,6 +1467,7 @@
             this.ReportParameters.Add(reportParameter34);
             this.ReportParameters.Add(reportParameter35);
             this.ReportParameters.Add(reportParameter36);
+            this.ReportParameters.Add(reportParameter37);
             styleRule1.Selectors.AddRange(new Telerik.Reporting.Drawing.ISelector[] {
             new Telerik.Reporting.Drawing.TypeSelector(typeof(Telerik.Reporting.TextItemBase)),
             new Telerik.Reporting.Drawing.TypeSelector(typeof(Telerik.Reporting.HtmlTextBox))});

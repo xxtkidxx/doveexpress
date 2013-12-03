@@ -74,6 +74,7 @@ public partial class Report : System.Web.UI.Page
                 reportSource.Parameters.Add("C_DIACHINHAN", oDataTable.Rows[0]["C_DIACHINHAN"] != DBNull.Value ? oDataTable.Rows[0]["C_DIACHINHAN"].ToString() : "");
                 reportSource.Parameters.Add("C_TELNHAN", oDataTable.Rows[0]["C_TELNHAN"] != DBNull.Value ? oDataTable.Rows[0]["C_TELNHAN"].ToString() : "");
                 reportSource.Parameters.Add("C_NOIDUNG", oDataTable.Rows[0]["C_NOIDUNG"] != DBNull.Value ? oDataTable.Rows[0]["C_NOIDUNG"].ToString() : "");
+                reportSource.Parameters.Add("C_SOKIEN", oDataTable.Rows[0]["C_SOKIEN"] != DBNull.Value ? oDataTable.Rows[0]["C_SOKIEN"].ToString() : "");
                 reportSource.Parameters.Add("C_GIATRIHANGHOA", oDataTable.Rows[0]["C_GIATRIHANGHOA"] != DBNull.Value ? String.Format("{0:### ### ###}", oDataTable.Rows[0]["C_GIATRIHANGHOA"]) : "");
                 reportSource.Parameters.Add("C_KHOILUONG", oDataTable.Rows[0]["C_KHOILUONG"] != DBNull.Value ? String.Format("{0:### ### ###}", oDataTable.Rows[0]["C_KHOILUONG"]) : "");
                 reportSource.Parameters.Add("C_KHOILUONGQD", oDataTable.Rows[0]["C_KHOILUONGQD"] != DBNull.Value ? String.Format("{0:### ### ###}", oDataTable.Rows[0]["C_KHOILUONGQD"]) : "");
@@ -218,6 +219,7 @@ public partial class Report : System.Web.UI.Page
                 reportSource.Parameters.Add("C_DIACHINHAN", oDataTable.Rows[0]["C_DIACHINHAN"] != DBNull.Value ? oDataTable.Rows[0]["C_DIACHINHAN"].ToString() : "");
                 reportSource.Parameters.Add("C_TELNHAN", oDataTable.Rows[0]["C_TELNHAN"] != DBNull.Value ? oDataTable.Rows[0]["C_TELNHAN"].ToString() : "");
                 reportSource.Parameters.Add("C_NOIDUNG", oDataTable.Rows[0]["C_NOIDUNG"] != DBNull.Value ? oDataTable.Rows[0]["C_NOIDUNG"].ToString() : "");
+                reportSource.Parameters.Add("C_SOKIEN", oDataTable.Rows[0]["C_SOKIEN"] != DBNull.Value ? oDataTable.Rows[0]["C_SOKIEN"].ToString() : "");
                 reportSource.Parameters.Add("C_GIATRIHANGHOA", oDataTable.Rows[0]["C_GIATRIHANGHOA"] != DBNull.Value ? String.Format("{0:### ### ###}", oDataTable.Rows[0]["C_GIATRIHANGHOA"]) : "");
                 reportSource.Parameters.Add("C_KHOILUONG", oDataTable.Rows[0]["C_KHOILUONG"] != DBNull.Value ? String.Format("{0:### ### ###}", oDataTable.Rows[0]["C_KHOILUONG"]) : "");
                 reportSource.Parameters.Add("C_KHOILUONGQD", oDataTable.Rows[0]["C_KHOILUONGQD"] != DBNull.Value ? String.Format("{0:### ### ###}", oDataTable.Rows[0]["C_KHOILUONGQD"]) : "");
@@ -361,6 +363,7 @@ public partial class Report : System.Web.UI.Page
                 reportSource.Parameters.Add("C_DIACHINHAN", oDataTable.Rows[0]["C_DIACHINHAN"] != DBNull.Value ? oDataTable.Rows[0]["C_DIACHINHAN"].ToString() : "");
                 reportSource.Parameters.Add("C_TELNHAN", oDataTable.Rows[0]["C_TELNHAN"] != DBNull.Value ? oDataTable.Rows[0]["C_TELNHAN"].ToString() : "");
                 reportSource.Parameters.Add("C_NOIDUNG", oDataTable.Rows[0]["C_NOIDUNG"] != DBNull.Value ? oDataTable.Rows[0]["C_NOIDUNG"].ToString() : "");
+                reportSource.Parameters.Add("C_SOKIEN", oDataTable.Rows[0]["C_SOKIEN"] != DBNull.Value ? oDataTable.Rows[0]["C_SOKIEN"].ToString() : "");
                 reportSource.Parameters.Add("C_GIATRIHANGHOA", oDataTable.Rows[0]["C_GIATRIHANGHOA"] != DBNull.Value ? String.Format("{0:### ### ###}", oDataTable.Rows[0]["C_GIATRIHANGHOA"]) : "");
                 reportSource.Parameters.Add("C_KHOILUONG", oDataTable.Rows[0]["C_KHOILUONG"] != DBNull.Value ? String.Format("{0:### ### ###}", oDataTable.Rows[0]["C_KHOILUONG"]) : "");
                 reportSource.Parameters.Add("C_KHOILUONGQD", oDataTable.Rows[0]["C_KHOILUONGQD"] != DBNull.Value ? String.Format("{0:### ### ###}", oDataTable.Rows[0]["C_KHOILUONGQD"]) : "");
@@ -505,6 +508,7 @@ public partial class Report : System.Web.UI.Page
                 reportSource.Parameters.Add("C_DIACHINHAN", oDataTable.Rows[0]["C_DIACHINHAN"] != DBNull.Value ? oDataTable.Rows[0]["C_DIACHINHAN"].ToString() : "");
                 reportSource.Parameters.Add("C_TELNHAN", oDataTable.Rows[0]["C_TELNHAN"] != DBNull.Value ? oDataTable.Rows[0]["C_TELNHAN"].ToString() : "");
                 reportSource.Parameters.Add("C_NOIDUNG", oDataTable.Rows[0]["C_NOIDUNG"] != DBNull.Value ? oDataTable.Rows[0]["C_NOIDUNG"].ToString() : "");
+                reportSource.Parameters.Add("C_SOKIEN", oDataTable.Rows[0]["C_SOKIEN"] != DBNull.Value ? oDataTable.Rows[0]["C_SOKIEN"].ToString() : "");
                 reportSource.Parameters.Add("C_GIATRIHANGHOA", oDataTable.Rows[0]["C_GIATRIHANGHOA"] != DBNull.Value ? String.Format("{0:### ### ###}", oDataTable.Rows[0]["C_GIATRIHANGHOA"]) : "");
                 reportSource.Parameters.Add("C_KHOILUONG", oDataTable.Rows[0]["C_KHOILUONG"] != DBNull.Value ? String.Format("{0:### ### ###}", oDataTable.Rows[0]["C_KHOILUONG"]) : "");
                 reportSource.Parameters.Add("C_KHOILUONGQD", oDataTable.Rows[0]["C_KHOILUONGQD"] != DBNull.Value ? String.Format("{0:### ### ###}", oDataTable.Rows[0]["C_KHOILUONGQD"]) : "");
