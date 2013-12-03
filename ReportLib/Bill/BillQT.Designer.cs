@@ -1052,7 +1052,7 @@
             this.textBox23.Style.Font.Size = Telerik.Reporting.Drawing.Unit.Point(8D);
             this.textBox23.Style.Padding.Left = Telerik.Reporting.Drawing.Unit.Point(2D);
             this.textBox23.Style.Padding.Right = Telerik.Reporting.Drawing.Unit.Point(1D);
-            this.textBox23.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Left;
+            this.textBox23.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Center;
             this.textBox23.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
             this.textBox23.Value = "= Parameters.C_SOKIEN.Label";
             // 
