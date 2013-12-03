@@ -35,7 +35,7 @@
 </telerik:RadCodeBlock>
 <telerik:RadAjaxLoadingPanel Skin="Vista" ID="RadAjaxLoadingPanelQUOCGIA" runat="server" />
 <telerik:RadSplitter ID="RadSplitterQUOCGIA" runat="server" Width="100%" Height ="550px">
-<telerik:RadPane ID="LeftPaneQUOCGIA" runat="server" Width="20%">
+<telerik:RadPane ID="LeftPaneQUOCGIA" runat="server" Width="20%" Visible = "false">
 <telerik:RadPanelBar ID="RadPanelBarListKHUVUC" Width ="100%" Height ="100%"  
         runat="server" ExpandMode="MultipleExpandedItems"
         Skin ="Vista" DataFieldID="PK_ID" 
@@ -49,7 +49,7 @@
 </Items> 
 </telerik:RadPanelBar>
 </telerik:RadPane>
-<telerik:RadSplitBar ID="RadSplitBarQUOCGIA" runat="server" CollapseMode="Forward" />
+<telerik:RadSplitBar ID="RadSplitBarQUOCGIA" runat="server" CollapseMode="Forward"  Visible = "false"/>
 <telerik:RadPane ID="MiddlePaneQUOCGIA" runat="server" Width="79%">
 <telerik:RadGrid ID="RadGridQUOCGIA" runat="server" Skin="Vista" 
     AllowPaging="True" PageSize="20" AllowSorting="True" 
@@ -128,18 +128,6 @@
               </ul>
             </div>  
               <table id="Table1" cellspacing="3" cellpadding="3" style="width: 100%" border="0">
-                        <tr>
-                            <td>
-                                Thuộc khu vực:
-                            </td>
-                            <td>
-                            <asp:DropDownList ID="ddlKhuvuc" SelectedValue='<%# Bind("FK_KHUVUC") %>' DataTextField="C_NAME" DataValueField="PK_ID" runat="server" DataSourceID="SqlDataSourceKHUVUC" AppendDataBoundItems="True">
-                            <asp:ListItem Value="" Text="Chọn"></asp:ListItem>
-                            </asp:DropDownList>   
-                            <br />
-                            <asp:RequiredFieldValidator ForeColor ="Red"  ID="RequiredFieldValidator1" runat="server" ErrorMessage="Khu vực không thể rỗng" ControlToValidate="ddlKhuvuc" SetFocusOnError="True" Display="Dynamic" ValidationGroup="G1"></asp:RequiredFieldValidator>
-                   </td>
-               </tr>
                         <tr>
                             <td>
                                 Mã quốc gia:
