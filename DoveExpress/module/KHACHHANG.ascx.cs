@@ -158,7 +158,7 @@ public partial class module_KHACHHANG : System.Web.UI.UserControl
             QUANHUYENDataSource.SelectCommand = LoadFilteredQuanHuyenManually(hfQuanHuyen.Value);
             RadComboBox cmbQuocGia = (RadComboBox)editItem.FindControl("cmbQuocGia");
             RadComboBox cmbTinhThanh = (RadComboBox)editItem.FindControl("cmbTinhThanh");
-            RadComboBox cmbQuanHuyen = (RadComboBox)editItem.FindControl("cmbQuanHuyen");
+            RadComboBox cmbQuanHuyen = (RadComboBox)editItem.FindControl("cmbQuanHuyen");            
             cmbQuocGia.DataBind();
             cmbQuocGia.SelectedValue = hfQuocGia.Value;
             TINHTHANHDataSource.SelectCommand = LoadFilteredTinhThanhManually(hfQuocGia.Value);
@@ -167,6 +167,15 @@ public partial class module_KHACHHANG : System.Web.UI.UserControl
             QUANHUYENDataSource.SelectCommand = LoadFilteredQuanHuyenManually(hfTinhThanh.Value);
             cmbQuanHuyen.DataBind();
             cmbQuanHuyen.SelectedValue = hfQuanHuyen.Value;
+            if (e.Item is GridEditFormInsertItem || e.Item is GridDataInsertItem)
+            {
+                // insert item
+                RadComboBox cmbFK_NHOMKHACHHANG = (RadComboBox)editItem.FindControl("cmbFK_NHOMKHACHHANG");
+                cmbFK_NHOMKHACHHANG.SelectedIndex = 0;
+            }
+            else
+            {
+            }
         }
         if (e.Item is GridDataItem)
         {

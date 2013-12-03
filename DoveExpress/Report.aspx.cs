@@ -54,7 +54,7 @@ public partial class Report : System.Web.UI.Page
     //In bill full
     protected void InBill()
     {
-        string SQLSELECT = String.Format("SELECT NHANGUI.*  FROM NHANGUI WHERE NHANGUI.PK_ID = {0}", Request.QueryString["ID"]);
+        string SQLSELECT = String.Format("SELECT NHANGUI.*  FROM NHANGUI WHERE NHANGUI.C_BILL = {0}", Request.QueryString["ID"]);
         ITCLIB.Admin.SQL QR = new ITCLIB.Admin.SQL();
         DataTable oDataTable = QR.query_data(SQLSELECT);
         if (oDataTable.Rows.Count > 0)
@@ -198,7 +198,7 @@ public partial class Report : System.Web.UI.Page
     }
     protected void InBillQT()
     {
-        string SQLSELECT = String.Format("SELECT NHANGUI.*  FROM NHANGUI WHERE NHANGUI.PK_ID = {0}", Request.QueryString["ID"]);
+        string SQLSELECT = String.Format("SELECT NHANGUI.*  FROM NHANGUI WHERE NHANGUI.C_BILL = {0}", Request.QueryString["ID"]);
         ITCLIB.Admin.SQL QR = new ITCLIB.Admin.SQL();
         DataTable oDataTable = QR.query_data(SQLSELECT);
         if (oDataTable.Rows.Count > 0)
@@ -341,7 +341,7 @@ public partial class Report : System.Web.UI.Page
     }
     protected void INBILL2()
     {
-        string SQLSELECT = String.Format("SELECT NHANGUI.*  FROM NHANGUI WHERE NHANGUI.PK_ID = {0}", Request.QueryString["ID"]);
+        string SQLSELECT = String.Format("SELECT NHANGUI.*  FROM NHANGUI WHERE NHANGUI.C_BILL = {0}", Request.QueryString["ID"]);
         ITCLIB.Admin.SQL QR = new ITCLIB.Admin.SQL();
         DataTable oDataTable = QR.query_data(SQLSELECT);
         if (oDataTable.Rows.Count > 0)
@@ -485,7 +485,7 @@ public partial class Report : System.Web.UI.Page
     }
     protected void INBILLQT2()
     {
-        string SQLSELECT = String.Format("SELECT NHANGUI.*  FROM NHANGUI WHERE NHANGUI.PK_ID = {0}", Request.QueryString["ID"]);
+        string SQLSELECT = String.Format("SELECT NHANGUI.*  FROM NHANGUI WHERE NHANGUI.C_BILL = {0}", Request.QueryString["ID"]);
         ITCLIB.Admin.SQL QR = new ITCLIB.Admin.SQL();
         DataTable oDataTable = QR.query_data(SQLSELECT);
         if (oDataTable.Rows.Count > 0)
