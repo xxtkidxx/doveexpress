@@ -968,7 +968,7 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
                             }
                             else
                             {
-                                if (C_KHOILUONG <= int.Parse(ctcDataTable.Rows[i]["C_KHOILUONG"].ToString()) && C_KHOILUONG >= int.Parse(ctcDataTable.Rows[i - 1]["C_KHOILUONG"].ToString()))
+                                if (C_KHOILUONG <= int.Parse(ctcDataTable.Rows[i]["C_KHOILUONG"].ToString()) && C_KHOILUONG > int.Parse(ctcDataTable.Rows[i - 1]["C_KHOILUONG"].ToString()))
                                 {
                                     CUOCCHINH = decimal.Parse(ctcDataTable.Rows[i]["C_CUOCPHI"].ToString(), NumberStyles.Currency);
                                     CUOCCHINH = CUOCCHINH + ((decimal)C_KHOILUONG / 1000) + C_VALUE1;
@@ -1102,7 +1102,7 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
                         }
                         else
                         {
-                            if (C_KHOILUONG <= int.Parse(ctcDataTable.Rows[i]["C_KHOILUONG"].ToString()) && C_KHOILUONG >= int.Parse(ctcDataTable.Rows[i - 1]["C_KHOILUONG"].ToString()))
+                            if (C_KHOILUONG <= int.Parse(ctcDataTable.Rows[i]["C_KHOILUONG"].ToString()) && C_KHOILUONG > int.Parse(ctcDataTable.Rows[i - 1]["C_KHOILUONG"].ToString()))
                             {
                                 CUOCCHINH = decimal.Parse(ctcDataTable.Rows[i]["C_CUOCPHI"].ToString(), NumberStyles.Currency);
                                 CUOCCHINH = CUOCCHINH + ((decimal)C_KHOILUONG / 1000) + C_VALUE1;
@@ -1236,7 +1236,7 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
                             }
                             else
                             {
-                                if (C_KHOILUONG <= int.Parse(oDataTable1.Rows[i]["C_KHOILUONG"].ToString()) && C_KHOILUONG >= int.Parse(oDataTable1.Rows[i - 1]["C_KHOILUONG"].ToString()))
+                                if (C_KHOILUONG <= int.Parse(oDataTable1.Rows[i]["C_KHOILUONG"].ToString()) && C_KHOILUONG > int.Parse(oDataTable1.Rows[i - 1]["C_KHOILUONG"].ToString()))
                                 {
                                     GIADOITAC = decimal.Parse(oDataTable1.Rows[i]["C_CUOCPHI"].ToString(), NumberStyles.Currency);
                                     GIADOITACTL = decimal.Parse(oDataTable1.Rows[i]["C_CUOCPHITL"].ToString(), NumberStyles.Currency);
@@ -1350,7 +1350,7 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
                         }
                         else
                         {
-                            if (C_KHOILUONG <= int.Parse(oDataTable1.Rows[i]["C_KHOILUONG"].ToString()) && C_KHOILUONG >= int.Parse(oDataTable1.Rows[i - 1]["C_KHOILUONG"].ToString()))
+                            if (C_KHOILUONG <= int.Parse(oDataTable1.Rows[i]["C_KHOILUONG"].ToString()) && C_KHOILUONG > int.Parse(oDataTable1.Rows[i - 1]["C_KHOILUONG"].ToString()))
                             {
                                 GIADOITAC = decimal.Parse(oDataTable1.Rows[i]["C_CUOCPHI"].ToString(), NumberStyles.Currency);
                                 GIADOITACTL = decimal.Parse(oDataTable1.Rows[i]["C_CUOCPHITL"].ToString(), NumberStyles.Currency);
