@@ -200,7 +200,7 @@ public partial class module_SOQUYTIENMAT : System.Web.UI.UserControl
             Label lblSTT = (Label)e.Item.FindControl("lblSTT");
             RadNumericTextBox txtC_SOTIEN = (RadNumericTextBox)e.Item.FindControl("txtC_SOTIEN");
             RadNumericTextBox txtC_TON = (RadNumericTextBox)e.Item.FindControl("txtC_TON");
-            lblSTT.Text = (e.Item.ItemIndex + 1).ToString();
+            //lblSTT.Text = (e.Item.ItemIndex + 10000).ToString();
             if (e.Item.Cells[5].Text == "Thu")
             {
                 TONGTHU = TONGTHU + decimal.Parse(txtC_SOTIEN.Text);
@@ -213,7 +213,7 @@ public partial class module_SOQUYTIENMAT : System.Web.UI.UserControl
                 TONGCHI = TONGCHI + decimal.Parse(txtC_SOTIEN.Text);
                 TONCUOIKY = TONCUOIKY - decimal.Parse(txtC_SOTIEN.Text);
                 txtC_TON.Text = TONCUOIKY.ToString();
-                TONTHUCTE = TONCUOIKY;
+                TONTHUCTE = TONCUOIKY;                
             }
             else if (e.Item.Cells[5].Text == "Tồn đầu kỳ")
             {
@@ -224,6 +224,7 @@ public partial class module_SOQUYTIENMAT : System.Web.UI.UserControl
                 e.Item.BackColor = System.Drawing.Color.Red;
                 e.Item.ForeColor = System.Drawing.Color.White;
                 TONTHUCTE = TONCUOIKY;
+                lblSTT.Text = "";
             }
             else if (e.Item.Cells[5].Text == "Tồn cuối kỳ")
             {
@@ -231,6 +232,7 @@ public partial class module_SOQUYTIENMAT : System.Web.UI.UserControl
                 txtC_TON.Text = txtC_SOTIEN.Text;
                 e.Item.BackColor = System.Drawing.Color.Red;
                 e.Item.ForeColor = System.Drawing.Color.White;
+                lblSTT.Text = "";
             }
         }
     }
