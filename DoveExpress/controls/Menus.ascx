@@ -25,7 +25,7 @@
                     </telerik:RadMenuItem>
                     <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=QUOCGIA" Text="Quốc gia" Value="QUOCGIA">
                     </telerik:RadMenuItem> 
-                    <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=KHUVUC" Text="Khu vực" Value="KHUVUC">
+                    <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=KHUVUC" Text="Khu vực" Value="KHUVUC" Visible ="false">
                     </telerik:RadMenuItem> 
                  </Items>
             </telerik:RadMenuItem> 
