@@ -1,0 +1,5 @@
+Thời gian lỗi : 2013-12-01 22:47:25 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\DoveExpress\module\NHANGUI.ascx(6): error CS0103: The name 'RadGridNHANGUIQT' does not exist in the current context
+__________________________

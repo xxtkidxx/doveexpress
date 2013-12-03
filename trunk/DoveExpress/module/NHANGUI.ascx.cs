@@ -638,7 +638,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
             }
             foreach (GridDataItem item in RadGridNHANGUI.SelectedItems)
             {
-                if (!ValidateDeleteGroup(item["pk_id"].Text))
+                if (!ValidateDeleteGroup(item["C_BILL"].Text))
                 {
                     SetMessage("Không thể xóa nhận gửi \"" + item["c_name"].Text + "\" do có tham chiếu dữ liệu khác.");
                     RadGridNHANGUI.Rebind();
@@ -682,7 +682,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
                 ITCLIB.Admin.SQL UpdateQuery = new ITCLIB.Admin.SQL();
                 UpdateQuery.ExecuteNonQuery(UpdateSQL);
             }
-            SetMessage("Cập nhật tình trạng thanh toán thành công" + UpdateSQL);
+            SetMessage("Cập nhật tình trạng thanh toán thành công");
             RadGridNHANGUI.Rebind();
         }
         else if (e.CommandName == "ConfirmUnPayment")
@@ -724,7 +724,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
             return "1";
         }
     }
-    protected bool ValidateDeleteGroup(string pkID)
+    protected bool ValidateDeleteGroup(string C_BILL)
     {
         int rowcount = 0;
         //string SelectSQL = "SELECT EOF_JOB.PK_ID FROM EOF_JOB WHERE EOF_JOB.fk_jobstatus = " + pkID;
@@ -1154,15 +1154,38 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
     protected void txtBillNhanh_TextChanged(object sender, EventArgs e)
     {
         string InsertSQL;
-        if (cmbDoiTac.SelectedIndex > -1)
+        if (CheckBillQuick(txtBillNhanh.Text.Trim()))
         {
-            InsertSQL = "INSERT INTO [NHANGUI] ([C_NGAY], [C_BILL], [FK_DOITAC], [C_TYPE],[FK_VUNGLAMVIEC]) VALUES ('" + System.DateTime.Now + "','" + txtBillNhanh.Text + "'," + cmbDoiTac.SelectedValue + ", 1,N'" + Session["VUNGLAMVIEC"].ToString() + "');INSERT INTO [SOQUYTIENMAT] ([C_NGAY], [C_TYPE], [FK_KIHIEUTAIKHOAN], [C_DESC], [C_SOTIEN], [C_BILL],[C_TON],[C_ORDER],[FK_VUNGLAMVIEC]) VALUES ('" + System.DateTime.Now + "',N'Thu',NULL, N'Bill ' + '" + txtBillNhanh.Text + "',0 ,'" + txtBillNhanh.Text + "',0,1,N'" + Session["VUNGLAMVIEC"].ToString() + "')";
+            if (cmbDoiTac.SelectedIndex > -1)
+            {
+                InsertSQL = "INSERT INTO [NHANGUI] ([C_NGAY], [C_BILL], [FK_DOITAC], [C_TYPE],[FK_VUNGLAMVIEC]) VALUES ('" + System.DateTime.Now + "','" + txtBillNhanh.Text + "'," + cmbDoiTac.SelectedValue + ", 1,N'" + Session["VUNGLAMVIEC"].ToString() + "');INSERT INTO [SOQUYTIENMAT] ([C_NGAY], [C_TYPE], [FK_KIHIEUTAIKHOAN], [C_DESC], [C_SOTIEN], [C_BILL],[C_TON],[C_ORDER],[FK_VUNGLAMVIEC]) VALUES ('" + System.DateTime.Now + "',N'Thu',NULL, N'Bill ' + '" + txtBillNhanh.Text + "',0 ,'" + txtBillNhanh.Text + "',0,1,N'" + Session["VUNGLAMVIEC"].ToString() + "')";
+            }
+            else
+            {
+                InsertSQL = "INSERT INTO [NHANGUI] ([C_NGAY], [C_BILL], [C_TYPE],[FK_VUNGLAMVIEC]) VALUES ('" + System.DateTime.Now + "','" + txtBillNhanh.Text + "', 1,N'" + Session["VUNGLAMVIEC"].ToString() + "');INSERT INTO [SOQUYTIENMAT] ([C_NGAY], [C_TYPE], [FK_KIHIEUTAIKHOAN], [C_DESC], [C_SOTIEN], [C_BILL],[C_TON],[C_ORDER],[FK_VUNGLAMVIEC]) VALUES ('" + System.DateTime.Now + "',N'Thu',NULL, N'Bill ' + '" + txtBillNhanh.Text + "',0 ,'" + txtBillNhanh.Text + "',0,1,N'" + Session["VUNGLAMVIEC"].ToString() + "')";
+            }
+            ITCLIB.Admin.SQL InsertQuery = new ITCLIB.Admin.SQL();
+            InsertQuery.ExecuteNonQuery(InsertSQL);
         }
         else
         {
-            InsertSQL = "INSERT INTO [NHANGUI] ([C_NGAY], [C_BILL], [C_TYPE],[FK_VUNGLAMVIEC]) VALUES ('" + System.DateTime.Now + "','" + txtBillNhanh.Text + "', 1,N'" + Session["VUNGLAMVIEC"].ToString() + "');INSERT INTO [SOQUYTIENMAT] ([C_NGAY], [C_TYPE], [FK_KIHIEUTAIKHOAN], [C_DESC], [C_SOTIEN], [C_BILL],[C_TON],[C_ORDER],[FK_VUNGLAMVIEC]) VALUES ('" + System.DateTime.Now + "',N'Thu',NULL, N'Bill ' + '" + txtBillNhanh.Text + "',0 ,'" + txtBillNhanh.Text + "',0,1,N'" + Session["VUNGLAMVIEC"].ToString() + "')";
+            SetMessage("Bill đã có trong cơ sở dữ liệu");
         }
-        ITCLIB.Admin.SQL InsertQuery = new ITCLIB.Admin.SQL();
-        InsertQuery.ExecuteNonQuery(InsertSQL);
+    }
+    protected bool CheckBillQuick(string C_BILL)
+    {
+        string SelectSQL;
+        SelectSQL = "Select NHANGUI.C_BILL FROM NHANGUI WHERE NHANGUI.C_BILL = '" + C_BILL +"'";
+        DataTable oDataTable = new DataTable();
+        ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
+        oDataTable = SelectQuery.query_data(SelectSQL);
+        if (oDataTable.Rows.Count != 0)
+        {
+           return false;
+        }
+        else
+        {
+            return true;
+        }
     }
 }
