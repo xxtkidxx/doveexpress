@@ -960,7 +960,6 @@ table.gridtable td {
     </InsertParameters>
     <UpdateParameters>
         <asp:Parameter Name="C_NGAY" Type="DateTime" />
-        <asp:Parameter Name="C_BILL" Type="String" />
         <asp:Parameter Name="FK_KHACHHANG" Type="String" />
         <asp:Parameter Name="C_TENKH" Type="String" />
         <asp:Parameter Name="C_TELGUI" Type="String" />

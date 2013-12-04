@@ -209,6 +209,14 @@ public partial class Main : System.Web.UI.MasterPage
                         RadAjaxManager.AjaxSettings.Add(_AjaxSetting);
                         control = LoadControl("module/NHANGUIQT.ascx");
                         break;
+                     case "nhanguiph":
+                        _AjaxSetting.AjaxControlID = "RadGridNHANGUIPH";
+                        _AjaxUpdatedControl.ControlID = "RadGridNHANGUIPH";
+                        _AjaxUpdatedControl.LoadingPanelID = "RadAjaxLoadingPanelNHANGUIPH";
+                        _AjaxSetting.UpdatedControls.Add(_AjaxUpdatedControl);
+                        //RadAjaxManager.AjaxSettings.Add(_AjaxSetting);
+                        control = LoadControl("module/NHANGUIPH.ascx");
+                        break;
                      case "baocaongay":
                         _AjaxSetting.AjaxControlID = "RadGridBAOCAONGAY";
                         _AjaxUpdatedControl.ControlID = "RadGridBAOCAONGAY";
