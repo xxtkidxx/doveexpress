@@ -676,195 +676,192 @@ namespace ITCLIB
         //TuanDA
         public class Email
         {
-            public class Email
+            public static string Send(string sEmail)
             {
-                public static string Send(string sEmail)
+                System.Text.RegularExpressions.Regex regex = new System.Text.RegularExpressions.Regex(@"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*");
+                bool result = regex.IsMatch(sEmail);
+                if (result == false)
                 {
-                    System.Text.RegularExpressions.Regex regex = new System.Text.RegularExpressions.Regex(@"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*");
-                    bool result = regex.IsMatch(sEmail);
-                    if (result == false)
+                    return "Địa chỉ email không hợp lệ.";
+                }
+                else
+                {
+                    Configuration configurationFile = WebConfigurationManager.OpenWebConfiguration("~\\web.config");
+                    MailSettingsSectionGroup mailSettings = configurationFile.GetSectionGroup("system.net/mailSettings") as
+                    MailSettingsSectionGroup;
+                    if (mailSettings != null)
                     {
-                        return "Địa chỉ email không hợp lệ.";
+                        int port = mailSettings.Smtp.Network.Port;
+                        string host = mailSettings.Smtp.Network.Host;
+                        string password = mailSettings.Smtp.Network.Password;
+                        string username = mailSettings.Smtp.Network.UserName;
+                        string sendfrom = mailSettings.Smtp.From;
+                        SmtpClient client = new SmtpClient(host, port);
+                        client.EnableSsl = true;
+                        MailAddress from = new MailAddress(sendfrom, "");
+                        MailAddress to = new MailAddress(sEmail, "");
+                        MailMessage message = new MailMessage(from, to);
+                        message.IsBodyHtml = true;
+                        message.Body = "This is a test e-mail message sent using gmail as a relay server ";
+                        message.Subject = "Gmail test email with SSL and Credentials";
+                        NetworkCredential myCreds = new NetworkCredential(username, password, "");
+                        client.Credentials = myCreds;
+                        try
+                        {
+                            client.Send(message);
+                            return "Gửi mail thành công";
+                        }
+                        catch (Exception ex)
+                        {
+                            return "Gửi mail không thành công";
+                        }
                     }
                     else
                     {
-                        Configuration configurationFile = WebConfigurationManager.OpenWebConfiguration("~\\web.config");
-                        MailSettingsSectionGroup mailSettings = configurationFile.GetSectionGroup("system.net/mailSettings") as
-                        MailSettingsSectionGroup;
-                        if (mailSettings != null)
-                        {
-                            int port = mailSettings.Smtp.Network.Port;
-                            string host = mailSettings.Smtp.Network.Host;
-                            string password = mailSettings.Smtp.Network.Password;
-                            string username = mailSettings.Smtp.Network.UserName;
-                            string sendfrom = mailSettings.Smtp.From;
-                            SmtpClient client = new SmtpClient(host, port);
-                            client.EnableSsl = true;
-                            MailAddress from = new MailAddress(sendfrom, "");
-                            MailAddress to = new MailAddress(sEmail, "");
-                            MailMessage message = new MailMessage(from, to);
-                            message.IsBodyHtml = true;
-                            message.Body = "This is a test e-mail message sent using gmail as a relay server ";
-                            message.Subject = "Gmail test email with SSL and Credentials";
-                            NetworkCredential myCreds = new NetworkCredential(username, password, "");
-                            client.Credentials = myCreds;
-                            try
-                            {
-                                client.Send(message);
-                                return "Gửi mail thành công";
-                            }
-                            catch (Exception ex)
-                            {
-                                return "Gửi mail không thành công";
-                            }
-                        }
-                        else
-                        {
-                            return "Không tìm thấy thông tin cấu hình";
-                        }
+                        return "Không tìm thấy thông tin cấu hình";
                     }
                 }
-                public static string Send_Email(string SendTo, string Subject, string Body)
+            }
+            public static string Send_Email(string SendTo, string Subject, string Body)
+            {
+                System.Text.RegularExpressions.Regex regex = new System.Text.RegularExpressions.Regex(@"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*");
+                bool result = regex.IsMatch(SendTo);
+                if (result == false)
                 {
-                    System.Text.RegularExpressions.Regex regex = new System.Text.RegularExpressions.Regex(@"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*");
-                    bool result = regex.IsMatch(SendTo);
-                    if (result == false)
+                    return "Địa chỉ email không hợp lệ.";
+                }
+                else
+                {
+                    Configuration configurationFile = WebConfigurationManager.OpenWebConfiguration("~\\web.config");
+                    MailSettingsSectionGroup mailSettings = configurationFile.GetSectionGroup("system.net/mailSettings") as
+                    MailSettingsSectionGroup;
+                    if (mailSettings != null)
                     {
-                        return "Địa chỉ email không hợp lệ.";
+                        int port = mailSettings.Smtp.Network.Port;
+                        string host = mailSettings.Smtp.Network.Host;
+                        string password = mailSettings.Smtp.Network.Password;
+                        string username = mailSettings.Smtp.Network.UserName;
+                        string SendFrom = mailSettings.Smtp.From;
+                        SmtpClient client = new SmtpClient(host, port);
+                        client.EnableSsl = true;
+                        MailAddress from = new MailAddress(SendFrom, "Quản trị FIA");
+                        MailAddress to = new MailAddress(SendTo, "");
+                        MailMessage message = new MailMessage(from, to);
+                        message.Body = Body;
+                        message.IsBodyHtml = true;
+                        message.Subject = Subject;
+                        NetworkCredential myCreds = new NetworkCredential(username, password, "");
+                        client.Credentials = myCreds;
+                        try
+                        {
+                            client.Send(message);
+                            return "Gửi mail thành công";
+                        }
+                        catch (Exception ex)
+                        {
+                            return "Gửi mail không thành công";
+                        }
                     }
                     else
                     {
-                        Configuration configurationFile = WebConfigurationManager.OpenWebConfiguration("~\\web.config");
-                        MailSettingsSectionGroup mailSettings = configurationFile.GetSectionGroup("system.net/mailSettings") as
-                        MailSettingsSectionGroup;
-                        if (mailSettings != null)
-                        {
-                            int port = mailSettings.Smtp.Network.Port;
-                            string host = mailSettings.Smtp.Network.Host;
-                            string password = mailSettings.Smtp.Network.Password;
-                            string username = mailSettings.Smtp.Network.UserName;
-                            string SendFrom = mailSettings.Smtp.From;
-                            SmtpClient client = new SmtpClient(host, port);
-                            client.EnableSsl = true;
-                            MailAddress from = new MailAddress(SendFrom, "Quản trị FIA");
-                            MailAddress to = new MailAddress(SendTo, "");
-                            MailMessage message = new MailMessage(from, to);
-                            message.Body = Body;
-                            message.IsBodyHtml = true;
-                            message.Subject = Subject;
-                            NetworkCredential myCreds = new NetworkCredential(username, password, "");
-                            client.Credentials = myCreds;
-                            try
-                            {
-                                client.Send(message);
-                                return "Gửi mail thành công";
-                            }
-                            catch (Exception ex)
-                            {
-                                return "Gửi mail không thành công";
-                            }
-                        }
-                        else
-                        {
-                            return "Không tìm thấy thông tin cấu hình";
-                        }
+                        return "Không tìm thấy thông tin cấu hình";
                     }
                 }
-                public static string Send_Email_With_Attachment(string SendTo, string Subject, string Body, string AttachmentPath)
+            }
+            public static string Send_Email_With_Attachment(string SendTo, string Subject, string Body, string AttachmentPath)
+            {
+                System.Text.RegularExpressions.Regex regex = new System.Text.RegularExpressions.Regex(@"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*");
+                bool result = regex.IsMatch(SendTo);
+                if (result == false)
                 {
-                    System.Text.RegularExpressions.Regex regex = new System.Text.RegularExpressions.Regex(@"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*");
-                    bool result = regex.IsMatch(SendTo);
-                    if (result == false)
+                    return "Địa chỉ email không hợp lệ.";
+                }
+                else
+                {
+                    Configuration configurationFile = WebConfigurationManager.OpenWebConfiguration("~\\web.config");
+                    MailSettingsSectionGroup mailSettings = configurationFile.GetSectionGroup("system.net/mailSettings") as
+                    MailSettingsSectionGroup;
+                    if (mailSettings != null)
                     {
-                        return "Địa chỉ email không hợp lệ.";
+                        int port = mailSettings.Smtp.Network.Port;
+                        string host = mailSettings.Smtp.Network.Host;
+                        string password = mailSettings.Smtp.Network.Password;
+                        string username = mailSettings.Smtp.Network.UserName;
+                        string SendFrom = mailSettings.Smtp.From;
+                        SmtpClient client = new SmtpClient(host, port);
+                        client.EnableSsl = true;
+                        MailAddress from = new MailAddress(SendFrom, "");
+                        MailAddress to = new MailAddress(SendTo, "");
+                        MailMessage message = new MailMessage(from, to);
+                        message.IsBodyHtml = true;
+                        message.Body = Body;
+                        message.Subject = Subject;
+                        Attachment attach = new Attachment(AttachmentPath);
+                        message.Attachments.Add(attach);
+                        NetworkCredential myCreds = new NetworkCredential(username, password, "");
+                        client.Credentials = myCreds;
+                        try
+                        {
+                            client.Send(message);
+                            return "Gửi mail thành công";
+                        }
+                        catch (Exception ex)
+                        {
+                            return "Gửi mail không thành công";
+                        }
                     }
                     else
                     {
-                        Configuration configurationFile = WebConfigurationManager.OpenWebConfiguration("~\\web.config");
-                        MailSettingsSectionGroup mailSettings = configurationFile.GetSectionGroup("system.net/mailSettings") as
-                        MailSettingsSectionGroup;
-                        if (mailSettings != null)
-                        {
-                            int port = mailSettings.Smtp.Network.Port;
-                            string host = mailSettings.Smtp.Network.Host;
-                            string password = mailSettings.Smtp.Network.Password;
-                            string username = mailSettings.Smtp.Network.UserName;
-                            string SendFrom = mailSettings.Smtp.From;
-                            SmtpClient client = new SmtpClient(host, port);
-                            client.EnableSsl = true;
-                            MailAddress from = new MailAddress(SendFrom, "");
-                            MailAddress to = new MailAddress(SendTo, "");
-                            MailMessage message = new MailMessage(from, to);
-                            message.IsBodyHtml = true;
-                            message.Body = Body;
-                            message.Subject = Subject;
-                            Attachment attach = new Attachment(AttachmentPath);
-                            message.Attachments.Add(attach);
-                            NetworkCredential myCreds = new NetworkCredential(username, password, "");
-                            client.Credentials = myCreds;
-                            try
-                            {
-                                client.Send(message);
-                                return "Gửi mail thành công";
-                            }
-                            catch (Exception ex)
-                            {
-                                return "Gửi mail không thành công";
-                            }
-                        }
-                        else
-                        {
-                            return "Không tìm thấy thông tin cấu hình";
-                        }
+                        return "Không tìm thấy thông tin cấu hình";
                     }
                 }
-                public static string Send_Email_With_BCC_Attachment(string SendTo, string SendBCC, string Subject, string Body, string AttachmentPath)
+            }
+            public static string Send_Email_With_BCC_Attachment(string SendTo, string SendBCC, string Subject, string Body, string AttachmentPath)
+            {
+                System.Text.RegularExpressions.Regex regex = new System.Text.RegularExpressions.Regex(@"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*");
+                bool result = regex.IsMatch(SendTo);
+                if (result == false)
                 {
-                    System.Text.RegularExpressions.Regex regex = new System.Text.RegularExpressions.Regex(@"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*");
-                    bool result = regex.IsMatch(SendTo);
-                    if (result == false)
+                    return "Địa chỉ email không hợp lệ.";
+                }
+                else
+                {
+                    Configuration configurationFile = WebConfigurationManager.OpenWebConfiguration("~\\web.config");
+                    MailSettingsSectionGroup mailSettings = configurationFile.GetSectionGroup("system.net/mailSettings") as
+                    MailSettingsSectionGroup;
+                    if (mailSettings != null)
                     {
-                        return "Địa chỉ email không hợp lệ.";
+                        int port = mailSettings.Smtp.Network.Port;
+                        string host = mailSettings.Smtp.Network.Host;
+                        string password = mailSettings.Smtp.Network.Password;
+                        string username = mailSettings.Smtp.Network.UserName;
+                        string SendFrom = mailSettings.Smtp.From;
+                        SmtpClient client = new SmtpClient(host, port);
+                        client.EnableSsl = true;
+                        MailAddress from = new MailAddress(SendFrom, "");
+                        MailAddress to = new MailAddress(SendTo, "");
+                        MailMessage message = new MailMessage(from, to);
+                        message.IsBodyHtml = true;
+                        message.Body = Body;
+                        message.Subject = Subject;
+                        Attachment attach = new Attachment(AttachmentPath);
+                        message.Attachments.Add(attach);
+                        message.Bcc.Add(SendBCC);
+                        NetworkCredential myCreds = new NetworkCredential(username, password, "");
+                        client.Credentials = myCreds;
+                        try
+                        {
+                            client.Send(message);
+                            return "Gửi mail thành công";
+                        }
+                        catch (Exception ex)
+                        {
+                            return "Gửi mail không thành công";
+                        }
                     }
                     else
                     {
-                        Configuration configurationFile = WebConfigurationManager.OpenWebConfiguration("~\\web.config");
-                        MailSettingsSectionGroup mailSettings = configurationFile.GetSectionGroup("system.net/mailSettings") as
-                        MailSettingsSectionGroup;
-                        if (mailSettings != null)
-                        {
-                            int port = mailSettings.Smtp.Network.Port;
-                            string host = mailSettings.Smtp.Network.Host;
-                            string password = mailSettings.Smtp.Network.Password;
-                            string username = mailSettings.Smtp.Network.UserName;
-                            string SendFrom = mailSettings.Smtp.From;
-                            SmtpClient client = new SmtpClient(host, port);
-                            client.EnableSsl = true;
-                            MailAddress from = new MailAddress(SendFrom, "");
-                            MailAddress to = new MailAddress(SendTo, "");
-                            MailMessage message = new MailMessage(from, to);
-                            message.IsBodyHtml = true;
-                            message.Body = Body;
-                            message.Subject = Subject;
-                            Attachment attach = new Attachment(AttachmentPath);
-                            message.Attachments.Add(attach);
-                            message.Bcc.Add(SendBCC);
-                            NetworkCredential myCreds = new NetworkCredential(username, password, "");
-                            client.Credentials = myCreds;
-                            try
-                            {
-                                client.Send(message);
-                                return "Gửi mail thành công";
-                            }
-                            catch (Exception ex)
-                            {
-                                return "Gửi mail không thành công";
-                            }
-                        }
-                        else
-                        {
-                            return "Không tìm thấy thông tin cấu hình";
-                        }
+                        return "Không tìm thấy thông tin cấu hình";
                     }
                 }
             }
