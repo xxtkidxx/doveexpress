@@ -17,7 +17,7 @@ public partial class Report : System.Web.UI.Page
 {    
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (!ITCLIB.Security.Security.CanPrintModule("REPORT"))
+        if (!ITCLIB.Security.Security.CanViewModule("NHANGUI"))
         {
             ITCLIB.Security.Security.ReturnUrl();
         }
