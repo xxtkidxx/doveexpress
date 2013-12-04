@@ -1013,7 +1013,7 @@ table.gridtable td {
         <asp:Parameter Name="C_BILL" Type="String" />
     </DeleteParameters>
     <InsertParameters>
-       <asp:Parameter Name="C_NGAY" Type="DateTime" />
+        <asp:Parameter Name="C_NGAY" Type="DateTime" />
         <asp:Parameter Name="C_BILL" Type="String" />
         <asp:Parameter Name="FK_KHACHHANG" Type="String" />
         <asp:Parameter Name="C_TENKH" Type="String" />
@@ -1059,8 +1059,7 @@ table.gridtable td {
         <asp:SessionParameter Name="FK_VUNGLAMVIEC" Type="String" SessionField="VUNGLAMVIEC" />
     </InsertParameters>
     <UpdateParameters>
-         <asp:Parameter Name="C_NGAY" Type="DateTime" />
-        <asp:Parameter Name="C_BILL" Type="String" />
+        <asp:Parameter Name="C_NGAY" Type="DateTime" />
         <asp:Parameter Name="FK_KHACHHANG" Type="String" />
         <asp:Parameter Name="C_TENKH" Type="String" />
         <asp:Parameter Name="C_TELGUI" Type="String" />
