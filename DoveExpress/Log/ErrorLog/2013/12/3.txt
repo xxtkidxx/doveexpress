@@ -1,0 +1,45 @@
+Thời gian lỗi : 2013-12-03 21:47:15 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Cannot find a cell bound to column name 'pk_id'
+__________________________
+Thời gian lỗi : 2013-12-03 21:48:10 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Cannot find a cell bound to column name 'pk_id'
+__________________________
+Thời gian lỗi : 2013-12-03 21:49:29 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'PK_ID'.
+__________________________
+Thời gian lỗi : 2013-12-03 22:18:26 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=KHACHHANG. 
+Nội dung lỗi:Incorrect syntax near '@FK_VUNGLAMVIEC'.
+__________________________
+Thời gian lỗi : 2013-12-03 23:33:18 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=SOQUYTIENMAT. 
+Nội dung lỗi:Must declare the scalar variable "@row_num".
+__________________________
+Thời gian lỗi : 2013-12-03 23:41:07 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=SOQUYTIENMAT. 
+Nội dung lỗi:The function 'ROW_NUMBER' must have an OVER clause.
+__________________________
+Thời gian lỗi : 2013-12-03 23:42:16 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=SOQUYTIENMAT. 
+Nội dung lỗi:Ambiguous column name 'PK_ID'.
+__________________________
+Thời gian lỗi : 2013-12-03 23:42:41 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=SOQUYTIENMAT. 
+Nội dung lỗi:Ambiguous column name 'PK_ID'.
+__________________________
+Thời gian lỗi : 2013-12-03 23:49:20 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=SOQUYTIENMAT. 
+Nội dung lỗi:Ambiguous column name 'PK_ID'.
+__________________________

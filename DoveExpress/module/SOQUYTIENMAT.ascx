@@ -167,7 +167,7 @@ table.gridtable td {
                  <ItemStyle HorizontalAlign ="Center" Width ="50px" />
                </telerik:GridTemplateColumn>
                 <telerik:GridBoundColumn UniqueName="C_NGAY" HeaderText="Ngày" DataField="C_NGAY" HeaderStyle-Width="100px" HeaderStyle-HorizontalAlign="Center"
-                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%" DataType="System.DateTime" DataFormatString="{0:dd/MM/yyyy}">
+                AutoPostBackOnFilter="true" ShowFilterIcon="false" FilterControlWidth="100%" DataType="System.DateTime" DataFormatString="{0:dd/MM/yyyy}">
                 </telerik:GridBoundColumn>
                 <telerik:GridBoundColumn UniqueName="C_TYPE" HeaderText="Loại" DataField="C_TYPE" HeaderStyle-Width="60px" HeaderStyle-HorizontalAlign="Center"
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
