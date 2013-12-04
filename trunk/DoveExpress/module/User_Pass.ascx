@@ -14,14 +14,15 @@
                  <asp:TextBox ID="txtPassword1" TextMode="Password" runat="server" Width="300"></asp:TextBox>
                  <asp:RequiredFieldValidator ID="rfvPassword1" runat="server" ErrorMessage="Mật khẩu cũ không thể rỗng" ControlToValidate="txtPassword1" SetFocusOnError="True"  ValidationGroup="User_PassG1" Display="Dynamic">*</asp:RequiredFieldValidator>
                  <asp:CustomValidator ID="cvPassword1" ControlToValidate="txtPassword1"  OnServerValidate="CheckPassword" runat="server" ErrorMessage="Sai mật khẩu cũ" ValidationGroup="User_PassG1" Display="Dynamic"></asp:CustomValidator>
-           
-        </td>
+                 <asp:RegularExpressionValidator id="regPass" ControlToValidate="txtPassword1" ValidationExpression="^([\u0080-\ua7ffa-zA-Z0-9'_\s])+$" Display="Dynamic" ErrorMessage="Không thể nhập kí tự đặc biệt" ValidationGroup="User_PassG1" runat="server"></asp:RegularExpressionValidator>
+                   </td>
         </tr>
         <tr>
         <td style =" width:150px; padding-left :15px;">Mật khẩu mới</td>
         <td>
          <asp:TextBox ID="txtPassword2" TextMode="Password" runat="server"  Width="300"></asp:TextBox>
                  <asp:RequiredFieldValidator ID="rfvPassword2" runat="server" ErrorMessage="Mật khẩu mới không thể rỗng" ControlToValidate="txtPassword2" SetFocusOnError="True" ValidationGroup="User_PassG1" Display="Dynamic">*</asp:RequiredFieldValidator>
+                 <asp:RegularExpressionValidator id="RegularExpressionValidator1" ControlToValidate="txtPassword2" ValidationExpression="^([\u0080-\ua7ffa-zA-Z0-9'_\s])+$" Display="Dynamic" ErrorMessage="Không thể nhập kí tự đặc biệt" ValidationGroup="User_PassG1" runat="server"></asp:RegularExpressionValidator>
         </td>
         </tr>
          <tr>
