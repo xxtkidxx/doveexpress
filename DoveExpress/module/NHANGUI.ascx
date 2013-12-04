@@ -375,7 +375,8 @@
     function cmbC_HINHTHUCTTClientSelectedIndexChangedHandler(sender, eventArgs) {
         if ( eventArgs.get_item().get_value() == 'Thanh toán ngay' || eventArgs.get_item().get_value() == 'Đã thanh toán')
         {
-            txtC_DATHU.set_value(txtC_TIENHANGVAT.get_value());
+            txtC_DATHU.set_value(0);
+            //txtC_DATHU.set_value(txtC_TIENHANGVAT.get_value());
         } else if ( eventArgs.get_item().get_value() == 'Thanh toán sau')
         {
             txtC_DATHU.set_value(0);
