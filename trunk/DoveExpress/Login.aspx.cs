@@ -64,7 +64,7 @@ public partial class Login : System.Web.UI.Page
         int result = UpdateQuery.ExecuteNonQuery(UpdateSQL);
         if (result != 0)
         {
-            ITCLIB.Admin.Email.Send_Email(Email, "Email lấy lại mật khẩu", "Thông tin tài khoản của bạn là:" + "\r\nTên đăng nhập(Login name): " + Login_Name + "\r\nMật khẩu(Password): " + NewPassword, "Ban quản trị", false);
+            ITCLIB.Admin.Email.Send_Email(Email, "Email lấy lại mật khẩu", "Thông tin tài khoản của bạn là:" + "\r\nTên đăng nhập(Login name): " + Login_Name + "\r\nMật khẩu(Password): " + NewPassword);
             ITCLIB.Admin.JavaScript.ShowMessage("Mật khẩu đã được gửi tới Email của bạn", this);
         }            
     }
@@ -75,6 +75,7 @@ public partial class Login : System.Web.UI.Page
         string SelectSQL = "Select USERS.PK_ID,USERS.FK_GROUPUSER,USERS.C_NAME,GROUPUSER.C_TYPE FROM USERS INNER JOIN GROUPUSER ON USERS.FK_GROUPUSER = GROUPUSER.PK_ID WHERE USERS.C_LOGINNAME = '" + user + "' AND USERS.C_PASSWORD = '" + encryptpass + "'";
         DataTable oDataTable = new DataTable();
         ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
+        Session["VUNGLAMVIEC"] = cmbVungLamViec.SelectedValue;
         ITCLIB.Security.Security.Config();
         oDataTable = SelectQuery.query_data(SelectSQL);
         if (oDataTable.Rows.Count != 0)
@@ -88,7 +89,6 @@ public partial class Login : System.Web.UI.Page
             Session["User"] = sUser;           
             Session["UserID"] = (int)oDataTable.Rows[0]["PK_ID"];
             Session["GroupUser"] = (int)oDataTable.Rows[0]["FK_GROUPUSER"];
-            Session["VUNGLAMVIEC"] = cmbVungLamViec.SelectedValue;
             return true;
         }
         else
