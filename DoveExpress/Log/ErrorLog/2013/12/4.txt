@@ -1,0 +1,114 @@
+Thời gian lỗi : 2013-12-04 09:33:38 AM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Doc/. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-12-04 21:25:10 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=SOQUYTIENMAT. 
+Nội dung lỗi:String was not recognized as a valid DateTime.
+__________________________
+Thời gian lỗi : 2013-12-04 21:50:25 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUIPH. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\DoveExpress\module\NHANGUIPH.ascx(72): error CS1061: 'ASP.module_nhanguiph_ascx' does not contain a definition for 'txtBillNhanh_TextChanged' and no extension method 'txtBillNhanh_TextChanged' accepting a first argument of type 'ASP.module_nhanguiph_ascx' could be found (are you missing a using directive or an assembly reference?)
+__________________________
+Thời gian lỗi : 2013-12-04 21:50:46 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUIPH. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\DoveExpress\module\NHANGUIPH.ascx(207): error CS1061: 'ASP.module_nhanguiph_ascx' does not contain a definition for 'cmbQuanHuyen_ItemsRequested' and no extension method 'cmbQuanHuyen_ItemsRequested' accepting a first argument of type 'ASP.module_nhanguiph_ascx' could be found (are you missing a using directive or an assembly reference?)
+__________________________
+Thời gian lỗi : 2013-12-04 21:53:06 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUIPH. 
+Nội dung lỗi:Incorrect syntax near the keyword 'ORDER'.
+__________________________
+Thời gian lỗi : 2013-12-04 21:55:24 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUIPH. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\DoveExpress\module\NHANGUIPH.ascx(38): error CS1061: 'ASP.module_nhanguiph_ascx' does not contain a definition for 'RadGridNHANGUIPH_ItemDeleted' and no extension method 'RadGridNHANGUIPH_ItemDeleted' accepting a first argument of type 'ASP.module_nhanguiph_ascx' could be found (are you missing a using directive or an assembly reference?)
+__________________________
+Thời gian lỗi : 2013-12-04 21:58:34 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUIPH. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-12-04 21:58:36 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUIPH. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-12-04 21:58:37 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUIPH. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-12-04 21:59:48 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUIPH. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-12-04 22:00:33 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUIPH. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-12-04 22:02:07 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUIPH. 
+Nội dung lỗi:Failed to load viewstate.  The control tree into which viewstate is being loaded must match the control tree that was used to save viewstate during the previous request.  For example, when adding controls dynamically, the controls added during a post-back must match the type and position of the controls added during the initial request.
+__________________________
+Thời gian lỗi : 2013-12-04 22:19:18 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUIPH. 
+Nội dung lỗi:Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+__________________________
+Thời gian lỗi : 2013-12-04 22:19:26 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Selection out of range
+Parameter name: value
+__________________________
+Thời gian lỗi : 2013-12-04 22:19:28 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Selection out of range
+Parameter name: value
+__________________________
+Thời gian lỗi : 2013-12-04 22:19:42 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Selection out of range
+Parameter name: value
+__________________________
+Thời gian lỗi : 2013-12-04 22:19:44 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Selection out of range
+Parameter name: value
+__________________________
+Thời gian lỗi : 2013-12-04 22:19:46 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Selection out of range
+Parameter name: value
+__________________________
+Thời gian lỗi : 2013-12-04 22:19:48 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Selection out of range
+Parameter name: value
+__________________________
+Thời gian lỗi : 2013-12-04 22:20:16 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Selection out of range
+Parameter name: value
+__________________________
+Thời gian lỗi : 2013-12-04 22:21:53 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Selection out of range
+Parameter name: value
+__________________________
