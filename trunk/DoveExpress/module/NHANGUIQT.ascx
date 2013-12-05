@@ -748,7 +748,7 @@ table.gridtable td {
                 </td>
                 <td style =" width:100px;"> <span class="rtsTxtnew">Số kiện:</span></td>
                 <td colspan="4">
-                    <telerik:RadNumericTextBox  ID="RadNumericTextBox1" Width ="90%" Runat="server" Text='<%# Bind("C_SOKIEN") %>' ClientEvents-OnLoad="OnClientLoadtxtC_GIATRIHANGHOA" ClientEvents-OnValueChanged="OnValueChangedtxtC_GIATRIHANGHOA">
+                    <telerik:RadNumericTextBox  ID="txtC_SOKIEN" Width ="90%" Runat="server" Text='<%# Bind("C_SOKIEN") %>'>
                             <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
                     </telerik:RadNumericTextBox>
                 </td> 
