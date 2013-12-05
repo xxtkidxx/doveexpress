@@ -8,7 +8,6 @@
 </head>
 <body>
     <form id="formPriceCheck" runat="server">
-    <telerik:RadAjaxLoadingPanel Skin="Vista" ID="RadAjaxLoadingPanelPriceCheck" runat="server" />
     <telerik:RadScriptManager ID="RadScriptManagerPriceCheck" runat="server">
     </telerik:RadScriptManager>
     <telerik:RadAjaxManager ID="RadAjaxManagerPriceCheck" runat="server" UpdatePanelsRenderMode="Inline">
