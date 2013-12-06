@@ -4,9 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Telerik.Web.UI;
 using System.Data;
 
-public partial class BillCheck : System.Web.UI.Page
+public partial class ext_BillCheck : System.Web.UI.UserControl
 {
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -14,8 +15,9 @@ public partial class BillCheck : System.Web.UI.Page
     }
     protected void imgSearch_Click(object sender, ImageClickEventArgs e)
     {
+        RadAjaxManager ajaxManager = RadAjaxManager.GetCurrent(Page);
         if (txtBILL.Text.Trim() != "")
-        {
+        {            
             string SelectSQL = "SELECT NHANGUI.*,DMMASANPHAM.C_NAME as DICHVUNAME FROM NHANGUI LEFT OUTER JOIN DMMASANPHAM ON NHANGUI.FK_MASANPHAM = DMMASANPHAM.PK_ID WHERE C_BILL = " + txtBILL.Text.Trim();
             DataTable oDataTable = new DataTable();
             ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
@@ -55,12 +57,12 @@ public partial class BillCheck : System.Web.UI.Page
             }
             else
             {
-                RadAjaxManager.Alert("Không tồn tại BILL " + txtBILL.Text.Trim() + " trong dữ liệu DoveExpress");
+                ajaxManager.Alert("Không tồn tại BILL " + txtBILL.Text.Trim() + " trong dữ liệu DoveExpress");
             }
         }
         else
         {
-            RadAjaxManager.Alert("Hãy nhập BILL để kiểm tra trạng thái");
+            ajaxManager.Alert("Hãy nhập BILL để kiểm tra trạng thái");
         }
     }
 }

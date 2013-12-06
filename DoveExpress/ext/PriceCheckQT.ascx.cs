@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using Telerik.Web.UI;
 using System.Data;
 using System.Globalization;
+using System.Xml;
 
 public partial class ext_PriceCheckQT : System.Web.UI.UserControl
 {
@@ -25,33 +26,33 @@ public partial class ext_PriceCheckQT : System.Web.UI.UserControl
     {
         get
         {
-            return Session["FK_KHACHHANG"] as string;
+            return Session["FK_KHACHHANGQT"] as string;
         }
         set
         {
-            Session["FK_KHACHHANG"] = value;
+            Session["FK_KHACHHANGQT"] = value;
         }
     }
     private string FK_DICHVU
     {
         get
         {
-            return Session["FK_DICHVU"] as string;
+            return Session["FK_DICHVUQT"] as string;
         }
         set
         {
-            Session["FK_DICHVU"] = value;
+            Session["FK_DICHVUQT"] = value;
         }
     }
     private string FK_MABANGCUOC
     {
         get
         {
-            return Session["FK_MABANGCUOC"] as string;
+            return Session["FK_MABANGCUOCQT"] as string;
         }
         set
         {
-            Session["FK_MABANGCUOC"] = value;
+            Session["FK_MABANGCUOCQT"] = value;
         }
     }
     private decimal C_VALUE1
@@ -91,11 +92,11 @@ public partial class ext_PriceCheckQT : System.Web.UI.UserControl
     {
         get
         {
-            return Session["FK_MAVUNG"] as string;
+            return Session["FK_MAVUNGQT"] as string;
         }
         set
         {
-            Session["FK_MAVUNG"] = value;
+            Session["FK_MAVUNGQT"] = value;
         }
     }
     private string FK_MAVUNGDT
@@ -113,99 +114,99 @@ public partial class ext_PriceCheckQT : System.Web.UI.UserControl
     {
         get
         {
-            return int.Parse(Session["C_KHOILUONG"].ToString());
+            return int.Parse(Session["C_KHOILUONGQT"].ToString());
         }
         set
         {
-            Session["C_KHOILUONG"] = value;
+            Session["C_KHOILUONGQT"] = value;
         }
     }
     private decimal PPXD
     {
         get
         {
-            return decimal.Parse(Session["PPXD"].ToString());
+            return decimal.Parse(Session["PPXDQT"].ToString());
         }
         set
         {
-            Session["PPXD"] = value;
+            Session["PPXDQT"] = value;
         }
     }
     private decimal CUOCCHINH
     {
         get
         {
-            return decimal.Parse(Session["CUOCCHINH"].ToString());
+            return decimal.Parse(Session["CUOCCHINHQT"].ToString());
         }
         set
         {
-            Session["CUOCCHINH"] = value;
+            Session["CUOCCHINHQT"] = value;
         }
     }
     private decimal CUOCCHINHTL
     {
         get
         {
-            return decimal.Parse(Session["CUOCCHINHTL"].ToString());
+            return decimal.Parse(Session["CUOCCHINHTLQT"].ToString());
         }
         set
         {
-            Session["CUOCCHINHTL"] = value;
+            Session["CUOCCHINHTLQT"] = value;
         }
     }
     private string FK_DICHVUDOITAC
     {
         get
         {
-            return Session["FK_DICHVUDOITAC"] as string;
+            return Session["FK_DICHVUDOITACQT"] as string;
         }
         set
         {
-            Session["FK_DICHVUDOITAC"] = value;
+            Session["FK_DICHVUDOITACQT"] = value;
         }
     }
     private DataTable ctcDataTable
     {
         get
         {
-            return Session["ctcDataTable"] as DataTable;
+            return Session["ctcDataTableQT"] as DataTable;
         }
         set
         {
-            Session["ctcDataTable"] = value;
+            Session["ctcDataTableQT"] = value;
         }
     }
     private DataTable ctcDataTable1
     {
         get
         {
-            return Session["ctcDataTable1"] as DataTable;
+            return Session["ctcDataTable1QT"] as DataTable;
         }
         set
         {
-            Session["ctcDataTable1"] = value;
+            Session["ctcDataTable1QT"] = value;
         }
     }
     private int C_KHOILUONGLK
     {
         get
         {
-            return int.Parse(Session["C_KHOILUONGLK"].ToString());
+            return int.Parse(Session["C_KHOILUONGLKQT"].ToString());
         }
         set
         {
-            Session["C_KHOILUONGLK"] = value;
+            Session["C_KHOILUONGLKQT"] = value;
         }
     }
     private decimal GIACUOCLK
     {
         get
         {
-            return decimal.Parse(Session["GIACUOCLK"].ToString());
+            return decimal.Parse(Session["GIACUOCLKQT"].ToString());
         }
         set
         {
-            Session["GIACUOCLK"] = value;
+            Session["GIACUOCLKQT"] = value;
         }
     }
     private decimal GIACUOCLKTL
@@ -244,6 +245,7 @@ public partial class ext_PriceCheckQT : System.Web.UI.UserControl
     protected void RadScriptManager_AjaxRequestNG(object sender, AjaxRequestEventArgs e)
     {
         Session["VUNGLAMVIEC"] = cmbVungLamViec.SelectedValue;
+        txtC_TYGIA.Text = GetTyGia();
         string[] arrayvalue = e.Argument.Split(';');
         FK_KHACHHANG = "10002";
         string SelectSQL;
@@ -253,7 +255,7 @@ public partial class ext_PriceCheckQT : System.Web.UI.UserControl
         oDataTable = SelectQuery.query_data(SelectSQL);
         if (oDataTable.Rows.Count != 0)
         {
-            FK_NHOMKHACHHANGQT = oDataTable.Rows[0]["FK_NHOMKHACHHANG"].ToString();
+            FK_NHOMKHACHHANGQT = oDataTable.Rows[0]["FK_NHOMKHACHHANGQT"].ToString();
             string SelectSQL1;
             SelectSQL1 = "Select DMMABANGCUOCQT.FK_DOITAC,DMMABANGCUOCQT.C_VALUE1,DMMABANGCUOCQT.C_VALUE2 FROM DMMABANGCUOCQT WHERE ((DMMABANGCUOCQT.C_VALUE ='" + FK_NHOMKHACHHANGQT + "') OR (DMMABANGCUOCQT.C_VALUE LIKE '%," + FK_NHOMKHACHHANGQT + ",%') OR (DMMABANGCUOCQT.C_VALUE LIKE '%," + FK_NHOMKHACHHANGQT + "') OR (DMMABANGCUOCQT.C_VALUE LIKE '" + FK_NHOMKHACHHANGQT + ",%')) AND (DMMABANGCUOCQT.FK_VUNGLAMVIEC = N'" + Session["VUNGLAMVIEC"].ToString() + "')";
             DataTable oDataTable1 = new DataTable();
@@ -604,24 +606,31 @@ public partial class ext_PriceCheckQT : System.Web.UI.UserControl
                 }
             }
         }
-        isCuocchinh = false;
     }
     protected void ClearSession()
     {
-        FK_NHOMKHACHHANG = "";
+        FK_NHOMKHACHHANGQT = "";
         FK_KHACHHANG = "";
         FK_DICHVU = "";
         FK_MABANGCUOC = "";
-        FK_QUANHUYEN = "";
+        C_VALUE1 = 0;
+        C_VALUE2 = 0;
+        FK_QUOCGIA = "";
         FK_MAVUNG = "";
+        FK_MAVUNGDT = "";
         C_KHOILUONG = 0;
         PPXD = 0;
         CUOCCHINH = 0;
+        CUOCCHINHTL = 0;
+        FK_DICHVUDOITAC = "";
         ctcDataTable = new DataTable();
         ctcDataTable1 = new DataTable();
         C_KHOILUONGLK = 0;
         GIACUOCLK = 0;
+        GIACUOCLKTL = 0;
+        isTAILIEU = false;
         Alarm = "";
+        txtC_TYGIA.Text = GetTyGia();
         txtPPXD.Text = (txtPPXD.Text == "") ? "0" : txtPPXD.Text;
         txtC_GIATRIHANGHOA.Text = (txtC_GIATRIHANGHOA.Text == "") ? "0" : txtC_GIATRIHANGHOA.Text;
         txtC_KHOILUONG.Text = (txtC_KHOILUONG.Text == "") ? "0" : txtC_KHOILUONG.Text;
@@ -633,5 +642,29 @@ public partial class ext_PriceCheckQT : System.Web.UI.UserControl
         txtC_HENGIO.Text = (txtC_HENGIO.Text == "") ? "0" : txtC_HENGIO.Text;
         txtC_TIENHANG.Text = (txtC_TIENHANG.Text == "") ? "0" : txtC_TIENHANG.Text;
         txtC_TIENHANGVAT.Text = (txtC_TIENHANGVAT.Text == "") ? "0" : txtC_TIENHANGVAT.Text;
+    }
+    protected string GetTyGia()
+    {
+        float TyGia = 0;
+        try
+        {
+            XmlDocument xmlDocument = new XmlDocument();
+            String xmlSourceUrl = "http://www.vietcombank.com.vn/ExchangeRates/ExrateXML.aspx";
+            xmlDocument.Load(xmlSourceUrl);
+            XmlNodeList TimeList = xmlDocument.GetElementsByTagName("DateTime");
+            XmlNodeList nodeList = xmlDocument.GetElementsByTagName("Exrate");
+            if (nodeList != null && nodeList.Count > 0)
+            {
+                foreach (XmlNode xmlNode in nodeList)
+                {
+                    TyGia = float.Parse(xmlNode.Attributes["Sell"].InnerText);
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            Response.Write(ex.Message);
+        }
+        return TyGia.ToString();
     }
 }

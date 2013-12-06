@@ -1,10 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="BillCheck.aspx.cs" Inherits="BillCheck" %>
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head id="Head1" runat="server">
-    <title>CHUYỂN PHÁT NHANH DOVE EXPRESS</title>
-</head>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="BillCheck.ascx.cs" Inherits="ext_BillCheck" %>
 <style type="text/css">
     *
     {
@@ -155,11 +149,7 @@
         content: url(../images/check0.png);
     }
 </style>
-<body>
-    <form id="form1" runat="server">
-    <telerik:RadScriptManager ID="RadScriptManager" runat="server">
-    </telerik:RadScriptManager>
-    <telerik:RadAjaxManager ID="RadAjaxManager" runat="server" UpdatePanelsRenderMode="Inline">
+    <telerik:RadAjaxManagerProxy ID="RadAjaxManagerCheckBill" runat="server">
         <AjaxSettings>
             <telerik:AjaxSetting AjaxControlID="pnCheckBill">
                 <UpdatedControls>
@@ -168,7 +158,7 @@
                 </UpdatedControls>
             </telerik:AjaxSetting>
         </AjaxSettings>
-    </telerik:RadAjaxManager>
+    </telerik:RadAjaxManagerProxy>
     <telerik:RadAjaxLoadingPanel Skin="Vista" ID="RadAjaxLoadingPanel" runat="server" />
     <center>
         <h1>CHUYỂN PHÁT NHANH DOVEEXPRESS - KIỂM TRA TRẠNG THÁI BILL</h1>
@@ -180,7 +170,7 @@
                             TRẠNG THÁI
                         </th>
                         <td>
-                            <asp:Label ID="lblC_STATUS" runat="server" Text="Label"></asp:Label>
+                            <asp:Label ID="lblC_STATUS" runat="server" Text="-"></asp:Label>
                         </td>
                     </tr>
                 </tfoot>
@@ -258,6 +248,3 @@
             </table>
         </asp:Panel>
     </center>
-    </form>
-</body>
-</html>
