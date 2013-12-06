@@ -608,9 +608,9 @@
             // 
             // barcode1
             // 
-            this.barcode1.Anchoring = ((Telerik.Reporting.AnchoringStyles)((((Telerik.Reporting.AnchoringStyles.Top | Telerik.Reporting.AnchoringStyles.Bottom) 
-            | Telerik.Reporting.AnchoringStyles.Left) 
-            | Telerik.Reporting.AnchoringStyles.Right)));
+            this.barcode1.Anchoring = ((Telerik.Reporting.AnchoringStyles)((((Telerik.Reporting.AnchoringStyles.Top | Telerik.Reporting.AnchoringStyles.Bottom)
+                        | Telerik.Reporting.AnchoringStyles.Left)
+                        | Telerik.Reporting.AnchoringStyles.Right)));
             this.barcode1.BarAlign = Telerik.Reporting.Drawing.HorizontalAlign.Center;
             this.barcode1.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Inch(6.0064072608947754D), Telerik.Reporting.Drawing.Unit.Inch(0.099999986588954926D));
             this.barcode1.Name = "barcode1";
@@ -1775,7 +1775,7 @@
             this.textBox21.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Left;
             this.textBox21.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
             this.textBox21.Value = "Hà Nội: 33 Ngách 167/15 Tây Sơn, Đống Đa - 04.3533.5153; HCM: 47/4 Hậu Giang, P4." +
-    " Tân Bình - 08.6266.4455; Website: dovevn.com";
+                " Tân Bình - 08.6266.4455; Website: dovevn.com";
             // 
             // textBox59
             // 
@@ -1814,7 +1814,7 @@
             this.textBox61.Style.Padding.Right = Telerik.Reporting.Drawing.Unit.Point(1D);
             this.textBox61.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Center;
             this.textBox61.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
-            this.textBox61.Value = "";
+            this.textBox61.Value = "= Parameters.C_NGAY.Value";
             // 
             // pictureBox1
             // 
@@ -1885,7 +1885,7 @@
             this.textBox67.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Left;
             this.textBox67.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
             this.textBox67.Value = "Hà Nội: 33 Ngách 167/15 Tây Sơn, Đống Đa - 04.3533.5153; HCM: 47/4 Hậu Giang, P4." +
-    " Tân Bình - 08.6266.4455; Website: dovevn.com";
+                " Tân Bình - 08.6266.4455; Website: dovevn.com";
             // 
             // panel8
             // 
@@ -2709,9 +2709,9 @@
             // 
             // barcode2
             // 
-            this.barcode2.Anchoring = ((Telerik.Reporting.AnchoringStyles)((((Telerik.Reporting.AnchoringStyles.Top | Telerik.Reporting.AnchoringStyles.Bottom) 
-            | Telerik.Reporting.AnchoringStyles.Left) 
-            | Telerik.Reporting.AnchoringStyles.Right)));
+            this.barcode2.Anchoring = ((Telerik.Reporting.AnchoringStyles)((((Telerik.Reporting.AnchoringStyles.Top | Telerik.Reporting.AnchoringStyles.Bottom)
+                        | Telerik.Reporting.AnchoringStyles.Left)
+                        | Telerik.Reporting.AnchoringStyles.Right)));
             this.barcode2.BarAlign = Telerik.Reporting.Drawing.HorizontalAlign.Center;
             this.barcode2.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Inch(5.9981532096862793D), Telerik.Reporting.Drawing.Unit.Inch(5.4958338737487793D));
             this.barcode2.Name = "barcode2";
