@@ -334,7 +334,7 @@
     <script type="text/javascript">
         function onResponseEndNG() {
             if (typeof (result) != "undefined" && result && result != "") {
-                //alert(result);
+                alert(result);
                 var arrayOfStrings = result.split(",-,");
                 if (arrayOfStrings[0] != "msg") {
                     PPXD = arrayOfStrings[1];
@@ -438,7 +438,7 @@
                     <td>
                         <telerik:RadNumericTextBox ID="txtC_GIATRIHANGHOA" Width="90%" runat="server" ClientEvents-OnLoad="OnClientLoadtxtC_GIATRIHANGHOA"
                             ClientEvents-OnValueChanged="OnValueChangedtxtC_GIATRIHANGHOA">
-                            <NumberFormat DecimalSeparator="." GroupSeparator=" " DecimalDigits="0" />
+                            <NumberFormat DecimalSeparator="." GroupSeparator=" " DecimalDigits="2" />
                         </telerik:RadNumericTextBox>
                     </td>
                 </tr>
@@ -458,7 +458,7 @@
                     <td>
                         <telerik:RadNumericTextBox ID="txtC_GIACUOC" Width="90%" runat="server" ClientEvents-OnLoad="OnClientLoadtxtC_GIACUOC"
                             ClientEvents-OnValueChanged="OnValueChangedtxtC_GIACUOC">
-                            <NumberFormat DecimalSeparator="." GroupSeparator=" " DecimalDigits="0" />
+                            <NumberFormat DecimalSeparator="." GroupSeparator=" " DecimalDigits="2" />
                         </telerik:RadNumericTextBox>
                     </td>
                 </tr>
@@ -469,7 +469,7 @@
                     <td>
                         <telerik:RadNumericTextBox ID="txtPPXD" Width="90%" runat="server" ClientEvents-OnLoad="OnClientLoadtxtPPXD"
                             ClientEvents-OnValueChanged="OnValueChangedtxtPPXD">
-                            <NumberFormat DecimalSeparator="." GroupSeparator=" " DecimalDigits="0" />
+                            <NumberFormat DecimalSeparator="." GroupSeparator=" " DecimalDigits="2" />
                         </telerik:RadNumericTextBox>
                     </td>
                     <th scope="row">
@@ -479,7 +479,7 @@
                     <td>
                         <telerik:RadNumericTextBox ID="txtC_DONGGOI" Width="90%" runat="server" ClientEvents-OnLoad="OnClientLoadtxtC_DONGGOI"
                             ClientEvents-OnValueChanged="OnValueChangedtxtC_DONGGOI">
-                            <NumberFormat DecimalSeparator="." GroupSeparator=" " DecimalDigits="0" />
+                            <NumberFormat DecimalSeparator="." GroupSeparator=" " DecimalDigits="2" />
                         </telerik:RadNumericTextBox>
                     </td>
                 </tr>
@@ -491,7 +491,7 @@
                     <td>
                         <telerik:RadNumericTextBox ID="txtC_KHAIGIA" Width="90%" runat="server" ClientEvents-OnLoad="OnClientLoadtxtC_KHAIGIA"
                             ClientEvents-OnValueChanged="OnValueChangedtxtC_KHAIGIA">
-                            <NumberFormat DecimalSeparator="." GroupSeparator=" " DecimalDigits="0" />
+                            <NumberFormat DecimalSeparator="." GroupSeparator=" " DecimalDigits="2" />
                         </telerik:RadNumericTextBox>
                     </td>
                     <th scope="row">
@@ -500,7 +500,7 @@
                     <td>
                         <telerik:RadNumericTextBox ID="txtC_COD" Width="90%" runat="server" ClientEvents-OnLoad="OnClientLoadtxtC_COD"
                             ClientEvents-OnValueChanged="OnValueChangedtxtC_COD">
-                            <NumberFormat DecimalSeparator="." GroupSeparator=" " DecimalDigits="0" />
+                            <NumberFormat DecimalSeparator="." GroupSeparator=" " DecimalDigits="2" />
                         </telerik:RadNumericTextBox>
                     </td>
                 </tr>
@@ -511,7 +511,7 @@
                     <td>
                         <telerik:RadNumericTextBox ID="txtC_BAOPHAT" Width="90%" runat="server" ClientEvents-OnLoad="OnClientLoadtxtC_BAOPHAT"
                             ClientEvents-OnValueChanged="OnValueChangedtxtC_BAOPHAT">
-                            <NumberFormat DecimalSeparator="." GroupSeparator=" " DecimalDigits="0" />
+                            <NumberFormat DecimalSeparator="." GroupSeparator=" " DecimalDigits="2" />
                         </telerik:RadNumericTextBox>
                     </td>
                     <th scope="row">
@@ -520,7 +520,7 @@
                     <td>
                         <telerik:RadNumericTextBox ID="txtC_HENGIO" Width="90%" runat="server" ClientEvents-OnLoad="OnClientLoadtxtC_HENGIO"
                             ClientEvents-OnValueChanged="OnValueChangedtxtC_HENGIO">
-                            <NumberFormat DecimalSeparator="." GroupSeparator=" " DecimalDigits="0" />
+                            <NumberFormat DecimalSeparator="." GroupSeparator=" " DecimalDigits="2" />
                         </telerik:RadNumericTextBox>
                     </td>
                 </tr>
