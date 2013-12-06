@@ -1,0 +1,65 @@
+Thời gian lỗi : 2013-12-05 20:58:54 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Log/. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-12-05 21:25:47 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/PriceCheck.aspx. 
+Nội dung lỗi:The file '/DoveExpress/PriceCheck.aspx' does not exist.
+__________________________
+Thời gian lỗi : 2013-12-05 21:25:57 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/ext/PriceCheck.aspx. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\DoveExpress\ext\PriceCheckTN.ascx(16): error CS1061: 'ASP.ext_pricechecktn_ascx' does not contain a definition for 'cmbQuanHuyen_ItemsRequested' and no extension method 'cmbQuanHuyen_ItemsRequested' accepting a first argument of type 'ASP.ext_pricechecktn_ascx' could be found (are you missing a using directive or an assembly reference?)
+__________________________
+Thời gian lỗi : 2013-12-05 21:34:35 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/ext/PriceCheck.aspx. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\DoveExpress\ext\PriceCheckTN.ascx(39): error CS0103: The name 'RadAjaxLoadingPanelNHANGUI' does not exist in the current context
+__________________________
+Thời gian lỗi : 2013-12-05 21:35:03 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/ext/PriceCheck.aspx. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\DoveExpress\ext\PriceCheckTN.ascx(340): error CS0103: The name 'RadAjaxLoadingPanelNHANGUI' does not exist in the current context
+__________________________
+Thời gian lỗi : 2013-12-05 21:35:21 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/ext/PriceCheck.aspx. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\DoveExpress\ext\PriceCheckTN.ascx(349): error CS0103: The name 'RadGridNHANGUI' does not exist in the current context
+__________________________
+Thời gian lỗi : 2013-12-05 21:46:18 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/ext/PriceCheck.aspx. 
+Nội dung lỗi:Only one instance of a RadAjaxManager can be added to the page!
+__________________________
+Thời gian lỗi : 2013-12-05 21:46:59 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/ext/PriceCheck.aspx. 
+Nội dung lỗi:Type 'Telerik.Web.UI.RadAjaxManagerProxy' does not have a public property named 'UpdatePanelsRenderMode'.
+__________________________
+Thời gian lỗi : 2013-12-05 22:21:21 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/ext/PriceCheck.aspx. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\DoveExpress\ext\PriceCheckTN.ascx.cs(20): error CS1002: ; expected
+__________________________
+Thời gian lỗi : 2013-12-05 22:22:53 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/ext/PriceCheck.aspx. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\DoveExpress\ext\PriceCheckTN.ascx(173): error CS0103: The name 'RadAjaxManagerPriceCheck' does not exist in the current context
+__________________________
+Thời gian lỗi : 2013-12-05 23:25:58 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/ext/PriceCheck.aspx. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-12-05 23:26:45 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/ext/PriceCheck.aspx. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-12-05 23:27:43 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/ext/PriceCheck.aspx. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
