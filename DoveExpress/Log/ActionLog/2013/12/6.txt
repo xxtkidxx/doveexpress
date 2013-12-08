@@ -1,0 +1,24 @@
+Thời gian: 2013-12-06 21:18:04 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-12-06 21:21:02 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted CHITIETCUOCDT
+Kết quả : {PK_ID:"2"}
+__________________________
+Thời gian: 2013-12-06 21:21:11 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted CHITIETCUOCDT
+Kết quả : {PK_ID:"3"}
+__________________________
+Thời gian: 2013-12-06 21:27:47 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
