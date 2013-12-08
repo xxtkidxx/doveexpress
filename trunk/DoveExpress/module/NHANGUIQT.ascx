@@ -299,7 +299,7 @@
         return false;
     }
     function OnValueChangedtxtC_TIENHANGVAT(sender, eventArgs) {        
-        txtC_TIENHANGVATVND.set_value(txtC_TYGIA.get_value() * eventArgs.get_newValue());
+        txtC_TIENHANGVATVND.set_value(Math.round(txtC_TYGIA.get_value() * eventArgs.get_newValue()));
         txtC_CONLAI.set_value(txtC_TIENHANGVATVND.get_value() - txtC_DATHU.get_value());
         if (flag) {
          txtC_TIENHANG.set_value((txtC_TIENHANGVAT.get_value()/110)*100);
@@ -309,7 +309,7 @@
         return false;
     }
     function OnValueChangedtxtC_TYGIA(sender, eventArgs) {
-        txtC_TIENHANGVATVND.set_value(txtC_TIENHANGVAT.get_value() * eventArgs.get_newValue());
+        txtC_TIENHANGVATVND.set_value(Math.round(txtC_TIENHANGVAT.get_value() * eventArgs.get_newValue()));
         txtC_LOINHUANVND.set_value(txtC_LOINHUAN.get_value() * eventArgs.get_newValue());
         return false;
     }

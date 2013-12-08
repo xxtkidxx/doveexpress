@@ -1,0 +1,80 @@
+Thời gian lỗi : 2013-12-06 21:09:00 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/ext/PriceCheck.aspx. 
+Nội dung lỗi:Column 'FK_NHOMKHACHHANG' does not belong to table .
+__________________________
+Thời gian lỗi : 2013-12-06 21:14:19 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/ext/PriceCheck.aspx. 
+Nội dung lỗi:Column 'FK_NHOMKHACHHANG' does not belong to table .
+__________________________
+Thời gian lỗi : 2013-12-06 21:14:50 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/ext/PriceCheck.aspx. 
+Nội dung lỗi:Column 'FK_NHOMKHACHHANG' does not belong to table .
+__________________________
+Thời gian lỗi : 2013-12-06 21:15:28 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/ext/PriceCheck.aspx. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-12-06 21:15:43 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/ext/PriceCheck.aspx. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-12-06 21:47:05 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/ext/PriceCheckTN.aspx. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\DoveExpress\ext\PriceCheckTN.aspx(389): error CS1061: 'ASP.ext_pricechecktn_aspx' does not contain a definition for 'cmbVungLamViec_PreRender' and no extension method 'cmbVungLamViec_PreRender' accepting a first argument of type 'ASP.ext_pricechecktn_aspx' could be found (are you missing a using directive or an assembly reference?)
+__________________________
+Thời gian lỗi : 2013-12-06 21:47:47 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/ext/PriceCheckTN.aspx. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-12-06 21:48:41 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/ext/PriceCheckTN.aspx. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-12-06 21:48:44 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/ext/PriceCheckTN.aspx. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-12-06 21:48:45 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/ext/PriceCheckTN.aspx. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-12-06 21:48:45 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/ext/PriceCheckTN.aspx. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-12-06 21:48:46 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/ext/PriceCheckTN.aspx. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-12-06 21:58:25 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/ext/Check.aspx. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\DoveExpress\ext\Check.aspx.cs(9): error ASPNET: Make sure that the class defined in this code file matches the 'inherits' attribute, and that it extends the correct base class (e.g. Page or UserControl).
+__________________________
+Thời gian lỗi : 2013-12-06 22:02:28 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/ext/Check.aspx?ctl=billcheck. 
+Nội dung lỗi:Type 'Telerik.Web.UI.RadAjaxManagerProxy' does not have a public property named 'UpdatePanelsRenderMode'.
+__________________________
+Thời gian lỗi : 2013-12-06 22:02:49 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/ext/Check.aspx?ctl=billcheck. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\DoveExpress\ext\BillCheck.ascx(187): error CS1061: 'ASP.ext_billcheck_ascx' does not contain a definition for 'imgSearch_Click' and no extension method 'imgSearch_Click' accepting a first argument of type 'ASP.ext_billcheck_ascx' could be found (are you missing a using directive or an assembly reference?)
+__________________________
+Thời gian lỗi : 2013-12-06 22:03:27 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/ext/Check.aspx?ctl=billcheck. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\DoveExpress\ext\BillCheck.ascx.cs(59): error CS0120: An object reference is required for the non-static field, method, or property 'Telerik.Web.UI.RadAjaxControl.Alert(string)'
+__________________________
