@@ -1,0 +1,12 @@
+Thời gian: 2013-12-08 20:59:51 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-12-08 21:04:36 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIQTs
+Kết quả : {C_BILL:"17061"}
+__________________________
