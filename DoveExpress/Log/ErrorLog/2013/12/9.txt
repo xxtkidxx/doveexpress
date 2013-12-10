@@ -1,0 +1,79 @@
+Thời gian lỗi : 2013-12-09 16:08:31 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Lỗi truy vấn cơ sở dữ liệuIncorrect syntax near the keyword 'BEGIN'.
+Incorrect syntax near ')'.
+__________________________
+Thời gian lỗi : 2013-12-09 16:09:21 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Lỗi truy vấn cơ sở dữ liệuIncorrect syntax near the keyword 'BEGIN'.
+Incorrect syntax near ')'.
+__________________________
+Thời gian lỗi : 2013-12-09 16:13:03 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2013-12-09 21:06:07 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=BAOCAOCONGNO. 
+Nội dung lỗi:Incorrect syntax near 'TINHTHANHNAME'.
+__________________________
+Thời gian lỗi : 2013-12-09 21:06:44 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=BAOCAOCONGNO. 
+Nội dung lỗi:Invalid column name 'QUANHUYENNAME'.
+Invalid column name 'TINHTHANHNAME'.
+Invalid column name 'QUOCGIANAME'.
+__________________________
+Thời gian lỗi : 2013-12-09 21:07:48 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=BAOCAOCONGNO. 
+Nội dung lỗi:Index (zero based) must be greater than or equal to zero and less than the size of the argument list.
+__________________________
+Thời gian lỗi : 2013-12-09 21:07:51 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=BAOCAOCONGNO. 
+Nội dung lỗi:Index (zero based) must be greater than or equal to zero and less than the size of the argument list.
+__________________________
+Thời gian lỗi : 2013-12-09 21:07:54 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=BAOCAOCONGNO. 
+Nội dung lỗi:Conversion failed when converting the nvarchar value 'GB' to data type int.
+__________________________
+Thời gian lỗi : 2013-12-09 21:07:58 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=BAOCAOCONGNO. 
+Nội dung lỗi:Index (zero based) must be greater than or equal to zero and less than the size of the argument list.
+__________________________
+Thời gian lỗi : 2013-12-09 21:08:00 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=BAOCAOCONGNO. 
+Nội dung lỗi:Index (zero based) must be greater than or equal to zero and less than the size of the argument list.
+__________________________
+Thời gian lỗi : 2013-12-09 21:08:03 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=BAOCAOCONGNO. 
+Nội dung lỗi:Index (zero based) must be greater than or equal to zero and less than the size of the argument list.
+__________________________
+Thời gian lỗi : 2013-12-09 21:12:04 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=BAOCAOCONGNO. 
+Nội dung lỗi:Index (zero based) must be greater than or equal to zero and less than the size of the argument list.
+__________________________
+Thời gian lỗi : 2013-12-09 21:12:07 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=BAOCAOCONGNO. 
+Nội dung lỗi:Index (zero based) must be greater than or equal to zero and less than the size of the argument list.
+__________________________
+Thời gian lỗi : 2013-12-09 21:12:11 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=BAOCAOCONGNO. 
+Nội dung lỗi:Index (zero based) must be greater than or equal to zero and less than the size of the argument list.
+__________________________
+Thời gian lỗi : 2013-12-09 21:12:47 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=BAOCAOCONGNO. 
+Nội dung lỗi:Index (zero based) must be greater than or equal to zero and less than the size of the argument list.
+__________________________
