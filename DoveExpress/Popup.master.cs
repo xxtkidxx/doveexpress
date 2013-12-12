@@ -27,11 +27,11 @@ public partial class Popup : System.Web.UI.MasterPage
                         control = LoadControl("module/User_Priv_Module.ascx");
                         break;
                     case "nhanguipopup":
-                        _AjaxSetting.AjaxControlID = "RadGridNHANGUIPOPUP";
-                        _AjaxUpdatedControl.ControlID = "RadGridNHANGUIPOPUP";
+                        _AjaxSetting.AjaxControlID = "RadAjaxPanelNHANGUIPOPUP";
+                        _AjaxUpdatedControl.ControlID = "RadAjaxPanelNHANGUIPOPUP";
                         _AjaxUpdatedControl.LoadingPanelID = "RadAjaxLoadingPanelNHANGUIPOPUP";
                         _AjaxSetting.UpdatedControls.Add(_AjaxUpdatedControl);
-                        RadAjaxManagerPopup.AjaxSettings.Add(_AjaxSetting);
+                        //RadAjaxManagerPopup.AjaxSettings.Add(_AjaxSetting);
                         control = LoadControl("module/NHANGUIPOPUP.ascx");
                         break;
                 }
