@@ -36,6 +36,18 @@
             $find("<%=RadGridNHANGUIPH.ClientID %>").get_masterTableView().rebind();
         }
     </script>
+    <script type="text/javascript">
+        function TrangthaiOnClientLinkClicked() {
+            var oWindow = radopen("Popup.aspx?ctl=NHANGUIPH", "Cập nhật trạng thái BILL");
+            return false;
+        }
+        function OnClientShowNHANGUIPH(sender, eventArgs) {
+
+        }
+        function OnClientCloseNHANGUIPH(sender, eventArgs) {
+            var TypeName = sender.get_name();
+        } 
+    </script>
 </telerik:RadCodeBlock>
 <telerik:RadAjaxLoadingPanel Skin="Vista" ID="RadAjaxLoadingPanelNHANGUIPH" runat="server" />
 <style type="text/css">
@@ -77,11 +89,9 @@
     <tr>
         <td>
             <telerik:RadComboBox ID="cmbDoiTac" runat="server" Width="95%" DataTextField="C_NAME"
-                DataValueField="PK_ID" DataSourceID="DoiTacDataSource" 
-                ShowToggleImage="True" AppendDataBoundItems ="true"
-                EmptyMessage="Chọn đối tác" 
-                OnClientSelectedIndexChanged="cmbDoiTacClientSelectedIndexChangedHandler" 
-                onprerender="cmbDoiTac_PreRender">
+                DataValueField="PK_ID" DataSourceID="DoiTacDataSource" ShowToggleImage="True"
+                AppendDataBoundItems="true" EmptyMessage="Chọn đối tác" OnClientSelectedIndexChanged="cmbDoiTacClientSelectedIndexChangedHandler"
+                OnPreRender="cmbDoiTac_PreRender">
                 <Items>
                     <telerik:RadComboBoxItem runat="server" Text="Tất cả" Value="-1" />
                 </Items>
@@ -106,10 +116,11 @@
         InsertItemPageIndexAction="ShowItemOnFirstPage">
         <CommandItemTemplate>
             <div style="padding: 5px 5px; float: left; width: auto">
-                <b>Quản lý nhận gửi trong nước</b>&nbsp;&nbsp;&nbsp;&nbsp;
+                <b>Quản lý trạng thái Bill</b>&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:LinkButton ID="btnEditSelected" runat="server" CommandName="EditSelected" Visible='<%# RadGridNHANGUIPH.EditIndexes.Count == 0 && ITCLIB.Security.Security.CanEditModule("NHANGUI") %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Edit.gif" />Sửa</asp:LinkButton>&nbsp;&nbsp;
                 <asp:LinkButton ID="btnUpdateEdited" runat="server" CommandName="UpdateEdited" Visible='<%# RadGridNHANGUIPH.EditIndexes.Count > 0 %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Update.gif" />Lưu</asp:LinkButton>&nbsp;&nbsp;
                 <asp:LinkButton ID="btnCancel" runat="server" CommandName="CancelAll" Visible='<%# RadGridNHANGUIPH.EditIndexes.Count > 0 || RadGridNHANGUIPH.MasterTableView.IsItemInserted %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Cancel.gif" />Hủy bỏ</asp:LinkButton>&nbsp;&nbsp;
+                <asp:LinkButton ID="btnTrangthai" runat="server" OnClientClick='<%# String.Format("javascript:return TrangthaiOnClientLinkClicked()")%>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/img_OpenPanel.gif" />Cập nhật trạng thái Bill</asp:LinkButton>&nbsp;&nbsp;
                 <asp:LinkButton ID="LinkButton4" runat="server" CommandName="RebindGrid"><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Refresh.gif" />Làm mới</asp:LinkButton>
             </div>
         </CommandItemTemplate>
@@ -275,6 +286,10 @@
         SortToolTip="Click để sắp xếp" />
     <StatusBarSettings LoadingText="Đang tải..." ReadyText="Sẵn sàng" />
 </telerik:RadGrid>
+<telerik:RadWindowManager ReloadOnShow="true" ShowContentDuringLoad="false" ID="RadWindowManagerNHANGUIPH"
+    runat="server" VisibleStatusbar="False" OnClientClose="OnClientCloseNHANGUIPH"
+    OnClientShow="OnClientShowNHANGUIPH">
+</telerik:RadWindowManager>
 <asp:SqlDataSource ID="NHANGUIPHDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
     SelectCommand="SELECT [NHANGUI].[PK_ID], [NHANGUI].[C_NGAY], [NHANGUI].[FK_KHACHHANG], [NHANGUI].[C_BILL], [NHANGUI].[C_TENKH], [NHANGUI].[C_TELGUI], [NHANGUI].[C_NGUOINHAN], [NHANGUI].[C_DIACHINHAN], [NHANGUI].[C_TELNHAN], [NHANGUI].[FK_QUANHUYEN], [NHANGUI].[C_NOIDUNG], [NHANGUI].[C_SOKIEN], [NHANGUI].[C_GIATRIHANGHOA], [NHANGUI].[FK_MASANPHAM],  [NHANGUI].[C_PPXD], [NHANGUI].[C_KHOILUONGTHUC], [NHANGUI].[C_KHOILUONGQD], [NHANGUI].[C_KHOILUONG], [NHANGUI].[C_GIACUOC], [NHANGUI].[C_DONGGOI], [NHANGUI].[C_KHAIGIA], [NHANGUI].[C_COD], [NHANGUI].[C_BAOPHAT], [NHANGUI].[C_HENGIO], [NHANGUI].[C_HINHTHUCTT], [NHANGUI].[C_DATHU], ([NHANGUI].[C_TIENHANGVAT] - [NHANGUI].[C_DATHU]) as [C_CONLAI],([NHANGUI].[C_DONGGOI] + [NHANGUI].[C_KHAIGIA] + [NHANGUI].[C_COD] + [NHANGUI].[C_BAOPHAT] + [NHANGUI].[C_HENGIO]) as [C_PHUTROISUM], [NHANGUI].[C_TIENHANG], [NHANGUI].[C_VAT], [NHANGUI].[C_TIENHANGVAT], [NHANGUI].[FK_NHANVIENNHAN], [NHANGUI].[FK_DOITAC], [NHANGUI].[C_GIADOITAC], [NHANGUI].[FK_NHANVIENPHAT], [NHANGUI].[C_NGAYGIOPHAT], [NHANGUI].[FK_NHANVIENKHAITHAC], [NHANGUI].[C_NGUOIKYNHAN], [NHANGUI].[C_BOPHAN],[NHANGUI].FK_TRANGTHAI, USERSNHAN.C_NAME as NHANVIENNHANNAME,USERSPHAT.C_NAME as NHANVIENPHATNAME,USERSKHAITHAC.C_NAME as NHANVIENKHAITHACNAME,DMMASANPHAM.C_NAME as SANPHAMNAME,DMQUANHUYEN.C_NAME as QUANHUYENNAME,DMTINHTHANH.C_NAME as TINHTHANHNAME FROM [NHANGUI] LEFT OUTER JOIN USERS as USERSNHAN ON NHANGUI.FK_NHANVIENNHAN = USERSNHAN.PK_ID LEFT OUTER JOIN USERS as USERSPHAT ON NHANGUI.FK_NHANVIENPHAT = USERSPHAT.PK_ID LEFT OUTER JOIN USERS as USERSKHAITHAC ON NHANGUI.FK_NHANVIENKHAITHAC = USERSKHAITHAC.PK_ID LEFT OUTER JOIN DMMASANPHAM ON NHANGUI.FK_MASANPHAM=DMMASANPHAM.PK_ID LEFT OUTER JOIN DMQUANHUYEN ON NHANGUI.FK_QUANHUYEN = DMQUANHUYEN.C_CODE LEFT OUTER JOIN DMTINHTHANH ON DMQUANHUYEN.FK_TINHTHANH = DMTINHTHANH.PK_ID WHERE (@FK_DOITAC = -1 OR FK_DOITAC = @FK_DOITAC) ORDER BY [NHANGUI].C_NGAY DESC"
     UpdateCommand="UPDATE [NHANGUI] SET [FK_NHANVIENPHAT] = @FK_NHANVIENPHAT, [C_NGAYGIOPHAT] = @C_NGAYGIOPHAT, [FK_NHANVIENKHAITHAC]=@FK_NHANVIENKHAITHAC, [C_NGUOIKYNHAN] = @C_NGUOIKYNHAN, [C_BOPHAN] = @C_BOPHAN, [FK_TRANGTHAI] = @FK_TRANGTHAI WHERE [C_BILL] = @C_BILL">
