@@ -1,0 +1,63 @@
+Thời gian lỗi : 2013-12-10 21:21:07 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Lỗi truy vấn cơ sở dữ liệuIncorrect syntax near 'ENDUPDATE'.
+Incorrect syntax near 'ENDUPDATE'.
+Incorrect syntax near 'ENDUPDATE'.
+Incorrect syntax near 'ENDUPDATE'.
+Incorrect syntax near 'END'.
+__________________________
+Thời gian lỗi : 2013-12-10 21:21:16 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Lỗi truy vấn cơ sở dữ liệuIncorrect syntax near 'ENDUPDATE'.
+Incorrect syntax near 'ENDUPDATE'.
+Incorrect syntax near 'ENDUPDATE'.
+Incorrect syntax near 'ENDUPDATE'.
+Incorrect syntax near 'END'.
+__________________________
+Thời gian lỗi : 2013-12-10 21:21:30 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Lỗi truy vấn cơ sở dữ liệuIncorrect syntax near 'ENDUPDATE'.
+Incorrect syntax near 'ENDUPDATE'.
+Incorrect syntax near 'ENDUPDATE'.
+Incorrect syntax near 'ENDUPDATE'.
+Incorrect syntax near 'END'.
+__________________________
+Thời gian lỗi : 2013-12-10 21:22:13 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Lỗi truy vấn cơ sở dữ liệuIncorrect syntax near 'ENDUPDATE'.
+Incorrect syntax near 'END'.
+__________________________
+Thời gian lỗi : 2013-12-10 21:23:26 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Text property cannot be set. Input string was not in a correct format.
+__________________________
+Thời gian lỗi : 2013-12-10 21:28:47 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Cannot find a cell bound to column name 'C_BILL'
+__________________________
+Thời gian lỗi : 2013-12-10 21:36:53 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUIQT. 
+Nội dung lỗi:Input string was not in a correct format.
+__________________________
+Thời gian lỗi : 2013-12-10 21:36:56 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUIQT. 
+Nội dung lỗi:Input string was not in a correct format.
+__________________________
+Thời gian lỗi : 2013-12-10 21:37:29 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUIQT. 
+Nội dung lỗi:Input string was not in a correct format.
+__________________________
+Thời gian lỗi : 2013-12-10 21:38:54 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUIQT. 
+Nội dung lỗi:Input string was not in a correct format.
+__________________________
