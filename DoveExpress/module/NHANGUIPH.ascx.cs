@@ -242,4 +242,11 @@ public partial class module_NHANGUIPH : System.Web.UI.UserControl
         //TextBox1.Text = Session["t"].ToString();
         //ITCLIB.Admin.JavaScript.ShowMessage(Session["t"].ToString(), this);
     }
+    protected void cmbDoiTac_PreRender(object sender, EventArgs e)
+    {
+        if (!IsPostBack)
+        {
+            cmbDoiTac.SelectedIndex = 0;
+        }
+    }
 }
