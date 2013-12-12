@@ -41,7 +41,7 @@
             if ($find("<%= RadGridNHANGUIPH.MasterTableView.ClientID %>").get_selectedItems().length != 0) {
                 var IDString = 'BILL';
                 for (index = 0; index < $find("<%= RadGridNHANGUIPH.MasterTableView.ClientID %>").get_selectedItems().length; ++index) {
-                   IDString += '--' + $find("<%= RadGridNHANGUIPH.MasterTableView.ClientID %>").get_selectedItems()[index].getDataKeyValue("C_BILL");
+                   IDString += '-' + $find("<%= RadGridNHANGUIPH.MasterTableView.ClientID %>").get_selectedItems()[index].getDataKeyValue("C_BILL");
                 }
                var oWindow = radopen("Popup.aspx?ctl=NHANGUIPOPUP&IDBILL=" + IDString, "Cập nhật trạng thái BILL");
             } else {
