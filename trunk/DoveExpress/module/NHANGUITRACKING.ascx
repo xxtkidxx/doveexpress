@@ -152,9 +152,8 @@
     <ClientSettings AllowKeyboardNavigation="true" KeyboardNavigationSettings-AllowSubmitOnEnter="true"
         ClientEvents-OnKeyPress="KeyPressed">
         <Selecting AllowRowSelect="True" EnableDragToSelectRows="True" />
-        <ClientEvents OnPopUpShowing="PopUpShowingSmall" />
+        <ClientEvents OnPopUpShowing="PopUpShowing" />
         <ClientEvents OnRowDblClick="RowDblClick" />
-        <KeyboardNavigationSettings AllowSubmitOnEnter="True"></KeyboardNavigationSettings>
     </ClientSettings>
     <SortingSettings SortedAscToolTip="Sắp xếp tăng dần" SortedDescToolTip="Sắp xếp giảm dần"
         SortToolTip="Click để sắp xếp" />
