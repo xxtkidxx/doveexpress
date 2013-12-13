@@ -26,11 +26,44 @@
     }
 </script>
 <script type="text/javascript">
-
+    function cmbYearClientSelectedIndexChangedHandler(sender, eventArgs) {
+        $find("<%=RadGridBAOCAONVKD.ClientID %>").get_masterTableView().rebind();
+        return false;
+    }
+    function cmbMonthClientSelectedIndexChangedHandler(sender, eventArgs) {
+        $find("<%=RadGridBAOCAONVKD.ClientID %>").get_masterTableView().rebind();
+        return false;
+    }
 </script>
 </telerik:RadCodeBlock>
 <telerik:RadAjaxLoadingPanel Skin="Vista" ID="RadAjaxLoadingPanelBAOCAONVKD" runat="server" />
 <div style ="width:90%; margin: 10px 10px 10px 10px; ">
+Chọn tháng:&nbsp;
+    <telerik:RadComboBox ID="cmbMonth" runat="server" OnClientSelectedIndexChanged="cmbMonthClientSelectedIndexChangedHandler"
+        ShowToggleImage="True" EmptyMessage="Chọn tháng" OnPreRender="cmbMonth_PreRender">
+        <Items>
+            <telerik:RadComboBoxItem Value="0" Text="Tất cả" />
+            <telerik:RadComboBoxItem Value="1" Text="Tháng 1" />
+            <telerik:RadComboBoxItem Value="2" Text="Tháng 2" />
+            <telerik:RadComboBoxItem Value="3" Text="Tháng 3" />
+            <telerik:RadComboBoxItem Value="4" Text="Tháng 4" />
+            <telerik:RadComboBoxItem Value="5" Text="Tháng 5" />
+            <telerik:RadComboBoxItem Value="6" Text="Tháng 6" />
+            <telerik:RadComboBoxItem Value="7" Text="Tháng 7" />
+            <telerik:RadComboBoxItem Value="8" Text="Tháng 8" />
+            <telerik:RadComboBoxItem Value="9" Text="Tháng 9" />
+            <telerik:RadComboBoxItem Value="10" Text="Tháng 10" />
+            <telerik:RadComboBoxItem Value="11" Text="Tháng 11" />
+            <telerik:RadComboBoxItem Value="12" Text="Tháng 12" />
+        </Items>
+    </telerik:RadComboBox>
+    Chọn năm:&nbsp;
+    <telerik:RadComboBox ID="cmbYear" runat="server" OnClientSelectedIndexChanged="cmbYearClientSelectedIndexChangedHandler"
+        ShowToggleImage="True" EmptyMessage="Chọn năm" OnPreRender="cmbYear_PreRender">
+        <Items>
+             <telerik:RadComboBoxItem Value="0" Text="Tất cả" />
+        </Items>
+    </telerik:RadComboBox>
 Nhân viên kinh doanh:&nbsp; 
 <telerik:RadComboBox ID="cmbNVKD" runat="server"
 DataTextField="C_NAME" DataValueField="PK_ID" DataSourceID="UserDataSource"
@@ -120,8 +153,10 @@ ShowToggleImage="True" EmptyMessage="Chọn nhân viên" AutoPostBack ="True" Ap
 </telerik:RadGrid>
 <asp:SqlDataSource ID="BAOCAONVKDDataSource" runat="server" 
     ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>" 
-    SelectCommand="SELECT [NHANGUI].[PK_ID], [NHANGUI].[C_NGAY], [NHANGUI].[FK_KHACHHANG], [NHANGUI].[C_BILL], 'BC' + [NHANGUI].[C_BILL] as C_BILLFIX, [NHANGUI].[C_TENKH], [NHANGUI].[C_TELGUI], [NHANGUI].[C_NGUOINHAN], [NHANGUI].[C_DIACHINHAN], [NHANGUI].[C_TELNHAN], [NHANGUI].[FK_QUANHUYEN], [NHANGUI].[C_NOIDUNG], [NHANGUI].[FK_MASANPHAM],  [NHANGUI].[C_PPXD], [NHANGUI].[C_KHOILUONG], [NHANGUI].[C_GIACUOC], [NHANGUI].[C_HINHTHUCTT], [NHANGUI].[C_DATHU], ([NHANGUI].[C_TIENHANGVAT] - [NHANGUI].[C_DATHU]) as [C_CONLAI],([NHANGUI].[C_DONGGOI] + [NHANGUI].[C_KHAIGIA] + [NHANGUI].[C_COD] + [NHANGUI].[C_BAOPHAT] + [NHANGUI].[C_HENGIO]) as [C_PHUTROISUM], [NHANGUI].[C_TIENHANG], [NHANGUI].[C_VAT], [NHANGUI].[C_TIENHANGVAT], [NHANGUI].[FK_NHANVIENNHAN], [NHANGUI].[FK_DOITAC], [NHANGUI].[C_GIADOITAC], [NHANGUI].[FK_NHANVIENPHAT], [NHANGUI].[C_NGAYGIOPHAT], [NHANGUI].[FK_NHANVIENKHAITHAC], [NHANGUI].[C_NGUOIKYNHAN], [NHANGUI].[C_BOPHAN],USERSNHAN.C_NAME as NHANVIENNHANNAME,USERSPHAT.C_NAME as NHANVIENPHATNAME,USERSKHAITHAC.C_NAME as NHANVIENKHAITHACNAME,DMMASANPHAM.C_NAME as SANPHAMNAME,DMQUANHUYEN.C_NAME as QUANHUYENNAME,DMTINHTHANH.C_NAME as TINHTHANHNAME FROM [NHANGUI] LEFT OUTER JOIN USERS as USERSNHAN ON NHANGUI.FK_NHANVIENNHAN = USERSNHAN.PK_ID LEFT OUTER JOIN USERS as USERSPHAT ON NHANGUI.FK_NHANVIENPHAT = USERSPHAT.PK_ID LEFT OUTER JOIN USERS as USERSKHAITHAC ON NHANGUI.FK_NHANVIENKHAITHAC = USERSKHAITHAC.PK_ID LEFT OUTER JOIN DMMASANPHAM ON NHANGUI.FK_MASANPHAM=DMMASANPHAM.PK_ID LEFT OUTER JOIN DMQUANHUYEN ON NHANGUI.FK_QUANHUYEN = DMQUANHUYEN.C_CODE LEFT OUTER JOIN DMTINHTHANH ON DMQUANHUYEN.FK_TINHTHANH = DMTINHTHANH.PK_ID LEFT OUTER JOIN DMKHACHHANG ON NHANGUI.FK_KHACHHANG = DMKHACHHANG.C_CODE WHERE ([DMKHACHHANG].[FK_USER] = @FK_USER AND [NHANGUI].[FK_VUNGLAMVIEC] = @FK_VUNGLAMVIEC)">
+    SelectCommand="SELECT [NHANGUI].[PK_ID], [NHANGUI].[C_NGAY], [NHANGUI].[FK_KHACHHANG], [NHANGUI].[C_BILL], 'BC' + [NHANGUI].[C_BILL] as C_BILLFIX, [NHANGUI].[C_TENKH], [NHANGUI].[C_TELGUI], [NHANGUI].[C_NGUOINHAN], [NHANGUI].[C_DIACHINHAN], [NHANGUI].[C_TELNHAN], [NHANGUI].[FK_QUANHUYEN], [NHANGUI].[C_NOIDUNG], [NHANGUI].[FK_MASANPHAM],  [NHANGUI].[C_PPXD], [NHANGUI].[C_KHOILUONG], [NHANGUI].[C_GIACUOC], [NHANGUI].[C_HINHTHUCTT], [NHANGUI].[C_DATHU], ([NHANGUI].[C_TIENHANGVAT] - [NHANGUI].[C_DATHU]) as [C_CONLAI],([NHANGUI].[C_DONGGOI] + [NHANGUI].[C_KHAIGIA] + [NHANGUI].[C_COD] + [NHANGUI].[C_BAOPHAT] + [NHANGUI].[C_HENGIO]) as [C_PHUTROISUM], [NHANGUI].[C_TIENHANG], [NHANGUI].[C_VAT], [NHANGUI].[C_TIENHANGVAT], [NHANGUI].[FK_NHANVIENNHAN], [NHANGUI].[FK_DOITAC], [NHANGUI].[C_GIADOITAC], [NHANGUI].[FK_NHANVIENPHAT], [NHANGUI].[C_NGAYGIOPHAT], [NHANGUI].[FK_NHANVIENKHAITHAC], [NHANGUI].[C_NGUOIKYNHAN], [NHANGUI].[C_BOPHAN],USERSNHAN.C_NAME as NHANVIENNHANNAME,USERSPHAT.C_NAME as NHANVIENPHATNAME,USERSKHAITHAC.C_NAME as NHANVIENKHAITHACNAME,DMMASANPHAM.C_NAME as SANPHAMNAME,DMQUANHUYEN.C_NAME as QUANHUYENNAME,DMTINHTHANH.C_NAME as TINHTHANHNAME FROM [NHANGUI] LEFT OUTER JOIN USERS as USERSNHAN ON NHANGUI.FK_NHANVIENNHAN = USERSNHAN.PK_ID LEFT OUTER JOIN USERS as USERSPHAT ON NHANGUI.FK_NHANVIENPHAT = USERSPHAT.PK_ID LEFT OUTER JOIN USERS as USERSKHAITHAC ON NHANGUI.FK_NHANVIENKHAITHAC = USERSKHAITHAC.PK_ID LEFT OUTER JOIN DMMASANPHAM ON NHANGUI.FK_MASANPHAM=DMMASANPHAM.PK_ID LEFT OUTER JOIN DMQUANHUYEN ON NHANGUI.FK_QUANHUYEN = DMQUANHUYEN.C_CODE LEFT OUTER JOIN DMTINHTHANH ON DMQUANHUYEN.FK_TINHTHANH = DMTINHTHANH.PK_ID LEFT OUTER JOIN DMKHACHHANG ON NHANGUI.FK_KHACHHANG = DMKHACHHANG.C_CODE WHERE (month([NHANGUI].[C_NGAY]) = @MONTH OR @MONTH = 0) AND (year([NHANGUI].[C_NGAY]) = @YEAR OR @YEAR = 0) AND ([DMKHACHHANG].[FK_USER] = @FK_USER AND [NHANGUI].[FK_VUNGLAMVIEC] = @FK_VUNGLAMVIEC)">
     <SelectParameters>
+        <asp:ControlParameter ControlID="cmbMonth" Name="MONTH" PropertyName="SelectedValue" />
+        <asp:ControlParameter ControlID="cmbYear" Name="YEAR" PropertyName="SelectedValue" />
          <asp:ControlParameter ControlID="cmbNVKD" DefaultValue="0" Name="FK_USER" PropertyName="SelectedValue" />
          <asp:SessionParameter Name="FK_VUNGLAMVIEC" Type="String" SessionField="VUNGLAMVIEC" />
     </SelectParameters>        

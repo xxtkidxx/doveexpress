@@ -135,4 +135,54 @@ public partial class module_BAOCAOKHACHHANG : System.Web.UI.UserControl
             }
         }*/
     }
+    protected void cmbMonth_PreRender(object sender, EventArgs e)
+    {
+        if (!IsPostBack)
+        {
+            cmbMonth.SelectedValue = System.DateTime.Now.Month.ToString();
+            BAOCAOKHACHHANGDataSource.SelectParameters["MONTH"].DefaultValue = System.DateTime.Now.Month.ToString();
+        }
+    }
+    protected void cmbYear_PreRender(object sender, EventArgs e)
+    {
+        if (!IsPostBack)
+        {
+            string SelectSQL = "SELECT MIN(year(C_NGAY)) as MINNAM FROM NHANGUI";
+            DataTable oDataTable = new DataTable();
+            ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
+            oDataTable = SelectQuery.query_data(SelectSQL);
+            if (oDataTable.Rows.Count != 0)
+            {
+                if (oDataTable.Rows[0]["MINNAM"] == DBNull.Value)
+                {
+                    int intYear = DateTime.Now.Year;
+                    RadComboBoxItem Item0 = new RadComboBoxItem(intYear.ToString(), intYear.ToString());
+                    intYear += 1;
+                    RadComboBoxItem Item1 = new RadComboBoxItem(intYear.ToString(), intYear.ToString());
+                    cmbYear.Items.Add(Item0);
+                    cmbYear.Items.Add(Item1);
+                }
+                else
+                {
+                    int intYear = DateTime.Now.Year;
+                    for (int i = int.Parse(oDataTable.Rows[0]["MINNAM"].ToString()); i <= intYear + 1; i++)
+                    {
+                        RadComboBoxItem Item = new RadComboBoxItem(i.ToString(), i.ToString());
+                        cmbYear.Items.Add(Item);
+                    }
+                }
+            }
+            else
+            {
+                int intYear = DateTime.Now.Year;
+                for (int i = int.Parse(oDataTable.Rows[0]["MINNAM"].ToString()); i <= intYear + 1; i++)
+                {
+                    RadComboBoxItem Item = new RadComboBoxItem(i.ToString(), i.ToString());
+                    cmbYear.Items.Add(Item);
+                }
+            }
+            cmbYear.SelectedValue = System.DateTime.Now.Year.ToString();
+            BAOCAOKHACHHANGDataSource.SelectParameters["YEAR"].DefaultValue = System.DateTime.Now.Year.ToString();
+        }
+    }
 }

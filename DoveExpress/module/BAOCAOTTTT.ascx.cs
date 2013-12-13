@@ -113,7 +113,7 @@ public partial class module_BAOCAOTTTT : System.Web.UI.UserControl
     {
         if (!IsPostBack)
         {
-            string SelectSQL = "SELECT MIN(year(C_NGAY)) as MINNAM FROM SOQUYTIENMAT";
+            string SelectSQL = "SELECT MIN(year(C_NGAY)) as MINNAM FROM NHANGUI";
             DataTable oDataTable = new DataTable();
             ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
             oDataTable = SelectQuery.query_data(SelectSQL);
