@@ -46,3 +46,33 @@ Tài khoản : sysadmin
 Module : Login
 Kết quả : Thành công
 __________________________
+Thời gian: 2013-12-13 10:16:56 AM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-12-13 10:25:05 AM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-12-13 10:38:22 AM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : 1
+Module : Updated NHANGUITRACKINGs
+Kết quả : {PK_ID:"3"}
+__________________________
+Thời gian: 2013-12-13 10:38:29 AM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : 1
+Module : Updated NHANGUITRACKINGs
+Kết quả : {PK_ID:"2"}
+__________________________
+Thời gian: 2013-12-13 10:56:18 AM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________

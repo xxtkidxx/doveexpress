@@ -81,3 +81,38 @@ Thời gian lỗi : 2013-12-13 00:19:16 AM
 Nội dung lỗi:Selection out of range
 Parameter name: value
 __________________________
+Thời gian lỗi : 2013-12-13 09:49:00 AM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Popup.aspx?ctl=NHANGUITRACKING&IDBILL=383863&rwndrnd=0.2196543959049202. 
+Nội dung lỗi:Ambiguous column name 'PK_ID'.
+__________________________
+Thời gian lỗi : 2013-12-13 11:05:51 AM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:53224/doveexpress/ext/Check.aspx?ctl=BillCheck. 
+Nội dung lỗi:There is no row at position -1.
+__________________________
+Thời gian lỗi : 2013-12-13 11:05:52 AM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:53224/doveexpress/ext/Check.aspx?ctl=BillCheck. 
+Nội dung lỗi:There is no row at position -1.
+__________________________
+Thời gian lỗi : 2013-12-13 11:05:53 AM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:53224/doveexpress/ext/Check.aspx?ctl=BillCheck. 
+Nội dung lỗi:There is no row at position -1.
+__________________________
+Thời gian lỗi : 2013-12-13 11:05:55 AM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:53224/doveexpress/ext/Check.aspx?ctl=BillCheck. 
+Nội dung lỗi:There is no row at position -1.
+__________________________
+Thời gian lỗi : 2013-12-13 11:05:57 AM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:53224/doveexpress/ext/Check.aspx?ctl=BillCheck. 
+Nội dung lỗi:There is no row at position -1.
+__________________________
+Thời gian lỗi : 2013-12-13 11:05:59 AM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:53224/doveexpress/ext/Check.aspx?ctl=BillCheck. 
+Nội dung lỗi:There is no row at position -1.
+__________________________
