@@ -44,9 +44,9 @@
         color: #9CD009;
         font-weight: normal;
         font-style: normal;
-        font-size: 40px;
+        font-size: 36px;
         text-shadow: 1px 1px 1px #aaa;
-        padding-top: 30px;
+        padding-top: 20px;
     }
     /* Table 1 Style */
     table.table1
@@ -54,10 +54,10 @@
         font-family: "Trebuchet MS" , sans-serif;
         font-size: 16px;
         font-weight: bold;
-        line-height: 1.4em;
+        line-height: 1em;
         font-style: normal;
         border-collapse: separate;
-        padding-top: 30px;
+        padding-top: 20px;
     }
     .table1 thead th
     {
@@ -123,9 +123,9 @@
     .table1 tfoot td
     {
         color: #9CD009;
-        font-size: 32px;
+        font-size: 26px;
         text-align: center;
-        padding: 10px 0px;
+        padding: 8px 0px;
         text-shadow: 1px 1px 1px #444;
     }
     .table1 tfoot th
@@ -254,19 +254,18 @@
                 Height="30px" />
             <ItemStyle BorderStyle="Outset" Height="30px" />
             <PagerStyle Mode="NextPrevNumericAndAdvanced" />
-            <AlternatingItemStyle BackColor="#F7F6F6" Height="30px" />
-            <MasterTableView NoMasterRecordsText="Không có dữ liệu">
+              <MasterTableView NoMasterRecordsText="Không có dữ liệu">
                 <Columns>
                     <telerik:GridBoundColumn UniqueName="C_DATE" DataField="C_DATE" HeaderText="Thời gian">
-                        <HeaderStyle HorizontalAlign="Center" Width="50px" />
+                        <HeaderStyle HorizontalAlign="Center" Width="50px"/>
                         <ItemStyle HorizontalAlign="Center" Width="50px" />
                     </telerik:GridBoundColumn>
                     <telerik:GridBoundColumn UniqueName="TRANGTHAINAME" DataField="TRANGTHAINAME" HeaderText="Trạng thái">
-                        <HeaderStyle HorizontalAlign="Center" Width="70px" />
+                        <HeaderStyle HorizontalAlign="Center" Width="70px"/>
                         <ItemStyle HorizontalAlign="Center" Width="70px" />
                     </telerik:GridBoundColumn>
                     <telerik:GridBoundColumn UniqueName="C_DESC" DataField="C_DESC" HeaderText="Diễn giải">
-                        <HeaderStyle HorizontalAlign="Center" Width="70px" />
+                        <HeaderStyle HorizontalAlign="Center" Width="70px"/>
                         <ItemStyle HorizontalAlign="Center" Width="70px" />
                     </telerik:GridBoundColumn>
                 </Columns>
