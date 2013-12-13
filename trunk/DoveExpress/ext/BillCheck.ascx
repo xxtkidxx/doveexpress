@@ -149,134 +149,128 @@
         content: url(../images/check0.png);
     }
 </style>
-    <telerik:RadAjaxManagerProxy ID="RadAjaxManagerCheckBill" runat="server">
-        <AjaxSettings>
-            <telerik:AjaxSetting AjaxControlID="pnCheckBill">
-                <UpdatedControls>
-                    <telerik:AjaxUpdatedControl ControlID="pnCheckBill" LoadingPanelID="RadAjaxLoadingPanel">
-                    </telerik:AjaxUpdatedControl>
-                </UpdatedControls>
-            </telerik:AjaxSetting>
-            <telerik:AjaxSetting AjaxControlID="RadGridBILLCHECK">
-                <UpdatedControls>
-                    <telerik:AjaxUpdatedControl ControlID="RadGridBILLCHECK" LoadingPanelID="RadAjaxLoadingPanel">
-                    </telerik:AjaxUpdatedControl>
-                </UpdatedControls>
-            </telerik:AjaxSetting>
-        </AjaxSettings>
-    </telerik:RadAjaxManagerProxy>
-    <telerik:RadAjaxLoadingPanel Skin="Vista" ID="RadAjaxLoadingPanel" runat="server" />
-    <center>
-        <h1>CHUYỂN PHÁT NHANH DOVEEXPRESS - KIỂM TRA TRẠNG THÁI BILL</h1>
-        <asp:Panel ID="pnCheckBill" runat="server">
-            <table class="table1">
-                <tfoot>
-                    <tr>
-                        <th scope="row">
-                            TRẠNG THÁI
-                        </th>
-                        <td>
-                            <asp:Label ID="lblC_STATUS" runat="server" Text="-"></asp:Label>
-                        </td>
-                    </tr>
-                </tfoot>
-                <tbody>
-                    <tr>
-                        <th scope="row">
-                            Mã BILL
-                        </th>
-                        <td>
-                            (BC)<telerik:RadNumericTextBox ID="txtBILL" Width="50%" Text='<%# Bind("C_BILL") %>'
-                                runat="server">
-                                <NumberFormat DecimalSeparator="." GroupSeparator="" DecimalDigits="0" />
-                            </telerik:RadNumericTextBox>
-                            <asp:ImageButton ID="imgSearch" runat="server" ImageUrl="~/images/imgsearch.png"
-                                Width="40px" ImageAlign="AbsMiddle" OnClick="imgSearch_Click" />
-                        </td>
-                    </tr>
-                     <tr>
-                        <th scope="row">
-                            Dịch vụ
-                        </th>
-                        <td>
-                            <asp:Label ID="lblDichvu" runat="server" Text="-"></asp:Label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">
-                            Người gửi
-                        </th>
-                        <td>
-                            <asp:Label ID="lblNguoigui" runat="server" Text="-"></asp:Label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">
-                            Ngày gửi
-                        </th>
-                        <td>
-                            <asp:Label ID="lblNgaygui" runat="server" Text="-"></asp:Label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">
-                            Người nhận
-                        </th>
-                        <td>
-                            <asp:Label ID="lblNguoinhan" runat="server" Text="-"></asp:Label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">
-                            Địa chỉ nhận
-                        </th>
-                        <td>
-                            <asp:Label ID="lblDiachinhan" runat="server" Text="-"></asp:Label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">
-                            Ngày nhận
-                        </th>
-                        <td>
-                            <asp:Label ID="lblNgaynhan" runat="server" Text="-"></asp:Label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">
-                             <asp:Label ID="lblQuanhuyen" runat="server" Text="Tỉnh thành/Quận huyện"></asp:Label>
-                        </th>
-                        <td>
-                            <asp:Label ID="lblQuanhuyenValue" runat="server" Text="-"></asp:Label>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-             <telerik:RadGrid ID="RadGridBILLCHECK" runat="server" AutoGenerateColumns="false"
-                Skin="Simple" AllowFilteringByColumn="false" AllowSorting="True" 
-                AllowPaging="True" Width="100%" 
-                BorderColor="#D6D1C6">
-                <HeaderStyle BackColor="#EDEDED" BorderColor="#D6D1C6" Font-Bold="True" 
-                    ForeColor="#575757" Height="30px" />
-                <ItemStyle BorderStyle="Outset" Height="30px" />
-                <PagerStyle Mode="NextPrevNumericAndAdvanced" />
-                <AlternatingItemStyle BackColor="#F7F6F6" Height="30px" />
-                <MasterTableView NoMasterRecordsText="Không có dữ liệu">
-                    <Columns>
-                        <telerik:GridBoundColumn UniqueName="C_DATE" DataField="C_DATE" HeaderText="Thời gian">
-                            <HeaderStyle HorizontalAlign="Center" Width="50px" />
-                            <ItemStyle HorizontalAlign="Center" Width="50px" />
-                        </telerik:GridBoundColumn>
-                        <telerik:GridBoundColumn UniqueName="TRANGTHAINAME" DataField="Trạng thái" HeaderText="TRANGTHAINAME">
-                            <HeaderStyle HorizontalAlign="Center" Width="70px" />
-                            <ItemStyle HorizontalAlign="Center" Width="70px" />
-                        </telerik:GridBoundColumn>
-                        <telerik:GridBoundColumn UniqueName="C_DESC" DataField="C_DESC" HeaderText="C_DESC">
-                            <HeaderStyle HorizontalAlign="Center" Width="70px" />
-                            <ItemStyle HorizontalAlign="Center" Width="70px" />
-                        </telerik:GridBoundColumn>
-                    </Columns>
-                </MasterTableView>
-            </telerik:RadGrid>
-        </asp:Panel>
-    </center>
+<telerik:RadAjaxManagerProxy ID="RadAjaxManagerCheckBill" runat="server">
+    <AjaxSettings>
+        <telerik:AjaxSetting AjaxControlID="pnCheckBill">
+            <UpdatedControls>
+                <telerik:AjaxUpdatedControl ControlID="pnCheckBill" LoadingPanelID="RadAjaxLoadingPanel">
+                </telerik:AjaxUpdatedControl>
+            </UpdatedControls>
+        </telerik:AjaxSetting>
+    </AjaxSettings>
+</telerik:RadAjaxManagerProxy>
+<telerik:RadAjaxLoadingPanel Skin="Vista" ID="RadAjaxLoadingPanel" runat="server" />
+<center>
+    <h1>
+        CHUYỂN PHÁT NHANH DOVEEXPRESS - KIỂM TRA TRẠNG THÁI BILL</h1>
+    <asp:Panel ID="pnCheckBill" runat="server">
+        <table class="table1">
+            <tfoot>
+                <tr>
+                    <th scope="row">
+                        TRẠNG THÁI
+                    </th>
+                    <td>
+                        <asp:Label ID="lblC_STATUS" runat="server" Text="-"></asp:Label>
+                    </td>
+                </tr>
+            </tfoot>
+            <tbody>
+                <tr>
+                    <th scope="row">
+                        Mã BILL
+                    </th>
+                    <td>
+                        (BC)<telerik:RadNumericTextBox ID="txtBILL" Width="50%" Text='<%# Bind("C_BILL") %>'
+                            runat="server">
+                            <NumberFormat DecimalSeparator="." GroupSeparator="" DecimalDigits="0" />
+                        </telerik:RadNumericTextBox>
+                        <asp:ImageButton ID="imgSearch" runat="server" ImageUrl="~/images/imgsearch.png"
+                            Width="40px" ImageAlign="AbsMiddle" OnClick="imgSearch_Click" />
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        Dịch vụ
+                    </th>
+                    <td>
+                        <asp:Label ID="lblDichvu" runat="server" Text="-"></asp:Label>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        Người gửi
+                    </th>
+                    <td>
+                        <asp:Label ID="lblNguoigui" runat="server" Text="-"></asp:Label>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        Ngày gửi
+                    </th>
+                    <td>
+                        <asp:Label ID="lblNgaygui" runat="server" Text="-"></asp:Label>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        Người nhận
+                    </th>
+                    <td>
+                        <asp:Label ID="lblNguoinhan" runat="server" Text="-"></asp:Label>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        Địa chỉ nhận
+                    </th>
+                    <td>
+                        <asp:Label ID="lblDiachinhan" runat="server" Text="-"></asp:Label>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        Ngày nhận
+                    </th>
+                    <td>
+                        <asp:Label ID="lblNgaynhan" runat="server" Text="-"></asp:Label>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <asp:Label ID="lblQuanhuyen" runat="server" Text="Tỉnh thành/Quận huyện"></asp:Label>
+                    </th>
+                    <td>
+                        <asp:Label ID="lblQuanhuyenValue" runat="server" Text="-"></asp:Label>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <telerik:RadGrid ID="RadGridBILLCHECK" runat="server" AutoGenerateColumns="false"
+            Skin="Simple" AllowFilteringByColumn="false" AllowSorting="True" AllowPaging="True"
+            Width="100%" BorderColor="#D6D1C6">
+            <HeaderStyle BackColor="#EDEDED" BorderColor="#D6D1C6" Font-Bold="True" ForeColor="#575757"
+                Height="30px" />
+            <ItemStyle BorderStyle="Outset" Height="30px" />
+            <PagerStyle Mode="NextPrevNumericAndAdvanced" />
+            <AlternatingItemStyle BackColor="#F7F6F6" Height="30px" />
+            <MasterTableView NoMasterRecordsText="Không có dữ liệu">
+                <Columns>
+                    <telerik:GridBoundColumn UniqueName="C_DATE" DataField="C_DATE" HeaderText="Thời gian">
+                        <HeaderStyle HorizontalAlign="Center" Width="50px" />
+                        <ItemStyle HorizontalAlign="Center" Width="50px" />
+                    </telerik:GridBoundColumn>
+                    <telerik:GridBoundColumn UniqueName="TRANGTHAINAME" DataField="TRANGTHAINAME" HeaderText="Trạng thái">
+                        <HeaderStyle HorizontalAlign="Center" Width="70px" />
+                        <ItemStyle HorizontalAlign="Center" Width="70px" />
+                    </telerik:GridBoundColumn>
+                    <telerik:GridBoundColumn UniqueName="C_DESC" DataField="C_DESC" HeaderText="Diễn giải">
+                        <HeaderStyle HorizontalAlign="Center" Width="70px" />
+                        <ItemStyle HorizontalAlign="Center" Width="70px" />
+                    </telerik:GridBoundColumn>
+                </Columns>
+            </MasterTableView>
+        </telerik:RadGrid>
+    </asp:Panel>
+</center>
