@@ -196,3 +196,8 @@ Thời gian lỗi : 2013-12-13 20:35:41 PM
 Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/csv.gif. 
 Nội dung lỗi:File does not exist.
 __________________________
+Thời gian lỗi : 2013-12-13 20:48:19 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=BAOCAONGAY. 
+Nội dung lỗi:C_TIENHANGVAT is neither a DataColumn nor a DataRelation for table DefaultView.
+__________________________
