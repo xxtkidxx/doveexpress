@@ -248,13 +248,13 @@
             </tbody>
         </table>
         <telerik:RadGrid ID="RadGridBILLCHECK" runat="server" AutoGenerateColumns="false"
-            Skin="Simple" AllowFilteringByColumn="false" AllowSorting="True" AllowPaging="True"
-            Width="100%" BorderColor="#D6D1C6">
+            Skin="Hay" AllowFilteringByColumn="false" AllowSorting="false" AllowPaging="True"
+            Width="99%" BorderColor="#D6D1C6">
             <HeaderStyle BackColor="#EDEDED" BorderColor="#D6D1C6" Font-Bold="True" ForeColor="#575757"
                 Height="30px" />
             <ItemStyle BorderStyle="Outset" Height="30px" />
             <PagerStyle Mode="NextPrevNumericAndAdvanced" />
-              <MasterTableView NoMasterRecordsText="Không có dữ liệu">
+              <MasterTableView NoMasterRecordsText="Dữ liệu tracking chưa được cập nhật">
                 <Columns>
                     <telerik:GridBoundColumn UniqueName="C_DATE" DataField="C_DATE" HeaderText="Thời gian">
                         <HeaderStyle HorizontalAlign="Center" Width="50px"/>

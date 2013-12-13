@@ -65,9 +65,9 @@ public partial class ext_BillCheck : System.Web.UI.UserControl
         string SelectString = "SELECT [TRACKING].[PK_ID], [TRACKING].[C_BILL], [TRACKING].[C_DATE], [TRACKING].[FK_TRANGTHAI], [TRACKING].[C_DESC], [DMTRANGTHAI].[C_NAME] as TRANGTHAINAME FROM [TRACKING] LEFT OUTER JOIN [DMTRANGTHAI] ON [TRACKING].[FK_TRANGTHAI] = [DMTRANGTHAI].[C_CODE] WHERE [C_BILL] = '" + txtBILL.Text.Trim() + "' ORDER BY [C_DATE] ASC";
         //Response.Write(SelectString);       
         oDataTable = SelectQuery1.query_data(SelectString);
-        if (oDataTable.Rows[oDataTable.Rows.Count - 1]["TRANGTHAINAME"].ToString() != "")
+        if (oDataTable.Rows.Count != 0)
         {
-            lblC_STATUS.Text = oDataTable.Rows[oDataTable.Rows.Count - 1]["TRANGTHAINAME"].ToString();
+            lblC_STATUS.Text = oDataTable.Rows[oDataTable.Rows.Count - 1]["TRANGTHAINAME"].ToString();           
         }
         else
         {
