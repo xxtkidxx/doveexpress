@@ -39,7 +39,7 @@ public partial class Popup : System.Web.UI.MasterPage
                         _AjaxUpdatedControl.ControlID = "RadAjaxPanelNHANGUITRACKING";
                         _AjaxUpdatedControl.LoadingPanelID = "RadAjaxLoadingPanelNHANGUITRACKING";
                         _AjaxSetting.UpdatedControls.Add(_AjaxUpdatedControl);
-                        //RadAjaxManagerPopup.AjaxSettings.Add(_AjaxSetting);
+                        RadAjaxManagerPopup.AjaxSettings.Add(_AjaxSetting);
                         control = LoadControl("module/NHANGUITRACKING.ascx");
                         break;
                 }
