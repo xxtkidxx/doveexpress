@@ -116,3 +116,83 @@ Thời gian lỗi : 2013-12-13 11:05:59 AM
 Đường dẫn lỗi: http://localhost:53224/doveexpress/ext/Check.aspx?ctl=BillCheck. 
 Nội dung lỗi:There is no row at position -1.
 __________________________
+Thời gian lỗi : 2013-12-13 20:30:38 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=BAOCAOKHACHHANG. 
+Nội dung lỗi:Specified cast is not valid.
+__________________________
+Thời gian lỗi : 2013-12-13 20:30:50 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=BAOCAOKHACHHANG. 
+Nội dung lỗi:Specified cast is not valid.
+__________________________
+Thời gian lỗi : 2013-12-13 20:30:52 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=BAOCAOKHACHHANG. 
+Nội dung lỗi:Specified cast is not valid.
+__________________________
+Thời gian lỗi : 2013-12-13 20:30:53 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=BAOCAOKHACHHANG. 
+Nội dung lỗi:Specified cast is not valid.
+__________________________
+Thời gian lỗi : 2013-12-13 20:34:17 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/Refresh.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-12-13 20:34:17 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/approval.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\DoveExpress\Log\ErrorLog\2013\12\13.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-12-13 20:34:17 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/pdf.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-12-13 20:34:17 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/word.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\DoveExpress\Log\ErrorLog\2013\12\13.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-12-13 20:34:18 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/excel.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-12-13 20:34:18 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/csv.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\DoveExpress\Log\ErrorLog\2013\12\13.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-12-13 20:35:40 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/approval.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-12-13 20:35:40 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/Refresh.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\DoveExpress\Log\ErrorLog\2013\12\13.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-12-13 20:35:41 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/pdf.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-12-13 20:35:41 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/word.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\DoveExpress\Log\ErrorLog\2013\12\13.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2013-12-13 20:35:41 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/excel.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2013-12-13 20:35:41 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/csv.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
