@@ -80,7 +80,7 @@ ShowToggleImage="True" EmptyMessage="Chọn năm" onprerender="cmbYear_PreRender
     <MasterTableView Name="MasterTableViewBAOCAOTTTT" CommandItemDisplay="Top" DataSourceID="BAOCAOTTTTDataSource" DataKeyNames="PK_ID" ClientDataKeyNames="PK_ID" EditMode="PopUp" NoMasterRecordsText="Không có dữ liệu">
         <CommandItemTemplate>
                     <div style="padding: 5px 5px;float:left;width:auto">
-                       <b>Báo cáo doanh số theo ngày</b>&nbsp;&nbsp;&nbsp;&nbsp;
+                       <b>Báo cáo tình trạng thanh toán</b>&nbsp;&nbsp;&nbsp;&nbsp;
                        <asp:LinkButton ID="lbPrint" runat="server"  Visible ="false" CommandName="PrintGrid"><img style="border:0px;vertical-align:middle;" alt="" src="Images/approval.gif" />In</asp:LinkButton>&nbsp;&nbsp;&nbsp;&nbsp;
                        <asp:LinkButton ID="lblRefesh" runat="server" CommandName="RebindGrid"><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Refresh.gif" />Làm mới</asp:LinkButton>
                     </div>
