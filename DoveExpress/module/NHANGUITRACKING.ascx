@@ -50,7 +50,7 @@
             </div>
         </CommandItemTemplate>
         <Columns>
-            <telerik:GridClientSelectColumn UniqueName="ClientSelectColumn" HeaderStyle-Width="40px"
+            <telerik:GridClientSelectColumn UniqueName="ClientSelectColumn" HeaderStyle-Width="30px"
                 HeaderStyle-HorizontalAlign="Center" ItemStyle-HorizontalAlign="Center">
             </telerik:GridClientSelectColumn>
             <telerik:GridTemplateColumn HeaderText="" ShowFilterIcon="false">
@@ -71,9 +71,9 @@
             </telerik:GridBoundColumn>
             <telerik:GridBoundColumn UniqueName="C_DATE" HeaderText="Thời gian" DataField="C_DATE"
                 HeaderStyle-Width="100px" HeaderStyle-HorizontalAlign="Center" AutoPostBackOnFilter="true"
-                ShowFilterIcon="false" FilterControlWidth="100%" DataType="System.DateTime" DataFormatString="{0:dd/MM/yyyy}">
+                ShowFilterIcon="false" FilterControlWidth="100%" DataType="System.DateTime" DataFormatString="{0:dd/MM/yyyy HH:mm}">
             </telerik:GridBoundColumn>
-            <telerik:GridBoundColumn UniqueName="FK_TRANGTHAINAME" HeaderText="Trạng thái" DataField="FK_TRANGTHAINAME"
+            <telerik:GridBoundColumn UniqueName="TRANGTHAINAME" HeaderText="Trạng thái" DataField="TRANGTHAINAME"
                 HeaderStyle-Width="110px" HeaderStyle-HorizontalAlign="Center" AutoPostBackOnFilter="true"
                 CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
             </telerik:GridBoundColumn>
@@ -152,7 +152,7 @@
     <ClientSettings AllowKeyboardNavigation="true" KeyboardNavigationSettings-AllowSubmitOnEnter="true"
         ClientEvents-OnKeyPress="KeyPressed">
         <Selecting AllowRowSelect="True" EnableDragToSelectRows="True" />
-        <ClientEvents OnPopUpShowing="PopUpShowingSmall" />
+        <ClientEvents OnPopUpShowing="PopUpShowing" />
         <ClientEvents OnRowDblClick="RowDblClick" />
     </ClientSettings>
     <SortingSettings SortedAscToolTip="Sắp xếp tăng dần" SortedDescToolTip="Sắp xếp giảm dần"
@@ -161,7 +161,7 @@
 </telerik:RadGrid>
 <asp:SqlDataSource ID="NHANGUITRACKINGDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
     DeleteCommand="DELETE FROM [TRACKING] WHERE [PK_ID] = @PK_ID" InsertCommand="INSERT INTO [TRACKING] ([C_BILL], [C_DATE], [FK_TRANGTHAI], [C_DESC]) VALUES (@C_BILL, @C_DATE, @FK_TRANGTHAI, @C_DESC)"
-    SelectCommand="SELECT [PK_ID], [C_BILL], [C_DATE], [FK_TRANGTHAI], [C_DESC] FROM [TRACKING] WHERE [C_BILL] = @C_BILL ORDER BY [C_DATE] ASC"
+    SelectCommand="SELECT [TRACKING].[PK_ID], [TRACKING].[C_BILL], [TRACKING].[C_DATE], [TRACKING].[FK_TRANGTHAI], [TRACKING].[C_DESC], [DMTRANGTHAI].[C_NAME] as TRANGTHAINAME FROM [TRACKING] LEFT OUTER JOIN [DMTRANGTHAI] ON [TRACKING].[FK_TRANGTHAI] = [DMTRANGTHAI].[C_CODE] WHERE [C_BILL] = @C_BILL ORDER BY [C_DATE] ASC"
     UpdateCommand="UPDATE [TRACKING] SET [C_BILL] = @C_BILL, [C_DATE] = @C_DATE, [FK_TRANGTHAI] = @FK_TRANGTHAI, [C_DESC] = @C_DESC WHERE [PK_ID] = @PK_ID">
     <SelectParameters>
         <asp:QueryStringParameter Name="C_BILL" Type="String" QueryStringField="IDBILL" DefaultValue="0" />

@@ -56,7 +56,8 @@
             var TypeName = sender.get_name();
         }
         function OnClientLinkClicked(IDvalue) {
-            radopen("Popup.aspx?ctl=NHANGUITRACKING&IDBILL=" + IDvalue, "Tracking");
+            var oWindow = radopen("Popup.aspx?ctl=NHANGUITRACKING&IDBILL=" + IDvalue, "Tracking");
+            oWindow.maximize();
             return false;
         }
     </script>
@@ -153,7 +154,7 @@
                 <HeaderStyle HorizontalAlign="Center" Width="30px" />
                 <ItemStyle HorizontalAlign="Center" Width="30px" />
             </telerik:GridTemplateColumn>
-            <telerik:GridTemplateColumn UniqueName="Tracking" HeaderText="Tracking" DataField="C_BILL"
+            <telerik:GridTemplateColumn UniqueName="Tracking" HeaderText="Tracking" HeaderStyle-Width="70px" HeaderStyle-HorizontalAlign="Center" DataField="C_BILL"
                 AllowFiltering="False">
                 <ItemTemplate>
                     <asp:LinkButton ID="libTracking" OnClientClick='<%# String.Format("javascript:return OnClientLinkClicked({0})", Eval("C_BILL"))%>'
