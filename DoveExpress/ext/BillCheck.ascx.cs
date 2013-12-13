@@ -46,14 +46,7 @@ public partial class ext_BillCheck : System.Web.UI.UserControl
                 {
                     lblQuanhuyenValue.Text = ITCLIB.Admin.cFunction.LoadTinhThanhName(oDataTable.Rows[0]["FK_QUANHUYEN"].ToString()) + " / " + ITCLIB.Admin.cFunction.LoadQuanHuyenName(oDataTable.Rows[0]["FK_QUANHUYEN"].ToString());
                 }
-                if (oDataTable.Rows[0]["FK_TRANGTHAI"].ToString() != "")
-                {
-                    lblC_STATUS.Text = oDataTable.Rows[0]["FK_TRANGTHAI"].ToString();
-                }
-                else
-                {
-                    lblC_STATUS.Text = "Đang chờ xử lý";
-                }
+                LoadGrid();
             }
             else
             {
@@ -64,5 +57,23 @@ public partial class ext_BillCheck : System.Web.UI.UserControl
         {
             ajaxManager.Alert("Hãy nhập BILL để kiểm tra trạng thái");
         }
+    }
+    protected void LoadGrid()
+    {
+        ITCLIB.Admin.SQL SelectQuery1 = new ITCLIB.Admin.SQL();
+        DataTable oDataTable = new DataTable();
+        string SelectString = "SELECT [TRACKING].[PK_ID], [TRACKING].[C_BILL], [TRACKING].[C_DATE], [TRACKING].[FK_TRANGTHAI], [TRACKING].[C_DESC], [DMTRANGTHAI].[C_NAME] as TRANGTHAINAME FROM [TRACKING] LEFT OUTER JOIN [DMTRANGTHAI] ON [TRACKING].[FK_TRANGTHAI] = [DMTRANGTHAI].[C_CODE] WHERE [C_BILL] = '" + txtBILL.Text.Trim() + "' ORDER BY [C_DATE] ASC";
+        Response.Write(SelectString);       
+        /*oDataTable = SelectQuery.query_data(SelectString);
+        if (oDataTable.Rows[oDataTable.Rows.Count -1]["FK_TRANGTHAI"].ToString() != "")
+        {
+            lblC_STATUS.Text = oDataTable.Rows[oDataTable.Rows.Count - 1]["FK_TRANGTHAI"].ToString();
+        }
+        else
+        {
+            lblC_STATUS.Text = "Đang chờ xử lý";
+        }
+        RadGridBILLCHECK.DataSource = oDataTable;
+        RadGridBILLCHECK.Rebind();*/
     }
 }
