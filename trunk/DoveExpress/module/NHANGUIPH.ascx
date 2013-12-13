@@ -41,9 +41,9 @@
             if ($find("<%= RadGridNHANGUIPH.MasterTableView.ClientID %>").get_selectedItems().length != 0) {
                 var IDString = 'BILL';
                 for (index = 0; index < $find("<%= RadGridNHANGUIPH.MasterTableView.ClientID %>").get_selectedItems().length; ++index) {
-                   IDString += '-' + $find("<%= RadGridNHANGUIPH.MasterTableView.ClientID %>").get_selectedItems()[index].getDataKeyValue("C_BILL");
+                    IDString += '-' + $find("<%= RadGridNHANGUIPH.MasterTableView.ClientID %>").get_selectedItems()[index].getDataKeyValue("C_BILL");
                 }
-               var oWindow = radopen("Popup.aspx?ctl=NHANGUIPOPUP&IDBILL=" + IDString, "Cập nhật trạng thái BILL");
+                var oWindow = radopen("Popup.aspx?ctl=NHANGUIPOPUP&IDBILL=" + IDString, "Cập nhật trạng thái BILL");
             } else {
                 alert("Không có phiếu nhận gửi được chọn");
             }
@@ -54,7 +54,11 @@
         }
         function OnClientCloseNHANGUIPH(sender, eventArgs) {
             var TypeName = sender.get_name();
-        } 
+        }
+        function OnClientLinkClicked(IDvalue) {
+            radopen("Popup.aspx?ctl=NHANGUITRACKING&IDBILL=" + IDvalue, "Tracking");
+            return false;
+        }
     </script>
 </telerik:RadCodeBlock>
 <telerik:RadAjaxLoadingPanel Skin="Vista" ID="RadAjaxLoadingPanelNHANGUIPH" runat="server" />
@@ -148,6 +152,13 @@
                 </ItemTemplate>
                 <HeaderStyle HorizontalAlign="Center" Width="30px" />
                 <ItemStyle HorizontalAlign="Center" Width="30px" />
+            </telerik:GridTemplateColumn>
+            <telerik:GridTemplateColumn UniqueName="Tracking" HeaderText="Tracking" DataField="C_BILL"
+                AllowFiltering="False">
+                <ItemTemplate>
+                    <asp:LinkButton ID="libTracking" OnClientClick='<%# String.Format("javascript:return OnClientLinkClicked({0})", Eval("C_BILL"))%>'
+                        runat="server">Tracking</asp:LinkButton>&nbsp;&nbsp;
+                </ItemTemplate>
             </telerik:GridTemplateColumn>
             <telerik:GridBoundColumn UniqueName="C_NGAY" HeaderText="Ngày" DataField="C_NGAY"
                 HeaderStyle-Width="100px" HeaderStyle-HorizontalAlign="Center" AutoPostBackOnFilter="true"
@@ -260,7 +271,7 @@
                                 <td colspan="4">
                                     <telerik:RadTextBox ID="txtC_BOPHAN" Width="90%" Text='<%# Bind("C_BOPHAN") %>' runat="server">
                                     </telerik:RadTextBox>
-                                </td> 
+                                </td>
                             </tr>
                         </table>
                     </div>
