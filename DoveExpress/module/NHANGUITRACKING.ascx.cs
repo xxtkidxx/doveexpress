@@ -149,19 +149,13 @@ public partial class module_NHANGUITRACKING : System.Web.UI.UserControl
         {
             GridEditableItem editItem = (GridEditableItem)e.Item;
             RadListBox RadListBoxQuanHuyenRef = (RadListBox)editItem.FindControl("RadListBoxQuanHuyenRef");
-            if (getStringSelect(RadListBoxQuanHuyenRef) != "")
-            {
-                NHANGUITRACKINGDataSource.InsertParameters["C_DESC"].DefaultValue = getStringSelect(RadListBoxQuanHuyenRef);
-            }
+
         }
         else if (e.CommandName == RadGrid.UpdateCommandName)
         {
             GridEditableItem editItem = (GridEditableItem)e.Item;
             RadListBox RadListBoxQuanHuyenRef = (RadListBox)editItem.FindControl("RadListBoxQuanHuyenRef");
-            if (getStringSelect(RadListBoxQuanHuyenRef) != "")
-            {
-                NHANGUITRACKINGDataSource.UpdateParameters["C_DESC"].DefaultValue = getStringSelect(RadListBoxQuanHuyenRef);
-            }
+
         }
     }
     protected string getmaxid(string table)
@@ -195,7 +189,7 @@ public partial class module_NHANGUITRACKING : System.Web.UI.UserControl
         }
         else
         {*/
-            return true;
+        return true;
         //}
     }
 }
