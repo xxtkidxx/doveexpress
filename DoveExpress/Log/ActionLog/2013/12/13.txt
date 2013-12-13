@@ -100,3 +100,9 @@ Tài khoản : 1
 Module : Updated NHANGUIs
 Kết quả : {C_BILL:"3788882"}
 __________________________
+Thời gian: 2013-12-13 20:34:59 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
