@@ -26,7 +26,7 @@
             color: #FFFFFF;
             background-color: #98bf21;
             text-align: center;
-            padding: 20px;
+            padding: 16px;
             text-decoration: none;
             text-transform: uppercase;
         }
