@@ -1,0 +1,18 @@
+Thời gian: 2013-12-13 00:07:29 AM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-12-13 00:10:14 AM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-12-13 00:14:06 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {C_BILL:"3788882"}
+__________________________
