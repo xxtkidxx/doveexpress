@@ -201,3 +201,32 @@ Thời gian lỗi : 2013-12-13 20:48:19 PM
 Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=BAOCAONGAY. 
 Nội dung lỗi:C_TIENHANGVAT is neither a DataColumn nor a DataRelation for table DefaultView.
 __________________________
+Thời gian lỗi : 2013-12-13 20:57:24 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Parameter cannot be null or empty.
+Parameter name: fieldName
+__________________________
+Thời gian lỗi : 2013-12-13 20:57:36 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Parameter cannot be null or empty.
+Parameter name: fieldName
+__________________________
+Thời gian lỗi : 2013-12-13 20:59:16 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Parameter cannot be null or empty.
+Parameter name: fieldName
+__________________________
+Thời gian lỗi : 2013-12-13 20:59:31 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Parameter cannot be null or empty.
+Parameter name: fieldName
+__________________________
+Thời gian lỗi : 2013-12-13 21:02:38 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
