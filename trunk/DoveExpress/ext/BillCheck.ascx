@@ -189,6 +189,22 @@
                             Width="40px" ImageAlign="AbsMiddle" OnClick="imgSearch_Click" />
                     </td>
                 </tr>
+                 <tr>
+                    <th scope="row">
+                        Mã khách hàng
+                    </th>
+                    <td>
+                        <asp:Label ID="lblMaKhachHang" runat="server" Text="-"></asp:Label>
+                    </td>
+                </tr>
+                 <tr>
+                    <th scope="row">
+                        Ngày gửi
+                    </th>
+                    <td>
+                        <asp:Label ID="lblNgaygui" runat="server" Text="-"></asp:Label>
+                    </td>
+                </tr>
                 <tr>
                     <th scope="row">
                         Dịch vụ
@@ -199,42 +215,10 @@
                 </tr>
                 <tr>
                     <th scope="row">
-                        Người gửi
-                    </th>
-                    <td>
-                        <asp:Label ID="lblNguoigui" runat="server" Text="-"></asp:Label>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">
-                        Ngày gửi
-                    </th>
-                    <td>
-                        <asp:Label ID="lblNgaygui" runat="server" Text="-"></asp:Label>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">
-                        Người nhận
-                    </th>
-                    <td>
-                        <asp:Label ID="lblNguoinhan" runat="server" Text="-"></asp:Label>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">
                         Địa chỉ nhận
                     </th>
                     <td>
                         <asp:Label ID="lblDiachinhan" runat="server" Text="-"></asp:Label>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">
-                        Ngày nhận
-                    </th>
-                    <td>
-                        <asp:Label ID="lblNgaynhan" runat="server" Text="-"></asp:Label>
                     </td>
                 </tr>
                 <tr>

@@ -25,18 +25,9 @@ public partial class ext_BillCheck : System.Web.UI.UserControl
             if (oDataTable.Rows.Count != 0)
             {
                 lblDichvu.Text = (oDataTable.Rows[0]["DICHVUNAME"].ToString() == "") ? "-" : oDataTable.Rows[0]["DICHVUNAME"].ToString();
-                lblNguoigui.Text = (oDataTable.Rows[0]["C_TENKH"].ToString() == "") ? "-" : oDataTable.Rows[0]["C_TENKH"].ToString();
+                lblMaKhachHang.Text = (oDataTable.Rows[0]["FK_KHACHHANG"].ToString() == "") ? "-" : oDataTable.Rows[0]["FK_KHACHHANG"].ToString();
                 lblNgaygui.Text = String.Format("{0:dd/MM/yyyy}", DateTime.Parse(oDataTable.Rows[0]["C_NGAY"].ToString()));
-                lblNguoinhan.Text = (oDataTable.Rows[0]["C_NGUOINHAN"].ToString() == "") ? "-" : oDataTable.Rows[0]["C_NGUOINHAN"].ToString();
                 lblDiachinhan.Text = (oDataTable.Rows[0]["C_DIACHINHAN"].ToString() == "") ? "-" : oDataTable.Rows[0]["C_DIACHINHAN"].ToString();
-                if (oDataTable.Rows[0]["C_NGAYGIOPHAT"] != DBNull.Value)
-                {
-                    lblNgaynhan.Text = String.Format("{0:dd/MM/yyyy hh:mm:ss tt}", DateTime.Parse(oDataTable.Rows[0]["C_NGAYGIOPHAT"].ToString()));
-                }
-                else
-                {
-                    lblNgaynhan.Text = "-";
-                }
                 if (oDataTable.Rows[0]["C_TYPE"].ToString() == "2")
                 {
                     lblQuanhuyen.Text = "Quốc gia";

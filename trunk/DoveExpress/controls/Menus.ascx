@@ -111,6 +111,8 @@
             </telerik:RadMenuItem>
             <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=BAOCAOCONGNO" Text="Quản lý công nợ" Value="BAOCAOCONGNO">
             </telerik:RadMenuItem>
+            <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=BAOCAODOITAC" Text="Doanh thu theo đối tác" Value="BAOCAODOITAC">
+            </telerik:RadMenuItem> 
         </Items>                     
     </telerik:RadMenuItem>
     <telerik:RadMenuItem runat="server" Font-Size="Small" Text="Tài chỉnh" Value="TAICHINH">    

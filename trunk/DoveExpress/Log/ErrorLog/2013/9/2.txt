@@ -1,17 +1,17 @@
 Thời gian lỗi : 2013-09-02 13:22:06 PM
 Địa chỉ IP : ::1
 Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=BAOCAOCONGNO. 
-Nội dung lỗi:Field definition is not valid. FieldAlias contains invalid characters: Tiền hàng:
+Nội dung lỗi:Field definition is not valid. FieldAlias contains invalid characters: Tổng cước:
 __________________________
 Thời gian lỗi : 2013-09-02 13:22:45 PM
 Địa chỉ IP : ::1
 Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=BAOCAOCONGNO. 
-Nội dung lỗi:Field definition is not valid. FieldAlias contains invalid characters: Tiền hàng
+Nội dung lỗi:Field definition is not valid. FieldAlias contains invalid characters: Tổng cước
 __________________________
 Thời gian lỗi : 2013-09-02 13:23:04 PM
 Địa chỉ IP : ::1
 Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=BAOCAOCONGNO. 
-Nội dung lỗi:Field definition is not valid. FieldAlias contains invalid characters: Tiền hàng
+Nội dung lỗi:Field definition is not valid. FieldAlias contains invalid characters: Tổng cước
 __________________________
 Thời gian lỗi : 2013-09-02 13:23:38 PM
 Địa chỉ IP : ::1
