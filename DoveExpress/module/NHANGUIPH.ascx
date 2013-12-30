@@ -203,7 +203,7 @@
                 CurrentFilterFunction="Contains" ShowFilterIcon="true" FilterControlWidth="80%"
                 DataType="System.Decimal" DataFormatString="{0:### ### ###}">
             </telerik:GridBoundColumn>
-            <telerik:GridBoundColumn UniqueName="C_TIENHANGVAT" HeaderText="Tiền hàng (VAT)"
+            <telerik:GridBoundColumn UniqueName="C_TIENHANGVAT" HeaderText="Tổng cước (VAT)"
                 DataField="C_TIENHANGVAT" HeaderStyle-Width="130px" HeaderStyle-HorizontalAlign="Center"
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="true"
                 FilterControlWidth="80%" DataType="System.Decimal" DataFormatString="{0:### ### ###}">

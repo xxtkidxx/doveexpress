@@ -1,6 +1,6 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="BAOCAONGAY.ascx.cs" Inherits="module_BAOCAONGAY" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="BAOCAOTONGHOP.ascx.cs" Inherits="module_BAOCAOTONGHOP" %>
 <%@ Register TagPrefix="uc1" Namespace="ITCLIB.Admin" %>
-<telerik:RadCodeBlock ID="RadCodeBlockBAOCAONGAY" runat="server">
+<telerik:RadCodeBlock ID="RadCodeBlockBAOCAOTONGHOP" runat="server">
 <script type="text/javascript">
     var registeredElementsNG = [];
     function GetRegisteredServerElementNG(serverID) {
@@ -16,7 +16,7 @@
         if (!tagName)
             tagName = "*";
 
-        var grid = $get("<%=RadGridBAOCAONGAY.ClientID %>");
+        var grid = $get("<%=RadGridBAOCAOTONGHOP.ClientID %>");
         var elements = grid.getElementsByTagName(tagName);
         for (var i = 0; i < elements.length; i++) {
             var element = elements[i];
@@ -26,7 +26,7 @@
     }
 </script>
 </telerik:RadCodeBlock>
-<telerik:RadAjaxLoadingPanel Skin="Vista" ID="RadAjaxLoadingPanelBAOCAONGAY" runat="server" />
+<telerik:RadAjaxLoadingPanel Skin="Vista" ID="RadAjaxLoadingPanelBAOCAOTONGHOP" runat="server" />
 <div style ="width:90%; margin: 10px 10px 10px 10px; ">
 Từ ngày:&nbsp; 
 <telerik:RadDatePicker ID="radTuNgay" Width ="150px" runat="server" AutoPostBack ="true" >
@@ -39,21 +39,21 @@ Từ ngày:&nbsp;
 </DateInput>
 </telerik:RadDatePicker>
 </div>
-<telerik:RadGrid ID="RadGridBAOCAONGAY" runat="server" Skin="Vista" 
+<telerik:RadGrid ID="RadGridBAOCAOTONGHOP" runat="server" Skin="Vista" 
     AllowPaging="True" PageSize="50" AllowSorting="True" 
     AllowFilteringByColumn="True" GridLines="None" ShowStatusBar="True"
-    AutoGenerateColumns="False" onitemcommand="RadGridBAOCAONGAY_ItemCommand" 
+    AutoGenerateColumns="False" onitemcommand="RadGridBAOCAOTONGHOP_ItemCommand" 
     AllowMultiRowEdit="True" AllowAutomaticDeletes="True" 
     AllowAutomaticInserts="True" AllowAutomaticUpdates="True" 
-    DataSourceID="BAOCAONGAYDataSource" ShowFooter="True"
-    ondatabound="RadGridBAOCAONGAY_DataBound" CellSpacing="0" 
-    onexcelmlexportrowcreated="RadGridBAOCAONGAY_ExcelMLExportRowCreated" 
-    onitemdatabound="RadGridBAOCAONGAY_ItemDataBound">
+    DataSourceID="BAOCAOTONGHOPDataSource" ShowFooter="True"
+    ondatabound="RadGridBAOCAOTONGHOP_DataBound" CellSpacing="0" 
+    onexcelmlexportrowcreated="RadGridBAOCAOTONGHOP_ExcelMLExportRowCreated" 
+    onitemdatabound="RadGridBAOCAOTONGHOP_ItemDataBound">
     <PagerStyle FirstPageToolTip="Trang đầu" LastPageToolTip="Trang cuối" NextPagesToolTip="Các trang tiếp" NextPageToolTip="Trang tiếp" 
     PageSizeLabelText="Số bản ghi hiển thị:" PrevPagesToolTip="Các trang sau" PrevPageToolTip="Trang sau" PagerTextFormat="Change page: {4} &nbsp;Trang <strong>{0}</strong>/<strong>{1}</strong>, Bản ghi <strong>{2}</strong> đến <strong>{3}</strong> của tất cả <strong>{5}</strong> bản ghi" />    
     <ExportSettings HideStructureColumns="true" ExportOnlyData="true" IgnorePaging="true" OpenInNewWindow="true" Excel-Format="Biff"></ExportSettings>   
      <GroupingSettings CaseSensitive ="false"  />
-    <MasterTableView Name="MasterTableViewBAOCAONGAY" CommandItemDisplay="Top" DataSourceID="BAOCAONGAYDataSource" DataKeyNames="PK_ID" ClientDataKeyNames="PK_ID" EditMode="PopUp" NoMasterRecordsText="Không có dữ liệu">
+    <MasterTableView Name="MasterTableViewBAOCAOTONGHOP" CommandItemDisplay="Top" DataSourceID="BAOCAOTONGHOPDataSource" DataKeyNames="PK_ID" ClientDataKeyNames="PK_ID" EditMode="PopUp" NoMasterRecordsText="Không có dữ liệu">
         <CommandItemTemplate>
                     <div style="padding: 5px 5px;float:left;width:auto">
                        <b>Báo cáo doanh số theo ngày</b>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -86,10 +86,19 @@ Từ ngày:&nbsp;
                 <telerik:GridBoundColumn UniqueName="C_NGUOINHAN" HeaderText="Người nhận" DataField="C_NGUOINHAN" HeaderStyle-Width="130px" HeaderStyle-HorizontalAlign="Center"
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
                 </telerik:GridBoundColumn>
+                <telerik:GridBoundColumn UniqueName="C_TELNHAN" HeaderText="Điện thoại người nhận" DataField="C_TELNHAN" HeaderStyle-Width="130px" HeaderStyle-HorizontalAlign="Center"
+                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
+                </telerik:GridBoundColumn>
                 <telerik:GridBoundColumn UniqueName="C_DIACHINHAN" HeaderText="Địa chỉ nhận" DataField="C_DIACHINHAN" HeaderStyle-Width="130px" HeaderStyle-HorizontalAlign="Center"
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
                 </telerik:GridBoundColumn>                
                 <telerik:GridBoundColumn UniqueName="C_NOIDUNG" HeaderText="Nội dung" DataField="C_NOIDUNG" HeaderStyle-Width="130px" HeaderStyle-HorizontalAlign="Center"
+                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
+                </telerik:GridBoundColumn>
+                <telerik:GridBoundColumn UniqueName="C_GIATRIHANGHOA" HeaderText="Giá trị hàng hoá" DataField="C_GIATRIHANGHOA" HeaderStyle-Width="130px" HeaderStyle-HorizontalAlign="Center"
+                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
+                </telerik:GridBoundColumn>
+                <telerik:GridBoundColumn UniqueName="SANPHAMNAME" HeaderText="Dịch vụ" DataField="SANPHAMNAME" HeaderStyle-Width="130px" HeaderStyle-HorizontalAlign="Center"
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
                 </telerik:GridBoundColumn>
                 <telerik:GridBoundColumn UniqueName="C_KHOILUONG" HeaderText="Khối lượng" DataField="C_KHOILUONG" HeaderStyle-Width="80px" HeaderStyle-HorizontalAlign="Center"
@@ -114,18 +123,16 @@ Từ ngày:&nbsp;
         </MasterTableView>
         <ClientSettings>
             <Selecting AllowRowSelect="True" EnableDragToSelectRows="True" />
-            <Scrolling AllowScroll="True" UseStaticHeaders="True" SaveScrollPosition="True" FrozenColumnsCount="0" ScrollHeight="450px" />
+            <Scrolling AllowScroll="True" UseStaticHeaders="True" SaveScrollPosition="True" FrozenColumnsCount="3" ScrollHeight="450px" />
         </ClientSettings>
         <SortingSettings SortedAscToolTip="Sắp xếp tăng dần" 
             SortedDescToolTip="Sắp xếp giảm dần" SortToolTip="Click để sắp xếp" />
         <StatusBarSettings LoadingText="Đang tải..." ReadyText="Sẵn sàng" />
 </telerik:RadGrid>
-<asp:SqlDataSource ID="BAOCAONGAYDataSource" runat="server" 
+<asp:SqlDataSource ID="BAOCAOTONGHOPDataSource" runat="server" 
     ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>" 
-    SelectCommand="SELECT [NHANGUI].[PK_ID], [NHANGUI].[C_NGAY], [NHANGUI].[FK_KHACHHANG], [NHANGUI].[C_BILL], 'BC' + [NHANGUI].[C_BILL] as C_BILLFIX, [NHANGUI].[C_TENKH], [NHANGUI].[C_TELGUI], [NHANGUI].[C_NGUOINHAN], [NHANGUI].[C_DIACHINHAN], [NHANGUI].[C_TELNHAN], [NHANGUI].[FK_QUANHUYEN], [NHANGUI].[C_NOIDUNG], [NHANGUI].[FK_MASANPHAM],  [NHANGUI].[C_PPXD], [NHANGUI].[C_KHOILUONG], [NHANGUI].[C_GIACUOC], [NHANGUI].[C_HINHTHUCTT], ISNULL([NHANGUI].[C_DATHU],0) as C_DATHU, (ISNULL([NHANGUI].[C_TIENHANGVAT],0) - ISNULL([NHANGUI].[C_DATHU],0)) as [C_CONLAI],([NHANGUI].[C_DONGGOI] + [NHANGUI].[C_KHAIGIA] + [NHANGUI].[C_COD] + [NHANGUI].[C_BAOPHAT] + [NHANGUI].[C_HENGIO]) as [C_PHUTROISUM], [NHANGUI].[C_TIENHANG], [NHANGUI].[C_VAT], ISNULL([NHANGUI].[C_TIENHANGVAT],0) as C_TIENHANGVAT, [NHANGUI].[FK_NHANVIENNHAN], [NHANGUI].[FK_DOITAC], [NHANGUI].[C_GIADOITAC], [NHANGUI].[FK_NHANVIENPHAT], [NHANGUI].[C_NGAYGIOPHAT], [NHANGUI].[FK_NHANVIENKHAITHAC], [NHANGUI].[C_NGUOIKYNHAN], [NHANGUI].[C_BOPHAN], [NHANGUI].[FK_VUNGLAMVIEC], USERSNHAN.C_NAME as NHANVIENNHANNAME,USERSPHAT.C_NAME as NHANVIENPHATNAME,USERSKHAITHAC.C_NAME as NHANVIENKHAITHACNAME,DMMASANPHAM.C_NAME as SANPHAMNAME,DMQUANHUYEN.C_NAME as QUANHUYENNAME,DMTINHTHANH.C_NAME as TINHTHANHNAME FROM [NHANGUI] LEFT OUTER JOIN USERS as USERSNHAN ON NHANGUI.FK_NHANVIENNHAN = USERSNHAN.PK_ID LEFT OUTER JOIN USERS as USERSPHAT ON NHANGUI.FK_NHANVIENPHAT = USERSPHAT.PK_ID LEFT OUTER JOIN USERS as USERSKHAITHAC ON NHANGUI.FK_NHANVIENKHAITHAC = USERSKHAITHAC.PK_ID LEFT OUTER JOIN DMMASANPHAM ON NHANGUI.FK_MASANPHAM=DMMASANPHAM.PK_ID LEFT OUTER JOIN DMQUANHUYEN ON NHANGUI.FK_QUANHUYEN = DMQUANHUYEN.C_CODE LEFT OUTER JOIN DMTINHTHANH ON DMQUANHUYEN.FK_TINHTHANH = DMTINHTHANH.PK_ID WHERE ([NHANGUI].[C_NGAY] >= @TUNGAY) AND ([NHANGUI].[C_NGAY] <= @DENNGAY) AND [NHANGUI].[FK_VUNGLAMVIEC] = @FK_VUNGLAMVIEC">
+    SelectCommand="SELECT [NHANGUI].[PK_ID], [NHANGUI].[C_NGAY], [NHANGUI].[FK_KHACHHANG], [NHANGUI].[C_BILL], 'BC' + [NHANGUI].[C_BILL] as C_BILLFIX, [NHANGUI].[C_TENKH], [NHANGUI].[C_TELGUI], [NHANGUI].[C_NGUOINHAN], [NHANGUI].[C_DIACHINHAN], [NHANGUI].[C_TELNHAN], [NHANGUI].[FK_QUANHUYEN], [NHANGUI].[C_NOIDUNG], [NHANGUI].[FK_MASANPHAM],  [NHANGUI].[C_PPXD], [NHANGUI].[C_KHOILUONG], [NHANGUI].[C_GIACUOC], [NHANGUI].[C_HINHTHUCTT], ISNULL([NHANGUI].[C_DATHU],0) as C_DATHU, (ISNULL([NHANGUI].[C_TIENHANGVAT],0) - ISNULL([NHANGUI].[C_DATHU],0)) as [C_CONLAI],([NHANGUI].[C_DONGGOI] + [NHANGUI].[C_KHAIGIA] + [NHANGUI].[C_COD] + [NHANGUI].[C_BAOPHAT] + [NHANGUI].[C_HENGIO]) as [C_PHUTROISUM], [NHANGUI].[C_TIENHANG], [NHANGUI].[C_VAT], ISNULL([NHANGUI].[C_TIENHANGVAT],0) as C_TIENHANGVAT, [NHANGUI].[FK_NHANVIENNHAN], [NHANGUI].[FK_DOITAC], [NHANGUI].[C_GIADOITAC], [NHANGUI].[FK_NHANVIENPHAT], [NHANGUI].[C_NGAYGIOPHAT], [NHANGUI].[FK_NHANVIENKHAITHAC], [NHANGUI].[C_NGUOIKYNHAN], [NHANGUI].[C_BOPHAN], [NHANGUI].[FK_VUNGLAMVIEC], USERSNHAN.C_NAME as NHANVIENNHANNAME,USERSPHAT.C_NAME as NHANVIENPHATNAME,USERSKHAITHAC.C_NAME as NHANVIENKHAITHACNAME,DMMASANPHAM.C_NAME as SANPHAMNAME,DMQUANHUYEN.C_NAME as QUANHUYENNAME,DMTINHTHANH.C_NAME as TINHTHANHNAME FROM [NHANGUI] LEFT OUTER JOIN USERS as USERSNHAN ON NHANGUI.FK_NHANVIENNHAN = USERSNHAN.PK_ID LEFT OUTER JOIN USERS as USERSPHAT ON NHANGUI.FK_NHANVIENPHAT = USERSPHAT.PK_ID LEFT OUTER JOIN USERS as USERSKHAITHAC ON NHANGUI.FK_NHANVIENKHAITHAC = USERSKHAITHAC.PK_ID LEFT OUTER JOIN DMMASANPHAM ON NHANGUI.FK_MASANPHAM=DMMASANPHAM.PK_ID LEFT OUTER JOIN DMQUANHUYEN ON NHANGUI.FK_QUANHUYEN = DMQUANHUYEN.C_CODE LEFT OUTER JOIN DMTINHTHANH ON DMQUANHUYEN.FK_TINHTHANH = DMTINHTHANH.PK_ID WHERE [NHANGUI].[FK_VUNGLAMVIEC] = @FK_VUNGLAMVIEC">
     <SelectParameters>
-         <asp:ControlParameter ControlID="radTuNgay" DefaultValue="0" Name="TUNGAY" PropertyName="SelectedDate" />
-         <asp:ControlParameter ControlID="radDenNgay" DefaultValue="0" Name="DENNGAY" PropertyName="SelectedDate" />
          <asp:SessionParameter Name="FK_VUNGLAMVIEC" Type="String" SessionField="VUNGLAMVIEC" />
     </SelectParameters>        
 </asp:SqlDataSource>

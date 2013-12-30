@@ -131,7 +131,7 @@ onitemsrequested="cmbKhachHang_ItemsRequested" onclientselectedindexchanged="cmb
           <telerik:GridGroupByExpression>
             <SelectFields>
               <telerik:GridGroupByField FieldAlias="C_KHOILUONG" Aggregate="Sum" FieldName="C_KHOILUONG" FormatString=" {0} g" HeaderText="Khối lượng" />             
-              <telerik:GridGroupByField FieldAlias="C_TIENHANGVAT" Aggregate="Sum" FieldName="C_TIENHANGVAT" FormatString="{0:### ### ### VNĐ}" HeaderText="Tiền hàng (VAT)" />
+              <telerik:GridGroupByField FieldAlias="C_TIENHANGVAT" Aggregate="Sum" FieldName="C_TIENHANGVAT" FormatString="{0:### ### ### VNĐ}" HeaderText="Tổng cước (VAT)" />
               <telerik:GridGroupByField FieldAlias="C_DATHU" Aggregate="Sum" FieldName="C_DATHU" FormatString="{0:### ### ### VNĐ}" HeaderText="Đã thu" />
               <telerik:GridGroupByField FieldAlias="C_CONLAI" Aggregate="Sum" FieldName="C_CONLAI" FormatString="{0:### ### ### VNĐ}" HeaderText="Còn lại" />
             </SelectFields>
@@ -171,7 +171,7 @@ onitemsrequested="cmbKhachHang_ItemsRequested" onclientselectedindexchanged="cmb
                 <telerik:GridBoundColumn UniqueName="C_GIACUOC" HeaderText="Cước chính" DataField="C_GIACUOC" HeaderStyle-Width="100px" HeaderStyle-HorizontalAlign="Center"
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" FilterControlWidth="75%" DataType="System.Int64" DataFormatString="{0:### ### ###}">
                 </telerik:GridBoundColumn>
-                <telerik:GridBoundColumn UniqueName="C_TIENHANGVAT" HeaderText="Tiền hàng (VAT)" DataField="C_TIENHANGVAT" HeaderStyle-Width="130px" HeaderStyle-HorizontalAlign="Center"
+                <telerik:GridBoundColumn UniqueName="C_TIENHANGVAT" HeaderText="Tổng cước (VAT)" DataField="C_TIENHANGVAT" HeaderStyle-Width="130px" HeaderStyle-HorizontalAlign="Center"
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" FilterControlWidth="75%" Aggregate="Sum" FooterText="Tổng : " DataType="System.Decimal" DataFormatString="{0:### ### ###}">
                 </telerik:GridBoundColumn>
                  <telerik:GridBoundColumn UniqueName="C_DATHU" HeaderText="Đã thu" DataField="C_DATHU" HeaderStyle-Width="130px" HeaderStyle-HorizontalAlign="Center"

@@ -257,6 +257,14 @@ public partial class Main : System.Web.UI.MasterPage
                         RadAjaxManager.AjaxSettings.Add(_AjaxSetting);
                         control = LoadControl("module/BAOCAOCONGNO.ascx");
                         break;
+                     case "baocaodoitac":
+                        _AjaxSetting.AjaxControlID = "RadGridBAOCAODOITAC";
+                        _AjaxUpdatedControl.ControlID = "RadGridBAOCAODOITAC";
+                        _AjaxUpdatedControl.LoadingPanelID = "RadAjaxLoadingPanelBAOCAODOITAC";
+                        _AjaxSetting.UpdatedControls.Add(_AjaxUpdatedControl);
+                        RadAjaxManager.AjaxSettings.Add(_AjaxSetting);
+                        control = LoadControl("module/BAOCAODOITAC.ascx");
+                        break;
                      case "soquytienmat":
                         _AjaxSetting.AjaxControlID = "RadAjaxPanelSOQUYTIENMAT";
                         _AjaxUpdatedControl.ControlID = "RadAjaxPanelSOQUYTIENMAT";
