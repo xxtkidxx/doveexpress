@@ -433,7 +433,7 @@
      function OnKeyPresstxtBillNhanh(sender, eventArgs) {
          var c = eventArgs.get_keyCode();    
          if (c == 13) {
-             alert("Đã nhập!");
+             //alert("Đã nhập!");
          }
          return false;
      }

@@ -1,0 +1,30 @@
+Thời gian: 2013-12-30 21:14:54 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-12-30 21:27:33 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted NHANGUIs
+Kết quả : {PK_ID:"2863"}
+__________________________
+Thời gian: 2013-12-30 21:49:17 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-12-30 21:58:24 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {C_BILL:"3788882"}
+__________________________
+Thời gian: 2013-12-30 21:58:43 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {C_BILL:"3788882"}
+__________________________
