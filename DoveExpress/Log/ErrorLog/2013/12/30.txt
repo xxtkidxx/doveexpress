@@ -1,0 +1,51 @@
+Thời gian lỗi : 2013-12-30 21:21:38 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=BAOCAODOITAC. 
+Nội dung lỗi:The DataSourceID of 'cmbDoiTac' must be the ID of a control of type IDataSource.  A control with ID 'DoiTacDataSourceFix' could not be found.
+__________________________
+Thời gian lỗi : 2013-12-30 21:21:49 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=BAOCAODOITAC. 
+Nội dung lỗi:The variable name '@DENNGAY' has already been declared. Variable names must be unique within a query batch or stored procedure.
+Must declare the scalar variable "@FK_VUNGLAMVIEC".
+__________________________
+Thời gian lỗi : 2013-12-30 21:56:49 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/ext/PriceCheck.aspx. 
+Nội dung lỗi:The file '/DoveExpress/ext/PriceCheck.aspx' does not exist.
+__________________________
+Thời gian lỗi : 2013-12-30 21:57:00 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/ext/Check.aspx?ctl=billcheck. 
+Nội dung lỗi:Column 'C_MAKH' does not belong to table .
+__________________________
+Thời gian lỗi : 2013-12-30 21:57:02 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/ext/Check.aspx?ctl=billcheck. 
+Nội dung lỗi:Column 'C_MAKH' does not belong to table .
+__________________________
+Thời gian lỗi : 2013-12-30 21:57:03 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/ext/Check.aspx?ctl=billcheck. 
+Nội dung lỗi:Column 'C_MAKH' does not belong to table .
+__________________________
+Thời gian lỗi : 2013-12-30 21:57:03 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/ext/Check.aspx?ctl=billcheck. 
+Nội dung lỗi:Column 'C_MAKH' does not belong to table .
+__________________________
+Thời gian lỗi : 2013-12-30 21:57:03 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/ext/Check.aspx?ctl=billcheck. 
+Nội dung lỗi:Column 'C_MAKH' does not belong to table .
+__________________________
+Thời gian lỗi : 2013-12-30 21:57:04 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/ext/Check.aspx?ctl=billcheck. 
+Nội dung lỗi:Column 'C_MAKH' does not belong to table .
+__________________________
+Thời gian lỗi : 2013-12-30 21:57:24 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/ext/Check.aspx?ctl=billcheck. 
+Nội dung lỗi:Column 'C_MAKH' does not belong to table .
+__________________________
