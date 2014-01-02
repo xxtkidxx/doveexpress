@@ -476,7 +476,8 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
         if (e.Item is GridEditableItem && e.Item.IsInEditMode)
         {
             GridEditableItem editItem = (GridEditableItem)e.Item;
-            RadDatePicker radNgaynhangui = (RadDatePicker)editItem.FindControl("radNgaynhangui");
+            RadDateTimePicker radNgaynhangui = (RadDateTimePicker)editItem.FindControl("radNgaynhangui");
+            RadDateTimePicker radC_NGAYGIONHAN = (RadDateTimePicker)editItem.FindControl("radC_NGAYGIONHAN");
             RadTextBox txtC_TENKH = (RadTextBox)editItem.FindControl("txtC_TENKH");
             RadTextBox txtC_TELGUI = (RadTextBox)editItem.FindControl("txtC_TELGUI");            
             HiddenField txtID = (HiddenField)editItem.FindControl("txtID");
@@ -535,6 +536,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
             {
                 // insert item
                 radNgaynhangui.SelectedDate = System.DateTime.Now;
+                radC_NGAYGIONHAN.SelectedDate = System.DateTime.Now.Date;
                 txtCODE.Text = GetMaxBill();
                 ClearSession();
             }
