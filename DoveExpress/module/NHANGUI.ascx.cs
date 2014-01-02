@@ -646,14 +646,18 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
                     RadGridNHANGUI.Rebind();
                 }
             }
-        }      
+        }
         else if (e.CommandName == RadGrid.PerformInsertCommandName)
         {
             GridEditableItem editItem = (GridEditableItem)e.Item;
+            CheckBox chkFK_TRANGTHAI = (CheckBox)editItem.FindControl("chkFK_TRANGTHAI");
+            NHANGUIDataSource.InsertParameters["FK_TRANGTHAI"].DefaultValue = chkFK_TRANGTHAI.Checked.ToString();
         }
         else if (e.CommandName == RadGrid.UpdateCommandName)
         {
             GridEditableItem editItem = (GridEditableItem)e.Item;
+            CheckBox chkFK_TRANGTHAI = (CheckBox)editItem.FindControl("chkFK_TRANGTHAI");
+            NHANGUIDataSource.UpdateParameters["FK_TRANGTHAI"].DefaultValue = chkFK_TRANGTHAI.Checked.ToString();
         }
         else if (e.CommandName == RadGrid.CancelAllCommandName)
         {

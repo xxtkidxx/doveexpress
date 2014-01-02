@@ -148,6 +148,8 @@ public partial class module_NHANGUIPH : System.Web.UI.UserControl
         else if (e.CommandName == RadGrid.UpdateCommandName)
         {
             GridEditableItem editItem = (GridEditableItem)e.Item;
+            CheckBox chkFK_TRANGTHAI = (CheckBox)editItem.FindControl("chkFK_TRANGTHAI");
+            NHANGUIPHDataSource.UpdateParameters["FK_TRANGTHAI"].DefaultValue = chkFK_TRANGTHAI.Checked.ToString();
         }
         else if (e.CommandName == RadGrid.CancelAllCommandName)
         {
@@ -248,5 +250,23 @@ public partial class module_NHANGUIPH : System.Web.UI.UserControl
         {
             cmbDoiTac.SelectedIndex = 0;
         }
+    }
+
+    public string GetStatusBill(string C_BILL)
+    {
+        string result = "";
+        string SelectSQL = "SELECT TOP 1 DMTRANGTHAI.C_NAME FROM TRACKING LEFT OUTER JOIN DMTRANGTHAI ON TRACKING.FK_TRANGTHAI = DMTRANGTHAI.C_CODE WHERE TRACKING.C_BILL = N'" + C_BILL + "' ORDER BY TRACKING.C_DATE DESC";
+        DataTable oDataTable = new DataTable();
+        ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
+        oDataTable = SelectQuery.query_data(SelectSQL);
+        if (oDataTable.Rows.Count != 0)
+        {
+            result = oDataTable.Rows[0]["C_NAME"].ToString();
+        }
+        else
+        {
+            result ="";
+        }
+        return result;
     }
 }
