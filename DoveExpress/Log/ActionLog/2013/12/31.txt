@@ -1,0 +1,348 @@
+Thời gian: 2013-12-31 21:32:46 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-12-31 21:33:09 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"123456"}
+__________________________
+Thời gian: 2013-12-31 21:37:00 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"123456"}
+__________________________
+Thời gian: 2013-12-31 21:55:19 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-12-31 22:17:43 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-12-31 22:23:16 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"12"}
+__________________________
+Thời gian: 2013-12-31 22:24:55 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"12"}
+__________________________
+Thời gian: 2013-12-31 22:26:29 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"1234"}
+__________________________
+Thời gian: 2013-12-31 22:37:33 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-12-31 22:40:20 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"123456"}
+__________________________
+Thời gian: 2013-12-31 22:52:14 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-12-31 22:52:28 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"123456"}
+__________________________
+Thời gian: 2013-12-31 22:54:10 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"123456"}
+__________________________
+Thời gian: 2013-12-31 22:56:59 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"1234"}
+__________________________
+Thời gian: 2013-12-31 22:57:33 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"12345"}
+__________________________
+Thời gian: 2013-12-31 22:57:56 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"232323"}
+__________________________
+Thời gian: 2013-12-31 22:57:56 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"123455"}
+__________________________
+Thời gian: 2013-12-31 22:59:49 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"1234521212"}
+__________________________
+Thời gian: 2013-12-31 22:59:49 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"12345"}
+__________________________
+Thời gian: 2013-12-31 23:00:03 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"12"}
+__________________________
+Thời gian: 2013-12-31 23:00:03 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"12212"}
+__________________________
+Thời gian: 2013-12-31 23:04:22 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-12-31 23:06:00 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"32323"}
+__________________________
+Thời gian: 2013-12-31 23:06:00 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"2323"}
+__________________________
+Thời gian: 2013-12-31 23:06:00 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"123456"}
+__________________________
+Thời gian: 2013-12-31 23:06:50 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"12212212"}
+__________________________
+Thời gian: 2013-12-31 23:06:50 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"12212"}
+__________________________
+Thời gian: 2013-12-31 23:07:54 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"3788883"}
+__________________________
+Thời gian: 2013-12-31 23:07:54 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"123456"}
+__________________________
+Thời gian: 2013-12-31 23:07:54 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:""}
+__________________________
+Thời gian: 2013-12-31 23:07:54 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"323323"}
+__________________________
+Thời gian: 2013-12-31 23:07:54 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"32323"}
+__________________________
+Thời gian: 2013-12-31 23:07:59 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:""}
+__________________________
+Thời gian: 2013-12-31 23:08:10 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:""}
+__________________________
+Thời gian: 2013-12-31 23:09:58 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:""}
+__________________________
+Thời gian: 2013-12-31 23:10:10 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:""}
+__________________________
+Thời gian: 2013-12-31 23:10:16 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {C_BILL:""}
+__________________________
+Thời gian: 2013-12-31 23:11:09 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"123456"}
+__________________________
+Thời gian: 2013-12-31 23:11:09 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"3232332"}
+__________________________
+Thời gian: 2013-12-31 23:11:09 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"3131"}
+__________________________
+Thời gian: 2013-12-31 23:11:09 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"212"}
+__________________________
+Thời gian: 2013-12-31 23:11:09 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:""}
+__________________________
+Thời gian: 2013-12-31 23:16:48 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"123456"}
+__________________________
+Thời gian: 2013-12-31 23:17:08 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"1234556"}
+__________________________
+Thời gian: 2013-12-31 23:19:17 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"123456"}
+__________________________
+Thời gian: 2013-12-31 23:20:26 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2013-12-31 23:20:53 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"123"}
+__________________________
+Thời gian: 2013-12-31 23:20:53 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"123456"}
+__________________________
+Thời gian: 2013-12-31 23:20:53 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"12"}
+__________________________
+Thời gian: 2013-12-31 23:21:34 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"123"}
+__________________________
+Thời gian: 2013-12-31 23:21:34 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"12"}
+__________________________
+Thời gian: 2013-12-31 23:21:34 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"1"}
+__________________________
+Thời gian: 2013-12-31 23:21:34 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"15"}
+__________________________
+Thời gian: 2013-12-31 23:21:57 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"12"}
+__________________________
+Thời gian: 2013-12-31 23:21:57 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"1"}
+__________________________
+Thời gian: 2013-12-31 23:21:57 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"1415"}
+__________________________
+Thời gian: 2013-12-31 23:25:22 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIQTs
+Kết quả : {C_BILL:"12"}
+__________________________
+Thời gian: 2013-12-31 23:25:22 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIQTs
+Kết quả : {C_BILL:"123"}
+__________________________
