@@ -812,11 +812,15 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
         }
         else if (e.CommandName == RadGrid.PerformInsertCommandName)
         {
-            GridEditableItem editItem = (GridEditableItem)e.Item;            
+            GridEditableItem editItem = (GridEditableItem)e.Item;
+            CheckBox chkFK_TRANGTHAI = (CheckBox)editItem.FindControl("chkFK_TRANGTHAI");
+            NHANGUIQTDataSource.InsertParameters["FK_TRANGTHAI"].DefaultValue = chkFK_TRANGTHAI.Checked.ToString();
         }
         else if (e.CommandName == RadGrid.UpdateCommandName)
         {
-            GridEditableItem editItem = (GridEditableItem)e.Item;          
+            GridEditableItem editItem = (GridEditableItem)e.Item;
+            CheckBox chkFK_TRANGTHAI = (CheckBox)editItem.FindControl("chkFK_TRANGTHAI");
+            NHANGUIQTDataSource.UpdateParameters["FK_TRANGTHAI"].DefaultValue = chkFK_TRANGTHAI.Checked.ToString();
         }
         else if (e.CommandName == RadGrid.CancelAllCommandName)
         {
