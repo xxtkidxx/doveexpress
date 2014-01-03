@@ -53,12 +53,12 @@ public partial class ext_BillCheck : System.Web.UI.UserControl
     {
         ITCLIB.Admin.SQL SelectQuery1 = new ITCLIB.Admin.SQL();
         DataTable oDataTable = new DataTable();
-        string SelectString = "SELECT [TRACKING].[C_DATE], [TRACKING].[C_DESC], [DMTRANGTHAI].[C_NAME] as TRANGTHAINAME FROM [TRACKING] LEFT OUTER JOIN [DMTRANGTHAI] ON [TRACKING].[FK_TRANGTHAI] = [DMTRANGTHAI].[C_CODE] WHERE [C_BILL] = '" + txtBILL.Text.Trim() + "' UNION ALL SELECT NHANGUI.C_NGAYGIOPHAT as C_DATE,(N'Người nhận:' + NHANGUI.C_NGUOIKYNHAN + N';Bộ phận:' + NHANGUI.C_BOPHAN) as C_DESC, N'Khách đã nhận hàng' as TRANGTHAINAME FROM NHANGUI WHERE NHANGUI.C_BILL = '" + txtBILL.Text.Trim() + "' AND NHANGUI.FK_TRANGTHAI = N'True' ORDER BY [C_DATE] ASC";
+        string SelectString = "SELECT [TRACKING].[C_DATE], [TRACKING].[C_DESC], [DMTRANGTHAI].[C_NAME] as TRANGTHAINAME FROM [TRACKING] LEFT OUTER JOIN [DMTRANGTHAI] ON [TRACKING].[FK_TRANGTHAI] = [DMTRANGTHAI].[C_CODE] WHERE [C_BILL] = '" + txtBILL.Text.Trim() + "' UNION ALL SELECT NHANGUI.C_NGAYGIOPHAT as C_DATE,(N'Người nhận:' + NHANGUI.C_NGUOIKYNHAN + N';Bộ phận:' + NHANGUI.C_BOPHAN) as C_DESC, N'Đã ký nhận' as TRANGTHAINAME FROM NHANGUI WHERE NHANGUI.C_BILL = '" + txtBILL.Text.Trim() + "' AND NHANGUI.FK_TRANGTHAI = N'True' ORDER BY [C_DATE] ASC";
         //Response.Write(SelectString);       
         oDataTable = SelectQuery1.query_data(SelectString);
         if (oDataTable.Rows.Count != 0)
         {
-            lblC_STATUS.Text = oDataTable.Rows[oDataTable.Rows.Count - 1]["TRANGTHAINAME"].ToString();           
+            lblC_STATUS.Text = oDataTable.Rows[oDataTable.Rows.Count - 1]["TRANGTHAINAME"].ToString() + " " +  oDataTable.Rows[oDataTable.Rows.Count - 1]["C_DESC"].ToString();           
         }
         else
         {
