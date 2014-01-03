@@ -27,6 +27,7 @@ public partial class controls_Menu : System.Web.UI.UserControl
         Menu.FindItemByValue("CUOCQUOCTE").Visible = ITCLIB.Security.Security.CanViewModule("BANGCUOC");
         Menu.FindItemByValue("DOITACMENU").Visible = ITCLIB.Security.Security.CanViewModule("DOITAC");
         Menu.FindItemByValue("MASANPHAM").Visible = ITCLIB.Security.Security.IsSysAdmin();
+        Menu.FindItemByValue("TRANGTHAIBILL").Visible = ITCLIB.Security.Security.IsSysAdmin();
 
         Menu.FindItemByValue("NHANGUIMENU").Visible = ITCLIB.Security.Security.CanViewModule("NHANGUI");
         Menu.FindItemByValue("BAOCAO").Visible = ITCLIB.Security.Security.CanViewModule("BAOCAO");
