@@ -30,7 +30,7 @@
             <tbody>
                 <tr>
                     <th scope="row">
-                        NHẬP SỐ PHIẾU GỬI (BILL)
+                        NHẬP SỐ PHIẾU GỬI (BILL):
                     </th>
                     <td>
                         (BC)<telerik:RadNumericTextBox ID="txtBILL" Width="50%" Text='<%# Bind("C_BILL") %>'
@@ -43,7 +43,7 @@
                 </tr>
                  <tr>
                     <th scope="row">
-                        Mã khách hàng
+                        Mã khách hàng:
                     </th>
                     <td>
                         <asp:Label ID="lblMaKhachHang" runat="server" Text="-"></asp:Label>
@@ -51,7 +51,7 @@
                 </tr>
                  <tr>
                     <th scope="row">
-                        Ngày gửi
+                        Ngày gửi:
                     </th>
                     <td>
                         <asp:Label ID="lblNgaygui" runat="server" Text="-"></asp:Label>
@@ -59,7 +59,7 @@
                 </tr>
                 <tr>
                     <th scope="row">
-                        Dịch vụ
+                        Dịch vụ:
                     </th>
                     <td>
                         <asp:Label ID="lblDichvu" runat="server" Text="-"></asp:Label>
@@ -67,7 +67,7 @@
                 </tr>
                 <tr>
                     <th scope="row">
-                        Địa chỉ đến
+                        Địa chỉ đến:
                     </th>
                     <td>
                         <asp:Label ID="lblDiachinhan" runat="server" Text="-"></asp:Label>
@@ -75,7 +75,7 @@
                 </tr>
                 <tr>
                     <th scope="row">
-                        <asp:Label ID="lblQuanhuyen" runat="server" Text="Tỉnh thành/Quận huyện"></asp:Label>
+                        <asp:Label ID="lblQuanhuyen" runat="server" Text="Tỉnh thành/Quận huyện:"></asp:Label>
                     </th>
                     <td>
                         <asp:Label ID="lblQuanhuyenValue" runat="server" Text="-"></asp:Label>

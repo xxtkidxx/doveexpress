@@ -87,7 +87,6 @@
             font-weight: 500;
             font-style: normal;
             font-size: 16px;
-            text-shadow: 1px 1px 1px #aaa;
             text-align: justify;
         }
         .footer2
@@ -96,7 +95,6 @@
             font-weight: 500;
             font-style: normal;
             font-size: 16px;
-            text-shadow: 1px 1px 1px #aaa;
             text-align: center;
         }
         /* Table 1 Style */
