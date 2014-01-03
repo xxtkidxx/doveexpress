@@ -121,7 +121,7 @@
     AllowAutomaticUpdates="True" DataSourceID="NHANGUIPHDataSource" ShowFooter="True"
     OnDataBound="RadGridNHANGUIPH_DataBound" OnItemUpdated="RadGridNHANGUIPH_ItemUpdated"
     OnItemCommand="RadGridNHANGUIPH_ItemCommand" OnItemDataBound="RadGridNHANGUIPH_ItemDataBound"
-    CellSpacing="0" onitemcreated="RadGridNHANGUIPH_ItemCreated">
+    CellSpacing="0" OnItemCreated="RadGridNHANGUIPH_ItemCreated">
     <PagerStyle FirstPageToolTip="Trang đầu" LastPageToolTip="Trang cuối" NextPagesToolTip="Các trang tiếp"
         NextPageToolTip="Trang tiếp" PageSizeLabelText="Số bản ghi hiển thị:" PrevPagesToolTip="Các trang sau"
         PrevPageToolTip="Trang sau" PagerTextFormat="Change page: {4} &nbsp;Trang <strong>{0}</strong>/<strong>{1}</strong>, Bản ghi <strong>{2}</strong> đến <strong>{3}</strong> của tất cả <strong>{5}</strong> bản ghi" />
@@ -196,12 +196,25 @@
                 HeaderStyle-Width="130px" HeaderStyle-HorizontalAlign="Center" AutoPostBackOnFilter="true"
                 CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
             </telerik:GridBoundColumn>
-             <telerik:GridTemplateColumn UniqueName="TRANGTHAICUOI" HeaderText="Trạng thái cuối" DataField="C_BILL" HeaderStyle-Width="110px" HeaderStyle-HorizontalAlign="Center"
-                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
-                    <ItemTemplate>
-                        <%# Eval("FK_TRANGTHAI").ToString() == "True" ? "Khách đã nhận hàng" : GetStatusBill(Eval("C_BILL").ToString())%>
-                    </ItemTemplate>
-                </telerik:GridTemplateColumn>
+            <telerik:GridTemplateColumn UniqueName="TRANGTHAICUOI" HeaderText="Trạng thái cuối" AllowFiltering = "false"
+                DataField="C_BILL" HeaderStyle-Width="110px" HeaderStyle-HorizontalAlign="Center"
+                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false"
+                FilterControlWidth="100%">
+                <FilterTemplate>
+                    <telerik:RadTextBox ID="txtTRANGTHAIFILTER" Width="90%" runat="server" Text='<%# ((GridItem)Container).OwnerTableView.GetColumn("TRANGTHAICUOI").CurrentFilterValue %>' ClientEvents-OnValueChanged="OnValueChangedtxtTRANGTHAIFILTER"></telerik:RadTextBox>
+                    <telerik:RadScriptBlock ID="RadScriptBlock1" runat="server">
+                        <script type="text/javascript">
+                            function OnValueChangedtxtTRANGTHAIFILTER(sender, eventArgs) {
+                                var tableView = $find("<%# ((GridItem)Container).OwnerTableView.ClientID %>");
+                                tableView.filter("TRANGTHAICUOI", eventArgs.get_newValue(), "Contains");
+                            }
+                        </script>
+                    </telerik:RadScriptBlock>
+                </FilterTemplate>
+                <ItemTemplate>
+                    <%# Eval("FK_TRANGTHAI").ToString() == "True" ? "Khách đã nhận hàng" : GetStatusBill(Eval("C_BILL").ToString())%>
+                </ItemTemplate>
+            </telerik:GridTemplateColumn>
             <telerik:GridBoundColumn UniqueName="C_NGAYGIOPHAT" HeaderText="Thời gian nhận" DataField="C_NGAYGIOPHAT"
                 HeaderStyle-Width="110px" HeaderStyle-HorizontalAlign="Center" AutoPostBackOnFilter="true"
                 CurrentFilterFunction="Contains" ShowFilterIcon="true" FilterControlWidth="80%"
