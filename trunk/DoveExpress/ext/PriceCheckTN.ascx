@@ -14,7 +14,7 @@
             font-style: italic;
             font-weight: normal;
             letter-spacing: normal;
-            background: #f0f0f0;
+            background: #FFFFFF;
         }
         .head
         {
@@ -43,7 +43,7 @@
         h1
         {
             font-family: "Trebuchet MS" ,sans-serif;
-            color: #9CD009;
+            color: #005CA2;
             font-weight: normal;
             font-style: normal;
             font-size: 40px;
@@ -347,7 +347,7 @@
 <telerik:RadAjaxLoadingPanel Skin="Vista" ID="RadAjaxLoadingPanelPriceCheckTN" runat="server" />
 <center>
     <h1>
-        Tính giá gửi hàng trong nước</h1>
+        TÍNH CƯỚC GỬI HÀNG TRONG NƯỚC</h1>
     <asp:Panel ID="pnPriceCheckTN" runat="server">
         <table class="table1">
             <tfoot>
@@ -385,7 +385,7 @@
                 </tr>
                 <tr>
                     <th scope="row">
-                        Tỉnh thành/ Quận huyện
+                        Tỉnh thành
                     </th>
                     <td>
                         <telerik:RadComboBox ID="cmbTinhThanh" runat="server" DataTextField="C_NAME" DataValueField="PK_ID"
