@@ -72,7 +72,7 @@ ShowToggleImage="True" EmptyMessage="Chọn năm" onprerender="cmbYear_PreRender
     DataSourceID="BAOCAOTTTTDataSource" ShowFooter="True"
     ondatabound="RadGridBAOCAOTTTT_DataBound" CellSpacing="0" 
     onexcelmlexportrowcreated="RadGridBAOCAOTTTT_ExcelMLExportRowCreated" 
-    onitemdatabound="RadGridBAOCAOTTTT_ItemDataBound">
+    onitemdatabound="RadGridBAOCAOTTTT_ItemDataBound" onitemcreated="RadGridBAOCAOTTTT_ItemCreated">
     <PagerStyle FirstPageToolTip="Trang đầu" LastPageToolTip="Trang cuối" NextPagesToolTip="Các trang tiếp" NextPageToolTip="Trang tiếp" 
     PageSizeLabelText="Số bản ghi hiển thị:" PrevPagesToolTip="Các trang sau" PrevPageToolTip="Trang sau" PagerTextFormat="Change page: {4} &nbsp;Trang <strong>{0}</strong>/<strong>{1}</strong>, Bản ghi <strong>{2}</strong> đến <strong>{3}</strong> của tất cả <strong>{5}</strong> bản ghi" />    
     <ExportSettings HideStructureColumns="true" ExportOnlyData="true" IgnorePaging="true" OpenInNewWindow="true" Excel-Format="Biff"></ExportSettings>   

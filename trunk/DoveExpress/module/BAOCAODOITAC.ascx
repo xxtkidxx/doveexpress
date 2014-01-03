@@ -55,7 +55,7 @@
     AllowMultiRowEdit="True" AllowAutomaticDeletes="True" AllowAutomaticInserts="True"
     AllowAutomaticUpdates="True" DataSourceID="BAOCAODOITACDataSource" ShowFooter="True"
     OnDataBound="RadGridBAOCAODOITAC_DataBound" CellSpacing="0" OnExcelMLExportRowCreated="RadGridBAOCAODOITAC_ExcelMLExportRowCreated"
-    OnItemDataBound="RadGridBAOCAODOITAC_ItemDataBound">
+    OnItemDataBound="RadGridBAOCAODOITAC_ItemDataBound" onitemcreated="RadGridBAOCAODOITAC_ItemCreated">
     <PagerStyle FirstPageToolTip="Trang đầu" LastPageToolTip="Trang cuối" NextPagesToolTip="Các trang tiếp"
         NextPageToolTip="Trang tiếp" PageSizeLabelText="Số bản ghi hiển thị:" PrevPagesToolTip="Các trang sau"
         PrevPageToolTip="Trang sau" PagerTextFormat="Change page: {4} &nbsp;Trang <strong>{0}</strong>/<strong>{1}</strong>, Bản ghi <strong>{2}</strong> đến <strong>{3}</strong> của tất cả <strong>{5}</strong> bản ghi" />
