@@ -1994,3 +1994,18 @@ Thời gian lỗi : 2014-01-03 21:53:11 PM
 Đường dẫn lỗi: http://localhost:53224/DoveExpress/tinhcuoctrongnuoc/default.aspx. 
 Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\DoveExpress\tinhcuoctrongnuoc\tinhcuoctrongnuoc.master.cs(170): error CS0103: The name 'cmbVungLamViec' does not exist in the current context
 __________________________
+Thời gian lỗi : 2014-01-03 23:00:56 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/tracking/default.aspx. 
+Nội dung lỗi:The file '/DoveExpress/tracking/Check.master' does not exist.
+__________________________
+Thời gian lỗi : 2014-01-03 23:01:26 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/tracking/logo.png. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2014-01-03 23:01:27 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/tracking/logo.png. 
+Nội dung lỗi:File does not exist.
+__________________________
