@@ -11,19 +11,7 @@ public partial class tinhcuoctrongnuoc : System.Web.UI.MasterPage
     protected void Page_Load(object sender, EventArgs e)
     {
         Control control = new Control();
-        if (Request.QueryString["ctl"] != null)
-        {
-            switch ((string)Request.QueryString["ctl"].ToLower())
-            {
-                case "pricechecktn":
-                    control = LoadControl("PriceCheckTN.ascx");
-                    break;                    
-            }
-        }
-        else
-        {
-
-        }
+        control = LoadControl("PriceCheckTN.ascx");
         ContentPlaceHolderCheck.Controls.Add(control);
     }
 }

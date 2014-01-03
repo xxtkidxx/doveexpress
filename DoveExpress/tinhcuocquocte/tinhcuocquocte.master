@@ -21,7 +21,7 @@
         {
             display: block;
             width: 100%;
-            font-family: "Trebuchet MS" , sans-serif;
+            font-family: "Arial" , sans-serif;
             font-size: 16px;
             font-weight: bold;
             color: #FFFFFF;
@@ -45,9 +45,9 @@
     <telerik:RadAjaxManager ID="RadAjaxManagerPriceCheck" runat="server" UpdatePanelsRenderMode="Inline">
     </telerik:RadAjaxManager>
     <ul>
-        <li><a href="Check.aspx?ctl=BillCheck">Kiểm tra Bill</a></li>
-        <li><a href="Check.aspx?ctl=PriceCheckTN">Tính cước trong nước</a></li>
-        <li><a href="Check.aspx?ctl=PriceCheckQT">Tính cước quốc tế</a></li>
+        <li><a href="http://www.dovevn.com">Trang chủ</a></li>
+        <li><a href="../tinhcuoctrongnuoc">Tính cước trong nước</a></li>
+        <li><a href="#">Tính cước quốc tế</a></li>
     </ul>
     <asp:ContentPlaceHolder ID="ContentPlaceHolderCheck" runat="server">
     </asp:ContentPlaceHolder>

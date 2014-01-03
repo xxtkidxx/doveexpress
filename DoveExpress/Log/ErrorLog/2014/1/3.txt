@@ -1969,3 +1969,28 @@ Thời gian lỗi : 2014-01-03 20:36:21 PM
 Đường dẫn lỗi: http://localhost:53224/DoveExpress/ext/PriceCheck.aspx. 
 Nội dung lỗi:The file '/DoveExpress/ext/PriceCheck.aspx' does not exist.
 __________________________
+Thời gian lỗi : 2014-01-03 20:59:56 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/tinhcuoctrong nuoc. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2014-01-03 21:00:09 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/tinhcuocquocte/Check.aspx?ctl=PriceCheckTN. 
+Nội dung lỗi:The file '/DoveExpress/tinhcuocquocte/Check.aspx' does not exist.
+__________________________
+Thời gian lỗi : 2014-01-03 21:52:18 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/tinhcuoctrongnuoc/default.aspx. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\DoveExpress\tinhcuoctrongnuoc\tinhcuoctrongnuoc.master.cs(320): error CS0103: The name 'NumberStyles' does not exist in the current context
+__________________________
+Thời gian lỗi : 2014-01-03 21:52:39 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/tinhcuoctrongnuoc/default.aspx. 
+Nội dung lỗi:Cannot find ContentPlaceHolder 'ContentPlaceHolderCheck' in the master page 'tinhcuoctrongnuoc.master', verify content control's ContentPlaceHolderID attribute in the content page.
+__________________________
+Thời gian lỗi : 2014-01-03 21:53:11 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/tinhcuoctrongnuoc/default.aspx. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\DoveExpress\tinhcuoctrongnuoc\tinhcuoctrongnuoc.master.cs(170): error CS0103: The name 'cmbVungLamViec' does not exist in the current context
+__________________________
