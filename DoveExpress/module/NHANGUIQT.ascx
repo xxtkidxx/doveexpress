@@ -149,6 +149,7 @@
     var PPXD;
     function OnClientLoadtxtPPXD(sender) {
         txtPPXD = sender;
+        PPXD = txtPPXD.get_value();
     }   
     var txtC_GIACUOC;
     function OnClientLoadtxtC_GIACUOC(sender) {
