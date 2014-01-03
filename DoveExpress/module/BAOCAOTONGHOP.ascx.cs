@@ -36,8 +36,6 @@ public partial class module_BAOCAOTONGHOP : System.Web.UI.UserControl
             string index = Request["index"].ToString();
             string Value = Request["value"].ToString();
         }
-        radTuNgay.SelectedDate = DateTime.Now;
-        radDenNgay.SelectedDate = DateTime.Now.AddDays(1);
         Session["LastUrl"] = Request.Url.ToString();
     }
     protected void btnShowAll_Click(object sender, System.Web.UI.ImageClickEventArgs e)
