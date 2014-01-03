@@ -65,23 +65,23 @@
         {
             padding: 15px;
             color: #fff;
-            text-shadow: 1px 1px 1px #568F23;
-            border: 1px solid #93CE37;
-            border-bottom: 3px solid #9ED929;
-            background-color: #9DD929;
+            text-shadow: 1px 1px 1px #005CA2;
+            border: 1px solid #005CA2;
+            border-bottom: 3px solid #005CA2;
+            background-color: #005CA2;
             background: -webkit-gradient(
         linear,
         left bottom,
         left top,
-        color-stop(0.02, rgb(123,192,67)),
-        color-stop(0.51, rgb(139,198,66)),
-        color-stop(0.87, rgb(158,217,41))
+        color-stop(0.02, rgb(0,92,162)),
+        color-stop(0.51, rgb(0,92,162)),
+        color-stop(0.87, rgb(0,92,162))
         );
             background: -moz-linear-gradient(
         center bottom,
-        rgb(123,192,67) 2%,
-        rgb(139,198,66) 51%,
-        rgb(158,217,41) 87%
+        rgb(0,92,162) 2%,
+        rgb(0,92,162) 51%,
+        rgb(0,92,162) 87%
         );
             -webkit-border-top-left-radius: 5px;
             -webkit-border-top-right-radius: 5px;
@@ -97,24 +97,24 @@
         .table1 tbody th
         {
             color: #fff;
-            text-shadow: 1px 1px 1px #568F23;
-            background-color: #9DD929;
-            border: 1px solid #93CE37;
-            border-right: 3px solid #9ED929;
+            text-shadow: 1px 1px 1px #005CA2;
+            background-color: #005CA2;
+            border: 1px solid #005CA2;
+            border-right: 3px solid #005CA2;
             padding: 0px 10px;
             background: -webkit-gradient(
         linear,
         left bottom,
         right top,
-        color-stop(0.02, rgb(158,217,41)),
-        color-stop(0.51, rgb(139,198,66)),
-        color-stop(0.87, rgb(123,192,67))
+        color-stop(0.02, rgb(0,92,162)),
+        color-stop(0.51, rgb(0,92,162)),
+        color-stop(0.87, rgb(0,92,162))
         );
             background: -moz-linear-gradient(
         left bottom,
-        rgb(158,217,41) 2%,
-        rgb(139,198,66) 51%,
-        rgb(123,192,67) 87%
+        rgb(0,92,162) 2%,
+        rgb(0,92,162) 51%,
+        rgb(0,92,162) 87%
         );
             -moz-border-radius: 5px 0px 0px 5px;
             -webkit-border-top-left-radius: 5px;
@@ -138,8 +138,8 @@
         {
             padding: 10px;
             text-align: center;
-            background-color: #DEF3CA;
-            border: 2px solid #E7EFE0;
+            background-color: #005CA2;
+            border: 2px solid #005CA2;
             -moz-border-radius: 2px;
             -webkit-border-radius: 2px;
             border-radius: 2px;
