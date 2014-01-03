@@ -30,11 +30,12 @@ public partial class ext_BillCheck : System.Web.UI.UserControl
                 lblDiachinhan.Text = (oDataTable.Rows[0]["C_DIACHINHAN"].ToString() == "") ? "-" : oDataTable.Rows[0]["C_DIACHINHAN"].ToString();
                 if (oDataTable.Rows[0]["C_TYPE"].ToString() == "2")
                 {
-                    lblQuanhuyen.Text = "Quốc gia";
+                    lblQuanhuyen.Text = "Quốc gia:";
                     lblQuanhuyenValue.Text = ITCLIB.Admin.cFunction.LoadQuocGiaName(oDataTable.Rows[0]["FK_QUOCGIA"].ToString());
                 }
                 else
                 {
+                    lblQuanhuyen.Text = "Tỉnh thành/Quận huyện:";
                     lblQuanhuyenValue.Text = ITCLIB.Admin.cFunction.LoadTinhThanhName(oDataTable.Rows[0]["FK_QUANHUYEN"].ToString()) + " / " + ITCLIB.Admin.cFunction.LoadQuanHuyenName(oDataTable.Rows[0]["FK_QUANHUYEN"].ToString());
                 }
                 LoadGrid();

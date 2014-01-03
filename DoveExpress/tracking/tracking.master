@@ -86,7 +86,6 @@
             font-weight: 500;
             font-style: normal;
             font-size: 16px;
-            text-shadow: 1px 1px 1px #aaa;
             text-align: justify;
         }
         .footer2
@@ -95,7 +94,6 @@
             font-weight: 500;
             font-style: normal;
             font-size: 16px;
-            text-shadow: 1px 1px 1px #aaa;
             text-align: center;
         }
         /* Table 1 Style */
@@ -111,8 +109,7 @@
         .contents .table1 thead th
         {
             padding: 15px;
-            color: #fff;
-            text-shadow: 1px 1px 1px #005CA2;
+            color: #005CA2;
             border: 1px solid #005CA2;
             border-bottom: 3px solid #005CA2;
             background-color: #005CA2;
@@ -120,21 +117,19 @@
         linear,
         left bottom,
         left top,
-        color-stop(0.02, rgb(0,92,162)),
-        color-stop(0.51, rgb(0,92,162)),
-        color-stop(0.87, rgb(0,92,162))
+        color-stop(0.02, rgb(255,255,255)),
+        color-stop(0.51, rgb(255,255,255)),
+        color-stop(0.87, rgb(255,255,255))
         );
             background: -moz-linear-gradient(
         center bottom,
-        rgb(0,92,162) 2%,
-        rgb(0,92,162) 51%,
-        rgb(0,92,162) 87%
+        rgb(255,255,255) 2%,
+        rgb(255,255,255) 51%,
+        rgb(255,255,255) 87%
         );
             -webkit-border-top-left-radius: 5px;
             -webkit-border-top-right-radius: 5px;
             -moz-border-radius: 5px 5px 0px 0px;
-            border-top-left-radius: 5px;
-            border-top-right-radius: 5px;
         }
         .contents .table1 thead th:empty
         {
@@ -144,36 +139,30 @@
         .contents .table1 tbody th
         {
             width: 30%;
-            color: #fff;
-            text-shadow: 1px 1px 1px #005CA2;
-            background-color: #005CA2;
-            border: 1px solid #005CA2;
-            border-right: 3px solid #005CA2;
+            color: #005CA2;
+            background-color: #FFFFFF;
+            border: 0px solid #005CA2;
+            border-bottom: 1px solid #005CA2;
             padding: 0px 10px;
             background: -webkit-gradient(
         linear,
         left bottom,
         right top,
-        color-stop(0.02, rgb(0,92,162)),
-        color-stop(0.51, rgb(0,92,162)),
-        color-stop(0.87, rgb(0,92,162))
+        color-stop(0.02, rgb(255,255,255)),
+        color-stop(0.51, rgb(255,255,255)),
+        color-stop(0.87, rgb(255,255,162552))
         );
             background: -moz-linear-gradient(
         left bottom,
-        rgb(0,92,162) 2%,
-        rgb(0,92,162) 51%,
-        rgb(0,92,162) 87%
+        rgb(255,255,255) 2%,
+        rgb(255,255,255) 51%,
+        rgb(255,255,255) 87%
         );
-            -moz-border-radius: 5px 0px 0px 5px;
-            -webkit-border-top-left-radius: 5px;
-            -webkit-border-bottom-left-radius: 5px;
-            border-top-left-radius: 5px;
-            border-bottom-left-radius: 5px;
         }
         .contents .table1 tfoot td
         {
             color: #FF0000;
-            font-size: 22px;
+            font-size: 20px;
             text-align: center;
             padding: 10px 0px;
         }
@@ -185,17 +174,19 @@
         {
             padding: 10px;
             text-align: center;
-            background-color: #005CA2;
-            border: 2px solid #005CA2;
-            -moz-border-radius: 2px;
-            -webkit-border-radius: 2px;
-            border-radius: 2px;
-            color: #FFFFFF;
-            text-shadow: 1px 1px 1px #fff;
+            background-color: #FFFFFF;
+            border: 0px solid #005CA2;
+            border-bottom: 1px solid #005CA2;
+            color: #005CA2;
         }
         .contents .table1 tbody span.check::before
         {
             content: url(../images/check0.png);
+        }
+        .RadGrid_Hay th.rgHeader, .RadGrid_Hay th.rgSorted
+        {
+            background-image: none;
+            color: White;
         }
     </style>
 </head>
