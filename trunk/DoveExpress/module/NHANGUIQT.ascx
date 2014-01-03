@@ -563,14 +563,14 @@
     </tr>
 </table>
 <telerik:RadGrid ID="RadGridNHANGUIQT" runat="server" Skin="Vista" AllowPaging="True"
-    PageSize="20" AllowSorting="True" AllowFilteringByColumn="True" GridLines="None"
+    PageSize="50" AllowSorting="True" AllowFilteringByColumn="True" GridLines="None"
     ShowStatusBar="True" AutoGenerateColumns="False" AllowMultiRowSelection="True"
     AllowMultiRowEdit="True" AllowAutomaticDeletes="True" AllowAutomaticInserts="True"
     AllowAutomaticUpdates="True" DataSourceID="NHANGUIQTDataSource" ShowFooter="True"
     OnDataBound="RadGridNHANGUIQT_DataBound" OnItemDeleted="RadGridNHANGUIQT_ItemDeleted"
     OnItemInserted="RadGridNHANGUIQT_ItemInserted" OnItemUpdated="RadGridNHANGUIQT_ItemUpdated"
     OnItemCommand="RadGridNHANGUIQT_ItemCommand" OnItemDataBound="RadGridNHANGUIQT_ItemDataBound"
-    CellSpacing="0">
+    CellSpacing="0" onitemcreated="RadGridNHANGUIQT_ItemCreated">
     <PagerStyle FirstPageToolTip="Trang đầu" LastPageToolTip="Trang cuối" NextPagesToolTip="Các trang tiếp"
         NextPageToolTip="Trang tiếp" PageSizeLabelText="Số bản ghi hiển thị:" PrevPagesToolTip="Các trang sau"
         PrevPageToolTip="Trang sau" PagerTextFormat="Change page: {4} &nbsp;Trang <strong>{0}</strong>/<strong>{1}</strong>, Bản ghi <strong>{2}</strong> đến <strong>{3}</strong> của tất cả <strong>{5}</strong> bản ghi" />

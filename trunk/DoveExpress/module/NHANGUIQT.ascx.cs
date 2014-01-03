@@ -8,6 +8,7 @@ using System.Data;
 using Telerik.Web.UI;
 using System.Globalization;
 using System.Xml;
+using System.Collections;
 
 public partial class module_NHANGUIQT : System.Web.UI.UserControl
 {
@@ -1468,6 +1469,46 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
         else
         {
             return true;
+        }
+    }
+    protected void RadGridNHANGUIQT_ItemCreated(object sender, GridItemEventArgs e)
+    {
+        if (e.Item is GridPagerItem)
+        {
+            RadComboBox cb = (e.Item as GridPagerItem).FindControl("PageSizeComboBox") as RadComboBox;
+            RadComboBoxItem item = new RadComboBoxItem("100", "100");
+            item.Attributes.Add("ownerTableViewId", RadGridNHANGUIQT.MasterTableView.ClientID);
+            if (cb.Items.FindItemByValue("100") == null) cb.Items.Add(item);
+            item = new RadComboBoxItem("200", "200");
+            item.Attributes.Add("ownerTableViewId", RadGridNHANGUIQT.MasterTableView.ClientID);
+            if (cb.Items.FindItemByValue("200") == null) cb.Items.Add(item);
+            item = new RadComboBoxItem("500", "500");
+            item.Attributes.Add("ownerTableViewId", RadGridNHANGUIQT.MasterTableView.ClientID);
+            if (cb.Items.FindItemByValue("500") == null) cb.Items.Add(item);
+            cb.Items.Sort(new PagerRadComboBoxItemComparer());
+            cb.Items.FindItemByValue(RadGridNHANGUIQT.PageSize.ToString()).Selected = true;
+        }
+    }
+    public class PagerRadComboBoxItemComparer : IComparer<RadComboBoxItem>, IComparer
+    {
+        public int Compare(RadComboBoxItem x, RadComboBoxItem y)
+        {
+
+            int rValue = 0;
+            int lValue = 0;
+
+            if (Int32.TryParse(x.Value, out lValue) && Int32.TryParse(y.Value, out rValue))
+            {
+                return lValue.CompareTo(rValue);
+            }
+            else
+            {
+                return x.Value.CompareTo(y.Value);
+            }
+        }
+        public int Compare(object x, object y)
+        {
+            return Compare((RadComboBoxItem)x, (RadComboBoxItem)y);
         }
     }
 }
