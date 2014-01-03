@@ -1,0 +1,180 @@
+Thời gian: 2014-01-02 20:28:36 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2014-01-02 20:36:58 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2014-01-02 20:37:29 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted NHANGUIs
+Kết quả : {PK_ID:"1867"}
+__________________________
+Thời gian: 2014-01-02 20:40:09 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {C_BILL:"3788883"}
+__________________________
+Thời gian: 2014-01-02 20:50:00 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted NHANGUIQTs
+Kết quả : {PK_ID:"1868"}
+__________________________
+Thời gian: 2014-01-02 20:50:08 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIQTs
+Kết quả : {C_BILL:"3788884"}
+__________________________
+Thời gian: 2014-01-02 21:07:33 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {C_BILL:"3788882"}
+__________________________
+Thời gian: 2014-01-02 21:07:52 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {C_BILL:"3788882"}
+__________________________
+Thời gian: 2014-01-02 21:19:22 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {C_BILL:"3788883"}
+__________________________
+Thời gian: 2014-01-02 21:19:59 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {C_BILL:"3788883"}
+__________________________
+Thời gian: 2014-01-02 21:20:37 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIQTs
+Kết quả : {C_BILL:"3788884"}
+__________________________
+Thời gian: 2014-01-02 21:25:59 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2014-01-02 21:56:01 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIQTs
+Kết quả : {C_BILL:"3788884"}
+__________________________
+Thời gian: 2014-01-02 21:57:44 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2014-01-02 21:57:53 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIQTs
+Kết quả : {C_BILL:"3788884"}
+__________________________
+Thời gian: 2014-01-02 21:57:59 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIQTs
+Kết quả : {C_BILL:"3788884"}
+__________________________
+Thời gian: 2014-01-02 22:03:58 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {C_BILL:"3788883"}
+__________________________
+Thời gian: 2014-01-02 22:04:03 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {C_BILL:"3788883"}
+__________________________
+Thời gian: 2014-01-02 22:07:01 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {C_BILL:"3788884"}
+__________________________
+Thời gian: 2014-01-02 22:07:09 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {C_BILL:"3788884"}
+__________________________
+Thời gian: 2014-01-02 22:08:08 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {C_BILL:"3788884"}
+__________________________
+Thời gian: 2014-01-02 22:08:13 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {C_BILL:"3788884"}
+__________________________
+Thời gian: 2014-01-02 22:26:46 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {C_BILL:"3788884"}
+__________________________
+Thời gian: 2014-01-02 22:29:07 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2014-01-02 22:30:02 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUITRACKINGs
+Kết quả : {PK_ID:"11"}
+__________________________
+Thời gian: 2014-01-02 22:32:24 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted NHANGUITRACKINGs
+Kết quả : {PK_ID:"10008"}
+__________________________
+Thời gian: 2014-01-02 22:32:34 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUITRACKINGs
+Kết quả : {PK_ID:"10008"}
+__________________________
+Thời gian: 2014-01-02 22:41:59 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {C_BILL:"3788884"}
+__________________________
+Thời gian: 2014-01-02 22:46:55 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {C_BILL:"3788884"}
+__________________________
+Thời gian: 2014-01-02 22:52:34 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________

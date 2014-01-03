@@ -1,0 +1,78 @@
+Thời gian lỗi : 2014-01-02 20:28:55 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:The multi-part identifier "C_NGAYGIONHAN.C_NGAYGIONHAN" could not be bound.
+__________________________
+Thời gian lỗi : 2014-01-02 20:30:13 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Invalid column name 'C_NGAYGIONHAN'.
+__________________________
+Thời gian lỗi : 2014-01-02 20:30:52 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2014-01-02 20:31:22 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2014-01-02 21:04:50 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUIPH. 
+Nội dung lỗi:Literal content ('<telerik:GridBoundColumn UniqueName="C_NGUOIKYNHAN" HeaderText="Người nhận"
+                DataField="C_NGUOIKYNHAN" HeaderStyle-Width="130px" HeaderStyle-HorizontalAlign="Center"
+                AutoPostBackOnFilter="true"CurrentFilterFunction="Contains" ShowFilterIcon="true" FilterControlWidth="80%">
+            </telerik:GridBoundColumn>') is not allowed within a 'Telerik.Web.UI.GridColumnCollection'.
+__________________________
+Thời gian lỗi : 2014-01-02 21:26:02 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUIPH. 
+Nội dung lỗi:The server tag is not well formed.
+__________________________
+Thời gian lỗi : 2014-01-02 21:45:33 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUIQT. 
+Nội dung lỗi:Specified cast is not valid.
+__________________________
+Thời gian lỗi : 2014-01-02 21:45:34 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUIQT. 
+Nội dung lỗi:Specified cast is not valid.
+__________________________
+Thời gian lỗi : 2014-01-02 21:45:59 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUIQT. 
+Nội dung lỗi:Specified cast is not valid.
+__________________________
+Thời gian lỗi : 2014-01-02 21:46:10 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUIQT. 
+Nội dung lỗi:Specified cast is not valid.
+__________________________
+Thời gian lỗi : 2014-01-02 21:47:51 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUIQT. 
+Nội dung lỗi:Specified cast is not valid.
+__________________________
+Thời gian lỗi : 2014-01-02 21:49:05 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUIQT. 
+Nội dung lỗi:Specified cast is not valid.
+__________________________
+Thời gian lỗi : 2014-01-02 21:56:03 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUIQT. 
+Nội dung lỗi:Specified cast is not valid.
+__________________________
+Thời gian lỗi : 2014-01-02 22:14:58 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUIPH. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\DoveExpress\module\NHANGUIPH.ascx(201): error CS0173: Type of conditional expression cannot be determined because there is no implicit conversion between 'string' and 'bool'
+__________________________
+Thời gian lỗi : 2014-01-02 22:43:52 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/ext/Check.aspx?ctl=billcheck. 
+Nội dung lỗi:Telerik.Web.UI.GridColumnCollection must have items of type 'Telerik.Web.UI.GridColumn'. 'HeaderStyle' is of type 'System.Web.UI.HtmlControls.HtmlGenericControl'.
+__________________________
