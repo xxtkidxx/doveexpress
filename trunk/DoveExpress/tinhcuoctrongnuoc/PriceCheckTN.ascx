@@ -1,156 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="PriceCheckTN.ascx.cs"
     Inherits="ext_PriceCheckTN" %>
-<telerik:RadCodeBlock ID="RadCodeBlockPriceCheckTN" runat="server">
-    <style type="text/css">
-        *
-        {
-            margin: 0;
-            padding: 0;
-        }
-        body
-        {
-            font-family: Georgia, serif;
-            font-size: 20px;
-            font-style: italic;
-            font-weight: normal;
-            letter-spacing: normal;
-            background: #FFFFFF;
-        }
-        .head
-        {
-            font-family: Helvetica,Arial,Verdana;
-            text-transform: uppercase;
-            font-weight: bold;
-            font-size: 12px;
-            font-style: normal;
-            letter-spacing: 3px;
-            color: #888;
-            border-bottom: 3px solid #f0f0f0;
-            padding-bottom: 10px;
-            margin-bottom: 10px;
-        }
-        .head a
-        {
-            color: #1D81B6;
-            text-decoration: none;
-            float: right;
-            text-shadow: 1px 1px 1px #888;
-        }
-        .head a:hover
-        {
-            color: #f0f0f0;
-        }
-        h1
-        {
-            font-family: "Trebuchet MS" ,sans-serif;
-            color: #005CA2;
-            font-weight: normal;
-            font-style: normal;
-            font-size: 40px;
-            text-shadow: 1px 1px 1px #aaa;
-            padding-top: 30px;
-        }
-        /* Table 1 Style */
-        table.table1
-        {
-            font-family: "Trebuchet MS" , sans-serif;
-            font-size: 16px;
-            font-weight: bold;
-            line-height: 1.4em;
-            font-style: normal;
-            border-collapse: separate;
-            padding-top: 30px;
-        }
-        .table1 thead th
-        {
-            padding: 15px;
-            color: #fff;
-            text-shadow: 1px 1px 1px #005CA2;
-            border: 1px solid #005CA2;
-            border-bottom: 3px solid #005CA2;
-            background-color: #005CA2;
-            background: -webkit-gradient(
-        linear,
-        left bottom,
-        left top,
-        color-stop(0.02, rgb(0,92,162)),
-        color-stop(0.51, rgb(0,92,162)),
-        color-stop(0.87, rgb(0,92,162))
-        );
-            background: -moz-linear-gradient(
-        center bottom,
-        rgb(0,92,162) 2%,
-        rgb(0,92,162) 51%,
-        rgb(0,92,162) 87%
-        );
-            -webkit-border-top-left-radius: 5px;
-            -webkit-border-top-right-radius: 5px;
-            -moz-border-radius: 5px 5px 0px 0px;
-            border-top-left-radius: 5px;
-            border-top-right-radius: 5px;
-        }
-        .table1 thead th:empty
-        {
-            background: transparent;
-            border: none;
-        }
-        .table1 tbody th
-        {
-            color: #fff;
-            text-shadow: 1px 1px 1px #005CA2;
-            background-color: #005CA2;
-            border: 1px solid #005CA2;
-            border-right: 3px solid #005CA2;
-            padding: 0px 10px;
-            background: -webkit-gradient(
-        linear,
-        left bottom,
-        right top,
-        color-stop(0.02, rgb(0,92,162)),
-        color-stop(0.51, rgb(0,92,162)),
-        color-stop(0.87, rgb(0,92,162))
-        );
-            background: -moz-linear-gradient(
-        left bottom,
-        rgb(0,92,162) 2%,
-        rgb(0,92,162) 51%,
-        rgb(0,92,162) 87%
-        );
-            -moz-border-radius: 5px 0px 0px 5px;
-            -webkit-border-top-left-radius: 5px;
-            -webkit-border-bottom-left-radius: 5px;
-            border-top-left-radius: 5px;
-            border-bottom-left-radius: 5px;
-        }
-        .table1 tfoot td
-        {
-            color: #9CD009;
-            font-size: 32px;
-            text-align: center;
-            padding: 10px 0px;
-            text-shadow: 1px 1px 1px #444;
-        }
-        .table1 tfoot th
-        {
-            color: #FF0000;
-        }
-        .table1 tbody td
-        {
-            padding: 10px;
-            text-align: center;
-            background-color: #005CA2;
-            border: 2px solid #005CA2;
-            -moz-border-radius: 2px;
-            -webkit-border-radius: 2px;
-            border-radius: 2px;
-            color: #666;
-            text-shadow: 1px 1px 1px #fff;
-        }
-        .table1 tbody span.check::before
-        {
-            content: url(../images/check0.png);
-        }
-    </style>
+<telerik:RadCodeBlock ID="RadCodeBlockPriceCheckTN" runat="server"> 
     <script type="text/javascript">
         var cmbQuanHuyen;
         function OnClientLoadQuanHuyen(sender) {
@@ -345,172 +195,169 @@
     </script>
 </telerik:RadCodeBlock>
 <telerik:RadAjaxLoadingPanel Skin="Vista" ID="RadAjaxLoadingPanelPriceCheckTN" runat="server" />
-<center>
-    <h1>
-        TÍNH CƯỚC GỬI HÀNG TRONG NƯỚC</h1>
-    <asp:Panel ID="pnPriceCheckTN" runat="server">
-        <table class="table1">
-            <tfoot>
-                <tr>
-                    <th scope="row">
-                        Giá cước
-                    </th>
-                    <td>
-                         <telerik:RadNumericTextBox  ID="txtC_TIENHANG" Width ="90%" Runat="server" ClientEvents-OnLoad="OnClientLoadtxtC_TIENHANG" ClientEvents-OnValueChanged="OnValueChangedtxtC_TIENHANG">
-                            <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
-                    </telerik:RadNumericTextBox> 
-                    </td>
-                    <th scope="row">
-                        Giá cước (VAT)
-                    </th>
-                    <td>
-                        <telerik:RadNumericTextBox  ID="txtC_TIENHANGVAT" Width ="90%" Runat="server" ClientEvents-OnLoad="OnClientLoadtxtC_TIENHANGVAT">
-                            <NumberFormat DecimalSeparator ="." GroupSeparator =" " DecimalDigits="0"/>
-                    </telerik:RadNumericTextBox>
-                    </td>
-                </tr>
-            </tfoot>
-            <tbody>
+<asp:Panel ID="pnPriceCheckTN" runat="server">
+    <table class="table1">
+        <tfoot>
             <tr>
-                    <th scope="row">
-                        Khu vực gửi hàng
-                    </th>
-                     <td>
-                     <telerik:RadComboBox ID="cmbVungLamViec" DataTextField="C_NAME" 
-                               DataValueField="C_CODE" DataSourceID="VUNGLAMVIECDataSource"
-                           ShowToggleImage="True" runat="server" EmptyMessage="Chọn vùng làm việc" 
-                               nprerender="cmbVungLamViec_PreRender" 
-                               onprerender="cmbVungLamViec_PreRender"></telerik:RadComboBox>
-                       </td>
-                </tr>
-                <tr>
-                    <th scope="row">
-                        Tỉnh thành
-                    </th>
-                    <td>
-                        <telerik:RadComboBox ID="cmbTinhThanh" runat="server" DataTextField="C_NAME" DataValueField="PK_ID"
-                            DataSourceID="TINHTHANHDataSource" ShowToggleImage="True" EmptyMessage="Chọn tỉnh"
-                            OnClientSelectedIndexChanged="cmbTinhThanhClientSelectedIndexChangedHandler">
-                        </telerik:RadComboBox>
-                    </td>
-                    <th scope="row">
-                        Quận huyện
-                    </th>
-                    <td>
-                        <telerik:RadComboBox ID="cmbQuanHuyen" runat="server" DataTextField="C_NAME" DataValueField="C_CODE"
-                            DataSourceID="QUANHUYENDataSource" ShowToggleImage="True" EmptyMessage="Chọn quận huyện"
-                            OnClientItemsRequested="ItemsLoadedQuanHuyen" OnClientLoad="OnClientLoadQuanHuyen"
-                            OnItemsRequested="cmbQuanHuyen_ItemsRequested" OnClientSelectedIndexChanged="cmbQuanHuyenClientSelectedIndexChangedHandler">
-                        </telerik:RadComboBox>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">
-                        Khối lượng (g)
-                    </th>
-                    <td>
-                        <telerik:RadNumericTextBox ID="txtC_KHOILUONG" Width="90%" runat="server" ClientEvents-OnValueChanged="OnValueChangedtxtC_KHOILUONG"
-                            ClientEvents-OnLoad="OnClientLoadtxtC_KHOILUONG">
-                            <NumberFormat DecimalSeparator="." GroupSeparator=" " DecimalDigits="0" />
-                        </telerik:RadNumericTextBox>
-                    </td>
-                    <th scope="row">
-                        Giá trị hàng hoá
-                    </th>
-                    <td>
-                        <telerik:RadNumericTextBox ID="txtC_GIATRIHANGHOA" Width="90%" runat="server" ClientEvents-OnLoad="OnClientLoadtxtC_GIATRIHANGHOA"
-                            ClientEvents-OnValueChanged="OnValueChangedtxtC_GIATRIHANGHOA">
-                            <NumberFormat DecimalSeparator="." GroupSeparator=" " DecimalDigits="0" />
-                        </telerik:RadNumericTextBox>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">
-                        Dịch vụ
-                    </th>
-                    <td>
-                        <telerik:RadComboBox ID="cmbSanPham" runat="server" DataTextField="C_NAME" DataValueField="PK_ID"
-                            DataSourceID="MASANPHAMDataSource" ShowToggleImage="True" EmptyMessage="Chọn dịch vụ"
-                            OnClientSelectedIndexChanged="cmbSanPhamClientSelectedIndexChangedHandler">
-                        </telerik:RadComboBox>
-                    </td>
-                    <th scope="row">
-                        Cước chính
-                    </th>
-                    <td>
-                        <telerik:RadNumericTextBox ID="txtC_GIACUOC" Width="90%" runat="server" ClientEvents-OnLoad="OnClientLoadtxtC_GIACUOC"
-                            ClientEvents-OnValueChanged="OnValueChangedtxtC_GIACUOC">
-                            <NumberFormat DecimalSeparator="." GroupSeparator=" " DecimalDigits="0" />
-                        </telerik:RadNumericTextBox>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">
-                        PPXD
-                    </th>
-                    <td>
-                        <telerik:RadNumericTextBox ID="txtPPXD" Width="90%" runat="server" ClientEvents-OnLoad="OnClientLoadtxtPPXD"
-                            ClientEvents-OnValueChanged="OnValueChangedtxtPPXD">
-                            <NumberFormat DecimalSeparator="." GroupSeparator=" " DecimalDigits="0" />
-                        </telerik:RadNumericTextBox>
-                    </td>
-                    <th scope="row">
-                        <input id="btnC_DONGGOI" type="checkbox" onclick="SetC_DONGGOI();" value="false" />Đóng
-                        gói
-                    </th>
-                    <td>
-                        <telerik:RadNumericTextBox ID="txtC_DONGGOI" Width="90%" runat="server" ClientEvents-OnLoad="OnClientLoadtxtC_DONGGOI"
-                            ClientEvents-OnValueChanged="OnValueChangedtxtC_DONGGOI">
-                            <NumberFormat DecimalSeparator="." GroupSeparator=" " DecimalDigits="0" />
-                        </telerik:RadNumericTextBox>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">
-                        <input id="btnC_KHAIGIA" type="checkbox" onclick="SetC_KHAIGIA();" value="false" />Khai
-                        giá
-                    </th>
-                    <td>
-                        <telerik:RadNumericTextBox ID="txtC_KHAIGIA" Width="90%" runat="server" ClientEvents-OnLoad="OnClientLoadtxtC_KHAIGIA"
-                            ClientEvents-OnValueChanged="OnValueChangedtxtC_KHAIGIA">
-                            <NumberFormat DecimalSeparator="." GroupSeparator=" " DecimalDigits="0" />
-                        </telerik:RadNumericTextBox>
-                    </td>
-                    <th scope="row">
-                        <input id="btnC_COD" type="checkbox" onclick="SetC_COD();" value="false" />COD
-                    </th>
-                    <td>
-                        <telerik:RadNumericTextBox ID="txtC_COD" Width="90%" runat="server" ClientEvents-OnLoad="OnClientLoadtxtC_COD"
-                            ClientEvents-OnValueChanged="OnValueChangedtxtC_COD">
-                            <NumberFormat DecimalSeparator="." GroupSeparator=" " DecimalDigits="0" />
-                        </telerik:RadNumericTextBox>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">
-                        <input id="btnC_BAOPHAT" type="checkbox" onclick="SetC_BAOPHAT();" value="false" />Báo
-                        phát
-                    </th>
-                    <td>
-                        <telerik:RadNumericTextBox ID="txtC_BAOPHAT" Width="90%" runat="server" ClientEvents-OnLoad="OnClientLoadtxtC_BAOPHAT"
-                            ClientEvents-OnValueChanged="OnValueChangedtxtC_BAOPHAT">
-                            <NumberFormat DecimalSeparator="." GroupSeparator=" " DecimalDigits="0" />
-                        </telerik:RadNumericTextBox>
-                    </td>
-                    <th scope="row">
-                        <input id="btnC_HENGIO" type="checkbox" onclick="SetC_HENGIO();" value="false" />Hẹn giờ
-                    </th>
-                    <td>
-                        <telerik:RadNumericTextBox ID="txtC_HENGIO" Width="90%" runat="server" ClientEvents-OnLoad="OnClientLoadtxtC_HENGIO"
-                            ClientEvents-OnValueChanged="OnValueChangedtxtC_HENGIO">
-                            <NumberFormat DecimalSeparator="." GroupSeparator=" " DecimalDigits="0" />
-                        </telerik:RadNumericTextBox>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </asp:Panel>
-</center>
+                <th scope="row">
+                    Giá cước
+                </th>
+                <td>
+                    <telerik:RadNumericTextBox ID="txtC_TIENHANG" Width="90%" runat="server" ClientEvents-OnLoad="OnClientLoadtxtC_TIENHANG"
+                        ClientEvents-OnValueChanged="OnValueChangedtxtC_TIENHANG">
+                        <NumberFormat DecimalSeparator="." GroupSeparator=" " DecimalDigits="0" />
+                    </telerik:RadNumericTextBox>
+                </td>
+                <th scope="row">
+                    Giá cước (VAT)
+                </th>
+                <td>
+                    <telerik:RadNumericTextBox ID="txtC_TIENHANGVAT" Width="90%" runat="server" ClientEvents-OnLoad="OnClientLoadtxtC_TIENHANGVAT">
+                        <NumberFormat DecimalSeparator="." GroupSeparator=" " DecimalDigits="0" />
+                    </telerik:RadNumericTextBox>
+                </td>
+            </tr>
+        </tfoot>
+        <tbody>
+            <tr>
+                <th scope="row">
+                    Khu vực gửi hàng
+                </th>
+                <td>
+                    <telerik:RadComboBox ID="cmbVungLamViec" DataTextField="C_NAME" DataValueField="C_CODE"
+                        DataSourceID="VUNGLAMVIECDataSource" ShowToggleImage="True" runat="server" EmptyMessage="Chọn vùng làm việc"
+                        nprerender="cmbVungLamViec_PreRender" OnPreRender="cmbVungLamViec_PreRender">
+                    </telerik:RadComboBox>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">
+                    Tỉnh thành
+                </th>
+                <td>
+                    <telerik:RadComboBox ID="cmbTinhThanh" runat="server" DataTextField="C_NAME" DataValueField="PK_ID"
+                        DataSourceID="TINHTHANHDataSource" ShowToggleImage="True" EmptyMessage="Chọn tỉnh"
+                        OnClientSelectedIndexChanged="cmbTinhThanhClientSelectedIndexChangedHandler">
+                    </telerik:RadComboBox>
+                </td>
+                <th scope="row">
+                    Quận huyện
+                </th>
+                <td>
+                    <telerik:RadComboBox ID="cmbQuanHuyen" runat="server" DataTextField="C_NAME" DataValueField="C_CODE"
+                        DataSourceID="QUANHUYENDataSource" ShowToggleImage="True" EmptyMessage="Chọn quận huyện"
+                        OnClientItemsRequested="ItemsLoadedQuanHuyen" OnClientLoad="OnClientLoadQuanHuyen"
+                        OnItemsRequested="cmbQuanHuyen_ItemsRequested" OnClientSelectedIndexChanged="cmbQuanHuyenClientSelectedIndexChangedHandler">
+                    </telerik:RadComboBox>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">
+                    Khối lượng (g)
+                </th>
+                <td>
+                    <telerik:RadNumericTextBox ID="txtC_KHOILUONG" Width="90%" runat="server" ClientEvents-OnValueChanged="OnValueChangedtxtC_KHOILUONG"
+                        ClientEvents-OnLoad="OnClientLoadtxtC_KHOILUONG">
+                        <NumberFormat DecimalSeparator="." GroupSeparator=" " DecimalDigits="0" />
+                    </telerik:RadNumericTextBox>
+                </td>
+                <th scope="row">
+                    Giá trị hàng hoá
+                </th>
+                <td>
+                    <telerik:RadNumericTextBox ID="txtC_GIATRIHANGHOA" Width="90%" runat="server" ClientEvents-OnLoad="OnClientLoadtxtC_GIATRIHANGHOA"
+                        ClientEvents-OnValueChanged="OnValueChangedtxtC_GIATRIHANGHOA">
+                        <NumberFormat DecimalSeparator="." GroupSeparator=" " DecimalDigits="0" />
+                    </telerik:RadNumericTextBox>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">
+                    Dịch vụ
+                </th>
+                <td>
+                    <telerik:RadComboBox ID="cmbSanPham" runat="server" DataTextField="C_NAME" DataValueField="PK_ID"
+                        DataSourceID="MASANPHAMDataSource" ShowToggleImage="True" EmptyMessage="Chọn dịch vụ"
+                        OnClientSelectedIndexChanged="cmbSanPhamClientSelectedIndexChangedHandler">
+                    </telerik:RadComboBox>
+                </td>
+                <th scope="row">
+                    Cước chính
+                </th>
+                <td>
+                    <telerik:RadNumericTextBox ID="txtC_GIACUOC" Width="90%" runat="server" ClientEvents-OnLoad="OnClientLoadtxtC_GIACUOC"
+                        ClientEvents-OnValueChanged="OnValueChangedtxtC_GIACUOC">
+                        <NumberFormat DecimalSeparator="." GroupSeparator=" " DecimalDigits="0" />
+                    </telerik:RadNumericTextBox>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">
+                    PPXD
+                </th>
+                <td>
+                    <telerik:RadNumericTextBox ID="txtPPXD" Width="90%" runat="server" ClientEvents-OnLoad="OnClientLoadtxtPPXD"
+                        ClientEvents-OnValueChanged="OnValueChangedtxtPPXD">
+                        <NumberFormat DecimalSeparator="." GroupSeparator=" " DecimalDigits="0" />
+                    </telerik:RadNumericTextBox>
+                </td>
+                <th scope="row">
+                    <input id="btnC_DONGGOI" type="checkbox" onclick="SetC_DONGGOI();" value="false" />Đóng
+                    gói
+                </th>
+                <td>
+                    <telerik:RadNumericTextBox ID="txtC_DONGGOI" Width="90%" runat="server" ClientEvents-OnLoad="OnClientLoadtxtC_DONGGOI"
+                        ClientEvents-OnValueChanged="OnValueChangedtxtC_DONGGOI">
+                        <NumberFormat DecimalSeparator="." GroupSeparator=" " DecimalDigits="0" />
+                    </telerik:RadNumericTextBox>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">
+                    <input id="btnC_KHAIGIA" type="checkbox" onclick="SetC_KHAIGIA();" value="false" />Khai
+                    giá
+                </th>
+                <td>
+                    <telerik:RadNumericTextBox ID="txtC_KHAIGIA" Width="90%" runat="server" ClientEvents-OnLoad="OnClientLoadtxtC_KHAIGIA"
+                        ClientEvents-OnValueChanged="OnValueChangedtxtC_KHAIGIA">
+                        <NumberFormat DecimalSeparator="." GroupSeparator=" " DecimalDigits="0" />
+                    </telerik:RadNumericTextBox>
+                </td>
+                <th scope="row">
+                    <input id="btnC_COD" type="checkbox" onclick="SetC_COD();" value="false" />COD
+                </th>
+                <td>
+                    <telerik:RadNumericTextBox ID="txtC_COD" Width="90%" runat="server" ClientEvents-OnLoad="OnClientLoadtxtC_COD"
+                        ClientEvents-OnValueChanged="OnValueChangedtxtC_COD">
+                        <NumberFormat DecimalSeparator="." GroupSeparator=" " DecimalDigits="0" />
+                    </telerik:RadNumericTextBox>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">
+                    <input id="btnC_BAOPHAT" type="checkbox" onclick="SetC_BAOPHAT();" value="false" />Báo
+                    phát
+                </th>
+                <td>
+                    <telerik:RadNumericTextBox ID="txtC_BAOPHAT" Width="90%" runat="server" ClientEvents-OnLoad="OnClientLoadtxtC_BAOPHAT"
+                        ClientEvents-OnValueChanged="OnValueChangedtxtC_BAOPHAT">
+                        <NumberFormat DecimalSeparator="." GroupSeparator=" " DecimalDigits="0" />
+                    </telerik:RadNumericTextBox>
+                </td>
+                <th scope="row">
+                    <input id="btnC_HENGIO" type="checkbox" onclick="SetC_HENGIO();" value="false" />Hẹn
+                    giờ
+                </th>
+                <td>
+                    <telerik:RadNumericTextBox ID="txtC_HENGIO" Width="90%" runat="server" ClientEvents-OnLoad="OnClientLoadtxtC_HENGIO"
+                        ClientEvents-OnValueChanged="OnValueChangedtxtC_HENGIO">
+                        <NumberFormat DecimalSeparator="." GroupSeparator=" " DecimalDigits="0" />
+                    </telerik:RadNumericTextBox>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</asp:Panel>
 <asp:SqlDataSource ID="MASANPHAMDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
     SelectCommand="SELECT [PK_ID], [C_CODE], [C_NAME] FROM [DMMASANPHAM]  WHERE C_TYPE = N'Trong nước' ORDER BY PK_ID">
 </asp:SqlDataSource>
@@ -521,6 +368,5 @@
 </asp:SqlDataSource>
 <asp:SqlDataSource ID="QUANHUYENDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>">
 </asp:SqlDataSource>
- <asp:SqlDataSource ID="VUNGLAMVIECDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
- SelectCommand="SELECT DMVUNGLAMVIEC.* FROM DMVUNGLAMVIEC" >
-</asp:SqlDataSource>
+<asp:SqlDataSource ID="VUNGLAMVIECDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
+    SelectCommand="SELECT DMVUNGLAMVIEC.* FROM DMVUNGLAMVIEC"></asp:SqlDataSource>

@@ -45,9 +45,7 @@
     <telerik:RadAjaxManager ID="RadAjaxManagerPriceCheck" runat="server" UpdatePanelsRenderMode="Inline">
     </telerik:RadAjaxManager>
     <ul>
-        <li><a href="Check.aspx?ctl=BillCheck">Kiểm tra Bill</a></li>
-        <li><a href="Check.aspx?ctl=PriceCheckTN">Tính cước trong nước</a></li>
-        <li><a href="Check.aspx?ctl=PriceCheckQT">Tính cước quốc tế</a></li>
+        <li><a href="http://www.dovevn.com">Trang chủ</a></li>
     </ul>
     <asp:ContentPlaceHolder ID="ContentPlaceHolderCheck" runat="server">
     </asp:ContentPlaceHolder>
