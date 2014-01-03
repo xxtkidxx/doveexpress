@@ -8,49 +8,39 @@
     <style type="text/css">
         body
         {
-            font-family: Arial;
+            text-align: center;
+            font-family: Arial, Tahoma, Helvetica, sans-serif;
             font-size: 20px;
             font-weight: normal;
             letter-spacing: normal;
             background: #FFFFFF;
         }
-        .head
+        #wrapper
         {
-            font-family: Arial;
-            text-transform: uppercase;
-            font-weight: bold;
-            font-size: 12px;
-            font-style: normal;
-            letter-spacing: 3px;
-            color: #888;
-            border-bottom: 3px solid #f0f0f0;
+            width: 960px;
+            margin: 0 auto;
+            text-align: left;
         }
-        .head a
+        .menu
         {
-            color: #1D81B6;
-            text-decoration: none;
-            float: right;
-            text-shadow: 1px 1px 1px #888;
+            clear: both;
         }
-        .head a:hover
+        .menu ul
         {
-            color: #f0f0f0;
-        }
-        ul
-        {
+            margin: 0;
+            padding: 0;
             list-style-type: none;
             overflow: hidden;
         }
-        li
+        .menu li
         {
             float: left;
             padding-right: 10px;
         }
-        a:link, a:visited
+        .menu a:link, a:visited
         {
             display: block;
             width: 100%;
-            font-family: "Arial";
             font-size: 16px;
             font-weight: bold;
             color: #FFFFFF;
@@ -59,47 +49,66 @@
             padding: 12px;
             text-decoration: none;
         }
-        a:hover, a:active
+        .menu a:hover, a:active
         {
             background-color: #f0f0f0;
             color: #005CA2;
         }
+        .header
+        {
+        }
         .header h1
         {
             position: relative;
-            font-family: Arial;
+            float: left;
             color: #005CA2;
             font-weight: bold;
             font-style: normal;
-            font-size: 36px;
+            font-size: 32px;
             text-shadow: 1px 1px 1px #aaa;
-            padding-top: 30px;
+            text-align: center;
         }
         .header img
         {
             float: left;
             width: auto;
             height: auto;
-            padding-left: 40px;
-            padding-right: 40px;
+            padding-right: 30px;
         }
         .contents
         {
+            clear: both;
             width: 100%;
             height: 100%;
         }
+        .footer1
+        {
+            color: #005CA2;
+            font-weight: 500;
+            font-style: normal;
+            font-size: 16px;
+            text-shadow: 1px 1px 1px #aaa;
+            text-align: justify;
+        }
+        .footer2
+        {
+            color: #005CA2;
+            font-weight: 500;
+            font-style: normal;
+            font-size: 16px;
+            text-shadow: 1px 1px 1px #aaa;
+            text-align: center;
+        }
         /* Table 1 Style */
-        table.table1
+        .contents table.table1
         {
             font-size: 16px;
             font-weight: bold;
             line-height: 1.4em;
             font-style: normal;
             border-collapse: separate;
-            padding-top: 50px;
-            padding-right: 40px;
         }
-        .table1 thead th
+        .contents .table1 thead th
         {
             padding: 15px;
             color: #fff;
@@ -127,12 +136,12 @@
             border-top-left-radius: 5px;
             border-top-right-radius: 5px;
         }
-        .table1 thead th:empty
+        .contents .table1 thead th:empty
         {
             background: transparent;
             border: none;
         }
-        .table1 tbody th
+        .contents .table1 tbody th
         {
             color: #fff;
             text-shadow: 1px 1px 1px #005CA2;
@@ -160,7 +169,7 @@
             border-top-left-radius: 5px;
             border-bottom-left-radius: 5px;
         }
-        .table1 tfoot td
+        .contents .table1 tfoot td
         {
             color: #9CD009;
             font-size: 32px;
@@ -168,11 +177,11 @@
             padding: 10px 0px;
             text-shadow: 1px 1px 1px #444;
         }
-        .table1 tfoot th
+        .contents .table1 tfoot th
         {
             color: #FF0000;
         }
-        .table1 tbody td
+        .contents .table1 tbody td
         {
             padding: 10px;
             text-align: center;
@@ -184,7 +193,7 @@
             color: #666;
             text-shadow: 1px 1px 1px #fff;
         }
-        .table1 tbody span.check::before
+        .contents .table1 tbody span.check::before
         {
             content: url(../images/check0.png);
         }
@@ -196,19 +205,42 @@
     </telerik:RadScriptManager>
     <telerik:RadAjaxManager ID="RadAjaxManagerPriceCheck" runat="server" UpdatePanelsRenderMode="Inline">
     </telerik:RadAjaxManager>
-    <ul>
-        <li><a href="http://www.dovevn.com">Trang chủ</a></li>
-        <li><a href="#">Tính cước trong nước</a></li>
-        <li><a href="../tinhcuocquocte">Tính cước quốc tế</a></li>
-    </ul>
-    <div class="header">
-        <img alt="logo.png" src="logo.png" />
-        <h1>
-            TÍNH CƯỚC GỬI HÀNG TRONG NƯỚC</h1>
-    </div>
-    <div class="contents">
-        <asp:ContentPlaceHolder ID="ContentPlaceHolderCheck" runat="server">
-        </asp:ContentPlaceHolder>
+    <div id="wrapper">
+        <div class="menu">
+            <ul>
+                <li><a href="http://www.dovevn.com">Trang chủ</a></li>
+                <li><a href="#">Tính cước trong nước</a></li>
+                <li><a href="../tinhcuocquocte">Tính cước quốc tế</a></li>
+            </ul>
+        </div>
+        <div class="header">
+            <img alt="logo.png" src="logo.png" />
+            <h1>
+                TÍNH CƯỚC GỬI HÀNG</br>TRONG NƯỚC</h1>
+        </div>
+        <div class="contents">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolderCheck" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <div class="footer1">
+            Giá cước này được tính theo bảng giá công bố của Dove Express, tuy nhiên sẽ cố một
+            số<br />
+            lưu ý cho Quý khách khi gửi như hàng hoá nhẹ, hàng cồng kềnh, hàng có tính chất
+            đặc<br />
+            biệt...cần phải tư vấn thêm. Vui lòng gọi tổng đài Hà Nội hoặc TP. HCM để được tư
+            vấn
+            <br />
+            <br />
+        </div>
+        <div class="footer2">
+            <span style="font-weight: bold">Chuyển phát nhanh Bồ Câu - Dove Express.</span>
+            <br />
+            Hà Nội: 33 ngách 15 ngõ 167 Tây Sơn, Đống Đa - ÐT: 04.3533.5153
+            <br />
+            TP.HCM: 108/6 Cộng Hoà, P4, Tân Bình - ÐT: 08.62.66.44.55
+            <br />
+            <span style="font-weight: bold">Website: www.dovevn.com</span>
+        </div>
     </div>
     </form>
 </body>
