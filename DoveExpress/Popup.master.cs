@@ -34,6 +34,14 @@ public partial class Popup : System.Web.UI.MasterPage
                         //RadAjaxManagerPopup.AjaxSettings.Add(_AjaxSetting);
                         control = LoadControl("module/NHANGUIPOPUP.ascx");
                         break;
+                    case "doitacpopup":
+                        _AjaxSetting.AjaxControlID = "RadAjaxPanelBAOCAODOITACPOPUP";
+                        _AjaxUpdatedControl.ControlID = "RadAjaxPanelBAOCAODOITACPOPUP";
+                        _AjaxUpdatedControl.LoadingPanelID = "RadAjaxLoadingPanelBAOCAODOITACPOPUP";
+                        _AjaxSetting.UpdatedControls.Add(_AjaxUpdatedControl);
+                        //RadAjaxManagerPopup.AjaxSettings.Add(_AjaxSetting);
+                        control = LoadControl("module/BAOCAODOITACPOPUP.ascx");
+                        break;
                     case "nhanguitracking":
                         _AjaxSetting.AjaxControlID = "RadAjaxPanelNHANGUITRACKING";
                         _AjaxUpdatedControl.ControlID = "RadAjaxPanelNHANGUITRACKING";
