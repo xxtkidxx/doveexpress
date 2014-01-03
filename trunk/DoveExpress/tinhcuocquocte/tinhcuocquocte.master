@@ -1,0 +1,56 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="tinhcuocquocte.master.cs" Inherits="tinhcuocquocte" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>CHUYỂN PHÁT NHANH DOVE EXPRESS</title>
+    <style>
+        ul
+        {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        li
+        {
+            float: left;
+            padding-right: 10px;
+        }
+        a:link, a:visited
+        {
+            display: block;
+            width: 100%;
+            font-family: "Trebuchet MS" , sans-serif;
+            font-size: 16px;
+            font-weight: bold;
+            color: #FFFFFF;
+            background-color: #005CA2;
+            text-align: center;
+            padding: 12px;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+        a:hover, a:active
+        {
+            background-color: #f0f0f0;
+            color: #005CA2;
+        }
+    </style>
+</head>
+<body>
+    <form id="formPriceCheck" runat="server">
+    <telerik:RadScriptManager ID="RadScriptManagerPriceCheck" runat="server">
+    </telerik:RadScriptManager>
+    <telerik:RadAjaxManager ID="RadAjaxManagerPriceCheck" runat="server" UpdatePanelsRenderMode="Inline">
+    </telerik:RadAjaxManager>
+    <ul>
+        <li><a href="Check.aspx?ctl=BillCheck">Kiểm tra Bill</a></li>
+        <li><a href="Check.aspx?ctl=PriceCheckTN">Tính cước trong nước</a></li>
+        <li><a href="Check.aspx?ctl=PriceCheckQT">Tính cước quốc tế</a></li>
+    </ul>
+    <asp:ContentPlaceHolder ID="ContentPlaceHolderCheck" runat="server">
+    </asp:ContentPlaceHolder>
+    </form>
+</body>
+</html>
