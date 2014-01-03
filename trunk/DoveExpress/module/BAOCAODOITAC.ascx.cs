@@ -144,4 +144,12 @@ public partial class module_BAOCAODOITAC : System.Web.UI.UserControl
             return Compare((RadComboBoxItem)x, (RadComboBoxItem)y);
         }
     }
+    protected void cmbDoiTac_PreRender(object sender, EventArgs e)
+    {
+        if (!IsPostBack)
+        {
+            cmbDoiTac.Items.Insert(0, new RadComboBoxItem("Tất cả", "0"));
+            cmbDoiTac.SelectedIndex = 0;
+        }
+    }
 }
