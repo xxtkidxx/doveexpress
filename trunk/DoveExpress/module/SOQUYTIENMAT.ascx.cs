@@ -339,6 +339,14 @@ public partial class module_SOQUYTIENMAT : System.Web.UI.UserControl
             return true;
         }
     }
+    protected void cmbDay_PreRender(object sender, EventArgs e)
+    {
+        if (!IsPostBack)
+        {
+            cmbDay.SelectedValue = "0";
+            SOQUYTIENMATDataSource.SelectParameters["DAY"].DefaultValue = "0";
+        }
+    }
     protected void cmbMonth_PreRender(object sender, EventArgs e)
     {      
         if (!IsPostBack)
