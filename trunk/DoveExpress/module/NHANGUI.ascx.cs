@@ -228,10 +228,10 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
         Session["LastUrl"] = Request.Url.ToString();
         RadAjaxManager ajaxManager = RadAjaxManager.GetCurrent(Page);
         ajaxManager.AjaxRequest += new RadAjaxControl.AjaxRequestDelegate(RadScriptManager_AjaxRequestNG);
-        ajaxManager.ClientEvents.OnResponseEnd = "onResponseEndNG";        
+        ajaxManager.ClientEvents.OnResponseEnd = "onResponseEndNG";
     }
     protected void RadScriptManager_AjaxRequestNG(object sender, AjaxRequestEventArgs e)
-    {        
+    {
         GridEditableItem editableItem = null;
         foreach (GridEditFormItem item in RadGridNHANGUI.MasterTableView.GetItems(GridItemType.EditFormItem))
         {
@@ -269,7 +269,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
                 else
                 {
                     FK_MABANGCUOC = "";
-                    Alarm = "msg,-,Nhóm khách hàng này không nằm trong bảng cước nào trong khu vực làm việc " + Session["VUNGLAMVIEC"].ToString() + ",-," + TENKH + ",-," + DIENTHOAIKH; 
+                    Alarm = "msg,-,Nhóm khách hàng này không nằm trong bảng cước nào trong khu vực làm việc " + Session["VUNGLAMVIEC"].ToString() + ",-," + TENKH + ",-," + DIENTHOAIKH;
                 }
             }
             else
@@ -361,19 +361,19 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
             if ((FK_DOITAC != "") && (isCuocdoitac))
             {
                 GiaCuocDoiTac();
-            }  
+            }
         }
-       //Session["t"] = FK_KHACHHANG + "-" + TENKH + "-" + DIENTHOAIKH + "-" + PPXD + "-" + CUOCCHINH + "-" + GIADOITAC + "-" + FK_MABANGCUOC + "-" + FK_MAVUNG;
-      if (Alarm != "")
-      {
-          string script = string.Format("var result = '{0}'", Alarm);
-          ScriptManager.RegisterClientScriptBlock(Page, typeof(Page), "result", script, true);
-      }
-      else
-      {
-          string script = string.Format("var result = '{0}'", FK_KHACHHANG + ",-," + TENKH + ",-," + DIENTHOAIKH + ",-," + PPXD + ",-," + CUOCCHINH + ",-," + GIADOITAC + ",-," + FK_MABANGCUOC + ",-," + FK_MAVUNG);          
-          ScriptManager.RegisterClientScriptBlock(Page, typeof(Page), "result", script, true);
-      }
+        //Session["t"] = FK_KHACHHANG + "-" + TENKH + "-" + DIENTHOAIKH + "-" + PPXD + "-" + CUOCCHINH + "-" + GIADOITAC + "-" + FK_MABANGCUOC + "-" + FK_MAVUNG;
+        if (Alarm != "")
+        {
+            string script = string.Format("var result = '{0}'", Alarm);
+            ScriptManager.RegisterClientScriptBlock(Page, typeof(Page), "result", script, true);
+        }
+        else
+        {
+            string script = string.Format("var result = '{0}'", FK_KHACHHANG + ",-," + TENKH + ",-," + DIENTHOAIKH + ",-," + PPXD + ",-," + CUOCCHINH + ",-," + GIADOITAC + ",-," + FK_MABANGCUOC + ",-," + FK_MAVUNG);
+            ScriptManager.RegisterClientScriptBlock(Page, typeof(Page), "result", script, true);
+        }
     }
     protected void btnShowAll_Click(object sender, System.Web.UI.ImageClickEventArgs e)
     {
@@ -450,9 +450,16 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
         }
         else
         {
-            ClearSession();
+            if (Session["SaveAddNew"] == "True")
+            {                
+                e.KeepInInsertMode = true;                
+            }
+            else
+            {
+                ClearSession();
+            }           
             SetMessage("Tạo mới nhận gửi thành công!");
-            ITCLIB.ActionLog.ActionLog.WriteLog(Session["UserID"].ToString(), "Inserted NHANGUIs", "{PK_ID:\"" + getmaxid("NHANGUI") + "\"}");
+            ITCLIB.ActionLog.ActionLog.WriteLog(Session["UserID"].ToString(), "Inserted NHANGUIs", "{PK_ID:\"" + getmaxid("NHANGUI") + "\"}");            
         }
     }
     protected void RadGridNHANGUI_ItemUpdated(object sender, GridUpdatedEventArgs e)
@@ -480,7 +487,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
             RadDateTimePicker radNgaynhangui = (RadDateTimePicker)editItem.FindControl("radNgaynhangui");
             RadDateTimePicker radC_NGAYGIONHAN = (RadDateTimePicker)editItem.FindControl("radC_NGAYGIONHAN");
             RadTextBox txtC_TENKH = (RadTextBox)editItem.FindControl("txtC_TENKH");
-            RadTextBox txtC_TELGUI = (RadTextBox)editItem.FindControl("txtC_TELGUI");            
+            RadTextBox txtC_TELGUI = (RadTextBox)editItem.FindControl("txtC_TELGUI");
             HiddenField txtID = (HiddenField)editItem.FindControl("txtID");
             Session["txtID"] = (txtID.Value != "") ? txtID.Value : "0";
             HiddenField hfTinhThanh = (HiddenField)editItem.FindControl("hfTinhThanh");
@@ -539,12 +546,27 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
                 radNgaynhangui.SelectedDate = System.DateTime.Now;
                 radC_NGAYGIONHAN.SelectedDate = System.DateTime.Now.Date;
                 txtCODE.Text = GetMaxBill();
-                ClearSession();
+                if (Session["SaveAddNew"] == "True")
+                {
+                    cmbSanPham.SelectedValue = FK_DICHVU;
+                    cmbMaKhachHang.SelectedValue = FK_KHACHHANG;
+                    txtC_TENKH.Text = TENKH;
+                    txtC_TELGUI.Text = DIENTHOAIKH;
+                    txtC_KHOILUONG.Text = C_KHOILUONG.ToString();
+                    //txtC_GIACUOC.Text = CUOCCHINH.ToString();
+                    cmbFK_DOITAC.SelectedValue = FK_DOITAC;
+                    //txtC_GIADOITAC.Text = GIADOITAC.ToString();
+                }
+                else
+                {
+                    ClearSession();
+                }                
+                Session["SaveAddNew"] = "False";
             }
             else
             {
                 // edit item
-                txtC_CONLAI.Text = (((txtC_TIENHANGVAT.Text == "") ? 0 : decimal.Parse(txtC_TIENHANGVAT.Text)) - ((txtC_DATHU.Text == "") ? 0 : decimal.Parse(txtC_DATHU.Text))).ToString(); 
+                txtC_CONLAI.Text = (((txtC_TIENHANGVAT.Text == "") ? 0 : decimal.Parse(txtC_TIENHANGVAT.Text)) - ((txtC_DATHU.Text == "") ? 0 : decimal.Parse(txtC_DATHU.Text))).ToString();
                 FK_DICHVU = cmbSanPham.SelectedValue;
                 FK_QUANHUYEN = hfQuanHuyen.Value;
                 FK_KHACHHANG = cmbMaKhachHang.SelectedValue;
@@ -557,7 +579,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
                 oDataTable = SelectQuery.query_data(SelectSQL);
                 if (oDataTable.Rows.Count != 0)
                 {
-                    FK_NHOMKHACHHANG = oDataTable.Rows[0]["FK_NHOMKHACHHANG"].ToString();                  
+                    FK_NHOMKHACHHANG = oDataTable.Rows[0]["FK_NHOMKHACHHANG"].ToString();
                     string SelectSQL2;
                     SelectSQL2 = "Select DMMABANGCUOC.PK_ID FROM DMMABANGCUOC WHERE ((DMMABANGCUOC.C_VALUE ='" + FK_NHOMKHACHHANG + "') OR (DMMABANGCUOC.C_VALUE LIKE '%," + FK_NHOMKHACHHANG + ",%') OR (DMMABANGCUOC.C_VALUE LIKE '%," + FK_NHOMKHACHHANG + "') OR (DMMABANGCUOC.C_VALUE LIKE '" + FK_NHOMKHACHHANG + ",%')) AND (DMMABANGCUOC.FK_VUNGLAMVIEC = N'" + Session["VUNGLAMVIEC"].ToString() + "')";
                     DataTable oDataTable2 = new DataTable();
@@ -606,7 +628,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
                 C_KHOILUONG = (txtC_KHOILUONG.Text != "") ? int.Parse(txtC_KHOILUONG.Text) : 0;
                 CUOCCHINH = (txtC_GIACUOC.Text == "") ? 0 : decimal.Parse(txtC_GIACUOC.Text);
                 FK_DOITAC = cmbFK_DOITAC.SelectedValue;
-                GIADOITAC = (txtC_GIADOITAC.Text == "") ? 0 : decimal.Parse(txtC_GIADOITAC.Text);       
+                GIADOITAC = (txtC_GIADOITAC.Text == "") ? 0 : decimal.Parse(txtC_GIADOITAC.Text);
             }
         }
         if (e.Item is GridDataItem)
@@ -626,12 +648,12 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
         if (oDataTable.Rows[0]["MAXBILL"] != DBNull.Value)
         {
             Int64 maxvalue = (Int64)oDataTable.Rows[0]["MAXBILL"];
-            maxbill = String.Format("{0:00000000}", maxvalue + 1);   
+            maxbill = String.Format("{0:00000000}", maxvalue + 1);
         }
         return maxbill;
     }
     protected void RadGridNHANGUI_ItemCommand(object sender, GridCommandEventArgs e)
-    {     
+    {
         if (e.CommandName == "DeleteSelected")
         {
             if (RadGridNHANGUI.SelectedIndexes.Count == 0)
@@ -641,7 +663,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
             }
             foreach (GridDataItem item in RadGridNHANGUI.SelectedItems)
             {
-                if (!ValidateDeleteGroup(item["C_BILLFIX"].Text.Replace("BC","").Trim()))
+                if (!ValidateDeleteGroup(item["C_BILLFIX"].Text.Replace("BC", "").Trim()))
                 {
                     SetMessage("Không thể xóa nhận gửi \"" + item["c_name"].Text + "\" do có tham chiếu dữ liệu khác.");
                     RadGridNHANGUI.Rebind();
@@ -679,7 +701,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
             }
             else
             {
-               
+
                 foreach (GridDataItem item in RadGridNHANGUI.SelectedItems)
                 {
                     string TIENHANG = (item["C_TIENHANGVAT"].Text.Trim() == "") ? "0" : item["C_TIENHANGVAT"].Text.Trim();
@@ -688,11 +710,11 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
                     UpdateSQL += "UPDATE [NHANGUI] SET [C_DATHU] = " + TIENHANG + ",[C_HINHTHUCTT] = N'Đã thanh toán' WHERE [C_BILL] = '" + (item["C_BILLFIX"].FindControl("lblC_BILL") as Label).Text.Replace("BC", "").Trim() + "';IF (NOT EXISTS(SELECT C_BILL FROM SOQUYTIENMAT WHERE C_BILL = '" + (item["C_BILLFIX"].FindControl("lblC_BILL") as Label).Text.Replace("BC", "").Trim() + "'))" +
                     " BEGIN" +
                     " INSERT INTO [SOQUYTIENMAT] ([C_NGAY], [C_TYPE], [FK_KIHIEUTAIKHOAN], [C_DESC], [C_SOTIEN], [C_BILL],[C_TON],[C_ORDER],[FK_VUNGLAMVIEC]) VALUES ('" + String.Format("{0:yyyy-MM-dd hh:mm:ss tt}", System.DateTime.Now.ToUniversalTime().AddHours(7)) + "',N'Thu',NULL, N'Bill ' + '" + (item["C_BILLFIX"].FindControl("lblC_BILL") as Label).Text.Replace("BC", "").Trim() + "'," + TIENHANG + ",'" + (item["C_BILLFIX"].FindControl("lblC_BILL") as Label).Text.Replace("BC", "").Trim() + "',0,1,N'" + Session["VUNGLAMVIEC"].ToString() + "')" +
-                    " END" + 
-                    " ELSE" + 
+                    " END" +
+                    " ELSE" +
                     " BEGIN" +
                     " UPDATE [SOQUYTIENMAT] SET [C_NGAY] = '" + String.Format("{0:yyyy-MM-dd hh:mm:ss tt}", System.DateTime.Now.ToUniversalTime().AddHours(7)) + "',[C_SOTIEN] = " + TIENHANG + " WHERE [C_BILL] = '" + (item["C_BILLFIX"].FindControl("lblC_BILL") as Label).Text.Replace("BC", "").Trim() + "'" +
-                    " END;"; 
+                    " END;";
                 }
                 ITCLIB.Admin.SQL UpdateQuery = new ITCLIB.Admin.SQL();
                 //Response.Write(UpdateSQL);
@@ -775,7 +797,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
             SelectSQL = "SELECT * FROM DMQUANHUYEN order by LTRIM(C_NAME)";
         }
         return SelectSQL;
-    }    
+    }
     protected void GiaCuocChinh()
     {
         string SelectSQL1;
@@ -1164,7 +1186,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
     }
     protected void Button1_Click(object sender, EventArgs e)
     {
-        //TextBox1.Text = Session["t"].ToString();
+        TextBox1.Text = Session["t"].ToString();
         //ITCLIB.Admin.JavaScript.ShowMessage(Session["t"].ToString(), this);
     }
     protected void txtBillNhanh_TextChanged(object sender, EventArgs e)
@@ -1196,13 +1218,13 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
     protected bool CheckBillQuick(string C_BILL)
     {
         string SelectSQL;
-        SelectSQL = "Select NHANGUI.C_BILL FROM NHANGUI WHERE NHANGUI.C_BILL = '" + C_BILL +"'";
+        SelectSQL = "Select NHANGUI.C_BILL FROM NHANGUI WHERE NHANGUI.C_BILL = '" + C_BILL + "'";
         DataTable oDataTable = new DataTable();
         ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
         oDataTable = SelectQuery.query_data(SelectSQL);
         if (oDataTable.Rows.Count != 0)
         {
-           return false;
+            return false;
         }
         else
         {
@@ -1226,6 +1248,21 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
             cb.Items.Sort(new PagerRadComboBoxItemComparer());
             cb.Items.FindItemByValue(RadGridNHANGUI.PageSize.ToString()).Selected = true;
         }
+        if (e.Item is GridEditableItem && e.Item.IsInEditMode)
+        {
+            //LinkButton btnSave = (LinkButton)e.Item.FindControl("btnSave");
+            LinkButton btnSaveAddNew = (LinkButton)e.Item.FindControl("btnSaveAddNew");
+            btnSaveAddNew.Click += new EventHandler(btnSaveAddNew_Click);
+            //btnSave.Click += new EventHandler(btnSave_Click);
+        }
+    }
+    protected void btnSave_Click(object sender, EventArgs e)
+    {
+        Session["SaveAddNew"] = "False";
+    }
+    protected void btnSaveAddNew_Click(object sender, EventArgs e)
+    {
+        Session["SaveAddNew"] = "True";
     }
     public class PagerRadComboBoxItemComparer : IComparer<RadComboBoxItem>, IComparer
     {
