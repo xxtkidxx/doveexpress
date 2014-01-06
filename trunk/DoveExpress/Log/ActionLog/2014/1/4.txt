@@ -1,0 +1,12 @@
+Thời gian: 2014-01-04 00:21:45 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {C_BILL:"370616"}
+__________________________
+Thời gian: 2014-01-04 00:37:12 AM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
