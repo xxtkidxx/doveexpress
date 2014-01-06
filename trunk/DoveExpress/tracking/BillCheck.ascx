@@ -33,12 +33,12 @@
                         NHẬP SỐ PHIẾU GỬI (BILL):
                     </th>
                     <td>
-                        (BC)<telerik:RadNumericTextBox ID="txtBILL" Width="50%" Text='<%# Bind("C_BILL") %>'
+                        (BC)<telerik:RadNumericTextBox ID="txtBILL" Width="30%" Text='<%# Bind("C_BILL") %>'
                             runat="server">
                             <NumberFormat DecimalSeparator="." GroupSeparator="" DecimalDigits="0" />
                         </telerik:RadNumericTextBox>
                         <asp:ImageButton ID="imgSearch" runat="server" ImageUrl="~/images/imgsearch.png"
-                            Width="40px" ImageAlign="AbsMiddle" OnClick="imgSearch_Click" />
+                            Width="30px" ImageAlign="AbsMiddle" OnClick="imgSearch_Click" />
                     </td>
                 </tr>
                  <tr>
@@ -85,7 +85,7 @@
         </table>
         <telerik:RadGrid ID="RadGridBILLCHECK" runat="server" AutoGenerateColumns="false" ShowHeader = "false"
             Skin="Vista" AllowFilteringByColumn="false" AllowSorting="false" AllowPaging="True"
-            Width="99%" ItemStyle-Font-Bold ="true" AlternatingItemStyle-Font-Bold = "true" ItemStyle-Font-Size="16px" AlternatingItemStyle-Font-Size="16px" ItemStyle-ForeColor="#005CA2" AlternatingItemStyle-ForeColor="#005CA2" ItemStyle-Height="40px" AlternatingItemStyle-Height="40px">
+            Width="99%" ItemStyle-Font-Bold ="true" AlternatingItemStyle-Font-Bold = "true" ItemStyle-Font-Size="15px" AlternatingItemStyle-Font-Size="14px" ItemStyle-ForeColor="#005CA2" AlternatingItemStyle-ForeColor="#005CA2" ItemStyle-Height="30px" AlternatingItemStyle-Height="30px">
             <PagerStyle Mode="NextPrevNumericAndAdvanced" />
               <MasterTableView NoMasterRecordsText="Dữ liệu tracking chưa được cập nhật">
                 <Columns>

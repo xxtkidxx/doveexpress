@@ -55,17 +55,8 @@
             <table id="tblEdit" class="TableEditInGrid" cellspacing="3" cellpadding="3" style="width: 100%"
                 border="0">
                 <tr>
-                    <asp:HiddenField ID="txtID" Value='' runat="server" />
                     <td style="width: 100px;">
-                        <span class="rtsTxtnew">Nhân viên phát:</span>
-                    </td>
-                    <td colspan="4">
-                        <telerik:RadComboBox ID="cmbFK_NHANVIENPHAT" runat="server" DataTextField="C_NAME"
-                            DataValueField="PK_ID" DataSourceID="UserDataSource" ShowToggleImage="True" EmptyMessage="Chọn">
-                        </telerik:RadComboBox>
-                    </td>
-                    <td style="width: 100px;">
-                        <span class="rtsTxtnew">Ngày giờ phát:</span>
+                        <span class="rtsTxtnew">Ngày giờ:</span>
                     </td>
                     <td colspan="4">
                         <telerik:RadDateTimePicker ID="radC_NGAYGIOPHAT" Width="95%" runat="server" AutoPostBack="false">
@@ -73,30 +64,6 @@
                                 <ClientEvents OnKeyPress="controlkeypress" />
                             </DateInput>
                         </telerik:RadDateTimePicker>
-                    </td>
-                    <td style="width: 100px;">
-                        <span class="rtsTxtnew">Nhân viên KT:</span>
-                    </td>
-                    <td colspan="4">
-                        <telerik:RadComboBox ID="cmbFK_NHANVIENKHAITHAC" runat="server" DataTextField="C_NAME"
-                            DataValueField="PK_ID" DataSourceID="UserDataSource" ShowToggleImage="True" EmptyMessage="Chọn">
-                        </telerik:RadComboBox>
-                    </td>
-                </tr>
-                <tr>
-                    <td style="width: 100px;">
-                        <span class="rtsTxtnew">Người ký nhận:</span>
-                    </td>
-                    <td colspan="4">
-                        <telerik:RadTextBox ID="txtC_NGUOIKYNHAN" Width="90%" Text="" runat="server">
-                        </telerik:RadTextBox>
-                    </td>
-                    <td style="width: 100px;">
-                        <span class="rtsTxtnew">Bộ phận:</span>
-                    </td>
-                    <td colspan="4">
-                        <telerik:RadTextBox ID="txtC_BOPHAN" Width="90%" Text="" runat="server">
-                        </telerik:RadTextBox>
                     </td>
                     <td style="width: 100px;">
                         <span class="rtsTxtnew">Trạng thái:</span>
