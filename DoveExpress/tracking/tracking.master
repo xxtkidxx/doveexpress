@@ -183,10 +183,18 @@
         {
             content: url(../images/check0.png);
         }
-        .RadGrid_Hay th.rgHeader, .RadGrid_Hay th.rgSorted
+
+        .RadGrid_Vista td, .RadGrid_WebBlue th
         {
-            background-image: none;
-            color: White;
+            border-bottom: solid 1px #005CA2 !important;
+            
+        }
+        .RadGrid_Vista
+        {
+            border-left: none !important;
+            border-right: none !important;
+            border-bottom: none !important;
+            border-top: none !important;
         }
     </style>
 </head>
