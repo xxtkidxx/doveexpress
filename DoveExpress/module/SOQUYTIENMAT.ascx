@@ -35,6 +35,10 @@
         }
     </script>
     <script type="text/javascript">
+        function cmbDayClientSelectedIndexChangedHandler(sender, eventArgs) {
+            $find("<%=RadGridSOQUYTIENMAT.ClientID %>").get_masterTableView().rebind();
+            return false;
+        }
         function cmbYearClientSelectedIndexChangedHandler(sender, eventArgs) {
             $find("<%=RadGridSOQUYTIENMAT.ClientID %>").get_masterTableView().rebind();
             return false;
@@ -45,6 +49,44 @@
         }
     </script>
     <div style="width: 100%; margin: 10px 10px 10px 10px;">
+        Chọn ngày:&nbsp;
+        <telerik:RadComboBox ID="cmbDay" runat="server" OnClientSelectedIndexChanged="cmbDayClientSelectedIndexChangedHandler"
+            ShowToggleImage="True" EmptyMessage="Chọn ngày" OnPreRender="cmbDay_PreRender">
+            <Items>
+                <telerik:RadComboBoxItem Value="0" Text="Tất cả" />
+                <telerik:RadComboBoxItem Value="1" Text="1" />
+                <telerik:RadComboBoxItem Value="2" Text="2" />
+                <telerik:RadComboBoxItem Value="3" Text="3" />
+                <telerik:RadComboBoxItem Value="4" Text="4" />
+                <telerik:RadComboBoxItem Value="5" Text="5" />
+                <telerik:RadComboBoxItem Value="6" Text="6" />
+                <telerik:RadComboBoxItem Value="7" Text="7" />
+                <telerik:RadComboBoxItem Value="8" Text="8" />
+                <telerik:RadComboBoxItem Value="9" Text="9" />
+                <telerik:RadComboBoxItem Value="10" Text="10" />
+                <telerik:RadComboBoxItem Value="11" Text="11" />
+                <telerik:RadComboBoxItem Value="12" Text="12" />
+                <telerik:RadComboBoxItem Value="13" Text="13" />
+                <telerik:RadComboBoxItem Value="14" Text="14" />
+                <telerik:RadComboBoxItem Value="15" Text="15" />
+                <telerik:RadComboBoxItem Value="16" Text="16" />
+                <telerik:RadComboBoxItem Value="17" Text="17" />
+                <telerik:RadComboBoxItem Value="18" Text="18" />
+                <telerik:RadComboBoxItem Value="19" Text="19" />
+                <telerik:RadComboBoxItem Value="20" Text="20" />
+                <telerik:RadComboBoxItem Value="21" Text="21" />
+                <telerik:RadComboBoxItem Value="22" Text="22" />
+                <telerik:RadComboBoxItem Value="23" Text="23" />
+                <telerik:RadComboBoxItem Value="24" Text="24" />
+                <telerik:RadComboBoxItem Value="25" Text="25" />
+                <telerik:RadComboBoxItem Value="26" Text="26" />
+                <telerik:RadComboBoxItem Value="27" Text="27" />
+                <telerik:RadComboBoxItem Value="28" Text="28" />
+                <telerik:RadComboBoxItem Value="29" Text="29" />
+                <telerik:RadComboBoxItem Value="30" Text="30" />
+                <telerik:RadComboBoxItem Value="31" Text="31" />
+            </Items>
+        </telerik:RadComboBox>
         Chọn tháng:&nbsp;
         <telerik:RadComboBox ID="cmbMonth" runat="server" OnClientSelectedIndexChanged="cmbMonthClientSelectedIndexChangedHandler"
             ShowToggleImage="True" EmptyMessage="Chọn tháng" OnPreRender="cmbMonth_PreRender">
@@ -340,9 +382,10 @@
 </telerik:RadAjaxPanel>
 <asp:SqlDataSource ID="SOQUYTIENMATDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
     DeleteCommand="DELETE FROM [SOQUYTIENMAT] WHERE [PK_ID] = @PK_ID" InsertCommand="INSERT INTO [SOQUYTIENMAT] ([C_NGAY], [C_TYPE], [FK_KIHIEUTAIKHOAN], [C_DESC], [C_SOTIEN], [C_TON],[C_ORDER],[FK_VUNGLAMVIEC]) VALUES (@C_NGAY, @C_TYPE, @FK_KIHIEUTAIKHOAN, @C_DESC, @C_SOTIEN, 0, @C_ORDER,@FK_VUNGLAMVIEC)"
-    SelectCommand="SELECT (ROW_NUMBER() OVER(ORDER BY [SOQUYTIENMAT].C_ORDER ASC, [SOQUYTIENMAT].C_NGAY ASC, [SOQUYTIENMAT].PK_ID ASC) + 9999) AS SOCHUNGTU,[SOQUYTIENMAT].[PK_ID], [SOQUYTIENMAT].[C_NGAY], [SOQUYTIENMAT].[C_TYPE], [SOQUYTIENMAT].[FK_KIHIEUTAIKHOAN], [SOQUYTIENMAT].[C_DESC], [SOQUYTIENMAT].[C_SOTIEN], [SOQUYTIENMAT].[C_TON], [SOQUYTIENMAT].[C_ORDER],DMKIHIEUTAIKHOAN.C_NAME as KIHIEUTAIKHOANNAME FROM [SOQUYTIENMAT] LEFT OUTER JOIN DMKIHIEUTAIKHOAN ON SOQUYTIENMAT.FK_KIHIEUTAIKHOAN=DMKIHIEUTAIKHOAN.C_CODE  WHERE ([SOQUYTIENMAT].[FK_VUNGLAMVIEC] = @FK_VUNGLAMVIEC AND month([SOQUYTIENMAT].[C_NGAY]) = @MONTH AND year([SOQUYTIENMAT].[C_NGAY]) = @YEAR AND [SOQUYTIENMAT].[C_SOTIEN] > 0) OR ([SOQUYTIENMAT].[C_TYPE] = N'Tồn đầu kỳ') "
+    SelectCommand="SELECT (ROW_NUMBER() OVER(ORDER BY [SOQUYTIENMAT].C_ORDER ASC, [SOQUYTIENMAT].C_NGAY ASC, [SOQUYTIENMAT].PK_ID ASC) + 9999) AS SOCHUNGTU,[SOQUYTIENMAT].[PK_ID], [SOQUYTIENMAT].[C_NGAY], [SOQUYTIENMAT].[C_TYPE], [SOQUYTIENMAT].[FK_KIHIEUTAIKHOAN], [SOQUYTIENMAT].[C_DESC], [SOQUYTIENMAT].[C_SOTIEN], [SOQUYTIENMAT].[C_TON], [SOQUYTIENMAT].[C_ORDER],DMKIHIEUTAIKHOAN.C_NAME as KIHIEUTAIKHOANNAME FROM [SOQUYTIENMAT] LEFT OUTER JOIN DMKIHIEUTAIKHOAN ON SOQUYTIENMAT.FK_KIHIEUTAIKHOAN=DMKIHIEUTAIKHOAN.C_CODE  WHERE ([SOQUYTIENMAT].[FK_VUNGLAMVIEC] = @FK_VUNGLAMVIEC AND (day([SOQUYTIENMAT].[C_NGAY]) = @DAY OR @DAY = 0) AND month([SOQUYTIENMAT].[C_NGAY]) = @MONTH AND year([SOQUYTIENMAT].[C_NGAY]) = @YEAR AND [SOQUYTIENMAT].[C_SOTIEN] > 0) OR ([SOQUYTIENMAT].[C_TYPE] = N'Tồn đầu kỳ') "
     UpdateCommand="UPDATE [SOQUYTIENMAT] SET [C_NGAY] = @C_NGAY, [C_TYPE] = @C_TYPE, [FK_KIHIEUTAIKHOAN] = @FK_KIHIEUTAIKHOAN,[C_DESC] = @C_DESC, [C_SOTIEN] = @C_SOTIEN WHERE [PK_ID] = @PK_ID">
     <SelectParameters>
+        <asp:ControlParameter ControlID="cmbDay" Name="DAY" PropertyName="SelectedValue" />
         <asp:ControlParameter ControlID="cmbMonth" Name="MONTH" PropertyName="SelectedValue" />
         <asp:ControlParameter ControlID="cmbYear" Name="YEAR" PropertyName="SelectedValue" />
         <asp:SessionParameter Name="FK_VUNGLAMVIEC" Type="String" SessionField="VUNGLAMVIEC" />
