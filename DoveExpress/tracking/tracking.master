@@ -9,7 +9,7 @@
         {
             text-align: center;
             font-family: Arial, Tahoma, Helvetica, sans-serif;
-            font-size: 20px;
+            font-size: 15px;
             font-weight: normal;
             letter-spacing: normal;
             background: #FFFFFF;
@@ -40,12 +40,12 @@
         {
             display: block;
             width: 100%;
-            font-size: 16px;
+            font-size: 15px;
             font-weight: bold;
             color: #FFFFFF;
             background-color: #005CA2;
             text-align: center;
-            padding: 12px;
+            padding: 10px;
             text-decoration: none;
         }
         .menu a:hover, a:active
@@ -63,7 +63,7 @@
             color: #005CA2;
             font-weight: bold;
             font-style: normal;
-            font-size: 32px;
+            font-size: 25px;
             text-shadow: 1px 1px 1px #aaa;
             text-align: center;
         }
@@ -85,7 +85,7 @@
             color: #005CA2;
             font-weight: 500;
             font-style: normal;
-            font-size: 16px;
+            font-size: 15px;
             text-align: justify;
         }
         .footer2
@@ -93,22 +93,22 @@
             color: #005CA2;
             font-weight: 500;
             font-style: normal;
-            font-size: 16px;
+            font-size: 15px;
             text-align: center;
         }
         /* Table 1 Style */
         .contents table.table1
         {
-            font-size: 16px;
+            font-size: 15px;
             font-weight: bold;
-            line-height: 1.4em;
+            line-height: 0.6em;
             font-style: normal;
             border-collapse: separate;
             width: 100%;
         }
         .contents .table1 thead th
         {
-            padding: 15px;
+            padding: 12px;
             color: #005CA2;
             border: 1px solid #005CA2;
             border-bottom: 3px solid #005CA2;
@@ -143,7 +143,7 @@
             background-color: #FFFFFF;
             border: 0px solid #005CA2;
             border-bottom: 1px solid #005CA2;
-            padding: 0px 10px;
+            padding: 0px 20px;
             background: -webkit-gradient(
         linear,
         left bottom,
@@ -162,13 +162,14 @@
         .contents .table1 tfoot td
         {
             color: #FF0000;
-            font-size: 20px;
+            font-size: 15px;
             text-align: center;
-            padding: 10px 0px;
+            padding: 10px 4px;
         }
         .contents .table1 tfoot th
         {
             color: #005CA2;
+             padding: 10px 0px 10px 0px;
         }
         .contents .table1 tbody td
         {

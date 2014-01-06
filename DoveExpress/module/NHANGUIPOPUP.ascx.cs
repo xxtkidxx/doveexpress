@@ -19,8 +19,8 @@ public partial class module_NHANGUIPOPUP : System.Web.UI.UserControl
         ajaxManager.AjaxRequest += new RadAjaxControl.AjaxRequestDelegate(RadScriptManager_AjaxRequestNGPU);
         ajaxManager.ClientEvents.OnResponseEnd = "onResponseEndNGPU";
         radC_NGAYGIOPHAT.SelectedDate = System.DateTime.Now;
-        cmbFK_NHANVIENPHAT.SelectedIndex = 0;
-        cmbFK_NHANVIENKHAITHAC.SelectedIndex = 0;
+        //cmbFK_NHANVIENPHAT.SelectedIndex = 0;
+        //cmbFK_NHANVIENKHAITHAC.SelectedIndex = 0;
     }
     protected void RadScriptManager_AjaxRequestNGPU(object sender, AjaxRequestEventArgs e)
     {
@@ -31,7 +31,7 @@ public partial class module_NHANGUIPOPUP : System.Web.UI.UserControl
             string UpdateSQL = "";
             foreach (string C_BILL in IDBILLS)
             {
-                UpdateSQL += "UPDATE [NHANGUI] SET [FK_NHANVIENPHAT] = '" + cmbFK_NHANVIENPHAT.SelectedValue + "',[C_NGAYGIOPHAT] = '" + radC_NGAYGIOPHAT.SelectedDate + "',[FK_NHANVIENKHAITHAC] = '" + cmbFK_NHANVIENKHAITHAC.SelectedValue + "',[C_NGUOIKYNHAN] = N'" + txtC_NGUOIKYNHAN.Text + "', [C_BOPHAN]= N'" + txtC_BOPHAN.Text + "' WHERE [C_BILL] = '" + C_BILL.Trim() + "';";
+                //UpdateSQL += "UPDATE [NHANGUI] SET [FK_NHANVIENPHAT] = '" + cmbFK_NHANVIENPHAT.SelectedValue + "',[C_NGAYGIOPHAT] = '" + radC_NGAYGIOPHAT.SelectedDate + "',[FK_NHANVIENKHAITHAC] = '" + cmbFK_NHANVIENKHAITHAC.SelectedValue + "',[C_NGUOIKYNHAN] = N'" + txtC_NGUOIKYNHAN.Text + "', [C_BOPHAN]= N'" + txtC_BOPHAN.Text + "' WHERE [C_BILL] = '" + C_BILL.Trim() + "';";
                 if (cmbFK_TRANGTHAI.SelectedValue != "0")
                 {
                     UpdateSQL += "INSERT INTO TRACKING (C_BILL, C_DATE, FK_TRANGTHAI, C_DESC) VALUES ('" + C_BILL.Trim() + "',GETDATE(),'" + cmbFK_TRANGTHAI.SelectedValue + "'," + (txtC_DESC.Text == "" ? "NULL" : "N'" +txtC_DESC.Text + "'") + ")";
