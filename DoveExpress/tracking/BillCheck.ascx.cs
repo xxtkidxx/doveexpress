@@ -13,11 +13,55 @@ public partial class ext_BillCheck : System.Web.UI.UserControl
     {
 
     }
+    protected void Page_PreRender(object sender, EventArgs e)
+    {
+        if (!IsPostBack)
+        {
+            if (Request.QueryString["BILLID"] != null)
+            {
+                txtBILL.Text = Request.QueryString["BILLID"];
+                RadAjaxManager ajaxManager = RadAjaxManager.GetCurrent(Page);
+                if (txtBILL.Text.Trim() != "")
+                {
+                    string SelectSQL = "SELECT NHANGUI.*,DMMASANPHAM.C_NAME as DICHVUNAME FROM NHANGUI LEFT OUTER JOIN DMMASANPHAM ON NHANGUI.FK_MASANPHAM = DMMASANPHAM.PK_ID WHERE C_BILL = " + txtBILL.Text.Trim();
+                    DataTable oDataTable = new DataTable();
+                    ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
+                    oDataTable = SelectQuery.query_data(SelectSQL);
+                    if (oDataTable.Rows.Count != 0)
+                    {
+                        lblDichvu.Text = (oDataTable.Rows[0]["DICHVUNAME"].ToString() == "") ? "-" : oDataTable.Rows[0]["DICHVUNAME"].ToString();
+                        lblMaKhachHang.Text = (oDataTable.Rows[0]["FK_KHACHHANG"].ToString() == "") ? "-" : oDataTable.Rows[0]["FK_KHACHHANG"].ToString();
+                        lblNgaygui.Text = String.Format("{0:dd/MM/yyyy}", DateTime.Parse(oDataTable.Rows[0]["C_NGAY"].ToString()));
+                        lblDiachinhan.Text = (oDataTable.Rows[0]["C_DIACHINHAN"].ToString() == "") ? "-" : oDataTable.Rows[0]["C_DIACHINHAN"].ToString();
+                        if (oDataTable.Rows[0]["C_TYPE"].ToString() == "2")
+                        {
+                            lblQuanhuyen.Text = "Quốc gia:";
+                            lblQuanhuyenValue.Text = ITCLIB.Admin.cFunction.LoadQuocGiaName(oDataTable.Rows[0]["FK_QUOCGIA"].ToString());
+                        }
+                        else
+                        {
+                            lblQuanhuyen.Text = "Tỉnh thành/Quận huyện:";
+                            lblQuanhuyenValue.Text = ITCLIB.Admin.cFunction.LoadTinhThanhName(oDataTable.Rows[0]["FK_QUANHUYEN"].ToString()) + " / " + ITCLIB.Admin.cFunction.LoadQuanHuyenName(oDataTable.Rows[0]["FK_QUANHUYEN"].ToString());
+                        }
+                        LoadGrid();
+                    }
+                    else
+                    {
+                        ajaxManager.Alert("Không tồn tại BILL " + txtBILL.Text.Trim() + " trong dữ liệu DoveExpress");
+                    }
+                }
+                else
+                {
+                    ajaxManager.Alert("Hãy nhập BILL để kiểm tra trạng thái");
+                }
+            }
+        }
+    }
     protected void imgSearch_Click(object sender, ImageClickEventArgs e)
     {
         RadAjaxManager ajaxManager = RadAjaxManager.GetCurrent(Page);
         if (txtBILL.Text.Trim() != "")
-        {            
+        {
             string SelectSQL = "SELECT NHANGUI.*,DMMASANPHAM.C_NAME as DICHVUNAME FROM NHANGUI LEFT OUTER JOIN DMMASANPHAM ON NHANGUI.FK_MASANPHAM = DMMASANPHAM.PK_ID WHERE C_BILL = " + txtBILL.Text.Trim();
             DataTable oDataTable = new DataTable();
             ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
