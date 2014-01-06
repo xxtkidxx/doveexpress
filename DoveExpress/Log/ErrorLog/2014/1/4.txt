@@ -1,0 +1,5 @@
+Thời gian lỗi : 2014-01-04 00:08:59 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=BAOCAOTONGHOP. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\DoveExpress\module\BAOCAOTONGHOP.ascx.cs(39): error CS0103: The name 'radTuNgay' does not exist in the current context
+__________________________
