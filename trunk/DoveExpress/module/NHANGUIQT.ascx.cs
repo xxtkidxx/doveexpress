@@ -668,7 +668,21 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
                 cmbC_TAILIEU.SelectedIndex = 1;
                 txtCODE.Text = GetMaxBill();
                 txtC_TYGIA.Text = GetTyGia();
-                ClearSession();
+                if (Session["SaveAddNew"] == "True")
+                {
+                    cmbSanPham.SelectedValue = FK_DICHVU;
+                    cmbMaKhachHang.SelectedValue = FK_KHACHHANG;
+                    txtC_TENKH.Text = TENKH;
+                    txtC_TELGUI.Text = DIENTHOAIKH;
+                    txtC_KHOILUONG.Text = C_KHOILUONG.ToString();
+                    //txtC_GIACUOC.Text = CUOCCHINH.ToString();
+                    cmbFK_DOITAC.SelectedValue = FK_DOITAC;
+                    //txtC_GIADOITAC.Text = GIADOITAC.ToString();
+                }
+                else
+                {
+                    ClearSession();
+                }
             }
             else
             {
@@ -1488,6 +1502,21 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
             cb.Items.Sort(new PagerRadComboBoxItemComparer());
             cb.Items.FindItemByValue(RadGridNHANGUIQT.PageSize.ToString()).Selected = true;
         }
+        if (e.Item is GridEditableItem && e.Item.IsInEditMode)
+        {
+            //LinkButton btnSave = (LinkButton)e.Item.FindControl("btnSave");
+            LinkButton btnSaveAddNew = (LinkButton)e.Item.FindControl("btnSaveAddNew");
+            btnSaveAddNew.Click += new EventHandler(btnSaveAddNew_Click);
+            //btnSave.Click += new EventHandler(btnSave_Click);
+        }
+    }
+    protected void btnSave_Click(object sender, EventArgs e)
+    {
+        Session["SaveAddNew"] = "False";
+    }
+    protected void btnSaveAddNew_Click(object sender, EventArgs e)
+    {
+        Session["SaveAddNew"] = "True";
     }
     public class PagerRadComboBoxItemComparer : IComparer<RadComboBoxItem>, IComparer
     {

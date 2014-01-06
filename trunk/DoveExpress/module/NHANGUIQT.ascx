@@ -571,7 +571,7 @@
     OnDataBound="RadGridNHANGUIQT_DataBound" OnItemDeleted="RadGridNHANGUIQT_ItemDeleted"
     OnItemInserted="RadGridNHANGUIQT_ItemInserted" OnItemUpdated="RadGridNHANGUIQT_ItemUpdated"
     OnItemCommand="RadGridNHANGUIQT_ItemCommand" OnItemDataBound="RadGridNHANGUIQT_ItemDataBound"
-    CellSpacing="0" onitemcreated="RadGridNHANGUIQT_ItemCreated">
+    CellSpacing="0" OnItemCreated="RadGridNHANGUIQT_ItemCreated">
     <PagerStyle FirstPageToolTip="Trang đầu" LastPageToolTip="Trang cuối" NextPagesToolTip="Các trang tiếp"
         NextPageToolTip="Trang tiếp" PageSizeLabelText="Số bản ghi hiển thị:" PrevPagesToolTip="Các trang sau"
         PrevPageToolTip="Trang sau" PagerTextFormat="Change page: {4} &nbsp;Trang <strong>{0}</strong>/<strong>{1}</strong>, Bản ghi <strong>{2}</strong> đến <strong>{3}</strong> của tất cả <strong>{5}</strong> bản ghi" />
@@ -691,6 +691,8 @@
                     <ul>
                         <li class="lifirst">
                             <asp:LinkButton ID="btnSave" runat="server" CommandName='<%# (Container is GridEditFormInsertItem) ? "PerformInsert" : "Update" %>'><img src="Images/img_save.jpg" /><%# (Container is GridEditFormInsertItem) ? "Lưu" : "Lưu" %></asp:LinkButton></li>
+                        <li class="lifirst">
+                            <asp:LinkButton ID="btnSaveAddNew" runat="server" CommandName="PerformInsert" Visible='<%# Container is GridEditFormInsertItem %>'><img src="Images/img_save.jpg" /><%# (Container is GridEditFormInsertItem) ? "Lưu & Thêm mới" : "Lưu & Thêm mới" %></asp:LinkButton></li>
                         <li>
                             <asp:LinkButton ID="btnClose" runat="server" CommandName="Cancel"><img src="Images/img_Close.jpg" />Đóng</asp:LinkButton></li>
                         <li>
