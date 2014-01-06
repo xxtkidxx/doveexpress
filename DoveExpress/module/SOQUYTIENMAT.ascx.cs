@@ -154,6 +154,14 @@ public partial class module_SOQUYTIENMAT : System.Web.UI.UserControl
         }
         else
         {
+            if (Session["SaveAddNew"] == "True")
+            {
+                e.KeepInInsertMode = true;
+            }
+            else
+            {
+
+            }  
             SetMessage("Tạo mới sổ quỹ tiền mặt thành công!");
             ITCLIB.ActionLog.ActionLog.WriteLog(Session["UserID"].ToString(), "Inserted SOQUYTIENMATs", "{PK_ID:\"" + getmaxid("SOQUYTIENMAT") + "\"}");
         }
@@ -188,6 +196,15 @@ public partial class module_SOQUYTIENMAT : System.Web.UI.UserControl
                 // insert item
                 radNgaySOQUYTIENMAT.SelectedDate = System.DateTime.Now;
                 cmbC_TYPE.SelectedIndex = 0;
+                if (Session["SaveAddNew"] == "True")
+                {
+
+                }
+                else
+                {
+
+                }
+                Session["SaveAddNew"] = "False";
             }
             else
             {
@@ -452,5 +469,23 @@ public partial class module_SOQUYTIENMAT : System.Web.UI.UserControl
         {
             TONDAUKY = 0;
         }
+    }
+    protected void RadGridSOQUYTIENMAT_ItemCreated(object sender, GridItemEventArgs e)
+    {
+        if (e.Item is GridEditableItem && e.Item.IsInEditMode)
+        {
+            //LinkButton btnSave = (LinkButton)e.Item.FindControl("btnSave");
+            LinkButton btnSaveAddNew = (LinkButton)e.Item.FindControl("btnSaveAddNew");
+            btnSaveAddNew.Click += new EventHandler(btnSaveAddNew_Click);
+            //btnSave.Click += new EventHandler(btnSave_Click);
+        }
+    }
+    protected void btnSave_Click(object sender, EventArgs e)
+    {
+        Session["SaveAddNew"] = "False";
+    }
+    protected void btnSaveAddNew_Click(object sender, EventArgs e)
+    {
+        Session["SaveAddNew"] = "True";
     }
 }

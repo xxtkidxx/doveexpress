@@ -576,7 +576,14 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
         }
         else
         {
-            ClearSession();
+            if (Session["SaveAddNew"] == "True")
+            {
+                e.KeepInInsertMode = true;
+            }
+            else
+            {
+                ClearSession();
+            }
             SetMessage("Tạo mới nhận gửi thành công!");
             ITCLIB.ActionLog.ActionLog.WriteLog(Session["UserID"].ToString(), "Inserted NHANGUIQTs", "{PK_ID:\"" + getmaxid("NHANGUI") + "\"}");
         }
