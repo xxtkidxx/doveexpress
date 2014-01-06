@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>DoveExpress</title>
+    <style type="text/css">
+        body
+        {
+            text-align: center;
+            font-family: Arial, Tahoma, Helvetica, sans-serif;
+            font-size: 15px;
+            font-weight: normal;
+            letter-spacing: normal;
+            background: #FFFFFF;
+        }
+        #CheckbillTable
+        {
+            margin: 0 auto;
+            width: 300px;
+            text-align: left;
+            border: 1px solid #005CA2;
+        }
+        #CheckbillTable th
+        {
+            font-weight: bold;
+            padding: 10px;
+            background: #005CA2;
+            color: #FFFFFF;
+        }
+        #CheckbillTable td
+        {
+            padding: 6px;
+            background: #FFFFFF;
+            color: #005CA2;
+        }
+        #BILLVALUE
+        {
+            height: 25px;
+            border: 1px solid #005CA2;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" method="post">
+    <table id="CheckbillTable">
+        <thead>
+            <tr>
+                <th scope="col">
+                    TRA CỨU SỐ BILL
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td align="center" valign="middle">
+                    Số Bill gồm 7 chữ số (Ví dụ: BC1234567)
+                </td>
+            </tr>
+            <tr>
+                <td align="center" valign="middle">
+                    (BC)<input name="BILLVALUE" id="BILLVALUE" value="Nhập số Bill" type="text" onclick="HighlightAll(this);"
+                        onfocus="if(this.value=='Nhập mã số vận đơn')this.value=''"/>
+                </td>
+            </tr>
+            <tr>
+                <td align="center" valign="middle">
+                    <input type="button" onclick="goto_page('Tracking.aspx');" value="Kiểm tra"/>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">
+                    <a href="http://118.70.183.223:88/tinhcuoctrongnuoc">Tính cước trong nước</a>
+                    <a href="http://118.70.183.223:88/tinhcuocquocte">Tính cước quốc tế</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    </form>
+    <script type="text/javascript">
+        function goto_page(url) {
+            window.location = url + '?BILLID=' + document.getElementById('BILLVALUE').value;
+        }
+        function HighlightAll(BILLVALUE) {
+            BILLVALUE.select();
+        }
+    </script>
+</body>
+</html>

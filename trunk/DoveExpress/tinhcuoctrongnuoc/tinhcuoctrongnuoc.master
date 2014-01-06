@@ -24,6 +24,7 @@
         .menu
         {
             clear: both;
+            margin-left: 140px;
         }
         .menu ul
         {
@@ -56,6 +57,7 @@
         }
         .header
         {
+            margin-left: 140px;
         }
         .header h1
         {
@@ -83,6 +85,7 @@
         }
         .footer1
         {
+            margin-left: 140px;
             color: #005CA2;
             font-weight: 500;
             font-style: normal;
@@ -100,6 +103,7 @@
         /* Table 1 Style */
         .contents table.table1
         {
+            margin: 0 auto;
             font-size: 16px;
             font-weight: bold;
             line-height: 1.4em;

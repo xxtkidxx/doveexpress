@@ -214,7 +214,7 @@
                 <td>
                     <telerik:RadNumericTextBox ID="txtC_TIENHANG" Width="90%" runat="server" ClientEvents-OnLoad="OnClientLoadtxtC_TIENHANG"
                         ClientEvents-OnValueChanged="OnValueChangedtxtC_TIENHANG">
-                        <NumberFormat DecimalSeparator="." GroupSeparator=" " DecimalDigits="0" />
+                        <NumberFormat DecimalSeparator="." GroupSeparator=" " DecimalDigits="2" />
                     </telerik:RadNumericTextBox>
                 </td>
                 <th scope="row">
@@ -222,7 +222,7 @@
                 </th>
                 <td>
                     <telerik:RadNumericTextBox ID="txtC_TIENHANGVAT" Width="90%" runat="server" ClientEvents-OnLoad="OnClientLoadtxtC_TIENHANGVAT">
-                        <NumberFormat DecimalSeparator="." GroupSeparator=" " DecimalDigits="0" />
+                        <NumberFormat DecimalSeparator="." GroupSeparator=" " DecimalDigits="2" />
                     </telerik:RadNumericTextBox>
                 </td>
             </tr>
