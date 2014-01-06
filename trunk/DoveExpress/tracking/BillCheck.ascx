@@ -83,12 +83,9 @@
                 </tr>
             </tbody>
         </table>
-        <telerik:RadGrid ID="RadGridBILLCHECK" runat="server" AutoGenerateColumns="false"
-            Skin="Hay" AllowFilteringByColumn="false" AllowSorting="false" AllowPaging="True"
-            Width="99%" BorderColor="#D6D1C6">
-            <HeaderStyle BackColor="#EDEDED" BorderColor="#D6D1C6" Font-Bold="True" ForeColor="#575757"
-                Height="30px" />
-            <ItemStyle BorderStyle="Outset" Height="30px" />
+        <telerik:RadGrid ID="RadGridBILLCHECK" runat="server" AutoGenerateColumns="false" ShowHeader = "false"
+            Skin="Vista" AllowFilteringByColumn="false" AllowSorting="false" AllowPaging="True"
+            Width="99%" ItemStyle-Font-Bold ="true" AlternatingItemStyle-Font-Bold = "true" ItemStyle-Font-Size="16px" AlternatingItemStyle-Font-Size="16px" ItemStyle-ForeColor="#005CA2" AlternatingItemStyle-ForeColor="#005CA2" ItemStyle-Height="40px" AlternatingItemStyle-Height="40px">
             <PagerStyle Mode="NextPrevNumericAndAdvanced" />
               <MasterTableView NoMasterRecordsText="Dữ liệu tracking chưa được cập nhật">
                 <Columns>
@@ -97,12 +94,12 @@
                         <ItemStyle HorizontalAlign="Center" Width="50px" />
                     </telerik:GridBoundColumn>
                     <telerik:GridBoundColumn UniqueName="TRANGTHAINAME" DataField="TRANGTHAINAME" HeaderText="Trạng thái">
-                        <HeaderStyle HorizontalAlign="Center" Width="70px"/>
-                        <ItemStyle HorizontalAlign="Center" Width="70px" />
+                        <HeaderStyle HorizontalAlign="Center" Width="180px"/>
+                        <ItemStyle HorizontalAlign="Center" Width="180px" />
                     </telerik:GridBoundColumn>
                     <telerik:GridBoundColumn UniqueName="C_DESC" DataField="C_DESC" HeaderText="Diễn giải">
-                        <HeaderStyle HorizontalAlign="Center" Width="70px"/>
-                        <ItemStyle HorizontalAlign="Center" Width="70px" />
+                        <HeaderStyle HorizontalAlign="Center" Width="200px"/>
+                        <ItemStyle HorizontalAlign="Center" Width="200px" />
                     </telerik:GridBoundColumn>
                 </Columns>
             </MasterTableView>
