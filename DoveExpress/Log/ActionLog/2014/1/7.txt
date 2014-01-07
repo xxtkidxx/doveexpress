@@ -154,3 +154,39 @@ Tài khoản : 1
 Module : Deleted NHANGUIQTs
 Kết quả : {C_BILL:"3874586"}
 __________________________
+Thời gian: 2014-01-07 15:47:15 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : 1
+Module : Inserted SOQUYTIENMATs
+Kết quả : {PK_ID:"4396"}
+__________________________
+Thời gian: 2014-01-07 15:48:24 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : 1
+Module : Deleted SOQUYTIENMATs
+Kết quả : {PK_ID:"4396"}
+__________________________
+Thời gian: 2014-01-07 15:48:36 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : 1
+Module : Inserted SOQUYTIENMATs
+Kết quả : {PK_ID:"4397"}
+__________________________
+Thời gian: 2014-01-07 15:48:37 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : 1
+Module : Inserted SOQUYTIENMATs
+Kết quả : {PK_ID:"4398"}
+__________________________
+Thời gian: 2014-01-07 15:48:44 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : 1
+Module : Deleted SOQUYTIENMATs
+Kết quả : {PK_ID:"4397"}
+__________________________
+Thời gian: 2014-01-07 15:48:47 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : 1
+Module : Deleted SOQUYTIENMATs
+Kết quả : {PK_ID:"4398"}
+__________________________

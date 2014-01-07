@@ -89,7 +89,10 @@ public partial class module_SOQUYTIENMAT : System.Web.UI.UserControl
         TONGCHI = 0;
         TONGTHU = 0;
         TONTHUCTE = 0;
-        Session["LastUrl"] = Request.Url.ToString();
+        Session["SQTMC_TYPE"] = "";
+        Session["SQTMFK_KIHIEUTAIKHOAN"] = "";
+        Session["SQTMC_DESC"] = "";
+        Session["SQTMC_SOTIEN"] = "";
     }
     protected void btnShowAll_Click(object sender, System.Web.UI.ImageClickEventArgs e)
     {
@@ -198,7 +201,18 @@ public partial class module_SOQUYTIENMAT : System.Web.UI.UserControl
                 cmbC_TYPE.SelectedIndex = 0;
                 if (Session["SaveAddNew"] == "True")
                 {
-
+                    if (Session["SQTMC_TYPE"].ToString() != "")
+                    {
+                        cmbC_TYPE.SelectedValue = Session["SQTMC_TYPE"].ToString();
+                    }
+                    if (Session["SQTMFK_KIHIEUTAIKHOAN"].ToString() != "")
+                    {
+                        cmbFK_KIHIEUTAIKHOAN.SelectedValue = Session["SQTMFK_KIHIEUTAIKHOAN"].ToString();
+                    }
+                    RadTextBox txtC_DESC = (RadTextBox)e.Item.FindControl("txtC_DESC");
+                    txtC_DESC.Text = Session["SQTMC_DESC"].ToString();
+                    RadNumericTextBox txtC_SOTIEN = (RadNumericTextBox)e.Item.FindControl("txtC_SOTIEN");
+                    txtC_SOTIEN.Text = (Session["SQTMC_SOTIEN"].ToString() == "") ? "0" : Session["SQTMC_SOTIEN"].ToString();
                 }
                 else
                 {
@@ -275,6 +289,13 @@ public partial class module_SOQUYTIENMAT : System.Web.UI.UserControl
         {
             GridEditableItem editItem = (GridEditableItem)e.Item;
             RadComboBox cmbC_TYPE = (RadComboBox)editItem.FindControl("cmbC_TYPE");
+            RadComboBox cmbFK_KIHIEUTAIKHOAN = (RadComboBox)editItem.FindControl("cmbFK_KIHIEUTAIKHOAN");
+            Session["SQTMC_TYPE"] = cmbC_TYPE.SelectedValue;
+            Session["SQTMFK_KIHIEUTAIKHOAN"] = cmbFK_KIHIEUTAIKHOAN.SelectedValue;
+            RadTextBox txtC_DESC = (RadTextBox)e.Item.FindControl("txtC_DESC");
+            Session["SQTMC_DESC"] = txtC_DESC.Text;
+            RadNumericTextBox txtC_SOTIEN = (RadNumericTextBox)e.Item.FindControl("txtC_SOTIEN");
+            Session["SQTMC_SOTIEN"] = txtC_SOTIEN.Text;
             if (cmbC_TYPE.SelectedIndex == 2)
             {
                 SOQUYTIENMATDataSource.InsertParameters["C_ORDER"].DefaultValue = "2";
