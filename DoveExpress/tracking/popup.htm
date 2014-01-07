@@ -45,7 +45,6 @@
     </style>
 </head>
 <body>
-    <form id="form1" method="post">
     <table id="CheckbillTable">
         <thead>
             <tr>
@@ -68,7 +67,7 @@
             </tr>
             <tr>
                 <td align="center" valign="middle">
-                    <input type="button" onclick="goto_page('Tracking.aspx');" value="Kiểm tra"/>
+                    <input type="button" onclick="goto_page('http://118.70.183.223:88/tracking/Tracking.aspx');" value="Kiểm tra"/>
                 </td>
             </tr>
             <tr>
@@ -79,7 +78,6 @@
             </tr>
         </tbody>
     </table>
-    </form>
     <script type="text/javascript">
         function goto_page(url) {
             window.location = url + '?BILLID=' + document.getElementById('BILLVALUE').value;

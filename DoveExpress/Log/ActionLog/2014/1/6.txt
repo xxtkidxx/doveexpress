@@ -1,0 +1,264 @@
+Thời gian: 2014-01-06 09:53:59 AM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2014-01-06 10:52:08 AM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2014-01-06 10:52:31 AM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : 1
+Module : Inserted NHANGUIs
+Kết quả : {PK_ID:"4337"}
+__________________________
+Thời gian: 2014-01-06 10:52:43 AM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"3874583"}
+__________________________
+Thời gian: 2014-01-06 10:53:07 AM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : 1
+Module : Inserted NHANGUIs
+Kết quả : {PK_ID:"4338"}
+__________________________
+Thời gian: 2014-01-06 10:53:47 AM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"3874583"}
+__________________________
+Thời gian: 2014-01-06 11:37:07 AM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : 1
+Module : Inserted NHANGUIs
+Kết quả : {PK_ID:"4339"}
+__________________________
+Thời gian: 2014-01-06 11:41:27 AM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"3874583"}
+__________________________
+Thời gian: 2014-01-06 11:41:45 AM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : 1
+Module : Inserted NHANGUIs
+Kết quả : {PK_ID:"4340"}
+__________________________
+Thời gian: 2014-01-06 11:41:49 AM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"3874583"}
+__________________________
+Thời gian: 2014-01-06 11:41:52 AM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : 1
+Module : Inserted NHANGUIs
+Kết quả : {PK_ID:"4341"}
+__________________________
+Thời gian: 2014-01-06 11:42:00 AM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"3874583"}
+__________________________
+Thời gian: 2014-01-06 11:49:01 AM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : 1
+Module : Inserted NHANGUIs
+Kết quả : {PK_ID:"4342"}
+__________________________
+Thời gian: 2014-01-06 11:49:16 AM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"3874583"}
+__________________________
+Thời gian: 2014-01-06 11:57:15 AM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : 1
+Module : Inserted NHANGUIs
+Kết quả : {PK_ID:"4343"}
+__________________________
+Thời gian: 2014-01-06 11:58:01 AM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : 1
+Module : Inserted NHANGUIs
+Kết quả : {PK_ID:"4344"}
+__________________________
+Thời gian: 2014-01-06 11:58:55 AM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : 1
+Module : Inserted NHANGUIs
+Kết quả : {PK_ID:"4345"}
+__________________________
+Thời gian: 2014-01-06 11:59:06 AM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : 1
+Module : Inserted NHANGUIs
+Kết quả : {PK_ID:"4346"}
+__________________________
+Thời gian: 2014-01-06 11:59:22 AM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"3874583"}
+__________________________
+Thời gian: 2014-01-06 11:59:22 AM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"3874584"}
+__________________________
+Thời gian: 2014-01-06 11:59:22 AM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"3874585"}
+__________________________
+Thời gian: 2014-01-06 11:59:22 AM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"3874586"}
+__________________________
+Thời gian: 2014-01-06 12:00:22 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : 1
+Module : Inserted NHANGUIs
+Kết quả : {PK_ID:"4347"}
+__________________________
+Thời gian: 2014-01-06 13:04:11 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2014-01-06 13:32:50 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2014-01-06 13:33:08 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : 1
+Module : Inserted SOQUYTIENMATs
+Kết quả : {PK_ID:"4381"}
+__________________________
+Thời gian: 2014-01-06 13:34:38 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : 1
+Module : Inserted SOQUYTIENMATs
+Kết quả : {PK_ID:"4382"}
+__________________________
+Thời gian: 2014-01-06 13:37:58 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : 1
+Module : Inserted SOQUYTIENMATs
+Kết quả : {PK_ID:"4383"}
+__________________________
+Thời gian: 2014-01-06 13:38:06 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : 1
+Module : Inserted SOQUYTIENMATs
+Kết quả : {PK_ID:"4384"}
+__________________________
+Thời gian: 2014-01-06 15:57:38 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2014-01-06 15:57:59 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {C_BILL:"3874583"}
+__________________________
+Thời gian: 2014-01-06 15:58:45 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {C_BILL:"3874583"}
+__________________________
+Thời gian: 2014-01-06 16:13:41 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {C_BILL:"383863"}
+__________________________
+Thời gian: 2014-01-06 16:13:49 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {C_BILL:"383863"}
+__________________________
+Thời gian: 2014-01-06 16:14:04 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {C_BILL:"383863"}
+__________________________
+Thời gian: 2014-01-06 16:21:32 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {C_BILL:"383863"}
+__________________________
+Thời gian: 2014-01-06 16:22:03 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {C_BILL:"383863"}
+__________________________
+Thời gian: 2014-01-06 16:23:07 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : 1
+Module : Updated NHANGUITRACKINGs
+Kết quả : {PK_ID:"2"}
+__________________________
+Thời gian: 2014-01-06 16:23:21 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : 1
+Module : Updated NHANGUITRACKINGs
+Kết quả : {PK_ID:"2"}
+__________________________
+Thời gian: 2014-01-06 16:57:07 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2014-01-06 16:57:23 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {C_BILL:"3874583"}
+__________________________
+Thời gian: 2014-01-06 21:25:37 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2014-01-06 21:29:26 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2014-01-06 22:35:29 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
