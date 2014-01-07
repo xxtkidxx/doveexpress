@@ -30,7 +30,7 @@
 <telerik:RadAjaxLoadingPanel Skin="Vista" ID="RadAjaxLoadingPanelBAOCAOTONGHOPQT"
     runat="server" />
 <telerik:RadGrid ID="RadGridBAOCAOTONGHOPQT" runat="server" Skin="Vista" AllowPaging="True"
-    PageSize="50" AllowSorting="True" AllowFilteringByColumn="True" GridLines="None"
+    PageSize="20" AllowSorting="True" AllowFilteringByColumn="True" GridLines="None"
     ShowStatusBar="True" AutoGenerateColumns="False" OnItemCommand="RadGridBAOCAOTONGHOPQT_ItemCommand"
     AllowMultiRowEdit="True" AllowAutomaticDeletes="True" AllowAutomaticInserts="True"
     AllowAutomaticUpdates="True" DataSourceID="BAOCAOTONGHOPQTDataSource" ShowFooter="True"
@@ -219,7 +219,7 @@
     <ClientSettings>
         <Selecting AllowRowSelect="True" EnableDragToSelectRows="True" />
         <Scrolling AllowScroll="True" UseStaticHeaders="True" SaveScrollPosition="True" FrozenColumnsCount="3"
-            ScrollHeight="450px" />
+            ScrollHeight="400px" />
     </ClientSettings>
     <SortingSettings SortedAscToolTip="Sắp xếp tăng dần" SortedDescToolTip="Sắp xếp giảm dần"
         SortToolTip="Click để sắp xếp" />
