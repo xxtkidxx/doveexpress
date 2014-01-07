@@ -739,7 +739,7 @@
                                     <span class="rtsTxtnew">ĐT người nhận:</span>
                                 </td>
                                 <td colspan="4">
-                                    <telerik:RadTextBox ID="RadTextBox1" Width="90%" Text='<%# Bind("C_TELNHAN") %>'
+                                    <telerik:RadTextBox ID="txtC_TELNHAN" Width="90%" Text='<%# Bind("C_TELNHAN") %>'
                                         runat="server">
                                     </telerik:RadTextBox>
                                 </td>
@@ -780,7 +780,7 @@
                                     <span class="rtsTxtnew">Số kiện:</span>
                                 </td>
                                 <td colspan="4">
-                                    <telerik:RadNumericTextBox ID="RadNumericTextBox1" Width="90%" runat="server" Text='<%# Bind("C_SOKIEN") %>'>
+                                    <telerik:RadNumericTextBox ID="txtC_SOKIEN" Width="90%" runat="server" Text='<%# Bind("C_SOKIEN") %>'>
                                         <NumberFormat DecimalSeparator="." GroupSeparator=" " DecimalDigits="0" />
                                     </telerik:RadNumericTextBox>
                                 </td>

@@ -16,8 +16,10 @@
     <CollapseAnimation Type="Linear" />
     <DefaultGroupSettings OffsetX="2" OffsetY="2" />
     <Items>
-        <telerik:RadMenuItem runat="server" Font-Size="Small" Text="Danh mục chung" Value="DANHMUCCHUNG"
-            ImageUrl="~/images/home.png">
+        <telerik:RadMenuItem runat="server" ImageUrl="~/images/home.png" NavigateUrl="../Default.aspx"
+            Value="Home" Font-Size="Small">
+        </telerik:RadMenuItem>
+        <telerik:RadMenuItem runat="server" Font-Size="Small" Text="Danh mục chung" Value="DANHMUCCHUNG">
             <Items>
                 <telerik:RadMenuItem runat="server" Font-Size="Small" Text="Vùng địa lý" Value="VUNGDIALY">
                     <Items>
