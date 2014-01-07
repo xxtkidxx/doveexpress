@@ -698,7 +698,7 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
                     txtC_GIADOITAC.Text = GIADOITAC.ToString();
                     if (Session["MAXIDQT"].ToString() != "")
                     {
-                        string SQLSELECT = String.Format("SELECT NHANGUI.*  FROM NHANGUI WHERE NHANGUI.PK_ID = {0}", Session["MAXID"].ToString());
+                        string SQLSELECT = String.Format("SELECT NHANGUI.*  FROM NHANGUI WHERE NHANGUI.PK_ID = {0}", Session["MAXIDQT"].ToString());
                         ITCLIB.Admin.SQL QR = new ITCLIB.Admin.SQL();
                         DataTable oDataTableNew = QR.query_data(SQLSELECT);
                         if (oDataTableNew.Rows.Count > 0)

@@ -124,3 +124,33 @@ Tài khoản : sysadmin
 Module : Login
 Kết quả : Thành công
 __________________________
+Thời gian: 2014-01-07 15:32:08 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2014-01-07 15:32:22 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : 1
+Module : Inserted NHANGUIQTs
+Kết quả : {PK_ID:"4357"}
+__________________________
+Thời gian: 2014-01-07 15:33:09 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : 1
+Module : Inserted NHANGUIQTs
+Kết quả : {PK_ID:"4358"}
+__________________________
+Thời gian: 2014-01-07 15:33:16 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : 1
+Module : Deleted NHANGUIQTs
+Kết quả : {C_BILL:"3874585"}
+__________________________
+Thời gian: 2014-01-07 15:33:16 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : 1
+Module : Deleted NHANGUIQTs
+Kết quả : {C_BILL:"3874586"}
+__________________________
