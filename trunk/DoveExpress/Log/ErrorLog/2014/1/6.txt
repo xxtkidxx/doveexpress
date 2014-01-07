@@ -1,0 +1,210 @@
+Thời gian lỗi : 2014-01-06 10:35:36 AM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/tracking/tracking.master. 
+Nội dung lỗi:Path '/DoveExpress/tracking/tracking.master' is forbidden.
+__________________________
+Thời gian lỗi : 2014-01-06 10:37:20 AM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/tracking/tracking.aspx. 
+Nội dung lỗi:Content controls are allowed only in content page that references a master page.
+__________________________
+Thời gian lỗi : 2014-01-06 10:40:48 AM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/tinhcuoctrongnuoc/tinhcuoctrongnuoc.aspx. 
+Nội dung lỗi:The file '/DoveExpress/tinhcuoctrongnuoc/tinhcuoctrongnuoc.aspx' does not exist.
+__________________________
+Thời gian lỗi : 2014-01-06 10:51:57 AM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:53224/doveexpress/ext/Check.aspx?ctl=BillCheck. 
+Nội dung lỗi:The file '/doveexpress/ext/Check.aspx' does not exist.
+__________________________
+Thời gian lỗi : 2014-01-06 11:47:17 AM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:e:\Dropbox\Work\2013\DoveExpress\DoveExpress\module\NHANGUI.ascx.cs(554): error CS0103: The name 'xtC_TELGUI' does not exist in the current context
+__________________________
+Thời gian lỗi : 2014-01-06 13:27:52 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/Update.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2014-01-06 13:27:52 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/Edit.gif. 
+Nội dung lỗi:The process cannot access the file 'E:\Dropbox\Work\2013\DoveExpress\DoveExpress\Log\ErrorLog\2014\1\6.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2014-01-06 13:27:53 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/Cancel.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2014-01-06 13:27:53 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/AddRecord.gif. 
+Nội dung lỗi:The process cannot access the file 'E:\Dropbox\Work\2013\DoveExpress\DoveExpress\Log\ErrorLog\2014\1\6.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2014-01-06 13:27:53 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/Insert.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2014-01-06 13:27:53 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/Delete.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2014-01-06 13:27:53 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/Refresh.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2014-01-06 13:27:53 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/pdf.gif. 
+Nội dung lỗi:The process cannot access the file 'E:\Dropbox\Work\2013\DoveExpress\DoveExpress\Log\ErrorLog\2014\1\6.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2014-01-06 13:27:53 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/word.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2014-01-06 13:27:53 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/excel.gif. 
+Nội dung lỗi:The process cannot access the file 'E:\Dropbox\Work\2013\DoveExpress\DoveExpress\Log\ErrorLog\2014\1\6.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2014-01-06 13:27:53 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/csv.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2014-01-06 13:27:53 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/img_save.jpg. 
+Nội dung lỗi:The process cannot access the file 'E:\Dropbox\Work\2013\DoveExpress\DoveExpress\Log\ErrorLog\2014\1\6.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2014-01-06 13:27:53 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/img_Close.jpg. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2014-01-06 22:34:12 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/check. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2014-01-06 22:40:49 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/tracking/tracking.aspx. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\DoveExpress\tracking\BillCheck.ascx(16): error CS1061: 'Telerik.Web.UI.RadAjaxManagerProxy' does not contain a definition for 'GetCurrent' and no extension method 'GetCurrent' accepting a first argument of type 'Telerik.Web.UI.RadAjaxManagerProxy' could be found (are you missing a using directive or an assembly reference?)
+__________________________
+Thời gian lỗi : 2014-01-06 22:41:30 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/tracking/tracking.aspx. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\DoveExpress\tracking\BillCheck.ascx(16): error CS0176: Member 'Telerik.Web.UI.RadAjaxManager.GetCurrent(System.Web.UI.Page)' cannot be accessed with an instance reference; qualify it with a type name instead
+__________________________
+Thời gian lỗi : 2014-01-06 22:46:05 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/Edit.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2014-01-06 22:46:05 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/Update.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\DoveExpress\Log\ErrorLog\2014\1\6.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2014-01-06 22:46:05 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/Cancel.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2014-01-06 22:46:05 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/AddRecord.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\DoveExpress\Log\ErrorLog\2014\1\6.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2014-01-06 22:46:06 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/Insert.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2014-01-06 22:46:06 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/Delete.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2014-01-06 22:46:07 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/print.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2014-01-06 22:46:07 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/img_OpenPanel.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2014-01-06 22:46:07 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/Refresh.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\DoveExpress\Log\ErrorLog\2014\1\6.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2014-01-06 22:46:07 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/pdf.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2014-01-06 22:46:07 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/word.gif. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\DoveExpress\Log\ErrorLog\2014\1\6.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2014-01-06 22:46:07 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/excel.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2014-01-06 22:46:07 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/csv.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2014-01-06 22:46:07 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/img_save.jpg. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2014-01-06 22:46:07 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/img_Close.jpg. 
+Nội dung lỗi:The process cannot access the file 'F:\Dropbox\Work\2013\DoveExpress\DoveExpress\Log\ErrorLog\2014\1\6.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2014-01-06 22:57:59 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/tracking/popup.htm. 
+Nội dung lỗi:The HTTP verb POST used to access path '/DoveExpress/tracking/popup.htm' is not allowed.
+__________________________
+Thời gian lỗi : 2014-01-06 23:03:13 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/tracking/tracking.aspx. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\DoveExpress\tracking\BillCheck.ascx.cs(49): error CS0103: The name 'ajaxManager' does not exist in the current context
+__________________________
+Thời gian lỗi : 2014-01-06 23:06:00 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/tracking/popup.htm. 
+Nội dung lỗi:The HTTP verb POST used to access path '/DoveExpress/tracking/popup.htm' is not allowed.
+__________________________
+Thời gian lỗi : 2014-01-06 23:06:37 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/tracking/Default.aspxBILLID=3788883. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2014-01-06 23:08:23 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/tracking/Tracking.aspxBILLID=3788883. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2014-01-06 23:42:29 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/tracking/Tracking.aspx?BILLID=Nhập số Bill. 
+Nội dung lỗi:Text property cannot be set. Input string was not in a correct format.
+__________________________
