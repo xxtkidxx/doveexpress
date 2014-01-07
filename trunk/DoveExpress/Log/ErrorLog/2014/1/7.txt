@@ -18,3 +18,8 @@ Thời gian lỗi : 2014-01-07 15:23:57 PM
 Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUIQT. 
 Nội dung lỗi:Object reference not set to an instance of an object.
 __________________________
+Thời gian lỗi : 2014-01-07 15:32:22 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUIQT. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
