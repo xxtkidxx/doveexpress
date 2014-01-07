@@ -812,7 +812,7 @@
                                     <span class="rtsTxtnew">ĐT người nhận:</span>
                                 </td>
                                 <td colspan="4">
-                                    <telerik:RadTextBox ID="RadTextBox1" Width="90%" Text='<%# Bind("C_TELNHAN") %>'
+                                    <telerik:RadTextBox ID="txtC_TELNHAN" Width="90%" Text='<%# Bind("C_TELNHAN") %>'
                                         runat="server">
                                     </telerik:RadTextBox>
                                 </td>

@@ -585,7 +585,8 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
                 ClearSession();
             }
             SetMessage("Tạo mới nhận gửi thành công!");
-            ITCLIB.ActionLog.ActionLog.WriteLog(Session["UserID"].ToString(), "Inserted NHANGUIQTs", "{PK_ID:\"" + getmaxid("NHANGUI") + "\"}");
+            Session["MAXIDQT"] = getmaxid("NHANGUI");
+            ITCLIB.ActionLog.ActionLog.WriteLog(Session["UserID"].ToString(), "Inserted NHANGUIQTs", "{PK_ID:\"" + Session["MAXIDQT"].ToString() + "\"}");
         }
     }
     protected void RadGridNHANGUIQT_ItemUpdated(object sender, GridUpdatedEventArgs e)
@@ -677,19 +678,75 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
                 txtC_TYGIA.Text = GetTyGia();
                 if (Session["SaveAddNew"] == "True")
                 {
-                    cmbSanPham.SelectedValue = FK_DICHVU;
-                    cmbMaKhachHang.SelectedValue = FK_KHACHHANG;
+                    if (FK_DICHVU != "")
+                    {
+                        cmbSanPham.SelectedValue = FK_DICHVU;
+                    }
+                    if (FK_KHACHHANG != "")
+                    {
+                        cmbMaKhachHang.SelectedValue = FK_KHACHHANG;
+                    }                    
                     txtC_TENKH.Text = TENKH;
                     txtC_TELGUI.Text = DIENTHOAIKH;
-                    txtC_KHOILUONG.Text = C_KHOILUONG.ToString();
-                    //txtC_GIACUOC.Text = CUOCCHINH.ToString();
+                    txtC_KHOILUONG.Text = C_KHOILUONG.ToString();                    
+                    if (FK_QUOCGIA != "")
+                    {
+                        cmbQuocGia.SelectedValue = FK_QUOCGIA;
+                    }
+                    txtC_GIACUOC.Text = CUOCCHINH.ToString();
                     cmbFK_DOITAC.SelectedValue = FK_DOITAC;
-                    //txtC_GIADOITAC.Text = GIADOITAC.ToString();
+                    txtC_GIADOITAC.Text = GIADOITAC.ToString();
+                    if (Session["MAXIDQT"].ToString() != "")
+                    {
+                        string SQLSELECT = String.Format("SELECT NHANGUI.*  FROM NHANGUI WHERE NHANGUI.PK_ID = {0}", Session["MAXID"].ToString());
+                        ITCLIB.Admin.SQL QR = new ITCLIB.Admin.SQL();
+                        DataTable oDataTableNew = QR.query_data(SQLSELECT);
+                        if (oDataTableNew.Rows.Count > 0)
+                        {
+                            RadTextBox txtC_LIENHE = (RadTextBox)editItem.FindControl("txtC_LIENHE");
+                            txtC_LIENHE.Text = oDataTableNew.Rows[0]["C_LIENHE"].ToString();
+                            RadTextBox txtC_NGUOINHAN = (RadTextBox)editItem.FindControl("txtC_NGUOINHAN");
+                            txtC_NGUOINHAN.Text = oDataTableNew.Rows[0]["C_NGUOINHAN"].ToString();
+                            RadTextBox txtC_DIACHINHAN = (RadTextBox)editItem.FindControl("txtC_DIACHINHAN");
+                            txtC_DIACHINHAN.Text = oDataTableNew.Rows[0]["C_DIACHINHAN"].ToString();
+                            RadTextBox txtC_TELNHAN = (RadTextBox)editItem.FindControl("txtC_TELNHAN");
+                            txtC_TELNHAN.Text = oDataTableNew.Rows[0]["C_TELNHAN"].ToString();
+                            RadTextBox txtC_NOIDUNG = (RadTextBox)editItem.FindControl("txtC_NOIDUNG");
+                            txtC_NOIDUNG.Text = oDataTableNew.Rows[0]["C_NOIDUNG"].ToString();
+                            RadNumericTextBox txtC_SOKIEN = (RadNumericTextBox)editItem.FindControl("txtC_SOKIEN");
+                            txtC_SOKIEN.Text = oDataTableNew.Rows[0]["C_SOKIEN"].ToString();
+                            txtC_GIATRIHANGHOA.Text = oDataTableNew.Rows[0]["C_GIATRIHANGHOA"].ToString();
+                            txtC_KHOILUONGTHUC.Text = oDataTableNew.Rows[0]["C_KHOILUONGTHUC"].ToString();
+                            txtC_KHOILUONGQD.Text = oDataTableNew.Rows[0]["C_KHOILUONGQD"].ToString();
+                            txtPPXD.Text = oDataTableNew.Rows[0]["C_PPXD"].ToString();
+                            txtC_DONGGOI.Text = oDataTableNew.Rows[0]["C_DONGGOI"].ToString();
+                            txtC_KHAIGIA.Text = oDataTableNew.Rows[0]["C_KHAIGIA"].ToString();
+                            txtC_COD.Text = oDataTableNew.Rows[0]["C_COD"].ToString();
+                            txtC_BAOPHAT.Text = oDataTableNew.Rows[0]["C_BAOPHAT"].ToString();
+                            txtC_HENGIO.Text = oDataTableNew.Rows[0]["C_HENGIO"].ToString();
+                            txtC_TIENHANG.Text = oDataTableNew.Rows[0]["C_TIENHANG"].ToString();
+                            txtC_VAT.Text = oDataTableNew.Rows[0]["C_VAT"].ToString();
+                            txtC_TIENHANGVAT.Text = oDataTableNew.Rows[0]["C_TIENHANGVAT"].ToString();
+                            RadComboBox cmbC_HINHTHUCTT = (RadComboBox)editItem.FindControl("cmbC_HINHTHUCTT");
+                            if (oDataTableNew.Rows[0]["C_HINHTHUCTT"].ToString() != "")
+                            {
+                                cmbC_HINHTHUCTT.SelectedValue = oDataTableNew.Rows[0]["C_HINHTHUCTT"].ToString();
+                            }
+                            txtC_DATHU.Text = oDataTableNew.Rows[0]["C_DATHU"].ToString();
+                            txtC_CONLAI.Text = txtC_CONLAI.Text = (((txtC_TIENHANGVAT.Text == "") ? 0 : decimal.Parse(txtC_TIENHANGVAT.Text)) - ((txtC_DATHU.Text == "") ? 0 : decimal.Parse(txtC_DATHU.Text))).ToString();
+                            RadComboBox cmbFK_NHANVIENNHAN = (RadComboBox)editItem.FindControl("cmbFK_NHANVIENNHAN");
+                            if (oDataTableNew.Rows[0]["FK_NHANVIENNHAN"].ToString() != "")
+                            {
+                                cmbFK_NHANVIENNHAN.SelectedValue = oDataTableNew.Rows[0]["FK_NHANVIENNHAN"].ToString();
+                            }
+                        }
+                    }
                 }
                 else
                 {
                     ClearSession();
                 }
+                Session["SaveAddNew"] = "False";
             }
             else
             {
@@ -1449,6 +1506,7 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
         GIACUOCLKTL = 0;
         isTAILIEU = false;
         Alarm = "";
+        Session["MAXIDQT"] = "";
     }
     protected void txtBillNhanh_TextChanged(object sender, EventArgs e)
     {
