@@ -85,7 +85,7 @@
         </table>
         <telerik:RadGrid ID="RadGridBILLCHECK" runat="server" AutoGenerateColumns="false" ShowHeader = "false"
             Skin="Vista" AllowFilteringByColumn="false" AllowSorting="false" AllowPaging="True"
-            Width="99%" ItemStyle-Font-Bold ="true" AlternatingItemStyle-Font-Bold = "true" ItemStyle-Font-Size="15px" AlternatingItemStyle-Font-Size="14px" ItemStyle-ForeColor="#005CA2" AlternatingItemStyle-ForeColor="#005CA2" ItemStyle-Height="30px" AlternatingItemStyle-Height="30px">
+            Width="99%" ItemStyle-Font-Bold ="true" AlternatingItemStyle-Font-Bold = "true" ItemStyle-Font-Size="14px" AlternatingItemStyle-Font-Size="14px" ItemStyle-ForeColor="#005CA2" AlternatingItemStyle-ForeColor="#005CA2" ItemStyle-Height="30px" AlternatingItemStyle-Height="30px">
             <PagerStyle Mode="NextPrevNumericAndAdvanced" />
               <MasterTableView NoMasterRecordsText="Dữ liệu tracking chưa được cập nhật">
                 <Columns>
