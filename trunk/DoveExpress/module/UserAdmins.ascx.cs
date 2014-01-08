@@ -219,6 +219,12 @@ public partial class Modules_UserAdmins : System.Web.UI.UserControl
                     }
                 }
             }
+            if (e.Item is GridEditFormInsertItem || e.Item is GridDataInsertItem)
+            {
+                // insert item
+                RadComboBox cmbVungLamViec = (RadComboBox)editItem.FindControl("cmbVungLamViec");
+                cmbVungLamViec.SelectedIndex = 0;
+            }
         }
     }
     protected bool ValidateDeleteUserAdmin(string guID)

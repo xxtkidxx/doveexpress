@@ -3,7 +3,7 @@
 <telerik:RadCodeBlock ID="RadCodeBlockNHANGUIPH" runat="server">
     <script type="text/javascript">
     function RowDblClick(sender, eventArgs) {
-            var CanEdit = "<%=ITCLIB.Security.Security.CanEditModule("NHANGUI") %>";
+            var CanEdit = "<%=ITCLIB.Security.Security.CanEditModule("NHANGUIPH") %>";
             if ((eventArgs.get_tableView().get_name() == "MasterTableViewNHANGUIPH") && (CanEdit == "True")) {
                 sender.get_masterTableView().editItem(eventArgs.get_itemIndexHierarchical());
             }
@@ -132,10 +132,10 @@
         <CommandItemTemplate>
             <div style="padding: 5px 5px; float: left; width: auto">
                 <b>Quản lý trạng thái Bill</b>&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:LinkButton ID="btnEditSelected" runat="server" CommandName="EditSelected" Visible='<%# RadGridNHANGUIPH.EditIndexes.Count == 0 && ITCLIB.Security.Security.CanEditModule("NHANGUI") %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Edit.gif" />Sửa thông tin phát hàng</asp:LinkButton>&nbsp;&nbsp;
+                <asp:LinkButton ID="btnEditSelected" runat="server" CommandName="EditSelected" Visible='<%# RadGridNHANGUIPH.EditIndexes.Count == 0 && ITCLIB.Security.Security.CanEditModule("NHANGUIPH") %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Edit.gif" />Sửa thông tin phát hàng</asp:LinkButton>&nbsp;&nbsp;
                 <asp:LinkButton ID="btnUpdateEdited" runat="server" CommandName="UpdateEdited" Visible='<%# RadGridNHANGUIPH.EditIndexes.Count > 0 %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Update.gif" />Lưu</asp:LinkButton>&nbsp;&nbsp;
                 <asp:LinkButton ID="btnCancel" runat="server" CommandName="CancelAll" Visible='<%# RadGridNHANGUIPH.EditIndexes.Count > 0 || RadGridNHANGUIPH.MasterTableView.IsItemInserted %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Cancel.gif" />Hủy bỏ</asp:LinkButton>&nbsp;&nbsp;
-                <asp:LinkButton ID="btnTrangthai" runat="server" OnClientClick='<%# String.Format("javascript:return TrangthaiOnClientLinkClicked()")%>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/img_OpenPanel.gif"/>Cập nhật trạng thái Bill hàng loạt</asp:LinkButton>&nbsp;&nbsp;
+                <asp:LinkButton ID="btnTrangthai" runat="server" OnClientClick='<%# String.Format("javascript:return TrangthaiOnClientLinkClicked()")%>' Visible='<%# ITCLIB.Security.Security.CanEditModule("NHANGUIPH") %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/img_OpenPanel.gif"/>Cập nhật trạng thái Bill hàng loạt</asp:LinkButton>&nbsp;&nbsp;
                 <asp:LinkButton ID="LinkButton4" runat="server" CommandName="RebindGrid"><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Refresh.gif" />Làm mới</asp:LinkButton>
             </div>
         </CommandItemTemplate>
@@ -161,7 +161,7 @@
                 AllowFiltering="False">
                 <ItemTemplate>
                     <asp:LinkButton ID="libTracking" OnClientClick='<%# String.Format("javascript:return OnClientLinkClicked({0})", Eval("C_BILL"))%>'
-                        runat="server">Thông tin Tracking</asp:LinkButton>&nbsp;&nbsp;
+                        runat="server" Visible='<%# ITCLIB.Security.Security.CanEditModule("NHANGUIPH") %>'>Thông tin Tracking</asp:LinkButton>&nbsp;&nbsp;
                 </ItemTemplate>
             </telerik:GridTemplateColumn>
             <telerik:GridBoundColumn UniqueName="C_NGAY" HeaderText="Ngày" DataField="C_NGAY"
@@ -326,13 +326,13 @@
     </UpdateParameters>
 </asp:SqlDataSource>
 <asp:SqlDataSource ID="UserDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
-    SelectCommand="SELECT USERS.PK_ID,USERS.FK_GroupUser,USERS.FK_DEPT,USERS.C_LoginName,USERS.C_Password,USERS.C_NAME,USERS.C_Address,USERS.c_Tel,USERS.C_Email,USERS.C_DESC,GROUPUSER.C_NAME AS GROUPUSERNAME FROM USERS INNER JOIN GROUPUSER ON  USERS.FK_GROUPUSER = GROUPUSER.PK_ID WHERE FK_GROUPUSER NOT IN (0,1)">
-</asp:SqlDataSource>
-<asp:SqlDataSource ID="DoiTacDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
-    SelectCommand="SELECT [PK_ID], [C_CODE], [C_NAME] FROM [DMDoiTac] WHERE [DMDOITAC].FK_VUNGLAMVIEC = @FK_VUNGLAMVIEC ORDER BY LTRIM([C_CODE])">
+    SelectCommand="SELECT USERS.PK_ID,USERS.FK_GroupUser,USERS.FK_DEPT,USERS.C_LoginName,USERS.C_Password,USERS.C_NAME,USERS.C_Address,USERS.c_Tel,USERS.C_Email,USERS.C_DESC,GROUPUSER.C_NAME AS GROUPUSERNAME FROM USERS INNER JOIN GROUPUSER ON  USERS.FK_GROUPUSER = GROUPUSER.PK_ID WHERE FK_GROUPUSER NOT IN (0,1) AND (FK_VUNGLAMVIEC = N'Tất cả' OR FK_VUNGLAMVIEC = @FK_VUNGLAMVIEC)">
     <SelectParameters>
         <asp:SessionParameter Name="FK_VUNGLAMVIEC" Type="String" SessionField="VUNGLAMVIEC" />
     </SelectParameters>
+</asp:SqlDataSource>
+<asp:SqlDataSource ID="DoiTacDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
+    SelectCommand="SELECT [PK_ID], [C_CODE], [C_NAME] FROM [DMDoiTac] ORDER BY LTRIM([C_CODE])">
 </asp:SqlDataSource>
 <asp:SqlDataSource ID="FK_TRANGTHAIDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
     SelectCommand="SELECT [PK_ID], [C_CODE], [C_NAME] FROM [DMTRANGTHAI]"></asp:SqlDataSource>
