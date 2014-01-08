@@ -26,7 +26,7 @@ public partial class module_NHANGUIPH : System.Web.UI.UserControl
                 RadGridNHANGUIPH.MasterTableView.EditFormSettings.PopUpSettings.Modal = true;
                 break;
         }
-        if (!ITCLIB.Security.Security.CanViewModule("NHANGUI"))
+        if (!ITCLIB.Security.Security.CanViewModule("NHANGUIPH"))
         {
             ITCLIB.Security.Security.ReturnUrl();
         }
@@ -101,6 +101,8 @@ public partial class module_NHANGUIPH : System.Web.UI.UserControl
             else
             {
                 // edit item
+                RadDateTimePicker radC_NGAYGIOPHAT = (RadDateTimePicker)editItem.FindControl("radC_NGAYGIOPHAT");
+                //radC_NGAYGIOPHAT.SelectedDate = System.DateTime.Now;
             }
         }
         if (e.Item is GridDataItem)
