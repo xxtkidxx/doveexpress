@@ -1065,7 +1065,7 @@
                                 <td colspan="4">
                                     <telerik:RadComboBox ID="cmbFK_NHANVIENNHAN" runat="server" SelectedValue='<%# Bind("FK_NHANVIENNHAN") %>'
                                         DataTextField="C_NAME" DataValueField="PK_ID" DataSourceID="UserDataSource" ShowToggleImage="True"
-                                        EmptyMessage="Chọn">
+                                        EmptyMessage="Chọn" AllowCustomText="True" Filter="Contains">
                                     </telerik:RadComboBox>
                                 </td>
                                 <td style="width: 100px;">
@@ -1085,7 +1085,7 @@
                                 <td colspan="4">
                                     <telerik:RadComboBox ID="cmbFK_NHANVIENKHAITHAC" runat="server" SelectedValue='<%# Bind("FK_NHANVIENKHAITHAC") %>'
                                         DataTextField="C_NAME" DataValueField="PK_ID" DataSourceID="UserDataSource" ShowToggleImage="True"
-                                        EmptyMessage="Chọn">
+                                        EmptyMessage="Chọn" AllowCustomText="True" Filter="Contains">
                                     </telerik:RadComboBox>
                                 </td>
                             </tr>
@@ -1096,7 +1096,7 @@
                                 <td colspan="4">
                                     <telerik:RadComboBox ID="cmbFK_NHANVIENPHAT" runat="server" SelectedValue='<%# Bind("FK_NHANVIENPHAT") %>'
                                         DataTextField="C_NAME" DataValueField="PK_ID" DataSourceID="UserDataSource" ShowToggleImage="True"
-                                        EmptyMessage="Chọn">
+                                        EmptyMessage="Chọn" AllowCustomText="True" Filter="Contains">
                                     </telerik:RadComboBox>
                                 </td>
                                 <td style="width: 100px;">
