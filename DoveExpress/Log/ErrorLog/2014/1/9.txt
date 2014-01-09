@@ -47,3 +47,18 @@ Nội dung lỗi:Must declare the scalar variable "@FK_VUNGLAMVIEC".
 Must declare the scalar variable "@FK_VUNGLAMVIEC".
 Incorrect syntax near the keyword 'ORDER'.
 __________________________
+Thời gian lỗi : 2014-01-09 09:38:40 AM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Login.aspx. 
+Nội dung lỗi:Invalid object name 'DMVUNGLAMVIEC'.
+__________________________
+Thời gian lỗi : 2014-01-09 09:46:14 AM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Invalid column name 'FK_VUNGLAMVIEC'.
+Invalid column name 'FK_VUNGLAMVIEC'.
+Invalid column name 'FK_VUNGLAMVIEC'.
+Invalid column name 'FK_VUNGLAMVIEC'.
+Invalid column name 'FK_VUNGLAMVIEC'.
+Invalid column name 'FK_VUNGLAMVIEC'.
+__________________________
