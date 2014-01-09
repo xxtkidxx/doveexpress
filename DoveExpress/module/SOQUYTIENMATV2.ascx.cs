@@ -8,90 +8,32 @@ using System.Data;
 using Telerik.Web.UI;
 using System.Globalization;
 using Telerik.Web.UI.GridExcelBuilder;
+using System.Collections;
 /* select a.PK_ID,a.SOCHUNGTU,a.C_NGAY,a.C_TYPE,a.KIHIEUTAIKHOANNAME,a.C_DESC,a.C_SOTIEN,
 (Select sum(C_SOTIENFIX) from (SELECT (ROW_NUMBER() OVER(ORDER BY [SOQUYTIENMAT].C_ORDER ASC, [SOQUYTIENMAT].C_NGAY ASC, [SOQUYTIENMAT].PK_ID ASC) + 9999) AS SOCHUNGTU,(CASE WHEN C_TYPE=N'THU' THEN C_SOTIEN WHEN C_TYPE=N'CHI' THEN -C_SOTIEN ELSE (SELECT C_SOTIEN FROM SOQUYTIENMAT WHERE ([SOQUYTIENMAT].[FK_VUNGLAMVIEC] = N'Hà Nội' AND month([SOQUYTIENMAT].[C_NGAY]) = '11' AND year([SOQUYTIENMAT].[C_NGAY]) = '2013' AND [SOQUYTIENMAT].[C_TYPE] = N'Tồn cuối kỳ')) END) AS C_SOTIENFIX FROM [SOQUYTIENMAT] WHERE ([SOQUYTIENMAT].[FK_VUNGLAMVIEC] = N'Hà Nội' AND month([SOQUYTIENMAT].[C_NGAY]) = '12' AND year([SOQUYTIENMAT].[C_NGAY]) = '2013' AND [SOQUYTIENMAT].[C_SOTIEN] > 0) OR ([SOQUYTIENMAT].[C_TYPE] = N'Tồn đầu kỳ')) b where b.SOCHUNGTU <= a.SOCHUNGTU) as C_TON 
 from (SELECT (ROW_NUMBER() OVER(ORDER BY [SOQUYTIENMAT].C_ORDER ASC, [SOQUYTIENMAT].C_NGAY ASC, [SOQUYTIENMAT].PK_ID ASC) + 9999) AS SOCHUNGTU,[SOQUYTIENMAT].[PK_ID], [SOQUYTIENMAT].[C_NGAY], [SOQUYTIENMAT].[C_TYPE], [SOQUYTIENMAT].[FK_KIHIEUTAIKHOAN], [SOQUYTIENMAT].[C_DESC], CASE WHEN [SOQUYTIENMAT].C_TYPE = N'Tồn đầu kỳ' THEN (SELECT C_SOTIEN FROM SOQUYTIENMAT WHERE ([SOQUYTIENMAT].[FK_VUNGLAMVIEC] = N'Hà Nội' AND month([SOQUYTIENMAT].[C_NGAY]) = '11' AND year([SOQUYTIENMAT].[C_NGAY]) = '2013' AND [SOQUYTIENMAT].[C_TYPE] = N'Tồn cuối kỳ')) ELSE [SOQUYTIENMAT].C_SOTIEN END as C_SOTIEN,(CASE WHEN C_TYPE=N'THU' THEN C_SOTIEN WHEN C_TYPE=N'CHI' THEN -C_SOTIEN ELSE NULL END) AS C_SOTIENFIX,
 [SOQUYTIENMAT].[C_ORDER],DMKIHIEUTAIKHOAN.C_NAME as KIHIEUTAIKHOANNAME FROM [SOQUYTIENMAT] LEFT OUTER JOIN DMKIHIEUTAIKHOAN ON SOQUYTIENMAT.FK_KIHIEUTAIKHOAN=DMKIHIEUTAIKHOAN.C_CODE  WHERE ([SOQUYTIENMAT].[FK_VUNGLAMVIEC] = N'Hà Nội' AND month([SOQUYTIENMAT].[C_NGAY]) = '12' AND year([SOQUYTIENMAT].[C_NGAY]) = '2013' AND [SOQUYTIENMAT].[C_SOTIEN] > 0) OR ([SOQUYTIENMAT].[C_TYPE] = N'Tồn đầu kỳ')) a*/
-public partial class module_SOQUYTIENMAT : System.Web.UI.UserControl
+public partial class module_SOQUYTIENMATV2 : System.Web.UI.UserControl
 {
-    private decimal TONDAUKY
-    {
-        get
-        {
-            return decimal.Parse(Session["TONDAUKY"].ToString());
-        }
-        set
-        {
-            Session["TONDAUKY"] = value;
-        }
-    }
-    private decimal TONGTHU
-    {
-        get
-        {
-            return decimal.Parse(Session["TONGTHU"].ToString());
-        }
-        set
-        {
-            Session["TONGTHU"] = value;
-        }
-    }
-    private decimal TONGCHI
-    {
-        get
-        {
-            return decimal.Parse(Session["TONGCHI"].ToString());
-        }
-        set
-        {
-            Session["TONGCHI"] = value;
-        }
-    }
-    private decimal TONCUOIKY
-    {
-        get
-        {
-            return decimal.Parse(Session["TONCUOIKY"].ToString());
-        }
-        set
-        {
-            Session["TONCUOIKY"] = value;
-        }
-    }
-    private decimal TONTHUCTE
-    {
-        get
-        {
-            return decimal.Parse(Session["TONTHUCTE"].ToString());
-        }
-        set
-        {
-            Session["TONTHUCTE"] = value;
-        }
-    }
     protected void Page_Load(object sender, EventArgs e)
     {
         string sBrowserType = Request.Browser.Type;
         switch (sBrowserType)
         {
             case "IE6":
-                RadGridSOQUYTIENMAT.MasterTableView.EditFormSettings.PopUpSettings.Modal = false;
+                RadGridSOQUYTIENMATV2.MasterTableView.EditFormSettings.PopUpSettings.Modal = false;
                 break;
             case "IE7":
-                RadGridSOQUYTIENMAT.MasterTableView.EditFormSettings.PopUpSettings.Modal = false;
+                RadGridSOQUYTIENMATV2.MasterTableView.EditFormSettings.PopUpSettings.Modal = false;
                 break;
             default:
-                RadGridSOQUYTIENMAT.MasterTableView.EditFormSettings.PopUpSettings.Modal = true;
+                RadGridSOQUYTIENMATV2.MasterTableView.EditFormSettings.PopUpSettings.Modal = true;
                 break;
         }
         if (!ITCLIB.Security.Security.CanViewModule("TAICHINH"))
         {
             ITCLIB.Security.Security.ReturnUrl();
         }
-        TONCUOIKY = 0;
-        TONGCHI = 0;
-        TONGTHU = 0;
-        TONTHUCTE = 0;
         Session["SQTMC_TYPE"] = "";
         Session["SQTMFK_KIHIEUTAIKHOAN"] = "";
         Session["SQTMC_DESC"] = "";
@@ -99,8 +41,8 @@ public partial class module_SOQUYTIENMAT : System.Web.UI.UserControl
     }
     protected void btnShowAll_Click(object sender, System.Web.UI.ImageClickEventArgs e)
     {
-        RadGridSOQUYTIENMAT.MasterTableView.FilterExpression = string.Empty;
-        foreach (GridColumn column in RadGridSOQUYTIENMAT.MasterTableView.RenderColumns)
+        RadGridSOQUYTIENMATV2.MasterTableView.FilterExpression = string.Empty;
+        foreach (GridColumn column in RadGridSOQUYTIENMATV2.MasterTableView.RenderColumns)
         {
             if (column is GridBoundColumn)
             {
@@ -113,30 +55,26 @@ public partial class module_SOQUYTIENMAT : System.Web.UI.UserControl
                 boundColumn.CurrentFilterValue = string.Empty;
             }
         }
-        RadGridSOQUYTIENMAT.MasterTableView.Rebind();
+        RadGridSOQUYTIENMATV2.MasterTableView.Rebind();
     }
     private void DisplayMessage(string text)
     {
-        RadGridSOQUYTIENMAT.Controls.Add(new LiteralControl(string.Format("<span style='color:red'>{0}</span>", text)));
+        RadGridSOQUYTIENMATV2.Controls.Add(new LiteralControl(string.Format("<span style='color:red'>{0}</span>", text)));
     }
     private void SetMessage(string message)
     {
         gridMessage = message;
     }
     private string gridMessage = null;
-    protected void RadGridSOQUYTIENMAT_DataBound(object sender, EventArgs e)
+    protected void RadGridSOQUYTIENMATV2_DataBound(object sender, EventArgs e)
     {
         if (!string.IsNullOrEmpty(gridMessage))
         {
             DisplayMessage(gridMessage);
         }
-        txtTONDAU.Text = TONDAUKY.ToString();
-        txtTONGTHU.Text = TONGTHU.ToString();
-        txtTONGCHI.Text = TONGCHI.ToString();
-        txtTONCUOI.Text = TONCUOIKY.ToString();
-        txtTONTHUCTE.Text = TONTHUCTE.ToString();        
+        LoadTaiChinh();
     }
-    protected void RadGridSOQUYTIENMAT_ItemDeleted(object sender, GridDeletedEventArgs e)
+    protected void RadGridSOQUYTIENMATV2_ItemDeleted(object sender, GridDeletedEventArgs e)
     {
         GridDataItem dataItem = (GridDataItem)e.Item;
         if (e.Exception != null)
@@ -147,10 +85,10 @@ public partial class module_SOQUYTIENMAT : System.Web.UI.UserControl
         else
         {
             SetMessage("Xóa sổ quỹ tiền mặt thành công!");
-            ITCLIB.ActionLog.ActionLog.WriteLog(Session["UserID"].ToString(), "Deleted SOQUYTIENMATs", e.Item.KeyValues);
+            ITCLIB.ActionLog.ActionLog.WriteLog(Session["UserID"].ToString(), "Deleted SOQUYTIENMATV2s", e.Item.KeyValues);
         }
     }
-    protected void RadGridSOQUYTIENMAT_ItemInserted(object sender, GridInsertedEventArgs e)
+    protected void RadGridSOQUYTIENMATV2_ItemInserted(object sender, GridInsertedEventArgs e)
     {
         GridEditableItem item = (GridEditableItem)e.Item;
         if (e.Exception != null)
@@ -167,12 +105,12 @@ public partial class module_SOQUYTIENMAT : System.Web.UI.UserControl
             else
             {
 
-            }  
+            }
             SetMessage("Tạo mới sổ quỹ tiền mặt thành công!");
-            ITCLIB.ActionLog.ActionLog.WriteLog(Session["UserID"].ToString(), "Inserted SOQUYTIENMATs", "{PK_ID:\"" + getmaxid("SOQUYTIENMAT") + "\"}");
+            ITCLIB.ActionLog.ActionLog.WriteLog(Session["UserID"].ToString(), "Inserted SOQUYTIENMATV2s", "{PK_ID:\"" + getmaxid("SOQUYTIENMATV2") + "\"}");
         }
     }
-    protected void RadGridSOQUYTIENMAT_ItemUpdated(object sender, GridUpdatedEventArgs e)
+    protected void RadGridSOQUYTIENMATV2_ItemUpdated(object sender, GridUpdatedEventArgs e)
     {
         GridEditableItem item = (GridEditableItem)e.Item;
         if (e.Exception != null)
@@ -184,23 +122,23 @@ public partial class module_SOQUYTIENMAT : System.Web.UI.UserControl
         else
         {
             SetMessage("Cập nhật sổ quỹ tiền mặt thành công!");
-            ITCLIB.ActionLog.ActionLog.WriteLog(Session["UserID"].ToString(), "Updated SOQUYTIENMATs", e.Item.KeyValues);
+            ITCLIB.ActionLog.ActionLog.WriteLog(Session["UserID"].ToString(), "Updated SOQUYTIENMATV2s", e.Item.KeyValues);
         }
     }
     bool isExport = false;
-    protected void RadGridSOQUYTIENMAT_ItemDataBound(object sender, GridItemEventArgs e)
+    protected void RadGridSOQUYTIENMATV2_ItemDataBound(object sender, GridItemEventArgs e)
     {
         RadGrid grid = (RadGrid)sender;
         if (e.Item is GridEditableItem && e.Item.IsInEditMode)
         {
             GridEditableItem editItem = (GridEditableItem)e.Item;
-            RadDatePicker radNgaySOQUYTIENMAT = (RadDatePicker)editItem.FindControl("radNgaySOQUYTIENMAT");
+            RadDatePicker radNgaySOQUYTIENMATV2 = (RadDatePicker)editItem.FindControl("radNgaySOQUYTIENMATV2");
             RadComboBox cmbC_TYPE = (RadComboBox)editItem.FindControl("cmbC_TYPE");
-            RadComboBox cmbFK_KIHIEUTAIKHOAN = (RadComboBox)editItem.FindControl("cmbFK_KIHIEUTAIKHOAN"); 
+            RadComboBox cmbFK_KIHIEUTAIKHOAN = (RadComboBox)editItem.FindControl("cmbFK_KIHIEUTAIKHOAN");
             if (e.Item is GridEditFormInsertItem || e.Item is GridDataInsertItem)
             {
                 // insert item
-                radNgaySOQUYTIENMAT.SelectedDate = System.DateTime.Now;
+                radNgaySOQUYTIENMATV2.SelectedDate = System.DateTime.Now;
                 cmbC_TYPE.SelectedIndex = 0;
                 if (Session["SaveAddNew"] == "True")
                 {
@@ -226,7 +164,7 @@ public partial class module_SOQUYTIENMAT : System.Web.UI.UserControl
             else
             {
                 // edit item
-                
+
             }
         }
         if (e.Item is GridDataItem && !isExport)
@@ -237,54 +175,41 @@ public partial class module_SOQUYTIENMAT : System.Web.UI.UserControl
             //lblSTT.Text = (e.Item.ItemIndex + 10000).ToString();
             if (e.Item.Cells[5].Text == "Thu")
             {
-                TONGTHU = TONGTHU + decimal.Parse(txtC_SOTIEN.Text);
-                TONCUOIKY = decimal.Parse(txtC_SOTIEN.Text) + TONCUOIKY;
-                txtC_TON.Text = TONCUOIKY.ToString();
-                TONTHUCTE = TONCUOIKY;
+
             }
             else if (e.Item.Cells[5].Text == "Chi")
             {
-                TONGCHI = TONGCHI + decimal.Parse(txtC_SOTIEN.Text);
-                TONCUOIKY = TONCUOIKY - decimal.Parse(txtC_SOTIEN.Text);
-                txtC_TON.Text = TONCUOIKY.ToString();
-                TONTHUCTE = TONCUOIKY;                
+
             }
             else if (e.Item.Cells[5].Text == "Tồn đầu kỳ")
             {
-                LoadTonDauKy();
-                txtC_SOTIEN.Text = TONDAUKY.ToString();
-                txtC_TON.Text = TONDAUKY.ToString();
-                TONCUOIKY = TONDAUKY;
                 e.Item.BackColor = System.Drawing.Color.Red;
                 e.Item.ForeColor = System.Drawing.Color.White;
-                TONTHUCTE = TONCUOIKY;
                 lblSTT.Text = "";
             }
             else if (e.Item.Cells[5].Text == "Tồn cuối kỳ")
             {
-                TONTHUCTE = decimal.Parse(txtC_SOTIEN.Text);
-                txtC_TON.Text = txtC_SOTIEN.Text;
                 e.Item.BackColor = System.Drawing.Color.Red;
                 e.Item.ForeColor = System.Drawing.Color.White;
                 lblSTT.Text = "";
             }
         }
     }
-    protected void RadGridSOQUYTIENMAT_ItemCommand(object sender, GridCommandEventArgs e)
+    protected void RadGridSOQUYTIENMATV2_ItemCommand(object sender, GridCommandEventArgs e)
     {
         if (e.CommandName == "DeleteSelected")
         {
-            if (RadGridSOQUYTIENMAT.SelectedIndexes.Count == 0)
+            if (RadGridSOQUYTIENMATV2.SelectedIndexes.Count == 0)
             {
                 SetMessage("Không có bản ghi được chọn!");
-                RadGridSOQUYTIENMAT.Rebind();
+                RadGridSOQUYTIENMATV2.Rebind();
             }
-            foreach (GridDataItem item in RadGridSOQUYTIENMAT.SelectedItems)
+            foreach (GridDataItem item in RadGridSOQUYTIENMATV2.SelectedItems)
             {
                 if (!ValidateDeleteGroup(item["pk_id"].Text))
                 {
                     SetMessage("Không thể xóa \"" + item["c_name"].Text + "\" do có tham chiếu dữ liệu khác.");
-                    RadGridSOQUYTIENMAT.Rebind();
+                    RadGridSOQUYTIENMATV2.Rebind();
                 }
             }
         }
@@ -301,16 +226,16 @@ public partial class module_SOQUYTIENMAT : System.Web.UI.UserControl
             Session["SQTMC_SOTIEN"] = txtC_SOTIEN.Text;
             if (cmbC_TYPE.SelectedIndex == 2)
             {
-                SOQUYTIENMATDataSource.InsertParameters["C_ORDER"].DefaultValue = "2";
+                SOQUYTIENMATV2DataSource.InsertParameters["C_ORDER"].DefaultValue = "2";
             }
             else
             {
-                SOQUYTIENMATDataSource.InsertParameters["C_ORDER"].DefaultValue = "1";
+                SOQUYTIENMATV2DataSource.InsertParameters["C_ORDER"].DefaultValue = "1";
             }
         }
         else if (e.CommandName == RadGrid.UpdateCommandName)
         {
-           
+
         }
         else if (e.CommandName == RadGrid.ExportToCsvCommandName)
         {
@@ -368,16 +293,16 @@ public partial class module_SOQUYTIENMAT : System.Web.UI.UserControl
         if (!IsPostBack)
         {
             cmbDay.SelectedValue = "0";
-            SOQUYTIENMATDataSource.SelectParameters["DAY"].DefaultValue = "0";
+            SOQUYTIENMATV2DataSource.SelectParameters["DAY"].DefaultValue = "0";
         }
     }
     protected void cmbMonth_PreRender(object sender, EventArgs e)
-    {      
+    {
         if (!IsPostBack)
         {
             cmbMonth.SelectedValue = System.DateTime.Now.Month.ToString();
-            SOQUYTIENMATDataSource.SelectParameters["MONTH"].DefaultValue = System.DateTime.Now.Month.ToString();
-        }       
+            SOQUYTIENMATV2DataSource.SelectParameters["MONTH"].DefaultValue = System.DateTime.Now.Month.ToString();
+        }
     }
     protected void cmbYear_PreRender(object sender, EventArgs e)
     {
@@ -418,57 +343,79 @@ public partial class module_SOQUYTIENMAT : System.Web.UI.UserControl
                 }
             }
             cmbYear.SelectedValue = System.DateTime.Now.Year.ToString();
-            SOQUYTIENMATDataSource.SelectParameters["YEAR"].DefaultValue = System.DateTime.Now.Year.ToString();
+            SOQUYTIENMATV2DataSource.SelectParameters["YEAR"].DefaultValue = System.DateTime.Now.Year.ToString();
         }
     }
-    protected void RadGridSOQUYTIENMAT_ExcelMLExportRowCreated(object sender, Telerik.Web.UI.GridExcelBuilder.GridExportExcelMLRowCreatedArgs e)
-    {
-        if (e.RowType == GridExportExcelMLRowType.HeaderRow)
-        {
-            RadGridSOQUYTIENMAT.Rebind();  //workaround to get the template column's content
-            //create new column element and a header cell
-            e.Worksheet.Table.Columns.Add(new ColumnElement());
-            CellElement cell = new CellElement();
-            //correct the autofilter
-            e.Worksheet.AutoFilter.Range = String.Format("R{0}C{1}:R{0}C{2}", 1, 1, e.Worksheet.Table.Columns.Count + 1);
-            //populate the header cell
-            cell.Data.DataItem = (RadGridSOQUYTIENMAT.MasterTableView.GetItems(GridItemType.Header)[0] as GridHeaderItem)["C_TON"].Text.Trim();
-            e.Row.Cells.Add(cell);
-        }
 
-        if (e.RowType == GridExportExcelMLRowType.DataRow)
+    protected void RadGridSOQUYTIENMATV2_ItemCreated(object sender, GridItemEventArgs e)
+    {
+        if (e.Item is GridPagerItem)
         {
-            //create cell for the current row
-            CellElement cell = new CellElement();
-            int currentRow = e.Worksheet.Table.Rows.IndexOf(e.Row) - 1;
-            //populate the data cell
-            RadNumericTextBox txtC_TON = (RadNumericTextBox)RadGridSOQUYTIENMAT.MasterTableView.Items[currentRow].FindControl("txtC_TON");
-            RadNumericTextBox txtC_SOTIEN = (RadNumericTextBox)RadGridSOQUYTIENMAT.MasterTableView.Items[currentRow].FindControl("txtC_SOTIEN");
-            if (RadGridSOQUYTIENMAT.MasterTableView.Items[currentRow].Cells[5].Text == "Thu")
-            {
-                TONGTHU = TONGTHU + decimal.Parse(txtC_SOTIEN.Text);
-                TONCUOIKY = decimal.Parse(txtC_SOTIEN.Text) + TONCUOIKY;
-                cell.Data.DataItem = TONCUOIKY.ToString();
-            }
-            else if (RadGridSOQUYTIENMAT.MasterTableView.Items[currentRow].Cells[5].Text == "Chi")
-            {
-                TONGCHI = TONGCHI + decimal.Parse(txtC_SOTIEN.Text);
-                TONCUOIKY = TONCUOIKY - decimal.Parse(txtC_SOTIEN.Text);
-                cell.Data.DataItem = TONCUOIKY.ToString();
-            }
-            else if (RadGridSOQUYTIENMAT.MasterTableView.Items[currentRow].Cells[5].Text == "Tồn đầu kỳ")
-            {
-                cell.Data.DataItem = TONDAUKY.ToString();
-                TONCUOIKY = TONDAUKY;
-            }
-            else if (RadGridSOQUYTIENMAT.MasterTableView.Items[currentRow].Cells[5].Text == "Tồn cuối kỳ")
-            {
-                cell.Data.DataItem = txtC_SOTIEN.Text;                
-            }
-            e.Row.Cells.Add(cell);
+            RadComboBox cb = (e.Item as GridPagerItem).FindControl("PageSizeComboBox") as RadComboBox;
+            RadComboBoxItem item = new RadComboBoxItem("100", "100");
+            item.Attributes.Add("ownerTableViewId", RadGridSOQUYTIENMATV2.MasterTableView.ClientID);
+            if (cb.Items.FindItemByValue("100") == null) cb.Items.Add(item);
+            item = new RadComboBoxItem("200", "200");
+            item.Attributes.Add("ownerTableViewId", RadGridSOQUYTIENMATV2.MasterTableView.ClientID);
+            if (cb.Items.FindItemByValue("200") == null) cb.Items.Add(item);
+            item = new RadComboBoxItem("500", "500");
+            item.Attributes.Add("ownerTableViewId", RadGridSOQUYTIENMATV2.MasterTableView.ClientID);
+            if (cb.Items.FindItemByValue("500") == null) cb.Items.Add(item);
+            item = new RadComboBoxItem("1000", "1000");
+            item.Attributes.Add("ownerTableViewId", RadGridSOQUYTIENMATV2.MasterTableView.ClientID);
+            if (cb.Items.FindItemByValue("1000") == null) cb.Items.Add(item);
+            item = new RadComboBoxItem("2000", "2000");
+            item.Attributes.Add("ownerTableViewId", RadGridSOQUYTIENMATV2.MasterTableView.ClientID);
+            if (cb.Items.FindItemByValue("2000") == null) cb.Items.Add(item);
+            item = new RadComboBoxItem("5000", "5000");
+            item.Attributes.Add("ownerTableViewId", RadGridSOQUYTIENMATV2.MasterTableView.ClientID);
+            if (cb.Items.FindItemByValue("5000") == null) cb.Items.Add(item);
+            cb.Items.Sort(new PagerRadComboBoxItemComparer());
+            cb.Items.FindItemByValue(RadGridSOQUYTIENMATV2.PageSize.ToString()).Selected = true;
+        }
+        if (e.Item is GridEditableItem && e.Item.IsInEditMode)
+        {
+            //LinkButton btnSave = (LinkButton)e.Item.FindControl("btnSave");
+            LinkButton btnSaveAddNew = (LinkButton)e.Item.FindControl("btnSaveAddNew");
+            btnSaveAddNew.Click += new EventHandler(btnSaveAddNew_Click);
+            //btnSave.Click += new EventHandler(btnSave_Click);
         }
     }
-    protected void LoadTonDauKy()
+
+    public class PagerRadComboBoxItemComparer : IComparer<RadComboBoxItem>, IComparer
+    {
+        public int Compare(RadComboBoxItem x, RadComboBoxItem y)
+        {
+
+            int rValue = 0;
+            int lValue = 0;
+
+            if (Int32.TryParse(x.Value, out lValue) && Int32.TryParse(y.Value, out rValue))
+            {
+                return lValue.CompareTo(rValue);
+            }
+            else
+            {
+                return x.Value.CompareTo(y.Value);
+            }
+        }
+        public int Compare(object x, object y)
+        {
+            return Compare((RadComboBoxItem)x, (RadComboBoxItem)y);
+        }
+    }
+
+    protected void btnSave_Click(object sender, EventArgs e)
+    {
+        Session["SaveAddNew"] = "False";
+    }
+
+    protected void btnSaveAddNew_Click(object sender, EventArgs e)
+    {
+        Session["SaveAddNew"] = "True";
+    }
+
+    protected void LoadTaiChinh()
     {
         string THANGTRUOC = "";
         string NAMTRUOC = "";
@@ -482,7 +429,7 @@ public partial class module_SOQUYTIENMAT : System.Web.UI.UserControl
             THANGTRUOC = (int.Parse(cmbMonth.SelectedValue) - 1).ToString();
             NAMTRUOC = int.Parse(cmbYear.SelectedValue).ToString();
         }
-        string SelectSQL = "SELECT [SOQUYTIENMAT].[PK_ID], [SOQUYTIENMAT].[C_NGAY], [SOQUYTIENMAT].[C_TYPE], [SOQUYTIENMAT].[C_DESC], [SOQUYTIENMAT].[C_SOTIEN] FROM [SOQUYTIENMAT] WHERE [SOQUYTIENMAT].[FK_VUNGLAMVIEC] = N'" + Session["VUNGLAMVIEC"] + "' AND month([SOQUYTIENMAT].[C_NGAY]) =" + THANGTRUOC + " AND year([SOQUYTIENMAT].[C_NGAY]) =" + NAMTRUOC + " AND [SOQUYTIENMAT].[C_TYPE] = N'Tồn cuối kỳ'";
+        string SelectSQL = "SELECT [SOQUYTIENMAT].[C_SOTIEN] FROM [SOQUYTIENMAT] WHERE [SOQUYTIENMAT].[FK_VUNGLAMVIEC] = N'" + Session["VUNGLAMVIEC"] + "' AND month([SOQUYTIENMAT].[C_NGAY]) =" + THANGTRUOC + " AND year([SOQUYTIENMAT].[C_NGAY]) =" + NAMTRUOC + " AND [SOQUYTIENMAT].[C_TYPE] = N'Tồn cuối kỳ'";
         DataTable oDataTable = new DataTable();
         ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
         oDataTable = SelectQuery.query_data(SelectSQL);
@@ -490,34 +437,75 @@ public partial class module_SOQUYTIENMAT : System.Web.UI.UserControl
         {
             if (oDataTable.Rows[0]["C_SOTIEN"] == DBNull.Value)
             {
-                TONDAUKY = 0;
+                txtTONDAU.Text = "0";
             }
             else
             {
-                TONDAUKY = decimal.Parse(oDataTable.Rows[0]["C_SOTIEN"].ToString());
+                txtTONDAU.Text = oDataTable.Rows[0]["C_SOTIEN"].ToString();
             }
         }
         else
         {
-            TONDAUKY = 0;
+            txtTONDAU.Text = "0";
         }
-    }
-    protected void RadGridSOQUYTIENMAT_ItemCreated(object sender, GridItemEventArgs e)
-    {
-        if (e.Item is GridEditableItem && e.Item.IsInEditMode)
+        SelectSQL = "SELECT SUM ([SOQUYTIENMAT].[C_SOTIEN]) as TONGTHU FROM [SOQUYTIENMAT] WHERE [SOQUYTIENMAT].[FK_VUNGLAMVIEC] = N'" + Session["VUNGLAMVIEC"] + "' AND month([SOQUYTIENMAT].[C_NGAY]) =" + cmbMonth.SelectedValue + " AND year([SOQUYTIENMAT].[C_NGAY]) =" + cmbYear.SelectedValue + " AND [SOQUYTIENMAT].[C_TYPE] = N'Thu'";
+        oDataTable = new DataTable();
+        SelectQuery = new ITCLIB.Admin.SQL();
+        oDataTable = SelectQuery.query_data(SelectSQL);
+        if (oDataTable.Rows.Count != 0)
         {
-            //LinkButton btnSave = (LinkButton)e.Item.FindControl("btnSave");
-            LinkButton btnSaveAddNew = (LinkButton)e.Item.FindControl("btnSaveAddNew");
-            btnSaveAddNew.Click += new EventHandler(btnSaveAddNew_Click);
-            //btnSave.Click += new EventHandler(btnSave_Click);
+            if (oDataTable.Rows[0]["TONGTHU"] == DBNull.Value)
+            {
+                txtTONGTHU.Text = "0";
+            }
+            else
+            {
+                txtTONGTHU.Text = oDataTable.Rows[0]["TONGTHU"].ToString();
+            }
+        }
+        else
+        {
+            txtTONGTHU.Text = "0";
+        }
+        SelectSQL = "SELECT SUM ([SOQUYTIENMAT].[C_SOTIEN]) as TONGCHI FROM [SOQUYTIENMAT] WHERE [SOQUYTIENMAT].[FK_VUNGLAMVIEC] = N'" + Session["VUNGLAMVIEC"] + "' AND month([SOQUYTIENMAT].[C_NGAY]) =" + cmbMonth.SelectedValue + " AND year([SOQUYTIENMAT].[C_NGAY]) =" + cmbYear.SelectedValue + " AND [SOQUYTIENMAT].[C_TYPE] = N'Chi'";
+        oDataTable = new DataTable();
+        SelectQuery = new ITCLIB.Admin.SQL();
+        oDataTable = SelectQuery.query_data(SelectSQL);
+        if (oDataTable.Rows.Count != 0)
+        {
+            if (oDataTable.Rows[0]["TONGCHI"] == DBNull.Value)
+            {
+                txtTONGCHI.Text = "0";
+            }
+            else
+            {
+                txtTONGCHI.Text = oDataTable.Rows[0]["TONGCHI"].ToString();
+            }
+        }
+        else
+        {
+            txtTONGCHI.Text = "0";
+        }
+        txtTONCUOI.Text = (Decimal.Parse(txtTONDAU.Text) + Decimal.Parse(txtTONGTHU.Text) - Decimal.Parse(txtTONGCHI.Text)).ToString();
+        SelectSQL = "SELECT [SOQUYTIENMAT].[C_SOTIEN] FROM [SOQUYTIENMAT] WHERE [SOQUYTIENMAT].[FK_VUNGLAMVIEC] = N'" + Session["VUNGLAMVIEC"] + "' AND month([SOQUYTIENMAT].[C_NGAY]) =" + cmbMonth.SelectedValue + " AND year([SOQUYTIENMAT].[C_NGAY]) =" + cmbYear.SelectedValue + " AND [SOQUYTIENMAT].[C_TYPE] = N'Tồn cuối kỳ'";
+        oDataTable = new DataTable();
+        SelectQuery = new ITCLIB.Admin.SQL();
+        oDataTable = SelectQuery.query_data(SelectSQL);
+        if (oDataTable.Rows.Count != 0)
+        {
+            if (oDataTable.Rows[0]["C_SOTIEN"] == DBNull.Value)
+            {
+                txtTONTHUCTE.Text = "0";
+            }
+            else
+            {
+                txtTONTHUCTE.Text = oDataTable.Rows[0]["C_SOTIEN"].ToString();
+            }
+        }
+        else
+        {
+            txtTONTHUCTE.Text = txtTONCUOI.Text;
         }
     }
-    protected void btnSave_Click(object sender, EventArgs e)
-    {
-        Session["SaveAddNew"] = "False";
-    }
-    protected void btnSaveAddNew_Click(object sender, EventArgs e)
-    {
-        Session["SaveAddNew"] = "True";
-    }
+
 }

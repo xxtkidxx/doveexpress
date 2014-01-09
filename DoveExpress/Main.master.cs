@@ -311,6 +311,14 @@ public partial class Main : System.Web.UI.MasterPage
                         RadAjaxManager.AjaxSettings.Add(_AjaxSetting);
                         control = LoadControl("module/SOQUYTIENMAT.ascx");
                         break;
+                    case "soquytienmatv2":
+                        _AjaxSetting.AjaxControlID = "RadAjaxPanelSOQUYTIENMATV2";
+                        _AjaxUpdatedControl.ControlID = "RadAjaxPanelSOQUYTIENMATV2";
+                        _AjaxUpdatedControl.LoadingPanelID = "RadAjaxLoadingPanelSOQUYTIENMATV2";
+                        _AjaxSetting.UpdatedControls.Add(_AjaxUpdatedControl);
+                        RadAjaxManager.AjaxSettings.Add(_AjaxSetting);
+                        control = LoadControl("module/SOQUYTIENMATV2.ascx");
+                        break;
                     case "kihieutaikhoan":
                         _AjaxSetting.AjaxControlID = "RadGridKIHIEUTAIKHOAN";
                         _AjaxUpdatedControl.ControlID = "RadGridKIHIEUTAIKHOAN";
