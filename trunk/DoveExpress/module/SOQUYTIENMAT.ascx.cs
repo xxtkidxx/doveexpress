@@ -8,7 +8,12 @@ using System.Data;
 using Telerik.Web.UI;
 using System.Globalization;
 using Telerik.Web.UI.GridExcelBuilder;
-
+/*SELECT SUM(b) 
+FROM (
+  SELECT CASE WHEN ROWNUM=1 THEN 2*a ELSE -a END AS b
+  FROM foo
+  ORDER BY ???
+);*/
 public partial class module_SOQUYTIENMAT : System.Web.UI.UserControl
 {
     private decimal TONDAUKY
