@@ -30,7 +30,7 @@ public partial class controls_Menu : System.Web.UI.UserControl
         Menu.FindItemByValue("TRANGTHAIBILL").Visible = ITCLIB.Security.Security.IsSysAdmin();
 
         Menu.FindItemByValue("NHANGUI").Visible = ITCLIB.Security.Security.CanViewModule("NHANGUI");
-        Menu.FindItemByValue("NHANGUIQT").Visible = ITCLIB.Security.Security.CanViewModule("NHANGUIQT");
+        Menu.FindItemByValue("NHANGUIQT").Visible = ITCLIB.Security.Security.CanViewModule("NHANGUI");
         Menu.FindItemByValue("NHANGUIPH").Visible = ITCLIB.Security.Security.CanViewModule("NHANGUIPH");
 
         Menu.FindItemByValue("NHANGUIMENU").Visible = ITCLIB.Security.Security.CanViewModule("NHANGUI") || ITCLIB.Security.Security.CanViewModule("NHANGUIQT") || ITCLIB.Security.Security.CanViewModule("NHANGUIPH");
