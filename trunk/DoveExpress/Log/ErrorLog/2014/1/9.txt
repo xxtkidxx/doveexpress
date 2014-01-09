@@ -62,3 +62,141 @@ Invalid column name 'FK_VUNGLAMVIEC'.
 Invalid column name 'FK_VUNGLAMVIEC'.
 Invalid column name 'FK_VUNGLAMVIEC'.
 __________________________
+Thời gian lỗi : 2014-01-09 22:48:45 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=SOQUYTIENMATV2. 
+Nội dung lỗi:DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'FK_KIHIEUTAIKHOAN'.
+__________________________
+Thời gian lỗi : 2014-01-09 22:48:46 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=SOQUYTIENMATV2. 
+Nội dung lỗi:DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'FK_KIHIEUTAIKHOAN'.
+__________________________
+Thời gian lỗi : 2014-01-09 22:48:47 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=SOQUYTIENMATV2. 
+Nội dung lỗi:DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'FK_KIHIEUTAIKHOAN'.
+__________________________
+Thời gian lỗi : 2014-01-09 22:48:48 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=SOQUYTIENMATV2. 
+Nội dung lỗi:DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'FK_KIHIEUTAIKHOAN'.
+__________________________
+Thời gian lỗi : 2014-01-09 22:48:49 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=SOQUYTIENMATV2. 
+Nội dung lỗi:DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'FK_KIHIEUTAIKHOAN'.
+__________________________
+Thời gian lỗi : 2014-01-09 22:49:19 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=SOQUYTIENMATV2. 
+Nội dung lỗi:DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'FK_KIHIEUTAIKHOAN'.
+__________________________
+Thời gian lỗi : 2014-01-09 22:49:21 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=SOQUYTIENMATV2. 
+Nội dung lỗi:DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'FK_KIHIEUTAIKHOAN'.
+__________________________
+Thời gian lỗi : 2014-01-09 22:49:22 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=SOQUYTIENMATV2. 
+Nội dung lỗi:DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'FK_KIHIEUTAIKHOAN'.
+__________________________
+Thời gian lỗi : 2014-01-09 22:49:27 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=SOQUYTIENMATV2. 
+Nội dung lỗi:DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'FK_KIHIEUTAIKHOAN'.
+__________________________
+Thời gian lỗi : 2014-01-09 22:49:30 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=SOQUYTIENMATV2. 
+Nội dung lỗi:DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'FK_KIHIEUTAIKHOAN'.
+__________________________
+Thời gian lỗi : 2014-01-09 22:49:31 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=SOQUYTIENMATV2. 
+Nội dung lỗi:DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'FK_KIHIEUTAIKHOAN'.
+__________________________
+Thời gian lỗi : 2014-01-09 22:49:33 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=SOQUYTIENMATV2. 
+Nội dung lỗi:DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'FK_KIHIEUTAIKHOAN'.
+__________________________
+Thời gian lỗi : 2014-01-09 22:50:22 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=SOQUYTIENMATV2. 
+Nội dung lỗi:DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'FK_KIHIEUTAIKHOAN'.
+__________________________
+Thời gian lỗi : 2014-01-09 22:50:23 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=SOQUYTIENMATV2. 
+Nội dung lỗi:DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'FK_KIHIEUTAIKHOAN'.
+__________________________
+Thời gian lỗi : 2014-01-09 22:50:48 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=SOQUYTIENMATV2. 
+Nội dung lỗi:DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'FK_KIHIEUTAIKHOAN'.
+__________________________
+Thời gian lỗi : 2014-01-09 22:53:14 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=SOQUYTIENMATV2. 
+Nội dung lỗi:The column 'FK_KIHIEUTAIKHOAN' was specified multiple times for 'a'.
+__________________________
+Thời gian lỗi : 2014-01-09 23:12:47 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=SOQUYTIENMATV2. 
+Nội dung lỗi:Incorrect syntax near '='.
+Incorrect syntax near '='.
+__________________________
+Thời gian lỗi : 2014-01-09 23:13:57 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=SOQUYTIENMATV2. 
+Nội dung lỗi:Incorrect syntax near '='.
+Incorrect syntax near '='.
+__________________________
+Thời gian lỗi : 2014-01-09 23:14:17 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=SOQUYTIENMATV2. 
+Nội dung lỗi:Incorrect syntax near '='.
+__________________________
+Thời gian lỗi : 2014-01-09 23:15:05 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=SOQUYTIENMATV2. 
+Nội dung lỗi:Incorrect syntax near '='.
+Incorrect syntax near '='.
+__________________________
+Thời gian lỗi : 2014-01-09 23:15:42 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=SOQUYTIENMATV2. 
+Nội dung lỗi:Incorrect syntax near '='.
+Incorrect syntax near '='.
+__________________________
+Thời gian lỗi : 2014-01-09 23:16:06 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=SOQUYTIENMATV2. 
+Nội dung lỗi:Incorrect syntax near '='.
+Incorrect syntax near '='.
+__________________________
+Thời gian lỗi : 2014-01-09 23:16:28 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=SOQUYTIENMATV2. 
+Nội dung lỗi:Incorrect syntax near '='.
+Incorrect syntax near '='.
+__________________________
+Thời gian lỗi : 2014-01-09 23:16:30 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=SOQUYTIENMATV2. 
+Nội dung lỗi:Incorrect syntax near '='.
+Incorrect syntax near '='.
+__________________________
+Thời gian lỗi : 2014-01-09 23:16:41 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=SOQUYTIENMATV2. 
+Nội dung lỗi:Incorrect syntax near '='.
+Incorrect syntax near '='.
+__________________________
+Thời gian lỗi : 2014-01-09 23:17:27 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=SOQUYTIENMATV2. 
+Nội dung lỗi:Incorrect syntax near '='.
+__________________________
