@@ -24,7 +24,7 @@ public partial class module_NHANGUITRACKING : System.Web.UI.UserControl
                 RadGridNHANGUITRACKING.MasterTableView.EditFormSettings.PopUpSettings.Modal = true;
                 break;
         }
-        if (!ITCLIB.Security.Security.CanViewModule("NHANGUI"))
+        if (!ITCLIB.Security.Security.CanViewModule("NHANGUIPH"))
         {
             ITCLIB.Security.Security.ReturnUrl();
         }
