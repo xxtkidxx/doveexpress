@@ -74,8 +74,50 @@ public partial class module_BAOCAOCONGNO : System.Web.UI.UserControl
     }
     protected void RadGridBAOCAOCONGNO_ItemCommand(object sender, GridCommandEventArgs e)
     {
-        if (e.CommandName == "PrintGrid")
+        if (e.CommandName == "ConfirmPayment")
         {
+            if (RadGridBAOCAOCONGNO.SelectedIndexes.Count == 0)
+            {
+                SetMessage("Không có bản ghi được chọn!");
+            }
+            else
+            {
+                string UpdateSQL = "";
+                foreach (GridDataItem item in RadGridBAOCAOCONGNO.SelectedItems)
+                {
+                    UpdateSQL += "UPDATE [NHANGUI] SET [C_DATHU] = CASE WHEN (SELECT C_TYPE FROM NHANGUI WHERE C_BILL ='" + (item["C_BILLFIX"].FindControl("lblC_BILL") as Label).Text.Replace("BC", "").Trim() + "') = 1 THEN C_TIENHANGVAT ELSE C_TIENHANGVAT * C_TYGIA END,[C_HINHTHUCTT] = N'Đã thanh toán' WHERE [C_BILL] = '" + (item["C_BILLFIX"].FindControl("lblC_BILL") as Label).Text.Replace("BC", "").Trim() + "';IF (NOT EXISTS(SELECT C_BILL FROM SOQUYTIENMAT WHERE C_BILL = '" + (item["C_BILLFIX"].FindControl("lblC_BILL") as Label).Text.Replace("BC", "").Trim() + "'))" +
+                    " BEGIN" +
+                    " INSERT INTO [SOQUYTIENMAT] ([C_NGAY], [C_TYPE], [FK_KIHIEUTAIKHOAN], [C_DESC], [C_SOTIEN], [C_BILL],[C_TON],[C_ORDER],[FK_VUNGLAMVIEC]) VALUES ('" + String.Format("{0:yyyy-MM-dd hh:mm:ss tt}", System.DateTime.Now.ToUniversalTime().AddHours(7)) + "',N'Thu',NULL, N'Bill ' + '" + (item["C_BILLFIX"].FindControl("lblC_BILL") as Label).Text.Replace("BC", "").Trim() + "',CASE WHEN (SELECT C_TYPE FROM NHANGUI WHERE C_BILL ='" + (item["C_BILLFIX"].FindControl("lblC_BILL") as Label).Text.Replace("BC", "").Trim() + "') = 1 THEN (SELECT C_TIENHANGVAT FROM NHANGUI WHERE C_BILL ='" + (item["C_BILLFIX"].FindControl("lblC_BILL") as Label).Text.Replace("BC", "").Trim() + "') ELSE (SELECT C_TIENHANGVAT * C_TYGIA FROM NHANGUI WHERE C_BILL ='" + (item["C_BILLFIX"].FindControl("lblC_BILL") as Label).Text.Replace("BC", "").Trim() + "') END,'" + (item["C_BILLFIX"].FindControl("lblC_BILL") as Label).Text.Replace("BC", "").Trim() + "',0,1,N'" + Session["VUNGLAMVIEC"].ToString() + "')" +
+                    " END" +
+                    " ELSE" +
+                    " BEGIN" +
+                    " UPDATE [SOQUYTIENMAT] SET [C_NGAY] = '" + String.Format("{0:yyyy-MM-dd hh:mm:ss tt}", System.DateTime.Now.ToUniversalTime().AddHours(7)) + "',[C_SOTIEN] = CASE WHEN (SELECT C_TYPE FROM NHANGUI WHERE C_BILL ='" + (item["C_BILLFIX"].FindControl("lblC_BILL") as Label).Text.Replace("BC", "").Trim() + "') = 1 THEN (SELECT C_TIENHANGVAT FROM NHANGUI WHERE C_BILL ='" + (item["C_BILLFIX"].FindControl("lblC_BILL") as Label).Text.Replace("BC", "").Trim() + "') ELSE (SELECT C_TIENHANGVAT * C_TYGIA FROM NHANGUI WHERE C_BILL ='" + (item["C_BILLFIX"].FindControl("lblC_BILL") as Label).Text.Replace("BC", "").Trim() + "') END WHERE [C_BILL] = '" + (item["C_BILLFIX"].FindControl("lblC_BILL") as Label).Text.Replace("BC", "").Trim() + "'" +
+                    " END;"; 
+                }
+                ITCLIB.Admin.SQL UpdateQuery = new ITCLIB.Admin.SQL();
+                UpdateQuery.ExecuteNonQuery(UpdateSQL);
+            }           
+            SetMessage("Cập nhật tình trạng thanh toán thành công");
+            RadGridBAOCAOCONGNO.Rebind();
+        }
+        else if (e.CommandName == "ConfirmUnPayment")
+        {
+            if (RadGridBAOCAOCONGNO.SelectedIndexes.Count == 0)
+            {
+                SetMessage("Không có bản ghi được chọn!");
+            }
+            else
+            {
+                string UpdateSQL = "";
+                foreach (GridDataItem item in RadGridBAOCAOCONGNO.SelectedItems)
+                {
+                    UpdateSQL += "UPDATE [NHANGUI] SET [C_DATHU] = " + "0" + ",[C_HINHTHUCTT] = N'Thanh toán sau' WHERE [C_BILL] = '" + (item["C_BILLFIX"].FindControl("lblC_BILL") as Label).Text.Replace("BC", "").Trim() + "';UPDATE [SOQUYTIENMAT] SET [C_SOTIEN] = " + "0" + " WHERE [C_BILL] = '" + (item["C_BILLFIX"].FindControl("lblC_BILL") as Label).Text.Replace("BC", "").Trim() + "';";
+                }
+                ITCLIB.Admin.SQL UpdateQuery = new ITCLIB.Admin.SQL();
+                UpdateQuery.ExecuteNonQuery(UpdateSQL);
+            }
+            SetMessage("Cập nhật tình trạng thanh toán thành công");
+            RadGridBAOCAOCONGNO.Rebind();
         }
     }
     protected void RadGridBAOCAOCONGNO_ExcelMLExportRowCreated(object sender, Telerik.Web.UI.GridExcelBuilder.GridExportExcelMLRowCreatedArgs e)

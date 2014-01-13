@@ -40,7 +40,7 @@
     </telerik:RadDatePicker>
 </div>
 <telerik:RadGrid ID="RadGridBAOCAONGAY" runat="server" Skin="Vista" AllowPaging="True"
-    PageSize="50" AllowSorting="True" AllowFilteringByColumn="True" GridLines="None"
+    PageSize="50" AllowSorting="True" AllowFilteringByColumn="True" GridLines="None" AllowMultiRowSelection="True"
     ShowStatusBar="True" AutoGenerateColumns="False" OnItemCommand="RadGridBAOCAONGAY_ItemCommand"
     AllowMultiRowEdit="True" AllowAutomaticDeletes="True" AllowAutomaticInserts="True"
     AllowAutomaticUpdates="True" DataSourceID="BAOCAONGAYDataSource" ShowFooter="True"
@@ -58,7 +58,10 @@
         <CommandItemTemplate>
             <div style="padding: 5px 5px; float: left; width: auto">
                 <b>Báo cáo doanh số theo ngày</b>&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:LinkButton ID="lbPrint" runat="server" Visible="false" CommandName="PrintGrid"><img style="border:0px;vertical-align:middle;" alt="" src="Images/approval.gif" />In</asp:LinkButton>&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:LinkButton ID="LinkButton5" runat="server" OnClientClick="javascript:return confirm('Bạn có muốn xác nhận các Bill này đã thanh toán không?')"
+                    CommandName="ConfirmPayment" Visible='<%# ITCLIB.Security.Security.CanPrintModule("NHANGUI") %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/img_OpenPanel.gif" />Xác nhận đã thanh toán</asp:LinkButton>&nbsp;&nbsp;
+                <asp:LinkButton ID="LinkButton6" runat="server" OnClientClick="javascript:return confirm('Bạn có muốn xác nhận các Bill này chưa thanh toán không?')"
+                    CommandName="ConfirmUnPayment" Visible='<%# ITCLIB.Security.Security.CanPrintModule("NHANGUI") %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/img_OpenPanel.gif" />Xác nhận chưa thanh toán</asp:LinkButton>&nbsp;&nbsp;
                 <asp:LinkButton ID="lblRefesh" runat="server" CommandName="RebindGrid"><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Refresh.gif" />Làm mới</asp:LinkButton>
             </div>
             <div style="padding: 5px 5px; float: right; width: auto">
@@ -69,6 +72,9 @@
             </div>
         </CommandItemTemplate>
         <Columns>
+            <telerik:GridClientSelectColumn UniqueName="ClientSelectColumn" HeaderStyle-Width="40px"
+                HeaderStyle-HorizontalAlign="Center" ItemStyle-HorizontalAlign="Center">
+            </telerik:GridClientSelectColumn>
             <telerik:GridBoundColumn UniqueName="C_NGAYFIX" HeaderText="Ngày" DataField="C_NGAYFIX"
                 HeaderStyle-Width="100px" HeaderStyle-HorizontalAlign="Center" AutoPostBackOnFilter="true"
                 ShowFilterIcon="true" FilterControlWidth="75%" DataType="System.DateTime" DataFormatString="{0:dd/MM/yyyy}">
@@ -78,7 +84,7 @@
                 CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%"
                 SortExpression="C_BILLFIX">
                 <ItemTemplate>
-                    <%# String.Format("{0}", Eval("C_BILLFIX").ToString())%>
+                    <asp:Label ID="lblC_BILL" runat="server" Text='<%# String.Format("{0}", Eval("C_BILLFIX").ToString())%>'></asp:Label>
                 </ItemTemplate>
             </telerik:GridTemplateColumn>
             <telerik:GridBoundColumn UniqueName="FK_KHACHHANG" HeaderText="Mã khách hàng" DataField="FK_KHACHHANG"
