@@ -28,3 +28,11 @@ Thời gian lỗi : 2014-01-13 15:33:23 PM
 Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=BAOCAOCONGNO. 
 Nội dung lỗi:Object reference not set to an instance of an object.
 __________________________
+Thời gian lỗi : 2014-01-13 16:26:44 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUIPH. 
+Nội dung lỗi:Incorrect syntax near ')'.
+Incorrect syntax near the keyword 'THEN'.
+Incorrect syntax near the keyword 'THEN'.
+Incorrect syntax near the keyword 'ORDER'.
+__________________________
