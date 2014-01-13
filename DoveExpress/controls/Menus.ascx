@@ -170,7 +170,7 @@
                 <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=SOQUYTIENMAT"
                     Text="Sổ quỹ tiền mặt" Value="SOQUYTIENMAT">
                 </telerik:RadMenuItem>
-                <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=SOQUYTIENMATV2"
+                <telerik:RadMenuItem runat="server"  Visible = "false" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=SOQUYTIENMATV2"
                     Text="Sổ quỹ tiền mặt (Vesion 2)" Value="SOQUYTIENMATV2">
                 </telerik:RadMenuItem>
                 <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=BAOCAOTAICHINH"
