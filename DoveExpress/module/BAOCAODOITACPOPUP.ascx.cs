@@ -10,7 +10,7 @@ public partial class module_BAOCAODOITACPOPUP : System.Web.UI.UserControl
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (!ITCLIB.Security.Security.CanPrintModule("NHANGUI"))
+        if (!ITCLIB.Security.Security.CanPrintModule("BAOCAO"))
         {
             ITCLIB.Security.Security.ReturnUrl();
         }

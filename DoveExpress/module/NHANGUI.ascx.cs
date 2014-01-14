@@ -454,10 +454,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
             {
                 e.KeepInInsertMode = true;
             }
-            else
-            {
-                ClearSession();
-            }
+            ClearSession();
             SetMessage("Tạo mới nhận gửi thành công!");
             Session["MAXID"] = getmaxid("NHANGUI");
             ITCLIB.ActionLog.ActionLog.WriteLog(Session["UserID"].ToString(), "Inserted NHANGUIs", "{PK_ID:\"" + Session["MAXID"].ToString() + "\"}");
@@ -548,28 +545,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
                 radC_NGAYGIONHAN.SelectedDate = System.DateTime.Now.Date;
                 txtCODE.Text = GetMaxBill();
                 if (Session["SaveAddNew"] == "True")
-                {
-                    if (FK_DICHVU != "")
-                    {
-                        cmbSanPham.SelectedValue = FK_DICHVU;
-                    }
-                    if (FK_KHACHHANG != "")
-                    {
-                        cmbMaKhachHang.SelectedValue = FK_KHACHHANG;
-                    }  
-                    txtC_TENKH.Text = TENKH;
-                    txtC_TELGUI.Text = DIENTHOAIKH;
-                    if (FK_QUANHUYEN != "")
-                    {
-                        cmbTinhThanh.SelectedValue = ITCLIB.Admin.cFunction.LoadIDTinhThanhCode(FK_QUANHUYEN);
-                        QUANHUYENDataSource.SelectCommand = LoadFilteredManually(ITCLIB.Admin.cFunction.LoadIDTinhThanhCode(FK_QUANHUYEN));
-                        cmbQuanHuyen.DataBind();
-                        cmbQuanHuyen.SelectedValue = FK_QUANHUYEN;
-                    }
-                    txtC_KHOILUONG.Text = C_KHOILUONG.ToString();
-                    txtC_GIACUOC.Text = CUOCCHINH.ToString();
-                    cmbFK_DOITAC.SelectedValue = FK_DOITAC;
-                    txtC_GIADOITAC.Text = GIADOITAC.ToString();
+                {                    
                     if (Session["MAXID"].ToString() != "")
                     {
                         string SQLSELECT = String.Format("SELECT NHANGUI.*  FROM NHANGUI WHERE NHANGUI.PK_ID = {0}", Session["MAXID"].ToString());
@@ -577,6 +553,18 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
                         DataTable oDataTableNew = QR.query_data(SQLSELECT);
                         if (oDataTableNew.Rows.Count > 0)
                         {
+                            cmbSanPham.SelectedValue = oDataTableNew.Rows[0]["FK_MASANPHAM"].ToString();
+                            cmbMaKhachHang.SelectedValue = oDataTableNew.Rows[0]["FK_KHACHHANG"].ToString();
+                            txtC_TENKH.Text = oDataTableNew.Rows[0]["C_TENKH"].ToString();
+                            txtC_TELGUI.Text = oDataTableNew.Rows[0]["C_TELGUI"].ToString();
+                            cmbTinhThanh.SelectedValue = ITCLIB.Admin.cFunction.LoadIDTinhThanhCode(oDataTableNew.Rows[0]["FK_QUANHUYEN"].ToString());
+                            QUANHUYENDataSource.SelectCommand = LoadFilteredManually(ITCLIB.Admin.cFunction.LoadIDTinhThanhCode(oDataTableNew.Rows[0]["FK_QUANHUYEN"].ToString()));
+                            cmbQuanHuyen.DataBind();
+                            cmbQuanHuyen.SelectedValue = oDataTableNew.Rows[0]["FK_QUANHUYEN"].ToString();
+                            txtC_KHOILUONG.Text = oDataTableNew.Rows[0]["C_KHOILUONG"].ToString();
+                            txtC_GIACUOC.Text = oDataTableNew.Rows[0]["C_GIACUOC"].ToString();
+                            cmbFK_DOITAC.SelectedValue = oDataTableNew.Rows[0]["FK_DOITAC"].ToString();
+                            txtC_GIADOITAC.Text = oDataTableNew.Rows[0]["C_GIADOITAC"].ToString();
                             RadTextBox txtC_NGUOINHAN = (RadTextBox)editItem.FindControl("txtC_NGUOINHAN");
                             txtC_NGUOINHAN.Text = oDataTableNew.Rows[0]["C_NGUOINHAN"].ToString();
                             RadTextBox txtC_DIACHINHAN = (RadTextBox)editItem.FindControl("txtC_DIACHINHAN");
@@ -600,7 +588,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
                             txtC_VAT.Text = oDataTableNew.Rows[0]["C_VAT"].ToString();
                             txtC_TIENHANGVAT.Text = oDataTableNew.Rows[0]["C_TIENHANGVAT"].ToString();
                             RadComboBox cmbC_HINHTHUCTT = (RadComboBox)editItem.FindControl("cmbC_HINHTHUCTT");
-                            if (oDataTableNew.Rows[0]["C_HINHTHUCTT"].ToString() !="")
+                            if (oDataTableNew.Rows[0]["C_HINHTHUCTT"].ToString() != "")
                             {
                                 cmbC_HINHTHUCTT.SelectedValue = oDataTableNew.Rows[0]["C_HINHTHUCTT"].ToString();
                             }
@@ -611,6 +599,69 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
                             {
                                 cmbFK_NHANVIENNHAN.SelectedValue = oDataTableNew.Rows[0]["FK_NHANVIENNHAN"].ToString();
                             }
+
+                            FK_DICHVU = oDataTableNew.Rows[0]["FK_MASANPHAM"].ToString();
+                            FK_QUANHUYEN = oDataTableNew.Rows[0]["FK_QUANHUYEN"].ToString();
+                            FK_KHACHHANG = oDataTableNew.Rows[0]["FK_KHACHHANG"].ToString();
+                            TENKH = oDataTableNew.Rows[0]["C_TENKH"].ToString();
+                            DIENTHOAIKH = oDataTableNew.Rows[0]["C_TELGUI"].ToString();
+                            string SelectSQL;
+                            SelectSQL = "Select DMKHACHHANG.FK_NHOMKHACHHANG,DMKHACHHANG.C_NAME,DMKHACHHANG.C_TEL FROM DMKHACHHANG WHERE DMKHACHHANG.C_CODE ='" + FK_KHACHHANG + "'";
+                            DataTable oDataTable = new DataTable();
+                            ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
+                            oDataTable = SelectQuery.query_data(SelectSQL);
+                            if (oDataTable.Rows.Count != 0)
+                            {
+                                FK_NHOMKHACHHANG = oDataTable.Rows[0]["FK_NHOMKHACHHANG"].ToString();
+                                string SelectSQL2;
+                                SelectSQL2 = "Select DMMABANGCUOC.PK_ID FROM DMMABANGCUOC WHERE ((DMMABANGCUOC.C_VALUE ='" + FK_NHOMKHACHHANG + "') OR (DMMABANGCUOC.C_VALUE LIKE '%," + FK_NHOMKHACHHANG + ",%') OR (DMMABANGCUOC.C_VALUE LIKE '%," + FK_NHOMKHACHHANG + "') OR (DMMABANGCUOC.C_VALUE LIKE '" + FK_NHOMKHACHHANG + ",%')) AND (DMMABANGCUOC.FK_VUNGLAMVIEC = N'" + Session["VUNGLAMVIEC"].ToString() + "')";
+                                DataTable oDataTable2 = new DataTable();
+                                ITCLIB.Admin.SQL SelectQuery2 = new ITCLIB.Admin.SQL();
+                                oDataTable2 = SelectQuery2.query_data(SelectSQL2);
+                                if (oDataTable2.Rows.Count != 0)
+                                {
+                                    FK_MABANGCUOC = oDataTable2.Rows[0]["PK_ID"].ToString();
+                                }
+                                else
+                                {
+                                    FK_MABANGCUOC = "";
+                                }
+                            }
+                            else
+                            {
+                                FK_NHOMKHACHHANG = "";
+                                FK_MABANGCUOC = "";
+                            }
+                            string SelectSQL3;
+                            SelectSQL3 = "Select DMMAVUNG.PK_ID FROM DMMAVUNG WHERE FK_MASANPHAM=" + FK_DICHVU + " AND FK_VUNGLAMVIEC = N'" + Session["VUNGLAMVIEC"] + "' AND C_TYPE = 1 AND ((DMMAVUNG.C_DESC ='" + FK_QUANHUYEN + "') OR (DMMAVUNG.C_DESC LIKE '%," + FK_QUANHUYEN + ",%') OR (DMMAVUNG.C_DESC LIKE '%," + FK_QUANHUYEN + "') OR (DMMAVUNG.C_DESC LIKE '" + FK_QUANHUYEN + ",%')) AND (DMMAVUNG.FK_VUNGLAMVIEC = N'" + Session["VUNGLAMVIEC"].ToString() + "')";
+                            DataTable oDataTable3 = new DataTable();
+                            ITCLIB.Admin.SQL SelectQuery3 = new ITCLIB.Admin.SQL();
+                            oDataTable3 = SelectQuery3.query_data(SelectSQL3);
+                            if (oDataTable3.Rows.Count != 0)
+                            {
+                                FK_MAVUNG = oDataTable3.Rows[0]["PK_ID"].ToString();
+                            }
+                            else
+                            {
+                                FK_MAVUNG = "";
+                            }
+                            PPXD = 0;
+                            string SelectSQL4;
+                            SelectSQL4 = "Select DMPPXD.C_PPXD FROM DMPPXD WHERE DMPPXD.FK_MASANPHAM =" + FK_DICHVU + " AND FK_MABANGCUOC = " + FK_MABANGCUOC;
+                            DataTable oDataTable4 = new DataTable();
+                            ITCLIB.Admin.SQL SelectQuery4 = new ITCLIB.Admin.SQL();
+                            oDataTable4 = SelectQuery4.query_data(SelectSQL4);
+                            if (oDataTable4.Rows.Count != 0)
+                            {
+                                if (oDataTable4.Rows[0]["C_PPXD"] != DBNull.Value)
+                                {
+                                    PPXD = decimal.Parse(oDataTable4.Rows[0]["C_PPXD"].ToString());
+                                }
+                            }
+                            C_KHOILUONG = int.Parse(oDataTableNew.Rows[0]["C_KHOILUONG"].ToString());
+                            CUOCCHINH = decimal.Parse(oDataTableNew.Rows[0]["C_GIACUOC"].ToString());
+                            FK_DOITAC = oDataTableNew.Rows[0]["FK_DOITAC"].ToString();
+                            GIADOITAC = decimal.Parse(oDataTableNew.Rows[0]["C_GIADOITAC"].ToString());
                         }
                     }
                 }
