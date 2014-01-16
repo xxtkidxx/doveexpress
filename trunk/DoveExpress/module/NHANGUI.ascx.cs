@@ -241,7 +241,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
             }
         }
         RadNumericTextBox txtPPXD = (RadNumericTextBox)editableItem.FindControl("txtPPXD");
-        RadNumericTextBox txtCODE = (RadNumericTextBox)editableItem.FindControl("txtCODE");
+        RadTextBox txtCODE = (RadTextBox)editableItem.FindControl("txtCODE");
         RadNumericTextBox txtC_KHOILUONG = (RadNumericTextBox)editableItem.FindControl("txtC_KHOILUONG");
         string[] arrayvalue = e.Argument.Split(';');
         if ((arrayvalue[0] == "cmbMaKhachHang") && (FK_KHACHHANG != arrayvalue[1]))
@@ -502,7 +502,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
             }
             RadNumericTextBox txtPPXD = (RadNumericTextBox)editItem.FindControl("txtPPXD");
             txtPPXD.Text = (txtPPXD.Text == "") ? "0" : txtPPXD.Text;
-            RadNumericTextBox txtCODE = (RadNumericTextBox)editItem.FindControl("txtCODE");
+            RadTextBox txtCODE = (RadTextBox)editItem.FindControl("txtCODE");
             RadNumericTextBox txtC_GIATRIHANGHOA = (RadNumericTextBox)editItem.FindControl("txtC_GIATRIHANGHOA");
             txtC_GIATRIHANGHOA.Text = (txtC_GIATRIHANGHOA.Text == "") ? "0" : txtC_GIATRIHANGHOA.Text;
             RadNumericTextBox txtC_KHOILUONGTHUC = (RadNumericTextBox)editItem.FindControl("txtC_KHOILUONGTHUC");
