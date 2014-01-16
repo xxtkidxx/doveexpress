@@ -688,7 +688,7 @@
             this.textBox3.Style.Font.Size = Telerik.Reporting.Drawing.Unit.Point(8D);
             this.textBox3.Style.Padding.Left = Telerik.Reporting.Drawing.Unit.Point(1D);
             this.textBox3.Style.Padding.Right = Telerik.Reporting.Drawing.Unit.Point(1D);
-            this.textBox3.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Center;
+            this.textBox3.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Left;
             this.textBox3.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
             this.textBox3.Value = "= Parameters.FK_KHACHHANG.Value";
             // 
@@ -2442,7 +2442,7 @@
             this.textBox120.Style.Font.Size = Telerik.Reporting.Drawing.Unit.Point(8D);
             this.textBox120.Style.Padding.Left = Telerik.Reporting.Drawing.Unit.Point(1D);
             this.textBox120.Style.Padding.Right = Telerik.Reporting.Drawing.Unit.Point(1D);
-            this.textBox120.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Center;
+            this.textBox120.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Left;
             this.textBox120.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
             this.textBox120.Value = "= Parameters.FK_KHACHHANG.Value";
             // 
