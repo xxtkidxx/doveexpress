@@ -193,11 +193,11 @@ public partial class Report : System.Web.UI.Page
                 reportSource.Parameters.Add("NHANVIENPHAT", oDataTable.Rows[0]["FK_NHANVIENPHAT"] != DBNull.Value ? ITCLIB.Admin.cFunction.LoadUserName(oDataTable.Rows[0]["FK_NHANVIENPHAT"].ToString()) : "");
                 reportSource.Parameters.Add("C_NGAYGIOPHAT", oDataTable.Rows[0]["C_NGAYGIOPHAT"] != DBNull.Value ? String.Format("{0:dd/MM/yyyy HH:mm}", DateTime.Parse(oDataTable.Rows[0]["C_NGAYGIOPHAT"].ToString())) : "");
 
-                System.Drawing.Printing.PrinterSettings printerSettings = new System.Drawing.Printing.PrinterSettings();
+                /*System.Drawing.Printing.PrinterSettings printerSettings = new System.Drawing.Printing.PrinterSettings();
                 System.Drawing.Printing.PrintController standardPrintController = new System.Drawing.Printing.StandardPrintController();
                 Telerik.Reporting.Processing.ReportProcessor reportProcessor = new Telerik.Reporting.Processing.ReportProcessor();
                 reportProcessor.PrintController = standardPrintController;
-                reportProcessor.PrintReport(reportSource, printerSettings);
+                reportProcessor.PrintReport(reportSource, printerSettings);*/
             }        
         }
     }
@@ -342,11 +342,11 @@ public partial class Report : System.Web.UI.Page
                 reportSource.Parameters.Add("NHANVIENPHAT", oDataTable.Rows[0]["FK_NHANVIENPHAT"] != DBNull.Value ? ITCLIB.Admin.cFunction.LoadUserName(oDataTable.Rows[0]["FK_NHANVIENPHAT"].ToString()) : "");
                 reportSource.Parameters.Add("C_NGAYGIOPHAT", oDataTable.Rows[0]["C_NGAYGIOPHAT"] != DBNull.Value ? String.Format("{0:dd/MM/yyyy HH:mm}", DateTime.Parse(oDataTable.Rows[0]["C_NGAYGIOPHAT"].ToString())) : "");
 
-                System.Drawing.Printing.PrinterSettings printerSettings = new System.Drawing.Printing.PrinterSettings();
+                /*System.Drawing.Printing.PrinterSettings printerSettings = new System.Drawing.Printing.PrinterSettings();
                 System.Drawing.Printing.PrintController standardPrintController = new System.Drawing.Printing.StandardPrintController();
                 Telerik.Reporting.Processing.ReportProcessor reportProcessor = new Telerik.Reporting.Processing.ReportProcessor();
                 reportProcessor.PrintController = standardPrintController;
-                reportProcessor.PrintReport(reportSource, printerSettings);
+                reportProcessor.PrintReport(reportSource, printerSettings);*/
             }
         }
     }
@@ -492,11 +492,11 @@ public partial class Report : System.Web.UI.Page
                 reportSource.Parameters.Add("NHANVIENPHAT", oDataTable.Rows[0]["FK_NHANVIENPHAT"] != DBNull.Value ? ITCLIB.Admin.cFunction.LoadUserName(oDataTable.Rows[0]["FK_NHANVIENPHAT"].ToString()) : "");
                 reportSource.Parameters.Add("C_NGAYGIOPHAT", oDataTable.Rows[0]["C_NGAYGIOPHAT"] != DBNull.Value ? String.Format("{0:dd/MM/yyyy HH:mm}", DateTime.Parse(oDataTable.Rows[0]["C_NGAYGIOPHAT"].ToString())) : "");
 
-                System.Drawing.Printing.PrinterSettings printerSettings = new System.Drawing.Printing.PrinterSettings();
+                /*System.Drawing.Printing.PrinterSettings printerSettings = new System.Drawing.Printing.PrinterSettings();
                 System.Drawing.Printing.PrintController standardPrintController = new System.Drawing.Printing.StandardPrintController();
                 Telerik.Reporting.Processing.ReportProcessor reportProcessor = new Telerik.Reporting.Processing.ReportProcessor();
                 reportProcessor.PrintController = standardPrintController;
-                reportProcessor.PrintReport(reportSource, printerSettings);
+                reportProcessor.PrintReport(reportSource, printerSettings);*/
             }
         }
     }
@@ -641,11 +641,11 @@ public partial class Report : System.Web.UI.Page
                 reportSource.Parameters.Add("NHANVIENPHAT", oDataTable.Rows[0]["FK_NHANVIENPHAT"] != DBNull.Value ? ITCLIB.Admin.cFunction.LoadUserName(oDataTable.Rows[0]["FK_NHANVIENPHAT"].ToString()) : "");
                 reportSource.Parameters.Add("C_NGAYGIOPHAT", oDataTable.Rows[0]["C_NGAYGIOPHAT"] != DBNull.Value ? String.Format("{0:dd/MM/yyyy HH:mm}", DateTime.Parse(oDataTable.Rows[0]["C_NGAYGIOPHAT"].ToString())) : "");
 
-                System.Drawing.Printing.PrinterSettings printerSettings = new System.Drawing.Printing.PrinterSettings();
-                System.Drawing.Printing.PrintController standardPrintController = new System.Drawing.Printing.StandardPrintController();
-                Telerik.Reporting.Processing.ReportProcessor reportProcessor = new Telerik.Reporting.Processing.ReportProcessor();
-                reportProcessor.PrintController = standardPrintController;
-                reportProcessor.PrintReport(reportSource, printerSettings);
+                /*System.Drawing.Printing.PrinterSettings printerSettings = new System.Drawing.Printing.PrinterSettings();
+                 System.Drawing.Printing.PrintController standardPrintController = new System.Drawing.Printing.StandardPrintController();
+                 Telerik.Reporting.Processing.ReportProcessor reportProcessor = new Telerik.Reporting.Processing.ReportProcessor();
+                 reportProcessor.PrintController = standardPrintController;
+                 reportProcessor.PrintReport(reportSource, printerSettings);*/
             }
 
         }
