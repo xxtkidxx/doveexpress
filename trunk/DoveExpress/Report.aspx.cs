@@ -68,6 +68,7 @@ public partial class Report : System.Web.UI.Page
                 this.ReportViewer1.ReportSource = reportSource;
                 reportSource.Parameters.Add("C_NGAY", oDataTable.Rows[0]["C_NGAY"] != DBNull.Value ? String.Format("{0:dd/MM/yyyy HH:mm}", DateTime.Parse(oDataTable.Rows[0]["C_NGAY"].ToString())) : "");
                 reportSource.Parameters.Add("C_BILL", oDataTable.Rows[0]["C_BILL"] != DBNull.Value ? "BC" + oDataTable.Rows[0]["C_BILL"].ToString() : "");
+                reportSource.Parameters.Add("FK_KHACHHANG", oDataTable.Rows[0]["FK_KHACHHANG"] != DBNull.Value ? oDataTable.Rows[0]["FK_KHACHHANG"].ToString() : "");
                 reportSource.Parameters.Add("C_TENKH", oDataTable.Rows[0]["C_TENKH"] != DBNull.Value ? oDataTable.Rows[0]["C_TENKH"].ToString() : "");
                 reportSource.Parameters.Add("C_TELGUI", oDataTable.Rows[0]["C_TELGUI"] != DBNull.Value ? oDataTable.Rows[0]["C_TELGUI"].ToString() : "");
                 reportSource.Parameters.Add("C_NGUOINHAN", oDataTable.Rows[0]["C_NGUOINHAN"] != DBNull.Value ? oDataTable.Rows[0]["C_NGUOINHAN"].ToString() : "");
@@ -213,6 +214,7 @@ public partial class Report : System.Web.UI.Page
                 this.ReportViewer1.ReportSource = reportSource;
                 reportSource.Parameters.Add("C_NGAY", oDataTable.Rows[0]["C_NGAY"] != DBNull.Value ? String.Format("{0:dd/MM/yyyy HH:mm}", DateTime.Parse(oDataTable.Rows[0]["C_NGAY"].ToString())) : "");
                 reportSource.Parameters.Add("C_BILL", oDataTable.Rows[0]["C_BILL"] != DBNull.Value ? "BC_" + oDataTable.Rows[0]["C_BILL"].ToString() : "");
+                reportSource.Parameters.Add("FK_KHACHHANG", oDataTable.Rows[0]["FK_KHACHHANG"] != DBNull.Value ? oDataTable.Rows[0]["FK_KHACHHANG"].ToString() : "");
                 reportSource.Parameters.Add("C_TENKH", oDataTable.Rows[0]["C_TENKH"] != DBNull.Value ? oDataTable.Rows[0]["C_TENKH"].ToString() : "");
                 reportSource.Parameters.Add("C_TELGUI", oDataTable.Rows[0]["C_TELGUI"] != DBNull.Value ? oDataTable.Rows[0]["C_TELGUI"].ToString() : "");
                 reportSource.Parameters.Add("C_NGUOINHAN", oDataTable.Rows[0]["C_NGUOINHAN"] != DBNull.Value ? oDataTable.Rows[0]["C_NGUOINHAN"].ToString() : "");
@@ -357,6 +359,7 @@ public partial class Report : System.Web.UI.Page
                 this.ReportViewer1.ReportSource = reportSource;
                 reportSource.Parameters.Add("C_NGAY", oDataTable.Rows[0]["C_NGAY"] != DBNull.Value ? String.Format("{0:dd/MM/yyyy HH:mm}", DateTime.Parse(oDataTable.Rows[0]["C_NGAY"].ToString())) : "");
                 reportSource.Parameters.Add("C_BILL", oDataTable.Rows[0]["C_BILL"] != DBNull.Value ? "BC" + oDataTable.Rows[0]["C_BILL"].ToString() : "");
+                reportSource.Parameters.Add("FK_KHACHHANG", oDataTable.Rows[0]["FK_KHACHHANG"] != DBNull.Value ? oDataTable.Rows[0]["FK_KHACHHANG"].ToString() : "");
                 reportSource.Parameters.Add("C_TENKH", oDataTable.Rows[0]["C_TENKH"] != DBNull.Value ? oDataTable.Rows[0]["C_TENKH"].ToString() : "");
                 reportSource.Parameters.Add("C_TELGUI", oDataTable.Rows[0]["C_TELGUI"] != DBNull.Value ? oDataTable.Rows[0]["C_TELGUI"].ToString() : "");
                 reportSource.Parameters.Add("C_NGUOINHAN", oDataTable.Rows[0]["C_NGUOINHAN"] != DBNull.Value ? oDataTable.Rows[0]["C_NGUOINHAN"].ToString() : "");
@@ -502,6 +505,7 @@ public partial class Report : System.Web.UI.Page
                 this.ReportViewer1.ReportSource = reportSource;
                 reportSource.Parameters.Add("C_NGAY", oDataTable.Rows[0]["C_NGAY"] != DBNull.Value ? String.Format("{0:dd/MM/yyyy HH:mm}", DateTime.Parse(oDataTable.Rows[0]["C_NGAY"].ToString())) : "");
                 reportSource.Parameters.Add("C_BILL", oDataTable.Rows[0]["C_BILL"] != DBNull.Value ? "BC_" + oDataTable.Rows[0]["C_BILL"].ToString() : "");
+                reportSource.Parameters.Add("FK_KHACHHANG", oDataTable.Rows[0]["FK_KHACHHANG"] != DBNull.Value ? oDataTable.Rows[0]["FK_KHACHHANG"].ToString() : "");
                 reportSource.Parameters.Add("C_TENKH", oDataTable.Rows[0]["C_TENKH"] != DBNull.Value ? oDataTable.Rows[0]["C_TENKH"].ToString() : "");
                 reportSource.Parameters.Add("C_TELGUI", oDataTable.Rows[0]["C_TELGUI"] != DBNull.Value ? oDataTable.Rows[0]["C_TELGUI"].ToString() : "");
                 reportSource.Parameters.Add("C_NGUOINHAN", oDataTable.Rows[0]["C_NGUOINHAN"] != DBNull.Value ? oDataTable.Rows[0]["C_NGUOINHAN"].ToString() : "");

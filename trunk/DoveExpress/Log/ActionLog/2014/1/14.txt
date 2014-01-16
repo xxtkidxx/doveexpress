@@ -1,0 +1,42 @@
+Thời gian: 2014-01-14 15:51:06 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2014-01-14 15:57:24 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : 1
+Module : Inserted NHANGUIs
+Kết quả : {PK_ID:"9919"}
+__________________________
+Thời gian: 2014-01-14 15:57:50 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : 1
+Module : Inserted NHANGUIs
+Kết quả : {PK_ID:"9920"}
+__________________________
+Thời gian: 2014-01-14 15:58:01 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : 1
+Module : Inserted NHANGUIs
+Kết quả : {PK_ID:"9921"}
+__________________________
+Thời gian: 2014-01-14 16:26:13 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : 1
+Module : Inserted NHANGUIQTs
+Kết quả : {PK_ID:"9922"}
+__________________________
+Thời gian: 2014-01-14 16:26:23 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : 1
+Module : Inserted NHANGUIQTs
+Kết quả : {PK_ID:"9923"}
+__________________________
+Thời gian: 2014-01-14 16:26:32 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : 1
+Module : Inserted NHANGUIQTs
+Kết quả : {PK_ID:"9924"}
+__________________________

@@ -48,6 +48,7 @@
             Telerik.Reporting.ReportParameter reportParameter36 = new Telerik.Reporting.ReportParameter();
             Telerik.Reporting.ReportParameter reportParameter37 = new Telerik.Reporting.ReportParameter();
             Telerik.Reporting.ReportParameter reportParameter38 = new Telerik.Reporting.ReportParameter();
+            Telerik.Reporting.ReportParameter reportParameter39 = new Telerik.Reporting.ReportParameter();
             Telerik.Reporting.Drawing.StyleRule styleRule1 = new Telerik.Reporting.Drawing.StyleRule();
             this.detail = new Telerik.Reporting.DetailSection();
             this.barcode1 = new Telerik.Reporting.Barcode();
@@ -263,14 +264,14 @@
             // 
             this.textBox3.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Mm(5.0790138244628906D), Telerik.Reporting.Drawing.Unit.Mm(2.5389962196350098D));
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Mm(12.542246818542481D), Telerik.Reporting.Drawing.Unit.Mm(5.0799989700317383D));
+            this.textBox3.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Mm(14.873586654663086D), Telerik.Reporting.Drawing.Unit.Mm(5.0799989700317383D));
             this.textBox3.Style.Font.Bold = true;
             this.textBox3.Style.Font.Size = Telerik.Reporting.Drawing.Unit.Point(8D);
             this.textBox3.Style.Padding.Left = Telerik.Reporting.Drawing.Unit.Point(1D);
             this.textBox3.Style.Padding.Right = Telerik.Reporting.Drawing.Unit.Point(1D);
             this.textBox3.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Center;
             this.textBox3.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
-            this.textBox3.Value = "1000";
+            this.textBox3.Value = "= Parameters.FK_KHACHHANG.Value";
             // 
             // textBox4
             // 
@@ -1467,6 +1468,7 @@
             reportParameter36.Name = "C_GIATRIHANGHOA";
             reportParameter37.Name = "C_NGAY";
             reportParameter38.Name = "C_SOKIEN";
+            reportParameter39.Name = "FK_KHACHHANG";
             this.ReportParameters.Add(reportParameter1);
             this.ReportParameters.Add(reportParameter2);
             this.ReportParameters.Add(reportParameter3);
@@ -1505,6 +1507,7 @@
             this.ReportParameters.Add(reportParameter36);
             this.ReportParameters.Add(reportParameter37);
             this.ReportParameters.Add(reportParameter38);
+            this.ReportParameters.Add(reportParameter39);
             this.Style.Padding.Left = Telerik.Reporting.Drawing.Unit.Inch(0D);
             this.Style.Padding.Right = Telerik.Reporting.Drawing.Unit.Inch(0D);
             this.Style.Padding.Top = Telerik.Reporting.Drawing.Unit.Inch(0D);

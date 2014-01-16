@@ -47,6 +47,7 @@
             Telerik.Reporting.ReportParameter reportParameter35 = new Telerik.Reporting.ReportParameter();
             Telerik.Reporting.ReportParameter reportParameter36 = new Telerik.Reporting.ReportParameter();
             Telerik.Reporting.ReportParameter reportParameter37 = new Telerik.Reporting.ReportParameter();
+            Telerik.Reporting.ReportParameter reportParameter38 = new Telerik.Reporting.ReportParameter();
             Telerik.Reporting.Drawing.StyleRule styleRule1 = new Telerik.Reporting.Drawing.StyleRule();
             this.detail = new Telerik.Reporting.DetailSection();
             this.panel12 = new Telerik.Reporting.Panel();
@@ -682,14 +683,14 @@
             // 
             this.textBox3.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Mm(2.6967527866363525D), Telerik.Reporting.Drawing.Unit.Mm(2.5389962196350098D));
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Mm(10.159999847412109D), Telerik.Reporting.Drawing.Unit.Mm(5.0799989700317383D));
+            this.textBox3.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Mm(15.081245422363281D), Telerik.Reporting.Drawing.Unit.Mm(5.0799989700317383D));
             this.textBox3.Style.Font.Bold = true;
             this.textBox3.Style.Font.Size = Telerik.Reporting.Drawing.Unit.Point(8D);
             this.textBox3.Style.Padding.Left = Telerik.Reporting.Drawing.Unit.Point(1D);
             this.textBox3.Style.Padding.Right = Telerik.Reporting.Drawing.Unit.Point(1D);
             this.textBox3.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Center;
             this.textBox3.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
-            this.textBox3.Value = "1000";
+            this.textBox3.Value = "= Parameters.FK_KHACHHANG.Value";
             // 
             // textBox4
             // 
@@ -2436,14 +2437,14 @@
             // 
             this.textBox120.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Mm(2.6967527866363525D), Telerik.Reporting.Drawing.Unit.Mm(2.5389962196350098D));
             this.textBox120.Name = "textBox120";
-            this.textBox120.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Mm(10.159999847412109D), Telerik.Reporting.Drawing.Unit.Mm(5.0799989700317383D));
+            this.textBox120.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Mm(15.082246780395508D), Telerik.Reporting.Drawing.Unit.Mm(5.0799989700317383D));
             this.textBox120.Style.Font.Bold = true;
             this.textBox120.Style.Font.Size = Telerik.Reporting.Drawing.Unit.Point(8D);
             this.textBox120.Style.Padding.Left = Telerik.Reporting.Drawing.Unit.Point(1D);
             this.textBox120.Style.Padding.Right = Telerik.Reporting.Drawing.Unit.Point(1D);
             this.textBox120.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Center;
             this.textBox120.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
-            this.textBox120.Value = "1000";
+            this.textBox120.Value = "= Parameters.FK_KHACHHANG.Value";
             // 
             // textBox121
             // 
@@ -2738,6 +2739,7 @@
             reportParameter35.Name = "C_NGAY";
             reportParameter36.Name = "C_GIATRIHANGHOA";
             reportParameter37.Name = "C_SOKIEN";
+            reportParameter38.Name = "FK_KHACHHANG";
             this.ReportParameters.Add(reportParameter1);
             this.ReportParameters.Add(reportParameter2);
             this.ReportParameters.Add(reportParameter3);
@@ -2775,6 +2777,7 @@
             this.ReportParameters.Add(reportParameter35);
             this.ReportParameters.Add(reportParameter36);
             this.ReportParameters.Add(reportParameter37);
+            this.ReportParameters.Add(reportParameter38);
             styleRule1.Selectors.AddRange(new Telerik.Reporting.Drawing.ISelector[] {
             new Telerik.Reporting.Drawing.TypeSelector(typeof(Telerik.Reporting.TextItemBase)),
             new Telerik.Reporting.Drawing.TypeSelector(typeof(Telerik.Reporting.HtmlTextBox))});

@@ -48,6 +48,7 @@
             Telerik.Reporting.ReportParameter reportParameter36 = new Telerik.Reporting.ReportParameter();
             Telerik.Reporting.ReportParameter reportParameter37 = new Telerik.Reporting.ReportParameter();
             Telerik.Reporting.ReportParameter reportParameter38 = new Telerik.Reporting.ReportParameter();
+            Telerik.Reporting.ReportParameter reportParameter39 = new Telerik.Reporting.ReportParameter();
             Telerik.Reporting.Drawing.StyleRule styleRule1 = new Telerik.Reporting.Drawing.StyleRule();
             this.detail = new Telerik.Reporting.DetailSection();
             this.panel12 = new Telerik.Reporting.Panel();
@@ -608,9 +609,9 @@
             // 
             // barcode1
             // 
-            this.barcode1.Anchoring = ((Telerik.Reporting.AnchoringStyles)((((Telerik.Reporting.AnchoringStyles.Top | Telerik.Reporting.AnchoringStyles.Bottom)
-                        | Telerik.Reporting.AnchoringStyles.Left)
-                        | Telerik.Reporting.AnchoringStyles.Right)));
+            this.barcode1.Anchoring = ((Telerik.Reporting.AnchoringStyles)((((Telerik.Reporting.AnchoringStyles.Top | Telerik.Reporting.AnchoringStyles.Bottom) 
+            | Telerik.Reporting.AnchoringStyles.Left) 
+            | Telerik.Reporting.AnchoringStyles.Right)));
             this.barcode1.BarAlign = Telerik.Reporting.Drawing.HorizontalAlign.Center;
             this.barcode1.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Inch(6.0064072608947754D), Telerik.Reporting.Drawing.Unit.Inch(0.099999986588954926D));
             this.barcode1.Name = "barcode1";
@@ -693,14 +694,14 @@
             // 
             this.textBox3.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Mm(5.0790138244628906D), Telerik.Reporting.Drawing.Unit.Mm(2.5389962196350098D));
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Mm(12.542246818542481D), Telerik.Reporting.Drawing.Unit.Mm(5.0799989700317383D));
+            this.textBox3.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Mm(14.873586654663086D), Telerik.Reporting.Drawing.Unit.Mm(5.0799989700317383D));
             this.textBox3.Style.Font.Bold = true;
             this.textBox3.Style.Font.Size = Telerik.Reporting.Drawing.Unit.Point(8D);
             this.textBox3.Style.Padding.Left = Telerik.Reporting.Drawing.Unit.Point(1D);
             this.textBox3.Style.Padding.Right = Telerik.Reporting.Drawing.Unit.Point(1D);
             this.textBox3.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Center;
             this.textBox3.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
-            this.textBox3.Value = "1000";
+            this.textBox3.Value = "= Parameters.FK_KHACHHANG.Value";
             // 
             // textBox4
             // 
@@ -1775,7 +1776,7 @@
             this.textBox21.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Left;
             this.textBox21.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
             this.textBox21.Value = "Hà Nội: 33 Ngách 167/15 Tây Sơn, Đống Đa - 04.3533.5153; HCM: 47/4 Hậu Giang, P4." +
-                " Tân Bình - 08.6266.4455; Website: dovevn.com";
+    " Tân Bình - 08.6266.4455; Website: dovevn.com";
             // 
             // textBox59
             // 
@@ -1885,7 +1886,7 @@
             this.textBox67.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Left;
             this.textBox67.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
             this.textBox67.Value = "Hà Nội: 33 Ngách 167/15 Tây Sơn, Đống Đa - 04.3533.5153; HCM: 47/4 Hậu Giang, P4." +
-                " Tân Bình - 08.6266.4455; Website: dovevn.com";
+    " Tân Bình - 08.6266.4455; Website: dovevn.com";
             // 
             // panel8
             // 
@@ -2472,14 +2473,14 @@
             // 
             this.textBox120.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Mm(5.0790138244628906D), Telerik.Reporting.Drawing.Unit.Mm(2.5389962196350098D));
             this.textBox120.Name = "textBox120";
-            this.textBox120.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Mm(12.542246818542481D), Telerik.Reporting.Drawing.Unit.Mm(5.0799989700317383D));
+            this.textBox120.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Mm(14.662918090820313D), Telerik.Reporting.Drawing.Unit.Mm(5.0799989700317383D));
             this.textBox120.Style.Font.Bold = true;
             this.textBox120.Style.Font.Size = Telerik.Reporting.Drawing.Unit.Point(8D);
             this.textBox120.Style.Padding.Left = Telerik.Reporting.Drawing.Unit.Point(1D);
             this.textBox120.Style.Padding.Right = Telerik.Reporting.Drawing.Unit.Point(1D);
             this.textBox120.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Center;
             this.textBox120.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
-            this.textBox120.Value = "1000";
+            this.textBox120.Value = "= Parameters.FK_KHACHHANG.Value";
             // 
             // textBox121
             // 
@@ -2709,9 +2710,9 @@
             // 
             // barcode2
             // 
-            this.barcode2.Anchoring = ((Telerik.Reporting.AnchoringStyles)((((Telerik.Reporting.AnchoringStyles.Top | Telerik.Reporting.AnchoringStyles.Bottom)
-                        | Telerik.Reporting.AnchoringStyles.Left)
-                        | Telerik.Reporting.AnchoringStyles.Right)));
+            this.barcode2.Anchoring = ((Telerik.Reporting.AnchoringStyles)((((Telerik.Reporting.AnchoringStyles.Top | Telerik.Reporting.AnchoringStyles.Bottom) 
+            | Telerik.Reporting.AnchoringStyles.Left) 
+            | Telerik.Reporting.AnchoringStyles.Right)));
             this.barcode2.BarAlign = Telerik.Reporting.Drawing.HorizontalAlign.Center;
             this.barcode2.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Inch(5.9981532096862793D), Telerik.Reporting.Drawing.Unit.Inch(5.4958338737487793D));
             this.barcode2.Name = "barcode2";
@@ -2804,6 +2805,7 @@
             reportParameter36.Name = "C_NGAY";
             reportParameter37.Name = "C_GIATRIHANGHOA";
             reportParameter38.Name = "C_SOKIEN";
+            reportParameter39.Name = "FK_KHACHHANG";
             this.ReportParameters.Add(reportParameter1);
             this.ReportParameters.Add(reportParameter2);
             this.ReportParameters.Add(reportParameter3);
@@ -2842,6 +2844,7 @@
             this.ReportParameters.Add(reportParameter36);
             this.ReportParameters.Add(reportParameter37);
             this.ReportParameters.Add(reportParameter38);
+            this.ReportParameters.Add(reportParameter39);
             this.Style.Padding.Left = Telerik.Reporting.Drawing.Unit.Inch(0D);
             this.Style.Padding.Right = Telerik.Reporting.Drawing.Unit.Inch(0D);
             this.Style.Padding.Top = Telerik.Reporting.Drawing.Unit.Inch(0D);
