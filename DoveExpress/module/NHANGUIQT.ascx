@@ -474,10 +474,10 @@
             }
             return false;
         }
-        function OnKeyPresstxtBillNhanh(sender, eventArgs) {
-            var c = eventArgs.get_keyCode();
-            if (c == 13) {
-                //alert("Đã nhập!");
+        function OnKeyPressRadTextBox(sender, eventArgs) {
+            var charCode = eventArgs.get_keyCode();
+            if (charCode != 46 && charCode > 31 && (charCode < 48 || charCode > 57)) {
+                eventArgs.set_cancel(true);
             }
             return false;
         }
@@ -549,11 +549,10 @@
     </tr>
     <tr>
         <td>
-            <telerik:RadNumericTextBox ID="txtBillNhanh" ForeColor="Red" Width="200px" runat="server"
+            <telerik:RadTextBox ID="txtBillNhanh" ForeColor="Red" Width="200px" runat="server"
                 OnTextChanged="txtBillNhanh_TextChanged">
-                <NumberFormat DecimalSeparator="." GroupSeparator="" DecimalDigits="0" />
-                <ClientEvents OnKeyPress="OnKeyPresstxtBillNhanh" />
-            </telerik:RadNumericTextBox>
+                <ClientEvents OnKeyPress="OnKeyPressRadTextBox" />
+            </telerik:RadTextBox>
         </td>
         <td>
             <telerik:RadComboBox ID="cmbDoiTac" runat="server" Width="95%" DataTextField="C_NAME"
@@ -727,10 +726,9 @@
                                 </td>
                                 <td colspan="4">
                                     <asp:HiddenField ID="txtID" Value='<%# Eval( "PK_ID") %>' runat="server" />
-                                    BC<telerik:RadNumericTextBox ID="txtCODE" Width="80%" Text='<%# Bind("C_BILL") %>'
-                                        runat="server">
-                                        <NumberFormat DecimalSeparator="." GroupSeparator="" DecimalDigits="0" />
-                                    </telerik:RadNumericTextBox>
+                                    BC<telerik:RadTextBox ID="txtCODE" Width="80%" Text='<%# Bind("C_BILL") %>' runat="server">
+                                        <ClientEvents OnKeyPress="OnKeyPressRadTextBox" />
+                                    </telerik:RadTextBox>
                                     <asp:RequiredFieldValidator ID="rfvCODE" runat="server" ErrorMessage="Số Bill không thể rỗng"
                                         ControlToValidate="txtCODE" SetFocusOnError="True" Display="Dynamic" ValidationGroup="G1"></asp:RequiredFieldValidator>
                                     <asp:CustomValidator ID="cuvCODE" ControlToValidate="txtCODE" OnServerValidate="CheckBill"

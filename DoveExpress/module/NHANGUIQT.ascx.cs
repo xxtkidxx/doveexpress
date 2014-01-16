@@ -330,7 +330,7 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
             }
         }
         RadNumericTextBox txtPPXD = (RadNumericTextBox)editableItem.FindControl("txtPPXD");
-        RadNumericTextBox txtCODE = (RadNumericTextBox)editableItem.FindControl("txtCODE");
+        RadTextBox txtCODE = (RadTextBox)editableItem.FindControl("txtCODE");
         RadAutoCompleteBox radautoC_MAKH = (RadAutoCompleteBox)editableItem.FindControl("radautoC_MAKH");
         RadAutoCompleteBox radautoC_TENKH = (RadAutoCompleteBox)editableItem.FindControl("radautoC_TENKH");
         RadNumericTextBox txtC_KHOILUONG = (RadNumericTextBox)editableItem.FindControl("txtC_KHOILUONG");
@@ -618,7 +618,7 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
             RadComboBox cmbC_TAILIEU = (RadComboBox)editItem.FindControl("cmbC_TAILIEU");
             RadNumericTextBox txtPPXD = (RadNumericTextBox)editItem.FindControl("txtPPXD");
             txtPPXD.Text = (txtPPXD.Text == "") ? "0" : txtPPXD.Text;
-            RadNumericTextBox txtCODE = (RadNumericTextBox)editItem.FindControl("txtCODE");
+            RadTextBox txtCODE = (RadTextBox)editItem.FindControl("txtCODE");
             RadNumericTextBox txtC_TYGIA = (RadNumericTextBox)editItem.FindControl("txtC_TYGIA");
             txtC_TYGIA.Text = (txtC_TYGIA.Text == "") ? "0" : txtC_TYGIA.Text;
             RadNumericTextBox txtC_GIATRIHANGHOA = (RadNumericTextBox)editItem.FindControl("txtC_GIATRIHANGHOA");
