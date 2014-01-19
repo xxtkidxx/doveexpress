@@ -1,0 +1,25 @@
+Thời gian lỗi : 2014-01-16 20:48:53 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Unable to cast object of type 'Telerik.Web.UI.RadTextBox' to type 'Telerik.Web.UI.RadNumericTextBox'.
+__________________________
+Thời gian lỗi : 2014-01-16 21:18:41 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUIQT. 
+Nội dung lỗi:Unable to cast object of type 'Telerik.Web.UI.GridCommandItem' to type 'Telerik.Web.UI.GridEditableItem'.
+__________________________
+Thời gian lỗi : 2014-01-16 21:27:50 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Report.aspx?TYPE=INBILL&ID=0378887. 
+Nội dung lỗi:The Controls collection cannot be modified because the control contains code blocks (i.e. <% ... %>).
+__________________________
+Thời gian lỗi : 2014-01-16 22:31:55 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Report.aspx?TYPE=INBILL&ID=0378887. 
+Nội dung lỗi:Invalid value of report parameter 'TINHTHANHGUI'.
+__________________________
+Thời gian lỗi : 2014-01-16 23:00:37 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Report.aspx?TYPE=INBILL&ID=0378887. 
+Nội dung lỗi:External component has thrown an exception.
+__________________________

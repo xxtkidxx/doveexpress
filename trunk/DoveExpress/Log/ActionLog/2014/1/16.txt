@@ -1,0 +1,186 @@
+Thời gian: 2014-01-16 20:05:09 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2014-01-16 20:05:28 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2014-01-16 20:06:01 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2014-01-16 20:06:28 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2014-01-16 20:08:39 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted NHANGUIs
+Kết quả : {PK_ID:"1875"}
+__________________________
+Thời gian: 2014-01-16 20:08:43 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"3788885"}
+__________________________
+Thời gian: 2014-01-16 20:12:35 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"1234"}
+__________________________
+Thời gian: 2014-01-16 20:12:38 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"1234567"}
+__________________________
+Thời gian: 2014-01-16 20:22:17 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0123456"}
+__________________________
+Thời gian: 2014-01-16 20:22:32 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIQTs
+Kết quả : {C_BILL:"12345"}
+__________________________
+Thời gian: 2014-01-16 20:24:03 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0123456"}
+__________________________
+Thời gian: 2014-01-16 20:24:03 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"1221313"}
+__________________________
+Thời gian: 2014-01-16 20:24:08 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0000000"}
+__________________________
+Thời gian: 2014-01-16 20:31:38 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"123456"}
+__________________________
+Thời gian: 2014-01-16 20:31:38 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"1231414"}
+__________________________
+Thời gian: 2014-01-16 20:31:42 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"121313"}
+__________________________
+Thời gian: 2014-01-16 20:39:20 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"1234"}
+__________________________
+Thời gian: 2014-01-16 20:39:20 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"12345"}
+__________________________
+Thời gian: 2014-01-16 20:48:46 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2014-01-16 21:01:38 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2014-01-16 21:14:11 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"012313"}
+__________________________
+Thời gian: 2014-01-16 21:17:54 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2014-01-16 21:18:26 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0123456"}
+__________________________
+Thời gian: 2014-01-16 21:19:36 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIQTs
+Kết quả : {C_BILL:"0123456"}
+__________________________
+Thời gian: 2014-01-16 21:29:01 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2014-01-16 21:32:35 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2014-01-16 22:00:10 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2014-01-16 22:03:36 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2014-01-16 23:04:47 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2014-01-16 23:07:06 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2014-01-16 23:23:05 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
