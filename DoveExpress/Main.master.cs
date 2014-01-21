@@ -292,7 +292,7 @@ public partial class Main : System.Web.UI.MasterPage
                         _AjaxUpdatedControl.ControlID = "RadGridBAOCAOTONGHOP";
                         _AjaxUpdatedControl.LoadingPanelID = "RadAjaxLoadingPanelBAOCAOTONGHOP";
                         _AjaxSetting.UpdatedControls.Add(_AjaxUpdatedControl);
-                        RadAjaxManager.AjaxSettings.Add(_AjaxSetting);
+                        //RadAjaxManager.AjaxSettings.Add(_AjaxSetting);
                         control = LoadControl("module/BAOCAOTONGHOP.ascx");
                         break;
                     case "baocaotonghopqt":

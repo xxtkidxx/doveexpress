@@ -1,0 +1,28 @@
+Thời gian lỗi : 2014-01-19 15:57:32 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=BAOCAOKHACHHANG. 
+Nội dung lỗi:Lỗi truy vấn cơ sở dữ liệuSubquery returned more than 1 value. This is not permitted when the subquery follows =, !=, <, <= , >, >= or when the subquery is used as an expression.
+Subquery returned more than 1 value. This is not permitted when the subquery follows =, !=, <, <= , >, >= or when the subquery is used as an expression.
+The statement has been terminated.
+The statement has been terminated.
+__________________________
+Thời gian lỗi : 2014-01-19 20:33:34 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=SOQUYTIENMATV3. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\DoveExpress\module\SOQUYTIENMATV3.ascx.cs(511): error CS0103: The name 'RadGridSOQUYTIENMATV2' does not exist in the current context
+__________________________
+Thời gian lỗi : 2014-01-19 20:43:40 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=SOQUYTIENMATV3. 
+Nội dung lỗi:f:\Dropbox\Work\2013\DoveExpress\DoveExpress\module\SOQUYTIENMATV3.ascx.cs(251): error CS0103: The name 'LoadTonDauKy' does not exist in the current context
+__________________________
+Thời gian lỗi : 2014-01-19 21:47:20 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=SOQUYTIENMATV3. 
+Nội dung lỗi:Column 'TONDAU' does not belong to table .
+__________________________
+Thời gian lỗi : 2014-01-19 21:49:20 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=SOQUYTIENMATV3. 
+Nội dung lỗi:Column 'TONDAU' does not belong to table .
+__________________________
