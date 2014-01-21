@@ -38,24 +38,6 @@ public partial class module_BAOCAOTONGHOP : System.Web.UI.UserControl
         }
         Session["LastUrl"] = Request.Url.ToString();
     }
-    protected void btnShowAll_Click(object sender, System.Web.UI.ImageClickEventArgs e)
-    {
-        RadGridBAOCAOTONGHOP.MasterTableView.FilterExpression = string.Empty;
-        foreach (GridColumn column in RadGridBAOCAOTONGHOP.MasterTableView.RenderColumns)
-        {
-            if (column is GridBoundColumn)
-            {
-                GridBoundColumn boundColumn = column as GridBoundColumn;
-                boundColumn.CurrentFilterValue = string.Empty;
-            }
-            if (column is GridTemplateColumn)
-            {
-                GridTemplateColumn boundColumn = column as GridTemplateColumn;
-                boundColumn.CurrentFilterValue = string.Empty;
-            }
-        }
-        RadGridBAOCAOTONGHOP.MasterTableView.Rebind();
-    }
     private void DisplayMessage(string text)
     {
         RadGridBAOCAOTONGHOP.Controls.Add(new LiteralControl(string.Format("<span style='color:red'>{0}</span>", text)));
@@ -74,8 +56,23 @@ public partial class module_BAOCAOTONGHOP : System.Web.UI.UserControl
     }
     protected void RadGridBAOCAOTONGHOP_ItemCommand(object sender, GridCommandEventArgs e)
     {
-        if (e.CommandName == "PrintGrid")
+        if (e.CommandName == "ClearFilter")
         {
+            RadGridBAOCAOTONGHOP.MasterTableView.FilterExpression = string.Empty;
+            foreach (GridColumn column in RadGridBAOCAOTONGHOP.MasterTableView.RenderColumns)
+            {
+                if (column is GridBoundColumn)
+                {
+                    GridBoundColumn boundColumn = column as GridBoundColumn;
+                    boundColumn.CurrentFilterValue = string.Empty;
+                }
+                if (column is GridTemplateColumn)
+                {
+                    GridTemplateColumn boundColumn = column as GridTemplateColumn;
+                    boundColumn.CurrentFilterValue = string.Empty;
+                }
+            }
+            RadGridBAOCAOTONGHOP.MasterTableView.Rebind();
         }
     }
     protected void RadGridBAOCAOTONGHOP_ExcelMLExportRowCreated(object sender, Telerik.Web.UI.GridExcelBuilder.GridExportExcelMLRowCreatedArgs e)

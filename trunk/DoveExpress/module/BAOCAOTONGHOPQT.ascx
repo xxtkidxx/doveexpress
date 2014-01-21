@@ -49,7 +49,8 @@
             <div style="padding: 5px 5px; float: left; width: auto">
                 <b>Báo cáo tổng hợp theo ngày</b>&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:LinkButton ID="lbPrint" runat="server" Visible="false" CommandName="PrintGrid"><img style="border:0px;vertical-align:middle;" alt="" src="Images/approval.gif" />In</asp:LinkButton>&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:LinkButton ID="lblRefesh" runat="server" CommandName="RebindGrid"><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Refresh.gif" />Làm mới</asp:LinkButton>
+                <asp:LinkButton ID="lblRefesh" runat="server" CommandName="RebindGrid"><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Refresh.gif" />Làm mới</asp:LinkButton>&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:LinkButton ID="btnShowAll" runat="server" CommandName="ClearFilter"><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/filterCancel.gif" />Xóa tìm kiếm</asp:LinkButton>
             </div>
             <div style="padding: 5px 5px; float: right; width: auto">
                 <asp:LinkButton ID="ExportToPdfButton" runat="server" CommandName="ExportToPdf"><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/pdf.gif" /></asp:LinkButton>&nbsp;&nbsp;
@@ -184,7 +185,7 @@
                 CurrentFilterFunction="Contains" ShowFilterIcon="true" FilterControlWidth="75%"
                 DataType="System.Decimal" DataFormatString="{0:### ### ### VNĐ}">
             </telerik:GridBoundColumn>
-            <telerik:GridBoundColumn UniqueName="NHANVIENHANNAME" HeaderText="NV Nhận" DataField="NHANVIENHANNAME"
+            <telerik:GridBoundColumn UniqueName="NHANVIENNHANNAME" HeaderText="NV Nhận" DataField="NHANVIENNHANNAME"
                 HeaderStyle-Width="130px" HeaderStyle-HorizontalAlign="Center" AutoPostBackOnFilter="true"
                 CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
             </telerik:GridBoundColumn>

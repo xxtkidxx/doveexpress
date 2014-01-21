@@ -38,24 +38,6 @@ public partial class module_BAOCAOTONGHOPQT : System.Web.UI.UserControl
         }
         Session["LastUrl"] = Request.Url.ToString();
     }
-    protected void btnShowAll_Click(object sender, System.Web.UI.ImageClickEventArgs e)
-    {
-        RadGridBAOCAOTONGHOPQT.MasterTableView.FilterExpression = string.Empty;
-        foreach (GridColumn column in RadGridBAOCAOTONGHOPQT.MasterTableView.RenderColumns)
-        {
-            if (column is GridBoundColumn)
-            {
-                GridBoundColumn boundColumn = column as GridBoundColumn;
-                boundColumn.CurrentFilterValue = string.Empty;
-            }
-            if (column is GridTemplateColumn)
-            {
-                GridTemplateColumn boundColumn = column as GridTemplateColumn;
-                boundColumn.CurrentFilterValue = string.Empty;
-            }
-        }
-        RadGridBAOCAOTONGHOPQT.MasterTableView.Rebind();
-    }
     private void DisplayMessage(string text)
     {
         RadGridBAOCAOTONGHOPQT.Controls.Add(new LiteralControl(string.Format("<span style='color:red'>{0}</span>", text)));
@@ -74,8 +56,23 @@ public partial class module_BAOCAOTONGHOPQT : System.Web.UI.UserControl
     }
     protected void RadGridBAOCAOTONGHOPQT_ItemCommand(object sender, GridCommandEventArgs e)
     {
-        if (e.CommandName == "PrintGrid")
+        if (e.CommandName == "ClearFilter")
         {
+            RadGridBAOCAOTONGHOPQT.MasterTableView.FilterExpression = string.Empty;
+            foreach (GridColumn column in RadGridBAOCAOTONGHOPQT.MasterTableView.RenderColumns)
+            {
+                if (column is GridBoundColumn)
+                {
+                    GridBoundColumn boundColumn = column as GridBoundColumn;
+                    boundColumn.CurrentFilterValue = string.Empty;
+                }
+                if (column is GridTemplateColumn)
+                {
+                    GridTemplateColumn boundColumn = column as GridTemplateColumn;
+                    boundColumn.CurrentFilterValue = string.Empty;
+                }
+            }
+            RadGridBAOCAOTONGHOPQT.MasterTableView.Rebind();
         }
     }
     protected void RadGridBAOCAOTONGHOPQT_ExcelMLExportRowCreated(object sender, Telerik.Web.UI.GridExcelBuilder.GridExportExcelMLRowCreatedArgs e)
