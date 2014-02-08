@@ -1,0 +1,42 @@
+Thời gian: 2014-02-08 16:12:23 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2014-02-08 16:13:19 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"03997215"}
+__________________________
+Thời gian: 2014-02-08 16:13:30 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted NHANGUIs
+Kết quả : {PK_ID:"33070"}
+__________________________
+Thời gian: 2014-02-08 16:15:45 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"03997215"}
+__________________________
+Thời gian: 2014-02-08 16:16:23 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"123456"}
+__________________________
+Thời gian: 2014-02-08 16:17:00 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"03997215"}
+__________________________
+Thời gian: 2014-02-08 16:44:37 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________

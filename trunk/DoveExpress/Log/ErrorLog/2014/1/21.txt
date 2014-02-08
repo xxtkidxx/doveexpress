@@ -1,0 +1,45 @@
+Thời gian lỗi : 2014-01-21 16:12:05 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=BAOCAOTONGHOP. 
+Nội dung lỗi:NHANVIENHANNAME is neither a DataColumn nor a DataRelation for table DefaultView.
+__________________________
+Thời gian lỗi : 2014-01-21 16:23:40 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=BAOCAOTONGHOP. 
+Nội dung lỗi:e:\Dropbox\Work\2013\DoveExpress\DoveExpress\module\BAOCAOTONGHOP.ascx(52): error CS0123: No overload for 'btnShowAll_Click' matches delegate 'System.EventHandler'
+__________________________
+Thời gian lỗi : 2014-01-21 16:24:15 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/Refresh.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2014-01-21 16:24:15 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/approval.gif. 
+Nội dung lỗi:The process cannot access the file 'E:\Dropbox\Work\2013\DoveExpress\DoveExpress\Log\ErrorLog\2014\1\21.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2014-01-21 16:24:17 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/pdf.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2014-01-21 16:24:17 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/word.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2014-01-21 16:24:17 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/excel.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2014-01-21 16:24:17 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/csv.gif. 
+Nội dung lỗi:The process cannot access the file 'E:\Dropbox\Work\2013\DoveExpress\DoveExpress\Log\ErrorLog\2014\1\21.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2014-01-21 16:26:46 PM
+Địa chỉ IP : 127.0.0.1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/filterCancel.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
