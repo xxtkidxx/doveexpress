@@ -9,6 +9,15 @@
         </telerik:AjaxSetting>
     </AjaxSettings>
 </telerik:RadAjaxManagerProxy>
+<script type="text/javascript">
+function OnKeyPressRadTextBox(sender, eventArgs) {
+            var charCode = eventArgs.get_keyCode();
+            if (charCode != 46 && charCode > 31 && (charCode < 48 || charCode > 57)) {
+                eventArgs.set_cancel(true);
+            }
+            return false;
+        }
+</script>
 <telerik:RadAjaxLoadingPanel Skin="Vista" ID="RadAjaxLoadingPanel" runat="server" />
     <asp:Panel ID="pnCheckBill" runat="server">
         <table class="table1">
@@ -33,10 +42,9 @@
                         NHẬP SỐ PHIẾU GỬI (BILL):
                     </th>
                     <td>
-                        (BC)<telerik:RadNumericTextBox ID="txtBILL" Width="30%" Text='<%# Bind("C_BILL") %>'
-                            runat="server">
-                            <NumberFormat DecimalSeparator="." GroupSeparator="" DecimalDigits="0" />
-                        </telerik:RadNumericTextBox>
+                        (BC)<telerik:RadTextBox ID="txtBILL" Width="30%" Text='<%# Bind("C_BILL") %>' runat="server">
+                        <ClientEvents OnKeyPress="OnKeyPressRadTextBox" />
+                        </telerik:RadTextBox>
                         <asp:ImageButton ID="imgSearch" runat="server" ImageUrl="~/images/imgsearch.png"
                             Width="30px" ImageAlign="AbsMiddle" OnClick="imgSearch_Click" />
                     </td>

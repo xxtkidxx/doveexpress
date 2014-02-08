@@ -1,0 +1,6 @@
+Thời gian: 2014-01-21 16:11:30 PM
+Địa chỉ IP : 127.0.0.1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________

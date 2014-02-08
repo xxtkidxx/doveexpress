@@ -57,7 +57,7 @@
             $find("<%=RadGridNHANGUIPH.ClientID %>").get_masterTableView().rebind();
         }
         function OnClientLinkClicked(IDvalue) {
-            var oWindow = radopen("Popup.aspx?ctl=NHANGUITRACKING&IDBILL=" + IDvalue, "Tracking");
+            var oWindow = radopen("Popup.aspx?ctl=NHANGUITRACKING&IDBILL=" + IDvalue, "Tracking");            
             oWindow.setSize(800, 600);
             oWindow.set_top(0);
             return false;
@@ -160,7 +160,7 @@
                 HeaderStyle-Width="110px" HeaderStyle-HorizontalAlign="Center" DataField="C_BILL"
                 AllowFiltering="False">
                 <ItemTemplate>
-                    <asp:LinkButton ID="libTracking" OnClientClick='<%# String.Format("javascript:return OnClientLinkClicked({0})", Eval("C_BILL"))%>'
+                    <asp:LinkButton ID="libTracking" OnClientClick='<%# String.Format("javascript:return OnClientLinkClicked(\"{0}\")", Eval("C_BILL").ToString())%>'
                         runat="server" Visible='<%# ITCLIB.Security.Security.CanEditModule("NHANGUIPH") %>'>Thông tin Tracking</asp:LinkButton>&nbsp;&nbsp;
                 </ItemTemplate>
             </telerik:GridTemplateColumn>
@@ -321,8 +321,8 @@
         <asp:Parameter Name="FK_NHANVIENKHAITHAC" Type="Int32" />
         <asp:Parameter Name="C_NGUOIKYNHAN" Type="String" />
         <asp:Parameter Name="C_BOPHAN" Type="String" />
-        <asp:Parameter Name="C_BILL" Type="string" />
-        <asp:Parameter Name="FK_TRANGTHAI" Type="string" />
+        <asp:Parameter Name="C_BILL" Type="String" />
+        <asp:Parameter Name="FK_TRANGTHAI" Type="String" />
     </UpdateParameters>
 </asp:SqlDataSource>
 <asp:SqlDataSource ID="UserDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
