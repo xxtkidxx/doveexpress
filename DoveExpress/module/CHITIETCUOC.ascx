@@ -145,8 +145,8 @@ ShowToggleImage="True" EmptyMessage="Chọn bảng"
            <CommandItemTemplate>
                <div style="padding: 5px 5px;float:left;width:auto">
                <b>Chi tiết cước</b>&nbsp;&nbsp;&nbsp;&nbsp;                        
-               <asp:LinkButton ID="LinkButton2" runat="server" CommandName="InitInsert" Visible='<%# !RadGridCHITIETCUOC.MasterTableView.IsItemInserted && ITCLIB.Security.Security.CanAddModule("DANHMUCCHUNG")%>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/AddRecord.gif" />Thêm</asp:LinkButton>&nbsp;&nbsp;
-               <asp:LinkButton ID="LinkButton1" OnClientClick="javascript:return confirm('Bạn có muốn xóa bản ghi đã chọn không?')" runat="server" Visible='<%# ITCLIB.Security.Security.CanDeleteModule("DANHMUCCHUNG")%>' CommandName="DeleteSelected"><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Delete.gif" />Xóa</asp:LinkButton>&nbsp;&nbsp;
+               <asp:LinkButton ID="LinkButton2" runat="server" CommandName="InitInsert" Visible='<%# !RadGridCHITIETCUOC.MasterTableView.IsItemInserted && ITCLIB.Security.Security.CanAddModule("BANGCUOC")%>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/AddRecord.gif" />Thêm</asp:LinkButton>&nbsp;&nbsp;
+               <asp:LinkButton ID="LinkButton1" OnClientClick="javascript:return confirm('Bạn có muốn xóa bản ghi đã chọn không?')" runat="server" Visible='<%# ITCLIB.Security.Security.CanDeleteModule("BANGCUOC")%>' CommandName="DeleteSelected"><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Delete.gif" />Xóa</asp:LinkButton>&nbsp;&nbsp;
                </div>                    
             </CommandItemTemplate>
                             <Columns>
