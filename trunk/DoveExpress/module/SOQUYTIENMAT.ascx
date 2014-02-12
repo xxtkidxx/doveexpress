@@ -311,12 +311,12 @@
                                         <span class="rtsTxtnew">Ngày:
                                     </td>
                                     <td colspan="4">
-                                        <telerik:RadDatePicker ID="radNgaySOQUYTIENMAT" Width="150px" DbSelectedDate='<%# Bind("C_NGAY") %>'
+                                        <telerik:RadDateTimePicker ID="radNgaySOQUYTIENMAT" Width="150px" DbSelectedDate='<%# Bind("C_NGAY") %>'
                                             runat="server" AutoPostBack="false">
-                                            <DateInput ID="DateInput1" runat="server" DateFormat="dd/MM/yyyy" MinDate="1/1/1890 12:00:00 AM">
+                                            <DateInput ID="DateInput1" runat="server" DateFormat="dd/MM/yyyy hh:mm tt" MinDate="1/1/1890 12:00:00 AM">
                                                 <ClientEvents OnKeyPress="controlkeypress" />
                                             </DateInput>
-                                        </telerik:RadDatePicker>
+                                        </telerik:RadDateTimePicker>
                                     </td>
                                     <td style="width: 100px;">
                                         <span class="rtsTxtnew">Loại:</span>

@@ -3,12 +3,12 @@
 <%@ Register TagPrefix="uc1" Namespace="ITCLIB.Admin" %>
 <telerik:RadCodeBlock ID="RadCodeBlockSOQUYTIENMATV3" runat="server">
     <script type="text/javascript">
-    function RowDblClick(sender, eventArgs) {
+        function RowDblClick(sender, eventArgs) {
             var CanEdit = "<%=ITCLIB.Security.Security.CanEditModule("TAICHINH") %>";
-            if ((eventArgs.get_tableView().get_name() == "MasterTableViewSOQUYTIENMATV3") && (CanEdit == "True")) {
-                sender.get_masterTableView().editItem(eventArgs.get_itemIndexHierarchical());
-            }
-    }   
+        if ((eventArgs.get_tableView().get_name() == "MasterTableViewSOQUYTIENMATV3") && (CanEdit == "True")) {
+            sender.get_masterTableView().editItem(eventArgs.get_itemIndexHierarchical());
+        }
+    }
     </script>
     <script type="text/javascript">
         var registeredElementsNG = [];
@@ -128,40 +128,37 @@
             width: 50%;
             margin: 10px 10px 10px 10px;
         }
-        table.gridtable th
-        {
-            border-width: 1px;
-            padding: 8px;
-            font-weight: bold;
-            border-style: solid;
-            border-color: #666666;
-            background-color: #dedede;
-        }
-        table.gridtable td
-        {
-            border-width: 1px;
-            padding: 8px;
-            border-style: solid;
-            border-color: #666666;
-            background-color: #ffffff;
-        }
+
+            table.gridtable th
+            {
+                border-width: 1px;
+                padding: 8px;
+                font-weight: bold;
+                border-style: solid;
+                border-color: #666666;
+                background-color: #dedede;
+            }
+
+            table.gridtable td
+            {
+                border-width: 1px;
+                padding: 8px;
+                border-style: solid;
+                border-color: #666666;
+                background-color: #ffffff;
+            }
     </style>
     <table class="gridtable">
         <tr>
-            <th>
-                Tồn đầu
+            <th>Tồn đầu
             </th>
-            <th>
-                Tổng thu
+            <th>Tổng thu
             </th>
-            <th>
-                Tổng chi
+            <th>Tổng chi
             </th>
-            <th>
-                Tồn cuối
+            <th>Tồn cuối
             </th>
-            <th>
-                Tồn thực tế
+            <th>Tồn thực tế
             </th>
         </tr>
         <tr>
@@ -204,9 +201,9 @@
         ShowFooter="True" OnDataBound="RadGridSOQUYTIENMATV3_DataBound" OnItemDeleted="RadGridSOQUYTIENMATV3_ItemDeleted"
         OnItemInserted="RadGridSOQUYTIENMATV3_ItemInserted" OnItemUpdated="RadGridSOQUYTIENMATV3_ItemUpdated"
         OnItemCommand="RadGridSOQUYTIENMATV3_ItemCommand" OnItemDataBound="RadGridSOQUYTIENMATV3_ItemDataBound"
-        CellSpacing="0" 
-        OnExcelMLExportRowCreated="RadGridSOQUYTIENMATV3_ExcelMLExportRowCreated" 
-        onitemcreated="RadGridSOQUYTIENMATV3_ItemCreated">
+        CellSpacing="0"
+        OnExcelMLExportRowCreated="RadGridSOQUYTIENMATV3_ExcelMLExportRowCreated"
+        OnItemCreated="RadGridSOQUYTIENMATV3_ItemCreated">
         <ExportSettings HideStructureColumns="true" ExportOnlyData="true" IgnorePaging="true"
             OpenInNewWindow="true" Excel-Format="ExcelML">
         </ExportSettings>
@@ -311,12 +308,12 @@
                                         <span class="rtsTxtnew">Ngày:
                                     </td>
                                     <td colspan="4">
-                                        <telerik:RadDatePicker ID="radNgaySOQUYTIENMATV3" Width="150px" DbSelectedDate='<%# Bind("C_NGAY") %>'
+                                        <telerik:RadDateTimePicker ID="radNgaySOQUYTIENMATV3" Width="150px" DbSelectedDate='<%# Bind("C_NGAY") %>'
                                             runat="server" AutoPostBack="false">
-                                            <DateInput ID="DateInput1" runat="server" DateFormat="dd/MM/yyyy" MinDate="1/1/1890 12:00:00 AM">
+                                            <DateInput ID="DateInput1" runat="server" DateFormat="dd/MM/yyyy hh:mm tt" MinDate="1/1/1890 12:00:00 AM">
                                                 <ClientEvents OnKeyPress="controlkeypress" />
                                             </DateInput>
-                                        </telerik:RadDatePicker>
+                                        </telerik:RadDateTimePicker>
                                     </td>
                                     <td style="width: 100px;">
                                         <span class="rtsTxtnew">Loại:</span>
