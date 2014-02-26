@@ -23,7 +23,7 @@ public partial class ext_BillCheck : System.Web.UI.UserControl
                 RadAjaxManager ajaxManager = RadAjaxManager.GetCurrent(Page);
                 if (txtBILL.Text.Trim() != "")
                 {
-                    string SelectSQL = "SELECT NHANGUI.*,DMMASANPHAM.C_NAME as DICHVUNAME FROM NHANGUI LEFT OUTER JOIN DMMASANPHAM ON NHANGUI.FK_MASANPHAM = DMMASANPHAM.PK_ID WHERE C_BILL = " + txtBILL.Text.Trim();
+                    string SelectSQL = "SELECT NHANGUI.*,DMMASANPHAM.C_NAME as DICHVUNAME FROM NHANGUI LEFT OUTER JOIN DMMASANPHAM ON NHANGUI.FK_MASANPHAM = DMMASANPHAM.PK_ID WHERE C_BILL = '" + txtBILL.Text.Trim() + "'";
                     DataTable oDataTable = new DataTable();
                     ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
                     oDataTable = SelectQuery.query_data(SelectSQL);
@@ -62,7 +62,7 @@ public partial class ext_BillCheck : System.Web.UI.UserControl
         RadAjaxManager ajaxManager = RadAjaxManager.GetCurrent(Page);
         if (txtBILL.Text.Trim() != "")
         {
-            string SelectSQL = "SELECT NHANGUI.*,DMMASANPHAM.C_NAME as DICHVUNAME FROM NHANGUI LEFT OUTER JOIN DMMASANPHAM ON NHANGUI.FK_MASANPHAM = DMMASANPHAM.PK_ID WHERE C_BILL = " + txtBILL.Text.Trim();
+            string SelectSQL = "SELECT NHANGUI.*,DMMASANPHAM.C_NAME as DICHVUNAME FROM NHANGUI LEFT OUTER JOIN DMMASANPHAM ON NHANGUI.FK_MASANPHAM = DMMASANPHAM.PK_ID WHERE C_BILL = '" + txtBILL.Text.Trim() + "'";
             DataTable oDataTable = new DataTable();
             ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
             oDataTable = SelectQuery.query_data(SelectSQL);
