@@ -34,7 +34,7 @@ public partial class module_NHANGUIPOPUP : System.Web.UI.UserControl
                 //UpdateSQL += "UPDATE [NHANGUI] SET [FK_NHANVIENPHAT] = '" + cmbFK_NHANVIENPHAT.SelectedValue + "',[C_NGAYGIOPHAT] = '" + radC_NGAYGIOPHAT.SelectedDate + "',[FK_NHANVIENKHAITHAC] = '" + cmbFK_NHANVIENKHAITHAC.SelectedValue + "',[C_NGUOIKYNHAN] = N'" + txtC_NGUOIKYNHAN.Text + "', [C_BOPHAN]= N'" + txtC_BOPHAN.Text + "' WHERE [C_BILL] = '" + C_BILL.Trim() + "';";
                 if (cmbFK_TRANGTHAI.SelectedValue != "0")
                 {
-                    UpdateSQL += "INSERT INTO TRACKING (C_BILL, C_DATE, FK_TRANGTHAI, C_DESC) VALUES ('" + C_BILL.Trim() + "',GETDATE(),N'" + cmbFK_TRANGTHAI.SelectedValue + "'," + (txtC_DESC.Text == "" ? "NULL" : "N'" +txtC_DESC.Text + "'") + ")";
+                    UpdateSQL += "INSERT INTO TRACKING (C_BILL, C_DATE, FK_TRANGTHAI, C_DESC) VALUES ('" + C_BILL.Trim() + "','" + String.Format("{0:yyyy-MM-dd hh:mm:ss tt}", radC_NGAYGIOPHAT.SelectedDate) + "',N'" + cmbFK_TRANGTHAI.SelectedValue + "'," + (txtC_DESC.Text == "" ? "NULL" : "N'" + txtC_DESC.Text + "'") + ")";
                 }                
             }
             ITCLIB.Admin.SQL UpdateQuery = new ITCLIB.Admin.SQL();
