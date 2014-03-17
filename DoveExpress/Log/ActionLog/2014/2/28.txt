@@ -1,0 +1,24 @@
+Thời gian: 2014-02-28 09:43:31 AM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2014-02-28 09:48:46 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUITRACKINGs
+Kết quả : {PK_ID:"34783"}
+__________________________
+Thời gian: 2014-02-28 09:50:23 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUITRACKINGs
+Kết quả : {PK_ID:"34784"}
+__________________________
+Thời gian: 2014-02-28 09:51:38 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUITRACKINGs
+Kết quả : {PK_ID:"34785"}
+__________________________
