@@ -1,0 +1,24 @@
+Thời gian: 2014-02-12 14:45:27 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2014-02-12 14:46:20 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted SOQUYTIENMATV3s
+Kết quả : {PK_ID:"1"}
+__________________________
+Thời gian: 2014-02-12 14:46:57 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted SOQUYTIENMATV3s
+Kết quả : {PK_ID:"1"}
+__________________________
+Thời gian: 2014-02-12 14:47:05 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted SOQUYTIENMATV3s
+Kết quả : {PK_ID:"18881"}
+__________________________

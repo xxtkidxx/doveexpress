@@ -1,0 +1,20 @@
+Thời gian lỗi : 2014-02-28 09:44:13 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Popup.aspx?ctl=NHANGUIPOPUP&IDBILL=BILL-39973150&rwndrnd=0.22227477317412603. 
+Nội dung lỗi:Lỗi truy vấn cơ sở dữ liệuIncorrect syntax near '2'.
+__________________________
+Thời gian lỗi : 2014-02-28 09:44:44 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Popup.aspx?ctl=NHANGUIPOPUP&IDBILL=BILL-39973150&rwndrnd=0.3539893941823553. 
+Nội dung lỗi:Lỗi truy vấn cơ sở dữ liệuIncorrect syntax near '2'.
+__________________________
+Thời gian lỗi : 2014-02-28 09:47:01 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Popup.aspx?ctl=NHANGUIPOPUP&IDBILL=BILL-39973150&rwndrnd=0.6610028466881416. 
+Nội dung lỗi:Lỗi truy vấn cơ sở dữ liệuIncorrect syntax near '12'.
+__________________________
+Thời gian lỗi : 2014-02-28 09:50:29 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Popup.aspx?ctl=NHANGUIPOPUP&IDBILL=BILL-39973150&rwndrnd=0.5191989120839563. 
+Nội dung lỗi:c:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\NHANGUIPOPUP.ascx.cs(37): error CS1026: ) expected
+__________________________
