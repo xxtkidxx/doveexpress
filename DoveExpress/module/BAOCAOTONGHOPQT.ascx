@@ -40,7 +40,7 @@
         NextPageToolTip="Trang tiếp" PageSizeLabelText="Số bản ghi hiển thị:" PrevPagesToolTip="Các trang sau"
         PrevPageToolTip="Trang sau" PagerTextFormat="Change page: {4} &nbsp;Trang <strong>{0}</strong>/<strong>{1}</strong>, Bản ghi <strong>{2}</strong> đến <strong>{3}</strong> của tất cả <strong>{5}</strong> bản ghi" />
     <ExportSettings HideStructureColumns="true" ExportOnlyData="true" IgnorePaging="true"
-        OpenInNewWindow="true" Excel-Format="Biff">
+        OpenInNewWindow="true" Excel-Format="ExcelML">
     </ExportSettings>
     <GroupingSettings CaseSensitive="false" />
     <MasterTableView Name="MasterTableViewBAOCAOTONGHOPQT" CommandItemDisplay="Top" DataSourceID="BAOCAOTONGHOPQTDataSource"
