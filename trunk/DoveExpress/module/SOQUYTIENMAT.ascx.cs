@@ -286,6 +286,11 @@ public partial class module_SOQUYTIENMAT : System.Web.UI.UserControl
                     SetMessage("Không thể xóa \"" + item["c_name"].Text + "\" do có tham chiếu dữ liệu khác.");
                     RadGridSOQUYTIENMAT.Rebind();
                 }
+                else if (item["C_TYPE"].Text == "Tồn đầu kỳ")
+                {
+                    SetMessage("Không thể xóa bản ghi tồn đầu kỳ");
+                    RadGridSOQUYTIENMAT.Rebind();
+                }
             }
         }
         else if (e.CommandName == RadGrid.PerformInsertCommandName)
