@@ -97,7 +97,7 @@ function OnKeyPressRadTextBox(sender, eventArgs) {
             <PagerStyle Mode="NextPrevNumericAndAdvanced" />
               <MasterTableView NoMasterRecordsText="Dữ liệu tracking chưa được cập nhật">
                 <Columns>
-                    <telerik:GridBoundColumn UniqueName="C_DATE" DataField="C_DATE" HeaderText="Thời gian" DataType="System.DateTime" DataFormatString="{0:dd/MM/yyyy hh:mm:tt}">
+                    <telerik:GridBoundColumn UniqueName="C_DATE" DataField="C_DATE" HeaderText="Thời gian" DataType="System.DateTime" DataFormatString="{0:dd/MM/yyyy HH:mm}">
                         <HeaderStyle HorizontalAlign="Center" Width="50px"/>
                         <ItemStyle HorizontalAlign="Center" Width="50px" />
                     </telerik:GridBoundColumn>
