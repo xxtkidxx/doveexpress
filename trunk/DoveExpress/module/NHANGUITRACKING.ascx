@@ -108,7 +108,7 @@
                                     <asp:HiddenField ID="txtC_BILL" Value='<%# Eval( "C_BILL") %>' runat="server" />
                                     <telerik:RadDateTimePicker ID="radC_DATE" Width="95%" DbSelectedDate='<%# Bind("C_DATE") %>'
                                         runat="server" AutoPostBack="false">
-                                        <DateInput ID="DateInput1" runat="server" DateFormat="dd/MM/yyyy hh:mm tt" MinDate="1/1/1890 12:00:00 AM">
+                                        <DateInput ID="DateInput1" runat="server" DateFormat="dd/MM/yyyy HH:mm" MinDate="1/1/1890 00:00">
                                             <ClientEvents OnKeyPress="controlkeypress" />
                                         </DateInput>
                                     </telerik:RadDateTimePicker>
