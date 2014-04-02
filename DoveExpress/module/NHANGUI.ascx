@@ -668,7 +668,7 @@
                                 <td colspan="4">
                                     <telerik:RadDateTimePicker ID="radNgaynhangui" Width="95%" DbSelectedDate='<%# Bind("C_NGAY") %>'
                                         runat="server" AutoPostBack="false">
-                                        <DateInput ID="DateInput1" runat="server" DateFormat="dd/MM/yyyy hh:mm tt" MinDate="1/1/1890 12:00:00 AM">
+                                        <DateInput ID="DateInput1" runat="server" DateFormat="dd/MM/yyyy HH:mm" MinDate="1/1/1890 00:00">
                                             <ClientEvents OnKeyPress="controlkeypress" />
                                         </DateInput>
                                     </telerik:RadDateTimePicker>
@@ -989,7 +989,7 @@
                                 <td colspan="4">
                                     <telerik:RadDateTimePicker ID="radC_NGAYGIONHAN" Width="95%" DbSelectedDate='<%# Bind("C_NGAYGIONHAN") %>'
                                         runat="server" AutoPostBack="false">
-                                        <DateInput ID="DateInput3" runat="server" DateFormat="dd/MM/yyyy hh:mm tt" MinDate="1/1/1890 12:00:00 AM">
+                                        <DateInput ID="DateInput3" runat="server" DateFormat="dd/MM/yyyy HH:mm" MinDate="1/1/1890 00:00">
                                             <ClientEvents OnKeyPress="controlkeypress" />
                                         </DateInput>
                                     </telerik:RadDateTimePicker>
@@ -1020,7 +1020,7 @@
                                 <td colspan="4">
                                     <telerik:RadDateTimePicker ID="radC_NGAYGIOPHAT" Width="95%" DbSelectedDate='<%# Bind("C_NGAYGIOPHAT") %>'
                                         runat="server" AutoPostBack="false">
-                                        <DateInput ID="DateInput2" runat="server" DateFormat="dd/MM/yyyy hh:mm tt" MinDate="1/1/1890 12:00:00 AM">
+                                        <DateInput ID="DateInput2" runat="server" DateFormat="dd/MM/yyyy HH:mm" MinDate="1/1/1890 00:00">
                                             <ClientEvents OnKeyPress="controlkeypress" />
                                         </DateInput>
                                     </telerik:RadDateTimePicker>

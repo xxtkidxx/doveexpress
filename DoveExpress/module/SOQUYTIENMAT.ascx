@@ -313,7 +313,7 @@
                                     <td colspan="4">
                                         <telerik:RadDateTimePicker ID="radNgaySOQUYTIENMAT" Width="150px" DbSelectedDate='<%# Bind("C_NGAY") %>'
                                             runat="server" AutoPostBack="false">
-                                            <DateInput ID="DateInput1" runat="server" DateFormat="dd/MM/yyyy hh:mm tt" MinDate="1/1/1890 12:00:00 AM">
+                                            <DateInput ID="DateInput1" runat="server" DateFormat="dd/MM/yyyy HH:mm" MinDate="1/1/1890 00:00">
                                                 <ClientEvents OnKeyPress="controlkeypress" />
                                             </DateInput>
                                         </telerik:RadDateTimePicker>
