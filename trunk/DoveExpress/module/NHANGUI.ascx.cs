@@ -756,7 +756,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
         if (oDataTable.Rows[0]["MAXBILL"] != DBNull.Value)
         {
             decimal maxvalue = (decimal)oDataTable.Rows[0]["MAXBILL"];
-            maxbill = String.Format("{0:00000000}", maxvalue + 1);
+            maxbill = String.Format("{0:0000000}", maxvalue + 1);
         }
         return maxbill;
     }
