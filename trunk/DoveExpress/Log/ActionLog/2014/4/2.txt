@@ -1,0 +1,30 @@
+Thời gian: 2014-04-02 09:18:44 AM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2014-04-02 09:20:21 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted NHANGUITRACKINGs
+Kết quả : {PK_ID:"34787"}
+__________________________
+Thời gian: 2014-04-02 09:22:12 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUITRACKINGs
+Kết quả : {PK_ID:"34787"}
+__________________________
+Thời gian: 2014-04-02 09:23:09 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUITRACKINGs
+Kết quả : {PK_ID:"34787"}
+__________________________
+Thời gian: 2014-04-02 09:51:04 AM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________

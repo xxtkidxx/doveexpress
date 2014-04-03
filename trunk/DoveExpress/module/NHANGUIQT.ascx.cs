@@ -891,7 +891,7 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
     protected string GetMaxBill()
     {
         string maxbill = "00000001";
-        string SelectSQL = "SELECT MAX(CAST(C_BILL AS BIGINT)) as MAXBILL FROM NHANGUI";
+        string SelectSQL = "SELECT MAX(CAST(C_BILL AS DECIMAL)) as MAXBILL FROM NHANGUI";
         DataTable oDataTable = new DataTable();
         ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
         oDataTable = SelectQuery.query_data(SelectSQL);
@@ -899,7 +899,7 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
         {
             if (oDataTable.Rows[0]["MAXBILL"] != DBNull.Value)
             {
-                Int64 maxvalue = (Int64)oDataTable.Rows[0]["MAXBILL"];
+                decimal maxvalue = (decimal)oDataTable.Rows[0]["MAXBILL"];
                 maxbill = String.Format("{0:00000000}", maxvalue + 1);
             }
         }
