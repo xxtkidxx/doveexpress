@@ -678,7 +678,7 @@
                                 </td>
                                 <td colspan="4">
                                     <asp:HiddenField ID="txtID" Value='<%# Eval("PK_ID") %>' runat="server" />
-                                    BC<telerik:RadTextBox ID="txtCODE" Width="80%" Text='<%# Bind("C_BILL") %>' runat="server">
+                                    BC<telerik:RadTextBox ID="txtCODE" Width="80%" Text='<%# Bind("C_BILL") %>' runat="server" MaxLength ="8">
                                         <ClientEvents OnKeyPress="OnKeyPressRadTextBox" />
                                     </telerik:RadTextBox>
                                     <asp:RequiredFieldValidator ID="rfvCODE" runat="server" ErrorMessage="Số Bill không thể rỗng"
