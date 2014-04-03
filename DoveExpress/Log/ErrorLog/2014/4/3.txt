@@ -1,0 +1,25 @@
+Thời gian lỗi : 2014-04-03 15:27:29 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:There is no row at position 0.
+__________________________
+Thời gian lỗi : 2014-04-03 15:32:16 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:There is no row at position 0.
+__________________________
+Thời gian lỗi : 2014-04-03 15:32:42 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:There is no row at position 0.
+__________________________
+Thời gian lỗi : 2014-04-03 15:52:32 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:There is no row at position 0.
+__________________________
+Thời gian lỗi : 2014-04-03 15:57:11 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Specified cast is not valid.
+__________________________
