@@ -125,7 +125,7 @@ public partial class Login : System.Web.UI.Page
     {
         if (!IsPostBack)
         {
-            cmbVungLamViec.SelectedValue = "Hà Nội";
+            //cmbVungLamViec.SelectedValue = "Hà Nội";
         }
     }
 }

@@ -75,6 +75,8 @@
                                     DataSourceID="VUNGLAMVIECDataSource" ShowToggleImage="True" runat="server" EmptyMessage="Chọn vùng làm việc"
                                     OnPreRender="cmbVungLamViec_PreRender">
                                 </telerik:RadComboBox>
+                                <asp:RequiredFieldValidator ID="rfvVungLamViec" runat="server" ErrorMessage="Bạn chưa chọn vùng làm việc"
+                                    ControlToValidate="cmbVungLamViec" ValidationGroup="G1" Display="Dynamic">*</asp:RequiredFieldValidator>
                             </span>
                         </td>
                     </tr>
