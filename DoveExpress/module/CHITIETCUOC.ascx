@@ -7,10 +7,10 @@
         }
         function cmbSanPhamClientSelectedIndexChangedHandler(sender, eventArgs) {
             $find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("PTVALUE,1");
-        return false;
-    }
-    function cmbLoaiTienClientSelectedIndexChangedHandler(sender, eventArgs) {
-        $find("<%=RadGridCHITIETCUOC.ClientID %>").get_masterTableView().rebind();
+            return false;
+        }
+        function cmbLoaiTienClientSelectedIndexChangedHandler(sender, eventArgs) {
+            $find("<%=RadGridCHITIETCUOC.ClientID %>").get_masterTableView().rebind();
         return false;
     }
     </script>
@@ -29,15 +29,15 @@
         }
         function onClientClickSelectedCTC1(sender1, sender2, sender3) {
             $find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("SelectedCTC1," + sender1 + "," + sender2 + "," + sender3);
-        return false;
-    }
-    function onResponseEndCTC() {
+            return false;
+        }
+        function onResponseEndCTC() {
 
-        if (typeof (result) != "undefined" && result && result != "") {
-            //alert(result);
-            var arrayOfStrings = result.split(",-,");
-            if (arrayOfStrings[0] == "PTVALUE") {
-                $find("<%=txtC_PPXD.ClientID %>").set_value(arrayOfStrings[1]);
+            if (typeof (result) != "undefined" && result && result != "") {
+                //alert(result);
+                var arrayOfStrings = result.split(",-,");
+                if (arrayOfStrings[0] == "PTVALUE") {
+                    $find("<%=txtC_PPXD.ClientID %>").set_value(arrayOfStrings[1]);
                 $find("<%=txtC_VAT.ClientID %>").set_value(arrayOfStrings[2]);
                 $find("<%=txtC_DONGGOIX.ClientID %>").set_value(arrayOfStrings[3]);
                 $find("<%=txtC_DONGGOIY.ClientID %>").set_value(arrayOfStrings[4]);
@@ -124,9 +124,9 @@
                         <asp:LinkButton ID="btnEditSelected" runat="server" CommandName="EditSelected" Visible='<%# RadGridCHITIETCUOC.EditIndexes.Count == 0 && ITCLIB.Security.Security.CanEditModule("BANGCUOC") %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Edit.gif" />Sửa</asp:LinkButton>&nbsp;&nbsp;
                         <asp:LinkButton ID="btnUpdateEdited" runat="server" CommandName="UpdateEdited" Visible='<%# RadGridCHITIETCUOC.EditIndexes.Count > 0 %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Update.gif" />Lưu</asp:LinkButton>&nbsp;&nbsp;
                         <asp:LinkButton ID="btnCancel" runat="server" CommandName="CancelAll" Visible='<%# RadGridCHITIETCUOC.EditIndexes.Count > 0 || RadGridCHITIETCUOC.MasterTableView.IsItemInserted %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Cancel.gif" />Hủy bỏ</asp:LinkButton>&nbsp;&nbsp;
-                        <asp:LinkButton ID="LinkButton2" runat="server" CommandName="InitInsert" Visible='<%# !RadGridCHITIETCUOC.MasterTableView.IsItemInserted && ITCLIB.Security.Security.CanAddModule("BANGCUOC") %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/AddRecord.gif" />Thêm</asp:LinkButton>&nbsp;&nbsp;
+                        <asp:LinkButton ID="LinkButton2" runat="server" CommandName="InitInsert" Visible="false"><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/AddRecord.gif" />Thêm</asp:LinkButton>&nbsp;&nbsp;
                         <asp:LinkButton ID="LinkButton3" runat="server" CommandName="PerformInsert" Visible='<%# RadGridCHITIETCUOC.MasterTableView.IsItemInserted %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Insert.gif" />Lưu</asp:LinkButton>&nbsp;&nbsp;
-                        <asp:LinkButton ID="LinkButton1" OnClientClick="javascript:return confirm('Bạn có muốn xóa bản ghi đã chọn không?')" runat="server" CommandName="DeleteSelected" Visible='<%# ITCLIB.Security.Security.CanDeleteModule("BANGCUOC") %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Delete.gif" />Xóa</asp:LinkButton>&nbsp;&nbsp;
+                        <asp:LinkButton ID="LinkButton1" OnClientClick="javascript:return confirm('Bạn có muốn xóa bản ghi đã chọn không?')" runat="server" CommandName="DeleteSelected" Visible="false"><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Delete.gif" />Xóa</asp:LinkButton>&nbsp;&nbsp;
                        <asp:LinkButton ID="LinkButton4" runat="server" CommandName="RebindGrid"><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Refresh.gif" />Làm mới</asp:LinkButton>
             </div>
             <div style="padding: 5px 5px; float: right; width: auto">
@@ -150,6 +150,26 @@
             </telerik:GridBoundColumn>
             <telerik:GridBoundColumn UniqueName="C_NAME" HeaderText="Tên mã vùng" DataField="C_NAME" AllowFiltering="false">
             </telerik:GridBoundColumn>
+            <telerik:GridTemplateColumn DataField="PK_ID" DataType="System.Decimal" HeaderText="COD x" AllowFiltering="false" UniqueName="CODX">
+                <ItemTemplate>
+                    <%# LoadCODX(Eval("PK_ID").ToString())%>
+                </ItemTemplate>
+                <EditItemTemplate>
+                    <telerik:RadNumericTextBox runat="server" ID="txtC_CODX" DbValue='<%# LoadCODX(Eval("PK_ID").ToString()) %>'>
+                        <NumberFormat DecimalSeparator="." GroupSeparator=" " DecimalDigits="0" />
+                    </telerik:RadNumericTextBox>
+                </EditItemTemplate>
+            </telerik:GridTemplateColumn>
+            <telerik:GridTemplateColumn DataField="PK_ID" DataType="System.Decimal" HeaderText="COD y" AllowFiltering="false" UniqueName="CODY">
+                <ItemTemplate>
+                    <%# LoadCODY(Eval("PK_ID").ToString())%>
+                </ItemTemplate>
+                <EditItemTemplate>
+                    <telerik:RadNumericTextBox runat="server" ID="txtC_CODY" DbValue='<%# LoadCODY(Eval("PK_ID").ToString()) %>'>
+                        <NumberFormat DecimalSeparator="." GroupSeparator=" " DecimalDigits="1" />
+                    </telerik:RadNumericTextBox>
+                </EditItemTemplate>
+            </telerik:GridTemplateColumn>
             <telerik:GridBoundColumn UniqueName="C_DESC" HeaderText="Tuyến đường thuộc vùng" DataField="C_DESC" Visible="false" AllowFiltering="false">
             </telerik:GridBoundColumn>
         </Columns>

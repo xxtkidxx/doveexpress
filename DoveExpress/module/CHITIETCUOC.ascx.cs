@@ -190,7 +190,7 @@ public partial class module_CHITIETCUOC : System.Web.UI.UserControl
                 CHITIETCUOCDataSource.InsertParameters["FK_MAVUNG"].DefaultValue = parentItem.OwnerTableView.DataKeyValues[parentItem.ItemIndex]["PK_ID"].ToString();
             }
         }
-        else if (e.CommandName == RadGrid.UpdateCommandName)
+        else if (e.CommandName == RadGrid.UpdateEditedCommandName)
         {
 
         }
@@ -212,6 +212,34 @@ public partial class module_CHITIETCUOC : System.Web.UI.UserControl
             else
             {
                 DisplayMessage("Cập nhật vùng tính cước thành công!");
+                string FK_MABANGCUOC = cmbMaBangCuoc.SelectedValue;
+                if (e.Item is GridEditableItem && e.Item.IsInEditMode)
+                {
+                    GridEditableItem editItem = e.Item as GridEditableItem;
+                    RadNumericTextBox txtC_CODX = (RadNumericTextBox)editItem.FindControl("txtC_CODX");
+                    RadNumericTextBox txtC_CODY = (RadNumericTextBox)editItem.FindControl("txtC_CODY");
+                    decimal C_CODX = (txtC_CODX.Text != "") ? decimal.Parse(txtC_CODX.Text) : 0;
+                    decimal C_CODY = (txtC_CODY.Text != "") ? decimal.Parse(txtC_CODY.Text) : 0;
+                    string SelectSQL;
+                    string SQL;
+                    if (FK_MABANGCUOC != "")
+                    {
+                        SelectSQL = "Select DMDICHVUPHUTROI.C_VALUE FROM DMDICHVUPHUTROI WHERE DMDICHVUPHUTROI.FK_MAVUNG =" + editItem.GetDataKeyValue("PK_ID").ToString() + " AND FK_MABANGCUOC = " + FK_MABANGCUOC + " AND C_TYPE = N'COD'";
+                        Session["t"] = SelectSQL;
+                        DataTable oDataTable = new DataTable();
+                        ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
+                        oDataTable = SelectQuery.query_data(SelectSQL);
+                        if (oDataTable.Rows.Count != 0)
+                        {
+                            SQL = "Update DMDICHVUPHUTROI set C_VALUE = " + C_CODX + ",C_VALUE1 = " + C_CODY + " WHERE DMDICHVUPHUTROI.FK_MAVUNG =" + editItem.GetDataKeyValue("PK_ID").ToString() + " AND FK_MABANGCUOC = " + FK_MABANGCUOC + " AND C_TYPE = N'COD';";
+                        }
+                        else
+                        {
+                            SQL = "Insert into DMDICHVUPHUTROI (FK_MAVUNG,FK_MABANGCUOC,C_VALUE,C_VALUE1,C_TYPE) VALUES (" + editItem.GetDataKeyValue("PK_ID").ToString() + "," + FK_MABANGCUOC + "," + C_CODX + "," + C_CODY + ",N'COD');";
+                        }
+                        SelectQuery.ExecuteNonQuery(SQL);
+                    }
+                }
                 ITCLIB.ActionLog.ActionLog.WriteLog(Session["UserID"].ToString(), "Updated MAVUNG", e.Item.KeyValues);
             }
         }
@@ -370,6 +398,42 @@ public partial class module_CHITIETCUOC : System.Web.UI.UserControl
         SelectSQL += SavePPXD() + SaveVAT() + SaveDONGGOI() + SaveKHAIGIA() + SaveBAOPHAT() + SaveHENGIO() + SaveHAIQUAN() + SaveHUNTRUNG();
         ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
         SelectQuery.ExecuteNonQuery(SelectSQL);
+    }
+    protected string LoadCODX(string FK_MAVUNG)
+    {
+        string FK_MABANGCUOC = cmbMaBangCuoc.SelectedValue;
+        string result = "0";
+        string SelectSQL;
+        if (FK_MABANGCUOC != "")
+        {
+            SelectSQL = "Select DMDICHVUPHUTROI.C_VALUE FROM DMDICHVUPHUTROI WHERE DMDICHVUPHUTROI.FK_MAVUNG =" + FK_MAVUNG + " AND FK_MABANGCUOC = " + FK_MABANGCUOC + " AND C_TYPE = N'COD'";
+            DataTable oDataTable = new DataTable();
+            ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
+            oDataTable = SelectQuery.query_data(SelectSQL);
+            if (oDataTable.Rows.Count != 0)
+            {
+                result = oDataTable.Rows[0]["C_VALUE"].ToString();
+            }
+        }
+        return result;
+    }
+    protected string LoadCODY(string FK_MAVUNG)
+    {
+        string FK_MABANGCUOC = cmbMaBangCuoc.SelectedValue;
+        string result = "0";
+        string SelectSQL;
+        if (FK_MABANGCUOC != "")
+        {
+            SelectSQL = "Select DMDICHVUPHUTROI.C_VALUE1 FROM DMDICHVUPHUTROI WHERE DMDICHVUPHUTROI.FK_MAVUNG =" + FK_MAVUNG + " AND FK_MABANGCUOC = " + FK_MABANGCUOC + " AND C_TYPE = N'COD'";
+            DataTable oDataTable = new DataTable();
+            ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
+            oDataTable = SelectQuery.query_data(SelectSQL);
+            if (oDataTable.Rows.Count != 0)
+            {
+                result = oDataTable.Rows[0]["C_VALUE1"].ToString();
+            }
+        }
+        return result;
     }
     protected string SavePPXD()
     {
