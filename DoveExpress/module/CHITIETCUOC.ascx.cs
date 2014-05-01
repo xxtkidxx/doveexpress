@@ -43,7 +43,7 @@ public partial class module_CHITIETCUOC : System.Web.UI.UserControl
         {
             UpdateDefault(arrayvalue[1], arrayvalue[2], arrayvalue[3]);
             string script = string.Format("var result = '{0}'", "SelectedCTC," + arrayvalue[2]);
-            ScriptManager.RegisterClientScriptBlock(Page, typeof(Page), "result", script, true);           
+            ScriptManager.RegisterClientScriptBlock(Page, typeof(Page), "result", script, true);
         }
         else if (arrayvalue[0] == "SelectedCTC1")
         {
@@ -51,26 +51,69 @@ public partial class module_CHITIETCUOC : System.Web.UI.UserControl
             string script = string.Format("var result = '{0}'", "SelectedCTC1," + arrayvalue[2]);
             ScriptManager.RegisterClientScriptBlock(Page, typeof(Page), "result", script, true);
         }
-        else if (arrayvalue[0] == "PPXDVALUE")
+        else if (arrayvalue[0] == "PTVALUE")
         {
             string FK_MASANPHAM = cmbSanPham.SelectedValue;
             string FK_MABANGCUOC = cmbMaBangCuoc.SelectedValue;
             string SelectSQL;
-            string PPXD;
-            SelectSQL = "Select DMPPXD.C_PPXD FROM DMPPXD WHERE DMPPXD.FK_MASANPHAM =" + FK_MASANPHAM + " AND FK_MABANGCUOC = " + FK_MABANGCUOC;
+            string PPXD = "0";
+            string VAT = "0";
+            string DONGGOIX = "0"; string DONGGOIY = "0";
+            string KHAIGIAX = "0"; string KHAIGIAY = "0";
+            string BAOPHATX = "0"; string BAOPHATY = "0";
+            string HENGIOX = "0"; string HENGIOY = "0";
+            string HAIQUANX = "0"; string HAIQUANY = "0";
+            string HUNTRUNGX = "0"; string HUNTRUNGY = "0";
+            SelectSQL = "Select DMDICHVUPHUTROI.C_VALUE,DMDICHVUPHUTROI.C_VALUE1,DMDICHVUPHUTROI.C_TYPE FROM DMDICHVUPHUTROI WHERE DMDICHVUPHUTROI.FK_MASANPHAM =" + FK_MASANPHAM + " AND FK_MABANGCUOC = " + FK_MABANGCUOC;
             DataTable oDataTable = new DataTable();
             ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
             oDataTable = SelectQuery.query_data(SelectSQL);
             if (oDataTable.Rows.Count != 0)
             {
-                PPXD = oDataTable.Rows[0]["C_PPXD"].ToString();
+                for (int i = 0; i <= oDataTable.Rows.Count - 1; i++)
+                {
+                    if (oDataTable.Rows[i]["C_TYPE"].ToString() == "PPXD")
+                    {
+                        PPXD = oDataTable.Rows[i]["C_VALUE"].ToString();
+                    }
+                    else if (oDataTable.Rows[i]["C_TYPE"].ToString() == "VAT")
+                    {
+                        VAT = oDataTable.Rows[i]["C_VALUE"].ToString();
+                    }
+                    else if (oDataTable.Rows[i]["C_TYPE"].ToString() == "DONGGOI")
+                    {
+                        DONGGOIX = oDataTable.Rows[i]["C_VALUE"].ToString();
+                        DONGGOIY = oDataTable.Rows[i]["C_VALUE1"].ToString();
+                    }
+                    else if (oDataTable.Rows[i]["C_TYPE"].ToString() == "KHAIGIA")
+                    {
+                        KHAIGIAX = oDataTable.Rows[i]["C_VALUE"].ToString();
+                        KHAIGIAY = oDataTable.Rows[i]["C_VALUE1"].ToString();
+                    }
+                    else if (oDataTable.Rows[i]["C_TYPE"].ToString() == "BAOPHAT")
+                    {
+                        BAOPHATX = oDataTable.Rows[i]["C_VALUE"].ToString();
+                        BAOPHATY = oDataTable.Rows[i]["C_VALUE1"].ToString();
+                    }
+                    else if (oDataTable.Rows[i]["C_TYPE"].ToString() == "HENGIO")
+                    {
+                        HENGIOX = oDataTable.Rows[i]["C_VALUE"].ToString();
+                        HENGIOY = oDataTable.Rows[i]["C_VALUE1"].ToString();
+                    }
+                    else if (oDataTable.Rows[i]["C_TYPE"].ToString() == "HAIQUAN")
+                    {
+                        HAIQUANX = oDataTable.Rows[i]["C_VALUE"].ToString();
+                        HAIQUANY = oDataTable.Rows[i]["C_VALUE1"].ToString();
+                    }
+                    else if (oDataTable.Rows[i]["C_TYPE"].ToString() == "HUNTRUNG")
+                    {
+                        HUNTRUNGX = oDataTable.Rows[i]["C_VALUE"].ToString();
+                        HUNTRUNGY = oDataTable.Rows[i]["C_VALUE1"].ToString();
+                    }
+                }
             }
-            else
-            {
-                PPXD = "0";
-            }
-            string script = string.Format("var result = '{0}'", "PPXDVALUE," + PPXD);
-            ScriptManager.RegisterClientScriptBlock(Page, typeof(Page), "result", script, true);     
+            string script = string.Format("var result = '{0}'", "PTVALUE,-," + PPXD + ",-," + VAT + ",-," + DONGGOIX + ",-," + DONGGOIY + ",-," + KHAIGIAX + ",-," + KHAIGIAY + ",-," + BAOPHATX + ",-," + BAOPHATY + ",-," + HENGIOX + ",-," + HENGIOY + ",-," + HAIQUANX + ",-," + HAIQUANY + ",-," + HUNTRUNGX + ",-," + HUNTRUNGY);
+            ScriptManager.RegisterClientScriptBlock(Page, typeof(Page), "result", script, true);
         }
     }
     protected void UpdateDefault(string ID, string FK_MAVUNG, string C_TYPE)
@@ -149,7 +192,7 @@ public partial class module_CHITIETCUOC : System.Web.UI.UserControl
         }
         else if (e.CommandName == RadGrid.UpdateCommandName)
         {
-            
+
         }
         else if (e.CommandName == RadGrid.ExpandCollapseCommandName)
         {
@@ -183,7 +226,7 @@ public partial class module_CHITIETCUOC : System.Web.UI.UserControl
             {
                 SetMessage("Cập nhật không thành công!");
             }
-        }        
+        }
     }
     protected void RadGridCHITIETCUOC_ItemDeleted(object sender, GridDeletedEventArgs e)
     {
@@ -214,7 +257,7 @@ public partial class module_CHITIETCUOC : System.Web.UI.UserControl
                 SetMessage("Xóa bảng cước thành công!");
                 ITCLIB.ActionLog.ActionLog.WriteLog(Session["UserID"].ToString(), "Deleted CHITIETCUOC", e.Item.KeyValues);
             }
-        }      
+        }
     }
     protected void MAVUNGDeleteing(string pkID)
     {
@@ -251,9 +294,9 @@ public partial class module_CHITIETCUOC : System.Web.UI.UserControl
                 SetMessage("Tạo mới bảng cước thành công!");
                 ITCLIB.ActionLog.ActionLog.WriteLog(Session["UserID"].ToString(), "Inserted CHITIETCUOC", "{PK_ID:\"" + getmaxid("DMCHITIETCUOC") + "\"}");
             }
-        }        
+        }
     }
-     protected string getmaxid(string table)
+    protected string getmaxid(string table)
     {
         int rowcount = 0;
         string SelectSQL = "SELECT MAX(" + table + ".PK_ID) as MAXS FROM " + table;
@@ -300,9 +343,9 @@ public partial class module_CHITIETCUOC : System.Web.UI.UserControl
                 {
                     cmbMaBangCuoc.SelectedIndex = 0;
                 }
-                
+
             }
-        }        
+        }
     }
     protected void cmbSanPham_PreRender(object sender, EventArgs e)
     {
@@ -312,7 +355,7 @@ public partial class module_CHITIETCUOC : System.Web.UI.UserControl
             {
                 //cmbSanPham.SelectedIndex = 0;
             }
-        }       
+        }
     }
     protected void cmbLoaiTien_PreRender(object sender, EventArgs e)
     {
@@ -323,26 +366,208 @@ public partial class module_CHITIETCUOC : System.Web.UI.UserControl
     }
     protected void btnSave_Click(object sender, EventArgs e)
     {
+        string SelectSQL = "";
+        SelectSQL += SavePPXD() + SaveVAT() + SaveDONGGOI() + SaveKHAIGIA() + SaveBAOPHAT() + SaveHENGIO() + SaveHAIQUAN() + SaveHUNTRUNG();
+        ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
+        SelectQuery.ExecuteNonQuery(SelectSQL);
+    }
+    protected string SavePPXD()
+    {
         string FK_MASANPHAM = cmbSanPham.SelectedValue;
         string FK_MABANGCUOC = cmbMaBangCuoc.SelectedValue;
         decimal C_PPXD = (txtC_PPXD.Text != "") ? decimal.Parse(txtC_PPXD.Text) : 0;
-        string SQL;
+        string SQL = "";
         string SelectSQL;
         if (FK_MASANPHAM != "" && FK_MABANGCUOC != "")
         {
-            SelectSQL = "Select DMPPXD.C_PPXD FROM DMPPXD WHERE DMPPXD.FK_MASANPHAM =" + FK_MASANPHAM + " AND FK_MABANGCUOC = " + FK_MABANGCUOC;
+            SelectSQL = "Select DMDICHVUPHUTROI.C_VALUE FROM DMDICHVUPHUTROI WHERE DMDICHVUPHUTROI.FK_MASANPHAM =" + FK_MASANPHAM + " AND FK_MABANGCUOC = " + FK_MABANGCUOC + " AND C_TYPE = N'PPXD'";
             DataTable oDataTable = new DataTable();
             ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
             oDataTable = SelectQuery.query_data(SelectSQL);
             if (oDataTable.Rows.Count != 0)
             {
-                SQL = "Update DMPPXD set C_PPXD = " + C_PPXD + " WHERE DMPPXD.FK_MASANPHAM =" + FK_MASANPHAM + " AND FK_MABANGCUOC = " + FK_MABANGCUOC;
+                SQL = "Update DMDICHVUPHUTROI set C_VALUE = " + C_PPXD + " WHERE DMDICHVUPHUTROI.FK_MASANPHAM =" + FK_MASANPHAM + " AND FK_MABANGCUOC = " + FK_MABANGCUOC + " AND C_TYPE = N'PPXD';";
             }
             else
             {
-                SQL = "Insert into DMPPXD (FK_MASANPHAM,FK_MABANGCUOC,C_PPXD) VALUES (" + FK_MASANPHAM + "," + FK_MABANGCUOC + "," + C_PPXD + ")";
+                SQL = "Insert into DMDICHVUPHUTROI (FK_MASANPHAM,FK_MABANGCUOC,C_VALUE,C_TYPE) VALUES (" + FK_MASANPHAM + "," + FK_MABANGCUOC + "," + C_PPXD + ",N'PPXD');";
             }
-            SelectQuery.ExecuteNonQuery(SQL);
         }
+        return SQL;
+
+    }
+    protected string SaveVAT()
+    {
+        string FK_MASANPHAM = cmbSanPham.SelectedValue;
+        string FK_MABANGCUOC = cmbMaBangCuoc.SelectedValue;
+        decimal C_VAT = (txtC_VAT.Text != "") ? decimal.Parse(txtC_VAT.Text) : 0;
+        string SQL = "";
+        string SelectSQL;
+        if (FK_MASANPHAM != "" && FK_MABANGCUOC != "")
+        {
+            SelectSQL = "Select DMDICHVUPHUTROI.C_VALUE FROM DMDICHVUPHUTROI WHERE DMDICHVUPHUTROI.FK_MASANPHAM =" + FK_MASANPHAM + " AND FK_MABANGCUOC = " + FK_MABANGCUOC + " AND C_TYPE = N'VAT'";
+            DataTable oDataTable = new DataTable();
+            ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
+            oDataTable = SelectQuery.query_data(SelectSQL);
+            if (oDataTable.Rows.Count != 0)
+            {
+                SQL = "Update DMDICHVUPHUTROI set C_VALUE = " + C_VAT + " WHERE DMDICHVUPHUTROI.FK_MASANPHAM =" + FK_MASANPHAM + " AND FK_MABANGCUOC = " + FK_MABANGCUOC + " AND C_TYPE = N'VAT';";
+            }
+            else
+            {
+                SQL = "Insert into DMDICHVUPHUTROI (FK_MASANPHAM,FK_MABANGCUOC,C_VALUE,C_TYPE) VALUES (" + FK_MASANPHAM + "," + FK_MABANGCUOC + "," + C_VAT + ",N'VAT');";
+            }
+        }
+        return SQL;
+    }
+    protected string SaveDONGGOI()
+    {
+        string FK_MASANPHAM = cmbSanPham.SelectedValue;
+        string FK_MABANGCUOC = cmbMaBangCuoc.SelectedValue;
+        decimal C_DONGGOIX = (txtC_DONGGOIX.Text != "") ? decimal.Parse(txtC_DONGGOIX.Text) : 0;
+        decimal C_DONGGOIY = (txtC_DONGGOIY.Text != "") ? decimal.Parse(txtC_DONGGOIY.Text) : 0;
+        string SQL = "";
+        string SelectSQL;
+        if (FK_MASANPHAM != "" && FK_MABANGCUOC != "")
+        {
+            SelectSQL = "Select DMDICHVUPHUTROI.C_VALUE FROM DMDICHVUPHUTROI WHERE DMDICHVUPHUTROI.FK_MASANPHAM =" + FK_MASANPHAM + " AND FK_MABANGCUOC = " + FK_MABANGCUOC + " AND C_TYPE = N'DONGGOI'";
+            DataTable oDataTable = new DataTable();
+            ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
+            oDataTable = SelectQuery.query_data(SelectSQL);
+            if (oDataTable.Rows.Count != 0)
+            {
+                SQL = "Update DMDICHVUPHUTROI set C_VALUE = " + C_DONGGOIX + ",C_VALUE1 = " + C_DONGGOIY + " WHERE DMDICHVUPHUTROI.FK_MASANPHAM =" + FK_MASANPHAM + " AND FK_MABANGCUOC = " + FK_MABANGCUOC + " AND C_TYPE = N'DONGGOI';";
+            }
+            else
+            {
+                SQL = "Insert into DMDICHVUPHUTROI (FK_MASANPHAM,FK_MABANGCUOC,C_VALUE,C_VALUE1,C_TYPE) VALUES (" + FK_MASANPHAM + "," + FK_MABANGCUOC + "," + C_DONGGOIX + "," + C_DONGGOIY + ",N'DONGGOI');";
+            }
+        }
+        return SQL;
+    }
+    protected string SaveKHAIGIA()
+    {
+        string FK_MASANPHAM = cmbSanPham.SelectedValue;
+        string FK_MABANGCUOC = cmbMaBangCuoc.SelectedValue;
+        decimal C_KHAIGIAX = (txtC_KHAIGIAX.Text != "") ? decimal.Parse(txtC_KHAIGIAX.Text) : 0;
+        decimal C_KHAIGIAY = (txtC_KHAIGIAY.Text != "") ? decimal.Parse(txtC_KHAIGIAY.Text) : 0;
+        string SQL = "";
+        string SelectSQL;
+        if (FK_MASANPHAM != "" && FK_MABANGCUOC != "")
+        {
+            SelectSQL = "Select DMDICHVUPHUTROI.C_VALUE FROM DMDICHVUPHUTROI WHERE DMDICHVUPHUTROI.FK_MASANPHAM =" + FK_MASANPHAM + " AND FK_MABANGCUOC = " + FK_MABANGCUOC + " AND C_TYPE = N'KHAIGIA'";
+            DataTable oDataTable = new DataTable();
+            ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
+            oDataTable = SelectQuery.query_data(SelectSQL);
+            if (oDataTable.Rows.Count != 0)
+            {
+                SQL = "Update DMDICHVUPHUTROI set C_VALUE = " + C_KHAIGIAX + ",C_VALUE1 = " + C_KHAIGIAY + " WHERE DMDICHVUPHUTROI.FK_MASANPHAM =" + FK_MASANPHAM + " AND FK_MABANGCUOC = " + FK_MABANGCUOC + " AND C_TYPE = N'KHAIGIA';";
+            }
+            else
+            {
+                SQL = "Insert into DMDICHVUPHUTROI (FK_MASANPHAM,FK_MABANGCUOC,C_VALUE,C_VALUE1,C_TYPE) VALUES (" + FK_MASANPHAM + "," + FK_MABANGCUOC + "," + C_KHAIGIAX + "," + C_KHAIGIAY + ",N'KHAIGIA');";
+            }
+        }
+        return SQL;
+    }
+    protected string SaveBAOPHAT()
+    {
+        string FK_MASANPHAM = cmbSanPham.SelectedValue;
+        string FK_MABANGCUOC = cmbMaBangCuoc.SelectedValue;
+        decimal C_BAOPHATX = (txtC_BAOPHATX.Text != "") ? decimal.Parse(txtC_BAOPHATX.Text) : 0;
+        decimal C_BAOPHATY = (txtC_BAOPHATY.Text != "") ? decimal.Parse(txtC_BAOPHATY.Text) : 0;
+        string SQL = "";
+        string SelectSQL;
+        if (FK_MASANPHAM != "" && FK_MABANGCUOC != "")
+        {
+            SelectSQL = "Select DMDICHVUPHUTROI.C_VALUE FROM DMDICHVUPHUTROI WHERE DMDICHVUPHUTROI.FK_MASANPHAM =" + FK_MASANPHAM + " AND FK_MABANGCUOC = " + FK_MABANGCUOC + " AND C_TYPE = N'BAOPHAT'";
+            DataTable oDataTable = new DataTable();
+            ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
+            oDataTable = SelectQuery.query_data(SelectSQL);
+            if (oDataTable.Rows.Count != 0)
+            {
+                SQL = "Update DMDICHVUPHUTROI set C_VALUE = " + C_BAOPHATX + ",C_VALUE1 = " + C_BAOPHATY + " WHERE DMDICHVUPHUTROI.FK_MASANPHAM =" + FK_MASANPHAM + " AND FK_MABANGCUOC = " + FK_MABANGCUOC + " AND C_TYPE = N'BAOPHAT';";
+            }
+            else
+            {
+                SQL = "Insert into DMDICHVUPHUTROI (FK_MASANPHAM,FK_MABANGCUOC,C_VALUE,C_VALUE1,C_TYPE) VALUES (" + FK_MASANPHAM + "," + FK_MABANGCUOC + "," + C_BAOPHATX + "," + C_BAOPHATY + ",N'BAOPHAT');";
+            }
+        }
+        return SQL;
+    }
+    protected string SaveHENGIO()
+    {
+        string FK_MASANPHAM = cmbSanPham.SelectedValue;
+        string FK_MABANGCUOC = cmbMaBangCuoc.SelectedValue;
+        decimal C_HENGIOX = (txtC_HENGIOX.Text != "") ? decimal.Parse(txtC_HENGIOX.Text) : 0;
+        decimal C_HENGIOY = (txtC_HENGIOY.Text != "") ? decimal.Parse(txtC_HENGIOY.Text) : 0;
+        string SQL = "";
+        string SelectSQL;
+        if (FK_MASANPHAM != "" && FK_MABANGCUOC != "")
+        {
+            SelectSQL = "Select DMDICHVUPHUTROI.C_VALUE FROM DMDICHVUPHUTROI WHERE DMDICHVUPHUTROI.FK_MASANPHAM =" + FK_MASANPHAM + " AND FK_MABANGCUOC = " + FK_MABANGCUOC + " AND C_TYPE = N'HENGIO'";
+            DataTable oDataTable = new DataTable();
+            ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
+            oDataTable = SelectQuery.query_data(SelectSQL);
+            if (oDataTable.Rows.Count != 0)
+            {
+                SQL = "Update DMDICHVUPHUTROI set C_VALUE = " + C_HENGIOX + ",C_VALUE1 = " + C_HENGIOY + " WHERE DMDICHVUPHUTROI.FK_MASANPHAM =" + FK_MASANPHAM + " AND FK_MABANGCUOC = " + FK_MABANGCUOC + " AND C_TYPE = N'HENGIO';";
+            }
+            else
+            {
+                SQL = "Insert into DMDICHVUPHUTROI (FK_MASANPHAM,FK_MABANGCUOC,C_VALUE,C_VALUE1,C_TYPE) VALUES (" + FK_MASANPHAM + "," + FK_MABANGCUOC + "," + C_HENGIOX + "," + C_HENGIOY + ",N'HENGIO');";
+            }
+        }
+        return SQL;
+    }
+    protected string SaveHAIQUAN()
+    {
+        string FK_MASANPHAM = cmbSanPham.SelectedValue;
+        string FK_MABANGCUOC = cmbMaBangCuoc.SelectedValue;
+        decimal C_HAIQUANX = (txtC_HAIQUANX.Text != "") ? decimal.Parse(txtC_HAIQUANX.Text) : 0;
+        decimal C_HAIQUANY = (txtC_HAIQUANY.Text != "") ? decimal.Parse(txtC_HAIQUANY.Text) : 0;
+        string SQL = "";
+        string SelectSQL;
+        if (FK_MASANPHAM != "" && FK_MABANGCUOC != "")
+        {
+            SelectSQL = "Select DMDICHVUPHUTROI.C_VALUE FROM DMDICHVUPHUTROI WHERE DMDICHVUPHUTROI.FK_MASANPHAM =" + FK_MASANPHAM + " AND FK_MABANGCUOC = " + FK_MABANGCUOC + " AND C_TYPE = N'HAIQUAN'";
+            DataTable oDataTable = new DataTable();
+            ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
+            oDataTable = SelectQuery.query_data(SelectSQL);
+            if (oDataTable.Rows.Count != 0)
+            {
+                SQL = "Update DMDICHVUPHUTROI set C_VALUE = " + C_HAIQUANX + ",C_VALUE1 = " + C_HAIQUANY + " WHERE DMDICHVUPHUTROI.FK_MASANPHAM =" + FK_MASANPHAM + " AND FK_MABANGCUOC = " + FK_MABANGCUOC + " AND C_TYPE = N'HAIQUAN';";
+            }
+            else
+            {
+                SQL = "Insert into DMDICHVUPHUTROI (FK_MASANPHAM,FK_MABANGCUOC,C_VALUE,C_VALUE1,C_TYPE) VALUES (" + FK_MASANPHAM + "," + FK_MABANGCUOC + "," + C_HAIQUANX + "," + C_HAIQUANY + ",N'HAIQUAN');";
+            }
+        }
+        return SQL;
+    }
+    protected string SaveHUNTRUNG()
+    {
+        string FK_MASANPHAM = cmbSanPham.SelectedValue;
+        string FK_MABANGCUOC = cmbMaBangCuoc.SelectedValue;
+        decimal C_HUNTRUNGX = (txtC_HUNTRUNGX.Text != "") ? decimal.Parse(txtC_HUNTRUNGX.Text) : 0;
+        decimal C_HUNTRUNGY = (txtC_HUNTRUNGY.Text != "") ? decimal.Parse(txtC_HUNTRUNGY.Text) : 0;
+        string SQL = "";
+        string SelectSQL;
+        if (FK_MASANPHAM != "" && FK_MABANGCUOC != "")
+        {
+            SelectSQL = "Select DMDICHVUPHUTROI.C_VALUE FROM DMDICHVUPHUTROI WHERE DMDICHVUPHUTROI.FK_MASANPHAM =" + FK_MASANPHAM + " AND FK_MABANGCUOC = " + FK_MABANGCUOC + " AND C_TYPE = N'HUNTRUNG'";
+            DataTable oDataTable = new DataTable();
+            ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
+            oDataTable = SelectQuery.query_data(SelectSQL);
+            if (oDataTable.Rows.Count != 0)
+            {
+                SQL = "Update DMDICHVUPHUTROI set C_VALUE = " + C_HUNTRUNGX + ",C_VALUE1 = " + C_HUNTRUNGY + " WHERE DMDICHVUPHUTROI.FK_MASANPHAM =" + FK_MASANPHAM + " AND FK_MABANGCUOC = " + FK_MABANGCUOC + " AND C_TYPE = N'HUNTRUNG';";
+            }
+            else
+            {
+                SQL = "Insert into DMDICHVUPHUTROI (FK_MASANPHAM,FK_MABANGCUOC,C_VALUE,C_VALUE1,C_TYPE) VALUES (" + FK_MASANPHAM + "," + FK_MABANGCUOC + "," + C_HUNTRUNGX + "," + C_HUNTRUNGY + ",N'HUNTRUNG');";
+            }
+        }
+        return SQL;
     }
 }
