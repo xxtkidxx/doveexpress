@@ -1,0 +1,225 @@
+Thời gian lỗi : 2014-05-01 12:10:20 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Column 'C_PPXD' does not belong to table .
+__________________________
+Thời gian lỗi : 2014-05-01 12:10:29 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Column 'C_PPXD' does not belong to table .
+__________________________
+Thời gian lỗi : 2014-05-01 12:10:45 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Column 'C_PPXD' does not belong to table .
+__________________________
+Thời gian lỗi : 2014-05-01 12:10:54 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Column 'C_PPXD' does not belong to table .
+__________________________
+Thời gian lỗi : 2014-05-01 12:10:58 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Column 'C_PPXD' does not belong to table .
+__________________________
+Thời gian lỗi : 2014-05-01 12:11:09 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Column 'C_PPXD' does not belong to table .
+__________________________
+Thời gian lỗi : 2014-05-01 12:11:35 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Column 'C_PPXD' does not belong to table .
+__________________________
+Thời gian lỗi : 2014-05-01 12:11:40 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Column 'C_PPXD' does not belong to table .
+__________________________
+Thời gian lỗi : 2014-05-01 12:11:42 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Column 'C_PPXD' does not belong to table .
+__________________________
+Thời gian lỗi : 2014-05-01 12:15:55 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Column 'C_PPXD' does not belong to table .
+__________________________
+Thời gian lỗi : 2014-05-01 19:03:04 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Lỗi truy vấn cơ sở dữ liệuThere are fewer columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.
+__________________________
+Thời gian lỗi : 2014-05-01 21:44:11 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:e:\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\CHITIETCUOC.ascx.cs(374): error CS0161: 'module_CHITIETCUOC.LoadCODX(string)': not all code paths return a value
+__________________________
+Thời gian lỗi : 2014-05-01 22:05:56 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/Edit.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2014-05-01 22:05:56 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/Update.gif. 
+Nội dung lỗi:The process cannot access the file 'E:\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\Log\ErrorLog\2014\5\1.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2014-05-01 22:05:56 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/Cancel.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2014-05-01 22:05:56 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/AddRecord.gif. 
+Nội dung lỗi:The process cannot access the file 'E:\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\Log\ErrorLog\2014\5\1.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2014-05-01 22:05:57 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/Insert.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2014-05-01 22:05:57 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/Delete.gif. 
+Nội dung lỗi:The process cannot access the file 'E:\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\Log\ErrorLog\2014\5\1.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2014-05-01 22:05:57 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/Refresh.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2014-05-01 22:05:57 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/pdf.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2014-05-01 22:05:57 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/word.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2014-05-01 22:05:57 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/excel.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2014-05-01 22:05:57 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/csv.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2014-05-01 22:09:24 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:e:\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\CHITIETCUOC.ascx.cs(639): error CS0103: The name 'TextBox1' does not exist in the current context
+__________________________
+Thời gian lỗi : 2014-05-01 22:09:50 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2014-05-01 22:10:36 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2014-05-01 22:11:23 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2014-05-01 22:11:50 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2014-05-01 22:12:07 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2014-05-01 22:13:14 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2014-05-01 22:15:03 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2014-05-01 22:16:00 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2014-05-01 22:19:13 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2014-05-01 22:19:40 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2014-05-01 22:23:16 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Unable to cast object of type 'Telerik.Web.UI.GridCommandItem' to type 'Telerik.Web.UI.GridEditableItem'.
+__________________________
+Thời gian lỗi : 2014-05-01 22:23:18 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Unable to cast object of type 'Telerik.Web.UI.GridCommandItem' to type 'Telerik.Web.UI.GridEditableItem'.
+__________________________
+Thời gian lỗi : 2014-05-01 22:24:37 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Unable to cast object of type 'Telerik.Web.UI.GridCommandItem' to type 'Telerik.Web.UI.GridEditableItem'.
+__________________________
+Thời gian lỗi : 2014-05-01 22:24:39 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2014-05-01 22:25:17 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Unable to cast object of type 'Telerik.Web.UI.GridCommandItem' to type 'Telerik.Web.UI.GridEditableItem'.
+__________________________
+Thời gian lỗi : 2014-05-01 22:26:48 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Unable to cast object of type 'Telerik.Web.UI.GridCommandItem' to type 'Telerik.Web.UI.GridEditableItem'.
+__________________________
+Thời gian lỗi : 2014-05-01 22:26:51 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Unable to cast object of type 'Telerik.Web.UI.GridCommandItem' to type 'Telerik.Web.UI.GridEditableItem'.
+__________________________
+Thời gian lỗi : 2014-05-01 22:27:28 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Unable to cast object of type 'Telerik.Web.UI.GridCommandItem' to type 'Telerik.Web.UI.GridEditableItem'.
+__________________________
+Thời gian lỗi : 2014-05-01 22:28:44 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Unable to cast object of type 'Telerik.Web.UI.GridCommandItem' to type 'Telerik.Web.UI.GridEditableItem'.
+__________________________
+Thời gian lỗi : 2014-05-01 22:31:46 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Unable to cast object of type 'Telerik.Web.UI.GridCommandItem' to type 'Telerik.Web.UI.GridDataItem'.
+__________________________
+Thời gian lỗi : 2014-05-01 22:59:36 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=CHITIETCUOC. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
