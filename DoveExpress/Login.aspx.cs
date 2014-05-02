@@ -17,7 +17,11 @@ public partial class Login : System.Web.UI.Page
         }
     }
     protected void btnLogin_Click(object sender, EventArgs e)
-    {    
+    {
+        Page.Validate();
+
+        if (Page.IsValid)
+        {
             if (CheckValidate(ITCLIB.Admin.cFunction.KillCharsFix(txtUser.Text.Trim()), ITCLIB.Admin.cFunction.KillCharsFix(txtPass.Text.Trim())))
             {
                 ITCLIB.ActionLog.ActionLog.WriteLog(txtUser.Text.Trim(), "Login", "Thành công");
@@ -34,7 +38,8 @@ public partial class Login : System.Web.UI.Page
             else
             {
                 ITCLIB.Admin.JavaScript.ShowMessage("Tên đăng nhập hoặc mật khẩu không đúng", this);
-            }   
+            }
+        }
     }
     protected void lbtnForgotPass_Click(object sender, EventArgs e)
     {
@@ -50,7 +55,7 @@ public partial class Login : System.Web.UI.Page
     protected string Login_Name;
     protected string Email;
     protected void btnForgotPass_Click(object sender, EventArgs e)
-    {
+    {       
         Email = txtEmail.Text;
         StringBuilder builder = new StringBuilder();
         builder.Append(ITCLIB.Admin.CreateRandom.RandomString(4, true));
@@ -66,11 +71,11 @@ public partial class Login : System.Web.UI.Page
         {
             ITCLIB.Admin.Email.Send_Email(Email, "Email lấy lại mật khẩu", "Thông tin tài khoản của bạn là:" + "\r\nTên đăng nhập(Login name): " + Login_Name + "\r\nMật khẩu(Password): " + NewPassword);
             ITCLIB.Admin.JavaScript.ShowMessage("Mật khẩu đã được gửi tới Email của bạn", this);
-        }            
+        }
     }
     private ITCLIB.Security.User sUser = new ITCLIB.Security.User();
     protected bool CheckValidate(string user, string pass)
-    {        
+    {
         string encryptpass = ITCLIB.Security.Security.Encrypt(pass);
         string SelectSQL = "Select USERS.PK_ID,USERS.FK_GROUPUSER,USERS.C_NAME,GROUPUSER.C_TYPE FROM USERS INNER JOIN GROUPUSER ON USERS.FK_GROUPUSER = GROUPUSER.PK_ID WHERE USERS.C_LOGINNAME = '" + user + "' AND USERS.C_PASSWORD = '" + encryptpass + "'";
         DataTable oDataTable = new DataTable();
@@ -86,7 +91,7 @@ public partial class Login : System.Web.UI.Page
             sUser.LoginName = user;
             sUser.UserName = oDataTable.Rows[0]["C_NAME"].ToString();
             //Session.Timeout = 5;
-            Session["User"] = sUser;           
+            Session["User"] = sUser;
             Session["UserID"] = (int)oDataTable.Rows[0]["PK_ID"];
             Session["GroupUser"] = (int)oDataTable.Rows[0]["FK_GROUPUSER"];
             return true;
@@ -128,4 +133,33 @@ public partial class Login : System.Web.UI.Page
             //cmbVungLamViec.SelectedValue = "Hà Nội";
         }
     }
+    protected void CheckVungLamViec(object source, ServerValidateEventArgs args)
+    {
+        string SelectSQL;
+        SelectSQL = "Select USERS.FK_VUNGLAMVIEC FROM USERS WHERE USERS.C_LOGINNAME = N'" + txtUser.Text.Trim() + "'";
+        DataTable oDataTable = new DataTable();
+        ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
+        Session["t"] = args.Value;
+        oDataTable = SelectQuery.query_data(SelectSQL);
+        if (oDataTable.Rows.Count != 0)
+        {
+            if (oDataTable.Rows[0]["FK_VUNGLAMVIEC"].ToString() == "Tất cả")
+            {
+                args.IsValid = true;
+            }
+            else if (oDataTable.Rows[0]["FK_VUNGLAMVIEC"].ToString() == cmbVungLamViec.SelectedValue)
+            {
+                args.IsValid = true;
+            }
+            else
+            {
+                args.IsValid = false;
+            }
+        }
+        else
+        {
+            args.IsValid = false;
+        }
+    }
+
 }
