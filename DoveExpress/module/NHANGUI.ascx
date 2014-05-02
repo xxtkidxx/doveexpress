@@ -567,7 +567,7 @@
             <telerik:GridClientSelectColumn UniqueName="ClientSelectColumn" HeaderStyle-Width="40px"
                 HeaderStyle-HorizontalAlign="Center" ItemStyle-HorizontalAlign="Center">
             </telerik:GridClientSelectColumn>
-            <telerik:GridTemplateColumn HeaderText="" ShowFilterIcon="false">
+            <telerik:GridTemplateColumn HeaderText="" ShowFilterIcon="false" Visible ="false">
                 <FilterTemplate>
                     <center>
                         <asp:ImageButton ID="btnShowAll" runat="server" ImageUrl="../Images/Grid/filterCancel.gif"
@@ -581,11 +581,11 @@
                 <ItemStyle HorizontalAlign="Center" Width="30px" />
             </telerik:GridTemplateColumn>
             <telerik:GridBoundColumn UniqueName="C_NGAYFIX" HeaderText="Ngày" DataField="C_NGAYFIX"
-                HeaderStyle-Width="100px" HeaderStyle-HorizontalAlign="Center" AutoPostBackOnFilter="true"
+                HeaderStyle-Width="80px" HeaderStyle-HorizontalAlign="Center" AutoPostBackOnFilter="true"
                 ShowFilterIcon="true" FilterControlWidth="75%" DataType="System.DateTime" DataFormatString="{0:dd/MM/yyyy}">
             </telerik:GridBoundColumn>
             <telerik:GridTemplateColumn UniqueName="C_BILLFIX" HeaderText="Số Bill" DataField="C_BILLFIX"
-                HeaderStyle-Width="100px" HeaderStyle-HorizontalAlign="Center" AutoPostBackOnFilter="true"
+                HeaderStyle-Width="60px" HeaderStyle-HorizontalAlign="Center" AutoPostBackOnFilter="true"
                 CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%"
                 SortExpression="C_BILLFIX">
                 <ItemTemplate>
@@ -593,7 +593,7 @@
                 </ItemTemplate>
             </telerik:GridTemplateColumn>
             <telerik:GridBoundColumn UniqueName="FK_KHACHHANG" HeaderText="Mã khách hàng" DataField="FK_KHACHHANG"
-                HeaderStyle-Width="100px" HeaderStyle-HorizontalAlign="Center" AutoPostBackOnFilter="true"
+                HeaderStyle-Width="80px" HeaderStyle-HorizontalAlign="Center" AutoPostBackOnFilter="true"
                 CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
             </telerik:GridBoundColumn>
             <telerik:GridBoundColumn UniqueName="C_TENKH" HeaderText="Tên khách hàng" DataField="C_TENKH"
@@ -601,31 +601,31 @@
                 CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
             </telerik:GridBoundColumn>
             <telerik:GridBoundColumn UniqueName="TINHTHANHNAME" HeaderText="Tỉnh thành" DataField="TINHTHANHNAME"
-                HeaderStyle-Width="130px" HeaderStyle-HorizontalAlign="Center" AutoPostBackOnFilter="true"
+                HeaderStyle-Width="80px" HeaderStyle-HorizontalAlign="Center" AutoPostBackOnFilter="true"
                 CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
             </telerik:GridBoundColumn>
             <telerik:GridBoundColumn UniqueName="C_NOIDUNG" HeaderText="Nội dung" DataField="C_NOIDUNG"
                 HeaderStyle-Width="130px" HeaderStyle-HorizontalAlign="Center" AutoPostBackOnFilter="true"
-                CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
+                CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%" Visible ="false">
             </telerik:GridBoundColumn>
             <telerik:GridBoundColumn UniqueName="C_KHOILUONG" HeaderText="Khối lượng" DataField="C_KHOILUONG"
-                HeaderStyle-Width="120px" HeaderStyle-HorizontalAlign="Center" AutoPostBackOnFilter="true"
+                HeaderStyle-Width="80px" HeaderStyle-HorizontalAlign="Center" AutoPostBackOnFilter="true"
                 CurrentFilterFunction="Contains" ShowFilterIcon="true" FilterControlWidth="80%">
             </telerik:GridBoundColumn>
             <telerik:GridBoundColumn UniqueName="C_GIACUOC" HeaderText="Cước chính" DataField="C_GIACUOC"
-                HeaderStyle-Width="100px" HeaderStyle-HorizontalAlign="Center" AutoPostBackOnFilter="true"
+                HeaderStyle-Width="80px" HeaderStyle-HorizontalAlign="Center" AutoPostBackOnFilter="true"
                 CurrentFilterFunction="Contains" ShowFilterIcon="true" FilterControlWidth="80%"
-                DataType="System.Decimal" DataFormatString="{0:### ### ###}">
+                DataType="System.Decimal" DataFormatString="{0:### ### ###}" Visible ="false">
             </telerik:GridBoundColumn>
             <telerik:GridBoundColumn UniqueName="C_TIENHANGVAT" HeaderText="Tổng cước (VAT)"
-                DataField="C_TIENHANGVAT" HeaderStyle-Width="130px" HeaderStyle-HorizontalAlign="Center"
+                DataField="C_TIENHANGVAT" HeaderStyle-Width="80px" HeaderStyle-HorizontalAlign="Center"
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="true"
                 FilterControlWidth="80%" DataType="System.Decimal" DataFormatString="{0:### ### ###}">
             </telerik:GridBoundColumn>
             <telerik:GridBoundColumn UniqueName="C_DATHU" HeaderText="Đã thu" DataField="C_DATHU"
-                HeaderStyle-Width="130px" HeaderStyle-HorizontalAlign="Center" AutoPostBackOnFilter="true"
+                HeaderStyle-Width="80px" HeaderStyle-HorizontalAlign="Center" AutoPostBackOnFilter="true"
                 CurrentFilterFunction="Contains" ShowFilterIcon="true" FilterControlWidth="80%"
-                DataType="System.Decimal" DataFormatString="{0:### ### ###}">
+                DataType="System.Decimal" DataFormatString="{0:### ### ###}" Visible ="false">
             </telerik:GridBoundColumn>
             <telerik:GridBoundColumn UniqueName="C_CONLAI" HeaderText="Còn lại" DataField="C_CONLAI"
                 HeaderStyle-Width="130px" HeaderStyle-HorizontalAlign="Center" AutoPostBackOnFilter="true"
