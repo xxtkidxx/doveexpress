@@ -167,7 +167,7 @@
         </telerik:RadMenuItem>
         <telerik:RadMenuItem runat="server" Font-Size="Small" Text="Tài chỉnh" Value="TAICHINH">
             <Items>
-                <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=SOQUYTIENMAT"
+                <telerik:RadMenuItem runat="server"  Visible = "false"  Font-Size="Small" NavigateUrl="../Default.aspx?ctl=SOQUYTIENMAT"
                     Text="Sổ quỹ tiền mặt" Value="SOQUYTIENMAT">
                 </telerik:RadMenuItem>
                 <telerik:RadMenuItem runat="server"  Visible = "false" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=SOQUYTIENMATV2"
