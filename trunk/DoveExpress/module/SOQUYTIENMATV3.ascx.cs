@@ -350,6 +350,14 @@ public partial class module_SOQUYTIENMATV3 : System.Web.UI.UserControl
             SOQUYTIENMATV3DataSource.SelectParameters["MONTH"].DefaultValue = System.DateTime.Now.Month.ToString();
         }
     }
+    protected void cmbTaiKhoan_PreRender(object sender, EventArgs e)
+    {
+        if (!IsPostBack)
+        {
+            cmbTaiKhoan.SelectedValue = "0";
+            SOQUYTIENMATV3DataSource.SelectParameters["FK_KIHIEUTAIKHOAN"].DefaultValue = "0";
+        }
+    }
     protected void cmbYear_PreRender(object sender, EventArgs e)
     {
         if (!IsPostBack)
@@ -470,7 +478,7 @@ public partial class module_SOQUYTIENMATV3 : System.Web.UI.UserControl
         {
             txtTONDAU.Text = "0";
         }
-        SelectSQL = "SELECT SUM ([SOQUYTIENMAT].[C_SOTIEN]) as TONGTHU FROM [SOQUYTIENMAT] WHERE [SOQUYTIENMAT].[FK_VUNGLAMVIEC] = N'" + Session["VUNGLAMVIEC"] + "' AND month([SOQUYTIENMAT].[C_NGAY]) =" + cmbMonth.SelectedValue + " AND year([SOQUYTIENMAT].[C_NGAY]) =" + cmbYear.SelectedValue + " AND [SOQUYTIENMAT].[C_TYPE] = N'Thu'";
+        SelectSQL = "SELECT SUM ([SOQUYTIENMAT].[C_SOTIEN]) as TONGTHU FROM [SOQUYTIENMAT] WHERE [SOQUYTIENMAT].[FK_VUNGLAMVIEC] = N'" + Session["VUNGLAMVIEC"] + "' AND month([SOQUYTIENMAT].[C_NGAY]) =" + cmbMonth.SelectedValue + " AND year([SOQUYTIENMAT].[C_NGAY]) =" + cmbYear.SelectedValue + " AND [SOQUYTIENMAT].[C_TYPE] = N'Thu' AND ([SOQUYTIENMAT].[FK_KIHIEUTAIKHOAN] = " + cmbTaiKhoan.SelectedValue + " OR " + cmbTaiKhoan.SelectedValue + " = 0)";
         oDataTable = new DataTable();
         SelectQuery = new ITCLIB.Admin.SQL();
         oDataTable = SelectQuery.query_data(SelectSQL);
@@ -489,7 +497,7 @@ public partial class module_SOQUYTIENMATV3 : System.Web.UI.UserControl
         {
             txtTONGTHU.Text = "0";
         }
-        SelectSQL = "SELECT SUM ([SOQUYTIENMAT].[C_SOTIEN]) as TONGCHI FROM [SOQUYTIENMAT] WHERE [SOQUYTIENMAT].[FK_VUNGLAMVIEC] = N'" + Session["VUNGLAMVIEC"] + "' AND month([SOQUYTIENMAT].[C_NGAY]) =" + cmbMonth.SelectedValue + " AND year([SOQUYTIENMAT].[C_NGAY]) =" + cmbYear.SelectedValue + " AND [SOQUYTIENMAT].[C_TYPE] = N'Chi'";
+        SelectSQL = "SELECT SUM ([SOQUYTIENMAT].[C_SOTIEN]) as TONGCHI FROM [SOQUYTIENMAT] WHERE [SOQUYTIENMAT].[FK_VUNGLAMVIEC] = N'" + Session["VUNGLAMVIEC"] + "' AND month([SOQUYTIENMAT].[C_NGAY]) =" + cmbMonth.SelectedValue + " AND year([SOQUYTIENMAT].[C_NGAY]) =" + cmbYear.SelectedValue + " AND [SOQUYTIENMAT].[C_TYPE] = N'Chi' AND ([SOQUYTIENMAT].[FK_KIHIEUTAIKHOAN] = " + cmbTaiKhoan.SelectedValue + " OR " + cmbTaiKhoan.SelectedValue + " = 0)";
         oDataTable = new DataTable();
         SelectQuery = new ITCLIB.Admin.SQL();
         oDataTable = SelectQuery.query_data(SelectSQL);
@@ -569,14 +577,14 @@ public partial class module_SOQUYTIENMATV3 : System.Web.UI.UserControl
         }
         else
         {
-            string SelectSQLROWNUMBER = "SELECT SOCHUNGTU FROM (SELECT (ROW_NUMBER() OVER(ORDER BY [SOQUYTIENMAT].C_ORDER ASC, [SOQUYTIENMAT].C_NGAY ASC, [SOQUYTIENMAT].PK_ID ASC) + 9999) AS SOCHUNGTU, [SOQUYTIENMAT].PK_ID FROM [SOQUYTIENMAT] WHERE ([SOQUYTIENMAT].[FK_VUNGLAMVIEC] = N'" + Session["VUNGLAMVIEC"] + "' AND (day([SOQUYTIENMAT].[C_NGAY]) = " + cmbDay.SelectedValue + " OR " + cmbDay.SelectedValue + " = 0) AND month([SOQUYTIENMAT].[C_NGAY]) = " + cmbMonth.SelectedValue + " AND year([SOQUYTIENMAT].[C_NGAY]) = " + cmbYear.SelectedValue + " AND [SOQUYTIENMAT].[C_SOTIEN] > 0) OR ([SOQUYTIENMAT].[C_TYPE] = N'Tồn đầu kỳ')) a WHERE a.PK_ID = " + PK_ID;
+            string SelectSQLROWNUMBER = "SELECT SOCHUNGTU FROM (SELECT (ROW_NUMBER() OVER(ORDER BY [SOQUYTIENMAT].C_ORDER ASC, [SOQUYTIENMAT].C_NGAY ASC, [SOQUYTIENMAT].PK_ID ASC) + 9999) AS SOCHUNGTU, [SOQUYTIENMAT].PK_ID FROM [SOQUYTIENMAT] WHERE ([SOQUYTIENMAT].[FK_VUNGLAMVIEC] = N'" + Session["VUNGLAMVIEC"] + "' AND (day([SOQUYTIENMAT].[C_NGAY]) = " + cmbDay.SelectedValue + " OR " + cmbDay.SelectedValue + " = 0) AND month([SOQUYTIENMAT].[C_NGAY]) = " + cmbMonth.SelectedValue + " AND year([SOQUYTIENMAT].[C_NGAY]) = " + cmbYear.SelectedValue + " AND [SOQUYTIENMAT].[C_SOTIEN] > 0 AND ([SOQUYTIENMAT].[FK_KIHIEUTAIKHOAN] = " + cmbTaiKhoan.SelectedValue + " OR " + cmbTaiKhoan.SelectedValue + " = 0)) OR ([SOQUYTIENMAT].[C_TYPE] = N'Tồn đầu kỳ')) a WHERE a.PK_ID = " + PK_ID;
             DataTable oDataTableROWNUMBER = new DataTable();
             ITCLIB.Admin.SQL SelectQueryROWNUMBER = new ITCLIB.Admin.SQL();
             oDataTableROWNUMBER = SelectQueryROWNUMBER.query_data(SelectSQLROWNUMBER);
             if (oDataTableROWNUMBER.Rows.Count != 0)
             {
                 string ROWNUMBER = oDataTableROWNUMBER.Rows[0]["SOCHUNGTU"].ToString();
-                string SelectSQL = "SELECT sum(C_SOTIENFIX) as TONDAU FROM (SELECT (ROW_NUMBER() OVER(ORDER BY [SOQUYTIENMAT].C_ORDER ASC, [SOQUYTIENMAT].C_NGAY ASC, [SOQUYTIENMAT].PK_ID ASC) + 9999) AS SOCHUNGTU, (CASE WHEN C_TYPE=N'THU' THEN C_SOTIEN WHEN C_TYPE=N'CHI' THEN -C_SOTIEN ELSE (SELECT C_SOTIEN FROM SOQUYTIENMAT WHERE ([SOQUYTIENMAT].[FK_VUNGLAMVIEC] = N'Hà Nội' AND month([SOQUYTIENMAT].[C_NGAY]) = " + THANGTRUOC + " AND year([SOQUYTIENMAT].[C_NGAY]) = " + NAMTRUOC + " AND [SOQUYTIENMAT].[C_TYPE] = N'Tồn cuối kỳ')) END) AS C_SOTIENFIX FROM [SOQUYTIENMAT] WHERE ([SOQUYTIENMAT].[FK_VUNGLAMVIEC] = N'" + Session["VUNGLAMVIEC"] + "' AND (day([SOQUYTIENMAT].[C_NGAY]) = " + cmbDay.SelectedValue + " OR " + cmbDay.SelectedValue + " = 0) AND month([SOQUYTIENMAT].[C_NGAY]) = " + cmbMonth.SelectedValue + " AND year([SOQUYTIENMAT].[C_NGAY]) = " + cmbYear.SelectedValue + " AND [SOQUYTIENMAT].[C_SOTIEN] > 0) OR ([SOQUYTIENMAT].[C_TYPE] = N'Tồn đầu kỳ')) a WHERE a.SOCHUNGTU < = " + ROWNUMBER;
+                string SelectSQL = "SELECT sum(C_SOTIENFIX) as TONDAU FROM (SELECT (ROW_NUMBER() OVER(ORDER BY [SOQUYTIENMAT].C_ORDER ASC, [SOQUYTIENMAT].C_NGAY ASC, [SOQUYTIENMAT].PK_ID ASC) + 9999) AS SOCHUNGTU, (CASE WHEN C_TYPE=N'THU' THEN C_SOTIEN WHEN C_TYPE=N'CHI' THEN -C_SOTIEN ELSE (SELECT C_SOTIEN FROM SOQUYTIENMAT WHERE ([SOQUYTIENMAT].[FK_VUNGLAMVIEC] = N'Hà Nội' AND month([SOQUYTIENMAT].[C_NGAY]) = " + THANGTRUOC + " AND year([SOQUYTIENMAT].[C_NGAY]) = " + NAMTRUOC + " AND [SOQUYTIENMAT].[C_TYPE] = N'Tồn cuối kỳ')) END) AS C_SOTIENFIX FROM [SOQUYTIENMAT] WHERE ([SOQUYTIENMAT].[FK_VUNGLAMVIEC] = N'" + Session["VUNGLAMVIEC"] + "' AND (day([SOQUYTIENMAT].[C_NGAY]) = " + cmbDay.SelectedValue + " OR " + cmbDay.SelectedValue + " = 0) AND month([SOQUYTIENMAT].[C_NGAY]) = " + cmbMonth.SelectedValue + " AND year([SOQUYTIENMAT].[C_NGAY]) = " + cmbYear.SelectedValue + " AND [SOQUYTIENMAT].[C_SOTIEN] > 0 AND ([SOQUYTIENMAT].[FK_KIHIEUTAIKHOAN] = " + cmbTaiKhoan.SelectedValue + " OR " + cmbTaiKhoan.SelectedValue + " = 0)) OR ([SOQUYTIENMAT].[C_TYPE] = N'Tồn đầu kỳ')) a WHERE a.SOCHUNGTU < = " + ROWNUMBER;
                 DataTable oDataTable = new DataTable();
                 ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
                 oDataTable = SelectQuery.query_data(SelectSQL);

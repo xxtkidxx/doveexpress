@@ -47,6 +47,10 @@
             $find("<%=RadGridSOQUYTIENMATV3.ClientID %>").get_masterTableView().rebind();
             return false;
         }
+        function cmbTaiKhoanClientSelectedIndexChangedHandler(sender, eventArgs) {
+            $find("<%=RadGridSOQUYTIENMATV3.ClientID %>").get_masterTableView().rebind();
+            return false;
+        }
     </script>
     <div style="width: 100%; margin: 10px 10px 10px 10px;">
         Chọn ngày:&nbsp;
@@ -109,6 +113,13 @@
         <telerik:RadComboBox ID="cmbYear" runat="server" OnClientSelectedIndexChanged="cmbYearClientSelectedIndexChangedHandler"
             ShowToggleImage="True" EmptyMessage="Chọn năm" OnPreRender="cmbYear_PreRender">
             <Items>
+            </Items>
+        </telerik:RadComboBox>
+        Ký hiệu tài khoản:&nbsp;
+        <telerik:RadComboBox ID="cmbTaiKhoan" runat="server" OnClientSelectedIndexChanged="cmbTaiKhoanClientSelectedIndexChangedHandler"
+            ShowToggleImage="True" EmptyMessage="Chọn tài khoản" OnPreRender="cmbTaiKhoan_PreRender" AppendDataBoundItems="True" DataSourceID="KIHIEUTAIKHOANDataSource" DataValueField="C_CODE" DataTextField="C_NAMEFIX">
+            <Items>
+                <telerik:RadComboBoxItem Value="0" Text="Tất cả" />
             </Items>
         </telerik:RadComboBox>
     </div>
@@ -379,12 +390,13 @@
 </telerik:RadAjaxPanel>
 <asp:SqlDataSource ID="SOQUYTIENMATV3DataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
     DeleteCommand="DELETE FROM [SOQUYTIENMAT] WHERE [PK_ID] = @PK_ID" InsertCommand="INSERT INTO [SOQUYTIENMAT] ([C_NGAY], [C_TYPE], [FK_KIHIEUTAIKHOAN], [C_DESC], [C_SOTIEN], [C_TON],[C_ORDER],[FK_VUNGLAMVIEC]) VALUES (@C_NGAY, @C_TYPE, @FK_KIHIEUTAIKHOAN, @C_DESC, @C_SOTIEN, 0, @C_ORDER,@FK_VUNGLAMVIEC)"
-    SelectCommand="SELECT (ROW_NUMBER() OVER(ORDER BY [SOQUYTIENMAT].C_ORDER ASC, [SOQUYTIENMAT].C_NGAY ASC, [SOQUYTIENMAT].PK_ID ASC) + 9999) AS SOCHUNGTU,[SOQUYTIENMAT].[PK_ID], [SOQUYTIENMAT].[C_NGAY], [SOQUYTIENMAT].[C_TYPE], [SOQUYTIENMAT].[FK_KIHIEUTAIKHOAN], [SOQUYTIENMAT].[C_DESC], [SOQUYTIENMAT].[C_SOTIEN], [SOQUYTIENMAT].[C_TON], [SOQUYTIENMAT].[C_ORDER],DMKIHIEUTAIKHOAN.C_NAME as KIHIEUTAIKHOANNAME FROM [SOQUYTIENMAT] LEFT OUTER JOIN DMKIHIEUTAIKHOAN ON SOQUYTIENMAT.FK_KIHIEUTAIKHOAN=DMKIHIEUTAIKHOAN.C_CODE  WHERE ([SOQUYTIENMAT].[FK_VUNGLAMVIEC] = @FK_VUNGLAMVIEC AND (day([SOQUYTIENMAT].[C_NGAY]) = @DAY OR @DAY = 0) AND month([SOQUYTIENMAT].[C_NGAY]) = @MONTH AND year([SOQUYTIENMAT].[C_NGAY]) = @YEAR AND [SOQUYTIENMAT].[C_SOTIEN] > 0) OR ([SOQUYTIENMAT].[C_TYPE] = N'Tồn đầu kỳ') "
+    SelectCommand="SELECT (ROW_NUMBER() OVER(ORDER BY [SOQUYTIENMAT].C_ORDER ASC, [SOQUYTIENMAT].C_NGAY ASC, [SOQUYTIENMAT].PK_ID ASC) + 9999) AS SOCHUNGTU,[SOQUYTIENMAT].[PK_ID], [SOQUYTIENMAT].[C_NGAY], [SOQUYTIENMAT].[C_TYPE], [SOQUYTIENMAT].[FK_KIHIEUTAIKHOAN], [SOQUYTIENMAT].[C_DESC], [SOQUYTIENMAT].[C_SOTIEN], [SOQUYTIENMAT].[C_TON], [SOQUYTIENMAT].[C_ORDER],DMKIHIEUTAIKHOAN.C_NAME as KIHIEUTAIKHOANNAME FROM [SOQUYTIENMAT] LEFT OUTER JOIN DMKIHIEUTAIKHOAN ON SOQUYTIENMAT.FK_KIHIEUTAIKHOAN=DMKIHIEUTAIKHOAN.C_CODE  WHERE ([SOQUYTIENMAT].[FK_VUNGLAMVIEC] = @FK_VUNGLAMVIEC AND (day([SOQUYTIENMAT].[C_NGAY]) = @DAY OR @DAY = 0) AND month([SOQUYTIENMAT].[C_NGAY]) = @MONTH AND year([SOQUYTIENMAT].[C_NGAY]) = @YEAR AND [SOQUYTIENMAT].[C_SOTIEN] > 0 AND ([SOQUYTIENMAT].[FK_KIHIEUTAIKHOAN] = @FK_KIHIEUTAIKHOAN OR @FK_KIHIEUTAIKHOAN = 0)) OR ([SOQUYTIENMAT].[C_TYPE] = N'Tồn đầu kỳ') "
     UpdateCommand="UPDATE [SOQUYTIENMAT] SET [C_NGAY] = @C_NGAY, [C_TYPE] = @C_TYPE, [FK_KIHIEUTAIKHOAN] = @FK_KIHIEUTAIKHOAN,[C_DESC] = @C_DESC, [C_SOTIEN] = @C_SOTIEN WHERE [PK_ID] = @PK_ID">
     <SelectParameters>
         <asp:ControlParameter ControlID="cmbDay" Name="DAY" PropertyName="SelectedValue" />
         <asp:ControlParameter ControlID="cmbMonth" Name="MONTH" PropertyName="SelectedValue" />
         <asp:ControlParameter ControlID="cmbYear" Name="YEAR" PropertyName="SelectedValue" />
+        <asp:ControlParameter ControlID="cmbTaiKhoan" Name="FK_KIHIEUTAIKHOAN" PropertyName="SelectedValue" />
         <asp:SessionParameter Name="FK_VUNGLAMVIEC" Type="String" SessionField="VUNGLAMVIEC" />
     </SelectParameters>
     <DeleteParameters>
@@ -408,4 +420,4 @@
     </UpdateParameters>
 </asp:SqlDataSource>
 <asp:SqlDataSource ID="KIHIEUTAIKHOANDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
-    SelectCommand="SELECT DMKIHIEUTAIKHOAN.* FROM DMKIHIEUTAIKHOAN"></asp:SqlDataSource>
+    SelectCommand="SELECT DMKIHIEUTAIKHOAN.C_CODE,DMKIHIEUTAIKHOAN.C_NAME, (DMKIHIEUTAIKHOAN.C_CODE + '-' + DMKIHIEUTAIKHOAN.C_NAME) as C_NAMEFIX  FROM DMKIHIEUTAIKHOAN"></asp:SqlDataSource>
