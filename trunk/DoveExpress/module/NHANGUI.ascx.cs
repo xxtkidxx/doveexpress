@@ -267,6 +267,10 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
                 if (oDataTable1.Rows.Count != 0)
                 {
                     FK_MABANGCUOC = oDataTable1.Rows[0]["PK_ID"].ToString();
+                    if (FK_DICHVU != "")
+                    {
+                        LoadPPXD(FK_DICHVU, FK_MABANGCUOC);
+                    }
                 }
                 else
                 {
@@ -308,21 +312,9 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
         else if ((arrayvalue[0] == "cmbSanPham") && (FK_DICHVU != arrayvalue[1]))
         {
             FK_DICHVU = arrayvalue[1];
-            string SelectSQL1;
-            SelectSQL1 = "Select DMDICHVUPHUTROI.C_VALUE FROM DMDICHVUPHUTROI WHERE DMDICHVUPHUTROI.FK_MASANPHAM =" + FK_DICHVU + " AND DMDICHVUPHUTROI.FK_MABANGCUOC = " + FK_MABANGCUOC + " AND C_TYPE = N'PPXD'";
-            DataTable oDataTable1 = new DataTable();
-            ITCLIB.Admin.SQL SelectQuery1 = new ITCLIB.Admin.SQL();
-            oDataTable1 = SelectQuery1.query_data(SelectSQL1);
-            if (oDataTable1.Rows.Count != 0)
+            if (FK_MABANGCUOC != "")
             {
-                if (oDataTable1.Rows[0]["C_VALUE"] != DBNull.Value)
-                {
-                    PPXD = decimal.Parse(oDataTable1.Rows[0]["C_VALUE"].ToString());
-                }
-                else
-                {
-                    PPXD = 0;
-                }
+                LoadPPXD(FK_DICHVU, FK_MABANGCUOC);
             }
             if (FK_QUANHUYEN != "")
             {
@@ -375,6 +367,25 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
         {
             string script = string.Format("var result = '{0}'", FK_KHACHHANG + ",-," + TENKH + ",-," + DIENTHOAIKH + ",-," + PPXD + ",-," + CUOCCHINH + ",-," + GIADOITAC + ",-," + FK_MABANGCUOC + ",-," + FK_MAVUNG);
             ScriptManager.RegisterClientScriptBlock(Page, typeof(Page), "result", script, true);
+        }
+    }
+    protected void LoadPPXD(string FKDICHVU, string FKMABANGCUOC)
+    {
+        string SelectSQL1;
+        SelectSQL1 = "Select DMDICHVUPHUTROI.C_VALUE FROM DMDICHVUPHUTROI WHERE DMDICHVUPHUTROI.FK_MASANPHAM =" + FKDICHVU + " AND DMDICHVUPHUTROI.FK_MABANGCUOC = " + FKMABANGCUOC + " AND C_TYPE = N'PPXD'";
+        DataTable oDataTable1 = new DataTable();
+        ITCLIB.Admin.SQL SelectQuery1 = new ITCLIB.Admin.SQL();
+        oDataTable1 = SelectQuery1.query_data(SelectSQL1);
+        if (oDataTable1.Rows.Count != 0)
+        {
+            if (oDataTable1.Rows[0]["C_VALUE"] != DBNull.Value)
+            {
+                PPXD = decimal.Parse(oDataTable1.Rows[0]["C_VALUE"].ToString());
+            }
+            else
+            {
+                PPXD = 0;
+            }
         }
     }
     protected void btnShowAll_Click(object sender, System.Web.UI.ImageClickEventArgs e)
@@ -538,6 +549,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
             RadNumericTextBox txtC_CONLAI = (RadNumericTextBox)editItem.FindControl("txtC_CONLAI");
             txtC_CONLAI.Text = (txtC_CONLAI.Text == "") ? "0" : txtC_CONLAI.Text;
             RadComboBox cmbFK_DOITAC = (RadComboBox)editItem.FindControl("cmbFK_DOITAC");
+            RadComboBox cmbFK_USERADD = (RadComboBox)editItem.FindControl("cmbFK_USERADD");
             RadNumericTextBox txtC_GIADOITAC = (RadNumericTextBox)editItem.FindControl("txtC_GIADOITAC");
             txtC_GIADOITAC.Text = (txtC_GIADOITAC.Text == "") ? "0" : txtC_GIADOITAC.Text;
             if (e.Item is GridEditFormInsertItem || e.Item is GridDataInsertItem)
@@ -546,6 +558,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
                 radNgaynhangui.SelectedDate = System.DateTime.Now;
                 radC_NGAYGIONHAN.SelectedDate = System.DateTime.Now.Date;
                 txtCODE.Text = GetMaxBill();
+                cmbFK_USERADD.SelectedValue = Session["UserID"].ToString();
                 if (Session["SaveAddNew"] == "True")
                 {                    
                     if (Session["MAXID"].ToString() != "")
@@ -783,14 +796,10 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
         else if (e.CommandName == RadGrid.PerformInsertCommandName)
         {
             GridEditableItem editItem = (GridEditableItem)e.Item;
-            CheckBox chkFK_TRANGTHAI = (CheckBox)editItem.FindControl("chkFK_TRANGTHAI");
-            NHANGUIDataSource.InsertParameters["FK_TRANGTHAI"].DefaultValue = chkFK_TRANGTHAI.Checked.ToString();
+            NHANGUIDataSource.InsertParameters["FK_TRANGTHAI"].DefaultValue = "False";
         }
         else if (e.CommandName == RadGrid.UpdateCommandName)
         {
-            GridEditableItem editItem = (GridEditableItem)e.Item;
-            CheckBox chkFK_TRANGTHAI = (CheckBox)editItem.FindControl("chkFK_TRANGTHAI");
-            NHANGUIDataSource.UpdateParameters["FK_TRANGTHAI"].DefaultValue = chkFK_TRANGTHAI.Checked.ToString();
         }
         else if (e.CommandName == RadGrid.CancelAllCommandName)
         {
