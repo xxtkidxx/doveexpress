@@ -12,6 +12,7 @@ using System.Collections;
 
 public partial class module_NHANGUIQT : System.Web.UI.UserControl
 {
+    #region Biến toàn cục
     private string FK_NHOMKHACHHANGQT
     {
         get
@@ -287,6 +288,7 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
             Session["isTAILIEU"] = value;
         }
     }
+    #endregion
     string Alarm = "";
     bool isCuocchinh = false;
     bool isCuocdoitac = false;
@@ -1028,6 +1030,25 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
             }
             SetMessage("Cập nhật tình trạng thanh toán thành công");
             RadGridNHANGUIQT.Rebind();
+        }
+        else if (e.CommandName == "ClearFilterGrid")
+        {
+            RadGridNHANGUIQT.MasterTableView.FilterExpression = string.Empty;
+
+            foreach (GridColumn column in RadGridNHANGUIQT.MasterTableView.RenderColumns)
+            {
+                if (column is GridBoundColumn)
+                {
+                    GridBoundColumn boundColumn = column as GridBoundColumn;
+                    boundColumn.CurrentFilterValue = string.Empty;
+                }
+                if (column is GridTemplateColumn)
+                {
+                    GridTemplateColumn boundColumn = column as GridTemplateColumn;
+                    boundColumn.CurrentFilterValue = string.Empty;
+                }
+            }
+            RadGridNHANGUIQT.MasterTableView.Rebind();
         }
     }
     protected string getmaxid(string table)
