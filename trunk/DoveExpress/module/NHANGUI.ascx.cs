@@ -863,6 +863,25 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
             SetMessage("Cập nhật tình trạng thanh toán thành công");
             RadGridNHANGUI.Rebind();
         }
+        else if (e.CommandName == "ClearFilterGrid")
+        {
+            RadGridNHANGUI.MasterTableView.FilterExpression = string.Empty;
+
+            foreach (GridColumn column in RadGridNHANGUI.MasterTableView.RenderColumns)
+            {
+                if (column is GridBoundColumn)
+                {
+                    GridBoundColumn boundColumn = column as GridBoundColumn;
+                    boundColumn.CurrentFilterValue = string.Empty;
+                }
+                if (column is GridTemplateColumn)
+                {
+                    GridTemplateColumn boundColumn = column as GridTemplateColumn;
+                    boundColumn.CurrentFilterValue = string.Empty;
+                }
+            }
+            RadGridNHANGUI.MasterTableView.Rebind();
+        }
     }
     protected string getmaxid(string table)
     {

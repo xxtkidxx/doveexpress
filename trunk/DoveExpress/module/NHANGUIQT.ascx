@@ -598,6 +598,7 @@
                     CommandName="ConfirmPayment"><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/img_OpenPanel.gif" />Xác nhận đã thanh toán</asp:LinkButton>&nbsp;&nbsp;
                 <asp:LinkButton ID="LinkButton6" runat="server" OnClientClick="javascript:return confirm('Bạn có muốn xác nhận các Bill này chưa thanh toán không?')"
                     CommandName="ConfirmUnPayment"><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/img_OpenPanel.gif" />Xác nhận chưa thanh toán</asp:LinkButton>&nbsp;&nbsp;
+                <asp:LinkButton ID="LinkButton11" runat="server" CommandName="ClearFilterGrid"><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/filterCancel.gif" />Xóa tìm kiếm</asp:LinkButton>&nbsp;&nbsp;
                 <asp:LinkButton ID="LinkButton4" runat="server" CommandName="RebindGrid"><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Refresh.gif" />Làm mới</asp:LinkButton>
             </div>
             <div style="padding: 5px 5px; float: right; width: auto">
@@ -615,7 +616,7 @@
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false"
                 FilterControlWidth="100%">
             </telerik:GridBoundColumn>
-            <telerik:GridTemplateColumn HeaderText="" ShowFilterIcon="false">
+            <telerik:GridTemplateColumn HeaderText="" ShowFilterIcon="false" Visible="false">
                 <FilterTemplate>
                     <center>
                         <asp:ImageButton ID="btnShowAll" runat="server" ImageUrl="../Images/Grid/filterCancel.gif"
@@ -654,7 +655,7 @@
             </telerik:GridBoundColumn>
             <telerik:GridBoundColumn UniqueName="C_NOIDUNG" HeaderText="Nội dung" DataField="C_NOIDUNG"
                 HeaderStyle-Width="130px" HeaderStyle-HorizontalAlign="Center" AutoPostBackOnFilter="true"
-                CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
+                CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%" Visible="false">
             </telerik:GridBoundColumn>
             <telerik:GridBoundColumn UniqueName="C_KHOILUONG" HeaderText="Khối lượng" DataField="C_KHOILUONG"
                 HeaderStyle-Width="80px" HeaderStyle-HorizontalAlign="Center" AutoPostBackOnFilter="true"
@@ -663,7 +664,7 @@
             <telerik:GridBoundColumn UniqueName="C_GIACUOC" HeaderText="Cước chính" DataField="C_GIACUOC"
                 HeaderStyle-Width="100px" HeaderStyle-HorizontalAlign="Center" AutoPostBackOnFilter="true"
                 CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%"
-                DataType="System.Decimal" DataFormatString="{0:### ###.## USD}">
+                DataType="System.Decimal" DataFormatString="{0:### ###.## USD}" Visible="false">
             </telerik:GridBoundColumn>
             <telerik:GridBoundColumn UniqueName="C_TIENHANGVAT" HeaderText="Tổng cước (VAT)"
                 DataField="C_TIENHANGVAT" HeaderStyle-Width="130px" HeaderStyle-HorizontalAlign="Center"
@@ -678,7 +679,7 @@
             <telerik:GridBoundColumn UniqueName="C_CONLAI" HeaderText="Còn lại" DataField="C_CONLAI"
                 HeaderStyle-Width="130px" HeaderStyle-HorizontalAlign="Center" AutoPostBackOnFilter="true"
                 CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%"
-                DataType="System.Decimal" DataFormatString="{0:### ### ### VNĐ}">
+                DataType="System.Decimal" DataFormatString="{0:### ### ### VNĐ}" Visible="false">
             </telerik:GridBoundColumn>
         </Columns>
         <EditFormSettings InsertCaption="Thêm nhận gửi mới" CaptionFormatString="Sửa nhận gửi: <b>{0}</b>"
