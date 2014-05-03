@@ -153,6 +153,16 @@
                 <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=BAOCAODOITAC"
                     Text="Doanh thu theo đối tác" Value="BAOCAODOITAC">
                 </telerik:RadMenuItem>
+                <telerik:RadMenuItem runat="server" Font-Size="Small" Text="Báo cáo giao nhận" Value="BAOCAOGIAONHANMENU">
+                    <Items>
+                        <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=BAOCAONHANHANG"
+                            Text="Báo cáo nhận hàng" Value="BAOCAONHANHANG">
+                        </telerik:RadMenuItem>
+                        <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=BAOCAOPHATHANG"
+                            Text="Báo cáo phát hàng" Value="BAOCAOPHATHANG">
+                        </telerik:RadMenuItem>
+                    </Items>
+                </telerik:RadMenuItem>
                 <telerik:RadMenuItem runat="server" Font-Size="Small" Text="Báo cáo tổng hợp" Value="BAOCAOTONGHOPMENU">
                     <Items>
                         <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=BAOCAOTONGHOP"
