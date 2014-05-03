@@ -667,11 +667,13 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
             txtC_LOINHUANVND.Text = (txtC_LOINHUANVND.Text == "") ? "0" : txtC_LOINHUANVND.Text;
             RadComboBox cmbFK_DOITAC = (RadComboBox)editItem.FindControl("cmbFK_DOITAC");
             RadComboBox cmbFK_DICHVUDOITAC = (RadComboBox)editItem.FindControl("cmbFK_DICHVUDOITAC");
+            RadComboBox cmbFK_USERADD = (RadComboBox)editItem.FindControl("cmbFK_USERADD");
             if (e.Item is GridEditFormInsertItem || e.Item is GridDataInsertItem)
             {
                 // insert item
                 radNgaynhangui.SelectedDate = System.DateTime.Now;
                 radC_NGAYGIONHAN.SelectedDate = System.DateTime.Now.Date;
+                cmbFK_USERADD.SelectedValue = Session["UserID"].ToString();
                 cmbC_TAILIEU.SelectedIndex = 1;
                 txtCODE.Text = GetMaxBill();
                 txtC_TYGIA.Text = GetTyGia();
