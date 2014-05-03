@@ -179,13 +179,13 @@
     function OnClientLoadtxtC_KHAIGIA(sender) {
         txtC_KHAIGIA = sender;
     }
-    var txtC_COD;
-    function OnClientLoadtxtC_COD(sender) {
-        txtC_COD = sender;
+    var txtC_HUNTRUNG;
+    function OnClientLoadtxtC_HUNTRUNG(sender) {
+        txtC_HUNTRUNG = sender;
     }
-    var txtC_BAOPHAT;
-    function OnClientLoadtxtC_BAOPHAT(sender) {
-        txtC_BAOPHAT = sender;
+    var txtC_HAIQUAN;
+    function OnClientLoadtxtC_HAIQUAN(sender) {
+        txtC_HAIQUAN = sender;
     }
     var txtC_HENGIO;
     function OnClientLoadtxtC_HENGIO(sender) {
@@ -229,63 +229,63 @@
     function OnValueChangedtxtC_GIACUOC(sender, eventArgs) {
         txtPPXD.set_value(txtC_GIACUOC.get_value() * parseFloat(PPXD)/100);
         if (!flag) {
-            txtC_TIENHANG.set_value(txtC_GIACUOC.get_value() + txtPPXD.get_value() + txtC_BAOPHAT.get_value() + txtC_HENGIO.get_value() + txtC_COD.get_value() + txtC_KHAIGIA.get_value() + txtC_DONGGOI.get_value());
+            txtC_TIENHANG.set_value(txtC_GIACUOC.get_value() + txtPPXD.get_value() + txtC_HAIQUAN.get_value() + txtC_HENGIO.get_value() + txtC_HUNTRUNG.get_value() + txtC_KHAIGIA.get_value() + txtC_DONGGOI.get_value());
         }
         return false;
     }
     function OnValueChangedtxtPPXD(sender, eventArgs) {
         if (!flag) {
-            txtC_TIENHANG.set_value(txtC_GIACUOC.get_value() + txtPPXD.get_value() + txtC_BAOPHAT.get_value()  + txtC_HENGIO.get_value() + txtC_COD.get_value() + txtC_KHAIGIA.get_value() + txtC_DONGGOI.get_value());
+            txtC_TIENHANG.set_value(txtC_GIACUOC.get_value() + txtPPXD.get_value() + txtC_HAIQUAN.get_value()  + txtC_HENGIO.get_value() + txtC_HUNTRUNG.get_value() + txtC_KHAIGIA.get_value() + txtC_DONGGOI.get_value());
         }
         return false;
     }
     function OnValueChangedtxtC_DONGGOI(sender, eventArgs) {
         if (flag) {
-           txtC_GIACUOC.set_value(((txtC_TIENHANG.get_value() - txtC_BAOPHAT.get_value() - txtC_HENGIO.get_value() - txtC_COD.get_value() - txtC_KHAIGIA.get_value() - txtC_DONGGOI.get_value())/(100 + parseFloat(PPXD)))*100);
-           txtPPXD.set_value(((txtC_TIENHANG.get_value() - txtC_BAOPHAT.get_value() - txtC_HENGIO.get_value() - txtC_COD.get_value() - txtC_KHAIGIA.get_value() - txtC_DONGGOI.get_value())/(100 + parseFloat(PPXD)))*parseFloat(PPXD));
+           txtC_GIACUOC.set_value(((txtC_TIENHANG.get_value() - txtC_HAIQUAN.get_value() - txtC_HENGIO.get_value() - txtC_HUNTRUNG.get_value() - txtC_KHAIGIA.get_value() - txtC_DONGGOI.get_value())/(100 + parseFloat(PPXD)))*100);
+           txtPPXD.set_value(((txtC_TIENHANG.get_value() - txtC_HAIQUAN.get_value() - txtC_HENGIO.get_value() - txtC_HUNTRUNG.get_value() - txtC_KHAIGIA.get_value() - txtC_DONGGOI.get_value())/(100 + parseFloat(PPXD)))*parseFloat(PPXD));
         }
         else {
-            txtC_TIENHANG.set_value(txtC_GIACUOC.get_value() + txtPPXD.get_value() + txtC_BAOPHAT.get_value() + txtC_HENGIO.get_value()  + txtC_COD.get_value() + txtC_KHAIGIA.get_value() + txtC_DONGGOI.get_value());
+            txtC_TIENHANG.set_value(txtC_GIACUOC.get_value() + txtPPXD.get_value() + txtC_HAIQUAN.get_value() + txtC_HENGIO.get_value()  + txtC_HUNTRUNG.get_value() + txtC_KHAIGIA.get_value() + txtC_DONGGOI.get_value());
         }        
         return false;
     }
     function OnValueChangedtxtC_KHAIGIA(sender, eventArgs) {
        if (flag) {
-           txtC_GIACUOC.set_value(((txtC_TIENHANG.get_value() - txtC_BAOPHAT.get_value() - txtC_HENGIO.get_value()  - txtC_COD.get_value() - txtC_KHAIGIA.get_value() - txtC_DONGGOI.get_value())/(100 + parseFloat(PPXD)))*100);
-           txtPPXD.set_value(((txtC_TIENHANG.get_value() - txtC_BAOPHAT.get_value() - txtC_HENGIO.get_value()  - txtC_COD.get_value() - txtC_KHAIGIA.get_value() - txtC_DONGGOI.get_value())/(100 + parseFloat(PPXD)))*parseFloat(PPXD));
+           txtC_GIACUOC.set_value(((txtC_TIENHANG.get_value() - txtC_HAIQUAN.get_value() - txtC_HENGIO.get_value()  - txtC_HUNTRUNG.get_value() - txtC_KHAIGIA.get_value() - txtC_DONGGOI.get_value())/(100 + parseFloat(PPXD)))*100);
+           txtPPXD.set_value(((txtC_TIENHANG.get_value() - txtC_HAIQUAN.get_value() - txtC_HENGIO.get_value()  - txtC_HUNTRUNG.get_value() - txtC_KHAIGIA.get_value() - txtC_DONGGOI.get_value())/(100 + parseFloat(PPXD)))*parseFloat(PPXD));
         }
         else {
-            txtC_TIENHANG.set_value(txtC_GIACUOC.get_value() + txtPPXD.get_value() + txtC_BAOPHAT.get_value() + txtC_HENGIO.get_value()  + txtC_COD.get_value() + txtC_KHAIGIA.get_value() + txtC_DONGGOI.get_value());
+            txtC_TIENHANG.set_value(txtC_GIACUOC.get_value() + txtPPXD.get_value() + txtC_HAIQUAN.get_value() + txtC_HENGIO.get_value()  + txtC_HUNTRUNG.get_value() + txtC_KHAIGIA.get_value() + txtC_DONGGOI.get_value());
         }        
         return false;
     }
-    function OnValueChangedtxtC_COD(sender, eventArgs) {
+    function OnValueChangedtxtC_HUNTRUNG(sender, eventArgs) {
         if (flag) {
-           txtC_GIACUOC.set_value(((txtC_TIENHANG.get_value() - txtC_BAOPHAT.get_value() - txtC_HENGIO.get_value()  - txtC_COD.get_value() - txtC_KHAIGIA.get_value() - txtC_DONGGOI.get_value())/(100 + parseFloat(PPXD)))*100);
-           txtPPXD.set_value(((txtC_TIENHANG.get_value() - txtC_BAOPHAT.get_value() - txtC_HENGIO.get_value()  - txtC_COD.get_value() - txtC_KHAIGIA.get_value() - txtC_DONGGOI.get_value())/(100 + parseFloat(PPXD)))*parseFloat(PPXD));
+           txtC_GIACUOC.set_value(((txtC_TIENHANG.get_value() - txtC_HAIQUAN.get_value() - txtC_HENGIO.get_value()  - txtC_HUNTRUNG.get_value() - txtC_KHAIGIA.get_value() - txtC_DONGGOI.get_value())/(100 + parseFloat(PPXD)))*100);
+           txtPPXD.set_value(((txtC_TIENHANG.get_value() - txtC_HAIQUAN.get_value() - txtC_HENGIO.get_value()  - txtC_HUNTRUNG.get_value() - txtC_KHAIGIA.get_value() - txtC_DONGGOI.get_value())/(100 + parseFloat(PPXD)))*parseFloat(PPXD));
         }
         else {
-            txtC_TIENHANG.set_value(txtC_GIACUOC.get_value() + txtPPXD.get_value() + txtC_BAOPHAT.get_value() + txtC_HENGIO.get_value() + txtC_COD.get_value() + txtC_KHAIGIA.get_value() + txtC_DONGGOI.get_value());
+            txtC_TIENHANG.set_value(txtC_GIACUOC.get_value() + txtPPXD.get_value() + txtC_HAIQUAN.get_value() + txtC_HENGIO.get_value() + txtC_HUNTRUNG.get_value() + txtC_KHAIGIA.get_value() + txtC_DONGGOI.get_value());
         }        
         return false;
     }
-    function OnValueChangedtxtC_BAOPHAT(sender, eventArgs) {
+    function OnValueChangedtxtC_HAIQUAN(sender, eventArgs) {
         if (flag) {
-           txtC_GIACUOC.set_value(((txtC_TIENHANG.get_value() - txtC_BAOPHAT.get_value() - txtC_COD.get_value() - txtC_KHAIGIA.get_value() - txtC_DONGGOI.get_value())/(100 + parseFloat(PPXD)))*100);
-           txtPPXD.set_value(((txtC_TIENHANG.get_value() - txtC_BAOPHAT.get_value() - txtC_COD.get_value() - txtC_KHAIGIA.get_value() - txtC_DONGGOI.get_value())/(100 + parseFloat(PPXD)))*parseFloat(PPXD));
+           txtC_GIACUOC.set_value(((txtC_TIENHANG.get_value() - txtC_HAIQUAN.get_value() - txtC_HUNTRUNG.get_value() - txtC_KHAIGIA.get_value() - txtC_DONGGOI.get_value())/(100 + parseFloat(PPXD)))*100);
+           txtPPXD.set_value(((txtC_TIENHANG.get_value() - txtC_HAIQUAN.get_value() - txtC_HUNTRUNG.get_value() - txtC_KHAIGIA.get_value() - txtC_DONGGOI.get_value())/(100 + parseFloat(PPXD)))*parseFloat(PPXD));
         }
         else {
-            txtC_TIENHANG.set_value(txtC_GIACUOC.get_value() + txtPPXD.get_value() + txtC_BAOPHAT.get_value() + txtC_COD.get_value() + txtC_KHAIGIA.get_value() + txtC_DONGGOI.get_value());
+            txtC_TIENHANG.set_value(txtC_GIACUOC.get_value() + txtPPXD.get_value() + txtC_HAIQUAN.get_value() + txtC_HUNTRUNG.get_value() + txtC_KHAIGIA.get_value() + txtC_DONGGOI.get_value());
         }        
         return false;
     }
     function OnValueChangedtxtC_HENGIO(sender, eventArgs) {
         if (flag) {
-           txtC_GIACUOC.set_value(((txtC_TIENHANG.get_value() - txtC_BAOPHAT.get_value() - txtC_HENGIO.get_value() - txtC_COD.get_value() - txtC_KHAIGIA.get_value() - txtC_DONGGOI.get_value())/(100 + parseFloat(PPXD)))*100);
-           txtPPXD.set_value(((txtC_TIENHANG.get_value() - txtC_BAOPHAT.get_value() - txtC_HENGIO.get_value() - txtC_COD.get_value() - txtC_KHAIGIA.get_value() - txtC_DONGGOI.get_value())/(100 + parseFloat(PPXD)))*parseFloat(PPXD));
+           txtC_GIACUOC.set_value(((txtC_TIENHANG.get_value() - txtC_HAIQUAN.get_value() - txtC_HENGIO.get_value() - txtC_HUNTRUNG.get_value() - txtC_KHAIGIA.get_value() - txtC_DONGGOI.get_value())/(100 + parseFloat(PPXD)))*100);
+           txtPPXD.set_value(((txtC_TIENHANG.get_value() - txtC_HAIQUAN.get_value() - txtC_HENGIO.get_value() - txtC_HUNTRUNG.get_value() - txtC_KHAIGIA.get_value() - txtC_DONGGOI.get_value())/(100 + parseFloat(PPXD)))*parseFloat(PPXD));
         }
         else {
-            txtC_TIENHANG.set_value(txtC_GIACUOC.get_value() + txtPPXD.get_value() + txtC_BAOPHAT.get_value() + txtC_HENGIO.get_value() + txtC_COD.get_value() + txtC_KHAIGIA.get_value() + txtC_DONGGOI.get_value());
+            txtC_TIENHANG.set_value(txtC_GIACUOC.get_value() + txtPPXD.get_value() + txtC_HAIQUAN.get_value() + txtC_HENGIO.get_value() + txtC_HUNTRUNG.get_value() + txtC_KHAIGIA.get_value() + txtC_DONGGOI.get_value());
         }        
         return false;
     }     
@@ -304,8 +304,8 @@
         txtC_CONLAI.set_value(txtC_TIENHANGVATVND.get_value() - txtC_DATHU.get_value());
         if (flag) {
          txtC_TIENHANG.set_value((txtC_TIENHANGVAT.get_value()/110)*100);
-         txtC_GIACUOC.set_value(((txtC_TIENHANG.get_value() - txtC_BAOPHAT.get_value() - txtC_HENGIO.get_value() - txtC_COD.get_value() - txtC_KHAIGIA.get_value() - txtC_DONGGOI.get_value())/(100 + parseFloat(PPXD)))*100);
-         txtPPXD.set_value(((txtC_TIENHANG.get_value() - txtC_BAOPHAT.get_value() - txtC_HENGIO.get_value() - txtC_COD.get_value() - txtC_KHAIGIA.get_value() - txtC_DONGGOI.get_value())/(100 + parseFloat(PPXD)))*parseFloat(PPXD));
+         txtC_GIACUOC.set_value(((txtC_TIENHANG.get_value() - txtC_HAIQUAN.get_value() - txtC_HENGIO.get_value() - txtC_HUNTRUNG.get_value() - txtC_KHAIGIA.get_value() - txtC_DONGGOI.get_value())/(100 + parseFloat(PPXD)))*100);
+         txtPPXD.set_value(((txtC_TIENHANG.get_value() - txtC_HAIQUAN.get_value() - txtC_HENGIO.get_value() - txtC_HUNTRUNG.get_value() - txtC_KHAIGIA.get_value() - txtC_DONGGOI.get_value())/(100 + parseFloat(PPXD)))*parseFloat(PPXD));
         }
         return false;
     }
@@ -335,14 +335,14 @@
         return false;
     }
     var isCOD = false;
-    function SetC_COD() {
+    function SetC_HUNTRUNG() {
         isCOD = !isCOD;
         if (isCOD) {          
-           //txtC_COD.set_value(0);
+           //txtC_HUNTRUNG.set_value(0);
         }
         else 
         {
-            txtC_COD.set_value(0);            
+            txtC_HUNTRUNG.set_value(0);            
         }      
     }
     var isKHAIGIA = false;
@@ -368,14 +368,14 @@
         }    
     }
     var isBAOPHAT = false;
-    function SetC_BAOPHAT() {
+    function SetC_HAIQUAN() {
         isBAOPHAT = !isBAOPHAT;
         if (isBAOPHAT) {          
-           //txtC_BAOPHAT.set_value(0); 
+           //txtC_HAIQUAN.set_value(0); 
         }
         else 
         {
-            txtC_BAOPHAT.set_value(0);            
+            txtC_HAIQUAN.set_value(0);            
         }    
     }
     var isDONGGOI = false;
@@ -399,8 +399,8 @@
         }
         if (flag) {
            txtC_TIENHANG.set_value((txtC_TIENHANGVAT.get_value()/110)*100);          
-           txtC_GIACUOC.set_value(((txtC_TIENHANG.get_value() - txtC_BAOPHAT.get_value() - txtC_HENGIO.get_value() - txtC_COD.get_value() - txtC_KHAIGIA.get_value() - txtC_DONGGOI.get_value())/(100 + parseFloat(PPXD)))*100);
-           txtPPXD.set_value(((txtC_TIENHANG.get_value() - txtC_BAOPHAT.get_value() - txtC_HENGIO.get_value() - txtC_COD.get_value() - txtC_KHAIGIA.get_value() - txtC_DONGGOI.get_value())/(100 + parseFloat(PPXD)))*parseFloat(PPXD));
+           txtC_GIACUOC.set_value(((txtC_TIENHANG.get_value() - txtC_HAIQUAN.get_value() - txtC_HENGIO.get_value() - txtC_HUNTRUNG.get_value() - txtC_KHAIGIA.get_value() - txtC_DONGGOI.get_value())/(100 + parseFloat(PPXD)))*100);
+           txtPPXD.set_value(((txtC_TIENHANG.get_value() - txtC_HAIQUAN.get_value() - txtC_HENGIO.get_value() - txtC_HUNTRUNG.get_value() - txtC_KHAIGIA.get_value() - txtC_DONGGOI.get_value())/(100 + parseFloat(PPXD)))*parseFloat(PPXD));
         }
         else 
         {
@@ -951,22 +951,22 @@
                             <tr>
                                 <td style="width: 100px;">
                                     <span class="rtsTxtnew">
-                                        <input id="btnC_COD" type="checkbox" onclick="SetC_COD();" value="false" />Hun trùng:</span>
+                                        <input id="btnC_HUNTRUNG" type="checkbox" onclick="SetC_HUNTRUNG();" value="false" />Hun trùng:</span>
                                 </td>
                                 <td colspan="4">
-                                    <telerik:RadNumericTextBox ID="txtC_COD" Width="90%" runat="server" Text='<%# Bind("C_COD") %>'
-                                        ClientEvents-OnLoad="OnClientLoadtxtC_COD" ClientEvents-OnValueChanged="OnValueChangedtxtC_COD">
+                                    <telerik:RadNumericTextBox ID="txtC_HUNTRUNG" Width="90%" runat="server" Text='<%# Bind("C_HUNTRUNG") %>'
+                                        ClientEvents-OnLoad="OnClientLoadtxtC_HUNTRUNG" ClientEvents-OnValueChanged="OnValueChangedtxtC_HUNTRUNG">
                                         <NumberFormat DecimalSeparator="." GroupSeparator=" " DecimalDigits="2" />
                                     </telerik:RadNumericTextBox>
                                 </td>
                                 <td style="width: 100px;">
                                     <span class="rtsTxtnew">
-                                        <input id="btnC_BAOPHAT" type="checkbox" onclick="SetC_BAOPHAT();" value="false" />Hải
+                                        <input id="btnC_HAIQUAN" type="checkbox" onclick="SetC_HAIQUAN();" value="false" />Hải
                                     quan:
                                 </td>
                                 <td colspan="4">
-                                    <telerik:RadNumericTextBox ID="txtC_BAOPHAT" Width="90%" runat="server" Text='<%# Bind("C_BAOPHAT") %>'
-                                        ClientEvents-OnLoad="OnClientLoadtxtC_BAOPHAT" ClientEvents-OnValueChanged="OnValueChangedtxtC_BAOPHAT">
+                                    <telerik:RadNumericTextBox ID="txtC_HAIQUAN" Width="90%" runat="server" Text='<%# Bind("C_HAIQUAN") %>'
+                                        ClientEvents-OnLoad="OnClientLoadtxtC_HAIQUAN" ClientEvents-OnValueChanged="OnValueChangedtxtC_HAIQUAN">
                                         <NumberFormat DecimalSeparator="." GroupSeparator=" " DecimalDigits="2" />
                                     </telerik:RadNumericTextBox>
                                 </td>
@@ -1215,9 +1215,9 @@
 </telerik:RadGrid>
 <asp:SqlDataSource ID="NHANGUIQTDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
     DeleteCommand="DELETE FROM [NHANGUI] WHERE [C_BILL] = @C_BILL;DELETE FROM [SOQUYTIENMAT] WHERE [C_BILL] = @C_BILL;DELETE FROM [TRACKING] WHERE [C_BILL] = @C_BILL"
-    InsertCommand="INSERT INTO [NHANGUI] ([C_NGAY], [C_BILL], [FK_KHACHHANG], [C_TENKH], [C_TELGUI], [C_LIENHE], [C_POSTCODE], [C_NGUOINHAN], [C_DIACHINHAN], [C_TELNHAN], [FK_QUOCGIA], [C_NOIDUNG], [C_SOKIEN], [C_TAILIEU], [C_GIATRIHANGHOA], [FK_MASANPHAM], [C_PPXD], [C_KHOILUONGTHUC], [C_KHOILUONGQD], [C_KHOILUONG], [C_GIACUOC], [C_DONGGOI], [C_KHAIGIA], [C_COD], [C_BAOPHAT], [C_HENGIO], [C_HINHTHUCTT], [C_DATHU], [C_TIENHANG], [C_VAT], [C_TIENHANGVAT], [FK_NHANVIENNHAN], [C_NGAYGIONHAN], [FK_DOITAC], [FK_DICHVUDOITAC], [C_GIADOITAC], [C_PHUPHIDOITAC], [C_DIENGIAIDOITAC], [C_TYGIA], [FK_NHANVIENPHAT], [C_NGAYGIOPHAT], [C_NGUOIKYNHAN], [C_BOPHAN],[FK_TRANGTHAI],[C_TYPE],[FK_VUNGLAMVIEC]) VALUES (@C_NGAY, @C_BILL, @FK_KHACHHANG, @C_TENKH, @C_TELGUI, @C_LIENHE, @C_POSTCODE, @C_NGUOINHAN, @C_DIACHINHAN, @C_TELNHAN, @FK_QUOCGIA, @C_NOIDUNG, @C_SOKIEN, @C_TAILIEU, @C_GIATRIHANGHOA, @FK_MASANPHAM, @C_PPXD, @C_KHOILUONGTHUC, @C_KHOILUONGQD, @C_KHOILUONG, @C_GIACUOC, @C_DONGGOI, @C_KHAIGIA, @C_COD, @C_BAOPHAT, @C_HENGIO, @C_HINHTHUCTT, @C_DATHU, @C_TIENHANG, @C_VAT, @C_TIENHANGVAT, @FK_NHANVIENNHAN, @C_NGAYGIONHAN, @FK_DOITAC, @FK_DICHVUDOITAC, @C_GIADOITAC, @C_PHUPHIDOITAC, @C_DIENGIAIDOITAC, @C_TYGIA, @FK_NHANVIENPHAT, @C_NGAYGIOPHAT, @C_NGUOIKYNHAN, @C_BOPHAN,@FK_TRANGTHAI,2,@FK_VUNGLAMVIEC);INSERT INTO [SOQUYTIENMAT] ([C_NGAY], [C_TYPE], [FK_KIHIEUTAIKHOAN], [C_DESC], [C_SOTIEN], [C_BILL],[C_TON],[C_ORDER],[FK_VUNGLAMVIEC]) VALUES (@C_NGAY,N'Thu',NULL, N'Bill ' + @C_BILL, @C_DATHU,@C_BILL,0,1,@FK_VUNGLAMVIEC);INSERT INTO TRACKING (C_BILL, C_DATE, FK_TRANGTHAI) SELECT @C_BILL, @C_NGAYGIONHAN, N'F' UNION ALL SELECT @C_BILL, @C_NGAY, N'G_' + @FK_VUNGLAMVIEC"
-    SelectCommand="SELECT [NHANGUI].[PK_ID], [NHANGUI].[C_NGAY], DATEADD(D, 0, DATEDIFF(D, 0, [NHANGUI].[C_NGAY])) as C_NGAYFIX, (CASE WHEN NOT EXISTS (SELECT DMKHACHHANG.C_CODE FROM DMKHACHHANG WHERE DMKHACHHANG.C_CODE = NHANGUI.FK_KHACHHANG) THEN NULL ELSE NHANGUI.FK_KHACHHANG END) as FK_KHACHHANG, [NHANGUI].[C_BILL], 'BC' + [NHANGUI].[C_BILL] as C_BILLFIX, [NHANGUI].[C_TENKH], [NHANGUI].[C_TELGUI], [NHANGUI].[C_LIENHE], [NHANGUI].[C_POSTCODE], [NHANGUI].[C_NGUOINHAN], [NHANGUI].[C_DIACHINHAN], [NHANGUI].[C_TELNHAN], [NHANGUI].[FK_QUOCGIA], [NHANGUI].[C_NOIDUNG], [NHANGUI].[C_SOKIEN], [NHANGUI].[C_TAILIEU], [NHANGUI].[C_GIATRIHANGHOA], [NHANGUI].[FK_MASANPHAM],  [NHANGUI].[C_PPXD], [NHANGUI].[C_KHOILUONGTHUC], [NHANGUI].[C_KHOILUONGQD], [NHANGUI].[C_KHOILUONG], [NHANGUI].[C_GIACUOC], [NHANGUI].[C_DONGGOI], [NHANGUI].[C_KHAIGIA], [NHANGUI].[C_COD], [NHANGUI].[C_BAOPHAT], [NHANGUI].[C_HENGIO], [NHANGUI].[C_HINHTHUCTT], [NHANGUI].[C_DATHU], ([NHANGUI].[C_TIENHANGVAT] * [NHANGUI].[C_TYGIA] - [NHANGUI].[C_DATHU]) as [C_CONLAI],([NHANGUI].[C_DONGGOI] + [NHANGUI].[C_KHAIGIA] + [NHANGUI].[C_COD] + [NHANGUI].[C_BAOPHAT] + [NHANGUI].[C_HENGIO]) as [C_PHUTROISUM], [NHANGUI].[C_TIENHANG], [NHANGUI].[C_VAT], [NHANGUI].[C_TIENHANGVAT], (CASE WHEN NOT EXISTS (SELECT USERS.PK_ID FROM USERS WHERE USERS.PK_ID = NHANGUI.FK_NHANVIENNHAN AND (USERS.FK_VUNGLAMVIEC = N'Tất cả' OR USERS.FK_VUNGLAMVIEC = @FK_VUNGLAMVIEC)) THEN NULL ELSE NHANGUI.FK_NHANVIENNHAN END) as FK_NHANVIENNHAN, (CASE WHEN NOT EXISTS (SELECT DMDOITAC.PK_ID FROM DMDOITAC WHERE DMDOITAC.PK_ID = NHANGUI.FK_DOITAC) THEN NULL ELSE NHANGUI.FK_DOITAC END) as FK_DOITAC, [NHANGUI].[FK_DICHVUDOITAC], [NHANGUI].[C_GIADOITAC], [NHANGUI].[C_PHUPHIDOITAC], [NHANGUI].[C_DIENGIAIDOITAC], ([NHANGUI].[C_TIENHANGVAT] - [NHANGUI].[C_GIADOITAC] - [NHANGUI].[C_PHUPHIDOITAC]) as [C_LOINHUAN],[NHANGUI].[C_TYGIA], (CASE WHEN NOT EXISTS (SELECT USERS.PK_ID FROM USERS WHERE USERS.PK_ID = NHANGUI.FK_NHANVIENPHAT AND (USERS.FK_VUNGLAMVIEC = N'Tất cả' OR USERS.FK_VUNGLAMVIEC = @FK_VUNGLAMVIEC)) THEN NULL ELSE NHANGUI.FK_NHANVIENPHAT END) as FK_NHANVIENPHAT, [NHANGUI].[C_NGAYGIOPHAT], (CASE WHEN NOT EXISTS (SELECT USERS.PK_ID FROM USERS WHERE USERS.PK_ID = NHANGUI.FK_NHANVIENKHAITHAC AND (USERS.FK_VUNGLAMVIEC = N'Tất cả' OR USERS.FK_VUNGLAMVIEC = @FK_VUNGLAMVIEC)) THEN NULL ELSE NHANGUI.FK_NHANVIENKHAITHAC END) as FK_NHANVIENKHAITHAC, [NHANGUI].[C_NGUOIKYNHAN], [NHANGUI].[C_BOPHAN], [NHANGUI].[C_NGAYGIONHAN], [NHANGUI].[FK_TRANGTHAI], USERSNHAN.C_NAME as NHANVIENNHANNAME,USERSPHAT.C_NAME as NHANVIENPHATNAME,USERSKHAITHAC.C_NAME as NHANVIENKHAITHACNAME,DMMASANPHAM.C_NAME as SANPHAMNAME,DMQUOCGIA.C_NAME as QUOCGIANAME FROM [NHANGUI] LEFT OUTER JOIN USERS as USERSNHAN ON NHANGUI.FK_NHANVIENNHAN = USERSNHAN.PK_ID LEFT OUTER JOIN USERS as USERSPHAT ON NHANGUI.FK_NHANVIENPHAT = USERSPHAT.PK_ID LEFT OUTER JOIN USERS as USERSKHAITHAC ON NHANGUI.FK_NHANVIENKHAITHAC = USERSKHAITHAC.PK_ID LEFT OUTER JOIN DMMASANPHAM ON NHANGUI.FK_MASANPHAM=DMMASANPHAM.PK_ID LEFT OUTER JOIN DMQUOCGIA ON NHANGUI.FK_QUOCGIA = DMQUOCGIA.C_CODE WHERE [NHANGUI].[C_TYPE] = 2 AND [NHANGUI].FK_VUNGLAMVIEC = @FK_VUNGLAMVIEC ORDER BY [NHANGUI].C_NGAY DESC"
-    UpdateCommand="UPDATE [SOQUYTIENMAT] SET [C_NGAY]=CASE WHEN @C_HINHTHUCTT = N'Đã thanh toán' THEN C_NGAY ELSE C_NGAY END,[C_SOTIEN] = @C_DATHU, [C_DESC] = N'Bill ' + @C_BILL, [C_BILL] = @C_BILL WHERE [C_BILL]= @C_BILL;UPDATE [NHANGUI] SET [C_NGAY] = @C_NGAY, [C_BILL] = @C_BILL, [FK_KHACHHANG] = @FK_KHACHHANG,[C_TENKH] = @C_TENKH, [C_TELGUI] = @C_TELGUI, [C_LIENHE] = @C_LIENHE, [C_POSTCODE] = @C_POSTCODE, [C_NGUOINHAN] = @C_NGUOINHAN, [C_DIACHINHAN] = @C_DIACHINHAN, [C_TELNHAN] = @C_TELNHAN, [FK_QUOCGIA] = @FK_QUOCGIA, [C_NOIDUNG] = @C_NOIDUNG, [C_SOKIEN] = @C_SOKIEN, [C_TAILIEU] = @C_TAILIEU, [C_GIATRIHANGHOA] = @C_GIATRIHANGHOA, [FK_MASANPHAM] = @FK_MASANPHAM, [C_PPXD] = @C_PPXD, [C_KHOILUONGTHUC] = @C_KHOILUONGTHUC, [C_KHOILUONGQD] = @C_KHOILUONGQD, [C_KHOILUONG] = @C_KHOILUONG, [C_GIACUOC] = @C_GIACUOC, [C_DONGGOI]=@C_DONGGOI, [C_KHAIGIA]=@C_KHAIGIA, [C_COD]=@C_COD, [C_BAOPHAT]=@C_BAOPHAT, [C_HENGIO] = @C_HENGIO, [C_HINHTHUCTT] = @C_HINHTHUCTT, [C_DATHU] = @C_DATHU, [C_TIENHANG] = @C_TIENHANG, [C_VAT] = @C_VAT, [C_TIENHANGVAT] = @C_TIENHANGVAT, [FK_NHANVIENNHAN] = @FK_NHANVIENNHAN, [C_NGAYGIONHAN] = @C_NGAYGIONHAN, [FK_DOITAC] = @FK_DOITAC, [FK_DICHVUDOITAC] = @FK_DICHVUDOITAC, [C_GIADOITAC] = @C_GIADOITAC, [C_PHUPHIDOITAC] = @C_PHUPHIDOITAC, [C_DIENGIAIDOITAC] = @C_DIENGIAIDOITAC, [C_TYGIA] = @C_TYGIA, [FK_NHANVIENPHAT] = @FK_NHANVIENPHAT, [C_NGAYGIOPHAT] = @C_NGAYGIOPHAT, [FK_NHANVIENKHAITHAC]=@FK_NHANVIENKHAITHAC, [C_NGUOIKYNHAN] = @C_NGUOIKYNHAN, [C_BOPHAN] = @C_BOPHAN, [FK_TRANGTHAI] = @FK_TRANGTHAI WHERE [C_BILL] = @C_BILL;UPDATE TRACKING SET C_DATE = @C_NGAY WHERE C_BILL = @C_BILL AND FK_TRANGTHAI = N'G_' + @FK_VUNGLAMVIEC;UPDATE TRACKING SET C_DATE = @C_NGAYGIONHAN WHERE C_BILL = @C_BILL AND FK_TRANGTHAI = N'F'">
+    InsertCommand="INSERT INTO [NHANGUI] ([C_NGAY], [C_BILL], [FK_KHACHHANG], [C_TENKH], [C_TELGUI], [C_LIENHE], [C_POSTCODE], [C_NGUOINHAN], [C_DIACHINHAN], [C_TELNHAN], [FK_QUOCGIA], [C_NOIDUNG], [C_SOKIEN], [C_TAILIEU], [C_GIATRIHANGHOA], [FK_MASANPHAM], [C_PPXD], [C_KHOILUONGTHUC], [C_KHOILUONGQD], [C_KHOILUONG], [C_GIACUOC], [C_DONGGOI], [C_KHAIGIA], [C_HUNTRUNG], [C_HAIQUAN], [C_HENGIO], [C_HINHTHUCTT], [C_DATHU], [C_TIENHANG], [C_VAT], [C_TIENHANGVAT], [FK_NHANVIENNHAN], [C_NGAYGIONHAN], [FK_DOITAC], [FK_DICHVUDOITAC], [C_GIADOITAC], [C_PHUPHIDOITAC], [C_DIENGIAIDOITAC], [C_TYGIA], [FK_NHANVIENPHAT], [C_NGAYGIOPHAT], [C_NGUOIKYNHAN], [C_BOPHAN],[FK_TRANGTHAI],[C_TYPE],[FK_VUNGLAMVIEC]) VALUES (@C_NGAY, @C_BILL, @FK_KHACHHANG, @C_TENKH, @C_TELGUI, @C_LIENHE, @C_POSTCODE, @C_NGUOINHAN, @C_DIACHINHAN, @C_TELNHAN, @FK_QUOCGIA, @C_NOIDUNG, @C_SOKIEN, @C_TAILIEU, @C_GIATRIHANGHOA, @FK_MASANPHAM, @C_PPXD, @C_KHOILUONGTHUC, @C_KHOILUONGQD, @C_KHOILUONG, @C_GIACUOC, @C_DONGGOI, @C_KHAIGIA, @C_HUNTRUNG, @C_HAIQUAN, @C_HENGIO, @C_HINHTHUCTT, @C_DATHU, @C_TIENHANG, @C_VAT, @C_TIENHANGVAT, @FK_NHANVIENNHAN, @C_NGAYGIONHAN, @FK_DOITAC, @FK_DICHVUDOITAC, @C_GIADOITAC, @C_PHUPHIDOITAC, @C_DIENGIAIDOITAC, @C_TYGIA, @FK_NHANVIENPHAT, @C_NGAYGIOPHAT, @C_NGUOIKYNHAN, @C_BOPHAN,@FK_TRANGTHAI,2,@FK_VUNGLAMVIEC);INSERT INTO [SOQUYTIENMAT] ([C_NGAY], [C_TYPE], [FK_KIHIEUTAIKHOAN], [C_DESC], [C_SOTIEN], [C_BILL],[C_TON],[C_ORDER],[FK_VUNGLAMVIEC]) VALUES (@C_NGAY,N'Thu',NULL, N'Bill ' + @C_BILL, @C_DATHU,@C_BILL,0,1,@FK_VUNGLAMVIEC);INSERT INTO TRACKING (C_BILL, C_DATE, FK_TRANGTHAI) SELECT @C_BILL, @C_NGAYGIONHAN, N'F' UNION ALL SELECT @C_BILL, @C_NGAY, N'G_' + @FK_VUNGLAMVIEC"
+    SelectCommand="SELECT [NHANGUI].[PK_ID], [NHANGUI].[C_NGAY], DATEADD(D, 0, DATEDIFF(D, 0, [NHANGUI].[C_NGAY])) as C_NGAYFIX, (CASE WHEN NOT EXISTS (SELECT DMKHACHHANG.C_CODE FROM DMKHACHHANG WHERE DMKHACHHANG.C_CODE = NHANGUI.FK_KHACHHANG) THEN NULL ELSE NHANGUI.FK_KHACHHANG END) as FK_KHACHHANG, [NHANGUI].[C_BILL], 'BC' + [NHANGUI].[C_BILL] as C_BILLFIX, [NHANGUI].[C_TENKH], [NHANGUI].[C_TELGUI], [NHANGUI].[C_LIENHE], [NHANGUI].[C_POSTCODE], [NHANGUI].[C_NGUOINHAN], [NHANGUI].[C_DIACHINHAN], [NHANGUI].[C_TELNHAN], [NHANGUI].[FK_QUOCGIA], [NHANGUI].[C_NOIDUNG], [NHANGUI].[C_SOKIEN], [NHANGUI].[C_TAILIEU], [NHANGUI].[C_GIATRIHANGHOA], [NHANGUI].[FK_MASANPHAM],  [NHANGUI].[C_PPXD], [NHANGUI].[C_KHOILUONGTHUC], [NHANGUI].[C_KHOILUONGQD], [NHANGUI].[C_KHOILUONG], [NHANGUI].[C_GIACUOC], [NHANGUI].[C_DONGGOI], [NHANGUI].[C_KHAIGIA], [NHANGUI].[C_HUNTRUNG], [NHANGUI].[C_HAIQUAN], [NHANGUI].[C_HENGIO], [NHANGUI].[C_HINHTHUCTT], [NHANGUI].[C_DATHU], ([NHANGUI].[C_TIENHANGVAT] * [NHANGUI].[C_TYGIA] - [NHANGUI].[C_DATHU]) as [C_CONLAI],(ISNULL([NHANGUI].[C_DONGGOI],0) + ISNULL([NHANGUI].[C_KHAIGIA],0) + ISNULL([NHANGUI].[C_COD],0) + ISNULL([NHANGUI].[C_BAOPHAT],0) + ISNULL([NHANGUI].[C_HENGIO],0)  + ISNULL([NHANGUI].[C_HAIQUAN],0)  + ISNULL([NHANGUI].[C_HUNTRUNG],0)) as [C_PHUTROISUM], [NHANGUI].[C_TIENHANG], [NHANGUI].[C_VAT], [NHANGUI].[C_TIENHANGVAT], (CASE WHEN NOT EXISTS (SELECT USERS.PK_ID FROM USERS WHERE USERS.PK_ID = NHANGUI.FK_NHANVIENNHAN AND (USERS.FK_VUNGLAMVIEC = N'Tất cả' OR USERS.FK_VUNGLAMVIEC = @FK_VUNGLAMVIEC)) THEN NULL ELSE NHANGUI.FK_NHANVIENNHAN END) as FK_NHANVIENNHAN, (CASE WHEN NOT EXISTS (SELECT DMDOITAC.PK_ID FROM DMDOITAC WHERE DMDOITAC.PK_ID = NHANGUI.FK_DOITAC) THEN NULL ELSE NHANGUI.FK_DOITAC END) as FK_DOITAC, [NHANGUI].[FK_DICHVUDOITAC], [NHANGUI].[C_GIADOITAC], [NHANGUI].[C_PHUPHIDOITAC], [NHANGUI].[C_DIENGIAIDOITAC], ([NHANGUI].[C_TIENHANGVAT] - [NHANGUI].[C_GIADOITAC] - [NHANGUI].[C_PHUPHIDOITAC]) as [C_LOINHUAN],[NHANGUI].[C_TYGIA], (CASE WHEN NOT EXISTS (SELECT USERS.PK_ID FROM USERS WHERE USERS.PK_ID = NHANGUI.FK_NHANVIENPHAT AND (USERS.FK_VUNGLAMVIEC = N'Tất cả' OR USERS.FK_VUNGLAMVIEC = @FK_VUNGLAMVIEC)) THEN NULL ELSE NHANGUI.FK_NHANVIENPHAT END) as FK_NHANVIENPHAT, [NHANGUI].[C_NGAYGIOPHAT], (CASE WHEN NOT EXISTS (SELECT USERS.PK_ID FROM USERS WHERE USERS.PK_ID = NHANGUI.FK_NHANVIENKHAITHAC AND (USERS.FK_VUNGLAMVIEC = N'Tất cả' OR USERS.FK_VUNGLAMVIEC = @FK_VUNGLAMVIEC)) THEN NULL ELSE NHANGUI.FK_NHANVIENKHAITHAC END) as FK_NHANVIENKHAITHAC, [NHANGUI].[C_NGUOIKYNHAN], [NHANGUI].[C_BOPHAN], [NHANGUI].[C_NGAYGIONHAN], [NHANGUI].[FK_TRANGTHAI], USERSNHAN.C_NAME as NHANVIENNHANNAME,USERSPHAT.C_NAME as NHANVIENPHATNAME,USERSKHAITHAC.C_NAME as NHANVIENKHAITHACNAME,DMMASANPHAM.C_NAME as SANPHAMNAME,DMQUOCGIA.C_NAME as QUOCGIANAME FROM [NHANGUI] LEFT OUTER JOIN USERS as USERSNHAN ON NHANGUI.FK_NHANVIENNHAN = USERSNHAN.PK_ID LEFT OUTER JOIN USERS as USERSPHAT ON NHANGUI.FK_NHANVIENPHAT = USERSPHAT.PK_ID LEFT OUTER JOIN USERS as USERSKHAITHAC ON NHANGUI.FK_NHANVIENKHAITHAC = USERSKHAITHAC.PK_ID LEFT OUTER JOIN DMMASANPHAM ON NHANGUI.FK_MASANPHAM=DMMASANPHAM.PK_ID LEFT OUTER JOIN DMQUOCGIA ON NHANGUI.FK_QUOCGIA = DMQUOCGIA.C_CODE WHERE [NHANGUI].[C_TYPE] = 2 AND [NHANGUI].FK_VUNGLAMVIEC = @FK_VUNGLAMVIEC ORDER BY [NHANGUI].C_NGAY DESC"
+    UpdateCommand="UPDATE [SOQUYTIENMAT] SET [C_NGAY]=CASE WHEN @C_HINHTHUCTT = N'Đã thanh toán' THEN C_NGAY ELSE C_NGAY END,[C_SOTIEN] = @C_DATHU, [C_DESC] = N'Bill ' + @C_BILL, [C_BILL] = @C_BILL WHERE [C_BILL]= @C_BILL;UPDATE [NHANGUI] SET [C_NGAY] = @C_NGAY, [C_BILL] = @C_BILL, [FK_KHACHHANG] = @FK_KHACHHANG,[C_TENKH] = @C_TENKH, [C_TELGUI] = @C_TELGUI, [C_LIENHE] = @C_LIENHE, [C_POSTCODE] = @C_POSTCODE, [C_NGUOINHAN] = @C_NGUOINHAN, [C_DIACHINHAN] = @C_DIACHINHAN, [C_TELNHAN] = @C_TELNHAN, [FK_QUOCGIA] = @FK_QUOCGIA, [C_NOIDUNG] = @C_NOIDUNG, [C_SOKIEN] = @C_SOKIEN, [C_TAILIEU] = @C_TAILIEU, [C_GIATRIHANGHOA] = @C_GIATRIHANGHOA, [FK_MASANPHAM] = @FK_MASANPHAM, [C_PPXD] = @C_PPXD, [C_KHOILUONGTHUC] = @C_KHOILUONGTHUC, [C_KHOILUONGQD] = @C_KHOILUONGQD, [C_KHOILUONG] = @C_KHOILUONG, [C_GIACUOC] = @C_GIACUOC, [C_DONGGOI]=@C_DONGGOI, [C_KHAIGIA]=@C_KHAIGIA, [C_HUNTRUNG]=@C_HUNTRUNG, [C_HAIQUAN]=@C_HAIQUAN, [C_HENGIO] = @C_HENGIO, [C_HINHTHUCTT] = @C_HINHTHUCTT, [C_DATHU] = @C_DATHU, [C_TIENHANG] = @C_TIENHANG, [C_VAT] = @C_VAT, [C_TIENHANGVAT] = @C_TIENHANGVAT, [FK_NHANVIENNHAN] = @FK_NHANVIENNHAN, [C_NGAYGIONHAN] = @C_NGAYGIONHAN, [FK_DOITAC] = @FK_DOITAC, [FK_DICHVUDOITAC] = @FK_DICHVUDOITAC, [C_GIADOITAC] = @C_GIADOITAC, [C_PHUPHIDOITAC] = @C_PHUPHIDOITAC, [C_DIENGIAIDOITAC] = @C_DIENGIAIDOITAC, [C_TYGIA] = @C_TYGIA, [FK_NHANVIENPHAT] = @FK_NHANVIENPHAT, [C_NGAYGIOPHAT] = @C_NGAYGIOPHAT, [FK_NHANVIENKHAITHAC]=@FK_NHANVIENKHAITHAC, [C_NGUOIKYNHAN] = @C_NGUOIKYNHAN, [C_BOPHAN] = @C_BOPHAN, [FK_TRANGTHAI] = @FK_TRANGTHAI WHERE [C_BILL] = @C_BILL;UPDATE TRACKING SET C_DATE = @C_NGAY WHERE C_BILL = @C_BILL AND FK_TRANGTHAI = N'G_' + @FK_VUNGLAMVIEC;UPDATE TRACKING SET C_DATE = @C_NGAYGIONHAN WHERE C_BILL = @C_BILL AND FK_TRANGTHAI = N'F'">
     <SelectParameters>
         <asp:SessionParameter Name="FK_VUNGLAMVIEC" Type="String" SessionField="VUNGLAMVIEC" />
     </SelectParameters>
@@ -1248,8 +1248,8 @@
         <asp:Parameter Name="C_GIACUOC" Type="Single" />
         <asp:Parameter Name="C_DONGGOI" Type="String" />
         <asp:Parameter Name="C_KHAIGIA" Type="String" />
-        <asp:Parameter Name="C_COD" Type="String" />
-        <asp:Parameter Name="C_BAOPHAT" Type="String" />
+        <asp:Parameter Name="C_HUNTRUNG" Type="String" />
+        <asp:Parameter Name="C_HAIQUAN" Type="String" />
         <asp:Parameter Name="C_HENGIO" Type="String" />
         <asp:Parameter Name="C_HINHTHUCTT" Type="String" />
         <asp:Parameter Name="C_DATHU" Type="String" DefaultValue="0" />
@@ -1294,8 +1294,8 @@
         <asp:Parameter Name="C_GIACUOC" Type="Single" />
         <asp:Parameter Name="C_DONGGOI" Type="String" />
         <asp:Parameter Name="C_KHAIGIA" Type="String" />
-        <asp:Parameter Name="C_COD" Type="String" />
-        <asp:Parameter Name="C_BAOPHAT" Type="String" />
+        <asp:Parameter Name="C_HUNTRUNG" Type="String" />
+        <asp:Parameter Name="C_HAIQUAN" Type="String" />
         <asp:Parameter Name="C_HENGIO" Type="String" />
         <asp:Parameter Name="C_HINHTHUCTT" Type="String" />
         <asp:Parameter Name="C_DATHU" Type="String" DefaultValue="0" />

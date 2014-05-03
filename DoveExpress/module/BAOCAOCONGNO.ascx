@@ -27,76 +27,25 @@
         }
     </script>
     <script type="text/javascript">
-        var cmbkhachhang;
-        function OnClientLoadKhachHang(sender) {
-            cmbkhachhang = sender;
-        }
-        function cmbNhomKhachHangClientSelectedIndexChangedHandler(sender, eventArgs) {
-            cmbkhachhang.requestItems(eventArgs.get_item().get_value(), false);
-        }
-        function ItemsLoadedKhachHang(combo, eventArqs) {
-            if (combo.get_items().get_count() > 0) {
-                combo.trackChanges();
-                combo.get_items().getItem(0).select();
-                combo.updateClientState();
-                combo.commitChanges();
-            } else {
-                combo.set_text("");
-            }
-            $find("<%=RadGridBAOCAOCONGNO.ClientID %>").get_masterTableView().rebind();
-        }
-        function cmbKhachHangClientSelectedIndexChangedHandler(sender, eventArgs) {
-            $find("<%=RadGridBAOCAOCONGNO.ClientID %>").get_masterTableView().rebind();
-        }
-        function cmbYearClientSelectedIndexChangedHandler(sender, eventArgs) {
-            $find("<%=RadGridBAOCAOCONGNO.ClientID %>").get_masterTableView().rebind();
-            return false;
-        }
-        function cmbMonthClientSelectedIndexChangedHandler(sender, eventArgs) {
-            $find("<%=RadGridBAOCAOCONGNO.ClientID %>").get_masterTableView().rebind();
-            return false;
-        }
+
     </script>
 </telerik:RadCodeBlock>
 <telerik:RadAjaxLoadingPanel Skin="Vista" ID="RadAjaxLoadingPanelBAOCAOCONGNO" runat="server" />
 <div style="width: 90%; margin: 10px 10px 10px 10px;">
-    Chọn tháng:&nbsp;
-    <telerik:RadComboBox ID="cmbMonth" runat="server" OnClientSelectedIndexChanged="cmbMonthClientSelectedIndexChangedHandler"
-        ShowToggleImage="True" EmptyMessage="Chọn tháng" OnPreRender="cmbMonth_PreRender">
-        <Items>
-            <telerik:RadComboBoxItem Value="0" Text="Tất cả" />
-            <telerik:RadComboBoxItem Value="1" Text="Tháng 1" />
-            <telerik:RadComboBoxItem Value="2" Text="Tháng 2" />
-            <telerik:RadComboBoxItem Value="3" Text="Tháng 3" />
-            <telerik:RadComboBoxItem Value="4" Text="Tháng 4" />
-            <telerik:RadComboBoxItem Value="5" Text="Tháng 5" />
-            <telerik:RadComboBoxItem Value="6" Text="Tháng 6" />
-            <telerik:RadComboBoxItem Value="7" Text="Tháng 7" />
-            <telerik:RadComboBoxItem Value="8" Text="Tháng 8" />
-            <telerik:RadComboBoxItem Value="9" Text="Tháng 9" />
-            <telerik:RadComboBoxItem Value="10" Text="Tháng 10" />
-            <telerik:RadComboBoxItem Value="11" Text="Tháng 11" />
-            <telerik:RadComboBoxItem Value="12" Text="Tháng 12" />
-        </Items>
-    </telerik:RadComboBox>
-    Chọn năm:&nbsp;
-    <telerik:RadComboBox ID="cmbYear" runat="server" OnClientSelectedIndexChanged="cmbYearClientSelectedIndexChangedHandler"
-        ShowToggleImage="True" EmptyMessage="Chọn năm" OnPreRender="cmbYear_PreRender">
-        <Items>
-             <telerik:RadComboBoxItem Value="0" Text="Tất cả" />
-        </Items>
-    </telerik:RadComboBox>
-    Nhóm khách hàng:&nbsp;
-    <telerik:RadComboBox ID="cmbNhomKhachHang" runat="server" DataTextField="C_NAME"
-        DataValueField="PK_ID" DataSourceID="NHOMKHACHHANGDataSource" ShowToggleImage="True"
-        EmptyMessage="Chọn nhóm" OnClientSelectedIndexChanged="cmbNhomKhachHangClientSelectedIndexChangedHandler"
-        OnPreRender="cmbNhomKhachHang_PreRender">
-    </telerik:RadComboBox>
+    Từ ngày:&nbsp;
+    <telerik:RadDatePicker ID="radTuNgay" Width="150px" runat="server" AutoPostBack="true">
+        <DateInput ID="DateInput1" runat="server" DateFormat="dd/MM/yyyy" MinDate="1/1/1890">
+        </DateInput>
+    </telerik:RadDatePicker>
+    Đến ngày:&nbsp;
+    <telerik:RadDatePicker ID="radDenNgay" Width="150px" runat="server" AutoPostBack="true">
+        <DateInput ID="DateInput2" runat="server" DateFormat="dd/MM/yyyy" MinDate="1/1/1890">
+        </DateInput>
+    </telerik:RadDatePicker>
     Khách hàng:&nbsp;
-    <telerik:RadComboBox ID="cmbKhachHang" runat="server" DataTextField="C_CODE" DataValueField="C_CODE"
-        DataSourceID="KHACHHANGDataSource" ShowToggleImage="True" EmptyMessage="Chọn khách hàng"
-        AutoPostBack="false" OnClientItemsRequested="ItemsLoadedKhachHang" OnClientLoad="OnClientLoadKhachHang"
-        OnItemsRequested="cmbKhachHang_ItemsRequested" OnClientSelectedIndexChanged="cmbKhachHangClientSelectedIndexChangedHandler">
+    <telerik:RadComboBox ID="cmbKhachHang" runat="server" DataTextField="C_CODEFIX" DataValueField="C_CODE"
+        DataSourceID="KHACHHANGDataSource" ShowToggleImage="True" EmptyMessage="Chọn khách hàng" AllowCustomText="True" Filter="Contains"
+        AutoPostBack="true">
     </telerik:RadComboBox>
 </div>
 <telerik:RadGrid ID="RadGridBAOCAOCONGNO" runat="server" Skin="Vista" AllowPaging="True"
@@ -105,7 +54,7 @@
     AllowMultiRowEdit="True" AllowAutomaticDeletes="True" AllowAutomaticInserts="True"
     AllowAutomaticUpdates="True" DataSourceID="BAOCAOCONGNODataSource" ShowFooter="True"
     OnDataBound="RadGridBAOCAOCONGNO_DataBound" CellSpacing="0" OnExcelMLExportRowCreated="RadGridBAOCAOCONGNO_ExcelMLExportRowCreated"
-    OnItemDataBound="RadGridBAOCAOCONGNO_ItemDataBound" onitemcreated="RadGridBAOCAOCONGNO_ItemCreated">
+    OnItemDataBound="RadGridBAOCAOCONGNO_ItemDataBound" OnItemCreated="RadGridBAOCAOCONGNO_ItemCreated">
     <PagerStyle FirstPageToolTip="Trang đầu" LastPageToolTip="Trang cuối" NextPagesToolTip="Các trang tiếp"
         NextPageToolTip="Trang tiếp" PageSizeLabelText="Số bản ghi hiển thị:" PrevPagesToolTip="Các trang sau"
         PrevPageToolTip="Trang sau" PagerTextFormat="Change page: {4} &nbsp;Trang <strong>{0}</strong>/<strong>{1}</strong>, Bản ghi <strong>{2}</strong> đến <strong>{3}</strong> của tất cả <strong>{5}</strong> bản ghi" />
@@ -136,11 +85,11 @@
                 HeaderStyle-HorizontalAlign="Center" ItemStyle-HorizontalAlign="Center">
             </telerik:GridClientSelectColumn>
             <telerik:GridBoundColumn UniqueName="C_NGAYFIX" HeaderText="Ngày" DataField="C_NGAYFIX"
-                HeaderStyle-Width="100px" HeaderStyle-HorizontalAlign="Center" AutoPostBackOnFilter="true"
+                HeaderStyle-Width="80px" HeaderStyle-HorizontalAlign="Center" AutoPostBackOnFilter="true"
                 ShowFilterIcon="true" FilterControlWidth="75%" DataType="System.DateTime" DataFormatString="{0:dd/MM/yyyy}">
             </telerik:GridBoundColumn>
             <telerik:GridTemplateColumn UniqueName="C_BILLFIX" HeaderText="Số Bill" DataField="C_BILLFIX"
-                HeaderStyle-Width="100px" HeaderStyle-HorizontalAlign="Center" AutoPostBackOnFilter="true"
+                HeaderStyle-Width="80px" HeaderStyle-HorizontalAlign="Center" AutoPostBackOnFilter="true"
                 CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%"
                 SortExpression="C_BILLFIX">
                 <ItemTemplate>
@@ -151,9 +100,14 @@
                 HeaderStyle-Width="130px" HeaderStyle-HorizontalAlign="Center" AutoPostBackOnFilter="true"
                 CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
             </telerik:GridBoundColumn>
-            <telerik:GridBoundColumn UniqueName="C_DIACHINHANFIX" HeaderText="Địa chỉ nhận" DataField="C_DIACHINHANFIX"
-                HeaderStyle-Width="130px" HeaderStyle-HorizontalAlign="Center" AutoPostBackOnFilter="true"
+            <telerik:GridBoundColumn UniqueName="C_DIACHINHAN" HeaderText="Địa chỉ nhận" DataField="C_DIACHINHAN"
+                HeaderStyle-Width="100px" HeaderStyle-HorizontalAlign="Center" AutoPostBackOnFilter="true"
                 CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
+            </telerik:GridBoundColumn>
+            <telerik:GridBoundColumn UniqueName="C_DIACHINHANFIX" HeaderText="Tỉnh/Quốc Gia"
+                DataField="C_DIACHINHANFIX" HeaderStyle-Width="100px" HeaderStyle-HorizontalAlign="Center"
+                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false"
+                FilterControlWidth="100%">
             </telerik:GridBoundColumn>
             <telerik:GridBoundColumn UniqueName="C_NOIDUNG" HeaderText="Nội dung" DataField="C_NOIDUNG"
                 HeaderStyle-Width="130px" HeaderStyle-HorizontalAlign="Center" AutoPostBackOnFilter="true"
@@ -163,17 +117,29 @@
                 HeaderStyle-Width="80px" HeaderStyle-HorizontalAlign="Center" AutoPostBackOnFilter="true"
                 CurrentFilterFunction="Contains" FilterControlWidth="75%" Aggregate="Sum" FooterText="Tổng : ">
             </telerik:GridBoundColumn>
-            <telerik:GridBoundColumn UniqueName="C_TIENHANG" HeaderText="Tổng cước" DataField="C_TIENHANG"
+            <telerik:GridBoundColumn UniqueName="C_GIACUOC" HeaderText="Cước chính" DataField="C_GIACUOC"
+                HeaderStyle-Width="80px" HeaderStyle-HorizontalAlign="Center" AutoPostBackOnFilter="true"
+                CurrentFilterFunction="Contains" FilterControlWidth="75%" DataType="System.Decimal" DataFormatString="{0:### ### ###}">
+            </telerik:GridBoundColumn>
+            <telerik:GridBoundColumn UniqueName="C_DVPT" HeaderText="Dịch vụ phụ trội" DataField="C_DVPT"
                 HeaderStyle-Width="130px" HeaderStyle-HorizontalAlign="Center" AutoPostBackOnFilter="true"
+                CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
+            </telerik:GridBoundColumn>
+            <telerik:GridBoundColumn UniqueName="C_PHUTROISUM" HeaderText="Cước phụ trội" DataField="C_PHUTROISUM"
+                HeaderStyle-Width="80px" HeaderStyle-HorizontalAlign="Center" AutoPostBackOnFilter="true"
+                CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%" DataType="System.Decimal" DataFormatString="{0:### ### ###}">
+            </telerik:GridBoundColumn>
+            <telerik:GridBoundColumn UniqueName="C_TIENHANG" HeaderText="Tổng cước" DataField="C_TIENHANG"
+                HeaderStyle-Width="80px" HeaderStyle-HorizontalAlign="Center" AutoPostBackOnFilter="true"
                 CurrentFilterFunction="Contains" FilterControlWidth="75%" Aggregate="Sum" FooterText="Tổng : "
                 DataType="System.Decimal" DataFormatString="{0:### ### ###}">
             </telerik:GridBoundColumn>
-            <telerik:GridBoundColumn UniqueName="C_VAT" HeaderText="VAT" DataField="C_VAT" HeaderStyle-Width="130px"
+            <telerik:GridBoundColumn UniqueName="C_VAT" HeaderText="VAT" DataField="C_VAT" HeaderStyle-Width="80px"
                 HeaderStyle-HorizontalAlign="Center" AutoPostBackOnFilter="true" CurrentFilterFunction="Contains"
                 FilterControlWidth="75%" DataType="System.Decimal" DataFormatString="{0:### ### ###}">
             </telerik:GridBoundColumn>
             <telerik:GridBoundColumn UniqueName="C_TIENHANGVAT" HeaderText="Tổng cước (VAT)"
-                DataField="C_TIENHANGVAT" HeaderStyle-Width="130px" HeaderStyle-HorizontalAlign="Center"
+                DataField="C_TIENHANGVAT" HeaderStyle-Width="80px" HeaderStyle-HorizontalAlign="Center"
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" FilterControlWidth="75%"
                 Aggregate="Sum" FooterText="Tổng : " DataType="System.Decimal" DataFormatString="{0:### ### ###}">
             </telerik:GridBoundColumn>
@@ -189,20 +155,18 @@
     <StatusBarSettings LoadingText="Đang tải..." ReadyText="Sẵn sàng" />
 </telerik:RadGrid>
 <asp:SqlDataSource ID="BAOCAOCONGNODataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
-    SelectCommand="SELECT [NHANGUI].[PK_ID], [NHANGUI].[C_NGAY], DATEADD(D, 0, DATEDIFF(D, 0, [NHANGUI].[C_NGAY])) as C_NGAYFIX, [NHANGUI].[FK_KHACHHANG], [NHANGUI].[C_BILL], 'BC' + [NHANGUI].[C_BILL] as C_BILLFIX, [NHANGUI].[C_TENKH], [NHANGUI].[C_TELGUI], [NHANGUI].[C_NGUOINHAN], [NHANGUI].[C_DIACHINHAN], [NHANGUI].[C_TELNHAN], [NHANGUI].[FK_QUANHUYEN], [NHANGUI].[C_NOIDUNG], [NHANGUI].[FK_MASANPHAM],  [NHANGUI].[C_PPXD], [NHANGUI].[C_KHOILUONG], (CASE WHEN [NHANGUI].[C_TYPE] = N'2' THEN ISNULL([NHANGUI].[C_GIACUOC],0) * [NHANGUI].[C_TYGIA] ELSE ISNULL([NHANGUI].[C_GIACUOC],0) END) as [C_GIACUOC], [NHANGUI].[C_HINHTHUCTT], ISNULL([NHANGUI].[C_DATHU],0) as C_DATHU, (CASE WHEN [NHANGUI].[C_TYPE] = N'2' THEN ISNULL([NHANGUI].[C_TIENHANGVAT],0) * [NHANGUI].[C_TYGIA] - ISNULL([NHANGUI].[C_DATHU],0) ELSE ISNULL([NHANGUI].[C_TIENHANGVAT],0) - ISNULL([NHANGUI].[C_DATHU],0) END) as [C_CONLAI],([NHANGUI].[C_DONGGOI] + [NHANGUI].[C_KHAIGIA] + [NHANGUI].[C_COD] + [NHANGUI].[C_BAOPHAT] + [NHANGUI].[C_HENGIO]) as [C_PHUTROISUM], (CASE WHEN [NHANGUI].[C_TYPE] = N'2' THEN ISNULL([NHANGUI].[C_TIENHANG],0) * [NHANGUI].[C_TYGIA] ELSE ISNULL([NHANGUI].[C_TIENHANG],0) END) as C_TIENHANG, [NHANGUI].[C_VAT], (CASE WHEN [NHANGUI].[C_TYPE] = N'2' THEN ISNULL([NHANGUI].[C_TIENHANGVAT],0) * [NHANGUI].[C_TYGIA] ELSE ISNULL([NHANGUI].[C_TIENHANGVAT],0) END) as C_TIENHANGVAT, [NHANGUI].[FK_NHANVIENNHAN], [NHANGUI].[FK_DOITAC], [NHANGUI].[C_GIADOITAC], [NHANGUI].[FK_NHANVIENPHAT], [NHANGUI].[C_NGAYGIOPHAT], [NHANGUI].[FK_NHANVIENKHAITHAC], [NHANGUI].[C_NGUOIKYNHAN], [NHANGUI].[C_BOPHAN],USERSNHAN.C_NAME as NHANVIENNHANNAME,USERSPHAT.C_NAME as NHANVIENPHATNAME,USERSKHAITHAC.C_NAME as NHANVIENKHAITHACNAME,DMMASANPHAM.C_NAME as SANPHAMNAME,DMQUANHUYEN.C_NAME as QUANHUYENNAME,DMTINHTHANH.C_NAME as TINHTHANHNAME, DMQUOCGIA.C_NAME as QUOCGIANAME,CASE WHEN NHANGUI.C_TYPE = 1 THEN DMQUANHUYEN.C_NAME + '-' + DMTINHTHANH.C_NAME ELSE DMQUOCGIA.C_NAME END AS C_DIACHINHANFIX FROM [NHANGUI] LEFT OUTER JOIN USERS as USERSNHAN ON NHANGUI.FK_NHANVIENNHAN = USERSNHAN.PK_ID LEFT OUTER JOIN USERS as USERSPHAT ON NHANGUI.FK_NHANVIENPHAT = USERSPHAT.PK_ID LEFT OUTER JOIN USERS as USERSKHAITHAC ON NHANGUI.FK_NHANVIENKHAITHAC = USERSKHAITHAC.PK_ID LEFT OUTER JOIN DMMASANPHAM ON NHANGUI.FK_MASANPHAM=DMMASANPHAM.PK_ID LEFT OUTER JOIN DMQUANHUYEN ON NHANGUI.FK_QUANHUYEN = DMQUANHUYEN.C_CODE LEFT OUTER JOIN DMTINHTHANH ON DMQUANHUYEN.FK_TINHTHANH = DMTINHTHANH.PK_ID LEFT OUTER JOIN DMQUOCGIA ON NHANGUI.FK_QUOCGIA = DMQUOCGIA.C_CODE WHERE (month([NHANGUI].[C_NGAY]) = @MONTH OR @MONTH = 0) AND (year([NHANGUI].[C_NGAY]) = @YEAR OR @YEAR = 0) AND ([NHANGUI].[FK_KHACHHANG] = @FK_KHACHHANG AND [NHANGUI].[FK_VUNGLAMVIEC] = @FK_VUNGLAMVIEC) ORDER BY [NHANGUI].C_NGAY ASC">
+    SelectCommand="SELECT [NHANGUI].[PK_ID], [NHANGUI].[C_NGAY], DATEADD(D, 0, DATEDIFF(D, 0, [NHANGUI].[C_NGAY])) as C_NGAYFIX, [NHANGUI].[FK_KHACHHANG], [NHANGUI].[C_BILL], 'BC' + [NHANGUI].[C_BILL] as C_BILLFIX, [NHANGUI].[C_TENKH], [NHANGUI].[C_TELGUI], [NHANGUI].[C_NGUOINHAN], [NHANGUI].[C_DIACHINHAN], [NHANGUI].[C_TELNHAN], [NHANGUI].[FK_QUANHUYEN], [NHANGUI].[C_NOIDUNG], [NHANGUI].[FK_MASANPHAM],  [NHANGUI].[C_PPXD], [NHANGUI].[C_KHOILUONG], (CASE WHEN [NHANGUI].[C_TYPE] = N'2' THEN ISNULL([NHANGUI].[C_GIACUOC],0) * [NHANGUI].[C_TYGIA] ELSE ISNULL([NHANGUI].[C_GIACUOC],0) END) as [C_GIACUOC], [NHANGUI].[C_HINHTHUCTT], ISNULL([NHANGUI].[C_DATHU],0) as C_DATHU, (CASE WHEN [NHANGUI].[C_TYPE] = N'2' THEN ISNULL([NHANGUI].[C_TIENHANGVAT],0) * [NHANGUI].[C_TYGIA] - ISNULL([NHANGUI].[C_DATHU],0) ELSE ISNULL([NHANGUI].[C_TIENHANGVAT],0) - ISNULL([NHANGUI].[C_DATHU],0) END) as [C_CONLAI],(ISNULL([NHANGUI].[C_DONGGOI],0) + ISNULL([NHANGUI].[C_KHAIGIA],0) + ISNULL([NHANGUI].[C_COD],0) + ISNULL([NHANGUI].[C_BAOPHAT],0) + ISNULL([NHANGUI].[C_HENGIO],0)  + ISNULL([NHANGUI].[C_HAIQUAN],0)  + ISNULL([NHANGUI].[C_HUNTRUNG],0)) as [C_PHUTROISUM],((CASE WHEN ISNULL([NHANGUI].[C_DONGGOI],0) <> 0 THEN N'Đóng gói,' ELSE '' END) + (CASE WHEN ISNULL([NHANGUI].[C_KHAIGIA],0) <> 0 THEN N'Khai giá,' ELSE '' END) + (CASE WHEN ISNULL([NHANGUI].[C_COD],0) <> 0 THEN N'COD,' ELSE '' END) + (CASE WHEN ISNULL([NHANGUI].[C_BAOPHAT],0) <> 0 THEN N'Báo phát,' ELSE '' END) + (CASE WHEN ISNULL([NHANGUI].[C_HENGIO],0) <> 0 THEN N'Hẹn giờ,' ELSE '' END) + (CASE WHEN ISNULL([NHANGUI].[C_HAIQUAN],0) <> 0 THEN N'Hải quan,' ELSE '' END) + (CASE WHEN ISNULL([NHANGUI].[C_HUNTRUNG],0) <> 0 THEN N'Hun trùng' ELSE '' END)) as C_DVPT, (CASE WHEN [NHANGUI].[C_TYPE] = N'2' THEN ISNULL([NHANGUI].[C_TIENHANG],0) * [NHANGUI].[C_TYGIA] ELSE ISNULL([NHANGUI].[C_TIENHANG],0) END) as C_TIENHANG, [NHANGUI].[C_VAT], (CASE WHEN [NHANGUI].[C_TYPE] = N'2' THEN ISNULL([NHANGUI].[C_TIENHANGVAT],0) * [NHANGUI].[C_TYGIA] ELSE ISNULL([NHANGUI].[C_TIENHANGVAT],0) END) as C_TIENHANGVAT, [NHANGUI].[FK_NHANVIENNHAN], [NHANGUI].[FK_DOITAC], [NHANGUI].[C_GIADOITAC], [NHANGUI].[FK_NHANVIENPHAT], [NHANGUI].[C_NGAYGIOPHAT], [NHANGUI].[FK_NHANVIENKHAITHAC], [NHANGUI].[C_NGUOIKYNHAN], [NHANGUI].[C_BOPHAN],USERSNHAN.C_NAME as NHANVIENNHANNAME,USERSPHAT.C_NAME as NHANVIENPHATNAME,USERSKHAITHAC.C_NAME as NHANVIENKHAITHACNAME,DMMASANPHAM.C_NAME as SANPHAMNAME,DMQUANHUYEN.C_NAME as QUANHUYENNAME,DMTINHTHANH.C_NAME as TINHTHANHNAME, DMQUOCGIA.C_NAME as QUOCGIANAME,CASE WHEN NHANGUI.C_TYPE = 1 THEN DMQUANHUYEN.C_NAME + '-' + DMTINHTHANH.C_NAME ELSE DMQUOCGIA.C_NAME END AS C_DIACHINHANFIX FROM [NHANGUI] LEFT OUTER JOIN USERS as USERSNHAN ON NHANGUI.FK_NHANVIENNHAN = USERSNHAN.PK_ID LEFT OUTER JOIN USERS as USERSPHAT ON NHANGUI.FK_NHANVIENPHAT = USERSPHAT.PK_ID LEFT OUTER JOIN USERS as USERSKHAITHAC ON NHANGUI.FK_NHANVIENKHAITHAC = USERSKHAITHAC.PK_ID LEFT OUTER JOIN DMMASANPHAM ON NHANGUI.FK_MASANPHAM=DMMASANPHAM.PK_ID LEFT OUTER JOIN DMQUANHUYEN ON NHANGUI.FK_QUANHUYEN = DMQUANHUYEN.C_CODE LEFT OUTER JOIN DMTINHTHANH ON DMQUANHUYEN.FK_TINHTHANH = DMTINHTHANH.PK_ID LEFT OUTER JOIN DMQUOCGIA ON NHANGUI.FK_QUOCGIA = DMQUOCGIA.C_CODE WHERE [NHANGUI].[C_HINHTHUCTT] = N'Thanh toán sau' AND ([NHANGUI].[C_NGAY] >= @TUNGAY) AND ([NHANGUI].[C_NGAY] <= @DENNGAY) AND ([NHANGUI].[FK_KHACHHANG] = @FK_KHACHHANG AND [NHANGUI].[FK_VUNGLAMVIEC] = @FK_VUNGLAMVIEC) ORDER BY [NHANGUI].C_NGAY ASC">
     <SelectParameters>
-        <asp:ControlParameter ControlID="cmbMonth" Name="MONTH" PropertyName="SelectedValue" />
-        <asp:ControlParameter ControlID="cmbYear" Name="YEAR" PropertyName="SelectedValue" />
+        <asp:ControlParameter ControlID="radTuNgay" DefaultValue="0" Name="TUNGAY" PropertyName="SelectedDate" />
+        <asp:ControlParameter ControlID="radDenNgay" DefaultValue="0" Name="DENNGAY" PropertyName="SelectedDate" />
         <asp:ControlParameter ControlID="cmbKhachHang" DefaultValue="0" Name="FK_KHACHHANG"
             PropertyName="SelectedValue" />
         <asp:SessionParameter Name="FK_VUNGLAMVIEC" Type="String" SessionField="VUNGLAMVIEC" />
     </SelectParameters>
 </asp:SqlDataSource>
- <asp:SqlDataSource ID="NHOMKHACHHANGDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
- SelectCommand="SELECT DMNHOMKHACHHANG.* FROM DMNHOMKHACHHANG WHERE FK_VUNGLAMVIEC = @FK_VUNGLAMVIEC">
- <SelectParameters>
-     <asp:SessionParameter Name="FK_VUNGLAMVIEC" Type="String" SessionField="VUNGLAMVIEC" />
- </SelectParameters>
-</asp:SqlDataSource>
-<asp:SqlDataSource ID="KHACHHANGDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>">
+<asp:SqlDataSource ID="KHACHHANGDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
+    SelectCommand="SELECT DMKHACHHANG.C_CODE, (DMKHACHHANG.C_CODE + '-' + DMKHACHHANG.C_NAME) as C_CODEFIX FROM DMKHACHHANG LEFT OUTER JOIN DMNHOMKHACHHANG ON DMKHACHHANG.FK_NHOMKHACHHANG = DMNHOMKHACHHANG.PK_ID LEFT OUTER JOIN NHANGUI ON NHANGUI.FK_KHACHHANG = DMKHACHHANG.C_CODE WHERE NHANGUI.C_HINHTHUCTT = N'Thanh toán sau' AND DMNHOMKHACHHANG.FK_VUNGLAMVIEC = @FK_VUNGLAMVIEC GROUP BY DMKHACHHANG.C_CODE,DMKHACHHANG.C_NAME">
+    <SelectParameters>
+        <asp:SessionParameter Name="FK_VUNGLAMVIEC" Type="String" SessionField="VUNGLAMVIEC" />
+    </SelectParameters>
 </asp:SqlDataSource>

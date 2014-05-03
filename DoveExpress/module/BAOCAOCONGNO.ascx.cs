@@ -36,6 +36,8 @@ public partial class module_BAOCAOCONGNO : System.Web.UI.UserControl
             string index = Request["index"].ToString();
             string Value = Request["value"].ToString();
         }
+        radTuNgay.SelectedDate = DateTime.Now;
+        radDenNgay.SelectedDate = DateTime.Now.AddDays(1);
         Session["LastUrl"] = Request.Url.ToString();
     }
     protected void btnShowAll_Click(object sender, System.Web.UI.ImageClickEventArgs e)
@@ -142,90 +144,6 @@ public partial class module_BAOCAOCONGNO : System.Web.UI.UserControl
         {
             //Label lblSTT = (Label)e.Item.FindControl("lblSTT");
             //lblSTT.Text = (e.Item.ItemIndex + 1).ToString();
-        }
-    }
-    protected void cmbKhachHang_ItemsRequested(object sender, RadComboBoxItemsRequestedEventArgs e)
-    {
-        KHACHHANGDataSource.SelectCommand = LoadFilteredManually(e.Text);
-        cmbKhachHang.DataBind();
-    }
-    protected string LoadFilteredManually(string ID)
-    {
-        string SelectSQL = "";
-        if (ID != "")
-        {
-            SelectSQL = "SELECT * FROM DMKHACHHANG WHERE FK_NHOMKHACHHANG = " + ID + "order by C_CODE";
-        }
-        else
-        {
-            SelectSQL = "SELECT * FROM DMKHACHHANG order by C_CODE";
-        }
-        return SelectSQL;
-    }
-    protected void cmbNhomKhachHang_PreRender(object sender, EventArgs e)
-    {
-        /*if (!IsPostBack)
-        {
-            if (cmbNhomKhachHang.Items.Count != 0)
-            {
-                cmbNhomKhachHang.SelectedIndex = 0;
-                KHACHHANGDataSource.SelectCommand = LoadFilteredManually(cmbNhomKhachHang.SelectedValue);
-                cmbKhachHang.DataBind();
-                if (cmbKhachHang.Items.Count != 0)
-                {
-                    cmbKhachHang.SelectedIndex = 0;
-                }
-            }
-        }*/
-    }
-    protected void cmbMonth_PreRender(object sender, EventArgs e)
-    {
-        if (!IsPostBack)
-        {
-            cmbMonth.SelectedValue = System.DateTime.Now.Month.ToString();
-            BAOCAOCONGNODataSource.SelectParameters["MONTH"].DefaultValue = System.DateTime.Now.Month.ToString();
-        }
-    }
-    protected void cmbYear_PreRender(object sender, EventArgs e)
-    {
-        if (!IsPostBack)
-        {
-            string SelectSQL = "SELECT MIN(year(C_NGAY)) as MINNAM FROM NHANGUI";
-            DataTable oDataTable = new DataTable();
-            ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
-            oDataTable = SelectQuery.query_data(SelectSQL);
-            if (oDataTable.Rows.Count != 0)
-            {
-                if (oDataTable.Rows[0]["MINNAM"] == DBNull.Value)
-                {
-                    int intYear = DateTime.Now.Year;
-                    RadComboBoxItem Item0 = new RadComboBoxItem(intYear.ToString(), intYear.ToString());
-                    intYear += 1;
-                    RadComboBoxItem Item1 = new RadComboBoxItem(intYear.ToString(), intYear.ToString());
-                    cmbYear.Items.Add(Item0);
-                    cmbYear.Items.Add(Item1);
-                }
-                else
-                {
-                    int intYear = DateTime.Now.Year;
-                    for (int i = int.Parse(oDataTable.Rows[0]["MINNAM"].ToString()); i <= intYear + 1; i++)
-                    {
-                        RadComboBoxItem Item = new RadComboBoxItem(i.ToString(), i.ToString());
-                        cmbYear.Items.Add(Item);
-                    }
-                }
-            }
-            else
-            {
-                int intYear = DateTime.Now.Year;
-                for (int i = int.Parse(oDataTable.Rows[0]["MINNAM"].ToString()); i <= intYear + 1; i++)
-                {
-                    RadComboBoxItem Item = new RadComboBoxItem(i.ToString(), i.ToString());
-                    cmbYear.Items.Add(Item);
-                }
-            }
-            cmbYear.SelectedValue = System.DateTime.Now.Year.ToString();
-            BAOCAOCONGNODataSource.SelectParameters["YEAR"].DefaultValue = System.DateTime.Now.Year.ToString();
         }
     }
     protected void RadGridBAOCAOCONGNO_ItemCreated(object sender, GridItemEventArgs e)

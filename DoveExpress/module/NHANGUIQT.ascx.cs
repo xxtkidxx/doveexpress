@@ -637,10 +637,10 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
             txtC_DONGGOI.Text = (txtC_DONGGOI.Text == "") ? "0" : txtC_DONGGOI.Text;
             RadNumericTextBox txtC_KHAIGIA = (RadNumericTextBox)editItem.FindControl("txtC_KHAIGIA");
             txtC_KHAIGIA.Text = (txtC_KHAIGIA.Text == "") ? "0" : txtC_KHAIGIA.Text;
-            RadNumericTextBox txtC_COD = (RadNumericTextBox)editItem.FindControl("txtC_COD");
-            txtC_COD.Text = (txtC_COD.Text == "") ? "0" : txtC_COD.Text;
-            RadNumericTextBox txtC_BAOPHAT = (RadNumericTextBox)editItem.FindControl("txtC_BAOPHAT");
-            txtC_BAOPHAT.Text = (txtC_BAOPHAT.Text == "") ? "0" : txtC_BAOPHAT.Text;
+            RadNumericTextBox txtC_HUNTRUNG = (RadNumericTextBox)editItem.FindControl("txtC_HUNTRUNG");
+            txtC_HUNTRUNG.Text = (txtC_HUNTRUNG.Text == "") ? "0" : txtC_HUNTRUNG.Text;
+            RadNumericTextBox txtC_HAIQUAN = (RadNumericTextBox)editItem.FindControl("txtC_HAIQUAN");
+            txtC_HAIQUAN.Text = (txtC_HAIQUAN.Text == "") ? "0" : txtC_HAIQUAN.Text;
             RadNumericTextBox txtC_HENGIO = (RadNumericTextBox)editItem.FindControl("txtC_HENGIO");
             txtC_HENGIO.Text = (txtC_HENGIO.Text == "") ? "0" : txtC_HENGIO.Text;
             RadNumericTextBox txtC_TIENHANG = (RadNumericTextBox)editItem.FindControl("txtC_TIENHANG");
@@ -709,8 +709,8 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
                             txtPPXD.Text = oDataTableNew.Rows[0]["C_PPXD"].ToString();
                             txtC_DONGGOI.Text = oDataTableNew.Rows[0]["C_DONGGOI"].ToString();
                             txtC_KHAIGIA.Text = oDataTableNew.Rows[0]["C_KHAIGIA"].ToString();
-                            txtC_COD.Text = oDataTableNew.Rows[0]["C_COD"].ToString();
-                            txtC_BAOPHAT.Text = oDataTableNew.Rows[0]["C_BAOPHAT"].ToString();
+                            txtC_HUNTRUNG.Text = oDataTableNew.Rows[0]["C_HUNTRUNG"].ToString();
+                            txtC_HAIQUAN.Text = oDataTableNew.Rows[0]["C_HAIQUAN"].ToString();
                             txtC_HENGIO.Text = oDataTableNew.Rows[0]["C_HENGIO"].ToString();
                             txtC_TIENHANG.Text = oDataTableNew.Rows[0]["C_TIENHANG"].ToString();
                             txtC_VAT.Text = oDataTableNew.Rows[0]["C_VAT"].ToString();
