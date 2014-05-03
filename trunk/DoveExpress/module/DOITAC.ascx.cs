@@ -152,6 +152,9 @@ public partial class module_DOITAC : System.Web.UI.UserControl
             GridEditableItem editItem = (GridEditableItem)e.Item;
             HiddenField txtID = (HiddenField)editItem.FindControl("txtID");
             Session["txtID"] = (txtID.Value != "") ? txtID.Value : "0";
+            RadListBox RadListBoxVungLamViecRef = (RadListBox)editItem.FindControl("RadListBoxVungLamViecRef");
+            HiddenField txtFK_VUNGLAMVIEC = (HiddenField)editItem.FindControl("txtFK_VUNGLAMVIEC");
+            setItenforListBoxSelect(RadListBoxVungLamViecRef, txtFK_VUNGLAMVIEC.Value);
             if (e.Item is GridEditFormInsertItem || e.Item is GridDataInsertItem)
             {
                 // insert item
@@ -163,6 +166,26 @@ public partial class module_DOITAC : System.Web.UI.UserControl
         {
             Label lblSTT = (Label)e.Item.FindControl("lblSTT");
             lblSTT.Text = (e.Item.ItemIndex + 1).ToString();
+        }
+    }
+    protected static void setItenforListBoxSelect(RadListBox control, string ivalue)
+    {
+        if (ivalue != "")
+        {
+            ivalue = "N'" + ivalue.Replace(",", "',N'") + "'";
+            string selectSQl = String.Format("Select C_CODE, C_NAME from DMVUNGLAMVIEC WHERE C_CODE in ({0})", ivalue);
+            ITCLIB.Admin.SQL sqlAC = new ITCLIB.Admin.SQL();
+            DataTable odata = sqlAC.query_data(selectSQl);
+            foreach (DataRow orow in odata.Rows)
+            {
+                if (control.FindItemByValue(orow["C_CODE"].ToString()) == null)
+                {
+                    RadListBoxItem item = new RadListBoxItem();
+                    item.Value = orow["C_CODE"] != null ? orow["C_CODE"].ToString() : "";
+                    item.Text = orow["C_NAME"] != null ? orow["C_NAME"].ToString() : "";
+                    control.Items.Add(item);
+                }
+            }
         }
     }
     protected void RadGridDOITAC_ItemCommand(object sender, GridCommandEventArgs e)
@@ -183,6 +206,36 @@ public partial class module_DOITAC : System.Web.UI.UserControl
                 }
             }
         }
+        else if (e.CommandName == RadGrid.PerformInsertCommandName)
+        {
+            GridEditableItem editItem = (GridEditableItem)e.Item;
+            RadListBox RadListBoxVungLamViecRef = (RadListBox)editItem.FindControl("RadListBoxVungLamViecRef");
+            if (getStringSelect(RadListBoxVungLamViecRef) != "")
+            {
+                DOITACDataSource.InsertParameters["FK_VUNGLAMVIEC"].DefaultValue = getStringSelect(RadListBoxVungLamViecRef);
+            }
+        }
+        else if (e.CommandName == RadGrid.UpdateCommandName)
+        {
+            GridEditableItem editItem = (GridEditableItem)e.Item;
+            RadListBox RadListBoxVungLamViecRef = (RadListBox)editItem.FindControl("RadListBoxVungLamViecRef");
+            if (getStringSelect(RadListBoxVungLamViecRef) != "")
+            {
+                DOITACDataSource.UpdateParameters["FK_VUNGLAMVIEC"].DefaultValue = getStringSelect(RadListBoxVungLamViecRef);
+            }
+        }
+    }
+    protected static string getStringSelect(RadListBox control)
+    {
+        string result = "";
+        if (control.Items.Count != 0)
+        {
+            foreach (RadListBoxItem item in control.Items)
+            {
+                result = ITCLIB.Admin.cFunction.GetStringForList(item.Value, result, ',');
+            }
+        }
+        return result;
     }
     protected string getmaxid(string table)
     {
