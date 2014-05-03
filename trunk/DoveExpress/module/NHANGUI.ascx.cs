@@ -11,6 +11,7 @@ using System.Collections;
 
 public partial class module_NHANGUI : System.Web.UI.UserControl
 {
+    #region Biến toàn cục
     private string FK_NHOMKHACHHANG
     {
         get
@@ -198,6 +199,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
             Session["GIACUOCLK"] = value;
         }
     }
+    #endregion
     string Alarm = "";
     bool isCuocchinh = false;
     bool isCuocdoitac = false;
@@ -307,15 +309,15 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
         {
             FK_DICHVU = arrayvalue[1];
             string SelectSQL1;
-            SelectSQL1 = "Select DMPPXD.C_PPXD FROM DMPPXD WHERE DMPPXD.FK_MASANPHAM =" + FK_DICHVU + " AND FK_MABANGCUOC = " + FK_MABANGCUOC;
+            SelectSQL1 = "Select DMDICHVUPHUTROI.C_VALUE FROM DMDICHVUPHUTROI WHERE DMDICHVUPHUTROI.FK_MASANPHAM =" + FK_DICHVU + " AND DMDICHVUPHUTROI.FK_MABANGCUOC = " + FK_MABANGCUOC + " AND C_TYPE = N'PPXD'";
             DataTable oDataTable1 = new DataTable();
             ITCLIB.Admin.SQL SelectQuery1 = new ITCLIB.Admin.SQL();
             oDataTable1 = SelectQuery1.query_data(SelectSQL1);
             if (oDataTable1.Rows.Count != 0)
             {
-                if (oDataTable1.Rows[0]["C_PPXD"] != DBNull.Value)
+                if (oDataTable1.Rows[0]["C_VALUE"] != DBNull.Value)
                 {
-                    PPXD = decimal.Parse(oDataTable1.Rows[0]["C_PPXD"].ToString());
+                    PPXD = decimal.Parse(oDataTable1.Rows[0]["C_VALUE"].ToString());
                 }
                 else
                 {
@@ -647,15 +649,15 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
                             }
                             PPXD = 0;
                             string SelectSQL4;
-                            SelectSQL4 = "Select DMPPXD.C_PPXD FROM DMPPXD WHERE DMPPXD.FK_MASANPHAM =" + FK_DICHVU + " AND FK_MABANGCUOC = " + FK_MABANGCUOC;
+                            SelectSQL4 = "Select DMDICHVUPHUTROI.C_VALUE FROM DMDICHVUPHUTROI WHERE DMDICHVUPHUTROI.FK_MASANPHAM =" + FK_DICHVU + " AND DMDICHVUPHUTROI.FK_MABANGCUOC = " + FK_MABANGCUOC + " AND C_TYPE = N'PPXD'";
                             DataTable oDataTable4 = new DataTable();
                             ITCLIB.Admin.SQL SelectQuery4 = new ITCLIB.Admin.SQL();
                             oDataTable4 = SelectQuery4.query_data(SelectSQL4);
                             if (oDataTable4.Rows.Count != 0)
                             {
-                                if (oDataTable4.Rows[0]["C_PPXD"] != DBNull.Value)
+                                if (oDataTable4.Rows[0]["C_VALUE"] != DBNull.Value)
                                 {
-                                    PPXD = decimal.Parse(oDataTable4.Rows[0]["C_PPXD"].ToString());
+                                    PPXD = decimal.Parse(oDataTable4.Rows[0]["C_VALUE"].ToString());
                                 }
                             }
                             C_KHOILUONG = int.Parse(oDataTableNew.Rows[0]["C_KHOILUONG"].ToString());
@@ -722,15 +724,15 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
                 }
                 PPXD = 0;
                 string SelectSQL4;
-                SelectSQL4 = "Select DMPPXD.C_PPXD FROM DMPPXD WHERE DMPPXD.FK_MASANPHAM =" + FK_DICHVU + " AND FK_MABANGCUOC = " + FK_MABANGCUOC;
+                SelectSQL4 = "Select DMDICHVUPHUTROI.C_VALUE FROM DMDICHVUPHUTROI WHERE DMDICHVUPHUTROI.FK_MASANPHAM =" + FK_DICHVU + " AND DMDICHVUPHUTROI.FK_MABANGCUOC = " + FK_MABANGCUOC + " AND C_TYPE = N'PPXD'";
                 DataTable oDataTable4 = new DataTable();
                 ITCLIB.Admin.SQL SelectQuery4 = new ITCLIB.Admin.SQL();
                 oDataTable4 = SelectQuery4.query_data(SelectSQL4);
                 if (oDataTable4.Rows.Count != 0)
                 {
-                    if (oDataTable4.Rows[0]["C_PPXD"] != DBNull.Value)
+                    if (oDataTable4.Rows[0]["C_VALUE"] != DBNull.Value)
                     {
-                        PPXD = decimal.Parse(oDataTable4.Rows[0]["C_PPXD"].ToString());
+                        PPXD = decimal.Parse(oDataTable4.Rows[0]["C_VALUE"].ToString());
                     }
                 }
                 C_KHOILUONG = (txtC_KHOILUONG.Text != "") ? int.Parse(txtC_KHOILUONG.Text) : 0;
@@ -741,8 +743,8 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
         }
         if (e.Item is GridDataItem)
         {
-            Label lblSTT = (Label)e.Item.FindControl("lblSTT");
-            lblSTT.Text = (e.Item.ItemIndex + 1).ToString();
+            /*Label lblSTT = (Label)e.Item.FindControl("lblSTT");
+            lblSTT.Text = (e.Item.ItemIndex + 1).ToString();*/
         }
     }
     protected string GetMaxBill()
