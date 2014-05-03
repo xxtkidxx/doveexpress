@@ -2,12 +2,12 @@
 <%@ Register TagPrefix="uc1" Namespace="ITCLIB.Admin" %>
 <telerik:RadCodeBlock ID="RadCodeBlockNHANGUIPH" runat="server">
     <script type="text/javascript">
-    function RowDblClick(sender, eventArgs) {
+        function RowDblClick(sender, eventArgs) {
             var CanEdit = "<%=ITCLIB.Security.Security.CanEditModule("NHANGUIPH") %>";
-            if ((eventArgs.get_tableView().get_name() == "MasterTableViewNHANGUIPH") && (CanEdit == "True")) {
-                sender.get_masterTableView().editItem(eventArgs.get_itemIndexHierarchical());
-            }
-    }   
+        if ((eventArgs.get_tableView().get_name() == "MasterTableViewNHANGUIPH") && (CanEdit == "True")) {
+            sender.get_masterTableView().editItem(eventArgs.get_itemIndexHierarchical());
+        }
+    }
     </script>
     <script type="text/javascript">
         var registeredElementsNG = [];
@@ -57,7 +57,7 @@
             $find("<%=RadGridNHANGUIPH.ClientID %>").get_masterTableView().rebind();
         }
         function OnClientLinkClicked(IDvalue) {
-            var oWindow = radopen("Popup.aspx?ctl=NHANGUITRACKING&IDBILL=" + IDvalue, "Tracking");            
+            var oWindow = radopen("Popup.aspx?ctl=NHANGUITRACKING&IDBILL=" + IDvalue, "Tracking");
             oWindow.setSize(800, 600);
             oWindow.set_top(0);
             return false;
@@ -66,8 +66,7 @@
 </telerik:RadCodeBlock>
 <telerik:RadAjaxLoadingPanel Skin="Vista" ID="RadAjaxLoadingPanelNHANGUIPH" runat="server" />
 <style type="text/css">
-    table.gridtable
-    {
+    table.gridtable {
         font-family: verdana,arial,sans-serif;
         font-size: 13px;
         color: #333333;
@@ -77,28 +76,27 @@
         width: 30%;
         margin: 5px 5px 5px 5px;
     }
-    table.gridtable th
-    {
-        border-width: 1px;
-        padding: 5px;
-        font-weight: bold;
-        border-style: solid;
-        border-color: #666666;
-        background-color: #dedede;
-    }
-    table.gridtable td
-    {
-        border-width: 1px;
-        padding: 5px;
-        border-style: solid;
-        border-color: #666666;
-        background-color: #ffffff;
-    }
+
+        table.gridtable th {
+            border-width: 1px;
+            padding: 5px;
+            font-weight: bold;
+            border-style: solid;
+            border-color: #666666;
+            background-color: #dedede;
+        }
+
+        table.gridtable td {
+            border-width: 1px;
+            padding: 5px;
+            border-style: solid;
+            border-color: #666666;
+            background-color: #ffffff;
+        }
 </style>
 <table class="gridtable">
     <tr>
-        <th>
-            Đối tác
+        <th>Đối tác
         </th>
     </tr>
     <tr>
@@ -277,8 +275,7 @@
                                 </td>
                                 <td colspan="4">
                                     <span style="color: red;">Đã phát</span><asp:CheckBox ID="chkFK_TRANGTHAI" runat="server"
-                                        Checked='<%# Eval("FK_TRANGTHAI") == DBNull.Value ? false : bool.Parse(Eval("FK_TRANGTHAI").ToString()) %>'>
-                                    </asp:CheckBox>
+                                        Checked='<%# Eval("FK_TRANGTHAI") == DBNull.Value ? false : bool.Parse(Eval("FK_TRANGTHAI").ToString()) %>'></asp:CheckBox>
                                 </td>
                             </tr>
                         </table>
@@ -310,10 +307,11 @@
     Top="50px" Left="100px">
 </telerik:RadWindowManager>
 <asp:SqlDataSource ID="NHANGUIPHDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
-    SelectCommand="SELECT [NHANGUI].[PK_ID], [NHANGUI].[C_NGAY], DATEADD(D, 0, DATEDIFF(D, 0, [NHANGUI].[C_NGAY])) as C_NGAYFIX, [NHANGUI].[FK_KHACHHANG], [NHANGUI].[C_BILL], [NHANGUI].[C_TENKH], [NHANGUI].[C_TELGUI], [NHANGUI].[C_NGUOINHAN], [NHANGUI].[C_DIACHINHAN], [NHANGUI].[C_TELNHAN], [NHANGUI].[FK_QUANHUYEN], [NHANGUI].[C_NOIDUNG], [NHANGUI].[C_SOKIEN], [NHANGUI].[C_GIATRIHANGHOA], [NHANGUI].[FK_MASANPHAM],  [NHANGUI].[C_PPXD], [NHANGUI].[C_KHOILUONGTHUC], [NHANGUI].[C_KHOILUONGQD], [NHANGUI].[C_KHOILUONG], [NHANGUI].[C_GIACUOC], [NHANGUI].[C_DONGGOI], [NHANGUI].[C_KHAIGIA], [NHANGUI].[C_COD], [NHANGUI].[C_BAOPHAT], [NHANGUI].[C_HENGIO], [NHANGUI].[C_HINHTHUCTT], [NHANGUI].[C_DATHU], ([NHANGUI].[C_TIENHANGVAT] - [NHANGUI].[C_DATHU]) as [C_CONLAI],(ISNULL([NHANGUI].[C_DONGGOI],0) + ISNULL([NHANGUI].[C_KHAIGIA],0) + ISNULL([NHANGUI].[C_COD],0) + ISNULL([NHANGUI].[C_BAOPHAT],0) + ISNULL([NHANGUI].[C_HENGIO],0)  + ISNULL([NHANGUI].[C_HAIQUAN],0)  + ISNULL([NHANGUI].[C_HUNTRUNG],0)) as [C_PHUTROISUM], [NHANGUI].[C_TIENHANG], [NHANGUI].[C_VAT], [NHANGUI].[C_TIENHANGVAT], [NHANGUI].[FK_NHANVIENNHAN], [NHANGUI].[FK_DOITAC], [NHANGUI].[C_GIADOITAC], (CASE WHEN NOT EXISTS (SELECT USERS.PK_ID FROM USERS WHERE USERS.PK_ID = NHANGUI.FK_NHANVIENPHAT) THEN NULL ELSE NHANGUI.FK_NHANVIENPHAT END) as FK_NHANVIENPHAT, [NHANGUI].[C_NGAYGIOPHAT], (CASE WHEN NOT EXISTS (SELECT USERS.PK_ID FROM USERS WHERE USERS.PK_ID = NHANGUI.FK_NHANVIENKHAITHAC) THEN NULL ELSE NHANGUI.FK_NHANVIENKHAITHAC END) as FK_NHANVIENKHAITHAC, [NHANGUI].[C_NGUOIKYNHAN], [NHANGUI].[C_BOPHAN], [NHANGUI].[FK_TRANGTHAI], (CASE WHEN [NHANGUI].[FK_TRANGTHAI] = N'True' THEN N'Đã ký nhận' ELSE (SELECT TOP 1 DMTRANGTHAI.C_NAME FROM TRACKING LEFT OUTER JOIN DMTRANGTHAI ON TRACKING.FK_TRANGTHAI = DMTRANGTHAI.C_CODE WHERE TRACKING.C_BILL = NHANGUI.C_BILL ORDER BY TRACKING.C_DATE DESC) END) as TRANGTHAINAME, USERSNHAN.C_NAME as NHANVIENNHANNAME,USERSPHAT.C_NAME as NHANVIENPHATNAME,USERSKHAITHAC.C_NAME as NHANVIENKHAITHACNAME,DMMASANPHAM.C_NAME as SANPHAMNAME,DMQUANHUYEN.C_NAME as QUANHUYENNAME,DMTINHTHANH.C_NAME as TINHTHANHNAME FROM [NHANGUI] LEFT OUTER JOIN USERS as USERSNHAN ON NHANGUI.FK_NHANVIENNHAN = USERSNHAN.PK_ID LEFT OUTER JOIN USERS as USERSPHAT ON NHANGUI.FK_NHANVIENPHAT = USERSPHAT.PK_ID LEFT OUTER JOIN USERS as USERSKHAITHAC ON NHANGUI.FK_NHANVIENKHAITHAC = USERSKHAITHAC.PK_ID LEFT OUTER JOIN DMMASANPHAM ON NHANGUI.FK_MASANPHAM=DMMASANPHAM.PK_ID LEFT OUTER JOIN DMQUANHUYEN ON NHANGUI.FK_QUANHUYEN = DMQUANHUYEN.C_CODE LEFT OUTER JOIN DMTINHTHANH ON DMQUANHUYEN.FK_TINHTHANH = DMTINHTHANH.PK_ID WHERE (@FK_DOITAC = -1 OR FK_DOITAC = @FK_DOITAC) ORDER BY [NHANGUI].C_NGAY DESC"
+    SelectCommand="SELECT [NHANGUI].[PK_ID], [NHANGUI].[C_NGAY], DATEADD(D, 0, DATEDIFF(D, 0, [NHANGUI].[C_NGAY])) as C_NGAYFIX, [NHANGUI].[FK_KHACHHANG], [NHANGUI].[C_BILL], [NHANGUI].[C_TENKH], [NHANGUI].[C_TELGUI], [NHANGUI].[C_NGUOINHAN], [NHANGUI].[C_DIACHINHAN], [NHANGUI].[C_TELNHAN], [NHANGUI].[FK_QUANHUYEN], [NHANGUI].[C_NOIDUNG], [NHANGUI].[C_SOKIEN], [NHANGUI].[C_GIATRIHANGHOA], [NHANGUI].[FK_MASANPHAM],  [NHANGUI].[C_PPXD], [NHANGUI].[C_KHOILUONGTHUC], [NHANGUI].[C_KHOILUONGQD], [NHANGUI].[C_KHOILUONG], [NHANGUI].[C_GIACUOC], [NHANGUI].[C_DONGGOI], [NHANGUI].[C_KHAIGIA], [NHANGUI].[C_COD], [NHANGUI].[C_BAOPHAT], [NHANGUI].[C_HENGIO], [NHANGUI].[C_HINHTHUCTT], [NHANGUI].[C_DATHU], ([NHANGUI].[C_TIENHANGVAT] - [NHANGUI].[C_DATHU]) as [C_CONLAI],(ISNULL([NHANGUI].[C_DONGGOI],0) + ISNULL([NHANGUI].[C_KHAIGIA],0) + ISNULL([NHANGUI].[C_COD],0) + ISNULL([NHANGUI].[C_BAOPHAT],0) + ISNULL([NHANGUI].[C_HENGIO],0)  + ISNULL([NHANGUI].[C_HAIQUAN],0)  + ISNULL([NHANGUI].[C_HUNTRUNG],0)) as [C_PHUTROISUM], [NHANGUI].[C_TIENHANG], [NHANGUI].[C_VAT], [NHANGUI].[C_TIENHANGVAT], [NHANGUI].[FK_NHANVIENNHAN], [NHANGUI].[FK_DOITAC], [NHANGUI].[C_GIADOITAC], (CASE WHEN NOT EXISTS (SELECT USERS.PK_ID FROM USERS WHERE USERS.PK_ID = NHANGUI.FK_NHANVIENPHAT) THEN NULL ELSE NHANGUI.FK_NHANVIENPHAT END) as FK_NHANVIENPHAT, [NHANGUI].[C_NGAYGIOPHAT], (CASE WHEN NOT EXISTS (SELECT USERS.PK_ID FROM USERS WHERE USERS.PK_ID = NHANGUI.FK_NHANVIENKHAITHAC) THEN NULL ELSE NHANGUI.FK_NHANVIENKHAITHAC END) as FK_NHANVIENKHAITHAC, [NHANGUI].[C_NGUOIKYNHAN], [NHANGUI].[C_BOPHAN], [NHANGUI].[FK_TRANGTHAI], (CASE WHEN [NHANGUI].[FK_TRANGTHAI] = N'True' THEN N'Đã ký nhận' ELSE (SELECT TOP 1 DMTRANGTHAI.C_NAME FROM TRACKING LEFT OUTER JOIN DMTRANGTHAI ON TRACKING.FK_TRANGTHAI = DMTRANGTHAI.C_CODE WHERE TRACKING.C_BILL = NHANGUI.C_BILL ORDER BY TRACKING.C_DATE DESC) END) as TRANGTHAINAME, USERSNHAN.C_NAME as NHANVIENNHANNAME,USERSPHAT.C_NAME as NHANVIENPHATNAME,USERSKHAITHAC.C_NAME as NHANVIENKHAITHACNAME,DMMASANPHAM.C_NAME as SANPHAMNAME,DMQUANHUYEN.C_NAME as QUANHUYENNAME,DMTINHTHANH.C_NAME as TINHTHANHNAME FROM [NHANGUI] LEFT OUTER JOIN USERS as USERSNHAN ON NHANGUI.FK_NHANVIENNHAN = USERSNHAN.PK_ID LEFT OUTER JOIN USERS as USERSPHAT ON NHANGUI.FK_NHANVIENPHAT = USERSPHAT.PK_ID LEFT OUTER JOIN USERS as USERSKHAITHAC ON NHANGUI.FK_NHANVIENKHAITHAC = USERSKHAITHAC.PK_ID LEFT OUTER JOIN DMMASANPHAM ON NHANGUI.FK_MASANPHAM=DMMASANPHAM.PK_ID LEFT OUTER JOIN DMQUANHUYEN ON NHANGUI.FK_QUANHUYEN = DMQUANHUYEN.C_CODE LEFT OUTER JOIN DMTINHTHANH ON DMQUANHUYEN.FK_TINHTHANH = DMTINHTHANH.PK_ID LEFT OUTER JOIN DMDOITAC ON [NHANGUI].FK_DOITAC = DMDOITAC.PK_ID WHERE (@FK_DOITAC = -1 OR [NHANGUI].FK_DOITAC = @FK_DOITAC) AND (([NHANGUI].[FK_VUNGLAMVIEC] = @FK_VUNGLAMVIEC) OR ([DMDOITAC].[FK_VUNGLAMVIEC] LIKE '%' + @FK_VUNGLAMVIEC + '%')) ORDER BY [NHANGUI].C_NGAY DESC"
     UpdateCommand="UPDATE [NHANGUI] SET [FK_NHANVIENPHAT] = @FK_NHANVIENPHAT, [C_NGAYGIOPHAT] = @C_NGAYGIOPHAT, [FK_NHANVIENKHAITHAC]=@FK_NHANVIENKHAITHAC, [C_NGUOIKYNHAN] = @C_NGUOIKYNHAN, [C_BOPHAN] = @C_BOPHAN, [FK_TRANGTHAI] = @FK_TRANGTHAI WHERE [C_BILL] = @C_BILL">
     <SelectParameters>
         <asp:ControlParameter Name="FK_DOITAC" Type="String" ControlID="cmbDoiTac" DefaultValue="-1" />
+        <asp:SessionParameter Name="FK_VUNGLAMVIEC" Type="String" SessionField="VUNGLAMVIEC" />
     </SelectParameters>
     <UpdateParameters>
         <asp:Parameter Name="FK_NHANVIENPHAT" Type="Int32" />
@@ -326,10 +324,12 @@
     </UpdateParameters>
 </asp:SqlDataSource>
 <asp:SqlDataSource ID="UserDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
-    SelectCommand="SELECT USERS.PK_ID,USERS.FK_GroupUser,USERS.FK_DEPT,USERS.C_LoginName,USERS.C_Password,USERS.C_NAME,USERS.C_Address,USERS.c_Tel,USERS.C_Email,USERS.C_DESC,GROUPUSER.C_NAME AS GROUPUSERNAME FROM USERS INNER JOIN GROUPUSER ON  USERS.FK_GROUPUSER = GROUPUSER.PK_ID WHERE FK_GROUPUSER NOT IN (0,1)">
-</asp:SqlDataSource>
+    SelectCommand="SELECT USERS.PK_ID,USERS.FK_GroupUser,USERS.FK_DEPT,USERS.C_LoginName,USERS.C_Password,USERS.C_NAME,USERS.C_Address,USERS.c_Tel,USERS.C_Email,USERS.C_DESC,GROUPUSER.C_NAME AS GROUPUSERNAME FROM USERS INNER JOIN GROUPUSER ON  USERS.FK_GROUPUSER = GROUPUSER.PK_ID WHERE FK_GROUPUSER NOT IN (0,1)"></asp:SqlDataSource>
 <asp:SqlDataSource ID="DoiTacDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
-    SelectCommand="SELECT [PK_ID], [C_CODE], [C_NAME] FROM [DMDoiTac] ORDER BY LTRIM([C_CODE])">
+    SelectCommand="SELECT [PK_ID], [C_CODE], [C_NAME] FROM [DMDoiTac] WHERE [FK_VUNGLAMVIEC] LIKE '%' + @FK_VUNGLAMVIEC + '%' ORDER BY LTRIM([C_CODE])">
+    <SelectParameters>
+        <asp:SessionParameter Name="FK_VUNGLAMVIEC" Type="String" SessionField="VUNGLAMVIEC" />
+    </SelectParameters>
 </asp:SqlDataSource>
 <asp:SqlDataSource ID="FK_TRANGTHAIDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
     SelectCommand="SELECT [PK_ID], [C_CODE], [C_NAME] FROM [DMTRANGTHAI]"></asp:SqlDataSource>
