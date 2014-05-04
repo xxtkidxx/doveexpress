@@ -1,0 +1,70 @@
+Thời gian lỗi : 2014-05-03 13:38:50 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Invalid column name 'C_KHOILUONGDT'.
+__________________________
+Thời gian lỗi : 2014-05-03 13:39:49 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Unable to cast object of type 'Telerik.Web.UI.GridCommandItem' to type 'Telerik.Web.UI.GridEditableItem'.
+__________________________
+Thời gian lỗi : 2014-05-03 14:48:31 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:DataBinding: 'Telerik.Web.UI.GridInsertionObject' does not contain a property with the name 'FK_USERADD'.
+__________________________
+Thời gian lỗi : 2014-05-03 15:31:09 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:String was not recognized as a valid DateTime.
+__________________________
+Thời gian lỗi : 2014-05-03 15:42:24 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=BAOCAOCONGNO. 
+Nội dung lỗi:Conversion failed when converting character string to smalldatetime data type.
+__________________________
+Thời gian lỗi : 2014-05-03 15:43:50 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=BAOCAOCONGNO. 
+Nội dung lỗi:Invalid object name 'DMKHANHHANG'.
+__________________________
+Thời gian lỗi : 2014-05-03 16:36:07 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2014-05-03 16:36:09 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2014-05-03 16:36:11 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2014-05-03 16:36:11 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2014-05-03 16:36:12 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2014-05-03 16:36:57 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2014-05-03 19:11:57 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=BAOCAONHANHANG. 
+Nội dung lỗi:Multiple controls with the same ID 'FilterTextBox_C_CONLAI' were found. FindControl requires that controls have unique IDs.
+__________________________
+Thời gian lỗi : 2014-05-03 20:17:35 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUIPH. 
+Nội dung lỗi:Must declare the scalar variable "@FK_VUNGLAMVIEC".
+__________________________

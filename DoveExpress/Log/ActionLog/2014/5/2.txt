@@ -1,0 +1,162 @@
+Thời gian: 2014-05-02 11:07:50 AM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2014-05-02 11:24:27 AM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2014-05-02 11:24:37 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated UserAdmins
+Kết quả : 2
+__________________________
+Thời gian: 2014-05-02 11:24:49 AM
+Địa chỉ IP : ::1
+Tài khoản : admin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2014-05-02 11:25:50 AM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2014-05-02 11:27:06 AM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2014-05-02 11:28:23 AM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2014-05-02 11:29:41 AM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2014-05-02 11:30:03 AM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2014-05-02 13:02:45 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2014-05-02 13:02:57 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2014-05-02 13:05:10 PM
+Địa chỉ IP : ::1
+Tài khoản : admin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2014-05-02 13:06:33 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2014-05-02 13:06:49 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2014-05-02 13:08:08 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2014-05-02 13:08:20 PM
+Địa chỉ IP : ::1
+Tài khoản : tuanda
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2014-05-02 13:08:47 PM
+Địa chỉ IP : ::1
+Tài khoản : tuanda
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2014-05-02 21:49:49 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2014-05-02 21:51:06 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2014-05-02 21:53:40 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2014-05-02 21:58:39 PM
+Địa chỉ IP : ::1
+Tài khoản : admin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2014-05-02 22:02:10 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2014-05-02 22:12:11 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2014-05-02 22:22:29 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2014-05-02 22:38:40 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2014-05-02 22:50:05 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2014-05-02 22:51:09 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
