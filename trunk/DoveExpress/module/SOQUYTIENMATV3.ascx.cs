@@ -95,6 +95,12 @@ public partial class module_SOQUYTIENMATV3 : System.Web.UI.UserControl
             DisplayMessage(gridMessage);
         }
         LoadTaiChinh();
+        if (cmbDay.SelectedValue != "0" || cmbTaiKhoan.SelectedValue != "0")
+        {
+            txtTONDAU.Text = "";
+            txtTONCUOI.Text = "";
+            txtTONTHUCTE.Text = "";
+        }
     }
     protected void RadGridSOQUYTIENMATV3_ItemDeleted(object sender, GridDeletedEventArgs e)
     {
@@ -658,5 +664,27 @@ public partial class module_SOQUYTIENMATV3 : System.Web.UI.UserControl
     protected void btnSaveAddNew_Click(object sender, EventArgs e)
     {
         Session["SaveAddNew"] = "True";
+    }
+    protected void CheckTonCuoiKy(object source, ServerValidateEventArgs args)
+    {
+        if (args.Value == "Tồn cuối kỳ")
+        {
+            string SelectSQL = "SELECT [SOQUYTIENMAT].[C_SOTIEN] FROM [SOQUYTIENMAT] WHERE [SOQUYTIENMAT].[FK_VUNGLAMVIEC] = N'" + Session["VUNGLAMVIEC"] + "' AND month([SOQUYTIENMAT].[C_NGAY]) =" + cmbMonth.SelectedValue + " AND year([SOQUYTIENMAT].[C_NGAY]) =" + cmbYear.SelectedValue + " AND [SOQUYTIENMAT].[C_TYPE] = N'Tồn cuối kỳ'";
+            DataTable oDataTable = new DataTable();
+            ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
+            oDataTable = SelectQuery.query_data(SelectSQL);
+            if (oDataTable.Rows.Count != 0)
+            {
+                args.IsValid = false;
+            }
+            else
+            {
+                args.IsValid = true;
+            }
+        }
+        else
+        {
+            args.IsValid = true;
+        }        
     }
 }
