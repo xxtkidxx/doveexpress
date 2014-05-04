@@ -32,6 +32,13 @@
 
             return false;
         }
+        function cmbVungLamViecClientSelectedIndexChangedHandler(sender, eventArgs) {
+            $find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("cmbVungLamViec;" + eventArgs.get_item().get_value());
+            var currentLoadingPanel = $find("<%= RadAjaxLoadingPanelPriceCheckQT.ClientID %>");
+            var currentUpdatedControl = "<%= pnPriceCheckQT.ClientID %>";
+            currentLoadingPanel.show(currentUpdatedControl);
+            return false;
+        }
         function cmbSanPhamClientSelectedIndexChangedHandler(sender, eventArgs) {
             $find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("cmbSanPham;" + eventArgs.get_item().get_value());
             var currentLoadingPanel = $find("<%= RadAjaxLoadingPanelPriceCheckQT.ClientID %>");
@@ -235,7 +242,7 @@
                 <td>
                     <telerik:RadComboBox ID="cmbVungLamViec" DataTextField="C_NAME" DataValueField="C_CODE"
                         DataSourceID="VUNGLAMVIECDataSource" ShowToggleImage="True" runat="server" EmptyMessage="Chọn vùng làm việc"
-                        nprerender="cmbVungLamViec_PreRender" OnPreRender="cmbVungLamViec_PreRender">
+                        OnPreRender="cmbVungLamViec_PreRender" OnClientSelectedIndexChanged="cmbVungLamViecClientSelectedIndexChangedHandler">
                     </telerik:RadComboBox>
                 </td>
                 <th scope="row">

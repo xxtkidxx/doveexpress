@@ -247,7 +247,7 @@ public partial class ext_PriceCheckQT : System.Web.UI.UserControl
         Session["VUNGLAMVIEC"] = cmbVungLamViec.SelectedValue;
         txtC_TYGIA.Text = GetTyGia();
         string[] arrayvalue = e.Argument.Split(';');
-        FK_KHACHHANG = "10002";
+        LoadKhachHang();
         string SelectSQL;
         SelectSQL = "Select DMKHACHHANG.FK_NHOMKHACHHANGQT,DMKHACHHANG.C_NAME,DMKHACHHANG.C_TEL FROM DMKHACHHANG WHERE DMKHACHHANG.C_CODE ='" + FK_KHACHHANG + "'";
         DataTable oDataTable = new DataTable();
@@ -367,6 +367,21 @@ public partial class ext_PriceCheckQT : System.Web.UI.UserControl
                 script = string.Format("var result = '{0}'", FK_KHACHHANG + ",-," + PPXD + ",-," + CUOCCHINH); //+ ",-," + FK_MABANGCUOC + ",-," + FK_MAVUNG + ",-," + FK_MAVUNGDT + ",-," + FK_DOITAC);
             }
             ScriptManager.RegisterClientScriptBlock(Page, typeof(Page), "result", script, true);
+        }
+    }
+    protected void LoadKhachHang()
+    {
+        string SelectSQL = "SELECT C_VALUE FROM DMCAUHINHVALUE WHERE FK_CAUHINH = 2 AND FK_VUNGLAMVIEC = N'" + Session["VUNGLAMVIEC"] + "'";
+        DataTable oDataTable = new DataTable();
+        ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
+        oDataTable = SelectQuery.query_data(SelectSQL);
+        if (oDataTable.Rows.Count != 0)
+        {
+            FK_KHACHHANG = oDataTable.Rows[0]["C_VALUE"].ToString();
+        }
+        else
+        {
+            FK_KHACHHANG = "";
         }
     }
     protected void cmbVungLamViec_PreRender(object sender, EventArgs e)

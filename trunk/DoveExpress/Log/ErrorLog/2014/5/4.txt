@@ -1,0 +1,15 @@
+Thời gian lỗi : 2014-05-04 00:19:58 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/js/. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2014-05-04 18:06:53 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/default.aspx. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2014-05-04 18:16:20 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=Config. 
+Nội dung lỗi:Two-way binding is only supported for properties. 'DbValue' is not a valid property on 'RadTextBox'
+__________________________

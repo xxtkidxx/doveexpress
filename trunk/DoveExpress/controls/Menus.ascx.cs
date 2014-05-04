@@ -18,6 +18,7 @@ public partial class controls_Menu : System.Web.UI.UserControl
         Menu.FindItemByValue("User_Log").Visible = ITCLIB.Security.Security.IsSysAdmin();
         Menu.FindItemByValue("ActionLog").Visible = ITCLIB.Security.Security.IsSysAdmin();
         Menu.FindItemByValue("ErrorLog").Visible = ITCLIB.Security.Security.IsSysAdmin();
+        Menu.FindItemByValue("Config").Visible = ITCLIB.Security.Security.IsSysAdmin();
         Menu.FindItemByValue("DANHMUCRIENG").Visible = ITCLIB.Security.Security.IsSysAdmin() || ITCLIB.Security.Security.CanViewModule("PHONGBAN") || ITCLIB.Security.Security.CanViewModule("NHANVIEN");
         //Danh mục chung
         Menu.FindItemByValue("VUNGDIALY").Visible = ITCLIB.Security.Security.CanViewModule("VUNGDIALY");

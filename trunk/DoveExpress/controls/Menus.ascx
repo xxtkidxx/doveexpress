@@ -117,6 +117,9 @@
                 <telerik:RadMenuItem runat="server" NavigateUrl="../Default.aspx?ctl=User_Log" Text="Nhật ký đăng nhập"
                     Value="User_Log" Font-Size="Small">
                 </telerik:RadMenuItem>
+                <telerik:RadMenuItem runat="server" NavigateUrl="../Default.aspx?ctl=Config" Text="Cấu hình hệ thống"
+                    Value="Config" Font-Size="Small">
+                </telerik:RadMenuItem>
             </Items>
         </telerik:RadMenuItem>
         <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="" Text="Nhận gửi"

@@ -49,6 +49,14 @@ public partial class Main : System.Web.UI.MasterPage
                     case "errorlog":
                         control = LoadControl("module/ErrorLog.ascx");
                         break;
+                    case "config":
+                        _AjaxSetting.AjaxControlID = "RadGridCONFIG";
+                        _AjaxUpdatedControl.ControlID = "RadGridCONFIG";
+                        _AjaxUpdatedControl.LoadingPanelID = "RadAjaxLoadingPanelCONFIG";
+                        _AjaxSetting.UpdatedControls.Add(_AjaxUpdatedControl);
+                        RadAjaxManager.AjaxSettings.Add(_AjaxSetting);
+                        control = LoadControl("module/CONFIG.ascx");
+                        break;
                     case "user_log":
                         control = LoadControl("module/User_Log.ascx");
                         break;
