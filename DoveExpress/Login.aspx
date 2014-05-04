@@ -38,12 +38,12 @@
                                 <span class="txtleft">
                                     <asp:TextBox ID="txtUser" Width="200px" runat="server" Height="15px"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="rfvUser" runat="server" ErrorMessage="Bạn chưa nhập tên đăng nhập"
-                                        ControlToValidate="txtUser" ValidationGroup="G1" Display="Dynamic">*</asp:RequiredFieldValidator>
+                                        ControlToValidate="txtUser" ValidationGroup="G1" Display="Dynamic" ForeColor="Red">*</asp:RequiredFieldValidator>
                                     <asp:RegularExpressionValidator ID="regUser" ControlToValidate="txtUser" ValidationExpression="^([\u0080-\ua7ffa-zA-Z0-9'\s])+$"
                                         Display="Dynamic" ErrorMessage="Không thể nhập kí tự đặc biệt" ValidationGroup="G1"
-                                        runat="server"></asp:RegularExpressionValidator>
+                                        runat="server" ForeColor="Red"></asp:RegularExpressionValidator>
                                     <asp:CustomValidator ID="cuvUser" ControlToValidate="txtUser" OnServerValidate="CheckVungLamViec"
-                                        runat="server" ErrorMessage="Tài khoản không được vào vùng làm việc này" Display="Dynamic" ValidationGroup="G1"></asp:CustomValidator>
+                                        runat="server" ErrorMessage="Tài khoản không được vào vùng làm việc này" Display="Dynamic" ValidationGroup="G1" ForeColor="Red"></asp:CustomValidator>
                                 </span>
                             </td>
                         </tr>
@@ -56,10 +56,10 @@
                                 <span class="txtleft">
                                     <asp:TextBox ID="txtPass" Width="200px" TextMode="Password" runat="server" Height="15px"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="rfvPass" runat="server" ErrorMessage="Bạn chưa nhập mật khẩu"
-                                        ControlToValidate="txtPass" ValidationGroup="G1" Display="Dynamic">*</asp:RequiredFieldValidator>
+                                        ControlToValidate="txtPass" ValidationGroup="G1" Display="Dynamic" ForeColor="Red">*</asp:RequiredFieldValidator>
                                     <asp:RegularExpressionValidator ID="regPass" ControlToValidate="txtPass" ValidationExpression="^([\u0080-\ua7ffa-zA-Z0-9'\s])+$"
                                         Display="Dynamic" ErrorMessage="Không thể nhập kí tự đặc biệt" ValidationGroup="G1"
-                                        runat="server"></asp:RegularExpressionValidator>
+                                        runat="server" ForeColor="Red"></asp:RegularExpressionValidator>
                                 </span>
                             </td>
                         </tr>
@@ -75,7 +75,7 @@
                                         OnPreRender="cmbVungLamViec_PreRender">
                                     </telerik:RadComboBox>
                                     <asp:RequiredFieldValidator ID="rfvVungLamViec" runat="server" ErrorMessage="Bạn chưa chọn vùng làm việc"
-                                        ControlToValidate="cmbVungLamViec" ValidationGroup="G1" Display="Dynamic">*</asp:RequiredFieldValidator>
+                                        ControlToValidate="cmbVungLamViec" ValidationGroup="G1" Display="Dynamic" ForeColor="Red">*</asp:RequiredFieldValidator>
                                 </span>
                             </td>
                         </tr>

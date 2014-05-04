@@ -338,7 +338,8 @@
                                                 <telerik:RadComboBoxItem Value="Chi" Text="Chi" />
                                                 <telerik:RadComboBoxItem Value="Tồn cuối kỳ" Text="Tồn cuối kỳ" />
                                             </Items>
-                                        </telerik:RadComboBox>
+                                        </telerik:RadComboBox><asp:CustomValidator ID="cuvcmbC_TYPE" ControlToValidate="cmbC_TYPE" OnServerValidate="CheckTonCuoiKy"
+                                        runat="server" ErrorMessage="Không thể tạo hai bản ghi tồn cuối kỳ trong 1 tháng" Display="Dynamic" ValidationGroup="G1" ForeColor="Red"></asp:CustomValidator>
                                     </td>
                                 </tr>
                                 <tr>
