@@ -1,0 +1,17 @@
+Thời gian lỗi : 2014-05-05 09:42:02 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Login.aspx. 
+Nội dung lỗi:Login failed for user 'sa'.
+__________________________
+Thời gian lỗi : 2014-05-05 09:44:14 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Selection out of range
+Parameter name: value
+__________________________
+Thời gian lỗi : 2014-05-05 09:45:03 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Selection out of range
+Parameter name: value
+__________________________

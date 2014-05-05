@@ -220,8 +220,8 @@ public partial class Main : System.Web.UI.MasterPage
                         _AjaxUpdatedControl.LoadingPanelID = "RadAjaxLoadingPanelNHANGUI";
                         _AjaxSetting.UpdatedControls.Add(_AjaxUpdatedControl);
                         _AjaxSettingOther.UpdatedControls.Add(_AjaxUpdatedControlOther);
-                        RadAjaxManager.AjaxSettings.Add(_AjaxSetting);
-                        RadAjaxManager.AjaxSettings.Add(_AjaxSettingOther);
+                        //RadAjaxManager.AjaxSettings.Add(_AjaxSetting);
+                        //RadAjaxManager.AjaxSettings.Add(_AjaxSettingOther);
                         control = LoadControl("module/NHANGUI.ascx");
                         break;
                     case "nhanguiqt":
