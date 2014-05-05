@@ -1583,7 +1583,7 @@
             this.textBox24.Style.Padding.Right = Telerik.Reporting.Drawing.Unit.Point(1D);
             this.textBox24.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Left;
             this.textBox24.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
-            this.textBox24.Value = "Dịch trong nước:";
+            this.textBox24.Value = "Dịch vụ trong nước:";
             // 
             // checkBox1
             // 
@@ -1889,7 +1889,7 @@
             this.textBox70.Style.Padding.Right = Telerik.Reporting.Drawing.Unit.Point(1D);
             this.textBox70.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Left;
             this.textBox70.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
-            this.textBox70.Value = "Dịch trong nước:";
+            this.textBox70.Value = "Dịch vụ trong nước:";
             // 
             // checkBox14
             // 

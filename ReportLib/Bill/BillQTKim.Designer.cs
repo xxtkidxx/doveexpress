@@ -1,6 +1,6 @@
 ﻿namespace ReportLib.Bill
 {
-    partial class BillQT
+    partial class BillQTKim
     {
         #region Component Designer generated code
         /// <summary>
@@ -9,7 +9,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BillQT));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BillQTKim));
             Telerik.Reporting.ReportParameter reportParameter1 = new Telerik.Reporting.ReportParameter();
             Telerik.Reporting.ReportParameter reportParameter2 = new Telerik.Reporting.ReportParameter();
             Telerik.Reporting.ReportParameter reportParameter3 = new Telerik.Reporting.ReportParameter();
@@ -195,6 +195,7 @@
             this.textBox1.Style.Font.Size = Telerik.Reporting.Drawing.Unit.Point(22D);
             this.textBox1.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Center;
             this.textBox1.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
+            this.textBox1.Style.Visible = false;
             this.textBox1.Value = "PHIẾU GỬI";
             // 
             // textBox2
@@ -206,6 +207,7 @@
             this.textBox2.Style.Font.Size = Telerik.Reporting.Drawing.Unit.Point(11D);
             this.textBox2.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Center;
             this.textBox2.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
+            this.textBox2.Style.Visible = false;
             this.textBox2.Value = "CHUYỂN PHÁT NHANH BỒ CÂU - DOVEEXPRESS";
             // 
             // panel1
@@ -275,6 +277,7 @@
             this.textBox4.Style.Padding.Right = Telerik.Reporting.Drawing.Unit.Point(1D);
             this.textBox4.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Left;
             this.textBox4.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
+            this.textBox4.Style.Visible = false;
             this.textBox4.Value = "Người gửi:";
             // 
             // textBox5
@@ -312,6 +315,7 @@
             this.textBox7.Style.Padding.Right = Telerik.Reporting.Drawing.Unit.Point(1D);
             this.textBox7.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Left;
             this.textBox7.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
+            this.textBox7.Style.Visible = false;
             this.textBox7.Value = "Điện thoại:";
             // 
             // textBox8
@@ -351,6 +355,7 @@
             this.textBox10.Style.Padding.Right = Telerik.Reporting.Drawing.Unit.Point(1D);
             this.textBox10.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Left;
             this.textBox10.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
+            this.textBox10.Style.Visible = false;
             this.textBox10.Value = "Tỉnh thành:";
             // 
             // textBox11
@@ -364,6 +369,7 @@
             this.textBox11.Style.Padding.Right = Telerik.Reporting.Drawing.Unit.Point(1D);
             this.textBox11.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Left;
             this.textBox11.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
+            this.textBox11.Style.Visible = false;
             this.textBox11.Value = "Người nhận:";
             // 
             // textBox12
@@ -377,6 +383,7 @@
             this.textBox12.Style.Padding.Right = Telerik.Reporting.Drawing.Unit.Point(1D);
             this.textBox12.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Left;
             this.textBox12.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
+            this.textBox12.Style.Visible = false;
             this.textBox12.Value = "Quốc gia:";
             // 
             // textBox13
@@ -416,6 +423,7 @@
             this.textBox15.Style.Padding.Right = Telerik.Reporting.Drawing.Unit.Point(1D);
             this.textBox15.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Left;
             this.textBox15.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
+            this.textBox15.Style.Visible = false;
             this.textBox15.Value = "Điện thoại:";
             // 
             // textBox16
@@ -499,6 +507,7 @@
             this.textBox41.Style.Padding.Right = Telerik.Reporting.Drawing.Unit.Point(1D);
             this.textBox41.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Left;
             this.textBox41.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
+            this.textBox41.Style.Visible = false;
             this.textBox41.Value = "Cước chính:";
             // 
             // textBox42
@@ -525,6 +534,7 @@
             this.textBox43.Style.Padding.Right = Telerik.Reporting.Drawing.Unit.Point(1D);
             this.textBox43.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Left;
             this.textBox43.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
+            this.textBox43.Style.Visible = false;
             this.textBox43.Value = "Đóng gói";
             // 
             // textBox44
@@ -551,6 +561,7 @@
             this.textBox45.Style.Padding.Right = Telerik.Reporting.Drawing.Unit.Point(1D);
             this.textBox45.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Left;
             this.textBox45.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
+            this.textBox45.Style.Visible = false;
             this.textBox45.Value = "Khai giá";
             // 
             // textBox46
@@ -577,6 +588,7 @@
             this.textBox47.Style.Padding.Right = Telerik.Reporting.Drawing.Unit.Point(1D);
             this.textBox47.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Left;
             this.textBox47.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
+            this.textBox47.Style.Visible = false;
             this.textBox47.Value = "COD";
             // 
             // textBox48
@@ -603,6 +615,7 @@
             this.textBox49.Style.Padding.Right = Telerik.Reporting.Drawing.Unit.Point(1D);
             this.textBox49.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Left;
             this.textBox49.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
+            this.textBox49.Style.Visible = false;
             this.textBox49.Value = "Tổng cước:";
             // 
             // textBox50
@@ -629,6 +642,7 @@
             this.textBox51.Style.Padding.Right = Telerik.Reporting.Drawing.Unit.Point(1D);
             this.textBox51.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Left;
             this.textBox51.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
+            this.textBox51.Style.Visible = false;
             this.textBox51.Value = "VAT:";
             // 
             // textBox53
@@ -642,6 +656,7 @@
             this.textBox53.Style.Padding.Right = Telerik.Reporting.Drawing.Unit.Point(1D);
             this.textBox53.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Left;
             this.textBox53.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
+            this.textBox53.Style.Visible = false;
             this.textBox53.Value = "Tổng cộng:";
             // 
             // textBox52
@@ -668,6 +683,7 @@
             this.textBox55.Style.Padding.Right = Telerik.Reporting.Drawing.Unit.Point(1D);
             this.textBox55.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Left;
             this.textBox55.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
+            this.textBox55.Style.Visible = false;
             this.textBox55.Value = "Thanh toán:";
             // 
             // textBox54
@@ -694,6 +710,7 @@
             this.textBox64.Style.Padding.Right = Telerik.Reporting.Drawing.Unit.Point(1D);
             this.textBox64.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Left;
             this.textBox64.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
+            this.textBox64.Style.Visible = false;
             this.textBox64.Value = "Báo phát";
             // 
             // textBox65
@@ -720,6 +737,7 @@
             this.textBox69.Style.Padding.Right = Telerik.Reporting.Drawing.Unit.Point(1D);
             this.textBox69.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Left;
             this.textBox69.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
+            this.textBox69.Style.Visible = false;
             this.textBox69.Value = "Còn lại:";
             // 
             // textBox68
@@ -746,6 +764,7 @@
             this.textBox28.Style.Padding.Right = Telerik.Reporting.Drawing.Unit.Point(1D);
             this.textBox28.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Left;
             this.textBox28.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
+            this.textBox28.Style.Visible = false;
             this.textBox28.Value = "Hẹn giờ";
             // 
             // textBox30
@@ -781,6 +800,7 @@
             this.textBox29.Style.Padding.Right = Telerik.Reporting.Drawing.Unit.Point(1D);
             this.textBox29.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Left;
             this.textBox29.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
+            this.textBox29.Style.Visible = false;
             this.textBox29.Value = "Nhân viên nhận:";
             // 
             // textBox31
@@ -807,6 +827,7 @@
             this.textBox32.Style.Padding.Right = Telerik.Reporting.Drawing.Unit.Point(1D);
             this.textBox32.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Left;
             this.textBox32.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
+            this.textBox32.Style.Visible = false;
             this.textBox32.Value = "Người gửi ký:";
             // 
             // panel7
@@ -837,6 +858,7 @@
             this.textBox37.Style.Padding.Right = Telerik.Reporting.Drawing.Unit.Point(1D);
             this.textBox37.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Left;
             this.textBox37.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
+            this.textBox37.Style.Visible = false;
             this.textBox37.Value = "Ngày giờ phát:";
             // 
             // textBox34
@@ -876,6 +898,7 @@
             this.textBox36.Style.Padding.Right = Telerik.Reporting.Drawing.Unit.Point(1D);
             this.textBox36.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Left;
             this.textBox36.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
+            this.textBox36.Style.Visible = false;
             this.textBox36.Value = "Nhân viên phát:";
             // 
             // textBox33
@@ -889,6 +912,7 @@
             this.textBox33.Style.Padding.Right = Telerik.Reporting.Drawing.Unit.Point(1D);
             this.textBox33.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Left;
             this.textBox33.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
+            this.textBox33.Style.Visible = false;
             this.textBox33.Value = "Người nhận ký:";
             // 
             // textBox58
@@ -902,6 +926,7 @@
             this.textBox58.Style.Padding.Right = Telerik.Reporting.Drawing.Unit.Point(1D);
             this.textBox58.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Left;
             this.textBox58.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
+            this.textBox58.Style.Visible = false;
             this.textBox58.Value = "Đã nhận, kiểm tra và không khiếu nại";
             // 
             // panel4
@@ -940,6 +965,7 @@
             this.textBox18.Style.Padding.Right = Telerik.Reporting.Drawing.Unit.Point(1D);
             this.textBox18.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Left;
             this.textBox18.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
+            this.textBox18.Style.Visible = false;
             this.textBox18.Value = "KL quy đổi:";
             // 
             // textBox19
@@ -965,6 +991,7 @@
             this.textBox20.Style.Padding.Right = Telerik.Reporting.Drawing.Unit.Point(1D);
             this.textBox20.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Left;
             this.textBox20.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
+            this.textBox20.Style.Visible = false;
             this.textBox20.Value = "Kiểm tra:";
             // 
             // textBox25
@@ -990,6 +1017,7 @@
             this.textBox26.Style.Padding.Right = Telerik.Reporting.Drawing.Unit.Point(1D);
             this.textBox26.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Left;
             this.textBox26.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
+            this.textBox26.Style.Visible = false;
             this.textBox26.Value = "Giá trị:";
             // 
             // textBox38
@@ -1003,6 +1031,7 @@
             this.textBox38.Style.Padding.Right = Telerik.Reporting.Drawing.Unit.Point(1D);
             this.textBox38.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Left;
             this.textBox38.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
+            this.textBox38.Style.Visible = false;
             this.textBox38.Value = "Khối lượng:";
             // 
             // textBox39
@@ -1042,6 +1071,7 @@
             this.textBox22.Style.Padding.Right = Telerik.Reporting.Drawing.Unit.Point(1D);
             this.textBox22.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Left;
             this.textBox22.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
+            this.textBox22.Style.Visible = false;
             this.textBox22.Value = "Số kiện:";
             // 
             // textBox23
@@ -1068,6 +1098,7 @@
             this.textBox71.Style.Padding.Right = Telerik.Reporting.Drawing.Unit.Point(1D);
             this.textBox71.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Left;
             this.textBox71.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
+            this.textBox71.Style.Visible = false;
             this.textBox71.Value = "Nội dung:";
             // 
             // textBox72
@@ -1155,7 +1186,8 @@
             this.textBox24.Style.Padding.Right = Telerik.Reporting.Drawing.Unit.Point(1D);
             this.textBox24.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Left;
             this.textBox24.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
-            this.textBox24.Value = "Dịch trong nước:";
+            this.textBox24.Style.Visible = false;
+            this.textBox24.Value = "Dịch vụ trong nước:";
             // 
             // checkBox1
             // 
@@ -1208,6 +1240,7 @@
             this.textBox27.Style.Padding.Right = Telerik.Reporting.Drawing.Unit.Point(1D);
             this.textBox27.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Left;
             this.textBox27.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
+            this.textBox27.Style.Visible = false;
             this.textBox27.Value = "Khi không phát được";
             // 
             // checkBox7
@@ -1271,6 +1304,7 @@
             this.textBox56.Style.Padding.Right = Telerik.Reporting.Drawing.Unit.Point(1D);
             this.textBox56.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Left;
             this.textBox56.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
+            this.textBox56.Style.Visible = false;
             this.textBox56.Value = "Dịch vụ quốc  tế:";
             // 
             // checkBox13
@@ -1310,6 +1344,7 @@
             this.textBox21.Style.Padding.Right = Telerik.Reporting.Drawing.Unit.Point(1D);
             this.textBox21.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Left;
             this.textBox21.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
+            this.textBox21.Style.Visible = false;
             this.textBox21.Value = "Hà Nội: 33 Ngách 167/15 Tây Sơn, Đống Đa - 04.3533.5153; HCM: 47/4 Hậu Giang, P4." +
     " Tân Bình - 08.6266.4455; Website: dovevn.com";
             // 
@@ -1324,6 +1359,7 @@
             this.textBox59.Style.Padding.Right = Telerik.Reporting.Drawing.Unit.Point(1D);
             this.textBox59.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Left;
             this.textBox59.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
+            this.textBox59.Style.Visible = false;
             this.textBox59.Value = "Cam kết kê khai đúng nội dung, đọc hiểu và đồng ý mặt sau của phiếu gửi này";
             // 
             // textBox60
@@ -1337,6 +1373,7 @@
             this.textBox60.Style.Padding.Right = Telerik.Reporting.Drawing.Unit.Point(1D);
             this.textBox60.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Left;
             this.textBox60.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
+            this.textBox60.Style.Visible = false;
             this.textBox60.Value = "Ngày giờ nhận:";
             // 
             // textBox61
@@ -1358,9 +1395,10 @@
             this.pictureBox1.MimeType = "image/png";
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Mm(38.099998474121094D), Telerik.Reporting.Drawing.Unit.Mm(12.456624031066895D));
+            this.pictureBox1.Style.Visible = false;
             this.pictureBox1.Value = ((object)(resources.GetObject("pictureBox1.Value")));
             // 
-            // BillQT
+            // BillQTKim
             // 
             this.Items.AddRange(new Telerik.Reporting.ReportItemBase[] {
             this.detail});
@@ -1471,6 +1509,7 @@
             this.ReportParameters.Add(reportParameter36);
             this.ReportParameters.Add(reportParameter37);
             this.ReportParameters.Add(reportParameter38);
+            this.Style.Visible = false;
             styleRule1.Selectors.AddRange(new Telerik.Reporting.Drawing.ISelector[] {
             new Telerik.Reporting.Drawing.TypeSelector(typeof(Telerik.Reporting.TextItemBase)),
             new Telerik.Reporting.Drawing.TypeSelector(typeof(Telerik.Reporting.HtmlTextBox))});
