@@ -1052,6 +1052,7 @@
             this.textBox57.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Mm(40.6410026550293D), Telerik.Reporting.Drawing.Unit.Mm(9.4709005355834961D));
             this.textBox57.Name = "textBox57";
             this.textBox57.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Mm(5.2357473373413086D), Telerik.Reporting.Drawing.Unit.Mm(5.0799989700317383D));
+            this.textBox57.Style.Color = System.Drawing.Color.White;
             this.textBox57.Style.Font.Bold = true;
             this.textBox57.Style.Font.Size = Telerik.Reporting.Drawing.Unit.Point(8D);
             this.textBox57.Style.Padding.Left = Telerik.Reporting.Drawing.Unit.Point(1D);
@@ -1119,6 +1120,7 @@
             this.textBox73.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Mm(40.6410026550293D), Telerik.Reporting.Drawing.Unit.Mm(17.668155670166016D));
             this.textBox73.Name = "textBox73";
             this.textBox73.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Mm(5.2357473373413086D), Telerik.Reporting.Drawing.Unit.Mm(5.0799989700317383D));
+            this.textBox73.Style.Color = System.Drawing.Color.White;
             this.textBox73.Style.Font.Bold = true;
             this.textBox73.Style.Font.Size = Telerik.Reporting.Drawing.Unit.Point(8D);
             this.textBox73.Style.Padding.Left = Telerik.Reporting.Drawing.Unit.Point(1D);
