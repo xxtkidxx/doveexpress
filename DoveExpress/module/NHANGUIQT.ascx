@@ -639,6 +639,7 @@
                 SortExpression="C_BILLFIX">
                 <ItemTemplate>
                     <asp:Label ID="lblC_BILL" runat="server" Text='<%# String.Format("{0}", Eval("C_BILLFIX").ToString())%>'></asp:Label>
+                    <asp:HiddenField ID="txtC_CONLAI" Value='<%# Eval( "C_CONLAI") %>' runat="server" />
                 </ItemTemplate>
             </telerik:GridTemplateColumn>
             <telerik:GridBoundColumn UniqueName="FK_KHACHHANG" HeaderText="Mã khách hàng" DataField="FK_KHACHHANG"

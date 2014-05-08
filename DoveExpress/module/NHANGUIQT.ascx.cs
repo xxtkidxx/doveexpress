@@ -987,9 +987,11 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
                     string TIENHANGDATHU = (item["C_DATHU"].Text.Trim() == "VNĐ") ? "0" : item["C_DATHU"].Text.Trim();
                     TIENHANGDATHU = TIENHANGDATHU.Replace(" ", "");
                     TIENHANGDATHU = TIENHANGDATHU.Replace("VNĐ", "");
-                    string TIENHANGCONLAI = (item["C_CONLAI"].Text.Trim() == "VNĐ") ? "0" : item["C_CONLAI"].Text.Trim();
+                    //string TIENHANGCONLAI = (item["C_CONLAI"].Text.Trim() == "VNĐ") ? "0" : item["C_CONLAI"].Text.Trim();
+                    HiddenField txtC_CONLAI = (HiddenField)item.FindControl("txtC_CONLAI");
+                    string TIENHANGCONLAI = (txtC_CONLAI.Value.Trim() == "") ? "0" : txtC_CONLAI.Value.Trim();
                     TIENHANGCONLAI = TIENHANGCONLAI.Replace(" ", "");
-                    TIENHANGCONLAI = TIENHANGCONLAI.Replace("VNĐ", "");
+                    //TIENHANGCONLAI = TIENHANGCONLAI.Replace("VNĐ", "");
                     string TIENHANG = (decimal.Parse(TIENHANGDATHU) + decimal.Parse(TIENHANGCONLAI)).ToString();
                     //UpdateSQL += "UPDATE [NHANGUI] SET [C_DATHU] = " + TIENHANG + ",[C_HINHTHUCTT] = N'Đã thanh toán' WHERE [C_BILL] = '" + (item["C_BILL"].FindControl("lblC_BILL") as Label).Text.Replace("BC", "").Trim() + "';UPDATE [SOQUYTIENMAT] SET [C_NGAY] = '" + String.Format("{0:yyyy-MM-dd hh:mm:ss tt}", System.DateTime.Now.ToUniversalTime().AddHours(7)) + "',[C_SOTIEN] = " + TIENHANG + " WHERE [C_BILL] = '" + (item["C_BILL"].FindControl("lblC_BILL") as Label).Text.Replace("BC", "").Trim() + "';";
                     UpdateSQL += "UPDATE [NHANGUI] SET [C_DATHU] = " + TIENHANG + ",[C_HINHTHUCTT] = N'Đã thanh toán' WHERE [C_BILL] = '" + (item["C_BILLFIX"].FindControl("lblC_BILL") as Label).Text.Replace("BC", "").Trim() + "';IF (NOT EXISTS(SELECT C_BILL FROM SOQUYTIENMAT WHERE C_BILL = '" + (item["C_BILLFIX"].FindControl("lblC_BILL") as Label).Text.Replace("BC", "").Trim() + "'))" +
