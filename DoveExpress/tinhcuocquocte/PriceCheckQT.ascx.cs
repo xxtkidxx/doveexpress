@@ -443,6 +443,23 @@ public partial class ext_PriceCheckQT : System.Web.UI.UserControl
                                     CUOCCHINHTL = CUOCCHINHTL + ((decimal)C_KHOILUONG / 1000) + C_VALUE1;
 
                                 }
+                                if (C_KHOILUONG > int.Parse(ctcDataTable.Rows[0]["C_KHOILUONG"].ToString()) && ctcDataTable.Rows.Count == 1 && C_KHOILUONGLK != 0 && GIACUOCLK != 0)
+                                {
+                                    if (((C_KHOILUONG - int.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_KHOILUONG"].ToString())) % C_KHOILUONGLK) == 0)
+                                    {
+                                        CUOCCHINH = decimal.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_CUOCPHITL"].ToString(), NumberStyles.Currency) + ((C_KHOILUONG - int.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_KHOILUONG"].ToString())) / C_KHOILUONGLK) * GIACUOCLK;
+                                        CUOCCHINH = CUOCCHINH + ((decimal)C_KHOILUONG / 1000) + C_VALUE1;
+                                        CUOCCHINHTL = decimal.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_CUOCPHITL"].ToString(), NumberStyles.Currency) + ((C_KHOILUONG - int.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_KHOILUONG"].ToString())) / C_KHOILUONGLK) * GIACUOCLKTL;
+                                        CUOCCHINHTL = CUOCCHINHTL + ((decimal)C_KHOILUONG / 1000) + C_VALUE1;
+                                    }
+                                    else
+                                    {
+                                        CUOCCHINH = decimal.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_CUOCPHI"].ToString(), NumberStyles.Currency) + (((C_KHOILUONG - int.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_KHOILUONG"].ToString())) / C_KHOILUONGLK) + 1) * GIACUOCLK;
+                                        CUOCCHINH = CUOCCHINH + ((decimal)C_KHOILUONG / 1000) + C_VALUE1;
+                                        CUOCCHINHTL = decimal.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_CUOCPHITL"].ToString(), NumberStyles.Currency) + (((C_KHOILUONG - int.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_KHOILUONG"].ToString())) / C_KHOILUONGLK) + 1) * GIACUOCLKTL;
+                                        CUOCCHINHTL = CUOCCHINHTL + ((decimal)C_KHOILUONG / 1000) + C_VALUE1;
+                                    }
+                                }
                             }
                             else
                             {
@@ -574,8 +591,27 @@ public partial class ext_PriceCheckQT : System.Web.UI.UserControl
                             {
                                 CUOCCHINH = decimal.Parse(ctcDataTable.Rows[0]["C_CUOCPHI"].ToString(), NumberStyles.Currency);
                                 CUOCCHINH = CUOCCHINH + ((decimal)C_KHOILUONG / 1000) + C_VALUE1;
+
                                 CUOCCHINHTL = decimal.Parse(ctcDataTable.Rows[0]["C_CUOCPHITL"].ToString(), NumberStyles.Currency);
                                 CUOCCHINHTL = CUOCCHINHTL + ((decimal)C_KHOILUONG / 1000) + C_VALUE1;
+
+                            }
+                            if (C_KHOILUONG > int.Parse(ctcDataTable.Rows[0]["C_KHOILUONG"].ToString()) && ctcDataTable.Rows.Count == 1 && C_KHOILUONGLK != 0 && GIACUOCLK != 0)
+                            {
+                                if (((C_KHOILUONG - int.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_KHOILUONG"].ToString())) % C_KHOILUONGLK) == 0)
+                                {
+                                    CUOCCHINH = decimal.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_CUOCPHITL"].ToString(), NumberStyles.Currency) + ((C_KHOILUONG - int.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_KHOILUONG"].ToString())) / C_KHOILUONGLK) * GIACUOCLK;
+                                    CUOCCHINH = CUOCCHINH + ((decimal)C_KHOILUONG / 1000) + C_VALUE1;
+                                    CUOCCHINHTL = decimal.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_CUOCPHITL"].ToString(), NumberStyles.Currency) + ((C_KHOILUONG - int.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_KHOILUONG"].ToString())) / C_KHOILUONGLK) * GIACUOCLKTL;
+                                    CUOCCHINHTL = CUOCCHINHTL + ((decimal)C_KHOILUONG / 1000) + C_VALUE1;
+                                }
+                                else
+                                {
+                                    CUOCCHINH = decimal.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_CUOCPHI"].ToString(), NumberStyles.Currency) + (((C_KHOILUONG - int.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_KHOILUONG"].ToString())) / C_KHOILUONGLK) + 1) * GIACUOCLK;
+                                    CUOCCHINH = CUOCCHINH + ((decimal)C_KHOILUONG / 1000) + C_VALUE1;
+                                    CUOCCHINHTL = decimal.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_CUOCPHITL"].ToString(), NumberStyles.Currency) + (((C_KHOILUONG - int.Parse(ctcDataTable.Rows[ctcDataTable.Rows.Count - 1]["C_KHOILUONG"].ToString())) / C_KHOILUONGLK) + 1) * GIACUOCLKTL;
+                                    CUOCCHINHTL = CUOCCHINHTL + ((decimal)C_KHOILUONG / 1000) + C_VALUE1;
+                                }
                             }
                         }
                         else
