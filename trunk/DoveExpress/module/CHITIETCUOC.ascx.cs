@@ -42,13 +42,13 @@ public partial class module_CHITIETCUOC : System.Web.UI.UserControl
         if (arrayvalue[0] == "SelectedCTC")
         {
             UpdateDefault(arrayvalue[1], arrayvalue[2], arrayvalue[3]);
-            string script = string.Format("var result = '{0}'", "SelectedCTC," + arrayvalue[2]);
+            string script = string.Format("var result = '{0}'", "SelectedCTC,-," + arrayvalue[2]);
             ScriptManager.RegisterClientScriptBlock(Page, typeof(Page), "result", script, true);
         }
         else if (arrayvalue[0] == "SelectedCTC1")
         {
             UpdateDefault1(arrayvalue[1], arrayvalue[2], arrayvalue[3]);
-            string script = string.Format("var result = '{0}'", "SelectedCTC1," + arrayvalue[2]);
+            string script = string.Format("var result = '{0}'", "SelectedCTC1,-," + arrayvalue[2]);
             ScriptManager.RegisterClientScriptBlock(Page, typeof(Page), "result", script, true);
         }
         else if (arrayvalue[0] == "PTVALUE")
