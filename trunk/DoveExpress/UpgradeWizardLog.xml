@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="_UpgradeWizard_Files\UpgradeWizardLog.xslt"?>
+<log>
+  <event action="Analyze" type="Success" name="Binary References" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\Bin\" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\controls\Menus.ascx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\controls\Menus.ascx" />
+  <event action="Analyze" type="Success" name="Menus.ascx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\controls\Menus.ascx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\Default.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\Default.aspx" />
+  <event action="Analyze" type="Success" name="Default.aspx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\Default.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\ErrorPage.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\ErrorPage.aspx" />
+  <event action="Analyze" type="Success" name="ErrorPage.aspx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\ErrorPage.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\KeepAlive.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\KeepAlive.aspx" />
+  <event action="Analyze" type="Success" name="KeepAlive.aspx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\KeepAlive.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\Login.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\Login.aspx" />
+  <event action="Analyze" type="Success" name="Login.aspx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\Login.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\Main.master" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\Main.master" />
+  <event action="Analyze" type="Success" name="Main.master" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\Main.master" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\ActionLog.ascx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\ActionLog.ascx" />
+  <event action="Analyze" type="Success" name="ActionLog.ascx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\ActionLog.ascx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\BAOCAOCONGNO.ascx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\BAOCAOCONGNO.ascx" />
+  <event action="Analyze" type="Success" name="BAOCAOCONGNO.ascx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\BAOCAOCONGNO.ascx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\BAOCAODOITAC.ascx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\BAOCAODOITAC.ascx" />
+  <event action="Analyze" type="Success" name="BAOCAODOITAC.ascx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\BAOCAODOITAC.ascx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\BAOCAODOITACPOPUP.ascx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\BAOCAODOITACPOPUP.ascx" />
+  <event action="Analyze" type="Success" name="BAOCAODOITACPOPUP.ascx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\BAOCAODOITACPOPUP.ascx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\BAOCAOKHACHHANG.ascx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\BAOCAOKHACHHANG.ascx" />
+  <event action="Analyze" type="Success" name="BAOCAOKHACHHANG.ascx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\BAOCAOKHACHHANG.ascx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\BAOCAONGAY.ascx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\BAOCAONGAY.ascx" />
+  <event action="Analyze" type="Success" name="BAOCAONGAY.ascx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\BAOCAONGAY.ascx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\BAOCAONHANHANG.ascx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\BAOCAONHANHANG.ascx" />
+  <event action="Analyze" type="Success" name="BAOCAONHANHANG.ascx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\BAOCAONHANHANG.ascx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\BAOCAONVKD.ascx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\BAOCAONVKD.ascx" />
+  <event action="Analyze" type="Success" name="BAOCAONVKD.ascx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\BAOCAONVKD.ascx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\BAOCAOPHATHANG.ascx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\BAOCAOPHATHANG.ascx" />
+  <event action="Analyze" type="Success" name="BAOCAOPHATHANG.ascx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\BAOCAOPHATHANG.ascx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\BAOCAOTONGHOP.ascx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\BAOCAOTONGHOP.ascx" />
+  <event action="Analyze" type="Success" name="BAOCAOTONGHOP.ascx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\BAOCAOTONGHOP.ascx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\BAOCAOTONGHOPQT.ascx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\BAOCAOTONGHOPQT.ascx" />
+  <event action="Analyze" type="Success" name="BAOCAOTONGHOPQT.ascx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\BAOCAOTONGHOPQT.ascx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\BAOCAOTTTT.ascx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\BAOCAOTTTT.ascx" />
+  <event action="Analyze" type="Success" name="BAOCAOTTTT.ascx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\BAOCAOTTTT.ascx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\CHITIETCUOC.ascx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\CHITIETCUOC.ascx" />
+  <event action="Analyze" type="Success" name="CHITIETCUOC.ascx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\CHITIETCUOC.ascx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\CHITIETCUOCDT.ascx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\CHITIETCUOCDT.ascx" />
+  <event action="Analyze" type="Success" name="CHITIETCUOCDT.ascx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\CHITIETCUOCDT.ascx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\CONFIG.ascx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\CONFIG.ascx" />
+  <event action="Analyze" type="Success" name="CONFIG.ascx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\CONFIG.ascx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\Depts.ascx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\Depts.ascx" />
+  <event action="Analyze" type="Success" name="Depts.ascx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\Depts.ascx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\DOITAC.ascx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\DOITAC.ascx" />
+  <event action="Analyze" type="Success" name="DOITAC.ascx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\DOITAC.ascx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\ErrorLog.ascx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\ErrorLog.ascx" />
+  <event action="Analyze" type="Success" name="ErrorLog.ascx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\ErrorLog.ascx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\GroupUsers.ascx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\GroupUsers.ascx" />
+  <event action="Analyze" type="Success" name="GroupUsers.ascx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\GroupUsers.ascx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\JobTitles.ascx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\JobTitles.ascx" />
+  <event action="Analyze" type="Success" name="JobTitles.ascx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\JobTitles.ascx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\KHACHHANG.ascx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\KHACHHANG.ascx" />
+  <event action="Analyze" type="Success" name="KHACHHANG.ascx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\KHACHHANG.ascx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\KHUVUC.ascx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\KHUVUC.ascx" />
+  <event action="Analyze" type="Success" name="KHUVUC.ascx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\KHUVUC.ascx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\KIHIEUTAIKHOAN.ascx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\KIHIEUTAIKHOAN.ascx" />
+  <event action="Analyze" type="Success" name="KIHIEUTAIKHOAN.ascx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\KIHIEUTAIKHOAN.ascx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\MABANGCUOC.ascx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\MABANGCUOC.ascx" />
+  <event action="Analyze" type="Success" name="MABANGCUOC.ascx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\MABANGCUOC.ascx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\MABANGCUOCQT.ascx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\MABANGCUOCQT.ascx" />
+  <event action="Analyze" type="Success" name="MABANGCUOCQT.ascx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\MABANGCUOCQT.ascx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\MASANPHAM.ascx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\MASANPHAM.ascx" />
+  <event action="Analyze" type="Success" name="MASANPHAM.ascx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\MASANPHAM.ascx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\MAVUNG.ascx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\MAVUNG.ascx" />
+  <event action="Analyze" type="Success" name="MAVUNG.ascx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\MAVUNG.ascx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\MAVUNGDT.ascx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\MAVUNGDT.ascx" />
+  <event action="Analyze" type="Success" name="MAVUNGDT.ascx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\MAVUNGDT.ascx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\MAVUNGQT.ascx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\MAVUNGQT.ascx" />
+  <event action="Analyze" type="Success" name="MAVUNGQT.ascx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\MAVUNGQT.ascx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\MAVUNGQTDT.ascx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\MAVUNGQTDT.ascx" />
+  <event action="Analyze" type="Success" name="MAVUNGQTDT.ascx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\MAVUNGQTDT.ascx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\NHANGUI.ascx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\NHANGUI.ascx" />
+  <event action="Analyze" type="Success" name="NHANGUI.ascx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\NHANGUI.ascx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\NHANGUIPH.ascx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\NHANGUIPH.ascx" />
+  <event action="Analyze" type="Success" name="NHANGUIPH.ascx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\NHANGUIPH.ascx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\NHANGUIPOPUP.ascx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\NHANGUIPOPUP.ascx" />
+  <event action="Analyze" type="Success" name="NHANGUIPOPUP.ascx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\NHANGUIPOPUP.ascx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\NHANGUIQT.ascx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\NHANGUIQT.ascx" />
+  <event action="Analyze" type="Success" name="NHANGUIQT.ascx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\NHANGUIQT.ascx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\NHANGUITRACKING.ascx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\NHANGUITRACKING.ascx" />
+  <event action="Analyze" type="Success" name="NHANGUITRACKING.ascx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\NHANGUITRACKING.ascx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\NHOMKHACHHANG.ascx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\NHOMKHACHHANG.ascx" />
+  <event action="Analyze" type="Success" name="NHOMKHACHHANG.ascx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\NHOMKHACHHANG.ascx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\QUANHUYEN.ascx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\QUANHUYEN.ascx" />
+  <event action="Analyze" type="Success" name="QUANHUYEN.ascx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\QUANHUYEN.ascx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\QUOCGIA.ascx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\QUOCGIA.ascx" />
+  <event action="Analyze" type="Success" name="QUOCGIA.ascx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\QUOCGIA.ascx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\SOQUYTIENMAT.ascx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\SOQUYTIENMAT.ascx" />
+  <event action="Analyze" type="Success" name="SOQUYTIENMAT.ascx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\SOQUYTIENMAT.ascx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\SOQUYTIENMATV2.ascx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\SOQUYTIENMATV2.ascx" />
+  <event action="Analyze" type="Success" name="SOQUYTIENMATV2.ascx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\SOQUYTIENMATV2.ascx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\SOQUYTIENMATV3.ascx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\SOQUYTIENMATV3.ascx" />
+  <event action="Analyze" type="Success" name="SOQUYTIENMATV3.ascx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\SOQUYTIENMATV3.ascx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\TINHTHANH.ascx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\TINHTHANH.ascx" />
+  <event action="Analyze" type="Success" name="TINHTHANH.ascx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\TINHTHANH.ascx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\TRANGTHAIBILL.ascx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\TRANGTHAIBILL.ascx" />
+  <event action="Analyze" type="Success" name="TRANGTHAIBILL.ascx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\TRANGTHAIBILL.ascx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\TYGIA.ascx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\TYGIA.ascx" />
+  <event action="Analyze" type="Success" name="TYGIA.ascx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\TYGIA.ascx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\User_Info.ascx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\User_Info.ascx" />
+  <event action="Analyze" type="Success" name="User_Info.ascx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\User_Info.ascx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\User_Log.ascx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\User_Log.ascx" />
+  <event action="Analyze" type="Success" name="User_Log.ascx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\User_Log.ascx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\User_Pass.ascx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\User_Pass.ascx" />
+  <event action="Analyze" type="Success" name="User_Pass.ascx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\User_Pass.ascx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\User_priv_module.ascx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\User_priv_module.ascx" />
+  <event action="Analyze" type="Success" name="User_priv_module.ascx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\User_priv_module.ascx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\UserAdmins.ascx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\UserAdmins.ascx" />
+  <event action="Analyze" type="Success" name="UserAdmins.ascx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\UserAdmins.ascx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\Popup.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\Popup.aspx" />
+  <event action="Analyze" type="Success" name="Popup.aspx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\Popup.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\Popup.master" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\Popup.master" />
+  <event action="Analyze" type="Success" name="Popup.master" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\Popup.master" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\Report.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\Report.aspx" />
+  <event action="Analyze" type="Success" name="Report.aspx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\Report.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\tinhcuocquocte\Default.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\tinhcuocquocte\Default.aspx" />
+  <event action="Analyze" type="Success" name="Default.aspx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\tinhcuocquocte\Default.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\tinhcuocquocte\PriceCheckQT.ascx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\tinhcuocquocte\PriceCheckQT.ascx" />
+  <event action="Analyze" type="Success" name="PriceCheckQT.ascx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\tinhcuocquocte\PriceCheckQT.ascx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\tinhcuocquocte\tinhcuocquocte.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\tinhcuocquocte\tinhcuocquocte.aspx" />
+  <event action="Analyze" type="Success" name="tinhcuocquocte.aspx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\tinhcuocquocte\tinhcuocquocte.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\tinhcuocquocte\tinhcuocquocte.master" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\tinhcuocquocte\tinhcuocquocte.master" />
+  <event action="Analyze" type="Success" name="tinhcuocquocte.master" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\tinhcuocquocte\tinhcuocquocte.master" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\tinhcuoctrongnuoc\Default.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\tinhcuoctrongnuoc\Default.aspx" />
+  <event action="Analyze" type="Success" name="Default.aspx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\tinhcuoctrongnuoc\Default.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\tinhcuoctrongnuoc\PriceCheckTN.ascx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\tinhcuoctrongnuoc\PriceCheckTN.ascx" />
+  <event action="Analyze" type="Success" name="PriceCheckTN.ascx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\tinhcuoctrongnuoc\PriceCheckTN.ascx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\tinhcuoctrongnuoc\tinhcuoctrongnuoc.master" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\tinhcuoctrongnuoc\tinhcuoctrongnuoc.master" />
+  <event action="Analyze" type="Success" name="tinhcuoctrongnuoc.master" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\tinhcuoctrongnuoc\tinhcuoctrongnuoc.master" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\tinhcuoctrongnuoc\tinhcuotrongnuoc.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\tinhcuoctrongnuoc\tinhcuotrongnuoc.aspx" />
+  <event action="Analyze" type="Success" name="tinhcuotrongnuoc.aspx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\tinhcuoctrongnuoc\tinhcuotrongnuoc.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\tracking\BillCheck.ascx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\tracking\BillCheck.ascx" />
+  <event action="Analyze" type="Success" name="BillCheck.ascx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\tracking\BillCheck.ascx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\tracking\Default.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\tracking\Default.aspx" />
+  <event action="Analyze" type="Success" name="Default.aspx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\tracking\Default.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\tracking\tracking.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\tracking\tracking.aspx" />
+  <event action="Analyze" type="Success" name="tracking.aspx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\tracking\tracking.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\tracking\tracking.master" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\tracking\tracking.master" />
+  <event action="Analyze" type="Success" name="tracking.master" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\tracking\tracking.master" />
+  <event action="Analyze" type="Success" name="Assembly References" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\web.config" />
+  <event action="Analyze" type="Success" name="Http Handlers" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\web.config" />
+  <event action="Analyze" type="Success" name="Handlers (IIS7+)" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\web.config" />
+  <event action="Analyze" type="Success" name="Config Sections" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\web.config" />
+  <event action="Analyze" type="Success" name="Render Extensions" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\web.config" />
+  <event action="Analyze" type="Success" name="Session State Providers" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\web.config" />
+  <event action="Analyze" type="Success" name="web.config" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\web.config" />
+  <event action="Analyze" type="Success" name="C:\...\DoveExpress\" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress" />
+  <event action="Analyze" type="Success" name="Assembly References" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\ReportLib\ReportLib.csproj" />
+  <event action="Analyze" type="Success" name="Bill.resx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\ReportLib\Bill\Bill.resx" />
+  <event action="Analyze" type="Success" name="Bill2.resx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\ReportLib\Bill\Bill2.resx" />
+  <event action="Analyze" type="Success" name="BillKim.resx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\ReportLib\Bill\BillKim.resx" />
+  <event action="Analyze" type="Success" name="BillQT.resx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\ReportLib\Bill\BillQT.resx" />
+  <event action="Analyze" type="Success" name="BillQT2.resx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\ReportLib\Bill\BillQT2.resx" />
+  <event action="Analyze" type="Success" name="BillQTKim.resx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\ReportLib\Bill\BillQTKim.resx" />
+  <event action="Analyze" type="Success" name="ReportLib" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\ReportLib\ReportLib.csproj" />
+  <event action="Analyze" type="Success" name="DoveExpress" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\DoveExpress.sln" />
+  <event action="Upgrade" type="Success" name="Binary References" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\Bin\" />
+  <event action="Upgrade" type="Success" name="Register Directives" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\Report.aspx" />
+  <event action="Upgrade" type="Success" name="Report.aspx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\Report.aspx" />
+  <event action="Upgrade" type="Success" name="Assembly References" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\web.config" />
+  <event action="Upgrade" type="Success" name="Http Handlers" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\web.config" />
+  <event action="Upgrade" type="Success" name="Handlers (IIS7+)" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\web.config" />
+  <event action="Upgrade" type="Success" name="web.config" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\web.config" />
+  <event action="Upgrade" type="Success" name="C:\...\DoveExpress\" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress" />
+  <event action="Upgrade" type="Success" name="Assembly References" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\ReportLib\ReportLib.csproj" />
+  <event action="Upgrade" type="Success" name="Bill.resx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\ReportLib\Bill\Bill.resx" />
+  <event action="Upgrade" type="Success" name="Bill2.resx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\ReportLib\Bill\Bill2.resx" />
+  <event action="Upgrade" type="Success" name="BillKim.resx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\ReportLib\Bill\BillKim.resx" />
+  <event action="Upgrade" type="Success" name="BillQT.resx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\ReportLib\Bill\BillQT.resx" />
+  <event action="Upgrade" type="Success" name="BillQT2.resx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\ReportLib\Bill\BillQT2.resx" />
+  <event action="Upgrade" type="Success" name="BillQTKim.resx" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\ReportLib\Bill\BillQTKim.resx" />
+  <event action="Upgrade" type="Success" name="ReportLib" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\ReportLib\ReportLib.csproj" />
+  <event action="Upgrade" type="Success" name="DoveExpress" path="C:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\DoveExpress.sln" />
+</log>
