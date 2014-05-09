@@ -51,7 +51,6 @@
                 $find("<%=txtC_HAIQUANY.ClientID %>").set_value(arrayOfStrings[12]);
                 $find("<%=txtC_HUNTRUNGX.ClientID %>").set_value(arrayOfStrings[13]);
                 $find("<%=txtC_HUNTRUNGY.ClientID %>").set_value(arrayOfStrings[14]);
-
                 $find("<%=RadGridCHITIETCUOC.ClientID %>").get_masterTableView().rebind();
             }
             else {
