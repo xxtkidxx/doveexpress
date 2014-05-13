@@ -595,9 +595,9 @@
                 <asp:LinkButton ID="LinkButton7" runat="server" OnClientClick='<%# String.Format("javascript:return PrintOnClientLinkClicked2()")%>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/print.gif" />In 2 bản</asp:LinkButton>&nbsp;&nbsp;
                 <asp:LinkButton ID="LinkButton8" runat="server" OnClientClick='<%# String.Format("javascript:return PrintOnClientLinkClicked3()")%>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/print.gif" />In kim</asp:LinkButton>&nbsp;&nbsp;
                 <asp:LinkButton ID="LinkButton5" runat="server" OnClientClick="javascript:return confirm('Bạn có muốn xác nhận các Bill này đã thanh toán không?')"
-                    CommandName="ConfirmPayment"><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/img_OpenPanel.gif" />Xác nhận đã thanh toán</asp:LinkButton>&nbsp;&nbsp;
+                    CommandName="ConfirmPayment"><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/img_OpenPanel.gif" />Xác nhận TT</asp:LinkButton>&nbsp;&nbsp;
                 <asp:LinkButton ID="LinkButton6" runat="server" OnClientClick="javascript:return confirm('Bạn có muốn xác nhận các Bill này chưa thanh toán không?')"
-                    CommandName="ConfirmUnPayment"><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/img_OpenPanel.gif" />Xác nhận chưa thanh toán</asp:LinkButton>&nbsp;&nbsp;
+                    CommandName="ConfirmUnPayment"><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/img_OpenPanel.gif" />Xác nhận chưa TT</asp:LinkButton>&nbsp;&nbsp;
                 <asp:LinkButton ID="LinkButton11" runat="server" CommandName="ClearFilterGrid"><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/filterCancel.gif" />Xóa tìm kiếm</asp:LinkButton>&nbsp;&nbsp;
                 <asp:LinkButton ID="LinkButton4" runat="server" CommandName="RebindGrid"><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Refresh.gif" />Làm mới</asp:LinkButton>
             </div>
@@ -698,13 +698,13 @@
                             <asp:LinkButton ID="btnClose" runat="server" CommandName="Cancel"><img src="Images/img_Close.jpg" />Đóng</asp:LinkButton></li>
                         <li>
                             <asp:LinkButton ID="btXuatbaocao" runat="server" Visible='<%# !(Container is GridEditFormInsertItem) %>'
-                                OnClientClick='<%# String.Format("javascript:return PrintOnClientLinkClickedEdit1({0})",Eval("C_BILL")) %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/print.gif"/>In 1 bản</asp:LinkButton></li>
+                                OnClientClick='<%# String.Format("javascript:return PrintOnClientLinkClickedEdit1(\"{0}\")",Eval("C_BILL").ToString()) %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/print.gif"/>In 1 bản</asp:LinkButton></li>
                         <li>
                             <asp:LinkButton ID="LinkButton9" runat="server" Visible='<%# !(Container is GridEditFormInsertItem) %>'
-                                OnClientClick='<%# String.Format("javascript:return PrintOnClientLinkClickedEdit2({0})",Eval("C_BILL")) %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/print.gif"/>In 2 bản</asp:LinkButton></li>
+                                OnClientClick='<%# String.Format("javascript:return PrintOnClientLinkClickedEdit2(\"{0}\")",Eval("C_BILL").ToString()) %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/print.gif"/>In 2 bản</asp:LinkButton></li>
                         <li>
                             <asp:LinkButton ID="LinkButton10" runat="server" Visible='<%# !(Container is GridEditFormInsertItem) %>'
-                                OnClientClick='<%# String.Format("javascript:return PrintOnClientLinkClickedEdit3({0})",Eval("C_BILL")) %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/print.gif"/>In kim</asp:LinkButton></li>
+                                OnClientClick='<%# String.Format("javascript:return PrintOnClientLinkClickedEdit3(\"{0}\")",Eval("C_BILL").ToString()) %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/print.gif"/>In kim</asp:LinkButton></li>
                     </ul>
                 </div>
                 <div class="clearfix bgpopup">

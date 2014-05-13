@@ -184,6 +184,7 @@
         txtC_TIENHANG = sender;
     }
     var txtC_VAT;
+    var VAT;
     function OnClientLoadtxtC_VAT(sender) {
         txtC_VAT = sender;
     }
@@ -192,22 +193,32 @@
         txtC_TIENHANGVAT = sender;
     }
     var txtC_DONGGOI;
+    var DONGGOIX;
+    var DONGGOIY;
     function OnClientLoadtxtC_DONGGOI(sender) {
         txtC_DONGGOI = sender;
     }
     var txtC_KHAIGIA;
+    var KHAIGIAX;
+    var KHAIGIAY;
     function OnClientLoadtxtC_KHAIGIA(sender) {
         txtC_KHAIGIA = sender;
     }
     var txtC_COD;
+    var CODX;
+    var CODY;
     function OnClientLoadtxtC_COD(sender) {
         txtC_COD = sender;
     }
     var txtC_BAOPHAT;
+    var BAOPHATX;
+    var BAOPHATY;
     function OnClientLoadtxtC_BAOPHAT(sender) {
         txtC_BAOPHAT = sender;
     }
     var txtC_HENGIO;
+    var HENGIOX;
+    var HENGIOY;
     function OnClientLoadtxtC_HENGIO(sender) {
         txtC_HENGIO = sender;
     }
@@ -287,7 +298,7 @@
         return false;
     }
     function OnValueChangedtxtC_TIENHANG(sender, eventArgs) {
-        txtC_VAT.set_value(txtC_TIENHANG.get_value() * 0.1);
+        txtC_VAT.set_value(txtC_TIENHANG.get_value() * VAT/100);
         return false;
     }
     function OnValueChangedtxtC_VAT(sender, eventArgs) {
@@ -313,7 +324,8 @@
     function SetC_COD() {
         isCOD = !isCOD;
         if (isCOD) {
-            txtC_COD.set_value(20000 + txtC_GIATRIHANGHOA.get_value() * 0.02);
+            //txtC_COD.set_value(Math.max(50000, CODX + txtC_GIATRIHANGHOA.get_value() * CODY/100));
+            txtC_COD.set_value(CODX * 1 + (txtC_GIATRIHANGHOA.get_value() * CODY / 100));
         }
         else {
             txtC_COD.set_value(0);
@@ -323,7 +335,8 @@
     function SetC_KHAIGIA() {
         isKHAIGIA = !isKHAIGIA;
         if (isKHAIGIA) {
-            txtC_KHAIGIA.set_value(Math.max(50000, txtC_GIATRIHANGHOA.get_value() * 0.02));
+            //txtC_KHAIGIA.set_value(Math.max(50000, KHAIGIAX + txtC_GIATRIHANGHOA.get_value() * KHAIGIAY/100));
+            txtC_KHAIGIA.set_value(KHAIGIAX * 1 + (txtC_GIATRIHANGHOA.get_value() * KHAIGIAY / 100));
         }
         else {
             txtC_KHAIGIA.set_value(0);
@@ -333,7 +346,8 @@
     function SetC_HENGIO() {
         isHENGIO = !isHENGIO;
         if (isHENGIO) {
-            txtC_HENGIO.set_value(Math.max(50000, txtC_GIACUOC.get_value() * 0.2));
+            //txtC_HENGIO.set_value(Math.max(50000, HENGIOX + txtC_GIATRIHANGHOA.get_value() * HENGIOY/100));
+            txtC_HENGIO.set_value(HENGIOX * 1 + (txtC_GIATRIHANGHOA.get_value() * HENGIOY / 100));
         }
         else {
             txtC_HENGIO.set_value(0);
@@ -343,7 +357,8 @@
     function SetC_BAOPHAT() {
         isBAOPHAT = !isBAOPHAT;
         if (isBAOPHAT) {
-            txtC_BAOPHAT.set_value(5000);
+            //txtC_BAOPHAT.set_value(Math.max(50000, BAOPHATX + txtC_GIATRIHANGHOA.get_value() * BAOPHATY/100));
+            txtC_BAOPHAT.set_value(BAOPHATX * 1 + (txtC_GIATRIHANGHOA.get_value() * BAOPHATY / 100));
         }
         else {
             txtC_BAOPHAT.set_value(0);
@@ -352,8 +367,11 @@
     var isDONGGOI = false;
     function SetC_DONGGOI() {
         isDONGGOI = !isDONGGOI;
+        //alert(DONGGOIX);
+        //alert(DONGGOIY);
         if (isDONGGOI) {
-            //txtC_DONGGOI.set_value(0); 
+            //txtC_DONGGOI.set_value(Math.max(50000, DONGGOIX + (txtC_GIATRIHANGHOA.get_value() * DONGGOIY/100)));
+            txtC_DONGGOI.set_value(DONGGOIX * 1 + (txtC_GIATRIHANGHOA.get_value() * DONGGOIY / 100));
         }
         else {
             txtC_DONGGOI.set_value(0);
@@ -395,7 +413,7 @@
     <script type="text/javascript">
         function onResponseEndNG() {
             if (typeof (result) != "undefined" && result && result != "") {
-                //alert(result);
+                alert(result);
                 var arrayOfStrings = result.split(",-,");
                 if (arrayOfStrings[0] != "msg") {
                     if (arrayOfStrings[0] != "") {
@@ -413,6 +431,57 @@
                     txtC_GIACUOC.set_value(arrayOfStrings[4]);
                     CUOCCHINH = arrayOfStrings[4];
                     txtC_GIADOITAC.set_value(arrayOfStrings[5]);
+                    VAT = arrayOfStrings[8];
+
+                    DONGGOIX = arrayOfStrings[9];
+                    DONGGOIY = arrayOfStrings[10];
+                    if (isDONGGOI) {
+                        //txtC_DONGGOI.set_value(Math.max(50000, DONGGOIX + (txtC_GIATRIHANGHOA.get_value() * DONGGOIY/100)));
+                        txtC_DONGGOI.set_value(DONGGOIX + (txtC_GIATRIHANGHOA.get_value() * DONGGOIY / 100));
+                    }
+                    else {
+                        txtC_DONGGOI.set_value(0);
+                    }
+
+                    KHAIGIAX = arrayOfStrings[11];
+                    KHAIGIAY = arrayOfStrings[12];
+                    if (isKHAIGIA) {
+                        //txtC_KHAIGIA.set_value(Math.max(50000, KHAIGIAX + txtC_GIATRIHANGHOA.get_value() * KHAIGIAY/100));
+                        txtC_KHAIGIA.set_value(KHAIGIAX + txtC_GIATRIHANGHOA.get_value() * KHAIGIAY / 100);
+                    }
+                    else {
+                        txtC_KHAIGIA.set_value(0);
+                    }
+
+                    BAOPHATX = arrayOfStrings[13];
+                    BAOPHATY = arrayOfStrings[14];
+                    if (isBAOPHAT) {
+                        //txtC_BAOPHAT.set_value(Math.max(50000, BAOPHATX + txtC_GIATRIHANGHOA.get_value() * BAOPHATY/100));
+                        txtC_BAOPHAT.set_value(BAOPHATX + txtC_GIATRIHANGHOA.get_value() * BAOPHATY / 100);
+                    }
+                    else {
+                        txtC_BAOPHAT.set_value(0);
+                    }
+
+                    HENGIOX = arrayOfStrings[15];
+                    HENGIOY = arrayOfStrings[16];
+                    if (isHENGIO) {
+                        //txtC_HENGIO.set_value(Math.max(50000, HENGIOX + txtC_GIATRIHANGHOA.get_value() * HENGIOY/100));
+                        txtC_HENGIO.set_value(HENGIOX + txtC_GIATRIHANGHOA.get_value() * HENGIOY / 100);
+                    }
+                    else {
+                        txtC_HENGIO.set_value(0);
+                    }
+
+                    CODX = arrayOfStrings[17];
+                    CODY = arrayOfStrings[18];
+                    if (isCOD) {
+                        //txtC_COD.set_value(Math.max(50000, CODX + txtC_GIATRIHANGHOA.get_value() * CODY/100));
+                        txtC_COD.set_value(CODX * 1 + (txtC_GIATRIHANGHOA.get_value() * CODY / 100));
+                    }
+                    else {
+                        txtC_COD.set_value(0);
+                    }
                 }
                 else {
                     alert(arrayOfStrings[1]);
@@ -547,9 +616,9 @@
                 <asp:LinkButton ID="LinkButton7" runat="server" OnClientClick='<%# String.Format("javascript:return PrintOnClientLinkClicked2()")%>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/print.gif" />In 2 bản</asp:LinkButton>&nbsp;&nbsp;
                 <asp:LinkButton ID="LinkButton8" runat="server" OnClientClick='<%# String.Format("javascript:return PrintOnClientLinkClicked3()")%>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/print.gif" />In kim</asp:LinkButton>&nbsp;&nbsp;
                 <asp:LinkButton ID="LinkButton5" runat="server" OnClientClick="javascript:return confirm('Bạn có muốn xác nhận các Bill này đã thanh toán không?')"
-                    CommandName="ConfirmPayment" Visible='<%# ITCLIB.Security.Security.CanPrintModule("NHANGUI") %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/img_OpenPanel.gif" />Xác nhận đã thanh toán</asp:LinkButton>&nbsp;&nbsp;
+                    CommandName="ConfirmPayment" Visible='<%# ITCLIB.Security.Security.CanPrintModule("NHANGUI") %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/img_OpenPanel.gif" />Xác nhận TT</asp:LinkButton>&nbsp;&nbsp;
                 <asp:LinkButton ID="LinkButton6" runat="server" OnClientClick="javascript:return confirm('Bạn có muốn xác nhận các Bill này chưa thanh toán không?')"
-                    CommandName="ConfirmUnPayment" Visible='<%# ITCLIB.Security.Security.CanPrintModule("NHANGUI") %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/img_OpenPanel.gif" />Xác nhận chưa thanh toán</asp:LinkButton>&nbsp;&nbsp;
+                    CommandName="ConfirmUnPayment" Visible='<%# ITCLIB.Security.Security.CanPrintModule("NHANGUI") %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/img_OpenPanel.gif" />Xác nhận chưa TT</asp:LinkButton>&nbsp;&nbsp;
                 <asp:LinkButton ID="LinkButton11" runat="server" CommandName="ClearFilterGrid"><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/filterCancel.gif" />Xóa tìm kiếm</asp:LinkButton>&nbsp;&nbsp;
                 <asp:LinkButton ID="LinkButton4" runat="server" CommandName="RebindGrid"><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Refresh.gif" />Làm mới</asp:LinkButton>
             </div>
@@ -645,13 +714,13 @@
                             <asp:LinkButton ID="btnClose" runat="server" CommandName="Cancel"><img src="Images/img_Close.jpg" />Đóng</asp:LinkButton></li>
                         <li>
                             <asp:LinkButton ID="btXuatbaocao" runat="server" Visible='<%# !(Container is GridEditFormInsertItem) %>'
-                                OnClientClick='<%# String.Format("javascript:return PrintOnClientLinkClickedEdit1({0})",Eval("C_BILL")) %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/print.gif"/>In 1 bản</asp:LinkButton></li>
+                                OnClientClick='<%# String.Format("javascript:return PrintOnClientLinkClickedEdit1(\"{0}\")",Eval("C_BILL").ToString()) %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/print.gif"/>In 1 bản</asp:LinkButton></li>
                         <li>
                             <asp:LinkButton ID="LinkButton9" runat="server" Visible='<%# !(Container is GridEditFormInsertItem) %>'
-                                OnClientClick='<%# String.Format("javascript:return PrintOnClientLinkClickedEdit2({0})",Eval("C_BILL")) %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/print.gif"/>In 2 bản</asp:LinkButton></li>
+                                OnClientClick='<%# String.Format("javascript:return PrintOnClientLinkClickedEdit2(\"{0}\")",Eval("C_BILL").ToString()) %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/print.gif"/>In 2 bản</asp:LinkButton></li>
                         <li>
                             <asp:LinkButton ID="LinkButton10" runat="server" Visible='<%# !(Container is GridEditFormInsertItem) %>'
-                                OnClientClick='<%# String.Format("javascript:return PrintOnClientLinkClickedEdit3({0})",Eval("C_BILL")) %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/print.gif"/>In kim</asp:LinkButton></li>
+                                OnClientClick='<%# String.Format("javascript:return PrintOnClientLinkClickedEdit3(\"{0}\")",Eval("C_BILL").ToString()) %>'><img style="border:0px;vertical-align:middle;" alt="" src="Images/print.gif"/>In kim</asp:LinkButton></li>
                     </ul>
                 </div>
                 <div class="clearfix bgpopup">
