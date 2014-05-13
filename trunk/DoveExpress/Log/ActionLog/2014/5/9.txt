@@ -1,0 +1,42 @@
+Thời gian: 2014-05-09 14:49:21 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2014-05-09 14:50:13 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted CHITIETCUOC
+Kết quả : {PK_ID:"3796"}
+__________________________
+Thời gian: 2014-05-09 14:51:03 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted CHITIETCUOC
+Kết quả : {PK_ID:"3797"}
+__________________________
+Thời gian: 2014-05-09 14:58:48 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted CHITIETCUOC
+Kết quả : {PK_ID:"3798"}
+__________________________
+Thời gian: 2014-05-09 15:16:42 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted CHITIETCUOC
+Kết quả : {PK_ID:"3798",FK_MAVUNG:"12"}
+__________________________
+Thời gian: 2014-05-09 16:10:56 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2014-05-09 16:12:18 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated NHANGUIs
+Kết quả : {C_BILL:"7040745"}
+__________________________
