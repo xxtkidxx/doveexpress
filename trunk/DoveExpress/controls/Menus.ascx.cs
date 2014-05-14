@@ -36,6 +36,8 @@ public partial class controls_Menu : System.Web.UI.UserControl
 
         Menu.FindItemByValue("NHANGUIMENU").Visible = ITCLIB.Security.Security.CanViewModule("NHANGUI") || ITCLIB.Security.Security.CanViewModule("NHANGUIPH");
         Menu.FindItemByValue("BAOCAO").Visible = ITCLIB.Security.Security.CanViewModule("BAOCAO");
-        Menu.FindItemByValue("TAICHINH").Visible = ITCLIB.Security.Security.CanViewModule("TAICHINH"); 
+        Menu.FindItemByValue("TAICHINH").Visible = ITCLIB.Security.Security.CanViewModule("TAICHINH");
+        Menu.FindItemByValue("KHIEUNAI").Visible = ITCLIB.Security.Security.CanViewModule("KHIEUNAI");
+        Menu.FindItemByValue("BAOGIA").Visible = ITCLIB.Security.Security.CanViewModule("BAOGIA"); 
     }
 }

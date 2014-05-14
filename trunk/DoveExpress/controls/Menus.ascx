@@ -180,22 +180,26 @@
         </telerik:RadMenuItem>
         <telerik:RadMenuItem runat="server" Font-Size="Small" Text="Tài chỉnh" Value="TAICHINH">
             <Items>
-                <telerik:RadMenuItem runat="server"  Visible = "false"  Font-Size="Small" NavigateUrl="../Default.aspx?ctl=SOQUYTIENMAT"
+                <telerik:RadMenuItem runat="server" Visible="false" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=SOQUYTIENMAT"
                     Text="Sổ quỹ tiền mặt" Value="SOQUYTIENMAT">
                 </telerik:RadMenuItem>
-                <telerik:RadMenuItem runat="server" Visible = "false" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=SOQUYTIENMATV2"
+                <telerik:RadMenuItem runat="server" Visible="false" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=SOQUYTIENMATV2"
                     Text="Sổ quỹ tiền mặt (Vesion 2)" Value="SOQUYTIENMATV2">
                 </telerik:RadMenuItem>
                 <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=SOQUYTIENMATV3"
                     Text="Sổ quỹ tiền mặt (Phân trang)" Value="SOQUYTIENMATV3">
                 </telerik:RadMenuItem>
-                <telerik:RadMenuItem runat="server" Visible = "false" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=BAOCAOTAICHINH"
+                <telerik:RadMenuItem runat="server" Visible="false" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=BAOCAOTAICHINH"
                     Text="Báo cáo tài chính nội bộ" Value="BAOCAOTAICHINH">
                 </telerik:RadMenuItem>
                 <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=KIHIEUTAIKHOAN"
                     Text="Kí hiệu các tài khoản" Value="KIHIEUTAIKHOAN">
                 </telerik:RadMenuItem>
             </Items>
+        </telerik:RadMenuItem>
+        <telerik:RadMenuItem runat="server" Font-Size="Small" Text="Khiếu nại" Value="KHIEUNAI">
+        </telerik:RadMenuItem>
+        <telerik:RadMenuItem runat="server" Font-Size="Small" Text="Báo giá" Value="BAOGIA">
         </telerik:RadMenuItem>
         <telerik:RadMenuItem runat="server" Text="Cá nhân" Font-Size="Small" Value="User">
             <Items>
