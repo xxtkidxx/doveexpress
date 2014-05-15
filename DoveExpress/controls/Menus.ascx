@@ -197,9 +197,9 @@
                 </telerik:RadMenuItem>
             </Items>
         </telerik:RadMenuItem>
-        <telerik:RadMenuItem runat="server" Font-Size="Small" Text="Khiếu nại" Value="KHIEUNAI">
+        <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=KHIEUNAI" Text="Khiếu nại" Value="KHIEUNAI">
         </telerik:RadMenuItem>
-        <telerik:RadMenuItem runat="server" Font-Size="Small" Text="Báo giá" Value="BAOGIA">
+        <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=BAOGIA" Text="Báo giá" Value="BAOGIA">
         </telerik:RadMenuItem>
         <telerik:RadMenuItem runat="server" Text="Cá nhân" Font-Size="Small" Value="User">
             <Items>
