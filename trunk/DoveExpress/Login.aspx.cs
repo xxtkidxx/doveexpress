@@ -104,7 +104,7 @@ public partial class Login : System.Web.UI.Page
     }
     protected void CheckEmail(object source, ServerValidateEventArgs args)
     {
-        string SelectSQL = "Select USERS.C_LOGINNAME FROM USER WHERE USERS.C_EMAIL = '" + txtEmail.Text + "' AND USERS.C_LOGINNAME = '" + txtUser.Text + "'";
+        string SelectSQL = "Select USERS.C_LOGINNAME FROM USERS WHERE USERS.C_EMAIL = '" + txtEmail.Text + "' AND USERS.C_LOGINNAME = '" + txtUser.Text + "'";
         DataTable oDataTable = new DataTable();
         ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
         oDataTable = SelectQuery.query_data(SelectSQL);

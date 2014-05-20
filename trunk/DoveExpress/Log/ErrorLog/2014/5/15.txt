@@ -1,0 +1,10 @@
+Thời gian lỗi : 2014-05-15 20:25:40 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Login.aspx. 
+Nội dung lỗi:Login failed for user 'sa'.
+__________________________
+Thời gian lỗi : 2014-05-15 21:24:27 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=KHIEUNAI. 
+Nội dung lỗi:e:\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\KHIEUNAI.ascx.cs(158): error CS0103: The name 'QUANHUYENDataSource' does not exist in the current context
+__________________________
