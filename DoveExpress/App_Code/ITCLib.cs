@@ -744,7 +744,7 @@ namespace ITCLIB
                         string SendFrom = mailSettings.Smtp.From;
                         SmtpClient client = new SmtpClient(host, port);
                         client.EnableSsl = true;
-                        MailAddress from = new MailAddress(SendFrom, "Quản trị FIA");
+                        MailAddress from = new MailAddress(SendFrom, "Quản trị");
                         MailAddress to = new MailAddress(SendTo, "");
                         MailMessage message = new MailMessage(from, to);
                         message.Body = Body;
