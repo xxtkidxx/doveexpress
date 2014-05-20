@@ -227,31 +227,21 @@ public partial class module_KHIEUNAI : System.Web.UI.UserControl
         {
             GridEditableItem editItem = (GridEditableItem)e.Item;            
         }
-    }    
-    protected string LoadFilteredTinhThanhManually(string ID)
-    {
-        string SelectSQL = "";
-        if (ID != "")
-        {
-            SelectSQL = "SELECT * FROM DMTINHTHANH WHERE FK_QUOCGIA = " + ID + "order by C_NAME";
-        }
-        else
-        {
-            SelectSQL = "SELECT * FROM DMTINHTHANH order by C_NAME";
-        }
-        return SelectSQL;
     }
-    protected string LoadFilteredQuanHuyenManually(string ID)
+    protected void CheckMaKN(object source, ServerValidateEventArgs args)
     {
-        string SelectSQL = "";
-        if (ID != "")
+        string SelectSQL;
+        SelectSQL = "Select KHIEUNAI.C_CODE FROM KHIEUNAI WHERE KHIEUNAI.C_BILL = '" + args.Value + "' AND KHIEUNAI.PK_ID <> " + Session["txtID"].ToString();
+        DataTable oDataTable = new DataTable();
+        ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
+        oDataTable = SelectQuery.query_data(SelectSQL);
+        if (oDataTable.Rows.Count != 0)
         {
-            SelectSQL = "SELECT * FROM DMQUANHUYEN WHERE FK_TINHTHANH = " + ID + " order by C_NAME";
+            args.IsValid = false;
         }
         else
         {
-            SelectSQL = "SELECT * FROM DMQUANHUYEN order by C_NAME";
+            args.IsValid = true;
         }
-        return SelectSQL;
     }
 }

@@ -34,37 +34,54 @@
     }
     </script>
     <script type="text/javascript">
-        var cmbtinhthanh;
-        var cmbquanhuyen;
-        function OnClientLoadTinhThanh(sender) {
-            cmbtinhthanh = sender;
+        var cmbMaKhachHang;
+        function OnClientLoadcmbMaKhachHang(sender) {
+            cmbMaKhachHang = sender;
         }
-        function OnClientLoadQuanHuyen(sender) {
-            cmbquanhuyen = sender;
+        var txtC_TENKH;
+        function OnClientLoadtxtC_TENKH(sender) {
+            txtC_TENKH = sender;
         }
-        function cmbQuocGiaClientSelectedIndexChangedHandler(sender, eventArgs) {
-            cmbtinhthanh.requestItems(eventArgs.get_item().get_value(), false);
+        var txtC_SDT;
+        function OnClientLoadtxtC_SDT(sender) {
+            txtC_SDT = sender;
         }
-        function cmbTinhThanhClientSelectedIndexChangedHandler(sender, eventArgs) {
-            cmbquanhuyen.requestItems(eventArgs.get_item().get_value(), false);
-        }
-        function cmbQuanHuyenClientSelectedIndexChangedHandler(sender, eventArgs) {
-            var hftext = GetGridServerElementDT("hfQuanHuyen");
-            hftext.value = eventArgs.get_item().get_value();
-        }
-        function ItemsLoadedTinhThanh(combo, eventArqs) {
-            if (combo.get_items().get_count() > 0) {
-                combo.clearSelection();
-            } else {
-                combo.set_text("");
+        function OnKeyPressRadTextBox(sender, eventArgs) {
+            var charCode = eventArgs.get_keyCode();
+            if (charCode != 46 && charCode > 31 && (charCode < 48 || charCode > 57)) {
+                eventArgs.set_cancel(true);
             }
-        }
-        function ItemsLoadedQuanHuyen(combo, eventArqs) {
-            if (combo.get_items().get_count() > 0) {
-                combo.clearSelection();
+            return false;
+        } 
+        function cmbC_TYPEClientSelectedIndexChangedHandler(sender, eventArgs) {
+            if (eventArgs.get_item().get_value() == 'Thanh toán ngay') {
+                txtC_DATHU.set_value(0);
+                //txtC_DATHU.set_value(txtC_TIENHANGVAT.get_value());
+            } else if (eventArgs.get_item().get_value() == 'Đã thanh toán') {
+                txtC_DATHU.set_value(txtC_TIENHANGVAT.get_value());
+            } else if (eventArgs.get_item().get_value() == 'Thanh toán sau') {
+                txtC_DATHU.set_value(0);
+            } else if (eventArgs.get_item().get_value() == 'Thanh toán đầu nhận') {
+                txtC_DATHU.set_value(0);
             } else {
-                combo.set_text("");
+                txtC_DATHU.set_value(0);
             }
+            return false;
+        }
+        function cmbMaKhachHangClientSelectedIndexChangedHandler(sender, eventArgs) {
+            if (eventArgs.get_item().get_value() == 'Thanh toán ngay') {
+                txtC_DATHU.set_value(0);
+                //txtC_DATHU.set_value(txtC_TIENHANGVAT.get_value());
+            } else if (eventArgs.get_item().get_value() == 'Đã thanh toán') {
+                txtC_DATHU.set_value(txtC_TIENHANGVAT.get_value());
+            } else if (eventArgs.get_item().get_value() == 'Thanh toán sau') {
+                txtC_DATHU.set_value(0);
+            } else if (eventArgs.get_item().get_value() == 'Thanh toán đầu nhận') {
+                txtC_DATHU.set_value(0);
+            } else {
+                txtC_DATHU.set_value(0);
+            }
+            return false;
         }
     </script>
 </telerik:RadCodeBlock>
@@ -121,34 +138,34 @@
                 <HeaderStyle HorizontalAlign="Center" Width="30px" />
                 <ItemStyle HorizontalAlign="Center" Width="30px" />
             </telerik:GridTemplateColumn>
-            <telerik:GridBoundColumn UniqueName="C_CODE" HeaderText="Mã khiếu nại" DataField="C_CODE"
+            <telerik:GridBoundColumn UniqueName="C_CODE" HeaderText="Mã khiếu nại" DataField="C_CODE" HeaderStyle-Width="90px" HeaderStyle-HorizontalAlign="Center" 
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
             </telerik:GridBoundColumn>
-            <telerik:GridBoundColumn UniqueName="C_TYPE" HeaderText="Loại khiếu nại" DataField="C_TYPE"
+            <telerik:GridBoundColumn UniqueName="C_TYPE" HeaderText="Loại khiếu nại" DataField="C_TYPE" HeaderStyle-Width="90px" HeaderStyle-HorizontalAlign="Center" 
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
             </telerik:GridBoundColumn>
             <telerik:GridBoundColumn UniqueName="C_DATE" HeaderText="Thời gian" DataField="C_DATE"
-                HeaderStyle-Width="80px" HeaderStyle-HorizontalAlign="Center" AutoPostBackOnFilter="true"
-                ShowFilterIcon="true" FilterControlWidth="75%" DataType="System.DateTime" DataFormatString="{0:dd/MM/yyyy}">
+                HeaderStyle-Width="90px" HeaderStyle-HorizontalAlign="Center" AutoPostBackOnFilter="true"
+                ShowFilterIcon="true" FilterControlWidth="70%" DataType="System.DateTime" DataFormatString="{0:dd/MM/yyyy}">
             </telerik:GridBoundColumn>
-            <telerik:GridBoundColumn UniqueName="C_BILL" HeaderText="Chủ đề" DataField="C_BILL"
+            <telerik:GridBoundColumn UniqueName="C_BILL" HeaderText="Chủ đề" DataField="C_BILL" HeaderStyle-Width="180px" HeaderStyle-HorizontalAlign="Center" 
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
             </telerik:GridBoundColumn>
              <telerik:GridBoundColumn UniqueName="FK_KHACHHANG" HeaderText="Mã khách hàng" DataField="FK_KHACHHANG"
-                HeaderStyle-Width="80px" HeaderStyle-HorizontalAlign="Center" AutoPostBackOnFilter="true"
+                HeaderStyle-Width="70px" HeaderStyle-HorizontalAlign="Center" AutoPostBackOnFilter="true"
                 CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
             </telerik:GridBoundColumn>
             <telerik:GridBoundColumn UniqueName="C_TENKH" HeaderText="Tên khách hàng" DataField="C_TENKH"
                 HeaderStyle-Width="110px" HeaderStyle-HorizontalAlign="Center" AutoPostBackOnFilter="true"
                 CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
             </telerik:GridBoundColumn>
-            <telerik:GridBoundColumn UniqueName="C_SDT" HeaderText="Số điện thoại" DataField="C_SDT"
+            <telerik:GridBoundColumn UniqueName="C_SDT" HeaderText="Số điện thoại" DataField="C_SDT" HeaderStyle-Width="70px" HeaderStyle-HorizontalAlign="Center" 
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
             </telerik:GridBoundColumn>
-            <telerik:GridBoundColumn UniqueName="NGUOIGIAIQUYETNAME" HeaderText="Người giải quyết" DataField="NGUOIGIAIQUYETNAME"
+            <telerik:GridBoundColumn UniqueName="NGUOIGIAIQUYETNAME" HeaderText="Người giải quyết" DataField="NGUOIGIAIQUYETNAME" HeaderStyle-Width="100px" HeaderStyle-HorizontalAlign="Center" 
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
             </telerik:GridBoundColumn>
-            <telerik:GridBoundColumn UniqueName="C_STATUS" HeaderText="Tình trạng" DataField="C_STATUS"
+            <telerik:GridBoundColumn UniqueName="C_STATUS" HeaderText="Tình trạng" DataField="C_STATUS" HeaderStyle-Width="60px" HeaderStyle-HorizontalAlign="Center" 
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
             </telerik:GridBoundColumn>            
         </Columns>
@@ -293,7 +310,7 @@
     ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
     DeleteCommand="DELETE FROM [KHIEUNAI] WHERE [PK_ID] = @PK_ID"
     InsertCommand="INSERT INTO [KHIEUNAI] ([C_CODE], [C_TYPE], [C_DATE], [C_BILL], [FK_KHACHHANG], [C_TENKH], [C_SDT], [C_NOIDUNG], [FK_NGUOIGIAIQUYET], [C_THONGTIN], [C_STATUS]) VALUES (@C_CODE, @C_TYPE, @C_DATE, @C_BILL, @FK_KHACHHANG, @C_TENKH, @C_SDT, @C_NOIDUNG, @FK_NGUOIGIAIQUYET, @C_THONGTIN, @C_STATUS)"
-    SelectCommand="SELECT [KHIEUNAI].[PK_ID], [KHIEUNAI].[C_CODE], [KHIEUNAI].[C_TYPE], [KHIEUNAI].[C_DATE], [KHIEUNAI].[C_BILL], [KHIEUNAI].[FK_KHACHHANG], [KHIEUNAI].[C_TENKH], [KHIEUNAI].[C_SDT], [KHIEUNAI].[FK_NGUOIGIAIQUYET] ,USERS.C_NAME as NGUOIGIAIQUYENAME FROM [KHIEUNAI] LEFT OUTER JOIN USERS ON KHIEUNAI.FK_USER =USERS.PK_ID WHERE a.FK_VUNGLAMVIEC = @FK_VUNGLAMVIEC"
+    SelectCommand="SELECT [KHIEUNAI].[PK_ID], [KHIEUNAI].[C_CODE], [KHIEUNAI].[C_TYPE], [KHIEUNAI].[C_DATE], [KHIEUNAI].[C_BILL], [KHIEUNAI].[FK_KHACHHANG], [KHIEUNAI].[C_TENKH], [KHIEUNAI].[C_SDT], [KHIEUNAI].[C_NOIDUNG], [KHIEUNAI].[FK_NGUOIGIAIQUYET], [KHIEUNAI].[C_THONGTIN], [KHIEUNAI].[C_STATUS], USERS.C_NAME as NGUOIGIAIQUYENAME FROM [KHIEUNAI] LEFT OUTER JOIN USERS ON KHIEUNAI.FK_NGUOIGIAIQUYET =USERS.PK_ID"
     UpdateCommand="UPDATE [KHIEUNAI] SET [C_CODE] = @C_CODE, [C_TYPE] = @C_TYPE, [C_DATE] = @C_DATE, [C_BILL] = @C_BILL, [FK_KHACHHANG] = @FK_KHACHHANG, [C_SDT] = @C_SDT, [C_NOIDUNG] = @C_NOIDUNG, [FK_NGUOIGIAIQUYET] = @FK_NGUOIGIAIQUYET, [C_THONGTIN] = @C_THONGTIN, [C_STATUS] = @C_STATUS WHERE [PK_ID] = @PK_ID">
     <SelectParameters>
         <asp:SessionParameter Name="FK_VUNGLAMVIEC" Type="String" SessionField="VUNGLAMVIEC" />
@@ -331,6 +348,12 @@
 </asp:SqlDataSource>
 <asp:SqlDataSource ID="UserDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
     SelectCommand="SELECT USERS.PK_ID,USERS.FK_GroupUser,USERS.FK_DEPT,USERS.C_LoginName,USERS.C_Password,USERS.C_NAME,USERS.C_Address,USERS.c_Tel,USERS.C_Email,USERS.C_DESC,GROUPUSER.C_NAME AS GROUPUSERNAME FROM USERS INNER JOIN GROUPUSER ON  USERS.FK_GROUPUSER = GROUPUSER.PK_ID WHERE FK_GROUPUSER NOT IN (0,1) AND (FK_VUNGLAMVIEC = N'Tất cả' OR FK_VUNGLAMVIEC = @FK_VUNGLAMVIEC)">
+    <SelectParameters>
+        <asp:SessionParameter Name="FK_VUNGLAMVIEC" Type="String" SessionField="VUNGLAMVIEC" />
+    </SelectParameters>
+</asp:SqlDataSource>
+<asp:SqlDataSource ID="KHACHHANGDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
+    SelectCommand="SELECT DMKHACHHANG.* FROM DMKHACHHANG LEFT OUTER JOIN DMNHOMKHACHHANG ON DMKHACHHANG.FK_NHOMKHACHHANG = DMNHOMKHACHHANG.PK_ID WHERE DMNHOMKHACHHANG.FK_VUNGLAMVIEC = @FK_VUNGLAMVIEC">
     <SelectParameters>
         <asp:SessionParameter Name="FK_VUNGLAMVIEC" Type="String" SessionField="VUNGLAMVIEC" />
     </SelectParameters>
