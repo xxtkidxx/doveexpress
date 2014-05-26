@@ -1,0 +1,51 @@
+Thời gian lỗi : 2014-05-20 14:30:16 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=KHIEUNAI. 
+Nội dung lỗi:Invalid object name 'KHIEUNAI'.
+__________________________
+Thời gian lỗi : 2014-05-20 14:40:13 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=KHIEUNAI. 
+Nội dung lỗi:Invalid column name 'FK_USER'.
+The multi-part identifier "a.FK_VUNGLAMVIEC" could not be bound.
+__________________________
+Thời gian lỗi : 2014-05-20 14:42:38 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=KHIEUNAI. 
+Nội dung lỗi:The DataSourceID of 'cmbMaKhachHang' must be the ID of a control of type IDataSource.  A control with ID 'KHACHHANGDataSource' could not be found.
+__________________________
+Thời gian lỗi : 2014-05-20 14:42:39 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=KHIEUNAI. 
+Nội dung lỗi:The DataSourceID of 'cmbMaKhachHang' must be the ID of a control of type IDataSource.  A control with ID 'KHACHHANGDataSource' could not be found.
+__________________________
+Thời gian lỗi : 2014-05-20 14:42:40 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=KHIEUNAI. 
+Nội dung lỗi:The DataSourceID of 'cmbMaKhachHang' must be the ID of a control of type IDataSource.  A control with ID 'KHACHHANGDataSource' could not be found.
+__________________________
+Thời gian lỗi : 2014-05-20 14:46:17 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=KHIEUNAI. 
+Nội dung lỗi:The DataSourceID of 'cmbMaKhachHang' must be the ID of a control of type IDataSource.  A control with ID 'KHACHHANGDataSource' could not be found.
+__________________________
+Thời gian lỗi : 2014-05-20 14:47:03 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=KHIEUNAI. 
+Nội dung lỗi:The DataSourceID of 'cmbMaKhachHang' must be the ID of a control of type IDataSource.  A control with ID 'KHACHHANGDataSource' could not be found.
+__________________________
+Thời gian lỗi : 2014-05-20 14:47:55 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=KHIEUNAI. 
+Nội dung lỗi:DataBinding: 'Telerik.Web.UI.GridInsertionObject' does not contain a property with the name 'C_NOIDUNG'.
+__________________________
+Thời gian lỗi : 2014-05-20 14:49:03 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=KHIEUNAI. 
+Nội dung lỗi:DataBinding: 'Telerik.Web.UI.GridInsertionObject' does not contain a property with the name 'C_THONGTIN'.
+__________________________
+Thời gian lỗi : 2014-05-20 14:49:35 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=KHIEUNAI. 
+Nội dung lỗi:DataBinding: 'Telerik.Web.UI.GridInsertionObject' does not contain a property with the name 'C_STATUS'.
+__________________________
