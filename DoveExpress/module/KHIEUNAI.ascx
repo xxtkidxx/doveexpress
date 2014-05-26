@@ -108,12 +108,11 @@
                              cmbMaKhachHang.commitChanges();
                          }
                          txtC_TENKH.set_value(arrayOfStrings[1]);
-                         txtC_SDT.set_value(arrayOfStrings[2]);
-                         checkKH = true;
+                         txtC_SDT.set_value(arrayOfStrings[2]);                         
                      }
                      else {
                      }
-                     
+                     checkKH = true;                     
                 }
                 var currentLoadingPanel = $find("<%= RadAjaxLoadingPanelKHIEUNAI.ClientID %>");
                 var currentUpdatedControl = "<%= RadGridKHIEUNAI.ClientID %>";
