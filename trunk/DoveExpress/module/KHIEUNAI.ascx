@@ -34,6 +34,10 @@
     }
     </script>
     <script type="text/javascript">
+        var cmbC_TYPE;
+        function OnClientLoadcmbC_TYPE(sender) {
+            cmbC_TYPE = sender;
+        }
         var cmbMaKhachHang;
         function OnClientLoadcmbMaKhachHang(sender) {
             cmbMaKhachHang = sender;
@@ -46,40 +50,75 @@
         function OnClientLoadtxtC_SDT(sender) {
             txtC_SDT = sender;
         }
+        var txtC_BILL;
+        function OnClientLoadtxtC_BILL(sender) {
+            txtC_BILL = sender;
+        }
         function OnKeyPressRadTextBox(sender, eventArgs) {
             var charCode = eventArgs.get_keyCode();
             if (charCode != 46 && charCode > 31 && (charCode < 48 || charCode > 57)) {
                 eventArgs.set_cancel(true);
             }
             return false;
-        } 
+        }
+        checkKH = true;
         function cmbC_TYPEClientSelectedIndexChangedHandler(sender, eventArgs) {
-            if (eventArgs.get_item().get_value() == 'Thanh toán ngay') {
-                txtC_DATHU.set_value(0);
-                //txtC_DATHU.set_value(txtC_TIENHANGVAT.get_value());
-            } else if (eventArgs.get_item().get_value() == 'Đã thanh toán') {
-                txtC_DATHU.set_value(txtC_TIENHANGVAT.get_value());
-            } else if (eventArgs.get_item().get_value() == 'Thanh toán sau') {
-                txtC_DATHU.set_value(0);
-            } else if (eventArgs.get_item().get_value() == 'Thanh toán đầu nhận') {
-                txtC_DATHU.set_value(0);
-            } else {
-                txtC_DATHU.set_value(0);
+            if (eventArgs.get_item().get_value() == 'Bill') {
+                checkKH = !checkKH;
+                $find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("cmbC_TYPE;" + txtC_BILL.get_value());
+                var currentLoadingPanel = $find("<%= RadAjaxLoadingPanelKHIEUNAI.ClientID %>");
+                var currentUpdatedControl = "<%= RadGridKHIEUNAI.ClientID %>";
+                currentLoadingPanel.show(currentUpdatedControl);
             }
             return false;
         }
         function cmbMaKhachHangClientSelectedIndexChangedHandler(sender, eventArgs) {
-            if (eventArgs.get_item().get_value() == 'Thanh toán ngay') {
-                txtC_DATHU.set_value(0);
-                //txtC_DATHU.set_value(txtC_TIENHANGVAT.get_value());
-            } else if (eventArgs.get_item().get_value() == 'Đã thanh toán') {
-                txtC_DATHU.set_value(txtC_TIENHANGVAT.get_value());
-            } else if (eventArgs.get_item().get_value() == 'Thanh toán sau') {
-                txtC_DATHU.set_value(0);
-            } else if (eventArgs.get_item().get_value() == 'Thanh toán đầu nhận') {
-                txtC_DATHU.set_value(0);
-            } else {
-                txtC_DATHU.set_value(0);
+            if (checkKH) {
+                $find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("cmbMaKhachHang;" + eventArgs.get_item().get_value());
+                var currentLoadingPanel = $find("<%= RadAjaxLoadingPanelKHIEUNAI.ClientID %>");
+                var currentUpdatedControl = "<%= RadGridKHIEUNAI.ClientID %>";
+                currentLoadingPanel.show(currentUpdatedControl);
+            }
+            return false;
+        }
+        function OnValueChangedtxtC_BILL(sender, eventArgs) {
+            if (cmbC_TYPE.get_selectedItem().get_value() == 'Bill') {
+                checkKH = !checkKH;
+                $find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("txtC_BILL;" + eventArgs.get_newValue());
+                var currentLoadingPanel = $find("<%= RadAjaxLoadingPanelKHIEUNAI.ClientID %>");
+                var currentUpdatedControl = "<%= RadGridKHIEUNAI.ClientID %>";
+                currentLoadingPanel.show(currentUpdatedControl);
+            }
+            return false;
+        }
+    </script>
+     <script type="text/javascript">
+         function onResponseEndKN() {
+             if (typeof (result) != "undefined" && result && result != "") {
+                 //alert(result);
+                 var arrayOfStrings = result.split(",-,");
+                 if (arrayOfStrings[0] != "msg") {
+                     if (arrayOfStrings[0] != "") {
+                         if (!checkKH) {
+                             var comboItem = new Telerik.Web.UI.RadComboBoxItem();
+                             comboItem = cmbMaKhachHang.findItemByText(arrayOfStrings[0]);
+                             comboItem.set_text(arrayOfStrings[0]);
+                             cmbMaKhachHang.trackChanges();
+                             comboItem.select();
+                             cmbMaKhachHang.commitChanges();
+                         }
+                         txtC_TENKH.set_value(arrayOfStrings[1]);
+                         txtC_SDT.set_value(arrayOfStrings[2]);
+                         checkKH = true;
+                     }
+                     else {
+                     }
+                     
+                }
+                var currentLoadingPanel = $find("<%= RadAjaxLoadingPanelKHIEUNAI.ClientID %>");
+                var currentUpdatedControl = "<%= RadGridKHIEUNAI.ClientID %>";
+                currentLoadingPanel.hide(currentUpdatedControl);
+                result = "";
             }
             return false;
         }
@@ -169,7 +208,7 @@
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
             </telerik:GridBoundColumn>            
         </Columns>
-        <EditFormSettings InsertCaption="Thêm khách hàng mới" CaptionFormatString="Sửa khách hàng: <b>{0}</b>" CaptionDataField="C_NAME" EditFormType="Template" PopUpSettings-Width="600px">
+        <EditFormSettings InsertCaption="Thêm khiếu nại mới" CaptionFormatString="Sửa khiếu nại: <b>{0}</b>" CaptionDataField="C_CODE" EditFormType="Template" PopUpSettings-Width="900px">
             <EditColumn UniqueName="EditCommandColumn1" FilterControlAltText="Filter EditCommandColumn1 column"></EditColumn>
             <FormTemplate>
                 <div class="headerthongtin">
@@ -181,7 +220,7 @@
                     </ul>
                 </div>
                 <div class="clearfix bgpopup">
-                    <div style="width: 600px; background: #FFFFFF" class="clearfix">
+                    <div style="width: 900px; height: 250px; background: #FFFFFF" class="clearfix">
                         <table id="tblEdit" class="TableEditInGrid" cellspacing="3" cellpadding="3" style="width: 100%" border="0">
                             <tr>
                                 <td style="width: 100px;">
@@ -213,7 +252,7 @@
                                 <td style="width: 150px;"><span class="rtsTxtnew">Loại:</td>
                                 <td colspan="4">
                                    <telerik:RadComboBox ID="cmbC_TYPE" SelectedValue='<%# Bind("C_TYPE") %>'
-                                        runat="server" EmptyMessage="Chọn" OnClientSelectedIndexChanged="cmbC_TYPEClientSelectedIndexChangedHandler">
+                                        runat="server" EmptyMessage="Chọn" OnClientSelectedIndexChanged="cmbC_TYPEClientSelectedIndexChangedHandler" OnClientLoad="OnClientLoadcmbC_TYPE">
                                         <Items>
                                             <telerik:RadComboBoxItem Value="Bill" Text="Bill" />
                                             <telerik:RadComboBoxItem Value="Khác" Text="Khác" />
@@ -222,7 +261,7 @@
                                 </td>
                                 <td style="width: 150px;"><span class="rtsTxtnew">Số Bill/Chủ đề:</td>
                                 <td colspan="4">
-                                    <telerik:RadTextBox ID="txtC_BILL" Text='<%# Bind( "C_BILL") %>' runat="server" Width="90%"></telerik:RadTextBox>
+                                    <telerik:RadTextBox ID="txtC_BILL" Text='<%# Bind( "C_BILL") %>' runat="server" Width="90%" ClientEvents-OnValueChanged="OnValueChangedtxtC_BILL" ClientEvents-OnLoad="OnClientLoadtxtC_BILL"></telerik:RadTextBox>
                                 </td>
                             </tr>
                             <tr>
@@ -256,7 +295,7 @@
                             </tr>
                             <tr>
                                 <td style="width: 150px;"><span class="rtsTxtnew">Nội dung:</td>
-                                <td colspan="4">
+                                <td colspan="12">
                                     <telerik:RadTextBox ID="txtC_NOIDUNG" Text='<%# Bind( "C_NOIDUNG") %>' runat="server" Width="90%" TextMode="MultiLine"></telerik:RadTextBox>
                                 </td>
                             </tr>
@@ -271,7 +310,7 @@
                             </tr>
                              <tr>
                                 <td style="width: 150px;"><span class="rtsTxtnew">Thông tin:</td>
-                                <td colspan="4">
+                                <td colspan="12">
                                     <telerik:RadTextBox ID="txtC_THONGTIN" Text='<%# Bind( "C_THONGTIN") %>' runat="server" Width="90%" TextMode="MultiLine"></telerik:RadTextBox>
                                 </td>
                             </tr>
@@ -311,7 +350,7 @@
     DeleteCommand="DELETE FROM [KHIEUNAI] WHERE [PK_ID] = @PK_ID"
     InsertCommand="INSERT INTO [KHIEUNAI] ([C_CODE], [C_TYPE], [C_DATE], [C_BILL], [FK_KHACHHANG], [C_TENKH], [C_SDT], [C_NOIDUNG], [FK_NGUOIGIAIQUYET], [C_THONGTIN], [C_STATUS]) VALUES (@C_CODE, @C_TYPE, @C_DATE, @C_BILL, @FK_KHACHHANG, @C_TENKH, @C_SDT, @C_NOIDUNG, @FK_NGUOIGIAIQUYET, @C_THONGTIN, @C_STATUS)"
     SelectCommand="SELECT [KHIEUNAI].[PK_ID], [KHIEUNAI].[C_CODE], [KHIEUNAI].[C_TYPE], [KHIEUNAI].[C_DATE], [KHIEUNAI].[C_BILL], [KHIEUNAI].[FK_KHACHHANG], [KHIEUNAI].[C_TENKH], [KHIEUNAI].[C_SDT], [KHIEUNAI].[C_NOIDUNG], [KHIEUNAI].[FK_NGUOIGIAIQUYET], [KHIEUNAI].[C_THONGTIN], [KHIEUNAI].[C_STATUS], USERS.C_NAME as NGUOIGIAIQUYENAME FROM [KHIEUNAI] LEFT OUTER JOIN USERS ON KHIEUNAI.FK_NGUOIGIAIQUYET =USERS.PK_ID"
-    UpdateCommand="UPDATE [KHIEUNAI] SET [C_CODE] = @C_CODE, [C_TYPE] = @C_TYPE, [C_DATE] = @C_DATE, [C_BILL] = @C_BILL, [FK_KHACHHANG] = @FK_KHACHHANG, [C_SDT] = @C_SDT, [C_NOIDUNG] = @C_NOIDUNG, [FK_NGUOIGIAIQUYET] = @FK_NGUOIGIAIQUYET, [C_THONGTIN] = @C_THONGTIN, [C_STATUS] = @C_STATUS WHERE [PK_ID] = @PK_ID">
+    UpdateCommand="UPDATE [KHIEUNAI] SET [C_CODE] = @C_CODE, [C_TYPE] = @C_TYPE, [C_DATE] = @C_DATE, [C_BILL] = @C_BILL, [FK_KHACHHANG] = @FK_KHACHHANG, [C_TENKH] = @C_TENKH, [C_SDT] = @C_SDT, [C_NOIDUNG] = @C_NOIDUNG, [FK_NGUOIGIAIQUYET] = @FK_NGUOIGIAIQUYET, [C_THONGTIN] = @C_THONGTIN, [C_STATUS] = @C_STATUS WHERE [PK_ID] = @PK_ID">
     <SelectParameters>
         <asp:SessionParameter Name="FK_VUNGLAMVIEC" Type="String" SessionField="VUNGLAMVIEC" />
     </SelectParameters>
