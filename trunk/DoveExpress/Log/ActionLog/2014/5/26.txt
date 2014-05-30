@@ -1,0 +1,90 @@
+Thời gian: 2014-05-26 21:43:34 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2014-05-26 22:13:30 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Inserted KHIEUNAIs
+Kết quả : {PK_ID:"1"}
+__________________________
+Thời gian: 2014-05-26 22:36:01 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2014-05-26 22:36:47 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated KHIEUNAIs
+Kết quả : {PK_ID:"1"}
+__________________________
+Thời gian: 2014-05-26 22:37:40 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated KHIEUNAIs
+Kết quả : {PK_ID:"1"}
+__________________________
+Thời gian: 2014-05-26 22:37:46 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated KHIEUNAIs
+Kết quả : {PK_ID:"1"}
+__________________________
+Thời gian: 2014-05-26 22:38:40 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2014-05-26 22:38:50 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated KHIEUNAIs
+Kết quả : {PK_ID:"1"}
+__________________________
+Thời gian: 2014-05-26 23:08:43 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2014-05-26 23:13:50 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2014-05-26 23:15:12 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated KHIEUNAIs
+Kết quả : {PK_ID:"1"}
+__________________________
+Thời gian: 2014-05-26 23:16:12 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2014-05-26 23:26:27 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated KHIEUNAIs
+Kết quả : {PK_ID:"1"}
+__________________________
+Thời gian: 2014-05-26 23:32:40 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Updated KHIEUNAIs
+Kết quả : {PK_ID:"1"}
+__________________________
+Thời gian: 2014-05-26 23:37:05 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________

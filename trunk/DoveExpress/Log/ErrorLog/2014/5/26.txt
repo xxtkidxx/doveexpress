@@ -1,0 +1,50 @@
+Thời gian lỗi : 2014-05-26 21:34:45 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Login.aspx. 
+Nội dung lỗi:Login failed for user 'sa'.
+__________________________
+Thời gian lỗi : 2014-05-26 21:36:51 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Login.aspx. 
+Nội dung lỗi:Login failed for user 'sa'.
+__________________________
+Thời gian lỗi : 2014-05-26 21:37:00 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Login.aspx. 
+Nội dung lỗi:Login failed for user 'sa'.
+__________________________
+Thời gian lỗi : 2014-05-26 21:37:18 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Login.aspx. 
+Nội dung lỗi:Login failed for user 'sa'.
+__________________________
+Thời gian lỗi : 2014-05-26 21:54:41 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:A potentially dangerous Request.Form value was detected from the client (ctl00$ContentPlaceHolderMain$ctl00$RadGridNHANGUI$ctl00$ctl02$ctl03$FilterTextBox_C_BILLFIX="<div style="width: 9...").
+__________________________
+Thời gian lỗi : 2014-05-26 22:13:36 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=KHIEUNAI. 
+Nội dung lỗi:DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'C_NAME'.
+__________________________
+Thời gian lỗi : 2014-05-26 22:50:08 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=KHIEUNAI. 
+Nội dung lỗi:e:\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\KHIEUNAI.ascx.cs(344): error CS1002: ; expected
+__________________________
+Thời gian lỗi : 2014-05-26 22:50:10 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=KHIEUNAI. 
+Nội dung lỗi:e:\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\KHIEUNAI.ascx.cs(344): error CS1002: ; expected
+__________________________
+Thời gian lỗi : 2014-05-26 23:13:20 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=KHIEUNAI. 
+Nội dung lỗi:Column 'TELGUI' does not belong to table .
+__________________________
+Thời gian lỗi : 2014-05-26 23:14:16 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=KHIEUNAI. 
+Nội dung lỗi:Column 'TELGUI' does not belong to table .
+__________________________
