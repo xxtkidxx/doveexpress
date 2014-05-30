@@ -543,7 +543,7 @@
         border-width: 1px;
         border-color: #666666;
         border-collapse: collapse;
-        width: 30%;
+        width: 50%;
         margin: 5px 5px 5px 5px;
     }
 
@@ -570,6 +570,8 @@
         </th>
         <th>Đối tác
         </th>
+         <th>Lọc Bill theo file Excel
+        </th>
     </tr>
     <tr>
         <td>
@@ -584,9 +586,17 @@
                 EmptyMessage="Chọn đối tác">
             </telerik:RadComboBox>
         </td>
+         <td>
+                <telerik:RadAsyncUpload runat="server" ID="RadAsyncUploadExcel" Width="70%" HideFileInput="false" Localization-Select="Chọn" InputSize="60"
+                    AllowedFileExtensions="xls,xlsx" MaxFileSize="1048576000">
+                </telerik:RadAsyncUpload>
+                <asp:Button ID="btnImport" runat="server" Text="Lọc" OnClick="btnImport_Click" />
+            <asp:Button ID="btnClear" runat="server" Text="Xóa lọc" OnClick="btnClear_Click" />
+                <asp:Label ID="lblMessage" runat="server" Text="" ForeColor="Red"></asp:Label>
+        </td>
     </tr>
 </table>
-<telerik:RadGrid ID="RadGridNHANGUI" runat="server" Skin="Vista" AllowPaging="True"
+<telerik:RadGrid ID="RadGridNHANGUI" runat="server" Skin="Vista" AllowPaging="True" EnableLinqExpressions="False"
     PageSize="50" AllowSorting="True" AllowFilteringByColumn="True" GridLines="None"
     ShowStatusBar="True" AutoGenerateColumns="False" AllowMultiRowSelection="True"
     AllowMultiRowEdit="True" AllowAutomaticDeletes="True" AllowAutomaticInserts="True"
@@ -636,7 +646,7 @@
             <telerik:GridClientSelectColumn UniqueName="ClientSelectColumn" HeaderStyle-Width="40px"
                 HeaderStyle-HorizontalAlign="Center" ItemStyle-HorizontalAlign="Center">
             </telerik:GridClientSelectColumn>
-            <telerik:GridTemplateColumn HeaderText="" ShowFilterIcon="false" Visible="false">
+            <telerik:GridTemplateColumn HeaderText="" ShowFilterIcon="false" Visible="false" DataField="C_BILL">
                 <FilterTemplate>
                     <center>
                         <asp:ImageButton ID="btnShowAll" runat="server" ImageUrl="../Images/Grid/filterCancel.gif"
