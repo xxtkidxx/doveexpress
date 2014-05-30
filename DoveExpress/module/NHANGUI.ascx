@@ -298,7 +298,10 @@
         return false;
     }
     function OnValueChangedtxtC_TIENHANG(sender, eventArgs) {
-        txtC_VAT.set_value(txtC_TIENHANG.get_value() * VAT/100);
+        txtC_VAT.set_value(txtC_TIENHANG.get_value() * VAT / 100);
+        if (!flag && VAT == 0) {
+            txtC_TIENHANGVAT.set_value(txtC_TIENHANG.get_value() + txtC_VAT.get_value());
+        }
         return false;
     }
     function OnValueChangedtxtC_VAT(sender, eventArgs) {
