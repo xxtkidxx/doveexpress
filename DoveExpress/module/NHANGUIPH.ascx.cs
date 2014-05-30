@@ -8,6 +8,8 @@ using System.Data;
 using Telerik.Web.UI;
 using System.Globalization;
 using System.Collections;
+using System.Data.OleDb;
+using Excel;
 
 public partial class module_NHANGUIPH : System.Web.UI.UserControl
 {
@@ -311,5 +313,81 @@ public partial class module_NHANGUIPH : System.Web.UI.UserControl
         {
             return Compare((RadComboBoxItem)x, (RadComboBoxItem)y);
         }
+    }
+    protected void btnImport_Click(object sender, EventArgs e)
+    {
+        //lblMessage.Text = RadAsyncUploadExcel.TemporaryFolder + RadAsyncUploadExcel.UploadedFiles[0].FileName;
+        if (RadAsyncUploadExcel.UploadedFiles.Count != 0)
+        {
+            System.IO.Stream stream = RadAsyncUploadExcel.UploadedFiles[0].InputStream;
+            IExcelDataReader excelReader;
+            if (RadAsyncUploadExcel.UploadedFiles[0].GetExtension() == ".xls")
+            {
+                excelReader = ExcelReaderFactory.CreateBinaryReader(stream);
+            }
+            else
+            {
+                excelReader = ExcelReaderFactory.CreateOpenXmlReader(stream);
+            }
+
+            //excelReader.IsFirstRowAsColumnNames = true;
+            DataSet result = excelReader.AsDataSet();
+            excelReader.Close();
+            excelReader.Close();
+            DataTable oDataTable = new DataTable();
+            oDataTable = result.Tables[0];
+            if (oDataTable.Rows.Count != 0)
+            {
+                string BillFilter = "";
+                string CheckSQL = "";
+                for (int i = 0; i < oDataTable.Rows.Count; i++)
+                {
+                    if (i == 0)
+                    {
+                        BillFilter = "'" + oDataTable.Rows[i][0].ToString().Trim() + "'";
+                        CheckSQL = "SELECT (CASE WHEN EXISTS (SELECT C_BILL FROM NHANGUI WHERE C_BILL='" + oDataTable.Rows[i][0].ToString().Trim() + "') THEN 'True' ELSE '" + oDataTable.Rows[i][0].ToString().Trim() + "' END) as C_BILL";
+                    }
+                    else
+                    {
+                        BillFilter += ",'" + oDataTable.Rows[i][0].ToString().Trim() + "'";
+                        CheckSQL += " UNION ALL " + "SELECT (CASE WHEN EXISTS (SELECT C_BILL FROM NHANGUI WHERE C_BILL='" + oDataTable.Rows[i][0].ToString().Trim() + "') THEN 'True' ELSE '" + oDataTable.Rows[i][0].ToString().Trim() + "' END) as C_BILL";
+                    }
+                }
+                RadGridNHANGUIPH.MasterTableView.FilterExpression = "([C_BILL] IN (" + BillFilter + "))";
+                RadGridNHANGUIPH.Rebind();
+                string CheckResult = "";
+                DataTable oDataTableCheck = new DataTable();
+                ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
+                oDataTableCheck = SelectQuery.query_data(CheckSQL);
+                if (oDataTableCheck.Rows.Count != 0)
+                {
+                    for (int i = 0; i < oDataTableCheck.Rows.Count; i++)
+                    {
+                        if (oDataTableCheck.Rows[i]["C_BILL"].ToString() != "True")
+                        {
+                            if (CheckResult == "")
+                            {
+                                CheckResult = oDataTableCheck.Rows[i]["C_BILL"].ToString();
+                            }
+                            else
+                            {
+                                CheckResult += "," + oDataTableCheck.Rows[i]["C_BILL"].ToString();
+                            }
+                        }
+                    }
+                }
+                lblMessage.Text = "Các Bill: " + CheckResult + " không có trong cơ sở dữ liệu";
+            }          
+        }
+        else
+        {
+            lblMessage.Text = "Hãy chọn file Excel để lọc dữ liệu";
+        }
+    }
+    protected void btnClear_Click(object sender, EventArgs e)
+    {
+        RadGridNHANGUIPH.MasterTableView.FilterExpression = string.Empty;
+        lblMessage.Text = "";
+        RadGridNHANGUIPH.Rebind();
     }
 }

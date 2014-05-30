@@ -245,6 +245,29 @@ public partial class Main : System.Web.UI.MasterPage
                         _AjaxUpdatedControl.LoadingPanelID = "RadAjaxLoadingPanelNHANGUIPH";
                         _AjaxSetting.UpdatedControls.Add(_AjaxUpdatedControl);
                         RadAjaxManager.AjaxSettings.Add(_AjaxSetting);
+
+                        AjaxSetting _AjaxSettingImport = new AjaxSetting();
+                        AjaxUpdatedControl _AjaxUpdatedControlImport = new AjaxUpdatedControl();
+                        AjaxUpdatedControl _AjaxUpdatedControlMessage = new AjaxUpdatedControl();
+                        _AjaxSettingImport.AjaxControlID = "btnImport";
+                         _AjaxUpdatedControlMessage.ControlID = "lblMessage";
+                        _AjaxUpdatedControlImport.ControlID = "RadGridNHANGUIPH";
+                        _AjaxUpdatedControlImport.LoadingPanelID = "RadAjaxLoadingPanelNHANGUIPH";
+                        _AjaxSettingImport.UpdatedControls.Add(_AjaxUpdatedControlImport);
+                        _AjaxSettingImport.UpdatedControls.Add(_AjaxUpdatedControlMessage);
+                        RadAjaxManager.AjaxSettings.Add(_AjaxSettingImport);
+
+                        AjaxSetting _AjaxSettingClear = new AjaxSetting();
+                        AjaxUpdatedControl _AjaxUpdatedControlClear = new AjaxUpdatedControl();
+                        AjaxUpdatedControl _AjaxUpdatedControlClearMessage = new AjaxUpdatedControl();
+                        _AjaxSettingClear.AjaxControlID = "btnClear";
+                        _AjaxUpdatedControlClear.ControlID = "RadGridNHANGUIPH";
+                        _AjaxUpdatedControlClearMessage.ControlID = "lblMessage";
+                        _AjaxUpdatedControlClear.LoadingPanelID = "RadAjaxLoadingPanelNHANGUIPH";
+                        _AjaxSettingClear.UpdatedControls.Add(_AjaxUpdatedControlClear);
+                        _AjaxSettingClear.UpdatedControls.Add(_AjaxUpdatedControlClearMessage);
+                        RadAjaxManager.AjaxSettings.Add(_AjaxSettingClear);
+
                         control = LoadControl("module/NHANGUIPH.ascx");
                         break;
                     case "baocaongay":
