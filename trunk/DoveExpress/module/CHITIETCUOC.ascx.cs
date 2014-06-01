@@ -225,7 +225,7 @@ public partial class module_CHITIETCUOC : System.Web.UI.UserControl
                     if (FK_MABANGCUOC != "")
                     {
                         SelectSQL = "Select DMDICHVUPHUTROI.C_VALUE FROM DMDICHVUPHUTROI WHERE DMDICHVUPHUTROI.FK_MAVUNG =" + editItem.GetDataKeyValue("PK_ID").ToString() + " AND FK_MABANGCUOC = " + FK_MABANGCUOC + " AND C_TYPE = N'COD'";
-                        Session["t"] = SelectSQL;
+                        //Session["t"] = SelectSQL;
                         DataTable oDataTable = new DataTable();
                         ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
                         oDataTable = SelectQuery.query_data(SelectSQL);
