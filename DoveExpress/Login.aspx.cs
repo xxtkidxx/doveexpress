@@ -139,7 +139,7 @@ public partial class Login : System.Web.UI.Page
         SelectSQL = "Select USERS.FK_VUNGLAMVIEC FROM USERS WHERE USERS.C_LOGINNAME = N'" + txtUser.Text.Trim() + "'";
         DataTable oDataTable = new DataTable();
         ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
-        Session["t"] = args.Value;
+        //Session["t"] = args.Value;
         oDataTable = SelectQuery.query_data(SelectSQL);
         if (oDataTable.Rows.Count != 0)
         {

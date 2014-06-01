@@ -2836,98 +2836,6 @@ namespace ITCLIB
         }
     }
     //TuanDA
-    public class PrintHelper
-    {
-        public PrintHelper()
-        {
-        }
-
-        public static void PrintWebControl(Control ctrl)
-        {
-            PrintWebControl(ctrl, string.Empty);
-        }
-
-        public static void PrintWebControl(Control ctrl, string Script)
-        {
-            StringWriter stringWrite = new StringWriter();
-            System.Web.UI.HtmlTextWriter htmlWrite = new System.Web.UI.HtmlTextWriter(stringWrite);
-            if (ctrl is WebControl)
-            {
-                Unit w = new Unit(100, UnitType.Percentage); ((WebControl)ctrl).Width = w;
-            }
-            Page pg = new Page();
-            pg.EnableEventValidation = false;
-            if (Script != string.Empty)
-            {
-                pg.ClientScript.RegisterStartupScript(pg.GetType(), "PrintJavaScript", Script);
-            }
-            HtmlForm frm = new HtmlForm();
-            pg.Controls.Add(frm);
-            frm.Attributes.Add("runat", "server");
-            frm.Controls.Add(ctrl);
-            pg.DesignerInitialize();
-            pg.RenderControl(htmlWrite);
-            string strHTML = stringWrite.ToString();
-            HttpContext.Current.Response.Clear();
-            HttpContext.Current.Response.Write(strHTML);
-            HttpContext.Current.Response.Write("<script>window.print();</script>");
-            HttpContext.Current.Response.End();
-        }
-    }
-    //TuanDA
-    namespace URLRewriter
-    {
-        public class Rewriter : IConfigurationSectionHandler
-        {
-            protected XmlNode _oRules = null;
-
-            protected Rewriter() { }
-
-            public string GetSubstitution(string zPath)
-            {
-                Regex oReg;
-
-                foreach (XmlNode oNode in _oRules.SelectNodes("rule"))
-                {
-                    oReg = new Regex(oNode.SelectSingleNode("url/text()").Value);
-                    Match oMatch = oReg.Match(zPath);
-
-                    if (oMatch.Success)
-                    {
-                        return oReg.Replace(zPath, oNode.SelectSingleNode("rewrite/text()").Value);
-                    }
-                }
-
-                return zPath;
-            }
-
-            public static void Process()
-            {
-                Rewriter oRewriter = (Rewriter)ConfigurationSettings.GetConfig("system.web/urlrewrites");
-
-
-                string zSubst = oRewriter.GetSubstitution(HttpContext.Current.Request.Path);
-
-
-                if (zSubst.Length > 0)
-                {
-                    HttpContext.Current.RewritePath(zSubst);
-                }
-            }
-
-            #region Implementation of IConfigurationSectionHandler
-            public object Create(object parent, object configContext, XmlNode section)
-            {
-                _oRules = section;
-
-                // TODO: Compile all Regular Expressions
-
-                return this;
-            }
-            #endregion
-        }
-    }
-    //TuanDA
     namespace Filter
     {
         public class FilteringGroupUserOffice : GridTemplateColumn
@@ -3324,6 +3232,259 @@ namespace ITCLIB
                 ((GridFilteringItem)(((RadComboBox)sender).Parent.Parent)).FireCommandEvent("Filter", new Pair());
             }
         } 
+    }
+     //TuanDA
+    namespace KHIEUNAI
+    {
+        public class KHIEUNAI
+        {
+            #region Private fields
+            private int _PK_ID;
+            private string _C_CODE;
+            private string _C_TYPE;
+            private System.Nullable<System.DateTime> _C_DATE;
+            private string _C_BILL;
+            private string _FK_KHACHHANG;
+            private string _C_TENKH;
+            private string _C_SDT;
+            private string _C_NOIDUNG;
+            private int _FK_NGUOITAO;
+            private string _C_STATUS;
+            #endregion
+            #region Constructors
+            public KHIEUNAI()
+            {
+            }
+            public KHIEUNAI(SqlDataReader reader)
+            {
+                _PK_ID = Convert.ToInt32(reader["PK_ID"]);
+                _C_CODE = reader["C_CODE"].ToString();
+                _C_TYPE = reader["C_TYPE"].ToString();
+                _C_DATE = Convert.ToDateTime(reader["C_DATE"]);
+                _C_BILL = reader["C_BILL"].ToString();
+                _FK_KHACHHANG = reader["FK_KHACHHANG"].ToString();
+                _C_TENKH = reader["C_TENKH"].ToString();
+                _C_SDT = reader["C_SDT"].ToString();
+                _C_NOIDUNG = reader["C_NOIDUNG"].ToString();
+                _FK_NGUOITAO = Convert.ToInt32(reader["FK_NGUOITAO"]);
+                _C_STATUS = reader["C_STATUS"].ToString();
+            }
+            #endregion
+            #region Public properties
+            public int PK_ID
+            {
+                get
+                {
+                    return this._PK_ID;
+                }
+                set
+                {
+                    if ((this._PK_ID != value))
+                    {
+                        this._PK_ID = value;
+                    }
+                }
+            }
+            public string C_CODE
+            {
+                get
+                {
+                    return this._C_CODE;
+                }
+                set
+                {
+                    if ((this._C_CODE != value))
+                    {
+                        this._C_CODE = value;
+                    }
+                }
+            }
+            public string C_TYPE
+            {
+                get
+                {
+                    return this._C_TYPE;
+                }
+                set
+                {
+                    if ((this._C_TYPE != value))
+                    {
+                        this._C_TYPE = value;
+                    }
+                }
+            }
+            public System.Nullable<System.DateTime> C_DATE
+            {
+                get
+                {
+                    return this._C_DATE;
+                }
+                set
+                {
+                    if ((this._C_DATE != value))
+                    {
+                        this._C_DATE = value;
+                    }
+                }
+            }
+            public string C_BILL
+            {
+                get
+                {
+                    return this._C_BILL;
+                }
+                set
+                {
+                    if ((this._C_BILL != value))
+                    {
+                        this._C_BILL = value;
+                    }
+                }
+            }
+            public string FK_KHACHHANG
+            {
+                get
+                {
+                    return this._FK_KHACHHANG;
+                }
+                set
+                {
+                    if ((this._FK_KHACHHANG != value))
+                    {
+                        this._FK_KHACHHANG = value;
+                    }
+                }
+            }
+            public string C_TENKH
+            {
+                get
+                {
+                    return this._C_TENKH;
+                }
+                set
+                {
+                    if ((this._C_TENKH != value))
+                    {
+
+                        this._C_TENKH = value;
+                    }
+                }
+            }
+            public string C_SDT
+            {
+                get
+                {
+                    return this._C_SDT;
+                }
+                set
+                {
+                    if ((this._C_SDT != value))
+                    {
+
+                        this._C_SDT = value;
+                    }
+                }
+            }
+            public string C_NOIDUNG
+            {
+                get
+                {
+                    return this._C_NOIDUNG;
+                }
+                set
+                {
+                    if ((this._C_NOIDUNG != value))
+                    {
+
+                        this._C_NOIDUNG = value;
+                    }
+                }
+            }
+            public int FK_NGUOITAO
+            {
+                get
+                {
+                    return this._FK_NGUOITAO;
+                }
+                set
+                {
+                    if ((this._FK_NGUOITAO != value))
+                    {
+
+                        this._FK_NGUOITAO = value;
+                    }
+                }
+            }
+            public string C_STATUS
+            {
+                get
+                {
+                    return this._C_STATUS;
+                }
+                set
+                {
+                    if ((this._C_STATUS != value))
+                    {
+
+                        this._C_STATUS = value;
+                    }
+                }
+            }
+            #endregion
+        }
+        public class KHIEUNAIList : List<KHIEUNAI>
+        {
+            #region Constuctors
+
+            public KHIEUNAIList()
+            {
+                LoadAllKHIEUNAI();
+            }
+
+            #endregion
+
+            #region Helper methods
+
+            private void LoadAllKHIEUNAI()
+            {
+                if (this.Count > 0)
+                    this.Clear();
+
+                SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["DOVEEXPRESSConnectionString"].ConnectionString);
+                SqlCommand cmd = new SqlCommand("SELECT [KHIEUNAI].[PK_ID], [KHIEUNAI].[C_CODE], [KHIEUNAI].[C_TYPE], [KHIEUNAI].[C_DATE], [KHIEUNAI].[C_BILL], [KHIEUNAI].[FK_KHACHHANG], [KHIEUNAI].[C_TENKH], [KHIEUNAI].[C_SDT], [KHIEUNAI].[C_NOIDUNG], [KHIEUNAI].[FK_NGUOITAO], [KHIEUNAI].[C_STATUS], USERS.C_NAME as NGUOITAONAME FROM [KHIEUNAI] LEFT OUTER JOIN USERS ON KHIEUNAI.FK_NGUOITAO =USERS.PK_ID", conn);
+                cmd.CommandType = CommandType.Text;
+
+                try
+                {
+                    conn.Open();
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        this.Add(new KHIEUNAI(dr));
+                    }
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+
+            public KHIEUNAI GetKHIEUNAIByPK_ID(int id)
+            {
+                HttpContext.Current.Session["t"] = "1212121";
+                foreach (KHIEUNAI khieunai in this)
+                {
+                    if (khieunai.PK_ID == id)
+                    {
+                       
+                        return khieunai;
+                    }
+                }
+                return null;
+            }
+
+            #endregion
+        }
     }
 }
 
