@@ -57,12 +57,10 @@
                 PK_ID = args.getDataKeyValue("PK_ID");
                 currentRowIndex = args.get_gridDataItem().get_element().rowIndex;
                 $find("<%= RadTabStripKHIEUNAI.ClientID %>").set_selectedIndex(0);   
-                alert(PK_ID);
                 MyWebService.GetKHIEUNAIByPK_ID(PK_ID, setValues);
             }
 
         function setValues(khieunai) {
-                alert(khieunai.C_CODE);
                 $get("<%= txtID.ClientID %>").value = khieunai.PK_ID;
                 $find("<%= txtC_CODE.ClientID %>").set_value(khieunai.C_CODE);
                 $find("<%= txtC_CODE.ClientID %>").focus();
