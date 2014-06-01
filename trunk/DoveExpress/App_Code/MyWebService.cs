@@ -22,7 +22,7 @@ public class MyWebService : System.Web.Services.WebService {
 
         if (HttpContext.Current.Session["MyData"] == null)
         {
-            HttpContext.Current.Session["MyData"] = khieunaiList;
+           HttpContext.Current.Session["MyData"] = khieunaiList;
         }
     }
 
@@ -73,10 +73,18 @@ public class MyWebService : System.Web.Services.WebService {
     [WebMethod(EnableSession = true)]
     public KHIEUNAI GetKHIEUNAIByPK_ID(int PK_ID)
     {
-        HttpContext.Current.Session["t"] = "123";
         KHIEUNAIList list = (KHIEUNAIList)HttpContext.Current.Session["MyData"];
-
         return list.GetKHIEUNAIByPK_ID(PK_ID);
+    }
+    [WebMethod]
+    public string GetServerTime()
+    {
+
+        string serverTime =
+            String.Format("The current time is {0}.", DateTime.Now);
+
+        return serverTime;
+
     }
     
 }

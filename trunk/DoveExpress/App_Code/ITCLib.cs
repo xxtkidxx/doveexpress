@@ -3471,12 +3471,11 @@ namespace ITCLIB
 
             public KHIEUNAI GetKHIEUNAIByPK_ID(int id)
             {
-                HttpContext.Current.Session["t"] = "1212121";
                 foreach (KHIEUNAI khieunai in this)
                 {
                     if (khieunai.PK_ID == id)
                     {
-                       
+                        HttpContext.Current.Session["t"] = khieunai.PK_ID;
                         return khieunai;
                     }
                 }
