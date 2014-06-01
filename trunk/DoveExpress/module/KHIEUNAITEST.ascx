@@ -29,15 +29,15 @@
 
                 obj.PK_ID = "";
                 obj.C_CODE = "";
-                obj.C_TYPE = "";
+                obj.C_TYPE = "Khác";
                 obj.C_DATE = "";
                 obj.C_BILL = "";
-                obj.FK_KHACHHANG = "";
+                obj.FK_KHACHHANG = "10001";
                 obj.C_TENKH = "";
                 obj.C_SDT = "";
                 obj.C_NOIDUNG = "";
                 obj.FK_NGUOITAO = "";
-                obj.C_STATUS = "";
+                obj.C_STATUS = "Đang xử lý";
 
                 return obj;
             }
@@ -48,39 +48,56 @@
         }
 
         function pageLoad(sender, args) {
-                PK_ID = $find("<%= RadGridKHIEUNAI.ClientID %>").get_masterTableView().get_dataItems()[0].getDataKeyValue("PK_ID");
-                $find("<%= txtC_CODE.ClientID %>").focus();
-                currentRowIndex = 0;
-            }
+            PK_ID = $find("<%= RadGridKHIEUNAI.ClientID %>").get_masterTableView().get_dataItems()[0].getDataKeyValue("PK_ID");
+            $find("<%= txtC_CODE.ClientID %>").focus();
+            currentRowIndex = 0;
+        }
 
-            function rowSelected(sender, args) {
-                PK_ID = args.getDataKeyValue("PK_ID");
-                currentRowIndex = args.get_gridDataItem().get_element().rowIndex;
-                $find("<%= RadTabStripKHIEUNAI.ClientID %>").set_selectedIndex(0);   
-                MyWebService.GetKHIEUNAIByPK_ID(PK_ID, setValues);
-            }
+        function rowSelected(sender, args) {
+            PK_ID = args.getDataKeyValue("PK_ID");
+            currentRowIndex = args.get_gridDataItem().get_element().rowIndex;
+            $find("<%= RadTabStripKHIEUNAI.ClientID %>").set_selectedIndex(0);
+            MyWebService.GetKHIEUNAIByPK_ID(PK_ID, setValues);
+        }
 
-        function setValues(khieunai) {
+        function setValues(khieunai) {            
                 $get("<%= txtID.ClientID %>").value = khieunai.PK_ID;
                 $find("<%= txtC_CODE.ClientID %>").set_value(khieunai.C_CODE);
+                $find("<%= radC_DATE.ClientID %>").set_selectedDate(khieunai.C_DATE);
+                $find("<%= cmbC_TYPE.ClientID %>").findItemByText(khieunai.C_TYPE).select();
+                $find("<%= txtC_BILL.ClientID %>").set_value(khieunai.C_BILL);
+                $find("<%= txtC_TENKH.ClientID %>").set_value(khieunai.C_TENKH);
+                $find("<%= txtC_SDT.ClientID %>").set_value(khieunai.C_SDT);
+                $find("<%= txtC_NOIDUNG.ClientID %>").set_value(khieunai.C_NOIDUNG);
+                $find("<%= cmbC_STATUS.ClientID %>").findItemByText(khieunai.C_STATUS).select();
                 $find("<%= txtC_CODE.ClientID %>").focus();
+                $find("<%= cmbMaKhachHang.ClientID %>").findItemByText(khieunai.FK_KHACHHANG).select();
+                $find("<%= cmbFK_NGUOITAO.ClientID %>").findItemByValue(khieunai.FK_NGUOITAO).select();
             }
 
             function getValues() {
                 khieunai.PK_ID = $get("<%= txtID.ClientID %>").value;
                 khieunai.C_CODE = $find("<%= txtC_CODE.ClientID %>").get_value();
-                return khieunai;
-            }
+                khieunai.C_DATE = $find("<%= radC_DATE.ClientID %>").get_selectedDate();
+                khieunai.C_TYPE = $find("<%= cmbC_TYPE.ClientID %>").get_value();
+                khieunai.C_BILL = $find("<%= txtC_BILL.ClientID %>").get_value();
+                khieunai.C_TENKH = $find("<%= txtC_TENKH.ClientID %>").get_value();
+                khieunai.C_SDT = $find("<%= txtC_SDT.ClientID %>").get_value();
+                khieunai.C_NOIDUNG = $find("<%= txtC_NOIDUNG.ClientID %>").get_value();
+                khieunai.C_STATUS = $find("<%= cmbC_STATUS.ClientID %>").get_value();
+                khieunai.FK_KHACHHANG = $find("<%= cmbMaKhachHang.ClientID %>").get_value();
+                khieunai.FK_NGUOITAO = $find("<%= cmbFK_NGUOITAO.ClientID %>").get_value();
+            return khieunai;
+        }
 
-            function updateChanges() {
-                MyWebService.UpdateKHIEUNAIByKHIEUNAI(getValues(), updateGrid);
-            }
+        function updateChanges() {
+            MyWebService.UpdateKHIEUNAIByKHIEUNAI(getValues(), updateGrid);
+        }
 
-            function updateGrid(result) {
-                var tableView = $find("<%= RadGridKHIEUNAI.ClientID %>").get_masterTableView();
+        function updateGrid(result) {
+            var tableView = $find("<%= RadGridKHIEUNAI.ClientID %>").get_masterTableView();
                 tableView.set_dataSource(result);
                 tableView.dataBind();
-
                 var grid = $find("<%= RadGridKHIEUNAI.ClientID %>");
                 grid.repaint();
             }
@@ -169,7 +186,7 @@
             </telerik:GridBoundColumn>
             <telerik:GridBoundColumn UniqueName="C_DATE" HeaderText="Thời gian" DataField="C_DATE"
                 HeaderStyle-Width="90px" HeaderStyle-HorizontalAlign="Center" AutoPostBackOnFilter="true"
-                ShowFilterIcon="true" FilterControlWidth="70%" DataType="System.DateTime" DataFormatString="{0:dd/MM/yyyy}">
+                ShowFilterIcon="true" FilterControlWidth="70%" DataType="System.DateTime" DataFormatString="{0:dd/MM/yyyy HH:mm}">
             </telerik:GridBoundColumn>
             <telerik:GridBoundColumn UniqueName="C_BILL" HeaderText="Chủ đề" DataField="C_BILL" HeaderStyle-Width="180px" HeaderStyle-HorizontalAlign="Center"
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
@@ -184,6 +201,12 @@
             </telerik:GridBoundColumn>
             <telerik:GridBoundColumn UniqueName="C_SDT" HeaderText="Số điện thoại" DataField="C_SDT" HeaderStyle-Width="70px" HeaderStyle-HorizontalAlign="Center"
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
+            </telerik:GridBoundColumn>
+            <telerik:GridBoundColumn UniqueName="C_NOIDUNG" HeaderText="Nội dung" DataField="C_NOIDUNG" HeaderStyle-Width="60px" HeaderStyle-HorizontalAlign="Center"
+                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%" Visible="false">
+            </telerik:GridBoundColumn>
+             <telerik:GridBoundColumn UniqueName="FK_NGUOITAO" HeaderText="Người tạo fix" DataField="FK_NGUOITAO" HeaderStyle-Width="60px" HeaderStyle-HorizontalAlign="Center"
+                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%" Visible="false">
             </telerik:GridBoundColumn>
             <telerik:GridBoundColumn UniqueName="NGUOITAONAME" HeaderText="Người tạo" DataField="NGUOITAONAME" HeaderStyle-Width="100px" HeaderStyle-HorizontalAlign="Center"
                 AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
@@ -211,9 +234,9 @@
 <div class="headerthongtin">
     <ul>
         <li class="lifirst">
-            <asp:LinkButton ID="btnSave" runat="server"><img src="Images/img_save.jpg" />Lưu</asp:LinkButton></li>
+            <asp:LinkButton ID="btnSave" runat="server" OnClientClick="updateChanges(); return false;"><img src="Images/img_save.jpg" />Lưu</asp:LinkButton></li>
         <li>
-            <asp:LinkButton ID="btnDelete" runat="server"><img src="Images/img_Close.jpg" />Xóa</asp:LinkButton></li>
+            <asp:LinkButton ID="btnDelete" runat="server" OnClientClick="if(!confirm('Bạn chắc chắn muốn xóa khiếu nại?'))return false; deleteCurrent(); return false;"><img src="Images/img_Close.jpg" />Xóa</asp:LinkButton></li>
     </ul>
 </div>
 <div class="clearfix bgpopup">
@@ -228,10 +251,7 @@
                     <telerik:RadTextBox ID="txtC_CODE" Width="80%" runat="server" MaxLength="7">
                         <ClientEvents OnKeyPress="OnKeyPressRadTextBox" />
                     </telerik:RadTextBox>
-                    <asp:RequiredFieldValidator ID="rfvtxtC_CODE" runat="server" ErrorMessage="Mã khiếu nại không thể rỗng"
-                        ControlToValidate="txtC_CODE" SetFocusOnError="True" Display="Dynamic" ValidationGroup="G1"></asp:RequiredFieldValidator>
-                    <asp:CustomValidator ID="cfvtxtC_CODE" ControlToValidate="txtC_CODE" OnServerValidate="CheckMaKN"
-                        runat="server" ErrorMessage="Mã khiếu nại đã tồn tại" Display="Dynamic" ValidationGroup="G1"></asp:CustomValidator>
+
                 </td>
                 <td style="width: 100px;">
                     <span class="rtsTxtnew">Ngày tiếp nhận:
@@ -309,7 +329,7 @@
                     <telerik:RadComboBox ID="cmbC_STATUS"
                         runat="server" EmptyMessage="Chọn">
                         <Items>
-                            <telerik:RadComboBoxItem Value="Đang khiếu nại" Text="Đang khiếu nại" />
+                            <telerik:RadComboBoxItem Value="Đang xử lý" Text="Đang xử lý" />
                             <telerik:RadComboBoxItem Value="Đóng" Text="Đóng" />
                         </Items>
                     </telerik:RadComboBox>
@@ -370,6 +390,6 @@
         <asp:SessionParameter Name="FK_VUNGLAMVIEC" Type="String" SessionField="VUNGLAMVIEC" />
     </SelectParameters>
 </asp:SqlDataSource>
-<asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Visible="true" Text="Button" />
-<asp:TextBox ID="TextBox1" runat="server" Visible="true"></asp:TextBox>
+<asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Visible="false" Text="Button" />
+<asp:TextBox ID="TextBox1" runat="server" Visible="false"></asp:TextBox>
 

@@ -1,0 +1,247 @@
+Thời gian lỗi : 2014-05-31 00:02:13 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUIPH. 
+Nội dung lỗi:e:\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\NHANGUIPH.ascx.cs(360): error CS0103: The name 'F' does not exist in the current context
+__________________________
+Thời gian lỗi : 2014-05-31 00:41:05 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUIPH. 
+Nội dung lỗi:Column 'C_NAME' does not belong to table .
+__________________________
+Thời gian lỗi : 2014-05-31 01:00:36 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:e:\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\NHANGUI.ascx(593): error CS1061: 'ASP.module_nhangui_ascx' does not contain a definition for 'btnImport_Click' and no extension method 'btnImport_Click' accepting a first argument of type 'ASP.module_nhangui_ascx' could be found (are you missing a using directive or an assembly reference?)
+__________________________
+Thời gian lỗi : 2014-05-31 01:01:45 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Expression expected
+__________________________
+Thời gian lỗi : 2014-05-31 01:02:11 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Expression expected
+__________________________
+Thời gian lỗi : 2014-05-31 01:13:58 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Multiple controls with the same ID 'lblC_BILL' were found. FindControl requires that controls have unique IDs.
+__________________________
+Thời gian lỗi : 2014-05-31 01:14:02 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Multiple controls with the same ID 'lblC_BILL' were found. FindControl requires that controls have unique IDs.
+__________________________
+Thời gian lỗi : 2014-05-31 12:48:11 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Login.aspx. 
+Nội dung lỗi:Login failed for user 'sa'.
+__________________________
+Thời gian lỗi : 2014-05-31 12:48:24 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Login.aspx. 
+Nội dung lỗi:Login failed for user 'sa'.
+__________________________
+Thời gian lỗi : 2014-05-31 12:48:49 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Login.aspx. 
+Nội dung lỗi:Login failed for user 'sa'.
+__________________________
+Thời gian lỗi : 2014-05-31 12:48:51 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Login.aspx. 
+Nội dung lỗi:Login failed for user 'sa'.
+__________________________
+Thời gian lỗi : 2014-05-31 14:09:23 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=KHIEUNAI. 
+Nội dung lỗi:e:\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\KHIEUNAITEST.ascx.cs(45): error CS1022: Type or namespace definition, or end-of-file expected
+__________________________
+Thời gian lỗi : 2014-05-31 14:10:37 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=KHIEUNAI. 
+Nội dung lỗi:e:\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\KHIEUNAITEST.ascx(173): error CS1061: 'ASP.module_khieunaitest_ascx' does not contain a definition for 'btnShowAll_Click' and no extension method 'btnShowAll_Click' accepting a first argument of type 'ASP.module_khieunaitest_ascx' could be found (are you missing a using directive or an assembly reference?)
+__________________________
+Thời gian lỗi : 2014-05-31 14:11:20 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=KHIEUNAI. 
+Nội dung lỗi:e:\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\KHIEUNAITEST.ascx(251): error CS1061: 'ASP.module_khieunaitest_ascx' does not contain a definition for 'CheckMaKN' and no extension method 'CheckMaKN' accepting a first argument of type 'ASP.module_khieunaitest_ascx' could be found (are you missing a using directive or an assembly reference?)
+__________________________
+Thời gian lỗi : 2014-05-31 14:13:33 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=KHIEUNAI. 
+Nội dung lỗi:e:\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\KHIEUNAITEST.ascx.cs(65): error CS0246: The type or namespace name 'DataTable' could not be found (are you missing a using directive or an assembly reference?)
+__________________________
+Thời gian lỗi : 2014-05-31 14:13:57 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/MyWebService.asmx/jsdebug. 
+Nội dung lỗi:No web service found at: /DoveExpress/module/MyWebService.asmx.
+__________________________
+Thời gian lỗi : 2014-05-31 14:13:57 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/MyWebService.asmx/jsdebug. 
+Nội dung lỗi:No web service found at: /DoveExpress/module/MyWebService.asmx.
+__________________________
+Thời gian lỗi : 2014-05-31 14:15:59 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/MyWebService.asmx/jsdebug. 
+Nội dung lỗi:No web service found at: /DoveExpress/module/MyWebService.asmx.
+__________________________
+Thời gian lỗi : 2014-05-31 14:15:59 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/MyWebService.asmx/jsdebug. 
+Nội dung lỗi:No web service found at: /DoveExpress/module/MyWebService.asmx.
+__________________________
+Thời gian lỗi : 2014-05-31 14:17:26 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/MyWebService.asmx/jsdebug. 
+Nội dung lỗi:No web service found at: /DoveExpress/module/MyWebService.asmx.
+__________________________
+Thời gian lỗi : 2014-05-31 14:17:26 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/MyWebService.asmx/jsdebug. 
+Nội dung lỗi:No web service found at: /DoveExpress/module/MyWebService.asmx.
+__________________________
+Thời gian lỗi : 2014-05-31 14:17:41 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/MyWebService.asmx/jsdebug. 
+Nội dung lỗi:No web service found at: /DoveExpress/module/MyWebService.asmx.
+__________________________
+Thời gian lỗi : 2014-05-31 14:17:41 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/MyWebService.asmx/jsdebug. 
+Nội dung lỗi:No web service found at: /DoveExpress/module/MyWebService.asmx.
+__________________________
+Thời gian lỗi : 2014-05-31 14:19:50 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/MyWebService.asmx/jsdebug. 
+Nội dung lỗi:No web service found at: /DoveExpress/module/MyWebService.asmx.
+__________________________
+Thời gian lỗi : 2014-05-31 14:21:01 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/MyWebService.asmx/jsdebug. 
+Nội dung lỗi:No web service found at: /DoveExpress/module/MyWebService.asmx.
+__________________________
+Thời gian lỗi : 2014-05-31 14:23:33 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/MyWebService.asmx/jsdebug. 
+Nội dung lỗi:No web service found at: /DoveExpress/module/MyWebService.asmx.
+__________________________
+Thời gian lỗi : 2014-05-31 14:27:36 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/MyWebService.asmx/jsdebug. 
+Nội dung lỗi:No web service found at: /DoveExpress/module/MyWebService.asmx.
+__________________________
+Thời gian lỗi : 2014-05-31 14:31:59 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/MyWebService.asmx/jsdebug. 
+Nội dung lỗi:No web service found at: /DoveExpress/module/MyWebService.asmx.
+__________________________
+Thời gian lỗi : 2014-05-31 14:31:59 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/MyWebService.asmx/jsdebug. 
+Nội dung lỗi:No web service found at: /DoveExpress/module/MyWebService.asmx.
+__________________________
+Thời gian lỗi : 2014-05-31 14:32:25 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/MyWebService.asmx/jsdebug. 
+Nội dung lỗi:No web service found at: /DoveExpress/module/MyWebService.asmx.
+__________________________
+Thời gian lỗi : 2014-05-31 15:45:17 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/pdf.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2014-05-31 15:45:17 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/Refresh.gif. 
+Nội dung lỗi:The process cannot access the file 'E:\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\Log\ErrorLog\2014\5\31.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2014-05-31 15:45:18 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/excel.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2014-05-31 15:45:18 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/word.gif. 
+Nội dung lỗi:The process cannot access the file 'E:\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\Log\ErrorLog\2014\5\31.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2014-05-31 15:45:18 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/csv.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2014-05-31 15:45:18 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/img_save.jpg. 
+Nội dung lỗi:The process cannot access the file 'E:\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\Log\ErrorLog\2014\5\31.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2014-05-31 15:45:19 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/img_Close.jpg. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2014-05-31 16:00:46 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=KHIEUNAI. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2014-05-31 16:01:20 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=KHIEUNAI. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2014-05-31 16:01:27 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=KHIEUNAI. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2014-05-31 16:02:21 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=KHIEUNAI. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2014-05-31 16:02:26 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=KHIEUNAI. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2014-05-31 16:02:32 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=KHIEUNAI. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2014-05-31 16:03:47 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=KHIEUNAI. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2014-05-31 16:03:53 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=KHIEUNAI. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2014-05-31 16:10:00 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default2.aspx. 
+Nội dung lỗi:Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+__________________________
+Thời gian lỗi : 2014-05-31 16:10:22 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default2.aspx. 
+Nội dung lỗi:Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+__________________________
+Thời gian lỗi : 2014-05-31 16:12:13 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default2.aspx. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
+Thời gian lỗi : 2014-05-31 16:20:04 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default2.aspx. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________

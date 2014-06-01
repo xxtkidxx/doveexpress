@@ -1,0 +1,161 @@
+Thời gian lỗi : 2014-05-30 22:17:47 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUIPH. 
+Nội dung lỗi:Cannot create an object of type 'System.Int32' from its string representation '104857666666666' for the 'MaxFileSize' property.
+__________________________
+Thời gian lỗi : 2014-05-30 22:22:06 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUIPH. 
+Nội dung lỗi:e:\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\NHANGUIPH.ascx(119): error CS1061: 'ASP.module_nhanguiph_ascx' does not contain a definition for 'btnImport_Click' and no extension method 'btnImport_Click' accepting a first argument of type 'ASP.module_nhanguiph_ascx' could be found (are you missing a using directive or an assembly reference?)
+__________________________
+Thời gian lỗi : 2014-05-30 22:22:47 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUIPH. 
+Nội dung lỗi:e:\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\NHANGUIPH.ascx.cs(315): error CS1519: Invalid token '{' in class, struct, or interface member declaration
+__________________________
+Thời gian lỗi : 2014-05-30 22:26:01 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/Update.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2014-05-30 22:26:01 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/Edit.gif. 
+Nội dung lỗi:The process cannot access the file 'E:\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\Log\ErrorLog\2014\5\30.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2014-05-30 22:26:01 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/Cancel.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2014-05-30 22:26:01 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/img_OpenPanel.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2014-05-30 22:26:01 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/Refresh.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2014-05-30 22:26:01 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/img_save.jpg. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2014-05-30 22:26:01 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/img_Close.jpg. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2014-05-30 22:58:40 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUIPH. 
+Nội dung lỗi:e:\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\NHANGUIPH.ascx(120): error CS1061: 'ASP.module_nhanguiph_ascx' does not contain a definition for 'btnClear_Click' and no extension method 'btnClear_Click' accepting a first argument of type 'ASP.module_nhanguiph_ascx' could be found (are you missing a using directive or an assembly reference?)
+__________________________
+Thời gian lỗi : 2014-05-30 23:09:36 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUIPH. 
+Nội dung lỗi:e:\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\NHANGUIPH.ascx.cs(318): error CS0103: The name 'RadAsyncUploadExcel' does not exist in the current context
+__________________________
+Thời gian lỗi : 2014-05-30 23:32:47 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUIPH. 
+Nội dung lỗi:DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'C_BILLFIX'.
+__________________________
+Thời gian lỗi : 2014-05-30 23:32:56 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/Edit.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2014-05-30 23:32:56 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/Update.gif. 
+Nội dung lỗi:The process cannot access the file 'E:\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\Log\ErrorLog\2014\5\30.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2014-05-30 23:32:56 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/Cancel.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2014-05-30 23:32:56 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/AddRecord.gif. 
+Nội dung lỗi:The process cannot access the file 'E:\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\Log\ErrorLog\2014\5\30.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2014-05-30 23:32:56 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/Insert.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2014-05-30 23:32:56 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/Delete.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2014-05-30 23:32:56 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/print.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2014-05-30 23:32:56 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/img_OpenPanel.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2014-05-30 23:32:56 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/filterCancel.gif. 
+Nội dung lỗi:The process cannot access the file 'E:\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\Log\ErrorLog\2014\5\30.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2014-05-30 23:32:57 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/pdf.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2014-05-30 23:32:57 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/Refresh.gif. 
+Nội dung lỗi:The process cannot access the file 'E:\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\Log\ErrorLog\2014\5\30.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2014-05-30 23:32:57 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/word.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2014-05-30 23:32:57 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/excel.gif. 
+Nội dung lỗi:The process cannot access the file 'E:\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\Log\ErrorLog\2014\5\30.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2014-05-30 23:32:57 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/csv.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2014-05-30 23:32:57 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/img_save.jpg. 
+Nội dung lỗi:The process cannot access the file 'E:\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\Log\ErrorLog\2014\5\30.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2014-05-30 23:32:57 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/img_Close.jpg. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2014-05-30 23:35:26 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUIPH. 
+Nội dung lỗi:Expression expected
+__________________________
+Thời gian lỗi : 2014-05-30 23:36:26 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUIPH. 
+Nội dung lỗi:Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+__________________________
+Thời gian lỗi : 2014-05-30 23:36:38 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUIPH. 
+Nội dung lỗi:Expression expected
+__________________________

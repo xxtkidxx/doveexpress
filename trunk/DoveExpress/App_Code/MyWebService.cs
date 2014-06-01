@@ -37,7 +37,6 @@ public class MyWebService : System.Web.Services.WebService {
         {
             khieunaiToUpdate = new KHIEUNAI();
             khieunaiToUpdate.PK_ID = khieunai.PK_ID;
-
             list.Add(khieunaiToUpdate);
         }
         khieunaiToUpdate.C_CODE = khieunai.C_CODE;
@@ -50,9 +49,7 @@ public class MyWebService : System.Web.Services.WebService {
         khieunaiToUpdate.C_NOIDUNG = khieunai.C_NOIDUNG;
         khieunaiToUpdate.FK_NGUOITAO = khieunai.FK_NGUOITAO;
         khieunaiToUpdate.C_STATUS = khieunai.C_STATUS;
-
         HttpContext.Current.Session["MyData"] = list;
-
         return list;
     }
 
@@ -60,12 +57,9 @@ public class MyWebService : System.Web.Services.WebService {
     public KHIEUNAIList DeleteKHIEUNAIByPK_ID(int PK_ID)
     {
         KHIEUNAI khieunaiToDelete = GetKHIEUNAIByPK_ID(PK_ID);
-
         KHIEUNAIList list = (KHIEUNAIList)HttpContext.Current.Session["MyData"];
         list.Remove(khieunaiToDelete);
-
         HttpContext.Current.Session["MyData"] = list;
-
         return list;
     }
 
@@ -79,12 +73,9 @@ public class MyWebService : System.Web.Services.WebService {
     [WebMethod]
     public string GetServerTime()
     {
-
         string serverTime =
-            String.Format("The current time is {0}.", DateTime.Now);
-
+        String.Format("The current time is {0}.", DateTime.Now);
         return serverTime;
-
     }
     
 }
