@@ -3475,7 +3475,6 @@ namespace ITCLIB
                 {
                     if (khieunai.PK_ID == id)
                     {
-                        HttpContext.Current.Session["t"] = khieunai.PK_ID;
                         return khieunai;
                     }
                 }
