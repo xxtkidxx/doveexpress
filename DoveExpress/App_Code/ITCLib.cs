@@ -1242,6 +1242,32 @@ namespace ITCLIB
                 }
                 return Result;
             }
+            public static string LoadIDTinhThanhName(string Name)
+            {
+                string Result = "";
+                if (Name != "")
+                {
+                    string SelectSQL = "SELECT DMTINHTHANH.PK_ID FROM DMTINHTHANH WHERE DMTINHTHANH.C_NAME = N'" + Name + "'";
+                    ITCLIB.Admin.SQL rs = new ITCLIB.Admin.SQL();
+                    DataTable oDataTable = rs.query_data(SelectSQL);
+
+                    if (oDataTable.Rows.Count != 0)
+                    {
+                        for (int i = 0; i < oDataTable.Rows.Count; i++)
+                        {
+                            if (i == 0)
+                            {
+                                Result += oDataTable.Rows[i]["PK_ID"].ToString();
+                            }
+                            else
+                            {
+                                Result += "-" + oDataTable.Rows[i]["PK_ID"].ToString();
+                            }
+                        }
+                    }
+                }
+                return Result;
+            }
             public static string LoadTinhThanhName(string QuanHuyenCode)
             {
                 string Result = "";
@@ -1297,6 +1323,32 @@ namespace ITCLIB
                 {
                     return "";
                 }
+            }
+            public static string LoadIDDoiTacName(string Name)
+            {
+                string Result = "";
+                if (Name != "")
+                {
+                    string SelectSQL = "SELECT DMDOITAC.PK_ID FROM DMDOITAC WHERE DMDOITAC.C_NAME = N'" + Name + "'";
+                    ITCLIB.Admin.SQL rs = new ITCLIB.Admin.SQL();
+                    DataTable oDataTable = rs.query_data(SelectSQL);
+
+                    if (oDataTable.Rows.Count != 0)
+                    {
+                        for (int i = 0; i < oDataTable.Rows.Count; i++)
+                        {
+                            if (i == 0)
+                            {
+                                Result += oDataTable.Rows[i]["PK_ID"].ToString();
+                            }
+                            else
+                            {
+                                Result += "-" + oDataTable.Rows[i]["PK_ID"].ToString();
+                            }
+                        }
+                    }
+                }
+                return Result;
             }
         }
     }
