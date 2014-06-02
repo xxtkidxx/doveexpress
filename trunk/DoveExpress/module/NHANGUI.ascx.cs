@@ -1709,7 +1709,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
                 excelReader = ExcelReaderFactory.CreateOpenXmlReader(stream);
             }
 
-            //excelReader.IsFirstRowAsColumnNames = true;
+            excelReader.IsFirstRowAsColumnNames = true;
             DataSet result = excelReader.AsDataSet();
             excelReader.Close();
             excelReader.Close();
@@ -1719,14 +1719,29 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
             {
                 for (int i = 0; i < oDataTable.Rows.Count; i++)
                 {
-                    
+                    string C_BILL = oDataTable.Rows[i][1].ToString().Trim();
+                    string C_KHOILUONG = oDataTable.Rows[i][2].ToString().Trim();
+                    string C_TINHTHANH = ITCLIB.Admin.cFunction.LoadIDTinhThanhName(oDataTable.Rows[i][3].ToString().Trim());
+                    string C_HINHTHUCTT = "";
+                    string C_TIENHANGVAT = "0";
+                    if (oDataTable.Rows[i][4].ToString().Trim() != "")
+                    {
+                        C_HINHTHUCTT = "Thanh toán đầu nhận";
+                        C_TIENHANGVAT = oDataTable.Rows[i][4].ToString().Trim();
+                    }
+                    string C_TIENTHUHO = oDataTable.Rows[i][5].ToString().Trim();
+                    DateTime C_NGAY = DateTime.Parse(oDataTable.Rows[i][6].ToString().Trim());
+                    DateTime C_NGAYGIONHAN = System.DateTime.Now;
+                    string FK_DOITAC = ITCLIB.Admin.cFunction.LoadIDDoiTacName(oDataTable.Rows[i][7].ToString().Trim());
+                    string C_DIENGIAIDOITAC = oDataTable.Rows[i][8].ToString().Trim();
+                    string C_GIADOITAC = oDataTable.Rows[i][9].ToString().Trim();
                 }                
                 lblMessage.Text = "";
             }
         }
         else
         {
-            lblMessage.Text = "Hãy chọn file Excel để lọc dữ liệu";
+            lblMessage.Text = "Hãy chọn file Excel để thêm dữ liệu";
         }
     }
 }
