@@ -543,7 +543,7 @@
         border-width: 1px;
         border-color: #666666;
         border-collapse: collapse;
-        width: 50%;
+        width: 90%;
         margin: 5px 5px 5px 5px;
     }
 
@@ -572,6 +572,8 @@
         </th>
          <th>Lọc Bill theo file Excel
         </th>
+        <th>Nhập Bill từ bảng kê Excel
+        </th>
     </tr>
     <tr>
         <td>
@@ -587,12 +589,19 @@
             </telerik:RadComboBox>
         </td>
          <td>
-                <telerik:RadAsyncUpload runat="server" ID="RadAsyncUploadExcel" Width="70%" HideFileInput="false" Localization-Select="Chọn" InputSize="60"
+                <telerik:RadAsyncUpload runat="server" ID="RadAsyncUploadExcel" Width="50%" HideFileInput="false" Localization-Select="Chọn" InputSize="50"
                     AllowedFileExtensions="xls,xlsx" MaxFileSize="1048576000">
                 </telerik:RadAsyncUpload>
                 <asp:Button ID="btnImport" runat="server" Text="Lọc" OnClick="btnImport_Click" />
             <asp:Button ID="btnClear" runat="server" Text="Xóa lọc" OnClick="btnClear_Click" />
                 <asp:Label ID="lblMessage" runat="server" Text="" ForeColor="Red"></asp:Label>
+        </td>
+        <td>
+                <telerik:RadAsyncUpload runat="server" ID="RadAsyncUploadAddExcel" Width="50%" HideFileInput="false" Localization-Select="Chọn" InputSize="50"
+                    AllowedFileExtensions="xls,xlsx" MaxFileSize="1048576000">
+                </telerik:RadAsyncUpload>
+                <asp:Button ID="btnAddExcell" runat="server" Text="Lọc" OnClick="btnAddExcell_Click" />
+                <asp:Label ID="lblMessageAddExcell" runat="server" Text="" ForeColor="Red"></asp:Label>
         </td>
     </tr>
 </table>

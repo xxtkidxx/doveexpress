@@ -1,0 +1,107 @@
+Thời gian lỗi : 2014-06-02 00:03:33 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=KHIEUNAI. 
+Nội dung lỗi:Invalid column name 'FK_NGUOIGIAIQUYET'.
+Invalid column name 'FK_NGUOIGIAIQUYET'.
+Invalid column name 'C_THONGTIN'.
+__________________________
+Thời gian lỗi : 2014-06-02 09:48:01 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Login.aspx. 
+Nội dung lỗi:Login failed for user 'sa'.
+__________________________
+Thời gian lỗi : 2014-06-02 09:49:38 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:The wait operation timed out
+__________________________
+Thời gian lỗi : 2014-06-02 09:50:30 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:The wait operation timed out
+__________________________
+Thời gian lỗi : 2014-06-02 09:53:10 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:The wait operation timed out
+__________________________
+Thời gian lỗi : 2014-06-02 09:53:43 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:The wait operation timed out
+__________________________
+Thời gian lỗi : 2014-06-02 09:55:08 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUIQT. 
+Nội dung lỗi:The wait operation timed out
+__________________________
+Thời gian lỗi : 2014-06-02 09:55:39 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUIQT. 
+Nội dung lỗi:The wait operation timed out
+__________________________
+Thời gian lỗi : 2014-06-02 09:56:10 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUIQT. 
+Nội dung lỗi:The wait operation timed out
+__________________________
+Thời gian lỗi : 2014-06-02 09:56:41 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUIQT. 
+Nội dung lỗi:The wait operation timed out
+__________________________
+Thời gian lỗi : 2014-06-02 09:57:11 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUIQT. 
+Nội dung lỗi:The wait operation timed out
+__________________________
+Thời gian lỗi : 2014-06-02 09:57:42 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUIQT. 
+Nội dung lỗi:The wait operation timed out
+__________________________
+Thời gian lỗi : 2014-06-02 10:02:42 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:The wait operation timed out
+__________________________
+Thời gian lỗi : 2014-06-02 10:05:34 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:The wait operation timed out
+__________________________
+Thời gian lỗi : 2014-06-02 10:07:27 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:The wait operation timed out
+__________________________
+Thời gian lỗi : 2014-06-02 10:09:07 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUIQT. 
+Nội dung lỗi:The wait operation timed out
+__________________________
+Thời gian lỗi : 2014-06-02 10:11:03 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUIQT. 
+Nội dung lỗi:The wait operation timed out
+__________________________
+Thời gian lỗi : 2014-06-02 10:23:18 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUIQT. 
+Nội dung lỗi:The wait operation timed out
+__________________________
+Thời gian lỗi : 2014-06-02 10:23:58 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUIQT. 
+Nội dung lỗi:The wait operation timed out
+__________________________
+Thời gian lỗi : 2014-06-02 10:26:02 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUIQT. 
+Nội dung lỗi:The wait operation timed out
+__________________________
+Thời gian lỗi : 2014-06-02 11:14:20 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:c:\Users\Dang Anh Tuan\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\NHANGUI.ascx(603): error CS1061: 'ASP.module_nhangui_ascx' does not contain a definition for 'btnAddExcell_Click' and no extension method 'btnAddExcell_Click' accepting a first argument of type 'ASP.module_nhangui_ascx' could be found (are you missing a using directive or an assembly reference?)
+__________________________
