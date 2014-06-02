@@ -374,8 +374,8 @@
         <asp:ControlParameter ControlID="cmbSanPham" DefaultValue="0" Name="FK_MASANPHAM" PropertyName="SelectedValue" />
         <asp:Parameter Name="FK_MAVUNG" Type="Int32" />
         <asp:ControlParameter ControlID="cmbLoaiTien" DefaultValue="0" Name="C_LOAITIEN" PropertyName="SelectedValue" />
-        <asp:Parameter Name="C_KHOILUONG" Type="String" />
-        <asp:Parameter Name="C_CUOCPHI" Type="Decimal" />
+        <asp:Parameter Name="C_KHOILUONG" Type="String" DefaultValue="0"/>
+        <asp:Parameter Name="C_CUOCPHI" Type="Decimal" DefaultValue="0"/>
     </InsertParameters>
     <UpdateParameters>
         <asp:Parameter Name="C_KHOILUONG" Type="String" />

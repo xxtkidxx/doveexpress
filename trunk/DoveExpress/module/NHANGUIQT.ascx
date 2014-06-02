@@ -701,7 +701,7 @@
                 <div class="headerthongtin">
                     <ul>
                         <li class="lifirst">
-                            <asp:LinkButton ID="btnSave" runat="server" CommandName='<%# (Container is GridEditFormInsertItem) ? "PerformInsert" : "Update" %>'><img src="Images/img_save.jpg" /><%# (Container is GridEditFormInsertItem) ? "Lưu" : "Lưu" %></asp:LinkButton></li>
+                            <asp:LinkButton ID="btnSave" runat="server" Visible='<%# (Container is GridEditFormInsertItem) || ITCLIB.Security.Security.CanEditModule("NHANGUI") %>' CommandName='<%# (Container is GridEditFormInsertItem) ? "PerformInsert" : "Update" %>'><img src="Images/img_save.jpg" /><%# (Container is GridEditFormInsertItem) ? "Lưu" : "Lưu" %></asp:LinkButton></li>
                         <li class="lifirst">
                             <asp:LinkButton ID="btnSaveAddNew" runat="server" CommandName="PerformInsert" Visible='<%# Container is GridEditFormInsertItem %>'><img src="Images/img_save.jpg" /><%# (Container is GridEditFormInsertItem) ? "Lưu & Thêm mới" : "Lưu & Thêm mới" %></asp:LinkButton></li>
                         <li>
