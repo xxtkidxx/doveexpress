@@ -260,8 +260,8 @@ public partial class Main : System.Web.UI.MasterPage
                         _AjaxUpdatedControl.LoadingPanelID = "RadAjaxLoadingPanelNHANGUIQT";
                         _AjaxSetting.UpdatedControls.Add(_AjaxUpdatedControl);
                         _AjaxSettingOtherQT.UpdatedControls.Add(_AjaxUpdatedControlOtherQT);
-                        RadAjaxManager.AjaxSettings.Add(_AjaxSetting);
-                        RadAjaxManager.AjaxSettings.Add(_AjaxSettingOtherQT);
+                        //RadAjaxManager.AjaxSettings.Add(_AjaxSetting);
+                        //RadAjaxManager.AjaxSettings.Add(_AjaxSettingOtherQT);
 
                         _AjaxSettingImport.AjaxControlID = "btnImport";
                          _AjaxUpdatedControlMessage.ControlID = "lblMessage";
@@ -434,8 +434,8 @@ public partial class Main : System.Web.UI.MasterPage
                         _AjaxUpdatedControl.ControlID = "RadGridKHIEUNAI";
                         _AjaxUpdatedControl.LoadingPanelID = "RadAjaxLoadingPanelKHIEUNAI";
                         _AjaxSetting.UpdatedControls.Add(_AjaxUpdatedControl);
-                        //RadAjaxManager.AjaxSettings.Add(_AjaxSetting);
-                        control = LoadControl("module/KHIEUNAITEST.ascx");
+                        RadAjaxManager.AjaxSettings.Add(_AjaxSetting);
+                        //control = LoadControl("module/KHIEUNAITEST.ascx");
                         break;
                 }
             }

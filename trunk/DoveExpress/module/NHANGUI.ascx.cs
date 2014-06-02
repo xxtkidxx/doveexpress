@@ -1694,4 +1694,39 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
         lblMessage.Text = "";
         RadGridNHANGUI.Rebind();
     }
+    protected void btnAddExcell_Click(object sender, EventArgs e)
+    {        
+        if (RadAsyncUploadAddExcel.UploadedFiles.Count != 0)
+        {
+            System.IO.Stream stream = RadAsyncUploadAddExcel.UploadedFiles[0].InputStream;
+            IExcelDataReader excelReader;
+            if (RadAsyncUploadAddExcel.UploadedFiles[0].GetExtension() == ".xls")
+            {
+                excelReader = ExcelReaderFactory.CreateBinaryReader(stream);
+            }
+            else
+            {
+                excelReader = ExcelReaderFactory.CreateOpenXmlReader(stream);
+            }
+
+            //excelReader.IsFirstRowAsColumnNames = true;
+            DataSet result = excelReader.AsDataSet();
+            excelReader.Close();
+            excelReader.Close();
+            DataTable oDataTable = new DataTable();
+            oDataTable = result.Tables[0];
+            if (oDataTable.Rows.Count != 0)
+            {
+                for (int i = 0; i < oDataTable.Rows.Count; i++)
+                {
+                    
+                }                
+                lblMessage.Text = "";
+            }
+        }
+        else
+        {
+            lblMessage.Text = "Hãy chọn file Excel để lọc dữ liệu";
+        }
+    }
 }
