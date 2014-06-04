@@ -1039,6 +1039,8 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
                     boundColumn.CurrentFilterValue = string.Empty;
                 }
             }
+            lblMessage.Text = "";
+            lblMessageAddExcell.Text = "";
             RadGridNHANGUI.MasterTableView.Rebind();
         }
     }
@@ -1692,6 +1694,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
     {
         RadGridNHANGUI.MasterTableView.FilterExpression = string.Empty;
         lblMessage.Text = "";
+        lblMessageAddExcell.Text = "";
         RadGridNHANGUI.Rebind();
     }
     protected void btnAddExcell_Click(object sender, EventArgs e)
@@ -1716,45 +1719,70 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
             oDataTable = result.Tables[0];
             if (oDataTable.Rows.Count >= 2)
             {
-                for (int i = 1; i < oDataTable.Rows.Count; i++)
+                bool check = true;
+                int BillCount = 0;
+                string insertSQL = "";
+                for (int i = 0; i < oDataTable.Rows.Count; i++)
                 {
-                    try
+                    string C_BILL = oDataTable.Rows[i][1].ToString().Trim();
+                    if (C_BILL != "")
                     {
-                        string C_BILL = oDataTable.Rows[i][1].ToString().Trim();
-                        string C_KHOILUONG = oDataTable.Rows[i][2].ToString().Trim();
-                        string C_TINHTHANH = ITCLIB.Admin.cFunction.LoadIDTinhThanhName(oDataTable.Rows[i][3].ToString().Trim());
-                        string C_HINHTHUCTT = "";
-                        decimal C_TIENHANGVAT = 0;
-                        if (oDataTable.Rows[i][4].ToString().Trim() != "")
+                        try
                         {
-                            C_HINHTHUCTT = "Thanh toán đầu nhận";
-                            C_TIENHANGVAT = decimal.Parse(oDataTable.Rows[i][4].ToString().Trim());
+                            int C_KHOILUONG = int.Parse((oDataTable.Rows[i][2].ToString().Trim() == "" ? "0" : oDataTable.Rows[i][2].ToString().Trim()));
+                            //string C_TINHTHANH = ITCLIB.Admin.cFunction.LoadIDTinhThanhName(oDataTable.Rows[i][3].ToString().Trim());
+                            string C_HINHTHUCTT;
+                            decimal C_TIENHANGVAT = 0;
+                            if (oDataTable.Rows[i][4].ToString().Trim() != "")
+                            {
+                                C_HINHTHUCTT = "Thanh toán đầu nhận";
+                                C_TIENHANGVAT = decimal.Parse((oDataTable.Rows[i][4].ToString().Trim() == "" ? "0" : oDataTable.Rows[i][4].ToString().Trim()));
+                            }
+                            else
+                            {
+                                C_HINHTHUCTT = "NULL";
+                                C_TIENHANGVAT = 0;
+                            }
+                            string C_TIENTHUHO = oDataTable.Rows[i][5].ToString().Trim();
+                            var formats = new[] { "dd/M/yyyy", "dd/MM/yyyy", "d/M/yyyy" };
+                            DateTime C_NGAY = DateTime.ParseExact(oDataTable.Rows[i][6].ToString().Trim(), formats, System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.AssumeLocal);
+                            DateTime C_NGAYGIONHAN = C_NGAY;
+                            string FK_DOITAC = ITCLIB.Admin.cFunction.LoadIDDoiTacName(oDataTable.Rows[i][7].ToString().Trim());
+                            string C_DIENGIAIDOITAC = oDataTable.Rows[i][8].ToString().Trim();
+                            decimal C_GIADOITAC = decimal.Parse((oDataTable.Rows[i][9].ToString().Trim() == "" ? "0" : oDataTable.Rows[i][9].ToString().Trim()));
+                            insertSQL += "INSERT INTO [NHANGUI] ([C_NGAY], [C_BILL], [C_TIENTHUHO], [C_KHOILUONG], [C_HINHTHUCTT], [C_TIENHANGVAT], [C_NGAYGIONHAN], [FK_DOITAC], [C_GIADOITAC], [C_DIENGIAIDOITAC], [C_TYPE], [FK_VUNGLAMVIEC], [FK_USERADD]) VALUES ('" + String.Format("{0:yyyy-MM-dd hh:mm:ss tt}", C_NGAY) + "', '" + C_BILL + "', " + C_TIENTHUHO + ", " + C_KHOILUONG + ", N'" + C_HINHTHUCTT + "', " + C_TIENHANGVAT + ", '" + String.Format("{0:yyyy-MM-dd hh:mm:ss tt}", C_NGAYGIONHAN) + "', " + FK_DOITAC + ", " + C_GIADOITAC + ", N'" + C_DIENGIAIDOITAC + "' , 1, N'" + Session["VUNGLAMVIEC"] + "', " + Session["UserID"] + ");INSERT INTO [SOQUYTIENMAT] ([C_NGAY], [C_TYPE], [FK_KIHIEUTAIKHOAN], [C_DESC], [C_SOTIEN], [C_BILL],[C_TON],[C_ORDER],[FK_VUNGLAMVIEC]) VALUES ('" + String.Format("{0:yyyy-MM-dd hh:mm:ss tt}", C_NGAY) + "',N'Thu',NULL, N'Bill ' + '" + C_BILL + "', 0, '" + C_BILL + "', 0, 1, N'" + Session["VUNGLAMVIEC"] + "');INSERT INTO TRACKING (C_BILL, C_DATE, FK_TRANGTHAI) SELECT '" + C_BILL + "', '" + String.Format("{0:yyyy-MM-dd hh:mm:ss tt}", C_NGAYGIONHAN) + "', N'F' UNION ALL SELECT '" + C_BILL + "', '" + String.Format("{0:yyyy-MM-dd hh:mm:ss tt}", C_NGAY) + "',N'G_' + N'" + Session["VUNGLAMVIEC"] + "';";
+                            BillCount += 1;
                         }
-                        string C_TIENTHUHO = oDataTable.Rows[i][5].ToString().Trim();
-                        var formats = new[] { "dd/M/yyyy", "dd/MM/yyyy", "d/M/yyyy" };
-                        DateTime C_NGAY = DateTime.ParseExact(oDataTable.Rows[i][6].ToString().Trim(), formats,System.Globalization.CultureInfo.InvariantCulture,System.Globalization.DateTimeStyles.AssumeLocal);
-                        DateTime C_NGAYGIONHAN = System.DateTime.Now;
-                        string FK_DOITAC = ITCLIB.Admin.cFunction.LoadIDDoiTacName(oDataTable.Rows[i][7].ToString().Trim());
-                        string C_DIENGIAIDOITAC = oDataTable.Rows[i][8].ToString().Trim();
-                        string C_GIADOITAC = oDataTable.Rows[i][9].ToString().Trim();
-                    }
-                    catch (FormatException format1)
-                    {
-                        lblMessageAddExcell.Text = "1" + oDataTable.Rows[i][6].ToString().Trim();
-                        //lblMessageAddExcell.Text = "Dữ liệu tại dòng thứ " + i + " không đúng định dạng." + format1.Message;
-                        break;
-                    }
-                    catch (ArgumentNullException format2)
-                    {
-                        lblMessageAddExcell.Text = "không có dữ liệu tại dòng thứ " + i + "." + format2.Message;
-                        break;
-                    }
-                    finally
-                    {
+                        catch (FormatException format1)
+                        {
+                            lblMessageAddExcell.Text = "Dữ liệu tại dòng thứ " + (i + 1) + " không đúng định dạng." + format1.Message;
+                            check = false;
+                            break;
+                        }
+                        catch (ArgumentNullException format2)
+                        {
+                            lblMessageAddExcell.Text = "không có dữ liệu tại dòng thứ " + (i + 1) + "." + format2.Message;
+                            check = false;
+                            break;
+                        }
+                        finally
+                        {
 
+                        }
                     }
                 }
-                //lblMessageAddExcell.Text = "";
+                if (check)
+                {
+                    ITCLIB.Admin.SQL InsertQuery = new ITCLIB.Admin.SQL();
+                    //lblMessageAddExcell.Text = insertSQL;
+                    InsertQuery.ExecuteNonQuery(insertSQL);
+                    lblMessageAddExcell.Text = "Thêm mới thành công " + BillCount + " Bill";
+                    RadGridNHANGUI.Rebind();
+                }
+            }
+            else
+            {
+                lblMessageAddExcell.Text = "File Excell không có dữ liệu";
             }
         }
         else

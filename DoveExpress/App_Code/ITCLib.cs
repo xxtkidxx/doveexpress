@@ -1311,7 +1311,7 @@ namespace ITCLIB
             }
             public static string LoadQuocGiaName(string C_CODE)
             {
-                string SelectSQL = "SELECT C_NAME FROM DMQUOCGIA where C_CODE ='" + C_CODE +"'";
+                string SelectSQL = "SELECT C_NAME FROM DMQUOCGIA where C_CODE ='" + C_CODE + "'";
                 DataTable oDataTable = new DataTable();
                 ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
                 oDataTable = SelectQuery.query_data(SelectSQL);
@@ -1326,26 +1326,15 @@ namespace ITCLIB
             }
             public static string LoadIDDoiTacName(string Name)
             {
-                string Result = "";
+                string Result = "NULL";
                 if (Name != "")
                 {
                     string SelectSQL = "SELECT DMDOITAC.PK_ID FROM DMDOITAC WHERE DMDOITAC.C_NAME = N'" + Name + "'";
                     ITCLIB.Admin.SQL rs = new ITCLIB.Admin.SQL();
                     DataTable oDataTable = rs.query_data(SelectSQL);
-
                     if (oDataTable.Rows.Count != 0)
                     {
-                        for (int i = 0; i < oDataTable.Rows.Count; i++)
-                        {
-                            if (i == 0)
-                            {
-                                Result += oDataTable.Rows[i]["PK_ID"].ToString();
-                            }
-                            else
-                            {
-                                Result += "-" + oDataTable.Rows[i]["PK_ID"].ToString();
-                            }
-                        }
+                        Result = oDataTable.Rows[0]["PK_ID"].ToString();
                     }
                 }
                 return Result;
@@ -2353,7 +2342,7 @@ namespace ITCLIB
     {
         public class User
         {
-            private int userid, usertype,companyID;
+            private int userid, usertype, companyID;
             private string loginname;
             private string username;
             public int Userid { set { userid = value; } get { return userid; } }
@@ -2980,9 +2969,9 @@ namespace ITCLIB
                 rcBox.SelectedIndexChanged += rcBox_SelectedIndexChanged;
                 DataTable oDataTable = new DataTable();
                 Admin.SQL SelectQuery = new Admin.SQL();
-                string SelectStr;                
+                string SelectStr;
                 if (this.FieldRoot.Trim() != "")
-                {                   
+                {
                     if (this.Conditions.Trim() != "")
                     {
                         SelectStr = string.Format("SELECT {0} AS {1} FROM {2} WHERE {3}", this.FieldRoot, this.DataField, this.TableName, this.Conditions);
@@ -2993,17 +2982,17 @@ namespace ITCLIB
                     }
                 }
                 else
-                {                    
+                {
                     if (this.Conditions.Trim() != "")
                     {
-                        SelectStr = string.Format("SELECT {0} FROM {1} WHERE {2}", this.DataField,  this.TableName, this.Conditions);
+                        SelectStr = string.Format("SELECT {0} FROM {1} WHERE {2}", this.DataField, this.TableName, this.Conditions);
                     }
                     else
                     {
-                        SelectStr = string.Format("SELECT {0} FROM {1}", this.DataField,  this.TableName);
+                        SelectStr = string.Format("SELECT {0} FROM {1}", this.DataField, this.TableName);
                     }
                 }
-               
+
                 oDataTable = SelectQuery.query_data(SelectStr);
                 DataRow row = oDataTable.NewRow();
                 row[this.DataField] = "";
@@ -3283,9 +3272,9 @@ namespace ITCLIB
             {
                 ((GridFilteringItem)(((RadComboBox)sender).Parent.Parent)).FireCommandEvent("Filter", new Pair());
             }
-        } 
+        }
     }
-     //TuanDA
+    //TuanDA
     namespace KHIEUNAI
     {
         public class KHIEUNAI
