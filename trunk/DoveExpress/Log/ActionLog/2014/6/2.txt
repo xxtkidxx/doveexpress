@@ -58,3 +58,15 @@ Tài khoản : 1
 Module : Deleted CHITIETCUOCDT
 Kết quả : {PK_ID:"406",FK_MAVUNG:"51"}
 __________________________
+Thời gian: 2014-06-02 23:23:18 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2014-06-02 23:30:30 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________

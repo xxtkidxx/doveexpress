@@ -1927,3 +1927,8 @@ Thời gian lỗi : 2014-06-02 21:45:55 PM
 Nội dung lỗi:Login failed for user 'sa'.
 A severe error occurred on the current command.  The results, if any, should be discarded.
 __________________________
+Thời gian lỗi : 2014-06-02 23:23:20 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:e:\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\NHANGUI.ascx.cs(1724): error CS0128: A local variable named 'C_BILL' is already defined in this scope
+__________________________
