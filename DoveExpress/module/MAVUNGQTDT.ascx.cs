@@ -57,38 +57,6 @@ public partial class module_MAVUNGQTDT : System.Web.UI.UserControl
         }
         RadGridMAVUNGQTDT.MasterTableView.Rebind();
     }
-    protected void CheckCode(object source, ServerValidateEventArgs args)
-    {
-        string SelectSQL;
-        SelectSQL = "Select DMMAVUNG.C_CODE FROM DMMAVUNG WHERE DMMAVUNG.C_CODE = '" + args.Value + "' AND DMMAVUNG.PK_ID <> " + Session["txtID"].ToString();
-        DataTable oDataTable = new DataTable();
-        ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
-        oDataTable = SelectQuery.query_data(SelectSQL);
-        if (oDataTable.Rows.Count != 0)
-        {
-            args.IsValid = false;
-        }
-        else
-        {
-            args.IsValid = true;
-        }
-    }
-    protected void CheckName(object source, ServerValidateEventArgs args)
-    {
-        string SelectSQL;
-        SelectSQL = "Select DMMAVUNG.C_NAME FROM DMMAVUNG WHERE DMMAVUNG.C_NAME = '" + args.Value + "' AND DMMAVUNG.PK_ID <> " + Session["txtID"].ToString();
-        DataTable oDataTable = new DataTable();
-        ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
-        oDataTable = SelectQuery.query_data(SelectSQL);
-        if (oDataTable.Rows.Count != 0)
-        {
-            args.IsValid = false;
-        }
-        else
-        {
-            args.IsValid = true;
-        }
-    }
     private void DisplayMessage(string text)
     {
         RadGridMAVUNGQTDT.Controls.Add(new LiteralControl(string.Format("<span style='color:red'>{0}</span>", text)));
@@ -130,7 +98,7 @@ public partial class module_MAVUNGQTDT : System.Web.UI.UserControl
         else
         {
             SetMessage("Tạo mới vùng tính cước thành công!");
-            ITCLIB.ActionLog.ActionLog.WriteLog(Session["UserID"].ToString(), "Inserted MAVUNGQTDTs", "{PK_ID:\"" + getmaxid("DMMAVUNG") + "\"}");
+            ITCLIB.ActionLog.ActionLog.WriteLog(Session["UserID"].ToString(), "Inserted MAVUNGQTDTs", "{PK_ID:\"" + getmaxid("DMMAVUNGDT") + "\"}");
         }
     }
     protected void RadGridMAVUNGQTDT_ItemUpdated(object sender, GridUpdatedEventArgs e)
@@ -156,11 +124,16 @@ public partial class module_MAVUNGQTDT : System.Web.UI.UserControl
             GridEditableItem editItem = (GridEditableItem)e.Item;
             HiddenField txtID = (HiddenField)editItem.FindControl("txtID");
             Session["txtID"] = (txtID.Value != "") ? txtID.Value : "0";
-            RadListBox RadListBoxQuanHuyenRef = (RadListBox)editItem.FindControl("RadListBoxQuanHuyenRef");
+            RadListBox RadListBoxQuocGiaRef = (RadListBox)editItem.FindControl("RadListBoxQuocGiaRef");
             HiddenField txtC_DESC = (HiddenField)editItem.FindControl("txtC_DESC");
-            setItenforListBoxSelect(RadListBoxQuanHuyenRef, txtC_DESC.Value);
+            setItenforListBoxSelect(RadListBoxQuocGiaRef, txtC_DESC.Value);
             RadComboBox cmbSanPham = (RadComboBox)editItem.FindControl("cmbSanPham");
             cmbSanPham.SelectedIndex = 0;
+            if (e.Item is GridEditFormInsertItem || e.Item is GridDataInsertItem)
+            {
+                RadComboBox cmbDoiTacEdit = (RadComboBox)editItem.FindControl("cmbDoiTacEdit");
+                cmbDoiTacEdit.SelectedValue = cmbDoiTac.SelectedValue;
+            }
         }
         if (e.Item is GridDataItem)
         {
@@ -186,7 +159,7 @@ public partial class module_MAVUNGQTDT : System.Web.UI.UserControl
                     ivalueconvert += ",N'" + temp[i] + "'";
                 }
             }
-            string selectSQl = String.Format("Select C_CODE, C_NAME from DMQUANHUYEN WHERE C_CODE in ({0})", ivalueconvert);
+            string selectSQl = String.Format("Select C_CODE, C_NAME from DMQUOCGIA WHERE C_CODE in ({0})", ivalueconvert);
             ITCLIB.Admin.SQL sqlAC = new ITCLIB.Admin.SQL();
             DataTable odata = sqlAC.query_data(selectSQl);
             foreach (DataRow orow in odata.Rows)
@@ -270,7 +243,7 @@ public partial class module_MAVUNGQTDT : System.Web.UI.UserControl
     protected bool ValidateDeleteGroup(string pkID)
     {
         int rowcount = 0;
-        string SelectSQL = String.Format("SELECT DMCHITIETCUOC.PK_ID FROM from DMCHITIETCUOC where FK_MAVUNG= {0}", pkID);
+        string SelectSQL = String.Format("SELECT DMCHITIETCUOCDT.PK_ID FROM from DMCHITIETCUOCDT where FK_MAVUNG= {0}", pkID);
         DataTable oDataTable = new DataTable();
         ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
         oDataTable = SelectQuery.query_data(SelectSQL);
@@ -287,5 +260,13 @@ public partial class module_MAVUNGQTDT : System.Web.UI.UserControl
     protected void RadPanelBarLoadTextfromDept_ItemClick(object sender, RadPanelBarEventArgs e)
     {
         Session["ValueFilter"] = e.Item.Value;
+    }
+    protected void cmbDoiTac_PreRender(object sender, EventArgs e)
+    {
+        if (!IsPostBack)
+        {
+            cmbDoiTac.Items.Insert(0, new RadComboBoxItem("Tất cả", "0"));
+            cmbDoiTac.SelectedIndex = 0;
+        }
     }
 }
