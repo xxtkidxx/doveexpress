@@ -1180,7 +1180,7 @@
                                     </telerik:RadNumericTextBox>
                                 </td>
                                 <td style="width: 100px;">
-                                    <span class="rtsTxtnew">Diễn giải:</span>
+                                    <span class="rtsTxtnew">Bill đối tác:</span>
                                 </td>
                                 <td colspan="4">
                                     <telerik:RadTextBox ID="txtC_DIENGIAIDOITAC" Width="90%" Text='<%# Bind("C_DIENGIAIDOITAC") %>'
