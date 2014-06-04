@@ -454,7 +454,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
                     FK_MAVUNG = oDataTable.Rows[0]["PK_ID"].ToString();
                     if (FK_MABANGCUOC != "")
                     {
-                        LoadCOD(FK_MABANGCUOC,FK_MAVUNG);
+                        LoadCOD(FK_MABANGCUOC, FK_MAVUNG);
                     }
                 }
                 else
@@ -502,45 +502,45 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
     protected void LoadDVPT(string FKDICHVU, string FKMABANGCUOC)
     {
         string SelectSQL = "Select DMDICHVUPHUTROI.C_VALUE,DMDICHVUPHUTROI.C_VALUE1,DMDICHVUPHUTROI.C_TYPE FROM DMDICHVUPHUTROI WHERE DMDICHVUPHUTROI.FK_MASANPHAM =" + FKDICHVU + " AND FK_MABANGCUOC = " + FKMABANGCUOC;
-            DataTable oDataTable = new DataTable();
-            ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
-            oDataTable = SelectQuery.query_data(SelectSQL);
-            if (oDataTable.Rows.Count != 0)
+        DataTable oDataTable = new DataTable();
+        ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
+        oDataTable = SelectQuery.query_data(SelectSQL);
+        if (oDataTable.Rows.Count != 0)
+        {
+            for (int i = 0; i <= oDataTable.Rows.Count - 1; i++)
             {
-                for (int i = 0; i <= oDataTable.Rows.Count - 1; i++)
+                if (oDataTable.Rows[i]["C_TYPE"].ToString() == "PPXD")
                 {
-                    if (oDataTable.Rows[i]["C_TYPE"].ToString() == "PPXD")
-                    {
-                        PPXD = (oDataTable.Rows[i]["C_VALUE"] == DBNull.Value) ? 0 : decimal.Parse(oDataTable.Rows[i]["C_VALUE"].ToString());
-                    }
-                    else if (oDataTable.Rows[i]["C_TYPE"].ToString() == "VAT")
-                    {
-                        VAT = (oDataTable.Rows[i]["C_VALUE"] == DBNull.Value) ? 0 : decimal.Parse(oDataTable.Rows[i]["C_VALUE"].ToString());
-                    }
-                    else if (oDataTable.Rows[i]["C_TYPE"].ToString() == "DONGGOI")
-                    {
-                        DONGGOIX = (oDataTable.Rows[i]["C_VALUE"] == DBNull.Value) ? 0 : decimal.Parse(oDataTable.Rows[i]["C_VALUE"].ToString());
-                        DONGGOIY = (oDataTable.Rows[i]["C_VALUE1"] == DBNull.Value) ? 0 : decimal.Parse(oDataTable.Rows[i]["C_VALUE1"].ToString());
-                    }
-                    else if (oDataTable.Rows[i]["C_TYPE"].ToString() == "KHAIGIA")
-                    {
-                        KHAIGIAX = (oDataTable.Rows[i]["C_VALUE"] == DBNull.Value) ? 0 : decimal.Parse(oDataTable.Rows[i]["C_VALUE"].ToString());
-                        KHAIGIAY = (oDataTable.Rows[i]["C_VALUE1"] == DBNull.Value) ? 0 : decimal.Parse(oDataTable.Rows[i]["C_VALUE1"].ToString());
-                    }
-                    else if (oDataTable.Rows[i]["C_TYPE"].ToString() == "BAOPHAT")
-                    {
-                        BAOPHATX = (oDataTable.Rows[i]["C_VALUE"] == DBNull.Value) ? 0 : decimal.Parse(oDataTable.Rows[i]["C_VALUE"].ToString());
-                        BAOPHATY = (oDataTable.Rows[i]["C_VALUE1"] == DBNull.Value) ? 0 : decimal.Parse(oDataTable.Rows[i]["C_VALUE1"].ToString());
-                    }
-                    else if (oDataTable.Rows[i]["C_TYPE"].ToString() == "HENGIO")
-                    {
-                        HENGIOX = (oDataTable.Rows[i]["C_VALUE"] == DBNull.Value) ? 0 : decimal.Parse(oDataTable.Rows[i]["C_VALUE"].ToString());
-                        HENGIOY = (oDataTable.Rows[i]["C_VALUE1"] == DBNull.Value) ? 0 : decimal.Parse(oDataTable.Rows[i]["C_VALUE1"].ToString());
-                    }                    
+                    PPXD = (oDataTable.Rows[i]["C_VALUE"] == DBNull.Value) ? 0 : decimal.Parse(oDataTable.Rows[i]["C_VALUE"].ToString());
+                }
+                else if (oDataTable.Rows[i]["C_TYPE"].ToString() == "VAT")
+                {
+                    VAT = (oDataTable.Rows[i]["C_VALUE"] == DBNull.Value) ? 0 : decimal.Parse(oDataTable.Rows[i]["C_VALUE"].ToString());
+                }
+                else if (oDataTable.Rows[i]["C_TYPE"].ToString() == "DONGGOI")
+                {
+                    DONGGOIX = (oDataTable.Rows[i]["C_VALUE"] == DBNull.Value) ? 0 : decimal.Parse(oDataTable.Rows[i]["C_VALUE"].ToString());
+                    DONGGOIY = (oDataTable.Rows[i]["C_VALUE1"] == DBNull.Value) ? 0 : decimal.Parse(oDataTable.Rows[i]["C_VALUE1"].ToString());
+                }
+                else if (oDataTable.Rows[i]["C_TYPE"].ToString() == "KHAIGIA")
+                {
+                    KHAIGIAX = (oDataTable.Rows[i]["C_VALUE"] == DBNull.Value) ? 0 : decimal.Parse(oDataTable.Rows[i]["C_VALUE"].ToString());
+                    KHAIGIAY = (oDataTable.Rows[i]["C_VALUE1"] == DBNull.Value) ? 0 : decimal.Parse(oDataTable.Rows[i]["C_VALUE1"].ToString());
+                }
+                else if (oDataTable.Rows[i]["C_TYPE"].ToString() == "BAOPHAT")
+                {
+                    BAOPHATX = (oDataTable.Rows[i]["C_VALUE"] == DBNull.Value) ? 0 : decimal.Parse(oDataTable.Rows[i]["C_VALUE"].ToString());
+                    BAOPHATY = (oDataTable.Rows[i]["C_VALUE1"] == DBNull.Value) ? 0 : decimal.Parse(oDataTable.Rows[i]["C_VALUE1"].ToString());
+                }
+                else if (oDataTable.Rows[i]["C_TYPE"].ToString() == "HENGIO")
+                {
+                    HENGIOX = (oDataTable.Rows[i]["C_VALUE"] == DBNull.Value) ? 0 : decimal.Parse(oDataTable.Rows[i]["C_VALUE"].ToString());
+                    HENGIOY = (oDataTable.Rows[i]["C_VALUE1"] == DBNull.Value) ? 0 : decimal.Parse(oDataTable.Rows[i]["C_VALUE1"].ToString());
                 }
             }
+        }
     }
-    protected void LoadCOD(string FKMABANGCUOC,string FKMAVUNG)
+    protected void LoadCOD(string FKMABANGCUOC, string FKMAVUNG)
     {
         string SelectSQL = "Select DMDICHVUPHUTROI.C_VALUE,DMDICHVUPHUTROI.C_VALUE1,DMDICHVUPHUTROI.C_TYPE FROM DMDICHVUPHUTROI WHERE FK_MABANGCUOC = " + FKMABANGCUOC + " AND FK_MAVUNG = " + FK_MAVUNG;
         DataTable oDataTable = new DataTable();
@@ -730,7 +730,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
                 txtCODE.Text = GetMaxBill();
                 cmbFK_USERADD.SelectedValue = Session["UserID"].ToString();
                 if (Session["SaveAddNew"] == "True")
-                {                    
+                {
                     if (Session["MAXID"].ToString() != "")
                     {
                         string SQLSELECT = String.Format("SELECT NHANGUI.*  FROM NHANGUI WHERE NHANGUI.PK_ID = {0}", Session["MAXID"].ToString());
@@ -831,7 +831,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
                                 FK_MAVUNG = "";
                             }
                             PPXD = 0;
-                            LoadDVPT(FK_DICHVU,FK_MABANGCUOC);
+                            LoadDVPT(FK_DICHVU, FK_MABANGCUOC);
                             C_KHOILUONG = int.Parse(oDataTableNew.Rows[0]["C_KHOILUONG"].ToString());
                             CUOCCHINH = decimal.Parse(oDataTableNew.Rows[0]["C_GIACUOC"].ToString());
                             FK_DOITAC = oDataTableNew.Rows[0]["FK_DOITAC"].ToString();
@@ -1695,7 +1695,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
         RadGridNHANGUI.Rebind();
     }
     protected void btnAddExcell_Click(object sender, EventArgs e)
-    {        
+    {
         if (RadAsyncUploadAddExcel.UploadedFiles.Count != 0)
         {
             System.IO.Stream stream = RadAsyncUploadAddExcel.UploadedFiles[0].InputStream;
@@ -1708,40 +1708,58 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
             {
                 excelReader = ExcelReaderFactory.CreateOpenXmlReader(stream);
             }
-
             excelReader.IsFirstRowAsColumnNames = true;
             DataSet result = excelReader.AsDataSet();
             excelReader.Close();
             excelReader.Close();
             DataTable oDataTable = new DataTable();
             oDataTable = result.Tables[0];
-            if (oDataTable.Rows.Count != 0)
+            if (oDataTable.Rows.Count >= 2)
             {
-                for (int i = 0; i < oDataTable.Rows.Count; i++)
+                for (int i = 1; i < oDataTable.Rows.Count; i++)
                 {
-                    string C_BILL = oDataTable.Rows[i][1].ToString().Trim();
-                    string C_KHOILUONG = oDataTable.Rows[i][2].ToString().Trim();
-                    string C_TINHTHANH = ITCLIB.Admin.cFunction.LoadIDTinhThanhName(oDataTable.Rows[i][3].ToString().Trim());
-                    string C_HINHTHUCTT = "";
-                    string C_TIENHANGVAT = "0";
-                    if (oDataTable.Rows[i][4].ToString().Trim() != "")
+                    try
                     {
-                        C_HINHTHUCTT = "Thanh toán đầu nhận";
-                        C_TIENHANGVAT = oDataTable.Rows[i][4].ToString().Trim();
+                        string C_BILL = oDataTable.Rows[i][1].ToString().Trim();
+                        string C_KHOILUONG = oDataTable.Rows[i][2].ToString().Trim();
+                        string C_TINHTHANH = ITCLIB.Admin.cFunction.LoadIDTinhThanhName(oDataTable.Rows[i][3].ToString().Trim());
+                        string C_HINHTHUCTT = "";
+                        decimal C_TIENHANGVAT = 0;
+                        if (oDataTable.Rows[i][4].ToString().Trim() != "")
+                        {
+                            C_HINHTHUCTT = "Thanh toán đầu nhận";
+                            C_TIENHANGVAT = decimal.Parse(oDataTable.Rows[i][4].ToString().Trim());
+                        }
+                        string C_TIENTHUHO = oDataTable.Rows[i][5].ToString().Trim();
+                        var formats = new[] { "dd/M/yyyy", "dd/MM/yyyy", "d/M/yyyy" };
+                        DateTime C_NGAY = DateTime.ParseExact(oDataTable.Rows[i][6].ToString().Trim(), formats,System.Globalization.CultureInfo.InvariantCulture,System.Globalization.DateTimeStyles.AssumeLocal);
+                        DateTime C_NGAYGIONHAN = System.DateTime.Now;
+                        string FK_DOITAC = ITCLIB.Admin.cFunction.LoadIDDoiTacName(oDataTable.Rows[i][7].ToString().Trim());
+                        string C_DIENGIAIDOITAC = oDataTable.Rows[i][8].ToString().Trim();
+                        string C_GIADOITAC = oDataTable.Rows[i][9].ToString().Trim();
                     }
-                    string C_TIENTHUHO = oDataTable.Rows[i][5].ToString().Trim();
-                    DateTime C_NGAY = DateTime.Parse(oDataTable.Rows[i][6].ToString().Trim());
-                    DateTime C_NGAYGIONHAN = System.DateTime.Now;
-                    string FK_DOITAC = ITCLIB.Admin.cFunction.LoadIDDoiTacName(oDataTable.Rows[i][7].ToString().Trim());
-                    string C_DIENGIAIDOITAC = oDataTable.Rows[i][8].ToString().Trim();
-                    string C_GIADOITAC = oDataTable.Rows[i][9].ToString().Trim();
-                }                
-                lblMessage.Text = "";
+                    catch (FormatException format1)
+                    {
+                        lblMessageAddExcell.Text = "1" + oDataTable.Rows[i][6].ToString().Trim();
+                        //lblMessageAddExcell.Text = "Dữ liệu tại dòng thứ " + i + " không đúng định dạng." + format1.Message;
+                        break;
+                    }
+                    catch (ArgumentNullException format2)
+                    {
+                        lblMessageAddExcell.Text = "không có dữ liệu tại dòng thứ " + i + "." + format2.Message;
+                        break;
+                    }
+                    finally
+                    {
+
+                    }
+                }
+                //lblMessageAddExcell.Text = "";
             }
         }
         else
         {
-            lblMessage.Text = "Hãy chọn file Excel để thêm dữ liệu";
+            lblMessageAddExcell.Text = "Hãy chọn file Excel để thêm dữ liệu";
         }
     }
 }
