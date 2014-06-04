@@ -250,10 +250,13 @@ public partial class Main : System.Web.UI.MasterPage
 
                          AjaxSetting _AjaxSettingAddExcel = new AjaxSetting();
                          AjaxUpdatedControl _AjaxUpdatedControlAddExcel = new AjaxUpdatedControl();
+                         AjaxUpdatedControl _AjaxUpdatedControlAddRadGrid = new AjaxUpdatedControl();
                          _AjaxSettingAddExcel.AjaxControlID = "btnAddExcell";
                          _AjaxUpdatedControlAddExcel.ControlID = "lblMessageAddExcell";
+                         _AjaxUpdatedControlAddRadGrid.ControlID = "RadGridNHANGUI";
                          _AjaxUpdatedControlAddExcel.LoadingPanelID = "RadAjaxLoadingPanelNHANGUI";
                          _AjaxSettingAddExcel.UpdatedControls.Add(_AjaxUpdatedControlAddExcel);
+                         _AjaxSettingAddExcel.UpdatedControls.Add(_AjaxUpdatedControlAddRadGrid);
                          RadAjaxManager.AjaxSettings.Add(_AjaxSettingAddExcel);
 
                         control = LoadControl("module/NHANGUI.ascx");
