@@ -14,25 +14,6 @@ public partial class module_KHIEUNAITEST : System.Web.UI.UserControl
         RadScriptManager.GetCurrent(Page).Services.Add(new ServiceReference(ResolveUrl("~/MyWebService.asmx")));
         RadGridKHIEUNAI.SelectedIndexes.Add(0);
     }
-
-    protected void btnShowAll_Click(object sender, System.Web.UI.ImageClickEventArgs e)
-    {
-        RadGridKHIEUNAI.MasterTableView.FilterExpression = string.Empty;
-        foreach (GridColumn column in RadGridKHIEUNAI.MasterTableView.RenderColumns)
-        {
-            if (column is GridBoundColumn)
-            {
-                GridBoundColumn boundColumn = column as GridBoundColumn;
-                boundColumn.CurrentFilterValue = string.Empty;
-            }
-            if (column is GridTemplateColumn)
-            {
-                GridTemplateColumn boundColumn = column as GridTemplateColumn;
-                boundColumn.CurrentFilterValue = string.Empty;
-            }
-        }
-        RadGridKHIEUNAI.MasterTableView.Rebind();
-    }
     protected void RadGridKHIEUNAI_DataBound(object sender, EventArgs e)
     {
         GridDataItem selectedItem = RadGridKHIEUNAI.Items[0];
@@ -60,7 +41,6 @@ public partial class module_KHIEUNAITEST : System.Web.UI.UserControl
             
         }
     }
-
     protected void RadGridKHIEUNAI_ColumnCreated(object sender, GridColumnCreatedEventArgs e)
     {
         /*if (e.Column.IsBoundToFieldName("BirthDate"))
@@ -71,6 +51,28 @@ public partial class module_KHIEUNAITEST : System.Web.UI.UserControl
         {
             e.Column.Visible = false;
         }*/
+    }
+    protected void RadGridKHIEUNAI_ItemCommand(object sender, GridCommandEventArgs e)
+    {
+        if (e.CommandName == "ClearFilterGrid")
+        {
+            RadGridKHIEUNAI.MasterTableView.FilterExpression = string.Empty;
+
+            foreach (GridColumn column in RadGridKHIEUNAI.MasterTableView.RenderColumns)
+            {
+                if (column is GridBoundColumn)
+                {
+                    GridBoundColumn boundColumn = column as GridBoundColumn;
+                    boundColumn.CurrentFilterValue = string.Empty;
+                }
+                if (column is GridTemplateColumn)
+                {
+                    GridTemplateColumn boundColumn = column as GridTemplateColumn;
+                    boundColumn.CurrentFilterValue = string.Empty;
+                }
+            }
+            RadGridKHIEUNAI.MasterTableView.Rebind();
+        }
     }
     protected void CheckMaKN(object source, ServerValidateEventArgs args)
     {

@@ -60,23 +60,23 @@
             MyWebService.GetKHIEUNAIByPK_ID(PK_ID, setValues);
         }
 
-        function setValues(khieunai) {            
-                $get("<%= txtID.ClientID %>").value = khieunai.PK_ID;
-                $find("<%= txtC_CODE.ClientID %>").set_value(khieunai.C_CODE);
-                $find("<%= radC_DATE.ClientID %>").set_selectedDate(khieunai.C_DATE);
-                $find("<%= cmbC_TYPE.ClientID %>").findItemByText(khieunai.C_TYPE).select();
-                $find("<%= txtC_BILL.ClientID %>").set_value(khieunai.C_BILL);
-                $find("<%= txtC_TENKH.ClientID %>").set_value(khieunai.C_TENKH);
-                $find("<%= txtC_SDT.ClientID %>").set_value(khieunai.C_SDT);
-                $find("<%= txtC_NOIDUNG.ClientID %>").set_value(khieunai.C_NOIDUNG);
-                $find("<%= cmbC_STATUS.ClientID %>").findItemByText(khieunai.C_STATUS).select();
-                $find("<%= txtC_CODE.ClientID %>").focus();
-                $find("<%= cmbMaKhachHang.ClientID %>").findItemByText(khieunai.FK_KHACHHANG).select();
-                $find("<%= cmbFK_NGUOITAO.ClientID %>").findItemByValue(khieunai.FK_NGUOITAO).select();
-            }
+        function setValues(khieunai) {
+            $get("<%= txtID.ClientID %>").value = khieunai.PK_ID;
+            $find("<%= txtC_CODE.ClientID %>").set_value(khieunai.C_CODE);
+            $find("<%= radC_DATE.ClientID %>").set_selectedDate(khieunai.C_DATE);
+            $find("<%= cmbC_TYPE.ClientID %>").findItemByText(khieunai.C_TYPE).select();
+            $find("<%= txtC_BILL.ClientID %>").set_value(khieunai.C_BILL);
+            $find("<%= txtC_TENKH.ClientID %>").set_value(khieunai.C_TENKH);
+            $find("<%= txtC_SDT.ClientID %>").set_value(khieunai.C_SDT);
+            $find("<%= txtC_NOIDUNG.ClientID %>").set_value(khieunai.C_NOIDUNG);
+            $find("<%= cmbC_STATUS.ClientID %>").findItemByText(khieunai.C_STATUS).select();
+            $find("<%= txtC_CODE.ClientID %>").focus();
+            $find("<%= cmbMaKhachHang.ClientID %>").findItemByText(khieunai.FK_KHACHHANG).select();
+            $find("<%= cmbFK_NGUOITAO.ClientID %>").findItemByValue(khieunai.FK_NGUOITAO).select();
+        }
 
-            function getValues() {
-                khieunai.PK_ID = $get("<%= txtID.ClientID %>").value;
+        function getValues() {
+            khieunai.PK_ID = $get("<%= txtID.ClientID %>").value;
                 khieunai.C_CODE = $find("<%= txtC_CODE.ClientID %>").get_value();
                 khieunai.C_DATE = $find("<%= radC_DATE.ClientID %>").get_selectedDate();
                 khieunai.C_TYPE = $find("<%= cmbC_TYPE.ClientID %>").get_value();
@@ -87,18 +87,18 @@
                 khieunai.C_STATUS = $find("<%= cmbC_STATUS.ClientID %>").get_value();
                 khieunai.FK_KHACHHANG = $find("<%= cmbMaKhachHang.ClientID %>").get_value();
                 khieunai.FK_NGUOITAO = $find("<%= cmbFK_NGUOITAO.ClientID %>").get_value();
-            return khieunai;
-        }
+                return khieunai;
+            }
 
-        function updateChanges() {
-            MyWebService.UpdateKHIEUNAIByKHIEUNAI(getValues(), updateGrid);
-        }
+            function updateChanges() {
+                MyWebService.UpdateKHIEUNAIByKHIEUNAI(getValues(), updateGrid);
+            }
 
-        function updateGrid(result) {
-            var tableView = $find("<%= RadGridKHIEUNAI.ClientID %>").get_masterTableView();
-                tableView.set_dataSource(result);
-                tableView.dataBind();
-                var grid = $find("<%= RadGridKHIEUNAI.ClientID %>");
+            function updateGrid(result) {
+                var tableView = $find("<%= RadGridKHIEUNAI.ClientID %>").get_masterTableView();
+            tableView.set_dataSource(result);
+            tableView.dataBind();
+            var grid = $find("<%= RadGridKHIEUNAI.ClientID %>");
                 grid.repaint();
             }
 
@@ -146,200 +146,193 @@
 
     </script>
 </telerik:RadCodeBlock>
-<telerik:RadGrid ID="RadGridKHIEUNAI" DataSourceID="KHIEUNAIDataSource" runat="server"
-    Skin="Vista" AllowPaging="True" PageSize="20" AllowSorting="True" AllowFilteringByColumn="True" GridLines="None" ShowStatusBar="True"
-    AutoGenerateColumns="False" OnDataBound="RadGridKHIEUNAI_DataBound" OnColumnCreated="RadGridKHIEUNAI_ColumnCreated" Height="300px">
-    <MasterTableView Name="MasterTableViewKHIEUNAI" CommandItemDisplay="Top" DataSourceID="KHIEUNAIDataSource" DataKeyNames="PK_ID" ClientDataKeyNames="PK_ID" EditMode="PopUp" NoMasterRecordsText="Không có dữ liệu">
-        <CommandItemTemplate>
-            <div style="padding: 5px 5px; float: left; width: auto">
-                <b>Quản lý khiếu nại</b>&nbsp;&nbsp;&nbsp;&nbsp;
+<telerik:RadSplitter ID="RadSplitterKHIEUNAI" runat="server" Width="100%" Height="550px">
+    <telerik:RadPane ID="LeftPaneKHIEUNAI" runat="server" Width="32%">
+        <telerik:RadGrid ID="RadGridKHIEUNAI" DataSourceID="KHIEUNAIDataSource" runat="server" OnItemCommand="RadGridKHIEUNAI_ItemCommand"
+            Skin="Vista" AllowPaging="True" PageSize="20" AllowSorting="True" AllowFilteringByColumn="True" GridLines="None" ShowStatusBar="True"
+            AutoGenerateColumns="False" OnDataBound="RadGridKHIEUNAI_DataBound" OnColumnCreated="RadGridKHIEUNAI_ColumnCreated" Height="300px">
+            <MasterTableView Name="MasterTableViewKHIEUNAI" CommandItemDisplay="Top" DataSourceID="KHIEUNAIDataSource" DataKeyNames="PK_ID" ClientDataKeyNames="PK_ID" EditMode="PopUp" NoMasterRecordsText="Không có dữ liệu">
+                <CommandItemTemplate>
+                    <div style="padding: 5px 5px; float: left; width: auto">
+                        <b>Quản lý khiếu nại</b>&nbsp;&nbsp;&nbsp;&nbsp;
+                     <asp:LinkButton ID="LinkButton11" runat="server" CommandName="ClearFilterGrid"><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/filterCancel.gif" />Xóa tìm kiếm</asp:LinkButton>&nbsp;&nbsp;
                      <asp:LinkButton ID="LinkButton4" runat="server" CommandName="RebindGrid"><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Refresh.gif" />Làm mới</asp:LinkButton>
-            </div>
-            <div style="padding: 5px 5px; float: right; width: auto">
-                <asp:LinkButton ID="ExportToPdfButton" runat="server" CommandName="ExportToPdf"><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/pdf.gif" /></asp:LinkButton>&nbsp;&nbsp;
+                    </div>
+                    <div style="padding: 5px 5px; float: right; width: auto">
+                        <asp:LinkButton ID="ExportToPdfButton" runat="server" CommandName="ExportToPdf"><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/pdf.gif" /></asp:LinkButton>&nbsp;&nbsp;
                         <asp:LinkButton ID="ExportToWordButton" runat="server" CommandName="ExportToWord"><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/word.gif" /></asp:LinkButton>&nbsp;&nbsp;
                         <asp:LinkButton ID="ExportToExcelButton" runat="server" CommandName="ExportToExcel"><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/excel.gif" /></asp:LinkButton>&nbsp;&nbsp;
                         <asp:LinkButton ID="ExportToCsvButton" runat="server" CommandName="ExportToCsv"><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/csv.gif" /></asp:LinkButton>&nbsp;&nbsp;
-            </div>
-        </CommandItemTemplate>
-        <Columns>
-            <telerik:GridBoundColumn UniqueName="PK_ID" HeaderText="" DataField="PK_ID" Visible="false"
-                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
-            </telerik:GridBoundColumn>
-            <telerik:GridTemplateColumn HeaderText="" ShowFilterIcon="false">
-                <FilterTemplate>
-                    <center>
-                    <asp:ImageButton ID="btnShowAll" runat="server" ImageUrl="../Images/Grid/filterCancel.gif" AlternateText="Xem tất" ToolTip="Xem tất" OnClick="btnShowAll_Click" Style="vertical-align: middle" />
-                  </center>
-                </FilterTemplate>
-                <ItemTemplate>
-                    <asp:Label ID="lblSTT" runat="server" Text=""></asp:Label>
-                </ItemTemplate>
-                <HeaderStyle HorizontalAlign="Center" Width="30px" />
-                <ItemStyle HorizontalAlign="Center" Width="30px" />
-            </telerik:GridTemplateColumn>
-            <telerik:GridBoundColumn UniqueName="C_CODE" HeaderText="Mã khiếu nại" DataField="C_CODE" HeaderStyle-Width="90px" HeaderStyle-HorizontalAlign="Center"
-                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
-            </telerik:GridBoundColumn>
-            <telerik:GridBoundColumn UniqueName="C_TYPE" HeaderText="Loại khiếu nại" DataField="C_TYPE" HeaderStyle-Width="90px" HeaderStyle-HorizontalAlign="Center"
-                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
-            </telerik:GridBoundColumn>
-            <telerik:GridBoundColumn UniqueName="C_DATE" HeaderText="Thời gian" DataField="C_DATE"
-                HeaderStyle-Width="90px" HeaderStyle-HorizontalAlign="Center" AutoPostBackOnFilter="true"
-                ShowFilterIcon="true" FilterControlWidth="70%" DataType="System.DateTime" DataFormatString="{0:dd/MM/yyyy HH:mm}">
-            </telerik:GridBoundColumn>
-            <telerik:GridBoundColumn UniqueName="C_BILL" HeaderText="Chủ đề" DataField="C_BILL" HeaderStyle-Width="180px" HeaderStyle-HorizontalAlign="Center"
-                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
-            </telerik:GridBoundColumn>
-            <telerik:GridBoundColumn UniqueName="FK_KHACHHANG" HeaderText="Mã khách hàng" DataField="FK_KHACHHANG"
-                HeaderStyle-Width="70px" HeaderStyle-HorizontalAlign="Center" AutoPostBackOnFilter="true"
-                CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
-            </telerik:GridBoundColumn>
-            <telerik:GridBoundColumn UniqueName="C_TENKH" HeaderText="Tên khách hàng" DataField="C_TENKH"
-                HeaderStyle-Width="110px" HeaderStyle-HorizontalAlign="Center" AutoPostBackOnFilter="true"
-                CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
-            </telerik:GridBoundColumn>
-            <telerik:GridBoundColumn UniqueName="C_SDT" HeaderText="Số điện thoại" DataField="C_SDT" HeaderStyle-Width="70px" HeaderStyle-HorizontalAlign="Center"
-                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
-            </telerik:GridBoundColumn>
-            <telerik:GridBoundColumn UniqueName="C_NOIDUNG" HeaderText="Nội dung" DataField="C_NOIDUNG" HeaderStyle-Width="60px" HeaderStyle-HorizontalAlign="Center"
-                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%" Visible="false">
-            </telerik:GridBoundColumn>
-             <telerik:GridBoundColumn UniqueName="FK_NGUOITAO" HeaderText="Người tạo fix" DataField="FK_NGUOITAO" HeaderStyle-Width="60px" HeaderStyle-HorizontalAlign="Center"
-                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%" Visible="false">
-            </telerik:GridBoundColumn>
-            <telerik:GridBoundColumn UniqueName="NGUOITAONAME" HeaderText="Người tạo" DataField="NGUOITAONAME" HeaderStyle-Width="100px" HeaderStyle-HorizontalAlign="Center"
-                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
-            </telerik:GridBoundColumn>
-            <telerik:GridBoundColumn UniqueName="C_STATUS" HeaderText="Tình trạng" DataField="C_STATUS" HeaderStyle-Width="60px" HeaderStyle-HorizontalAlign="Center"
-                AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
-            </telerik:GridBoundColumn>
-        </Columns>
-    </MasterTableView>
-    <ClientSettings>
-        <Selecting AllowRowSelect="true"></Selecting>
-        <ClientEvents OnRowSelected="rowSelected"></ClientEvents>
-        <Scrolling AllowScroll="true" UseStaticHeaders="true"></Scrolling>
-    </ClientSettings>
-</telerik:RadGrid>
-<telerik:RadTabStrip ID="RadTabStripKHIEUNAI" OnClientTabSelected="tabSelected" Style="margin-top: 10px;"
-    SelectedIndex="0" runat="server">
-    <Tabs>
-        <telerik:RadTab Text="Sửa khiếu nại">
-        </telerik:RadTab>
-        <telerik:RadTab Text="Thêm khiếu nại">
-        </telerik:RadTab>
-    </Tabs>
-</telerik:RadTabStrip>
-<div class="headerthongtin">
-    <ul>
-        <li class="lifirst">
-            <asp:LinkButton ID="btnSave" runat="server" OnClientClick="updateChanges(); return false;"><img src="Images/img_save.jpg" />Lưu</asp:LinkButton></li>
-        <li>
-            <asp:LinkButton ID="btnDelete" runat="server" OnClientClick="if(!confirm('Bạn chắc chắn muốn xóa khiếu nại?'))return false; deleteCurrent(); return false;"><img src="Images/img_Close.jpg" />Xóa</asp:LinkButton></li>
-    </ul>
-</div>
-<div class="clearfix bgpopup">
-    <div style="width: 900px; height: 250px; background: #FFFFFF" class="clearfix">
-        <table id="tblEdit" class="TableEditInGrid" cellspacing="3" cellpadding="3" style="width: 100%" border="0">
-            <tr>
-                <td style="width: 100px;">
-                    <span class="rtsTxtnew">Mã khiếu nại:</span>
-                </td>
-                <td colspan="4">
-                    <asp:HiddenField ID="txtID" Value='<%# Eval("PK_ID") %>' runat="server" />
-                    <telerik:RadTextBox ID="txtC_CODE" Width="80%" runat="server" MaxLength="7">
-                        <ClientEvents OnKeyPress="OnKeyPressRadTextBox" />
-                    </telerik:RadTextBox>
+                    </div>
+                </CommandItemTemplate>
+                <Columns>
+                    <telerik:GridBoundColumn UniqueName="PK_ID" HeaderText="" DataField="PK_ID" Visible="false"
+                        AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
+                    </telerik:GridBoundColumn>
+                    <telerik:GridBoundColumn UniqueName="C_CODE" HeaderText="Mã KN" DataField="C_CODE" HeaderStyle-Width="40px" HeaderStyle-HorizontalAlign="Center" ItemStyle-HorizontalAlign="Center"
+                        AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
+                    </telerik:GridBoundColumn>
+                    <telerik:GridBoundColumn UniqueName="C_TYPE" HeaderText="Loại khiếu nại" DataField="C_TYPE" HeaderStyle-Width="90px" HeaderStyle-HorizontalAlign="Center"
+                        AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%" Visible="false">
+                    </telerik:GridBoundColumn>
+                    <telerik:GridBoundColumn UniqueName="C_DATE" HeaderText="Thời gian" DataField="C_DATE"
+                        HeaderStyle-Width="90px" HeaderStyle-HorizontalAlign="Center" AutoPostBackOnFilter="true"
+                        ShowFilterIcon="true" FilterControlWidth="70%" DataType="System.DateTime" DataFormatString="{0:dd/MM/yyyy HH:mm}" Visible="false">
+                    </telerik:GridBoundColumn>
+                    <telerik:GridBoundColumn UniqueName="C_BILL" HeaderText="Chủ đề" DataField="C_BILL" HeaderStyle-Width="100px" HeaderStyle-HorizontalAlign="Center"
+                        AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
+                    </telerik:GridBoundColumn>
+                    <telerik:GridBoundColumn UniqueName="FK_KHACHHANG" HeaderText="Mã khách hàng" DataField="FK_KHACHHANG"
+                        HeaderStyle-Width="70px" HeaderStyle-HorizontalAlign="Center" AutoPostBackOnFilter="true"
+                        CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%" Visible="false">
+                    </telerik:GridBoundColumn>
+                    <telerik:GridBoundColumn UniqueName="C_TENKH" HeaderText="Tên khách hàng" DataField="C_TENKH"
+                        HeaderStyle-Width="90px" HeaderStyle-HorizontalAlign="Center" AutoPostBackOnFilter="true"
+                        CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
+                    </telerik:GridBoundColumn>
+                    <telerik:GridBoundColumn UniqueName="C_SDT" HeaderText="Số điện thoại" DataField="C_SDT" HeaderStyle-Width="70px" HeaderStyle-HorizontalAlign="Center"
+                        AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
+                    </telerik:GridBoundColumn>
+                    <telerik:GridBoundColumn UniqueName="C_NOIDUNG" HeaderText="Nội dung" DataField="C_NOIDUNG" HeaderStyle-Width="60px" HeaderStyle-HorizontalAlign="Center"
+                        AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%" Visible="false">
+                    </telerik:GridBoundColumn>
+                    <telerik:GridBoundColumn UniqueName="FK_NGUOITAO" HeaderText="Người tạo fix" DataField="FK_NGUOITAO" HeaderStyle-Width="60px" HeaderStyle-HorizontalAlign="Center"
+                        AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%" Visible="false">
+                    </telerik:GridBoundColumn>
+                    <telerik:GridBoundColumn UniqueName="NGUOITAONAME" HeaderText="Người tạo" DataField="NGUOITAONAME" HeaderStyle-Width="100px" HeaderStyle-HorizontalAlign="Center"
+                        AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%" Visible="false">
+                    </telerik:GridBoundColumn>
+                    <telerik:GridBoundColumn UniqueName="C_STATUS" HeaderText="Tình trạng" DataField="C_STATUS" HeaderStyle-Width="60px" HeaderStyle-HorizontalAlign="Center"
+                        AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
+                    </telerik:GridBoundColumn>
+                </Columns>
+            </MasterTableView>
+            <ClientSettings>
+                <Selecting AllowRowSelect="true"></Selecting>
+                <ClientEvents OnRowSelected="rowSelected"></ClientEvents>
+                <Scrolling AllowScroll="true" UseStaticHeaders="true"></Scrolling>
+            </ClientSettings>
+        </telerik:RadGrid>
+    </telerik:RadPane>
+    <telerik:RadSplitBar ID="RadSplitBarKHIEUNAI" runat="server" CollapseMode="Forward" />
+    <telerik:RadPane ID="MiddlePaneKHIEUNAI" runat="server" Width="67%">
+        <telerik:RadTabStrip ID="RadTabStripKHIEUNAI" OnClientTabSelected="tabSelected" Style="margin-top: 10px;"
+            SelectedIndex="0" runat="server">
+            <Tabs>
+                <telerik:RadTab Text="Sửa khiếu nại">
+                </telerik:RadTab>
+                <telerik:RadTab Text="Thêm khiếu nại">
+                </telerik:RadTab>
+            </Tabs>
+        </telerik:RadTabStrip>
+        <div class="headerthongtin">
+            <ul>
+                <li class="lifirst">
+                    <asp:LinkButton ID="btnSave" runat="server" OnClientClick="updateChanges(); return false;"><img src="Images/img_save.jpg" />Lưu</asp:LinkButton></li>
+                <li>
+                    <asp:LinkButton ID="btnDelete" runat="server" OnClientClick="if(!confirm('Bạn chắc chắn muốn xóa khiếu nại?'))return false; deleteCurrent(); return false;"><img src="Images/img_Close.jpg" />Xóa</asp:LinkButton></li>
+            </ul>
+        </div>
+            <div style="width: 100%; height: 250px; background: #FFFFFF" class="clearfix">
+                <table id="tblEdit" class="TableEditInGrid" cellspacing="3" cellpadding="3" style="width: 100%" border="0">
+                    <tr>
+                        <td style="width: 100px;">
+                            <span class="rtsTxtnew">Mã khiếu nại:</span>
+                        </td>
+                        <td colspan="4">
+                            <asp:HiddenField ID="txtID" Value='<%# Eval("PK_ID") %>' runat="server" />
+                            <telerik:RadTextBox ID="txtC_CODE" Width="80%" runat="server" MaxLength="7">
+                                <ClientEvents OnKeyPress="OnKeyPressRadTextBox" />
+                            </telerik:RadTextBox>
 
-                </td>
-                <td style="width: 100px;">
-                    <span class="rtsTxtnew">Ngày tiếp nhận:
-                </td>
-                <td colspan="4">
-                    <telerik:RadDateTimePicker ID="radC_DATE" Width="95%"
-                        runat="server" AutoPostBack="false">
-                        <DateInput ID="DateInput1" runat="server" DateFormat="dd/MM/yyyy HH:mm" MinDate="1/1/1890 00:00">
-                            <ClientEvents OnKeyPress="controlkeypress" />
-                        </DateInput>
-                    </telerik:RadDateTimePicker>
-                </td>
-            </tr>
-            <tr>
-                <td style="width: 150px;"><span class="rtsTxtnew">Loại:</td>
-                <td colspan="4">
-                    <telerik:RadComboBox ID="cmbC_TYPE"
-                        runat="server" EmptyMessage="Chọn">
-                        <Items>
-                            <telerik:RadComboBoxItem Value="Bill" Text="Bill" />
-                            <telerik:RadComboBoxItem Value="Khác" Text="Khác" />
-                        </Items>
-                    </telerik:RadComboBox>
-                </td>
-                <td style="width: 150px;"><span class="rtsTxtnew">Số Bill/Chủ đề:</td>
-                <td colspan="4">
-                    <telerik:RadTextBox ID="txtC_BILL" runat="server" Width="90%"></telerik:RadTextBox>
-                </td>
-            </tr>
-            <tr>
-                <td style="width: 100px;">
-                    <span class="rtsTxtnew">Mã khách hàng:</span>
-                </td>
-                <td colspan="4">
-                    <telerik:RadComboBox ID="cmbMaKhachHang" runat="server"
-                        DataTextField="C_CODE" DataValueField="C_CODE" DataSourceID="KHACHHANGDataSource"
-                        ShowToggleImage="True" EmptyMessage="Chọn mã"
-                        AllowCustomText="True" Filter="Contains">
-                    </telerik:RadComboBox>
-                </td>
-                <td style="width: 100px;">
-                    <span class="rtsTxtnew">Tên khách hàng:</span>
-                </td>
-                <td colspan="4">
-                    <telerik:RadTextBox ID="txtC_TENKH" Width="90%" runat="server">
-                    </telerik:RadTextBox>
-                </td>
-                <td style="width: 100px;">
-                    <span class="rtsTxtnew">Số điện thoại:</span>
-                </td>
-                <td colspan="4">
-                    <telerik:RadTextBox ID="txtC_SDT" Width="90%"
-                        runat="server">
-                    </telerik:RadTextBox>
-                </td>
-            </tr>
-            <tr>
-                <td style="width: 150px;"><span class="rtsTxtnew">Nội dung:</td>
-                <td colspan="12">
-                    <telerik:RadTextBox ID="txtC_NOIDUNG" runat="server" Width="90%" TextMode="MultiLine"></telerik:RadTextBox>
-                </td>
-            </tr>
-            <tr>
-                <td style="width: 150px;"><span class="rtsTxtnew">Người tạo:</td>
-                <td colspan="4">
-                    <telerik:RadComboBox ID="cmbFK_NGUOITAO" runat="server"
-                        DataTextField="C_NAME" DataValueField="PK_ID" DataSourceID="UserDataSource" ShowToggleImage="True"
-                        EmptyMessage="Chọn" AllowCustomText="True" Filter="Contains">
-                    </telerik:RadComboBox>
-                </td>
-            </tr>
-            <tr>
-                <td style="width: 150px;"><span class="rtsTxtnew">Trạng thái:</td>
-                <td colspan="4">
-                    <telerik:RadComboBox ID="cmbC_STATUS"
-                        runat="server" EmptyMessage="Chọn">
-                        <Items>
-                            <telerik:RadComboBoxItem Value="Đang xử lý" Text="Đang xử lý" />
-                            <telerik:RadComboBoxItem Value="Đóng" Text="Đóng" />
-                        </Items>
-                    </telerik:RadComboBox>
-                </td>
-            </tr>
-        </table>
-    </div>
-    </center> 
+                        </td>
+                        <td style="width: 100px;">
+                            <span class="rtsTxtnew">Ngày tiếp nhận:
+                        </td>
+                        <td colspan="4">
+                            <telerik:RadDateTimePicker ID="radC_DATE" Width="95%"
+                                runat="server" AutoPostBack="false">
+                                <DateInput ID="DateInput1" runat="server" DateFormat="dd/MM/yyyy HH:mm" MinDate="1/1/1890 00:00">
+                                    <ClientEvents OnKeyPress="controlkeypress" />
+                                </DateInput>
+                            </telerik:RadDateTimePicker>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 150px;"><span class="rtsTxtnew">Loại:</td>
+                        <td colspan="4">
+                            <telerik:RadComboBox ID="cmbC_TYPE"
+                                runat="server" EmptyMessage="Chọn">
+                                <Items>
+                                    <telerik:RadComboBoxItem Value="Bill" Text="Bill" />
+                                    <telerik:RadComboBoxItem Value="Khác" Text="Khác" />
+                                </Items>
+                            </telerik:RadComboBox>
+                        </td>
+                        <td style="width: 150px;"><span class="rtsTxtnew">Số Bill/Chủ đề:</td>
+                        <td colspan="4">
+                            <telerik:RadTextBox ID="txtC_BILL" runat="server" Width="90%"></telerik:RadTextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 100px;">
+                            <span class="rtsTxtnew">Mã khách hàng:</span>
+                        </td>
+                        <td colspan="4">
+                            <telerik:RadComboBox ID="cmbMaKhachHang" runat="server"
+                                DataTextField="C_CODE" DataValueField="C_CODE" DataSourceID="KHACHHANGDataSource"
+                                ShowToggleImage="True" EmptyMessage="Chọn mã"
+                                AllowCustomText="True" Filter="Contains">
+                            </telerik:RadComboBox>
+                        </td>
+                        <td style="width: 100px;">
+                            <span class="rtsTxtnew">Tên khách hàng:</span>
+                        </td>
+                        <td colspan="4">
+                            <telerik:RadTextBox ID="txtC_TENKH" Width="90%" runat="server">
+                            </telerik:RadTextBox>
+                        </td>
+                        <td style="width: 100px;">
+                            <span class="rtsTxtnew">Số điện thoại:</span>
+                        </td>
+                        <td colspan="4">
+                            <telerik:RadTextBox ID="txtC_SDT" Width="90%"
+                                runat="server">
+                            </telerik:RadTextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 150px;"><span class="rtsTxtnew">Nội dung:</td>
+                        <td colspan="12">
+                            <telerik:RadTextBox ID="txtC_NOIDUNG" runat="server" Width="90%" TextMode="MultiLine"></telerik:RadTextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 150px;"><span class="rtsTxtnew">Người tạo:</td>
+                        <td colspan="4">
+                            <telerik:RadComboBox ID="cmbFK_NGUOITAO" runat="server"
+                                DataTextField="C_NAME" DataValueField="PK_ID" DataSourceID="UserDataSource" ShowToggleImage="True"
+                                EmptyMessage="Chọn" AllowCustomText="True" Filter="Contains">
+                            </telerik:RadComboBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 150px;"><span class="rtsTxtnew">Trạng thái:</td>
+                        <td colspan="4">
+                            <telerik:RadComboBox ID="cmbC_STATUS"
+                                runat="server" EmptyMessage="Chọn">
+                                <Items>
+                                    <telerik:RadComboBoxItem Value="Đang xử lý" Text="Đang xử lý" />
+                                    <telerik:RadComboBoxItem Value="Đóng" Text="Đóng" />
+                                </Items>
+                            </telerik:RadComboBox>
+                        </td>
+                    </tr>
+                </table>
+            </div>
         <!-- end bgpopup-->
-</div>
+    </telerik:RadPane>
+</telerik:RadSplitter>
 <asp:SqlDataSource ID="KHIEUNAIDataSource" runat="server"
     ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
     DeleteCommand="DELETE FROM [KHIEUNAI] WHERE [PK_ID] = @PK_ID"
