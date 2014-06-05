@@ -169,7 +169,7 @@
                 AllowFiltering="False">
                 <ItemTemplate>
                     <asp:LinkButton ID="libTracking" OnClientClick='<%# String.Format("javascript:return OnClientLinkClicked(\"{0}\")", Eval("C_BILL").ToString())%>'
-                        runat="server" Visible='<%# ITCLIB.Security.Security.CanEditModule("NHANGUIPH") %>'>Thông tin Tracking</asp:LinkButton>&nbsp;&nbsp;
+                        runat="server">Thông tin Tracking</asp:LinkButton>&nbsp;&nbsp;
                 </ItemTemplate>
             </telerik:GridTemplateColumn>
             <telerik:GridBoundColumn UniqueName="C_NGAY" HeaderText="Ngày" DataField="C_NGAY"
