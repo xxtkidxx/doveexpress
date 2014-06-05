@@ -248,3 +248,45 @@ Thời gian lỗi : 2014-06-04 17:11:06 PM
 Nội dung lỗi:Selection out of range
 Parameter name: value
 __________________________
+Thời gian lỗi : 2014-06-04 20:18:13 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Login.aspx. 
+Nội dung lỗi:Login failed for user 'sa'.
+__________________________
+Thời gian lỗi : 2014-06-04 20:26:32 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Literal content ('<asp:Parameter Name="C_GIADOITAC" Type="Single"') is not allowed within a 'System.Web.UI.WebControls.ParameterCollection'.
+__________________________
+Thời gian lỗi : 2014-06-04 20:26:36 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Literal content ('<asp:Parameter Name="C_GIADOITAC" Type="Single"') is not allowed within a 'System.Web.UI.WebControls.ParameterCollection'.
+__________________________
+Thời gian lỗi : 2014-06-04 20:26:39 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Literal content ('<asp:Parameter Name="C_GIADOITAC" Type="Single"') is not allowed within a 'System.Web.UI.WebControls.ParameterCollection'.
+__________________________
+Thời gian lỗi : 2014-06-04 20:34:37 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=MAVUNG. 
+Nội dung lỗi:Selection out of range
+Parameter name: value
+__________________________
+Thời gian lỗi : 2014-06-04 20:34:38 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=MAVUNG. 
+Nội dung lỗi:Selection out of range
+Parameter name: value
+__________________________
+Thời gian lỗi : 2014-06-04 21:01:28 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=MAVUNGDT. 
+Nội dung lỗi:The DataSourceID of 'cmbDoiTac' must be the ID of a control of type IDataSource.  A control with ID 'DoiTacDataSource' could not be found.
+__________________________
+Thời gian lỗi : 2014-06-04 21:15:59 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=MAVUNGQTDT. 
+Nội dung lỗi:e:\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\MAVUNGQTDT.ascx(44): error CS1061: 'ASP.module_mavungqtdt_ascx' does not contain a definition for 'cmbDoiTac_PreRender' and no extension method 'cmbDoiTac_PreRender' accepting a first argument of type 'ASP.module_mavungqtdt_ascx' could be found (are you missing a using directive or an assembly reference?)
+__________________________

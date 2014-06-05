@@ -208,3 +208,69 @@ Tài khoản : 1
 Module : Deleted NHANGUIs
 Kết quả : {C_BILL:"abc"}
 __________________________
+Thời gian: 2014-06-04 20:21:54 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2014-06-04 20:34:50 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted MAVUNGs
+Kết quả : {PK_ID:"40"}
+__________________________
+Thời gian: 2014-06-04 20:34:52 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted MAVUNGs
+Kết quả : {PK_ID:"41"}
+__________________________
+Thời gian: 2014-06-04 20:34:55 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted MAVUNGs
+Kết quả : {PK_ID:"42"}
+__________________________
+Thời gian: 2014-06-04 20:34:59 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted MAVUNGs
+Kết quả : {PK_ID:"43"}
+__________________________
+Thời gian: 2014-06-04 20:35:02 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted MAVUNGs
+Kết quả : {PK_ID:"63"}
+__________________________
+Thời gian: 2014-06-04 21:02:26 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted MAVUNGDTs
+Kết quả : {PK_ID:"35"}
+__________________________
+Thời gian: 2014-06-04 21:02:29 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted MAVUNGDTs
+Kết quả : {PK_ID:"36"}
+__________________________
+Thời gian: 2014-06-04 21:02:31 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted MAVUNGDTs
+Kết quả : {PK_ID:"37"}
+__________________________
+Thời gian: 2014-06-04 21:02:35 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted MAVUNGDTs
+Kết quả : {PK_ID:"38"}
+__________________________
+Thời gian: 2014-06-04 21:02:37 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted MAVUNGDTs
+Kết quả : {PK_ID:"57"}
+__________________________
