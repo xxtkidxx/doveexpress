@@ -52,3 +52,15 @@ Tài khoản : sysadmin
 Module : Login
 Kết quả : Thành công
 __________________________
+Thời gian: 2014-06-05 21:57:31 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2014-06-05 22:18:59 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
