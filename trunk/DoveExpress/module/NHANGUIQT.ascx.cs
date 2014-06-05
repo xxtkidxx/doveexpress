@@ -384,19 +384,10 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
             FK_QUOCGIA = arrayvalue[1];
             if (FK_DICHVU != "")
             {
-                string SelectSQL;
-                SelectSQL = "Select DMMAVUNG.PK_ID FROM DMMAVUNG WHERE FK_MASANPHAM=" + FK_DICHVU + " AND C_TYPE = 2 AND ((DMMAVUNG.C_DESC ='" + FK_QUOCGIA + "') OR (DMMAVUNG.C_DESC LIKE '%," + FK_QUOCGIA + ",%') OR (DMMAVUNG.C_DESC LIKE '%," + FK_QUOCGIA + "') OR (DMMAVUNG.C_DESC LIKE '" + FK_QUOCGIA + ",%')) AND (DMMAVUNG.FK_VUNGLAMVIEC = N'" + Session["VUNGLAMVIEC"].ToString() + "')";
-                DataTable oDataTable = new DataTable();
-                ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
-                oDataTable = SelectQuery.query_data(SelectSQL);
-                if (oDataTable.Rows.Count != 0)
+                LoadMaVung();
+                if (FK_DOITAC != "")
                 {
-                    FK_MAVUNG = oDataTable.Rows[0]["PK_ID"].ToString();
-                }
-                else
-                {
-                    FK_MAVUNG = "";
-                    Alarm = "msg,-,Quốc gia này không nằm trong vùng tính cước nào";
+                    LoadMaVungDT();
                 }
             }
             isCuocchinh = true;
@@ -422,19 +413,10 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
             }
             if (FK_QUOCGIA != "")
             {
-                string SelectSQL;
-                SelectSQL = "Select DMMAVUNG.PK_ID FROM DMMAVUNG WHERE FK_MASANPHAM=" + FK_DICHVU + " AND C_TYPE = 2 AND ((DMMAVUNG.C_DESC ='" + FK_QUOCGIA + "') OR (DMMAVUNG.C_DESC LIKE '%," + FK_QUOCGIA + ",%') OR (DMMAVUNG.C_DESC LIKE '%," + FK_QUOCGIA + "') OR (DMMAVUNG.C_DESC LIKE '" + FK_QUOCGIA + ",%')) AND (DMMAVUNG.FK_VUNGLAMVIEC = N'" + Session["VUNGLAMVIEC"].ToString() + "')";
-                DataTable oDataTable = new DataTable();
-                ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
-                oDataTable = SelectQuery.query_data(SelectSQL);
-                if (oDataTable.Rows.Count != 0)
+                LoadMaVung();
+                if (FK_DOITAC != "")
                 {
-                    FK_MAVUNG = oDataTable.Rows[0]["PK_ID"].ToString();
-                }
-                else
-                {
-                    FK_MAVUNG = "";
-                    Alarm = "msg,-,Quốc gia này không nằm trong vùng tính cước nào";
+                    LoadMaVungDT();
                 }
             }
             isCuocchinh = true;
@@ -447,7 +429,10 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
         else if ((arrayvalue[0] == "cmbFK_DOITAC") && (FK_DOITAC != arrayvalue[1]))
         {
             FK_DOITAC = arrayvalue[1];
-            isCuocdoitac = true;
+            if (FK_QUOCGIA != "" && FK_DICHVU != "")
+            {
+                LoadMaVungDT();
+            }
         }
         else if ((arrayvalue[0] == "cmbFK_DICHVUDOITAC") && (FK_DICHVUDOITAC != arrayvalue[1]))
         {
@@ -480,7 +465,7 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
                 GiaCuocChinh();
             }
             //CUOCCHINH = (Math.Round((CUOCCHINH + ((CUOCCHINH * PPXD) / 100)) / 1000)) * 1000;
-            if ((FK_DOITAC != "") && (isCuocdoitac))
+            if ((FK_MAVUNGDT != "") && (isCuocdoitac))
             {
                 GiaCuocDoiTac();
             }
@@ -495,13 +480,51 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
             string script = "";
             if (isTAILIEU)
             {
-                script = string.Format("var result = '{0}'", FK_KHACHHANG + ",-," + TENKH + ",-," + DIENTHOAIKH + ",-," + PPXD + ",-," + CUOCCHINHTL + ",-," + GIADOITACTL); //+ ",-," + FK_MABANGCUOC + ",-," + FK_MAVUNG + ",-," + FK_MAVUNGDT + ",-," + FK_DOITAC);
+                script = string.Format("var result = '{0}'", FK_KHACHHANG + ",-," + TENKH + ",-," + DIENTHOAIKH + ",-," + PPXD + ",-," + CUOCCHINHTL + ",-," + GIADOITACTL + ",-," + FK_MABANGCUOC + ",-," + FK_MAVUNG + ",-," + FK_MAVUNGDT + ",-," + FK_DOITAC);
             }
             else
             {
-                script = string.Format("var result = '{0}'", FK_KHACHHANG + ",-," + TENKH + ",-," + DIENTHOAIKH + ",-," + PPXD + ",-," + CUOCCHINH + ",-," + GIADOITAC); //+ ",-," + FK_MABANGCUOC + ",-," + FK_MAVUNG + ",-," + FK_MAVUNGDT + ",-," + FK_DOITAC);
+                script = string.Format("var result = '{0}'", FK_KHACHHANG + ",-," + TENKH + ",-," + DIENTHOAIKH + ",-," + PPXD + ",-," + CUOCCHINH + ",-," + GIADOITAC + ",-," + FK_MABANGCUOC + ",-," + FK_MAVUNG + ",-," + FK_MAVUNGDT + ",-," + FK_DOITAC);
             }
             ScriptManager.RegisterClientScriptBlock(Page, typeof(Page), "result", script, true);
+        }
+    }
+    protected void LoadMaVung()
+    {
+        string SelectSQL;
+        SelectSQL = "Select DMMAVUNG.PK_ID FROM DMMAVUNG WHERE FK_MASANPHAM=" + FK_DICHVU + " AND C_TYPE = 2 AND ((DMMAVUNG.C_DESC ='" + FK_QUOCGIA + "') OR (DMMAVUNG.C_DESC LIKE '%," + FK_QUOCGIA + ",%') OR (DMMAVUNG.C_DESC LIKE '%," + FK_QUOCGIA + "') OR (DMMAVUNG.C_DESC LIKE '" + FK_QUOCGIA + ",%')) AND (DMMAVUNG.FK_VUNGLAMVIEC = N'" + Session["VUNGLAMVIEC"].ToString() + "')";
+        DataTable oDataTable = new DataTable();
+        ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
+        oDataTable = SelectQuery.query_data(SelectSQL);
+        if (oDataTable.Rows.Count != 0)
+        {
+            FK_MAVUNG = oDataTable.Rows[0]["PK_ID"].ToString();
+        }
+        else
+        {
+            FK_MAVUNG = "";
+            Alarm = "msg,-,Quốc gia này không nằm trong vùng tính cước nào";
+        }
+    }
+    protected void LoadMaVungDT()
+    {
+        isCuocdoitac = true;
+        if (FK_DICHVUDOITAC == "")
+        {
+            FK_DICHVUDOITAC = FK_DICHVU;
+        }
+        string SelectSQL;
+        SelectSQL = "Select DMMAVUNGDT.PK_ID FROM DMMAVUNGDT WHERE FK_MASANPHAM = " + FK_DICHVUDOITAC + " AND FK_DOITAC = " + FK_DOITAC + " AND C_TYPE = 2 AND ((DMMAVUNGDT.C_DESC = '" + FK_QUOCGIA + "') OR (DMMAVUNGDT.C_DESC LIKE '%," + FK_QUOCGIA + ",%') OR (DMMAVUNGDT.C_DESC LIKE '%," + FK_QUOCGIA + "') OR (DMMAVUNGDT.C_DESC LIKE '" + FK_QUOCGIA + ",%')) AND (DMMAVUNGDT.FK_VUNGLAMVIEC = N'" + Session["VUNGLAMVIEC"].ToString() + "')";
+        DataTable oDataTable = new DataTable();
+        ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
+        oDataTable = SelectQuery.query_data(SelectSQL);
+        if (oDataTable.Rows.Count != 0)
+        {
+            FK_MAVUNGDT = oDataTable.Rows[0]["PK_ID"].ToString();
+        }
+        else
+        {
+            FK_MAVUNGDT = "";
         }
     }
     protected void btnShowAll_Click(object sender, System.Web.UI.ImageClickEventArgs e)
@@ -679,7 +702,7 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
                 txtCODE.Text = GetMaxBill();
                 txtC_TYGIA.Text = GetTyGia();
                 if (Session["SaveAddNew"] == "True")
-                {                    
+                {
                     if (Session["MAXIDQT"].ToString() != "")
                     {
                         string SQLSELECT = String.Format("SELECT NHANGUI.*  FROM NHANGUI WHERE NHANGUI.PK_ID = {0}", Session["MAXIDQT"].ToString());
@@ -844,7 +867,7 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
                     {
                         FK_MABANGCUOC = "";
                         C_VALUE1 = 0;
-                        C_VALUE2 = 0;                        
+                        C_VALUE2 = 0;
                     }
                 }
                 else
@@ -945,7 +968,7 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
             }
             foreach (GridDataItem item in RadGridNHANGUIQT.SelectedItems)
             {
-                if (!ValidateDeleteGroup(item["C_BILLFIX"].Text.Replace("BC","").Trim()))
+                if (!ValidateDeleteGroup(item["C_BILLFIX"].Text.Replace("BC", "").Trim()))
                 {
                     SetMessage("Không thể xóa nhận gửi \"" + item["c_name"].Text + "\" do có tham chiếu dữ liệu khác.");
                     RadGridNHANGUIQT.Rebind();
@@ -1002,7 +1025,7 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
                     " ELSE" +
                     " BEGIN" +
                     " UPDATE [SOQUYTIENMAT] SET [C_NGAY] = '" + String.Format("{0:yyyy-MM-dd hh:mm:ss tt}", System.DateTime.Now.ToUniversalTime().AddHours(7)) + "',[C_SOTIEN] = " + TIENHANG + " WHERE [C_BILL] = '" + (item["C_BILLFIX"].FindControl("lblC_BILL") as Label).Text.Replace("BC", "").Trim() + "'" +
-                    " END;"; 
+                    " END;";
                 }
                 ITCLIB.Admin.SQL UpdateQuery = new ITCLIB.Admin.SQL();
                 UpdateQuery.ExecuteNonQuery(UpdateSQL);
@@ -1367,49 +1390,26 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
         decimal GIACUOCLKDTTL = 0;
         GIADOITAC = 0;
         GIADOITACTL = 0;
-        if (FK_DICHVUDOITAC == "")
+        decimal PPXDDT = 0;
+        string SelectSQL4;
+        SelectSQL4 = "Select DMPPXDDT.C_PPXD FROM DMPPXDDT WHERE DMPPXDDT.FK_MASANPHAM =" + FK_DICHVUDOITAC + " AND FK_DOITAC = " + FK_DOITAC;
+        DataTable oDataTable4 = new DataTable();
+        ITCLIB.Admin.SQL SelectQuery4 = new ITCLIB.Admin.SQL();
+        oDataTable4 = SelectQuery4.query_data(SelectSQL4);
+        if (oDataTable4.Rows.Count != 0)
         {
-            FK_MAVUNGDT = FK_MAVUNG;
-        }
-        else
-        {
-            decimal PPXDDT = 0;
-            string SelectSQL4;
-            SelectSQL4 = "Select DMPPXDDT.C_PPXD FROM DMPPXDDT WHERE DMPPXDDT.FK_MASANPHAM =" + FK_DICHVUDOITAC + " AND FK_DOITAC = " + FK_DOITAC;
-            DataTable oDataTable4 = new DataTable();
-            ITCLIB.Admin.SQL SelectQuery4 = new ITCLIB.Admin.SQL();
-            oDataTable4 = SelectQuery4.query_data(SelectSQL4);
-            if (oDataTable4.Rows.Count != 0)
+            if (oDataTable4.Rows[0]["C_PPXD"] != DBNull.Value)
             {
-                if (oDataTable4.Rows[0]["C_PPXD"] != DBNull.Value)
-                {
-                    PPXDDT = decimal.Parse(oDataTable4.Rows[0]["C_PPXD"].ToString());
-                }
-            }
-            if (FK_QUOCGIA != "")
-            {
-                string SelectSQL;
-                SelectSQL = "Select DMMAVUNG.PK_ID FROM DMMAVUNG WHERE FK_MASANPHAM=" + FK_DICHVUDOITAC + " AND C_TYPE = 2 AND ((DMMAVUNG.C_DESC ='" + FK_QUOCGIA + "') OR (DMMAVUNG.C_DESC LIKE '%," + FK_QUOCGIA + ",%') OR (DMMAVUNG.C_DESC LIKE '%," + FK_QUOCGIA + "') OR (DMMAVUNG.C_DESC LIKE '" + FK_QUOCGIA + ",%')) AND (DMMAVUNG.FK_VUNGLAMVIEC = N'" + Session["VUNGLAMVIEC"].ToString() + "')";
-                DataTable oDataTable = new DataTable();
-                ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
-                oDataTable = SelectQuery.query_data(SelectSQL);
-                if (oDataTable.Rows.Count != 0)
-                {
-                    FK_MAVUNGDT = oDataTable.Rows[0]["PK_ID"].ToString();
-                }
-                else
-                {
-                    FK_MAVUNGDT = "";
-                }
+                PPXDDT = decimal.Parse(oDataTable4.Rows[0]["C_PPXD"].ToString());
             }
         }
         string SelectSQL1;
-        SelectSQL1 = "Select DMCHITIETCUOCDT.PK_ID,DMCHITIETCUOCDT.C_KHOILUONG,DMCHITIETCUOCDT.C_CUOCPHI,DMCHITIETCUOCDT.C_CUOCPHITL,DMCHITIETCUOCDT.C_TYPE FROM DMCHITIETCUOCDT WHERE C_LOAITIEN = N'USD' AND FK_DOITAC = " + FK_DOITAC + " AND FK_MAVUNG = " + FK_MAVUNGDT + " AND C_TYPE <> 1 AND C_TYPE1 <> 1 ORDER BY C_KHOILUONG  ASC";
+        SelectSQL1 = "Select DMCHITIETCUOCDT.PK_ID,DMCHITIETCUOCDT.C_KHOILUONG,DMCHITIETCUOCDT.C_CUOCPHI,DMCHITIETCUOCDT.C_CUOCPHITL,DMCHITIETCUOCDT.C_TYPE FROM DMCHITIETCUOCDT WHERE C_LOAITIEN = N'USD' AND FK_MAVUNG = " + FK_MAVUNGDT + " AND C_TYPE <> 1 AND C_TYPE1 <> 1 ORDER BY C_KHOILUONG  ASC";
         ITCLIB.Admin.SQL SelectQuery1 = new ITCLIB.Admin.SQL();
         DataTable oDataTable1 = new DataTable();
         oDataTable1 = SelectQuery1.query_data(SelectSQL1);
         string SelectSQL2;
-        SelectSQL2 = "Select DMCHITIETCUOCDT.PK_ID,DMCHITIETCUOCDT.C_KHOILUONG,DMCHITIETCUOCDT.C_CUOCPHI,DMCHITIETCUOCDT.C_CUOCPHITL,DMCHITIETCUOCDT.C_TYPE FROM DMCHITIETCUOCDT WHERE C_LOAITIEN = N'USD' AND FK_DOITAC = " + FK_DOITAC + " AND FK_MAVUNG = " + FK_MAVUNGDT + " AND C_TYPE = 1 AND C_TYPE1 <> 1 ORDER BY C_KHOILUONG  ASC";
+        SelectSQL2 = "Select DMCHITIETCUOCDT.PK_ID,DMCHITIETCUOCDT.C_KHOILUONG,DMCHITIETCUOCDT.C_CUOCPHI,DMCHITIETCUOCDT.C_CUOCPHITL,DMCHITIETCUOCDT.C_TYPE FROM DMCHITIETCUOCDT WHERE C_LOAITIEN = N'USD' AND FK_MAVUNG = " + FK_MAVUNGDT + " AND C_TYPE = 1 AND C_TYPE1 <> 1 ORDER BY C_KHOILUONG  ASC";
         DataTable oDataTable2 = new DataTable();
         ITCLIB.Admin.SQL SelectQuery2 = new ITCLIB.Admin.SQL();
         oDataTable2 = SelectQuery2.query_data(SelectSQL2);
@@ -1426,7 +1426,7 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
             GIACUOCLKDTTL = 0;
         }
         string SelectSQL3;
-        SelectSQL3 = "Select DMCHITIETCUOCDT.PK_ID,DMCHITIETCUOCDT.C_KHOILUONG,DMCHITIETCUOCDT.C_CUOCPHI,DMCHITIETCUOCDT.C_CUOCPHITL,DMCHITIETCUOCDT.C_TYPE FROM DMCHITIETCUOCDT WHERE C_LOAITIEN = N'USD' AND FK_DOITAC = " + FK_DOITAC + " AND FK_MAVUNG = " + FK_MAVUNGDT + " AND C_TYPE1 = 1 ORDER BY C_KHOILUONG  ASC";
+        SelectSQL3 = "Select DMCHITIETCUOCDT.PK_ID,DMCHITIETCUOCDT.C_KHOILUONG,DMCHITIETCUOCDT.C_CUOCPHI,DMCHITIETCUOCDT.C_CUOCPHITL,DMCHITIETCUOCDT.C_TYPE FROM DMCHITIETCUOCDT WHERE C_LOAITIEN = N'USD' AND FK_MAVUNG = " + FK_MAVUNGDT + " AND C_TYPE1 = 1 ORDER BY C_KHOILUONG  ASC";
         ITCLIB.Admin.SQL SelectQuery3 = new ITCLIB.Admin.SQL();
         DataTable oDataTable3 = new DataTable();
         oDataTable3 = SelectQuery3.query_data(SelectSQL3);
@@ -1665,7 +1665,7 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
         oDataTable = SelectQuery.query_data(SelectSQL);
         if (oDataTable.Rows.Count != 0)
         {
-           return false;
+            return false;
         }
         else
         {
