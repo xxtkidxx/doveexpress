@@ -221,7 +221,7 @@ public partial class module_KHIEUNAI : System.Web.UI.UserControl
     protected string GetMaxKN()
     {
         string maxbill = "0001";
-        string SelectSQL = "SELECT MAX(CAST(C_BILL AS DECIMAL)) as MAXKN FROM KHIEUNAI";
+        string SelectSQL = "SELECT MAX(CAST(C_CODE AS DECIMAL)) as MAXKN FROM KHIEUNAI";
         DataTable oDataTable = new DataTable();
         ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
         oDataTable = SelectQuery.query_data(SelectSQL);
