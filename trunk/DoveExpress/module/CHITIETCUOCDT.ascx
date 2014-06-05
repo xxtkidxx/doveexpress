@@ -239,12 +239,11 @@ Phụ phí xăng dầu(%):&nbsp;
 <asp:SqlDataSource ID="CHITIETCUOCDTDataSource" runat="server" 
     ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>" 
     DeleteCommand="DELETE FROM [DMCHITIETCUOCDT] WHERE [PK_ID] = @PK_ID" 
-    InsertCommand="INSERT INTO [DMCHITIETCUOCDT] ([FK_DoiTac], [FK_MASANPHAM], [FK_MAVUNG], [C_LOAITIEN], [C_KHOILUONG], [C_CUOCPHI], [C_CUOCPHITL], [C_TYPE], [C_TYPE1]) VALUES (@FK_DoiTac, @FK_MASANPHAM, @FK_MAVUNG, @C_LOAITIEN, @C_KHOILUONG, @C_CUOCPHI,@C_CUOCPHITL,0,0)" 
-    SelectCommand="SELECT [PK_ID], [FK_DoiTac], [FK_MASANPHAM], [FK_MAVUNG], [C_LOAITIEN], [C_KHOILUONG], [C_CUOCPHI], [C_CUOCPHITL], [C_TYPE], [C_TYPE1] FROM [DMCHITIETCUOCDT] WHERE [FK_MAVUNG] =@FK_MAVUNG AND [FK_DoiTac] = @FK_DoiTac AND [FK_MASANPHAM] = @FK_MASANPHAM AND [C_LOAITIEN] = @C_LOAITIEN ORDER BY [C_TYPE] ASC, [C_TYPE1] ASC, [C_KHOILUONG] ASC" 
+    InsertCommand="INSERT INTO [DMCHITIETCUOCDT] ([FK_MASANPHAM], [FK_MAVUNG], [C_LOAITIEN], [C_KHOILUONG], [C_CUOCPHI], [C_CUOCPHITL], [C_TYPE], [C_TYPE1]) VALUES (@FK_MASANPHAM, @FK_MAVUNG, @C_LOAITIEN, @C_KHOILUONG, @C_CUOCPHI,@C_CUOCPHITL,0,0)" 
+    SelectCommand="SELECT [PK_ID], [FK_MASANPHAM], [FK_MAVUNG], [C_LOAITIEN], [C_KHOILUONG], [C_CUOCPHI], [C_CUOCPHITL], [C_TYPE], [C_TYPE1] FROM [DMCHITIETCUOCDT] WHERE [FK_MAVUNG] =@FK_MAVUNG AND [FK_MASANPHAM] = @FK_MASANPHAM AND [C_LOAITIEN] = @C_LOAITIEN ORDER BY [C_TYPE] ASC, [C_TYPE1] ASC, [C_KHOILUONG] ASC" 
     UpdateCommand="UPDATE [DMCHITIETCUOCDT] SET [C_KHOILUONG] = @C_KHOILUONG, [C_CUOCPHI] = @C_CUOCPHI, [C_CUOCPHITL] = @C_CUOCPHITL WHERE [PK_ID] = @PK_ID">
     <SelectParameters>
         <asp:Parameter Name="FK_MAVUNG" Type="Int32" />
-        <asp:ControlParameter ControlID="cmbDoiTac" DefaultValue="0" Name="FK_DoiTac" PropertyName="SelectedValue" />
         <asp:ControlParameter ControlID="cmbSanPham" DefaultValue="0" Name="FK_MASANPHAM" PropertyName="SelectedValue" />
         <asp:ControlParameter ControlID="cmbLoaiTien" DefaultValue="0" Name="C_LOAITIEN" PropertyName="SelectedValue" />
     </SelectParameters>
@@ -252,7 +251,6 @@ Phụ phí xăng dầu(%):&nbsp;
         <asp:Parameter Name="PK_ID" Type="Int32" />
     </DeleteParameters>
     <InsertParameters>
-        <asp:ControlParameter ControlID="cmbDoiTac" DefaultValue="0" Name="FK_DoiTac" PropertyName="SelectedValue" />
         <asp:ControlParameter ControlID="cmbSanPham" DefaultValue="0" Name="FK_MASANPHAM" PropertyName="SelectedValue" />
         <asp:Parameter Name="FK_MAVUNG" Type="Int32" />
          <asp:ControlParameter ControlID="cmbLoaiTien" DefaultValue="0" Name="C_LOAITIEN" PropertyName="SelectedValue" />
@@ -268,11 +266,12 @@ Phụ phí xăng dầu(%):&nbsp;
     </UpdateParameters>
 </asp:SqlDataSource>
 <asp:SqlDataSource ID="MAVUNGDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
-        DeleteCommand="DELETE FROM [DMMAVUNG] WHERE [PK_ID] = @PK_ID" 
-        InsertCommand="INSERT INTO [DMMAVUNG] ([C_CODE], [C_NAME], [C_DESC]) VALUES (@C_CODE, @C_NAME, @C_DESC)"
-        SelectCommand="SELECT [PK_ID], [C_CODE], [C_NAME], [C_DESC] FROM [DMMAVUNG] WHERE FK_MASANPHAM = @FK_MASANPHAM AND DMMAVUNG.FK_VUNGLAMVIEC = @FK_VUNGLAMVIEC ORDER BY LTRIM([C_CODE])"      
-        UpdateCommand="UPDATE [DMMAVUNG] SET [C_CODE] = @C_CODE, [C_NAME] = @C_NAME,[C_DESC] = @C_DESC WHERE [PK_ID] = @PK_ID" >
+        DeleteCommand="DELETE FROM [DMMAVUNGDT] WHERE [PK_ID] = @PK_ID" 
+        InsertCommand="INSERT INTO [DMMAVUNGDT] ([FK_DOITAC], [C_CODE], [C_NAME], [C_DESC]) VALUES (@FK_DOITAC, @C_CODE, @C_NAME, @C_DESC)"
+        SelectCommand="SELECT [PK_ID], [C_CODE], [C_NAME], [C_DESC] FROM [DMMAVUNGDT] WHERE FK_MASANPHAM = @FK_MASANPHAM AND DMMAVUNGDT.FK_VUNGLAMVIEC = @FK_VUNGLAMVIEC AND DMMAVUNGDT.FK_DOITAC = @FK_DOITAC ORDER BY LTRIM([C_CODE])"      
+        UpdateCommand="UPDATE [DMMAVUNGDT] SET [C_CODE] = @C_CODE, [C_NAME] = @C_NAME,[C_DESC] = @C_DESC WHERE [PK_ID] = @PK_ID" >
         <SelectParameters>
+            <asp:ControlParameter ControlID="cmbDoiTac" DefaultValue="0" Name="FK_DoiTac" PropertyName="SelectedValue" />
             <asp:ControlParameter ControlID="cmbSanPham" DefaultValue="0" Name="FK_MASANPHAM" PropertyName="SelectedValue" />
              <asp:SessionParameter Name="FK_VUNGLAMVIEC" Type="String" SessionField="VUNGLAMVIEC" />
         </SelectParameters>
@@ -285,6 +284,7 @@ Phụ phí xăng dầu(%):&nbsp;
             <asp:Parameter Name="PK_ID" Type="Int32" />
         </DeleteParameters>
         <InsertParameters>
+            <asp:ControlParameter ControlID="cmbDoiTac" DefaultValue="0" Name="FK_DoiTac" PropertyName="SelectedValue" />
             <asp:Parameter Name="C_CODE" Type="String" />
             <asp:Parameter Name="C_NAME" Type="String" />
             <asp:Parameter Name="C_DESC" Type="String" />

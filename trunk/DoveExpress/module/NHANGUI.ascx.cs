@@ -101,6 +101,17 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
             Session["FK_MAVUNG"] = value;
         }
     }
+    private string FK_MAVUNGDT
+    {
+        get
+        {
+            return Session["FK_MAVUNGDT"] as string;
+        }
+        set
+        {
+            Session["FK_MAVUNGDT"] = value;
+        }
+    }
     private int C_KHOILUONG
     {
         get
@@ -391,7 +402,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
                     FK_MABANGCUOC = oDataTable1.Rows[0]["PK_ID"].ToString();
                     if (FK_DICHVU != "")
                     {
-                        LoadDVPT(FK_DICHVU, FK_MABANGCUOC);
+                        LoadDVPT();
                     }
                 }
                 else
@@ -414,23 +425,10 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
             FK_QUANHUYEN = arrayvalue[1];
             if (FK_DICHVU != "")
             {
-                string SelectSQL;
-                SelectSQL = "Select DMMAVUNG.PK_ID FROM DMMAVUNG WHERE FK_MASANPHAM=" + FK_DICHVU + " AND C_TYPE = 1 AND ((DMMAVUNG.C_DESC ='" + FK_QUANHUYEN + "') OR (DMMAVUNG.C_DESC LIKE '%," + FK_QUANHUYEN + ",%') OR (DMMAVUNG.C_DESC LIKE '%," + FK_QUANHUYEN + "') OR (DMMAVUNG.C_DESC LIKE '" + FK_QUANHUYEN + ",%')) AND (DMMAVUNG.FK_VUNGLAMVIEC = N'" + Session["VUNGLAMVIEC"].ToString() + "')";
-                DataTable oDataTable = new DataTable();
-                ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
-                oDataTable = SelectQuery.query_data(SelectSQL);
-                if (oDataTable.Rows.Count != 0)
+                LoadMaVung();
+                if (FK_DOITAC != "")
                 {
-                    FK_MAVUNG = oDataTable.Rows[0]["PK_ID"].ToString();
-                    if (FK_MABANGCUOC != "")
-                    {
-                        LoadCOD(FK_MABANGCUOC, FK_MAVUNG);
-                    }
-                }
-                else
-                {
-                    FK_MAVUNG = "";
-                    Alarm = "msg,-,Quận huyện này không nằm trong vùng tính cước nào";
+                    LoadMaVungDT();
                 }
             }
             isCuocchinh = true;
@@ -440,27 +438,14 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
             FK_DICHVU = arrayvalue[1];
             if (FK_MABANGCUOC != "")
             {
-                LoadDVPT(FK_DICHVU, FK_MABANGCUOC);
+                LoadDVPT();
             }
             if (FK_QUANHUYEN != "")
             {
-                string SelectSQL;
-                SelectSQL = "Select DMMAVUNG.PK_ID FROM DMMAVUNG WHERE FK_MASANPHAM=" + FK_DICHVU + " AND C_TYPE = 1 AND FK_VUNGLAMVIEC = N'" + Session["VUNGLAMVIEC"] + "' AND ((DMMAVUNG.C_DESC ='" + FK_QUANHUYEN + "') OR (DMMAVUNG.C_DESC LIKE '%," + FK_QUANHUYEN + ",%') OR (DMMAVUNG.C_DESC LIKE '%," + FK_QUANHUYEN + "') OR (DMMAVUNG.C_DESC LIKE '" + FK_QUANHUYEN + ",%')) AND (DMMAVUNG.FK_VUNGLAMVIEC = N'" + Session["VUNGLAMVIEC"].ToString() + "')";
-                DataTable oDataTable = new DataTable();
-                ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
-                oDataTable = SelectQuery.query_data(SelectSQL);
-                if (oDataTable.Rows.Count != 0)
+                LoadMaVung();
+                if (FK_DOITAC != "")
                 {
-                    FK_MAVUNG = oDataTable.Rows[0]["PK_ID"].ToString();
-                    if (FK_MABANGCUOC != "")
-                    {
-                        LoadCOD(FK_MABANGCUOC, FK_MAVUNG);
-                    }
-                }
-                else
-                {
-                    FK_MAVUNG = "";
-                    Alarm = "msg,-,Quận huyện này không nằm trong vùng tính cước nào";
+                    LoadMaVungDT();
                 }
             }
             isCuocchinh = true;
@@ -469,11 +454,15 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
         {
             C_KHOILUONG = int.Parse(arrayvalue[1]);
             isCuocchinh = true;
+            isCuocdoitac = true;
         }
         else if ((arrayvalue[0] == "cmbFK_DOITAC") && (FK_DOITAC != arrayvalue[1]))
         {
             FK_DOITAC = arrayvalue[1];
-            isCuocdoitac = true;
+            if (FK_QUANHUYEN != "" && FK_DICHVU != "")
+            {
+                LoadMaVungDT();
+            }            
         }
         if (C_KHOILUONG != 0)
         {
@@ -482,7 +471,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
                 GiaCuocChinh();
             }
             //CUOCCHINH = (Math.Round((CUOCCHINH + ((CUOCCHINH * PPXD) / 100)) / 1000)) * 1000;
-            if ((FK_DOITAC != "") && (isCuocdoitac))
+            if ((FK_MAVUNGDT != "") && (isCuocdoitac))
             {
                 GiaCuocDoiTac();
             }
@@ -499,9 +488,9 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
             ScriptManager.RegisterClientScriptBlock(Page, typeof(Page), "result", script, true);
         }
     }
-    protected void LoadDVPT(string FKDICHVU, string FKMABANGCUOC)
+    protected void LoadDVPT()
     {
-        string SelectSQL = "Select DMDICHVUPHUTROI.C_VALUE,DMDICHVUPHUTROI.C_VALUE1,DMDICHVUPHUTROI.C_TYPE FROM DMDICHVUPHUTROI WHERE DMDICHVUPHUTROI.FK_MASANPHAM =" + FKDICHVU + " AND FK_MABANGCUOC = " + FKMABANGCUOC;
+        string SelectSQL = "Select DMDICHVUPHUTROI.C_VALUE,DMDICHVUPHUTROI.C_VALUE1,DMDICHVUPHUTROI.C_TYPE FROM DMDICHVUPHUTROI WHERE DMDICHVUPHUTROI.FK_MASANPHAM =" + FK_DICHVU + " AND FK_MABANGCUOC = " + FK_MABANGCUOC;
         DataTable oDataTable = new DataTable();
         ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
         oDataTable = SelectQuery.query_data(SelectSQL);
@@ -540,9 +529,9 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
             }
         }
     }
-    protected void LoadCOD(string FKMABANGCUOC, string FKMAVUNG)
+    protected void LoadCOD()
     {
-        string SelectSQL = "Select DMDICHVUPHUTROI.C_VALUE,DMDICHVUPHUTROI.C_VALUE1,DMDICHVUPHUTROI.C_TYPE FROM DMDICHVUPHUTROI WHERE FK_MABANGCUOC = " + FKMABANGCUOC + " AND FK_MAVUNG = " + FK_MAVUNG;
+        string SelectSQL = "Select DMDICHVUPHUTROI.C_VALUE,DMDICHVUPHUTROI.C_VALUE1,DMDICHVUPHUTROI.C_TYPE FROM DMDICHVUPHUTROI WHERE FK_MABANGCUOC = " + FK_MABANGCUOC + " AND FK_MAVUNG = " + FK_MAVUNG;
         DataTable oDataTable = new DataTable();
         ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
         oDataTable = SelectQuery.query_data(SelectSQL);
@@ -556,6 +545,44 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
                     CODY = (oDataTable.Rows[i]["C_VALUE1"] == DBNull.Value) ? 0 : decimal.Parse(oDataTable.Rows[i]["C_VALUE1"].ToString());
                 }
             }
+        }
+    }
+    protected void LoadMaVung()
+    {
+        string SelectSQL;
+        SelectSQL = "Select DMMAVUNG.PK_ID FROM DMMAVUNG WHERE FK_MASANPHAM=" + FK_DICHVU + " AND C_TYPE = 1 AND FK_VUNGLAMVIEC = N'" + Session["VUNGLAMVIEC"] + "' AND ((DMMAVUNG.C_DESC ='" + FK_QUANHUYEN + "') OR (DMMAVUNG.C_DESC LIKE '%," + FK_QUANHUYEN + ",%') OR (DMMAVUNG.C_DESC LIKE '%," + FK_QUANHUYEN + "') OR (DMMAVUNG.C_DESC LIKE '" + FK_QUANHUYEN + ",%'))";
+        DataTable oDataTable = new DataTable();
+        ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
+        oDataTable = SelectQuery.query_data(SelectSQL);
+        if (oDataTable.Rows.Count != 0)
+        {
+            FK_MAVUNG = oDataTable.Rows[0]["PK_ID"].ToString();
+            if (FK_MABANGCUOC != "")
+            {
+                LoadCOD();
+            }
+        }
+        else
+        {
+            FK_MAVUNG = "";
+            Alarm = "msg,-,Quận huyện này không nằm trong vùng tính cước nào";
+        }
+    }
+    protected void LoadMaVungDT()
+    {
+        isCuocdoitac = true;
+        string SelectSQL;
+        SelectSQL = "Select DMMAVUNGDT.PK_ID FROM DMMAVUNGDT WHERE FK_MASANPHAM=" + FK_DICHVU + " AND FK_DOITAC = " + FK_DOITAC + " AND C_TYPE = 1 AND FK_VUNGLAMVIEC = N'" + Session["VUNGLAMVIEC"] + "' AND ((DMMAVUNGDT.C_DESC ='" + FK_QUANHUYEN + "') OR (DMMAVUNGDT.C_DESC LIKE '%," + FK_QUANHUYEN + ",%') OR (DMMAVUNGDT.C_DESC LIKE '%," + FK_QUANHUYEN + "') OR (DMMAVUNGDT.C_DESC LIKE '" + FK_QUANHUYEN + ",%'))";
+        DataTable oDataTable = new DataTable();
+        ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
+        oDataTable = SelectQuery.query_data(SelectSQL);
+        if (oDataTable.Rows.Count != 0)
+        {
+            FK_MAVUNGDT = oDataTable.Rows[0]["PK_ID"].ToString();
+        }
+        else
+        {
+            FK_MAVUNGDT = "";
         }
     }
     protected void btnShowAll_Click(object sender, System.Web.UI.ImageClickEventArgs e)
@@ -831,7 +858,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
                                 FK_MAVUNG = "";
                             }
                             PPXD = 0;
-                            LoadDVPT(FK_DICHVU, FK_MABANGCUOC);
+                            LoadDVPT();
                             C_KHOILUONG = int.Parse(oDataTableNew.Rows[0]["C_KHOILUONG"].ToString());
                             CUOCCHINH = decimal.Parse(oDataTableNew.Rows[0]["C_GIACUOC"].ToString());
                             FK_DOITAC = oDataTableNew.Rows[0]["FK_DOITAC"].ToString();
@@ -1307,12 +1334,12 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
         int C_KHOILUONGLKDT = 0;
         decimal GIACUOCLKDT = 0;
         string SelectSQL1;
-        SelectSQL1 = "Select DMCHITIETCUOCDT.PK_ID,DMCHITIETCUOCDT.C_KHOILUONG,DMCHITIETCUOCDT.C_CUOCPHI,DMCHITIETCUOCDT.C_TYPE FROM DMCHITIETCUOCDT WHERE C_LOAITIEN = N'VND' AND FK_DOITAC = " + FK_DOITAC + " AND FK_MAVUNG = " + FK_MAVUNG + " AND C_TYPE <> 1 AND C_TYPE1 <> 1 ORDER BY C_KHOILUONG  ASC";
+        SelectSQL1 = "Select DMCHITIETCUOCDT.PK_ID,DMCHITIETCUOCDT.C_KHOILUONG,DMCHITIETCUOCDT.C_CUOCPHI,DMCHITIETCUOCDT.C_TYPE FROM DMCHITIETCUOCDT WHERE C_LOAITIEN = N'VND' AND FK_MAVUNG = " + FK_MAVUNGDT + " AND C_TYPE <> 1 AND C_TYPE1 <> 1 ORDER BY C_KHOILUONG  ASC";
         ITCLIB.Admin.SQL SelectQuery1 = new ITCLIB.Admin.SQL();
         DataTable oDataTable1 = new DataTable();
         oDataTable1 = SelectQuery1.query_data(SelectSQL1);
         string SelectSQL2;
-        SelectSQL2 = "Select DMCHITIETCUOCDT.PK_ID,DMCHITIETCUOCDT.C_KHOILUONG,DMCHITIETCUOCDT.C_CUOCPHI,DMCHITIETCUOCDT.C_TYPE FROM DMCHITIETCUOCDT WHERE C_LOAITIEN = N'VND' AND FK_DOITAC = " + FK_DOITAC + " AND FK_MAVUNG = " + FK_MAVUNG + " AND C_TYPE = 1 AND C_TYPE1 <> 1 ORDER BY C_KHOILUONG  ASC";
+        SelectSQL2 = "Select DMCHITIETCUOCDT.PK_ID,DMCHITIETCUOCDT.C_KHOILUONG,DMCHITIETCUOCDT.C_CUOCPHI,DMCHITIETCUOCDT.C_TYPE FROM DMCHITIETCUOCDT WHERE C_LOAITIEN = N'VND' AND FK_MAVUNG = " + FK_MAVUNGDT + " AND C_TYPE = 1 AND C_TYPE1 <> 1 ORDER BY C_KHOILUONG  ASC";
         DataTable oDataTable2 = new DataTable();
         ITCLIB.Admin.SQL SelectQuery2 = new ITCLIB.Admin.SQL();
         oDataTable2 = SelectQuery2.query_data(SelectSQL2);
@@ -1327,7 +1354,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
             GIACUOCLKDT = 0;
         }
         string SelectSQL3;
-        SelectSQL3 = "Select DMCHITIETCUOCDT.PK_ID,DMCHITIETCUOCDT.C_KHOILUONG,DMCHITIETCUOCDT.C_CUOCPHI,DMCHITIETCUOCDT.C_TYPE FROM DMCHITIETCUOCDT WHERE C_LOAITIEN = N'VND' AND FK_DOITAC = " + FK_DOITAC + " AND FK_MAVUNG = " + FK_MAVUNG + " AND C_TYPE1 = 1 ORDER BY C_KHOILUONG  ASC";
+        SelectSQL3 = "Select DMCHITIETCUOCDT.PK_ID,DMCHITIETCUOCDT.C_KHOILUONG,DMCHITIETCUOCDT.C_CUOCPHI,DMCHITIETCUOCDT.C_TYPE FROM DMCHITIETCUOCDT WHERE C_LOAITIEN = N'VND' AND FK_MAVUNG = " + FK_MAVUNG + " AND C_TYPE1 = 1 ORDER BY C_KHOILUONG  ASC";
         ITCLIB.Admin.SQL SelectQuery3 = new ITCLIB.Admin.SQL();
         DataTable oDataTable3 = new DataTable();
         oDataTable3 = SelectQuery3.query_data(SelectSQL3);
@@ -1495,6 +1522,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
         FK_MABANGCUOC = "";
         FK_QUANHUYEN = "";
         FK_MAVUNG = "";
+        FK_MAVUNGDT = "";
         C_KHOILUONG = 0;
         PPXD = 0;
         VAT = 0;
