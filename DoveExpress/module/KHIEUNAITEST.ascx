@@ -28,7 +28,7 @@
                 var obj = new Object();
 
                 obj.PK_ID = "";
-                obj.C_CODE = "";
+                obj.C_CODE = "<%=GetMaxKN()%>";
                 obj.C_TYPE = "Khác";
                 obj.C_DATE = "";
                 obj.C_BILL = "";
@@ -36,9 +36,8 @@
                 obj.C_TENKH = "";
                 obj.C_SDT = "";
                 obj.C_NOIDUNG = "";
-                obj.FK_NGUOITAO = "";
+                obj.FK_NGUOITAO = "<%=Session["UserID"].ToString()%>";
                 obj.C_STATUS = "Đang xử lý";
-
                 return obj;
             }
         };
@@ -61,6 +60,7 @@
         }
 
         function setValues(khieunai) {
+            checkEdit = false;
             $get("<%= txtID.ClientID %>").value = khieunai.PK_ID;
             $find("<%= txtC_CODE.ClientID %>").set_value(khieunai.C_CODE);
             $find("<%= radC_DATE.ClientID %>").set_selectedDate(khieunai.C_DATE);
@@ -73,6 +73,7 @@
             $find("<%= txtC_CODE.ClientID %>").focus();
             $find("<%= cmbMaKhachHang.ClientID %>").findItemByText(khieunai.FK_KHACHHANG).select();
             $find("<%= cmbFK_NGUOITAO.ClientID %>").findItemByValue(khieunai.FK_NGUOITAO).select();
+            checkEdit = true;
         }
 
         function getValues() {
@@ -101,8 +102,8 @@
             var grid = $find("<%= RadGridKHIEUNAI.ClientID %>");
                 grid.repaint();
             }
-
-            function tabSelected(sender, args) {
+        checkEdit = true;
+        function tabSelected(sender, args) {
                 if (currentkhieunai == null) {
                     currentkhieunai = getValues();
                 }
@@ -145,12 +146,102 @@
             }
 
     </script>
+        <script type="text/javascript">
+            var cmbC_TYPE;
+            function OnClientLoadcmbC_TYPE(sender) {
+                cmbC_TYPE = sender;
+            }
+            var cmbMaKhachHang;
+            function OnClientLoadcmbMaKhachHang(sender) {
+                cmbMaKhachHang = sender;
+            }
+            var txtC_TENKH;
+            function OnClientLoadtxtC_TENKH(sender) {
+                txtC_TENKH = sender;
+            }
+            var txtC_SDT;
+            function OnClientLoadtxtC_SDT(sender) {
+                txtC_SDT = sender;
+            }
+            var txtC_BILL;
+            function OnClientLoadtxtC_BILL(sender) {
+                txtC_BILL = sender;
+            }
+            function OnKeyPressRadTextBox(sender, eventArgs) {
+                var charCode = eventArgs.get_keyCode();
+                if (charCode != 46 && charCode > 31 && (charCode < 48 || charCode > 57)) {
+                    eventArgs.set_cancel(true);
+                }
+                return false;
+            }
+            checkKH = true;
+            function cmbC_TYPEClientSelectedIndexChangedHandler(sender, eventArgs) {
+                if (checkEdit && eventArgs.get_item().get_value() == 'Bill') {
+                    checkKH = !checkKH;
+                    $find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("cmbC_TYPE;" + txtC_BILL.get_value());
+                var currentLoadingPanel = $find("<%= RadAjaxLoadingPanelKHIEUNAI.ClientID %>");
+                var currentUpdatedControl = "<%= RadSplitterKHIEUNAI.ClientID %>";
+                currentLoadingPanel.show(currentUpdatedControl);
+                }
+            return false;
+        }
+        function cmbMaKhachHangClientSelectedIndexChangedHandler(sender, eventArgs) {
+            if (checkEdit && checkKH) {
+                $find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("cmbMaKhachHang;" + eventArgs.get_item().get_value());
+                var currentLoadingPanel = $find("<%= RadAjaxLoadingPanelKHIEUNAI.ClientID %>");
+                var currentUpdatedControl = "<%= RadSplitterKHIEUNAI.ClientID %>";
+                currentLoadingPanel.show(currentUpdatedControl);
+            }
+            return false;
+        }
+        function OnValueChangedtxtC_BILL(sender, eventArgs) {
+            if (checkEdit && cmbC_TYPE.get_selectedItem().get_value() == 'Bill') {
+                checkKH = !checkKH;
+                $find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("txtC_BILL;" + eventArgs.get_newValue());
+                var currentLoadingPanel = $find("<%= RadAjaxLoadingPanelKHIEUNAI.ClientID %>");
+                var currentUpdatedControl = "<%= RadSplitterKHIEUNAI.ClientID %>";
+                currentLoadingPanel.show(currentUpdatedControl);
+            }
+            return false;
+        }
+    </script>
+     <script type="text/javascript">
+         function onResponseEndKN() {
+             if (typeof (result) != "undefined" && result && result != "") {
+                 //alert(result);
+                 var arrayOfStrings = result.split(",-,");
+                 if (arrayOfStrings[0] != "msg") {
+                     if (arrayOfStrings[0] != "") {
+                         if (!checkKH) {
+                             var comboItem = new Telerik.Web.UI.RadComboBoxItem();
+                             comboItem = cmbMaKhachHang.findItemByText(arrayOfStrings[0]);
+                             comboItem.set_text(arrayOfStrings[0]);
+                             cmbMaKhachHang.trackChanges();
+                             comboItem.select();
+                             cmbMaKhachHang.commitChanges();
+                         }
+                         txtC_TENKH.set_value(arrayOfStrings[1]);
+                         txtC_SDT.set_value(arrayOfStrings[2]);
+                     }
+                     else {
+                     }
+                     checkKH = true;
+                 }
+                 var currentLoadingPanel = $find("<%= RadAjaxLoadingPanelKHIEUNAI.ClientID %>");
+                 var currentUpdatedControl = "<%= RadSplitterKHIEUNAI.ClientID %>";
+                 currentLoadingPanel.hide(currentUpdatedControl);
+                 result = "";
+             }
+             return false;
+         }
+    </script>
 </telerik:RadCodeBlock>
-<telerik:RadSplitter ID="RadSplitterKHIEUNAI" runat="server" Width="100%" Height="550px">
+<telerik:RadAjaxLoadingPanel Skin="Vista" ID="RadAjaxLoadingPanelKHIEUNAI" runat="server" />
+<telerik:RadSplitter ID="RadSplitterKHIEUNAI" runat="server" Width="100%" Height="600px">
     <telerik:RadPane ID="LeftPaneKHIEUNAI" runat="server" Width="32%">
         <telerik:RadGrid ID="RadGridKHIEUNAI" DataSourceID="KHIEUNAIDataSource" runat="server" OnItemCommand="RadGridKHIEUNAI_ItemCommand"
             Skin="Vista" AllowPaging="True" PageSize="20" AllowSorting="True" AllowFilteringByColumn="True" GridLines="None" ShowStatusBar="True"
-            AutoGenerateColumns="False" OnDataBound="RadGridKHIEUNAI_DataBound" OnColumnCreated="RadGridKHIEUNAI_ColumnCreated" Height="300px">
+            AutoGenerateColumns="False" OnDataBound="RadGridKHIEUNAI_DataBound" OnColumnCreated="RadGridKHIEUNAI_ColumnCreated" Height="590px">
             <MasterTableView Name="MasterTableViewKHIEUNAI" CommandItemDisplay="Top" DataSourceID="KHIEUNAIDataSource" DataKeyNames="PK_ID" ClientDataKeyNames="PK_ID" EditMode="PopUp" NoMasterRecordsText="Không có dữ liệu">
                 <CommandItemTemplate>
                     <div style="padding: 5px 5px; float: left; width: auto">
@@ -262,7 +353,7 @@
                         <td style="width: 150px;"><span class="rtsTxtnew">Loại:</td>
                         <td colspan="4">
                             <telerik:RadComboBox ID="cmbC_TYPE"
-                                runat="server" EmptyMessage="Chọn">
+                                runat="server" EmptyMessage="Chọn" OnClientSelectedIndexChanged="cmbC_TYPEClientSelectedIndexChangedHandler" OnClientLoad="OnClientLoadcmbC_TYPE">
                                 <Items>
                                     <telerik:RadComboBoxItem Value="Bill" Text="Bill" />
                                     <telerik:RadComboBoxItem Value="Khác" Text="Khác" />
@@ -271,7 +362,7 @@
                         </td>
                         <td style="width: 150px;"><span class="rtsTxtnew">Số Bill/Chủ đề:</td>
                         <td colspan="4">
-                            <telerik:RadTextBox ID="txtC_BILL" runat="server" Width="90%"></telerik:RadTextBox>
+                            <telerik:RadTextBox ID="txtC_BILL" runat="server" Width="90%" ClientEvents-OnValueChanged="OnValueChangedtxtC_BILL" ClientEvents-OnLoad="OnClientLoadtxtC_BILL"></telerik:RadTextBox>
                         </td>
                     </tr>
                     <tr>
@@ -279,9 +370,10 @@
                             <span class="rtsTxtnew">Mã khách hàng:</span>
                         </td>
                         <td colspan="4">
-                            <telerik:RadComboBox ID="cmbMaKhachHang" runat="server"
+                            <telerik:RadComboBox ID="cmbMaKhachHang" runat="server" OnClientLoad="OnClientLoadcmbMaKhachHang"
                                 DataTextField="C_CODE" DataValueField="C_CODE" DataSourceID="KHACHHANGDataSource"
                                 ShowToggleImage="True" EmptyMessage="Chọn mã"
+                                OnClientSelectedIndexChanged="cmbMaKhachHangClientSelectedIndexChangedHandler"
                                 AllowCustomText="True" Filter="Contains">
                             </telerik:RadComboBox>
                         </td>
@@ -289,15 +381,14 @@
                             <span class="rtsTxtnew">Tên khách hàng:</span>
                         </td>
                         <td colspan="4">
-                            <telerik:RadTextBox ID="txtC_TENKH" Width="90%" runat="server">
+                            <telerik:RadTextBox ID="txtC_TENKH" Width="90%" runat="server" ClientEvents-OnLoad="OnClientLoadtxtC_TENKH">
                             </telerik:RadTextBox>
                         </td>
                         <td style="width: 100px;">
                             <span class="rtsTxtnew">Số điện thoại:</span>
                         </td>
                         <td colspan="4">
-                            <telerik:RadTextBox ID="txtC_SDT" Width="90%"
-                                runat="server">
+                            <telerik:RadTextBox ID="txtC_SDT" Width="90%" ClientEvents-OnLoad="OnClientLoadtxtC_SDT" runat="server">
                             </telerik:RadTextBox>
                         </td>
                     </tr>
