@@ -4,7 +4,7 @@
     <script type="text/javascript">
         function RowDblClick(sender, eventArgs) {
             var CanEdit = "<%=ITCLIB.Security.Security.CanEditModule("NHANGUIPH") %>";
-            if ((eventArgs.get_tableView().get_name() == "MasterTableViewNHANGUIPH") && (CanEdit == "True")) {
+            if ((eventArgs.get_tableView().get_name() == "MasterTableViewNHANGUIPH")) {
                 sender.get_masterTableView().editItem(eventArgs.get_itemIndexHierarchical());
             }
         }

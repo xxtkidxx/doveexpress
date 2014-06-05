@@ -60,7 +60,7 @@
     var CUOCCHINH;
     function RowDblClick(sender, eventArgs) {
             var CanEdit = "<%=ITCLIB.Security.Security.CanEditModule("NHANGUI") %>";
-            if ((eventArgs.get_tableView().get_name() == "MasterTableViewNHANGUIQT") && (CanEdit == "True")) {
+            if ((eventArgs.get_tableView().get_name() == "MasterTableViewNHANGUIQT")) {
                 sender.get_masterTableView().editItem(eventArgs.get_itemIndexHierarchical());
             }
     }
