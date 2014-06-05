@@ -60,7 +60,7 @@
         }
 
         function setValues(khieunai) {
-            checkEdit = false;
+            checkAjax = false;
             $get("<%= txtID.ClientID %>").value = khieunai.PK_ID;
             $find("<%= txtC_CODE.ClientID %>").set_value(khieunai.C_CODE);
             $find("<%= radC_DATE.ClientID %>").set_selectedDate(khieunai.C_DATE);
@@ -73,66 +73,74 @@
             $find("<%= txtC_CODE.ClientID %>").focus();
             $find("<%= cmbMaKhachHang.ClientID %>").findItemByText(khieunai.FK_KHACHHANG).select();
             $find("<%= cmbFK_NGUOITAO.ClientID %>").findItemByValue(khieunai.FK_NGUOITAO).select();
-            checkEdit = true;
+            checkAjax = true;
+            if (checkEdit) {
+                $find("<%= RadListViewKHIEUNAIGIAIQUYET.ClientID %>").rebind();
+            }
+
         }
 
         function getValues() {
             khieunai.PK_ID = $get("<%= txtID.ClientID %>").value;
-                khieunai.C_CODE = $find("<%= txtC_CODE.ClientID %>").get_value();
-                khieunai.C_DATE = $find("<%= radC_DATE.ClientID %>").get_selectedDate();
-                khieunai.C_TYPE = $find("<%= cmbC_TYPE.ClientID %>").get_value();
-                khieunai.C_BILL = $find("<%= txtC_BILL.ClientID %>").get_value();
-                khieunai.C_TENKH = $find("<%= txtC_TENKH.ClientID %>").get_value();
-                khieunai.C_SDT = $find("<%= txtC_SDT.ClientID %>").get_value();
-                khieunai.C_NOIDUNG = $find("<%= txtC_NOIDUNG.ClientID %>").get_value();
-                khieunai.C_STATUS = $find("<%= cmbC_STATUS.ClientID %>").get_value();
-                khieunai.FK_KHACHHANG = $find("<%= cmbMaKhachHang.ClientID %>").get_value();
-                khieunai.FK_NGUOITAO = $find("<%= cmbFK_NGUOITAO.ClientID %>").get_value();
-                return khieunai;
-            }
+            khieunai.C_CODE = $find("<%= txtC_CODE.ClientID %>").get_value();
+            khieunai.C_DATE = $find("<%= radC_DATE.ClientID %>").get_selectedDate();
+            khieunai.C_TYPE = $find("<%= cmbC_TYPE.ClientID %>").get_value();
+            khieunai.C_BILL = $find("<%= txtC_BILL.ClientID %>").get_value();
+            khieunai.C_TENKH = $find("<%= txtC_TENKH.ClientID %>").get_value();
+            khieunai.C_SDT = $find("<%= txtC_SDT.ClientID %>").get_value();
+            khieunai.C_NOIDUNG = $find("<%= txtC_NOIDUNG.ClientID %>").get_value();
+            khieunai.C_STATUS = $find("<%= cmbC_STATUS.ClientID %>").get_value();
+            khieunai.FK_KHACHHANG = $find("<%= cmbMaKhachHang.ClientID %>").get_value();
+            khieunai.FK_NGUOITAO = $find("<%= cmbFK_NGUOITAO.ClientID %>").get_value();
+            return khieunai;
+        }
 
-            function updateChanges() {
-                MyWebService.UpdateKHIEUNAIByKHIEUNAI(getValues(), updateGrid);
-            }
+        function updateChanges() {
+            MyWebService.UpdateKHIEUNAIByKHIEUNAI(getValues(), updateGrid);
+        }
 
-            function updateGrid(result) {
-                var tableView = $find("<%= RadGridKHIEUNAI.ClientID %>").get_masterTableView();
+        function updateGrid(result) {
+            var tableView = $find("<%= RadGridKHIEUNAI.ClientID %>").get_masterTableView();
             tableView.set_dataSource(result);
             tableView.dataBind();
             var grid = $find("<%= RadGridKHIEUNAI.ClientID %>");
-                grid.repaint();
-            }
+            grid.repaint();
+        }
+        checkAjax = true;
         checkEdit = true;
         function tabSelected(sender, args) {
-                if (currentkhieunai == null) {
-                    currentkhieunai = getValues();
-                }
-
-                switch (args.get_tab().get_index()) {
-                    case 1:
-                        {
-                            var gridItems = $find("<%= RadGridKHIEUNAI.ClientID %>").get_masterTableView().get_dataItems();
+            if (currentkhieunai == null) {
+                currentkhieunai = getValues();
+            }
+            var elem = document.getElementById('divRadListView');
+            switch (args.get_tab().get_index()) {
+                case 1:
+                    {
+                        checkEdit = false;
+                        $(elem).hide();
+                        var gridItems = $find("<%= RadGridKHIEUNAI.ClientID %>").get_masterTableView().get_dataItems();
                             var newID = parseInt(gridItems[gridItems.length - 1].getDataKeyValue("PK_ID")) + 1;
                             var newkhieunai = khieunai.create();
                             newkhieunai.PK_ID = newID;
                             setValues(newkhieunai);
                             $get("<%= btnSave.ClientID %>").value = "Thêm";
-                            $get("<%= btnDelete.ClientID %>").parentNode.style.display = "none";
+                        $get("<%= btnDelete.ClientID %>").parentNode.style.display = "none";
                             break;
                         }
                     default:
                         {
+                            checkEdit = true;
                             setValues(currentkhieunai);
                             currentkhieunai = null;
                             $get("<%= btnSave.ClientID %>").value = "Lưu";
-                            $get("<%= btnDelete.ClientID %>").parentNode.style.display = "";
-                            break;
-                        }
-                }
+                        $get("<%= btnDelete.ClientID %>").parentNode.style.display = "";
+                        break;
+                    }
             }
+        }
 
-            function deleteCurrent() {
-                var table = $find("<%= RadGridKHIEUNAI.ClientID %>").get_masterTableView().get_element();
+        function deleteCurrent() {
+            var table = $find("<%= RadGridKHIEUNAI.ClientID %>").get_masterTableView().get_element();
                 var row = table.rows[currentRowIndex];
                 table.deleteRow(currentRowIndex);
                 var dataItem = $find(row.id);
@@ -146,47 +154,47 @@
             }
 
     </script>
-        <script type="text/javascript">
-            var cmbC_TYPE;
-            function OnClientLoadcmbC_TYPE(sender) {
-                cmbC_TYPE = sender;
+    <script type="text/javascript">
+        var cmbC_TYPE;
+        function OnClientLoadcmbC_TYPE(sender) {
+            cmbC_TYPE = sender;
+        }
+        var cmbMaKhachHang;
+        function OnClientLoadcmbMaKhachHang(sender) {
+            cmbMaKhachHang = sender;
+        }
+        var txtC_TENKH;
+        function OnClientLoadtxtC_TENKH(sender) {
+            txtC_TENKH = sender;
+        }
+        var txtC_SDT;
+        function OnClientLoadtxtC_SDT(sender) {
+            txtC_SDT = sender;
+        }
+        var txtC_BILL;
+        function OnClientLoadtxtC_BILL(sender) {
+            txtC_BILL = sender;
+        }
+        function OnKeyPressRadTextBox(sender, eventArgs) {
+            var charCode = eventArgs.get_keyCode();
+            if (charCode != 46 && charCode > 31 && (charCode < 48 || charCode > 57)) {
+                eventArgs.set_cancel(true);
             }
-            var cmbMaKhachHang;
-            function OnClientLoadcmbMaKhachHang(sender) {
-                cmbMaKhachHang = sender;
-            }
-            var txtC_TENKH;
-            function OnClientLoadtxtC_TENKH(sender) {
-                txtC_TENKH = sender;
-            }
-            var txtC_SDT;
-            function OnClientLoadtxtC_SDT(sender) {
-                txtC_SDT = sender;
-            }
-            var txtC_BILL;
-            function OnClientLoadtxtC_BILL(sender) {
-                txtC_BILL = sender;
-            }
-            function OnKeyPressRadTextBox(sender, eventArgs) {
-                var charCode = eventArgs.get_keyCode();
-                if (charCode != 46 && charCode > 31 && (charCode < 48 || charCode > 57)) {
-                    eventArgs.set_cancel(true);
-                }
-                return false;
-            }
-            checkKH = true;
-            function cmbC_TYPEClientSelectedIndexChangedHandler(sender, eventArgs) {
-                if (checkEdit && eventArgs.get_item().get_value() == 'Bill') {
-                    checkKH = !checkKH;
-                    $find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("cmbC_TYPE;" + txtC_BILL.get_value());
+            return false;
+        }
+        checkKH = true;
+        function cmbC_TYPEClientSelectedIndexChangedHandler(sender, eventArgs) {
+            if (checkAjax && eventArgs.get_item().get_value() == 'Bill') {
+                checkKH = !checkKH;
+                $find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("cmbC_TYPE;" + txtC_BILL.get_value());
                 var currentLoadingPanel = $find("<%= RadAjaxLoadingPanelKHIEUNAI.ClientID %>");
                 var currentUpdatedControl = "<%= RadSplitterKHIEUNAI.ClientID %>";
                 currentLoadingPanel.show(currentUpdatedControl);
-                }
+            }
             return false;
         }
         function cmbMaKhachHangClientSelectedIndexChangedHandler(sender, eventArgs) {
-            if (checkEdit && checkKH) {
+            if (checkAjax && checkKH) {
                 $find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("cmbMaKhachHang;" + eventArgs.get_item().get_value());
                 var currentLoadingPanel = $find("<%= RadAjaxLoadingPanelKHIEUNAI.ClientID %>");
                 var currentUpdatedControl = "<%= RadSplitterKHIEUNAI.ClientID %>";
@@ -195,45 +203,45 @@
             return false;
         }
         function OnValueChangedtxtC_BILL(sender, eventArgs) {
-            if (checkEdit && cmbC_TYPE.get_selectedItem().get_value() == 'Bill') {
+            if (checkAjax && cmbC_TYPE.get_selectedItem().get_value() == 'Bill') {
                 checkKH = !checkKH;
                 $find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("txtC_BILL;" + eventArgs.get_newValue());
+                    var currentLoadingPanel = $find("<%= RadAjaxLoadingPanelKHIEUNAI.ClientID %>");
+                    var currentUpdatedControl = "<%= RadSplitterKHIEUNAI.ClientID %>";
+                    currentLoadingPanel.show(currentUpdatedControl);
+                }
+                return false;
+            }
+    </script>
+    <script type="text/javascript">
+        function onResponseEndKN() {
+            if (typeof (result) != "undefined" && result && result != "") {
+                //alert(result);
+                var arrayOfStrings = result.split(",-,");
+                if (arrayOfStrings[0] != "msg") {
+                    if (arrayOfStrings[0] != "") {
+                        if (!checkKH) {
+                            var comboItem = new Telerik.Web.UI.RadComboBoxItem();
+                            comboItem = cmbMaKhachHang.findItemByText(arrayOfStrings[0]);
+                            comboItem.set_text(arrayOfStrings[0]);
+                            cmbMaKhachHang.trackChanges();
+                            comboItem.select();
+                            cmbMaKhachHang.commitChanges();
+                        }
+                        txtC_TENKH.set_value(arrayOfStrings[1]);
+                        txtC_SDT.set_value(arrayOfStrings[2]);
+                    }
+                    else {
+                    }
+                    checkKH = true;
+                }
                 var currentLoadingPanel = $find("<%= RadAjaxLoadingPanelKHIEUNAI.ClientID %>");
                 var currentUpdatedControl = "<%= RadSplitterKHIEUNAI.ClientID %>";
-                currentLoadingPanel.show(currentUpdatedControl);
+                currentLoadingPanel.hide(currentUpdatedControl);
+                result = "";
             }
             return false;
         }
-    </script>
-     <script type="text/javascript">
-         function onResponseEndKN() {
-             if (typeof (result) != "undefined" && result && result != "") {
-                 //alert(result);
-                 var arrayOfStrings = result.split(",-,");
-                 if (arrayOfStrings[0] != "msg") {
-                     if (arrayOfStrings[0] != "") {
-                         if (!checkKH) {
-                             var comboItem = new Telerik.Web.UI.RadComboBoxItem();
-                             comboItem = cmbMaKhachHang.findItemByText(arrayOfStrings[0]);
-                             comboItem.set_text(arrayOfStrings[0]);
-                             cmbMaKhachHang.trackChanges();
-                             comboItem.select();
-                             cmbMaKhachHang.commitChanges();
-                         }
-                         txtC_TENKH.set_value(arrayOfStrings[1]);
-                         txtC_SDT.set_value(arrayOfStrings[2]);
-                     }
-                     else {
-                     }
-                     checkKH = true;
-                 }
-                 var currentLoadingPanel = $find("<%= RadAjaxLoadingPanelKHIEUNAI.ClientID %>");
-                 var currentUpdatedControl = "<%= RadSplitterKHIEUNAI.ClientID %>";
-                 currentLoadingPanel.hide(currentUpdatedControl);
-                 result = "";
-             }
-             return false;
-         }
     </script>
 </telerik:RadCodeBlock>
 <telerik:RadAjaxLoadingPanel Skin="Vista" ID="RadAjaxLoadingPanelKHIEUNAI" runat="server" />
@@ -324,103 +332,201 @@
                     <asp:LinkButton ID="btnDelete" runat="server" OnClientClick="if(!confirm('Bạn chắc chắn muốn xóa khiếu nại?'))return false; deleteCurrent(); return false;"><img src="Images/img_Close.jpg" />Xóa</asp:LinkButton></li>
             </ul>
         </div>
-            <div style="width: 100%; height: 250px; background: #FFFFFF" class="clearfix">
-                <table id="tblEdit" class="TableEditInGrid" cellspacing="3" cellpadding="3" style="width: 100%" border="0">
-                    <tr>
-                        <td style="width: 100px;">
-                            <span class="rtsTxtnew">Mã khiếu nại:</span>
-                        </td>
-                        <td colspan="4">
-                            <asp:HiddenField ID="txtID" Value='<%# Eval("PK_ID") %>' runat="server" />
-                            <telerik:RadTextBox ID="txtC_CODE" Width="80%" runat="server" MaxLength="7">
-                                <ClientEvents OnKeyPress="OnKeyPressRadTextBox" />
-                            </telerik:RadTextBox>
+        <div style="width: 100%; height: 250px; background: #FFFFFF" class="clearfix">
+            <table id="tblEdit" class="TableEditInGrid" cellspacing="3" cellpadding="3" style="width: 100%" border="0">
+                <tr>
+                    <td style="width: 100px;">
+                        <span class="rtsTxtnew">Mã khiếu nại:</span>
+                    </td>
+                    <td colspan="4">
+                        <asp:HiddenField ID="txtID" Value='<%# Eval("PK_ID") %>' runat="server" />
+                        <telerik:RadTextBox ID="txtC_CODE" Width="80%" runat="server" MaxLength="7">
+                            <ClientEvents OnKeyPress="OnKeyPressRadTextBox" />
+                        </telerik:RadTextBox>
 
-                        </td>
-                        <td style="width: 100px;">
-                            <span class="rtsTxtnew">Ngày tiếp nhận:
-                        </td>
-                        <td colspan="4">
-                            <telerik:RadDateTimePicker ID="radC_DATE" Width="95%"
-                                runat="server" AutoPostBack="false">
-                                <DateInput ID="DateInput1" runat="server" DateFormat="dd/MM/yyyy HH:mm" MinDate="1/1/1890 00:00">
-                                    <ClientEvents OnKeyPress="controlkeypress" />
-                                </DateInput>
-                            </telerik:RadDateTimePicker>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="width: 150px;"><span class="rtsTxtnew">Loại:</td>
-                        <td colspan="4">
-                            <telerik:RadComboBox ID="cmbC_TYPE"
-                                runat="server" EmptyMessage="Chọn" OnClientSelectedIndexChanged="cmbC_TYPEClientSelectedIndexChangedHandler" OnClientLoad="OnClientLoadcmbC_TYPE">
-                                <Items>
-                                    <telerik:RadComboBoxItem Value="Bill" Text="Bill" />
-                                    <telerik:RadComboBoxItem Value="Khác" Text="Khác" />
-                                </Items>
-                            </telerik:RadComboBox>
-                        </td>
-                        <td style="width: 150px;"><span class="rtsTxtnew">Số Bill/Chủ đề:</td>
-                        <td colspan="4">
-                            <telerik:RadTextBox ID="txtC_BILL" runat="server" Width="90%" ClientEvents-OnValueChanged="OnValueChangedtxtC_BILL" ClientEvents-OnLoad="OnClientLoadtxtC_BILL"></telerik:RadTextBox>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="width: 100px;">
-                            <span class="rtsTxtnew">Mã khách hàng:</span>
-                        </td>
-                        <td colspan="4">
-                            <telerik:RadComboBox ID="cmbMaKhachHang" runat="server" OnClientLoad="OnClientLoadcmbMaKhachHang"
-                                DataTextField="C_CODE" DataValueField="C_CODE" DataSourceID="KHACHHANGDataSource"
-                                ShowToggleImage="True" EmptyMessage="Chọn mã"
-                                OnClientSelectedIndexChanged="cmbMaKhachHangClientSelectedIndexChangedHandler"
-                                AllowCustomText="True" Filter="Contains">
-                            </telerik:RadComboBox>
-                        </td>
-                        <td style="width: 100px;">
-                            <span class="rtsTxtnew">Tên khách hàng:</span>
-                        </td>
-                        <td colspan="4">
-                            <telerik:RadTextBox ID="txtC_TENKH" Width="90%" runat="server" ClientEvents-OnLoad="OnClientLoadtxtC_TENKH">
-                            </telerik:RadTextBox>
-                        </td>
-                        <td style="width: 100px;">
-                            <span class="rtsTxtnew">Số điện thoại:</span>
-                        </td>
-                        <td colspan="4">
-                            <telerik:RadTextBox ID="txtC_SDT" Width="90%" ClientEvents-OnLoad="OnClientLoadtxtC_SDT" runat="server">
-                            </telerik:RadTextBox>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="width: 150px;"><span class="rtsTxtnew">Nội dung:</td>
-                        <td colspan="12">
-                            <telerik:RadTextBox ID="txtC_NOIDUNG" runat="server" Width="90%" TextMode="MultiLine"></telerik:RadTextBox>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="width: 150px;"><span class="rtsTxtnew">Người tạo:</td>
-                        <td colspan="4">
-                            <telerik:RadComboBox ID="cmbFK_NGUOITAO" runat="server"
-                                DataTextField="C_NAME" DataValueField="PK_ID" DataSourceID="UserDataSource" ShowToggleImage="True"
-                                EmptyMessage="Chọn" AllowCustomText="True" Filter="Contains">
-                            </telerik:RadComboBox>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="width: 150px;"><span class="rtsTxtnew">Trạng thái:</td>
-                        <td colspan="4">
-                            <telerik:RadComboBox ID="cmbC_STATUS"
-                                runat="server" EmptyMessage="Chọn">
-                                <Items>
-                                    <telerik:RadComboBoxItem Value="Đang xử lý" Text="Đang xử lý" />
-                                    <telerik:RadComboBoxItem Value="Đóng" Text="Đóng" />
-                                </Items>
-                            </telerik:RadComboBox>
-                        </td>
-                    </tr>
-                </table>
+                    </td>
+                    <td style="width: 100px;">
+                        <span class="rtsTxtnew">Ngày tiếp nhận:</span>
+                    </td>
+                    <td colspan="4">
+                        <telerik:RadDateTimePicker ID="radC_DATE" Width="95%"
+                            runat="server" AutoPostBack="false">
+                            <DateInput ID="DateInput1" runat="server" DateFormat="dd/MM/yyyy HH:mm" MinDate="1/1/1890 00:00">
+                                <ClientEvents OnKeyPress="controlkeypress" />
+                            </DateInput>
+                        </telerik:RadDateTimePicker>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 150px;"><span class="rtsTxtnew">Loại:</td>
+                    <td colspan="4">
+                        <telerik:RadComboBox ID="cmbC_TYPE"
+                            runat="server" EmptyMessage="Chọn" OnClientSelectedIndexChanged="cmbC_TYPEClientSelectedIndexChangedHandler" OnClientLoad="OnClientLoadcmbC_TYPE">
+                            <Items>
+                                <telerik:RadComboBoxItem Value="Bill" Text="Bill" />
+                                <telerik:RadComboBoxItem Value="Khác" Text="Khác" />
+                            </Items>
+                        </telerik:RadComboBox>
+                    </td>
+                    <td style="width: 150px;"><span class="rtsTxtnew">Số Bill/Chủ đề:</td>
+                    <td colspan="4">
+                        <telerik:RadTextBox ID="txtC_BILL" runat="server" Width="90%" ClientEvents-OnValueChanged="OnValueChangedtxtC_BILL" ClientEvents-OnLoad="OnClientLoadtxtC_BILL"></telerik:RadTextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 100px;">
+                        <span class="rtsTxtnew">Mã khách hàng:</span>
+                    </td>
+                    <td colspan="4">
+                        <telerik:RadComboBox ID="cmbMaKhachHang" runat="server" OnClientLoad="OnClientLoadcmbMaKhachHang"
+                            DataTextField="C_CODE" DataValueField="C_CODE" DataSourceID="KHACHHANGDataSource"
+                            ShowToggleImage="True" EmptyMessage="Chọn mã"
+                            OnClientSelectedIndexChanged="cmbMaKhachHangClientSelectedIndexChangedHandler"
+                            AllowCustomText="True" Filter="Contains">
+                        </telerik:RadComboBox>
+                    </td>
+                    <td style="width: 100px;">
+                        <span class="rtsTxtnew">Tên khách hàng:</span>
+                    </td>
+                    <td colspan="4">
+                        <telerik:RadTextBox ID="txtC_TENKH" Width="90%" runat="server" ClientEvents-OnLoad="OnClientLoadtxtC_TENKH">
+                        </telerik:RadTextBox>
+                    </td>
+                    <td style="width: 100px;">
+                        <span class="rtsTxtnew">Số điện thoại:</span>
+                    </td>
+                    <td colspan="4">
+                        <telerik:RadTextBox ID="txtC_SDT" Width="90%" ClientEvents-OnLoad="OnClientLoadtxtC_SDT" runat="server">
+                        </telerik:RadTextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 150px;"><span class="rtsTxtnew">Nội dung:</td>
+                    <td colspan="12">
+                        <telerik:RadTextBox ID="txtC_NOIDUNG" runat="server" Width="90%" TextMode="MultiLine"></telerik:RadTextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 150px;"><span class="rtsTxtnew">Người tạo:</td>
+                    <td colspan="4">
+                        <telerik:RadComboBox ID="cmbFK_NGUOITAO" runat="server"
+                            DataTextField="C_NAME" DataValueField="PK_ID" DataSourceID="UserDataSource" ShowToggleImage="True"
+                            EmptyMessage="Chọn" AllowCustomText="True" Filter="Contains">
+                        </telerik:RadComboBox>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 150px;"><span class="rtsTxtnew">Trạng thái:</td>
+                    <td colspan="4">
+                        <telerik:RadComboBox ID="cmbC_STATUS"
+                            runat="server" EmptyMessage="Chọn">
+                            <Items>
+                                <telerik:RadComboBoxItem Value="Đang xử lý" Text="Đang xử lý" />
+                                <telerik:RadComboBoxItem Value="Đóng" Text="Đóng" />
+                            </Items>
+                        </telerik:RadComboBox>
+                    </td>
+                </tr>
+            </table>
+            <div id="divRadListView">
+                <telerik:RadListView Skin="Vista" ID="RadListViewKHIEUNAIGIAIQUYET" DataSourceID="SqlDataSourceKHIEUNAIGIAIQUYET" OnItemCreated="RadListViewKHIEUNAIGIAIQUYET_ItemCreated"
+                    runat="server" ItemPlaceholderID="KHIEUNAIGIAIQUYETContainer" OnItemCommand="RadListViewKHIEUNAIGIAIQUYET_ItemCommand" 
+                    DataKeyNames="PK_ID">
+                    <LayoutTemplate>
+                        <fieldset id="FieldSet1">
+                            <legend></legend>
+                            <asp:PlaceHolder ID="KHIEUNAIGIAIQUYETContainer" runat="server"></asp:PlaceHolder>
+                            <br />
+                            <asp:Button ID="btnInitInsert" runat="server" Text="Thêm tình trạng" OnClick="btnInitInsert_Click"></asp:Button>
+                        </fieldset>
+                    </LayoutTemplate>
+                    <ItemTemplate>
+                        <fieldset>
+                            <div class="headerthongtin">
+                                <ul>
+                                    <li class="lifirst">
+                                        <asp:LinkButton ID="btnEdit" runat="server" CommandName="Edit"><img src="Images/img_save.jpg" />Sửa</asp:LinkButton></li>
+                                    <li>
+                                        <asp:LinkButton ID="btnDelete" runat="server" OnClientClick="javascript:return confirm('Bạn có muốn xóa bản ghi đã chọn không?')" CommandName="Delete" CommandArgument='<%#Eval("PK_ID") %>'><img src="Images/img_Close.jpg" />Xóa</asp:LinkButton></li>
+                                </ul>
+                            </div>
+                            <div style="width: 100%; height: 60px; background: #FFFFFF" class="clearfix">
+                                <table id="tblEdit" class="TableEditInGrid" cellspacing="3" cellpadding="3" style="width: 100%" border="0">
+                                    <tr>
+                                        <td style="width: 100px;">
+                                            <span class="rtsTxtnew">Người giải quyết:</span></br>
+                                        <telerik:RadComboBox ID="cmbFK_NGUOIGIAIQUYET" runat="server" SelectedValue='<%# Bind("FK_NGUOIGIAIQUYET") %>' Enabled="false"
+                                            DataTextField="C_NAME" DataValueField="PK_ID" DataSourceID="UserDataSource" ShowToggleImage="True"
+                                            EmptyMessage="Chọn" AllowCustomText="True" Filter="Contains">
+                                        </telerik:RadComboBox>
+                                        </td>
+                                        <td colspan="12">
+                                            <telerik:RadTextBox ID="txtC_NOIDUNGGIAIQUYET" runat="server" Width="90%" TextMode="MultiLine" Text='<%# Bind("C_NOIDUNG") %>' Enabled="false"></telerik:RadTextBox>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </fieldset>
+                    </ItemTemplate>
+                    <EditItemTemplate>
+                        <fieldset>
+                            <div class="headerthongtin">
+                                <ul>
+                                    <li class="lifirst">
+                                        <asp:LinkButton ID="btnSave" runat="server" CommandName="Update"><img src="Images/img_save.jpg" />Lưu</asp:LinkButton></li>
+                                    <li>
+                                        <asp:LinkButton ID="btnCancel" runat="server" CommandName="Cancel"><img src="Images/img_Close.jpg" />Hủy</asp:LinkButton></li>
+                                </ul>
+                            </div>
+                            <div style="width: 100%; height: 60px; background: #FFFFFF" class="clearfix">
+                                <table id="tblEdit" class="TableEditInGrid" cellspacing="3" cellpadding="3" style="width: 100%" border="0">
+                                    <tr>
+                                        <td style="width: 100px;">
+                                            <span class="rtsTxtnew">Người giải quyết:</span></br>
+                                        <telerik:RadComboBox ID="cmbFK_NGUOIGIAIQUYET" runat="server" SelectedValue='<%# Bind("FK_NGUOIGIAIQUYET") %>'
+                                            DataTextField="C_NAME" DataValueField="PK_ID" DataSourceID="UserDataSource" ShowToggleImage="True"
+                                            EmptyMessage="Chọn" AllowCustomText="True" Filter="Contains">
+                                        </telerik:RadComboBox>
+                                        </td>
+                                        <td colspan="12">
+                                            <telerik:RadTextBox ID="txtC_NOIDUNGGIAIQUYET" runat="server" Text='<%# Bind("C_NOIDUNG") %>' Width="90%" TextMode="MultiLine"></telerik:RadTextBox>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </fieldset>
+                    </EditItemTemplate>
+                    <InsertItemTemplate>
+                        <fieldset>
+                            <div class="headerthongtin">
+                                <ul>
+                                    <li class="lifirst">
+                                        <asp:LinkButton ID="btnSave" runat="server" CommandName="PerformInsert"><img src="Images/img_save.jpg" />Lưu</asp:LinkButton></li>
+                                    <li>
+                                        <asp:LinkButton ID="btnCancel" runat="server" CommandName="Cancel"><img src="Images/img_Close.jpg" />Hủy</asp:LinkButton></li>
+                                </ul>
+                            </div>
+                            <div style="width: 100%; height: 60px; background: #FFFFFF" class="clearfix">
+                                <table id="tblEdit" class="TableEditInGrid" cellspacing="3" cellpadding="3" style="width: 100%" border="0">
+                                    <tr>
+                                        <td style="width: 100px;">
+                                            <span class="rtsTxtnew">Người giải quyết:</span></br>
+                                        <telerik:RadComboBox ID="cmbFK_NGUOIGIAIQUYET" runat="server" SelectedValue='<%# Bind("FK_NGUOIGIAIQUYET") %>'
+                                            DataTextField="C_NAME" DataValueField="PK_ID" DataSourceID="UserDataSource" ShowToggleImage="True"
+                                            EmptyMessage="Chọn" AllowCustomText="True" Filter="Contains">
+                                        </telerik:RadComboBox>
+                                        </td>
+                                        <td colspan="12">
+                                            <telerik:RadTextBox ID="txtC_NOIDUNGGIAIQUYET" runat="server" Text='<%# Bind("C_NOIDUNG") %>' Width="90%" TextMode="MultiLine"></telerik:RadTextBox>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </fieldset>
+                    </InsertItemTemplate>
+                </telerik:RadListView>
             </div>
+        </div>
         <!-- end bgpopup-->
     </telerik:RadPane>
 </telerik:RadSplitter>
@@ -428,7 +534,7 @@
     ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
     DeleteCommand="DELETE FROM [KHIEUNAI] WHERE [PK_ID] = @PK_ID"
     InsertCommand="INSERT INTO [KHIEUNAI] ([C_CODE], [C_TYPE], [C_DATE], [C_BILL], [FK_KHACHHANG], [C_TENKH], [C_SDT], [C_NOIDUNG], [FK_NGUOITAO], [C_STATUS]) VALUES (@C_CODE, @C_TYPE, @C_DATE, @C_BILL, @FK_KHACHHANG, @C_TENKH, @C_SDT, @C_NOIDUNG, @FK_NGUOITAO, @C_STATUS)"
-    SelectCommand="SELECT [KHIEUNAI].[PK_ID], [KHIEUNAI].[C_CODE], [KHIEUNAI].[C_TYPE], [KHIEUNAI].[C_DATE], [KHIEUNAI].[C_BILL], [KHIEUNAI].[FK_KHACHHANG], [KHIEUNAI].[C_TENKH], [KHIEUNAI].[C_SDT], [KHIEUNAI].[C_NOIDUNG], [KHIEUNAI].[FK_NGUOITAO], [KHIEUNAI].[C_STATUS], USERS.C_NAME as NGUOITAONAME FROM [KHIEUNAI] LEFT OUTER JOIN USERS ON KHIEUNAI.FK_NGUOITAO =USERS.PK_ID"
+    SelectCommand="SELECT [KHIEUNAI].[PK_ID], [KHIEUNAI].[C_CODE], [KHIEUNAI].[C_TYPE], [KHIEUNAI].[C_DATE], [KHIEUNAI].[C_BILL], [KHIEUNAI].[FK_KHACHHANG], [KHIEUNAI].[C_TENKH], [KHIEUNAI].[C_SDT], [KHIEUNAI].[C_NOIDUNG], [KHIEUNAI].[FK_NGUOITAO], [KHIEUNAI].[C_STATUS], USERS.C_NAME as NGUOITAONAME FROM [KHIEUNAI] LEFT OUTER JOIN USERS ON KHIEUNAI.FK_NGUOITAO =USERS.PK_ID ORDER BY C_STATUS ASC, C_DATE DESC"
     UpdateCommand="UPDATE [KHIEUNAI] SET [C_CODE] = @C_CODE, [C_TYPE] = @C_TYPE, [C_DATE] = @C_DATE, [C_BILL] = @C_BILL, [FK_KHACHHANG] = @FK_KHACHHANG, [C_TENKH] = @C_TENKH, [C_SDT] = @C_SDT, [C_NOIDUNG] = @C_NOIDUNG, [FK_NGUOITAO] = @FK_NGUOITAO, [C_STATUS] = @C_STATUS WHERE [PK_ID] = @PK_ID">
     <SelectParameters>
         <asp:SessionParameter Name="FK_VUNGLAMVIEC" Type="String" SessionField="VUNGLAMVIEC" />
@@ -473,6 +579,28 @@
     <SelectParameters>
         <asp:SessionParameter Name="FK_VUNGLAMVIEC" Type="String" SessionField="VUNGLAMVIEC" />
     </SelectParameters>
+</asp:SqlDataSource>
+<asp:SqlDataSource ID="SqlDataSourceKHIEUNAIGIAIQUYET" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
+    DeleteCommand="DELETE FROM [KHIEUNAIGIAIQUYET] WHERE [PK_ID] = @PK_ID"
+    InsertCommand="INSERT INTO [KHIEUNAIGIAIQUYET] ([FK_KHIEUNAI], [FK_NGUOIGIAIQUYET], [C_NOIDUNG]) VALUES (@FK_KHIEUNAI, @FK_NGUOIGIAIQUYET, @C_NOIDUNG)"
+    SelectCommand="SELECT [KHIEUNAIGIAIQUYET].[PK_ID], [KHIEUNAIGIAIQUYET].[FK_KHIEUNAI], [KHIEUNAIGIAIQUYET].[FK_NGUOIGIAIQUYET], [KHIEUNAIGIAIQUYET].[C_NOIDUNG] FROM [KHIEUNAIGIAIQUYET] WHERE FK_KHIEUNAI = @FK_KHIEUNAI"
+    UpdateCommand="UPDATE [KHIEUNAIGIAIQUYET] SET [FK_NGUOIGIAIQUYET] = @FK_NGUOIGIAIQUYET, [C_NOIDUNG] = @C_NOIDUNG WHERE [PK_ID] = @PK_ID">
+    <SelectParameters>
+        <asp:ControlParameter Name="FK_KHIEUNAI" Type="Int32" ControlID="txtID" PropertyName="Value" />
+    </SelectParameters>
+    <UpdateParameters>
+        <asp:Parameter Name="FK_NGUOIGIAIQUYET" Type="Int32" />
+        <asp:Parameter Name="C_NOIDUNG" Type="String" />
+        <asp:Parameter Name="PK_ID" Type="Int32" />
+    </UpdateParameters>
+    <DeleteParameters>
+        <asp:Parameter Name="PK_ID" Type="Int32" />
+    </DeleteParameters>
+    <InsertParameters>
+        <asp:ControlParameter Name="FK_KHIEUNAI" Type="Int32" ControlID="txtID" PropertyName="Value" />
+        <asp:Parameter Name="FK_NGUOIGIAIQUYET" Type="Int32" />
+        <asp:Parameter Name="C_NOIDUNG" Type="String" />
+    </InsertParameters>
 </asp:SqlDataSource>
 <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Visible="false" Text="Button" />
 <asp:TextBox ID="TextBox1" runat="server" Visible="false"></asp:TextBox>
