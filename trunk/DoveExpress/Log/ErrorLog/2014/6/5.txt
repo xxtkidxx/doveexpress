@@ -1,0 +1,5 @@
+Thời gian lỗi : 2014-06-05 11:12:47 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:e:\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\NHANGUI.ascx.cs(861): error CS1501: No overload for method 'LoadDVPT' takes 2 arguments
+__________________________
