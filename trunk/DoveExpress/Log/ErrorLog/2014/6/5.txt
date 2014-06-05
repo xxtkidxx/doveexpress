@@ -3,3 +3,13 @@ Thời gian lỗi : 2014-06-05 11:12:47 AM
 Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
 Nội dung lỗi:e:\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\NHANGUI.ascx.cs(861): error CS1501: No overload for method 'LoadDVPT' takes 2 arguments
 __________________________
+Thời gian lỗi : 2014-06-05 22:30:42 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=KHIEUNAI. 
+Nội dung lỗi:e:\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\KHIEUNAITEST.ascx(39): error CS1026: ) expected
+__________________________
+Thời gian lỗi : 2014-06-05 22:34:43 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=KHIEUNAI. 
+Nội dung lỗi:There is no row at position 0.
+__________________________

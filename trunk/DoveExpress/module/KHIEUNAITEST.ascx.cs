@@ -238,4 +238,34 @@ public partial class module_KHIEUNAITEST : System.Web.UI.UserControl
         TextBox1.Text = Session["t"].ToString();
         //ITCLIB.Admin.JavaScript.ShowMessage(Session["t"].ToString(), this);
     }
+    protected void btnInitInsert_Click(object sender, System.EventArgs e)
+    {
+        RadListViewKHIEUNAIGIAIQUYET.ShowInsertItem();
+        RadListViewKHIEUNAIGIAIQUYET.FindControl("btnInitInsert").Visible = false;
+        
+    }
+    protected void RadListViewKHIEUNAIGIAIQUYET_ItemCommand(object sender, RadListViewCommandEventArgs e)
+    {
+        if ((e.CommandName == RadListView.PerformInsertCommandName) || (e.CommandName == RadListView.UpdateCommandName) || (e.CommandName == RadListView.CancelCommandName))
+        {
+            RadListViewKHIEUNAIGIAIQUYET.InsertItemPosition = RadListViewInsertItemPosition.None;
+            RadListViewKHIEUNAIGIAIQUYET.FindControl("btnInitInsert").Visible = true;
+        }
+    }
+    protected void RadListViewKHIEUNAIGIAIQUYET_ItemCreated(object sender, RadListViewItemEventArgs e)
+    {
+        if (e.Item is RadListViewInsertItem && e.Item.IsInEditMode)
+        {
+            RadComboBox cmbFK_NGUOIGIAIQUYET = (RadComboBox)e.Item.FindControl("cmbFK_NGUOIGIAIQUYET");
+            string checkuser = "SELECT USERS.PK_ID,USERS.FK_GroupUser,USERS.FK_DEPT,USERS.C_LoginName,USERS.C_Password,USERS.C_NAME,USERS.C_Address,USERS.c_Tel,USERS.C_Email,USERS.C_DESC,GROUPUSER.C_NAME AS GROUPUSERNAME FROM USERS INNER JOIN GROUPUSER ON  USERS.FK_GROUPUSER = GROUPUSER.PK_ID WHERE FK_GROUPUSER NOT IN (0,1) AND (FK_VUNGLAMVIEC = N'Tất cả' OR FK_VUNGLAMVIEC = N'" + Session["VUNGLAMVIEC"] + "') AND USERS.PK_ID = " + Session["UserID"];
+            //Session["t"] = checkuser;
+            DataTable oDataTable = new DataTable();
+            ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
+            oDataTable = SelectQuery.query_data(checkuser);
+            if (oDataTable.Rows.Count != 0)
+            {
+                cmbFK_NGUOIGIAIQUYET.SelectedValue = Session["UserID"].ToString();
+            }
+        }
+    }
 }
