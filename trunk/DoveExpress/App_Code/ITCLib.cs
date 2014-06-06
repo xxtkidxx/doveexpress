@@ -3283,7 +3283,7 @@ namespace ITCLIB
             private int _PK_ID;
             private string _C_CODE;
             private string _C_TYPE;
-            private System.Nullable<System.DateTime> _C_DATE;
+            private DateTime _C_DATE;
             private string _C_BILL;
             private string _FK_KHACHHANG;
             private string _C_TENKH;
@@ -3354,7 +3354,7 @@ namespace ITCLIB
                     }
                 }
             }
-            public System.Nullable<System.DateTime> C_DATE
+            public DateTime C_DATE
             {
                 get
                 {

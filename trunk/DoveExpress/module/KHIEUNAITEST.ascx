@@ -30,7 +30,7 @@
                 obj.C_TYPE = "Khác";
                 obj.C_DATE = new Date();
                 obj.C_BILL = "";
-                obj.FK_KHACHHANG = "10001";
+                obj.FK_KHACHHANG = "";
                 obj.C_TENKH = "";
                 obj.C_SDT = "";
                 obj.C_NOIDUNG = "";
@@ -47,6 +47,7 @@
 
         function rowSelected(sender, args) {
             PK_ID = args.getDataKeyValue("PK_ID");
+            $find("<%= RadTabStripKHIEUNAI.ClientID %>").set_selectedIndex(0);
             MyWebService.GetKHIEUNAIByPK_ID(PK_ID, setValues);
         }
 
@@ -62,13 +63,20 @@
             $find("<%= txtC_NOIDUNG.ClientID %>").set_value(khieunai.C_NOIDUNG);
             $find("<%= cmbC_STATUS.ClientID %>").findItemByText(khieunai.C_STATUS).select();
             $find("<%= txtC_CODE.ClientID %>").focus();
-            $find("<%= cmbMaKhachHang.ClientID %>").findItemByText(khieunai.FK_KHACHHANG).select();
-            $find("<%= cmbFK_NGUOITAO.ClientID %>").findItemByValue(khieunai.FK_NGUOITAO).select();
+            if ($find("<%= cmbMaKhachHang.ClientID %>").findItemByText(khieunai.FK_KHACHHANG) != null) {
+                $find("<%= cmbMaKhachHang.ClientID %>").findItemByText(khieunai.FK_KHACHHANG).select();
+            } else {
+                $find("<%= cmbMaKhachHang.ClientID %>").set_text("");
+            }
+            if ($find("<%= cmbFK_NGUOITAO.ClientID %>").findItemByValue(khieunai.FK_NGUOITAO) != null) {
+                $find("<%= cmbFK_NGUOITAO.ClientID %>").findItemByValue(khieunai.FK_NGUOITAO).select();
+            } else {
+                $find("<%= cmbFK_NGUOITAO.ClientID %>").set_text("");
+            }
             checkAjax = true;
             if (checkEdit) {
                 $find("<%= RadListViewKHIEUNAIGIAIQUYET.ClientID %>").rebind();
             }
-
         }
 
         function getValues() {
@@ -97,9 +105,9 @@
         checkAjax = true;
         checkEdit = true;
         function tabSelected(sender, args) {
-            if (currentkhieunai == null) {
+            /*if (currentkhieunai == null) {
                 currentkhieunai = getValues();
-            }
+            }*/
             var elem = document.getElementById('divRadListView');
             switch (args.get_tab().get_index()) {
                 case 1:
@@ -115,8 +123,7 @@
                 default:
                     {
                         checkEdit = true;
-                        setValues(currentkhieunai);
-                        currentkhieunai = null;
+                        $find("<%= RadGridKHIEUNAI.ClientID %>").get_masterTableView().selectItem(0);
                         $get("<%= btnSave.ClientID %>").value = "Lưu";
                             $get("<%= btnDelete.ClientID %>").parentNode.style.display = "";
                             break;
@@ -412,7 +419,7 @@
                             <legend></legend>
                             <asp:PlaceHolder ID="KHIEUNAIGIAIQUYETContainer" runat="server"></asp:PlaceHolder>
                             <br />
-                            <asp:Button ID="btnInitInsert" runat="server" Text="Thêm tình trạng" OnClick="btnInitInsert_Click"></asp:Button>
+                            <asp:Button ID="btnInitInsert" runat="server" Text="Thêm tình trạng" Visible ='<%# (cmbC_STATUS.SelectedIndex == 0) %>' OnClick="btnInitInsert_Click"></asp:Button>
                         </fieldset>
                     </LayoutTemplate>
                     <ItemTemplate>
@@ -577,6 +584,6 @@
         <asp:Parameter Name="C_NOIDUNG" Type="String" />
     </InsertParameters>
 </asp:SqlDataSource>
-<asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Visible="true" Text="Button" />
-<asp:TextBox ID="TextBox1" runat="server" Visible="true"></asp:TextBox>
+<asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Visible="false" Text="Button" />
+<asp:TextBox ID="TextBox1" runat="server" Visible="false"></asp:TextBox>
 
