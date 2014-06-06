@@ -15,14 +15,13 @@ using System.Web.Services;
 public class MyWebService : System.Web.Services.WebService {
 
     KHIEUNAIList khieunaiList = null;
-
     public MyWebService()
     {
         khieunaiList = new KHIEUNAIList();
 
-        if (HttpContext.Current.Session["MyData"] == null)
+        if (HttpContext.Current.Session["MyDataKHIEUNAI"] == null)
         {
-           HttpContext.Current.Session["MyData"] = khieunaiList;
+           HttpContext.Current.Session["MyDataKHIEUNAI"] = khieunaiList;
         }
     }
 
@@ -31,7 +30,7 @@ public class MyWebService : System.Web.Services.WebService {
     {
         KHIEUNAI khieunaiToUpdate = GetKHIEUNAIByPK_ID(khieunai.PK_ID);
 
-        KHIEUNAIList list = (KHIEUNAIList)HttpContext.Current.Session["MyData"];
+        KHIEUNAIList list = (KHIEUNAIList)HttpContext.Current.Session["MyDataKHIEUNAI"];
         bool CheckInsert = false;
         if (khieunaiToUpdate == null)
         {
@@ -62,7 +61,7 @@ public class MyWebService : System.Web.Services.WebService {
             Session["t"] = UpdateSQL;
             UpdateQuery.ExecuteNonQuery(UpdateSQL);
         }
-        HttpContext.Current.Session["MyData"] = list;      
+        HttpContext.Current.Session["MyDataKHIEUNAI"] = list;      
         return list;
     }
 
@@ -70,9 +69,9 @@ public class MyWebService : System.Web.Services.WebService {
     public KHIEUNAIList DeleteKHIEUNAIByPK_ID(int PK_ID)
     {
         KHIEUNAI khieunaiToDelete = GetKHIEUNAIByPK_ID(PK_ID);
-        KHIEUNAIList list = (KHIEUNAIList)HttpContext.Current.Session["MyData"];
+        KHIEUNAIList list = (KHIEUNAIList)HttpContext.Current.Session["MyDataKHIEUNAI"];
         list.Remove(khieunaiToDelete);
-        HttpContext.Current.Session["MyData"] = list;
+        HttpContext.Current.Session["MyDataKHIEUNAI"] = list;
         string DeleteSQL = "DELETE FROM KHIEUNAI WHERE PK_ID = " + PK_ID + ";DELETE FROM KHIEUNAIGIAIQUYET WHERE FK_KHIEUNAI = " + PK_ID;
         ITCLIB.Admin.SQL DeleteQuery = new ITCLIB.Admin.SQL();
         DeleteQuery.ExecuteNonQuery(DeleteSQL);
@@ -83,7 +82,7 @@ public class MyWebService : System.Web.Services.WebService {
     [WebMethod(EnableSession = true)]
     public KHIEUNAI GetKHIEUNAIByPK_ID(int PK_ID)
     {
-        KHIEUNAIList list = (KHIEUNAIList)HttpContext.Current.Session["MyData"];
+        KHIEUNAIList list = (KHIEUNAIList)HttpContext.Current.Session["MyDataKHIEUNAI"];
         return list.GetKHIEUNAIByPK_ID(PK_ID);
     }
     [WebMethod]

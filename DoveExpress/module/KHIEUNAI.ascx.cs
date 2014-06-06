@@ -203,7 +203,7 @@ public partial class module_KHIEUNAI : System.Web.UI.UserControl
     protected void CheckMaKN(object source, ServerValidateEventArgs args)
     {
         string SelectSQL;
-        SelectSQL = "Select KHIEUNAI.C_CODE FROM KHIEUNAI WHERE KHIEUNAI.C_BILL = '" + args.Value + "' AND KHIEUNAI.PK_ID <> " + Session["txtID"].ToString();
+        SelectSQL = "Select KHIEUNAI.C_CODE FROM KHIEUNAI WHERE KHIEUNAI.C_CODE = '" + args.Value + "' AND KHIEUNAI.PK_ID <> " + Session["txtID"].ToString();
         DataTable oDataTable = new DataTable();
         ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
         oDataTable = SelectQuery.query_data(SelectSQL);
