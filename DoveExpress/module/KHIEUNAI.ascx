@@ -160,7 +160,7 @@
                 default:
                     {
                         checkEdit = true;
-                        //$find("<%= RadGridKHIEUNAI.ClientID %>").get_masterTableView().selectItem(0);
+                        $find("<%= RadGridKHIEUNAI.ClientID %>").get_masterTableView().selectItem(0);
                         $get("<%= btnSave.ClientID %>").value = "Lưu";
                         $get("<%= btnDelete.ClientID %>").parentNode.style.display = "";
                         break;
