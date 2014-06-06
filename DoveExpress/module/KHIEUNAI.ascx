@@ -121,7 +121,11 @@
         }
 
         function updateChanges() {
-            MyWebServiceKN.UpdateKHIEUNAIByKHIEUNAI(getValues(), updateGrid);
+            if ($find("<%= cmbMaKhachHang.ClientID %>").get_value() != "" && $find("<%= cmbFK_NGUOITAO.ClientID %>").get_value() != "") {
+                MyWebServiceKN.UpdateKHIEUNAIByKHIEUNAI(getValues(), updateGrid);
+            } else {
+                alert("Hãy chọn khách hàng và người tạo khiếu nại");
+            }
         }
 
         function updateGrid(result) {
@@ -165,8 +169,7 @@
         }
 
         function deleteCurrent() {
-            alert(PK_ID);
-            //MyWebServiceKN.DeleteKHIEUNAIByPK_ID(PK_ID, updateGrid);
+            MyWebServiceKN.DeleteKHIEUNAIByPK_ID($find("<%= RadGridKHIEUNAI.ClientID %>").get_masterTableView().get_selectedItems()[0].getDataKeyValue("PK_ID"), updateGrid);
         }
 
     </script>
@@ -618,6 +621,6 @@
         <asp:Parameter Name="C_NOIDUNG" Type="String" />
     </InsertParameters>
 </asp:SqlDataSource>
-<asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Visible="false" Text="Button" />
-<asp:TextBox ID="TextBox1" runat="server" Visible="false"></asp:TextBox>
+<asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Visible="true" Text="Button" />
+<asp:TextBox ID="TextBox1" runat="server" Visible="true"></asp:TextBox>
 

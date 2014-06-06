@@ -123,11 +123,17 @@ public partial class module_BAOGIA : System.Web.UI.UserControl
             {
                 txtC_CODE.Text = oDataTable.Rows[0]["C_CODE"].ToString();
                 radC_DATE.SelectedDate = DateTime.Parse(oDataTable.Rows[0]["C_DATE"].ToString());
-                cmbMaKhachHang.SelectedValue = oDataTable.Rows[0]["FK_KHACHHANG"].ToString();
+                if (oDataTable.Rows[0]["FK_KHACHHANG"].ToString() != "")
+                {
+                    cmbMaKhachHang.SelectedValue = oDataTable.Rows[0]["FK_KHACHHANG"].ToString();
+                }
                 txtC_TENKH.Text = oDataTable.Rows[0]["C_TENKH"].ToString();
                 txtC_SDT.Text = oDataTable.Rows[0]["C_SDT"].ToString();
                 txtC_NOIDUNG.Text = oDataTable.Rows[0]["C_NOIDUNG"].ToString();
-                cmbFK_NGUOITAO.SelectedValue = oDataTable.Rows[0]["FK_NGUOITAO"].ToString();
+                if (oDataTable.Rows[0]["FK_NGUOITAO"].ToString() != "")
+                {
+                    cmbFK_NGUOITAO.SelectedValue = oDataTable.Rows[0]["FK_NGUOITAO"].ToString();
+                }
                 cmbC_STATUS.SelectedValue = oDataTable.Rows[0]["C_STATUS"].ToString();
             }
             else

@@ -51,13 +51,14 @@ public class MyWebServiceKN : System.Web.Services.WebService {
         ITCLIB.Admin.SQL UpdateQuery = new ITCLIB.Admin.SQL();
         if (CheckInsert)
         {
-            UpdateSQL = "INSERT INTO [KHIEUNAI] ([C_CODE], [C_TYPE], [C_DATE], [C_BILL], [FK_KHACHHANG], [C_TENKH], [C_SDT], [C_NOIDUNG], [FK_NGUOITAO], [C_STATUS]) VALUES ('" + khieunai.C_CODE + "', N'" + khieunai.C_TYPE + "','" + String.Format("{0:yyyy-MM-dd hh:mm:ss tt}", khieunai.C_DATE.ToUniversalTime().AddHours(7)) + "', N'" + khieunai.C_BILL + "', N'" + khieunai.FK_KHACHHANG + "', N'" + khieunai.C_TENKH + "', N'" + khieunai.C_SDT + "', N'" + khieunai.C_NOIDUNG + "', N'" + khieunai.FK_NGUOITAO + "', N'" + khieunai.C_STATUS + "');SELECT @@IDENTITY";           
+            UpdateSQL = "INSERT INTO [KHIEUNAI] ([C_CODE], [C_TYPE], [C_DATE], [C_BILL], [FK_KHACHHANG], [C_TENKH], [C_SDT], [C_NOIDUNG], [FK_NGUOITAO], [C_STATUS]) VALUES ('" + khieunai.C_CODE + "', N'" + khieunai.C_TYPE + "','" + String.Format("{0:yyyy-MM-dd hh:mm:ss tt}", khieunai.C_DATE.ToUniversalTime().AddHours(7)) + "', N'" + khieunai.C_BILL + "', " + (khieunai.FK_KHACHHANG == "0" ? "NULL" : "N'" + khieunai.FK_KHACHHANG + "'") + ", N'" + khieunai.C_TENKH + "', N'" + khieunai.C_SDT + "', N'" + khieunai.C_NOIDUNG + "', " + (khieunai.FK_NGUOITAO == 0 ? "NULL" : khieunai.FK_NGUOITAO.ToString()) + ", N'" + khieunai.C_STATUS + "');SELECT @@IDENTITY";
+            Session["t"] = UpdateSQL;
             khieunaiToUpdate.PK_ID = int.Parse(UpdateQuery.ExecuteScalar(UpdateSQL).ToString());           
             list.Add(khieunaiToUpdate);
         }
         else
         {
-            UpdateSQL = "UPDATE [KHIEUNAI] SET [C_CODE] = '" + khieunai.C_CODE + "', [C_TYPE] = N'" + khieunai.C_TYPE + "', [C_DATE] = '" + String.Format("{0:yyyy-MM-dd hh:mm:ss tt}", khieunai.C_DATE.ToUniversalTime().AddHours(7)) + "', [C_BILL] = N'" + khieunai.C_BILL + "', [FK_KHACHHANG] = N'" + khieunai.FK_KHACHHANG + "', [C_TENKH] = N'" + khieunai.C_TENKH + "', [C_SDT] = N'" + khieunai.C_SDT + "', [C_NOIDUNG] = N'" + khieunai.C_NOIDUNG + "', [FK_NGUOITAO] = N'" + khieunai.FK_NGUOITAO + "', [C_STATUS] = N'" + khieunai.C_STATUS + "' WHERE [PK_ID] = " + khieunai.PK_ID;
+            UpdateSQL = "UPDATE [KHIEUNAI] SET [C_CODE] = '" + khieunai.C_CODE + "', [C_TYPE] = N'" + khieunai.C_TYPE + "', [C_DATE] = '" + String.Format("{0:yyyy-MM-dd hh:mm:ss tt}", khieunai.C_DATE.ToUniversalTime().AddHours(7)) + "', [C_BILL] = N'" + khieunai.C_BILL + "', [FK_KHACHHANG] = " + (khieunai.FK_KHACHHANG == "0" ? "NULL" : "N'" + khieunai.FK_KHACHHANG + "'") + ", [C_TENKH] = N'" + khieunai.C_TENKH + "', [C_SDT] = N'" + khieunai.C_SDT + "', [C_NOIDUNG] = N'" + khieunai.C_NOIDUNG + "', [FK_NGUOITAO] = " + (khieunai.FK_NGUOITAO == 0 ? "NULL" : khieunai.FK_NGUOITAO.ToString()) + ", [C_STATUS] = N'" + khieunai.C_STATUS + "' WHERE [PK_ID] = " + khieunai.PK_ID;
             Session["t"] = UpdateSQL;
             UpdateQuery.ExecuteNonQuery(UpdateSQL);
         }

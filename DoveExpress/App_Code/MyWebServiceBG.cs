@@ -51,6 +51,7 @@ public class MyWebServiceBG : System.Web.Services.WebService
         if (CheckInsert)
         {
             UpdateSQL = "INSERT INTO [BAOGIA] ([C_CODE], [C_DATE], [FK_KHACHHANG], [C_TENKH], [C_SDT], [C_NOIDUNG], [FK_NGUOITAO], [C_STATUS]) VALUES ('" + baogia.C_CODE + "', '" + String.Format("{0:yyyy-MM-dd hh:mm:ss tt}", baogia.C_DATE.ToUniversalTime().AddHours(7)) + "', N'" + baogia.FK_KHACHHANG + "', N'" + baogia.C_TENKH + "', N'" + baogia.C_SDT + "', N'" + baogia.C_NOIDUNG + "', N'" + baogia.FK_NGUOITAO + "', N'" + baogia.C_STATUS + "');SELECT @@IDENTITY";
+            Session["t"] = UpdateSQL;
             baogiaToUpdate.PK_ID = int.Parse(UpdateQuery.ExecuteScalar(UpdateSQL).ToString());
             list.Add(baogiaToUpdate);
         }
