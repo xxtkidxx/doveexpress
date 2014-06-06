@@ -8,8 +8,7 @@
             }
             return false;
         }
-        var PK_ID, currentkhieunai, currentRowIndex = null;
-
+        var PK_ID, currentkhieunai;
         var khieunai =
         {
             PK_ID: null,
@@ -23,14 +22,13 @@
             C_NOIDUNG: null,
             FK_NGUOITAO: null,
             C_STATUS: null,
-
             create: function () {
                 var obj = new Object();
 
-                obj.PK_ID = "";
+                obj.PK_ID = "0";
                 obj.C_CODE = "<%=GetMaxKN()%>";
                 obj.C_TYPE = "Khác";
-                obj.C_DATE = "";
+                obj.C_DATE = new Date();
                 obj.C_BILL = "";
                 obj.FK_KHACHHANG = "10001";
                 obj.C_TENKH = "";
@@ -42,20 +40,13 @@
             }
         };
 
-        function getDataItemKeyValue(radGrid, item) {
-            return parseInt(item.getDataKeyValue("PK_ID"));
-        }
-
         function pageLoad(sender, args) {
             PK_ID = $find("<%= RadGridKHIEUNAI.ClientID %>").get_masterTableView().get_dataItems()[0].getDataKeyValue("PK_ID");
             $find("<%= txtC_CODE.ClientID %>").focus();
-            currentRowIndex = 0;
         }
 
         function rowSelected(sender, args) {
             PK_ID = args.getDataKeyValue("PK_ID");
-            currentRowIndex = args.get_gridDataItem().get_element().rowIndex;
-            $find("<%= RadTabStripKHIEUNAI.ClientID %>").set_selectedIndex(0);
             MyWebService.GetKHIEUNAIByPK_ID(PK_ID, setValues);
         }
 
@@ -100,11 +91,8 @@
         }
 
         function updateGrid(result) {
-            var tableView = $find("<%= RadGridKHIEUNAI.ClientID %>").get_masterTableView();
-            tableView.set_dataSource(result);
-            tableView.dataBind();
-            var grid = $find("<%= RadGridKHIEUNAI.ClientID %>");
-            grid.repaint();
+            $find("<%= RadGridKHIEUNAI.ClientID %>").get_masterTableView().set_dataSource(result);
+            $find("<%= RadGridKHIEUNAI.ClientID %>").get_masterTableView().rebind();
         }
         checkAjax = true;
         checkEdit = true;
@@ -118,39 +106,26 @@
                     {
                         checkEdit = false;
                         $(elem).hide();
-                        var gridItems = $find("<%= RadGridKHIEUNAI.ClientID %>").get_masterTableView().get_dataItems();
-                            var newID = parseInt(gridItems[gridItems.length - 1].getDataKeyValue("PK_ID")) + 1;
-                            var newkhieunai = khieunai.create();
-                            newkhieunai.PK_ID = newID;
-                            setValues(newkhieunai);
-                            $get("<%= btnSave.ClientID %>").value = "Thêm";
-                        $get("<%= btnDelete.ClientID %>").parentNode.style.display = "none";
-                            break;
-                        }
-                    default:
-                        {
-                            checkEdit = true;
-                            setValues(currentkhieunai);
-                            currentkhieunai = null;
-                            $get("<%= btnSave.ClientID %>").value = "Lưu";
-                        $get("<%= btnDelete.ClientID %>").parentNode.style.display = "";
+                        var newkhieunai = khieunai.create();
+                        setValues(newkhieunai);
+                        $get("<%= btnSave.ClientID %>").value = "Thêm";
+                            $get("<%= btnDelete.ClientID %>").parentNode.style.display = "none";
                         break;
                     }
-            }
-        }
-
-        function deleteCurrent() {
-            var table = $find("<%= RadGridKHIEUNAI.ClientID %>").get_masterTableView().get_element();
-                var row = table.rows[currentRowIndex];
-                table.deleteRow(currentRowIndex);
-                var dataItem = $find(row.id);
-                if (dataItem) {
-                    dataItem.dispose();
-                    Array.remove($find("<%= RadGridKHIEUNAI.ClientID %>").get_masterTableView()._dataItems, dataItem);
+                default:
+                    {
+                        checkEdit = true;
+                        setValues(currentkhieunai);
+                        currentkhieunai = null;
+                        $get("<%= btnSave.ClientID %>").value = "Lưu";
+                            $get("<%= btnDelete.ClientID %>").parentNode.style.display = "";
+                            break;
+                        }
                 }
-                var gridItems = $find("<%= RadGridKHIEUNAI.ClientID %>").get_masterTableView().get_dataItems();
+            }
+
+            function deleteCurrent() {
                 MyWebService.DeleteKHIEUNAIByPK_ID(PK_ID, updateGrid);
-                gridItems[gridItems.length - 1].set_selected(true);
             }
 
     </script>
@@ -206,12 +181,12 @@
             if (checkAjax && cmbC_TYPE.get_selectedItem().get_value() == 'Bill') {
                 checkKH = !checkKH;
                 $find('<%=RadAjaxManager.GetCurrent(Page).ClientID %>').ajaxRequest("txtC_BILL;" + eventArgs.get_newValue());
-                    var currentLoadingPanel = $find("<%= RadAjaxLoadingPanelKHIEUNAI.ClientID %>");
-                    var currentUpdatedControl = "<%= RadSplitterKHIEUNAI.ClientID %>";
-                    currentLoadingPanel.show(currentUpdatedControl);
-                }
-                return false;
+                var currentLoadingPanel = $find("<%= RadAjaxLoadingPanelKHIEUNAI.ClientID %>");
+                var currentUpdatedControl = "<%= RadSplitterKHIEUNAI.ClientID %>";
+                currentLoadingPanel.show(currentUpdatedControl);
             }
+            return false;
+        }
     </script>
     <script type="text/javascript">
         function onResponseEndKN() {
@@ -430,7 +405,7 @@
             </table>
             <div id="divRadListView">
                 <telerik:RadListView Skin="Vista" ID="RadListViewKHIEUNAIGIAIQUYET" DataSourceID="SqlDataSourceKHIEUNAIGIAIQUYET" OnItemCreated="RadListViewKHIEUNAIGIAIQUYET_ItemCreated"
-                    runat="server" ItemPlaceholderID="KHIEUNAIGIAIQUYETContainer" OnItemCommand="RadListViewKHIEUNAIGIAIQUYET_ItemCommand" 
+                    runat="server" ItemPlaceholderID="KHIEUNAIGIAIQUYETContainer" OnItemCommand="RadListViewKHIEUNAIGIAIQUYET_ItemCommand"
                     DataKeyNames="PK_ID">
                     <LayoutTemplate>
                         <fieldset id="FieldSet1">
@@ -602,6 +577,6 @@
         <asp:Parameter Name="C_NOIDUNG" Type="String" />
     </InsertParameters>
 </asp:SqlDataSource>
-<asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Visible="false" Text="Button" />
-<asp:TextBox ID="TextBox1" runat="server" Visible="false"></asp:TextBox>
+<asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Visible="true" Text="Button" />
+<asp:TextBox ID="TextBox1" runat="server" Visible="true"></asp:TextBox>
 
