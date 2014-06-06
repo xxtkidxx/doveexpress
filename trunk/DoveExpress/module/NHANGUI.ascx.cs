@@ -355,6 +355,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
         {
             ITCLIB.Security.Security.ReturnUrl();
         }
+        btnAddExcell.Visible = ITCLIB.Security.Security.CanAddModule("NHANGUI");
         if (Request["index"] != null && Request["value"] != null)
         {
             string index = Request["index"].ToString();
