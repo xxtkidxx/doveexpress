@@ -41,7 +41,11 @@
         };
 
         function pageLoad(sender, args) {
-            PK_ID = $find("<%= RadGridKHIEUNAI.ClientID %>").get_masterTableView().get_dataItems()[0].getDataKeyValue("PK_ID");
+            if ($find("<%=RadGridKHIEUNAI.ClientID %>").get_masterTableView().get_dataItems().length > 0) {
+                PK_ID = $find("<%= RadGridKHIEUNAI.ClientID %>").get_masterTableView().get_dataItems()[0].getDataKeyValue("PK_ID");
+            } else {
+                PK_ID = "1";
+            }
             $find("<%= txtC_CODE.ClientID %>").focus();
             var CanEdit = "<%=ITCLIB.Security.Security.CanEditModule("KHIEUNAI") %>";
             if (CanEdit == "True") {
