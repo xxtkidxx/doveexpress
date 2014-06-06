@@ -43,6 +43,20 @@
         function pageLoad(sender, args) {
             PK_ID = $find("<%= RadGridKHIEUNAI.ClientID %>").get_masterTableView().get_dataItems()[0].getDataKeyValue("PK_ID");
             $find("<%= txtC_CODE.ClientID %>").focus();
+            var CanEdit = "<%=ITCLIB.Security.Security.CanEditModule("KHIEUNAI") %>";
+            if (CanEdit == "True") {
+                $get("<%= btnSave.ClientID %>").parentNode.style.display = "";
+            }
+            else {
+                $get("<%= btnSave.ClientID %>").parentNode.style.display = "none";
+            }
+            var CanDelete = "<%=ITCLIB.Security.Security.CanDeleteModule("KHIEUNAI") %>";
+            if (CanDelete == "True") {
+                $get("<%= btnDelete.ClientID %>").parentNode.style.display = "";
+            }
+            else {
+                $get("<%= btnDelete.ClientID %>").parentNode.style.display = "none";
+            }
         }
 
         function rowSelected(sender, args) {
@@ -117,7 +131,14 @@
                         var newkhieunai = khieunai.create();
                         setValues(newkhieunai);
                         $get("<%= btnSave.ClientID %>").value = "Thêm";
-                            $get("<%= btnDelete.ClientID %>").parentNode.style.display = "none";
+                        var CanAdd = "<%=ITCLIB.Security.Security.CanAddModule("KHIEUNAI") %>";
+                        if (CanAdd == "True") {
+                            $get("<%= btnSave.ClientID %>").parentNode.style.display = "";
+                        }
+                        else {
+                            $get("<%= btnSave.ClientID %>").parentNode.style.display = "none";
+                        }
+                        $get("<%= btnDelete.ClientID %>").parentNode.style.display = "none";
                         break;
                     }
                 default:
@@ -125,15 +146,15 @@
                         checkEdit = true;
                         $find("<%= RadGridKHIEUNAI.ClientID %>").get_masterTableView().selectItem(0);
                         $get("<%= btnSave.ClientID %>").value = "Lưu";
-                            $get("<%= btnDelete.ClientID %>").parentNode.style.display = "";
-                            break;
-                        }
-                }
+                        $get("<%= btnDelete.ClientID %>").parentNode.style.display = "";
+                        break;
+                    }
             }
+        }
 
-            function deleteCurrent() {
-                MyWebService.DeleteKHIEUNAIByPK_ID(PK_ID, updateGrid);
-            }
+        function deleteCurrent() {
+            MyWebService.DeleteKHIEUNAIByPK_ID(PK_ID, updateGrid);
+        }
 
     </script>
     <script type="text/javascript">
@@ -250,7 +271,7 @@
                     <telerik:GridBoundColumn UniqueName="PK_ID" HeaderText="" DataField="PK_ID" Visible="false"
                         AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
                     </telerik:GridBoundColumn>
-                    <telerik:GridBoundColumn UniqueName="C_CODE" HeaderText="Mã KN" DataField="C_CODE" HeaderStyle-Width="40px" HeaderStyle-HorizontalAlign="Center" ItemStyle-HorizontalAlign="Center"
+                    <telerik:GridBoundColumn UniqueName="C_CODE" HeaderText="Mã KN" DataField="C_CODE" HeaderStyle-Width="45px" HeaderStyle-HorizontalAlign="Center" ItemStyle-HorizontalAlign="Center"
                         AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
                     </telerik:GridBoundColumn>
                     <telerik:GridBoundColumn UniqueName="C_TYPE" HeaderText="Loại khiếu nại" DataField="C_TYPE" HeaderStyle-Width="90px" HeaderStyle-HorizontalAlign="Center"
@@ -419,7 +440,7 @@
                             <legend></legend>
                             <asp:PlaceHolder ID="KHIEUNAIGIAIQUYETContainer" runat="server"></asp:PlaceHolder>
                             <br />
-                            <asp:Button ID="btnInitInsert" runat="server" Text="Thêm tình trạng" Visible ='<%# (cmbC_STATUS.SelectedIndex == 0) %>' OnClick="btnInitInsert_Click"></asp:Button>
+                            <asp:Button ID="btnInitInsert" runat="server" Text="Thêm tình trạng" Visible='<%# (cmbC_STATUS.SelectedIndex == 0) && ITCLIB.Security.Security.CanEditModule("KHIEUNAI") %>' OnClick="btnInitInsert_Click"></asp:Button>
                         </fieldset>
                     </LayoutTemplate>
                     <ItemTemplate>
@@ -427,9 +448,9 @@
                             <div class="headerthongtin">
                                 <ul>
                                     <li class="lifirst">
-                                        <asp:LinkButton ID="btnEdit" runat="server" CommandName="Edit"><img src="Images/img_save.jpg" />Sửa</asp:LinkButton></li>
+                                        <asp:LinkButton ID="btnEdit" runat="server" Visible='<%# ITCLIB.Security.Security.CanEditModule("KHIEUNAI") %>' CommandName="Edit"><img src="Images/img_save.jpg" />Sửa</asp:LinkButton></li>
                                     <li>
-                                        <asp:LinkButton ID="btnDelete" runat="server" OnClientClick="javascript:return confirm('Bạn có muốn xóa bản ghi đã chọn không?')" CommandName="Delete" CommandArgument='<%#Eval("PK_ID") %>'><img src="Images/img_Close.jpg" />Xóa</asp:LinkButton></li>
+                                        <asp:LinkButton ID="btnDelete" runat="server" Visible='<%# ITCLIB.Security.Security.CanEditModule("KHIEUNAI") %>' OnClientClick="javascript:return confirm('Bạn có muốn xóa bản ghi đã chọn không?')" CommandName="Delete" CommandArgument='<%#Eval("PK_ID") %>'><img src="Images/img_Close.jpg" />Xóa</asp:LinkButton></li>
                                 </ul>
                             </div>
                             <div style="width: 100%; height: 60px; background: #FFFFFF" class="clearfix">
