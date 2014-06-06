@@ -44,7 +44,7 @@
             if ($find("<%=RadGridKHIEUNAI.ClientID %>").get_masterTableView().get_dataItems().length > 0) {
                 PK_ID = $find("<%= RadGridKHIEUNAI.ClientID %>").get_masterTableView().get_dataItems()[0].getDataKeyValue("PK_ID");
             } else {
-                PK_ID = "1";
+                PK_ID = "0";
             }
             $find("<%= txtC_CODE.ClientID %>").focus();
             var CanEdit = "<%=ITCLIB.Security.Security.CanEditModule("KHIEUNAI") %>";
@@ -55,7 +55,7 @@
                 $get("<%= btnSave.ClientID %>").parentNode.style.display = "none";
             }
             var CanDelete = "<%=ITCLIB.Security.Security.CanDeleteModule("KHIEUNAI") %>";
-            if (CanDelete == "True") {
+            if (CanDelete == "True" && checkEdit) {
                 $get("<%= btnDelete.ClientID %>").parentNode.style.display = "";
             }
             else {
@@ -107,8 +107,16 @@
             khieunai.C_SDT = $find("<%= txtC_SDT.ClientID %>").get_value();
             khieunai.C_NOIDUNG = $find("<%= txtC_NOIDUNG.ClientID %>").get_value();
             khieunai.C_STATUS = $find("<%= cmbC_STATUS.ClientID %>").get_value();
-            khieunai.FK_KHACHHANG = $find("<%= cmbMaKhachHang.ClientID %>").get_value();
-            khieunai.FK_NGUOITAO = $find("<%= cmbFK_NGUOITAO.ClientID %>").get_value();
+            if ($find("<%= cmbMaKhachHang.ClientID %>").get_value() != "") {
+                khieunai.FK_KHACHHANG = $find("<%= cmbMaKhachHang.ClientID %>").get_value();
+            } else {
+                khieunai.FK_KHACHHANG = "0";
+            }
+            if ($find("<%= cmbFK_NGUOITAO.ClientID %>").get_value() != "") {
+                khieunai.FK_NGUOITAO = $find("<%= cmbFK_NGUOITAO.ClientID %>").get_value();
+            } else {
+                khieunai.FK_NGUOITAO = "0";
+            }
             return khieunai;
         }
 
@@ -148,7 +156,7 @@
                 default:
                     {
                         checkEdit = true;
-                        $find("<%= RadGridKHIEUNAI.ClientID %>").get_masterTableView().selectItem(0);
+                        //$find("<%= RadGridKHIEUNAI.ClientID %>").get_masterTableView().selectItem(0);
                         $get("<%= btnSave.ClientID %>").value = "Lưu";
                         $get("<%= btnDelete.ClientID %>").parentNode.style.display = "";
                         break;
@@ -157,7 +165,8 @@
         }
 
         function deleteCurrent() {
-            MyWebServiceKN.DeleteKHIEUNAIByPK_ID(PK_ID, updateGrid);
+            alert(PK_ID);
+            //MyWebServiceKN.DeleteKHIEUNAIByPK_ID(PK_ID, updateGrid);
         }
 
     </script>

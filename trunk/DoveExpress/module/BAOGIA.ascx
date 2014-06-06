@@ -40,7 +40,7 @@
             if ($find("<%=RadGridBAOGIA.ClientID %>").get_masterTableView().get_dataItems().length > 0) {
                 PK_ID = $find("<%= RadGridBAOGIA.ClientID %>").get_masterTableView().get_dataItems()[0].getDataKeyValue("PK_ID");
             } else {
-                PK_ID = "1";
+                PK_ID = "0";
             }
             $find("<%= txtC_CODE.ClientID %>").focus();
             var CanEdit = "<%=ITCLIB.Security.Security.CanEditModule("BAOGIA") %>";
@@ -51,7 +51,7 @@
                 $get("<%= btnSave.ClientID %>").parentNode.style.display = "none";
             }
             var CanDelete = "<%=ITCLIB.Security.Security.CanDeleteModule("BAOGIA") %>";
-            if (CanDelete == "True") {
+            if (CanDelete == "True" && checkEdit) {
                 $get("<%= btnDelete.ClientID %>").parentNode.style.display = "";
             }
             else {
@@ -99,17 +99,25 @@
             baogia.C_SDT = $find("<%= txtC_SDT.ClientID %>").get_value();
             baogia.C_NOIDUNG = $find("<%= txtC_NOIDUNG.ClientID %>").get_value();
             baogia.C_STATUS = $find("<%= cmbC_STATUS.ClientID %>").get_value();
-            baogia.FK_KHACHHANG = $find("<%= cmbMaKhachHang.ClientID %>").get_value();
-            baogia.FK_NGUOITAO = $find("<%= cmbFK_NGUOITAO.ClientID %>").get_value();
-            return baogia;
-        }
+            if ($find("<%= cmbMaKhachHang.ClientID %>").get_value() != "") {
+                baogia.FK_KHACHHANG = $find("<%= cmbMaKhachHang.ClientID %>").get_value();
+            } else {
+                baogia.FK_KHACHHANG = "0";
+            }
+            if ($find("<%= cmbFK_NGUOITAO.ClientID %>").get_value() != "") {
+                baogia.FK_NGUOITAO = $find("<%= cmbFK_NGUOITAO.ClientID %>").get_value();
+                        } else {
+                            baogia.FK_NGUOITAO = "0";
+                        }
+                        return baogia;
+                    }
 
-        function updateChanges() {
-            MyWebServiceBG.UpdateBAOGIAByBAOGIA(getValues(), updateGrid);
-        }
+                    function updateChanges() {
+                        MyWebServiceBG.UpdateBAOGIAByBAOGIA(getValues(), updateGrid);
+                    }
 
-        function updateGrid(result) {
-            $find("<%= RadGridBAOGIA.ClientID %>").get_masterTableView().set_dataSource(result);
+                    function updateGrid(result) {
+                        $find("<%= RadGridBAOGIA.ClientID %>").get_masterTableView().set_dataSource(result);
             $find("<%= RadGridBAOGIA.ClientID %>").get_masterTableView().rebind();
         }
         checkAjax = true;
@@ -140,7 +148,7 @@
                 default:
                     {
                         checkEdit = true;
-                        $find("<%= RadGridBAOGIA.ClientID %>").get_masterTableView().selectItem(0);
+                        //$find("<%= RadGridBAOGIA.ClientID %>").get_masterTableView().selectItem(0);
                         $get("<%= btnSave.ClientID %>").value = "Lưu";
                         $get("<%= btnDelete.ClientID %>").parentNode.style.display = "";
                         break;
