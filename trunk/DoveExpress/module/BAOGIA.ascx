@@ -24,7 +24,7 @@
                 var obj = new Object();
 
                 obj.PK_ID = "0";
-                obj.C_CODE = "<%=GetMaxKN()%>";
+                obj.C_CODE = "<%=GetMaxBG()%>";
                 obj.C_DATE = new Date();
                 obj.FK_KHACHHANG = "";
                 obj.C_TENKH = "";
@@ -37,7 +37,11 @@
         };
 
         function pageLoad(sender, args) {
-            PK_ID = $find("<%= RadGridBAOGIA.ClientID %>").get_masterTableView().get_dataItems()[0].getDataKeyValue("PK_ID");
+            if ($find("<%=RadGridBAOGIA.ClientID %>").get_masterTableView().get_dataItems().length > 0) {
+                PK_ID = $find("<%= RadGridBAOGIA.ClientID %>").get_masterTableView().get_dataItems()[0].getDataKeyValue("PK_ID");
+            } else {
+                PK_ID = "1";
+            }
             $find("<%= txtC_CODE.ClientID %>").focus();
             var CanEdit = "<%=ITCLIB.Security.Security.CanEditModule("BAOGIA") %>";
             if (CanEdit == "True") {
@@ -181,7 +185,7 @@
         }
     </script>
     <script type="text/javascript">
-        function onResponseEndKN() {
+        function onResponseEndBG() {
             if (typeof (result) != "undefined" && result && result != "") {
                 //alert(result);
                 var arrayOfStrings = result.split(",-,");
@@ -220,7 +224,7 @@
             <MasterTableView Name="MasterTableViewBAOGIA" CommandItemDisplay="Top" DataSourceID="BAOGIADataSource" DataKeyNames="PK_ID" ClientDataKeyNames="PK_ID" EditMode="PopUp" NoMasterRecordsText="Không có dữ liệu">
                 <CommandItemTemplate>
                     <div style="padding: 5px 5px; float: left; width: auto">
-                        <b>Quản lý khiếu nại</b>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <b>Quản lý báo giá</b>&nbsp;&nbsp;&nbsp;&nbsp;
                      <asp:LinkButton ID="LinkButton11" runat="server" CommandName="ClearFilterGrid"><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/filterCancel.gif" />Xóa tìm kiếm</asp:LinkButton>&nbsp;&nbsp;
                      <asp:LinkButton ID="LinkButton4" runat="server" CommandName="RebindGrid"><img style="border:0px;vertical-align:middle;" alt="" src="Images/Grid/Refresh.gif" />Làm mới</asp:LinkButton>
                     </div>
@@ -235,7 +239,7 @@
                     <telerik:GridBoundColumn UniqueName="PK_ID" HeaderText="" DataField="PK_ID" Visible="false"
                         AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
                     </telerik:GridBoundColumn>
-                    <telerik:GridBoundColumn UniqueName="C_CODE" HeaderText="Mã KN" DataField="C_CODE" HeaderStyle-Width="45px" HeaderStyle-HorizontalAlign="Center" ItemStyle-HorizontalAlign="Center"
+                    <telerik:GridBoundColumn UniqueName="C_CODE" HeaderText="Mã BG" DataField="C_CODE" HeaderStyle-Width="45px" HeaderStyle-HorizontalAlign="Center" ItemStyle-HorizontalAlign="Center"
                         AutoPostBackOnFilter="true" CurrentFilterFunction="Contains" ShowFilterIcon="false" FilterControlWidth="100%">
                     </telerik:GridBoundColumn>
                     <telerik:GridBoundColumn UniqueName="C_DATE" HeaderText="Thời gian" DataField="C_DATE"
@@ -279,9 +283,9 @@
         <telerik:RadTabStrip ID="RadTabStripBAOGIA" OnClientTabSelected="tabSelected" Style="margin-top: 10px;"
             SelectedIndex="0" runat="server">
             <Tabs>
-                <telerik:RadTab Text="Sửa khiếu nại">
+                <telerik:RadTab Text="Sửa báo giá">
                 </telerik:RadTab>
-                <telerik:RadTab Text="Thêm khiếu nại">
+                <telerik:RadTab Text="Thêm báo giá">
                 </telerik:RadTab>
             </Tabs>
         </telerik:RadTabStrip>
@@ -290,14 +294,14 @@
                 <li class="lifirst">
                     <asp:LinkButton ID="btnSave" runat="server" OnClientClick="updateChanges(); return false;"><img src="Images/img_save.jpg" />Lưu</asp:LinkButton></li>
                 <li>
-                    <asp:LinkButton ID="btnDelete" runat="server" OnClientClick="if(!confirm('Bạn chắc chắn muốn xóa khiếu nại?'))return false; deleteCurrent(); return false;"><img src="Images/img_Close.jpg" />Xóa</asp:LinkButton></li>
+                    <asp:LinkButton ID="btnDelete" runat="server" OnClientClick="if(!confirm('Bạn chắc chắn muốn xóa báo giá?'))return false; deleteCurrent(); return false;"><img src="Images/img_Close.jpg" />Xóa</asp:LinkButton></li>
             </ul>
         </div>
         <div style="width: 100%; height: 250px; background: #FFFFFF" class="clearfix">
             <table id="tblEdit" class="TableEditInGrid" cellspacing="3" cellpadding="3" style="width: 100%" border="0">
                 <tr>
                     <td style="width: 100px;">
-                        <span class="rtsTxtnew">Mã khiếu nại:</span>
+                        <span class="rtsTxtnew">Mã báo giá:</span>
                     </td>
                     <td colspan="4">
                         <asp:HiddenField ID="txtID" Value='<%# Eval("PK_ID") %>' runat="server" />

@@ -73,10 +73,10 @@ public partial class module_BAOGIA : System.Web.UI.UserControl
         RadScriptManager.GetCurrent(Page).Services.Add(new ServiceReference(ResolveUrl("~/MyWebServiceBG.asmx")));
         RadGridBAOGIA.SelectedIndexes.Add(0);
         RadAjaxManager ajaxManager = RadAjaxManager.GetCurrent(Page);
-        ajaxManager.AjaxRequest += new RadAjaxControl.AjaxRequestDelegate(RadScriptManager_AjaxRequestKN);
-        ajaxManager.ClientEvents.OnResponseEnd = "onResponseEndKN";
+        ajaxManager.AjaxRequest += new RadAjaxControl.AjaxRequestDelegate(RadScriptManager_AjaxRequestBG);
+        ajaxManager.ClientEvents.OnResponseEnd = "onResponseEndBG";
     }
-    protected void RadScriptManager_AjaxRequestKN(object sender, AjaxRequestEventArgs e)
+    protected void RadScriptManager_AjaxRequestBG(object sender, AjaxRequestEventArgs e)
     {
         string[] arrayvalue = e.Argument.Split(';');
         if ((arrayvalue[0] == "cmbMaKhachHang") && (FK_KHACHHANG != arrayvalue[1]))
@@ -110,27 +110,30 @@ public partial class module_BAOGIA : System.Web.UI.UserControl
     }
     protected void RadGridBAOGIA_DataBound(object sender, EventArgs e)
     {
-        GridDataItem selectedItem = RadGridBAOGIA.Items[0];
-        txtID.Value = selectedItem.GetDataKeyValue("PK_ID").ToString();
-        string SelectSQL;
-        SelectSQL = "Select BAOGIA.* FROM BAOGIA WHERE BAOGIA.PK_ID =  " + selectedItem.GetDataKeyValue("PK_ID").ToString();
-        DataTable oDataTable = new DataTable();
-        ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
-        oDataTable = SelectQuery.query_data(SelectSQL);
-        if (oDataTable.Rows.Count != 0)
+        if (RadGridBAOGIA.Items.Count > 0)
         {
-            txtC_CODE.Text = oDataTable.Rows[0]["C_CODE"].ToString();
-            radC_DATE.SelectedDate = DateTime.Parse(oDataTable.Rows[0]["C_DATE"].ToString());
-            cmbMaKhachHang.SelectedValue = oDataTable.Rows[0]["FK_KHACHHANG"].ToString();
-            txtC_TENKH.Text = oDataTable.Rows[0]["C_TENKH"].ToString();
-            txtC_SDT.Text = oDataTable.Rows[0]["C_SDT"].ToString();
-            txtC_NOIDUNG.Text = oDataTable.Rows[0]["C_NOIDUNG"].ToString();
-            cmbFK_NGUOITAO.SelectedValue = oDataTable.Rows[0]["FK_NGUOITAO"].ToString();
-            cmbC_STATUS.SelectedValue = oDataTable.Rows[0]["C_STATUS"].ToString();
-        }
-        else
-        {
+            GridDataItem selectedItem = RadGridBAOGIA.Items[0];
+            txtID.Value = selectedItem.GetDataKeyValue("PK_ID").ToString();
+            string SelectSQL;
+            SelectSQL = "Select BAOGIA.* FROM BAOGIA WHERE BAOGIA.PK_ID =  " + selectedItem.GetDataKeyValue("PK_ID").ToString();
+            DataTable oDataTable = new DataTable();
+            ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
+            oDataTable = SelectQuery.query_data(SelectSQL);
+            if (oDataTable.Rows.Count != 0)
+            {
+                txtC_CODE.Text = oDataTable.Rows[0]["C_CODE"].ToString();
+                radC_DATE.SelectedDate = DateTime.Parse(oDataTable.Rows[0]["C_DATE"].ToString());
+                cmbMaKhachHang.SelectedValue = oDataTable.Rows[0]["FK_KHACHHANG"].ToString();
+                txtC_TENKH.Text = oDataTable.Rows[0]["C_TENKH"].ToString();
+                txtC_SDT.Text = oDataTable.Rows[0]["C_SDT"].ToString();
+                txtC_NOIDUNG.Text = oDataTable.Rows[0]["C_NOIDUNG"].ToString();
+                cmbFK_NGUOITAO.SelectedValue = oDataTable.Rows[0]["FK_NGUOITAO"].ToString();
+                cmbC_STATUS.SelectedValue = oDataTable.Rows[0]["C_STATUS"].ToString();
+            }
+            else
+            {
 
+            }
         }
     }
     protected void RadGridBAOGIA_ColumnCreated(object sender, GridColumnCreatedEventArgs e)
@@ -182,18 +185,18 @@ public partial class module_BAOGIA : System.Web.UI.UserControl
             args.IsValid = true;
         }
     }
-    protected string GetMaxKN()
+    protected string GetMaxBG()
     {
         string maxbill = "0001";
-        string SelectSQL = "SELECT MAX(CAST(C_CODE AS DECIMAL)) as MAXKN FROM BAOGIA";
+        string SelectSQL = "SELECT MAX(CAST(C_CODE AS DECIMAL)) as MAXBG FROM BAOGIA";
         DataTable oDataTable = new DataTable();
         ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
         oDataTable = SelectQuery.query_data(SelectSQL);
         if (oDataTable.Rows.Count != 0)
         {
-            if (oDataTable.Rows[0]["MAXKN"] != DBNull.Value)
+            if (oDataTable.Rows[0]["MAXBG"] != DBNull.Value)
             {
-                decimal maxvalue = (decimal)oDataTable.Rows[0]["MAXKN"];
+                decimal maxvalue = (decimal)oDataTable.Rows[0]["MAXBG"];
                 maxbill = String.Format("{0:0000}", maxvalue + 1);
             }
         }

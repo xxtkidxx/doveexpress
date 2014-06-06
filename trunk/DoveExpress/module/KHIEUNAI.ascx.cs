@@ -142,29 +142,32 @@ public partial class module_KHIEUNAI : System.Web.UI.UserControl
     }
     protected void RadGridKHIEUNAI_DataBound(object sender, EventArgs e)
     {
-        GridDataItem selectedItem = RadGridKHIEUNAI.Items[0];
-        txtID.Value = selectedItem.GetDataKeyValue("PK_ID").ToString();
-        string SelectSQL;
-        SelectSQL = "Select KHIEUNAI.* FROM KHIEUNAI WHERE KHIEUNAI.PK_ID =  " + selectedItem.GetDataKeyValue("PK_ID").ToString();
-        DataTable oDataTable = new DataTable();
-        ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
-        oDataTable = SelectQuery.query_data(SelectSQL);
-        if (oDataTable.Rows.Count != 0)
+        if (RadGridKHIEUNAI.Items.Count > 0)
         {
-            txtC_CODE.Text = oDataTable.Rows[0]["C_CODE"].ToString();
-            cmbC_TYPE.SelectedValue = oDataTable.Rows[0]["C_TYPE"].ToString();
-            radC_DATE.SelectedDate = DateTime.Parse(oDataTable.Rows[0]["C_DATE"].ToString());
-            txtC_BILL.Text = oDataTable.Rows[0]["C_BILL"].ToString();
-            cmbMaKhachHang.SelectedValue = oDataTable.Rows[0]["FK_KHACHHANG"].ToString();
-            txtC_TENKH.Text = oDataTable.Rows[0]["C_TENKH"].ToString();
-            txtC_SDT.Text = oDataTable.Rows[0]["C_SDT"].ToString();
-            txtC_NOIDUNG.Text = oDataTable.Rows[0]["C_NOIDUNG"].ToString();
-            cmbFK_NGUOITAO.SelectedValue = oDataTable.Rows[0]["FK_NGUOITAO"].ToString();
-            cmbC_STATUS.SelectedValue = oDataTable.Rows[0]["C_STATUS"].ToString();
-        }
-        else
-        {
-            
+            GridDataItem selectedItem = RadGridKHIEUNAI.Items[0];
+            txtID.Value = selectedItem.GetDataKeyValue("PK_ID").ToString();
+            string SelectSQL;
+            SelectSQL = "Select KHIEUNAI.* FROM KHIEUNAI WHERE KHIEUNAI.PK_ID =  " + selectedItem.GetDataKeyValue("PK_ID").ToString();
+            DataTable oDataTable = new DataTable();
+            ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
+            oDataTable = SelectQuery.query_data(SelectSQL);
+            if (oDataTable.Rows.Count != 0)
+            {
+                txtC_CODE.Text = oDataTable.Rows[0]["C_CODE"].ToString();
+                cmbC_TYPE.SelectedValue = oDataTable.Rows[0]["C_TYPE"].ToString();
+                radC_DATE.SelectedDate = DateTime.Parse(oDataTable.Rows[0]["C_DATE"].ToString());
+                txtC_BILL.Text = oDataTable.Rows[0]["C_BILL"].ToString();
+                cmbMaKhachHang.SelectedValue = oDataTable.Rows[0]["FK_KHACHHANG"].ToString();
+                txtC_TENKH.Text = oDataTable.Rows[0]["C_TENKH"].ToString();
+                txtC_SDT.Text = oDataTable.Rows[0]["C_SDT"].ToString();
+                txtC_NOIDUNG.Text = oDataTable.Rows[0]["C_NOIDUNG"].ToString();
+                cmbFK_NGUOITAO.SelectedValue = oDataTable.Rows[0]["FK_NGUOITAO"].ToString();
+                cmbC_STATUS.SelectedValue = oDataTable.Rows[0]["C_STATUS"].ToString();
+            }
+            else
+            {
+
+            }
         }
     }
     protected void RadGridKHIEUNAI_ColumnCreated(object sender, GridColumnCreatedEventArgs e)
