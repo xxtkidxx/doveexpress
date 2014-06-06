@@ -437,8 +437,8 @@ public partial class Main : System.Web.UI.MasterPage
                         control = LoadControl("module/KIHIEUTAIKHOAN.ascx");
                         break;
                     case "baogia":
-                        _AjaxSetting.AjaxControlID = "RadGridBAOGIA";
-                        _AjaxUpdatedControl.ControlID = "RadGridBAOGIA";
+                        _AjaxSetting.AjaxControlID = "RadSplitterBAOGIA";
+                        _AjaxUpdatedControl.ControlID = "RadSplitterBAOGIA";
                         _AjaxUpdatedControl.LoadingPanelID = "RadAjaxLoadingPanelBAOGIA";
                         _AjaxSetting.UpdatedControls.Add(_AjaxUpdatedControl);
                         RadAjaxManager.AjaxSettings.Add(_AjaxSetting);
