@@ -75,6 +75,7 @@ public partial class module_KHIEUNAI : System.Web.UI.UserControl
         {
             ITCLIB.Security.Security.ReturnUrl();
         }
+        btnDelete.Visible = ITCLIB.Security.Security.CanDeleteModule("KHIEUNAI");
         if (Request["index"] != null && Request["value"] != null)
         {
             string index = Request["index"].ToString();
