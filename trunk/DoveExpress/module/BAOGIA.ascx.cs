@@ -70,7 +70,7 @@ public partial class module_BAOGIA : System.Web.UI.UserControl
             string Value = Request["value"].ToString();
         }
         Session["LastUrl"] = Request.Url.ToString();
-        RadScriptManager.GetCurrent(Page).Services.Add(new ServiceReference(ResolveUrl("~/MyWebService.asmx")));
+        RadScriptManager.GetCurrent(Page).Services.Add(new ServiceReference(ResolveUrl("~/MyWebServiceBG.asmx")));
         RadGridBAOGIA.SelectedIndexes.Add(0);
         RadAjaxManager ajaxManager = RadAjaxManager.GetCurrent(Page);
         ajaxManager.AjaxRequest += new RadAjaxControl.AjaxRequestDelegate(RadScriptManager_AjaxRequestKN);

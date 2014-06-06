@@ -62,7 +62,7 @@
         function rowSelected(sender, args) {
             PK_ID = args.getDataKeyValue("PK_ID");
             $find("<%= RadTabStripKHIEUNAI.ClientID %>").set_selectedIndex(0);
-            MyWebService.GetKHIEUNAIByPK_ID(PK_ID, setValues);
+            MyWebServiceKN.GetKHIEUNAIByPK_ID(PK_ID, setValues);
         }
 
         function setValues(khieunai) {
@@ -109,7 +109,7 @@
         }
 
         function updateChanges() {
-            MyWebService.UpdateKHIEUNAIByKHIEUNAI(getValues(), updateGrid);
+            MyWebServiceKN.UpdateKHIEUNAIByKHIEUNAI(getValues(), updateGrid);
         }
 
         function updateGrid(result) {
@@ -153,7 +153,7 @@
         }
 
         function deleteCurrent() {
-            MyWebService.DeleteKHIEUNAIByPK_ID(PK_ID, updateGrid);
+            MyWebServiceKN.DeleteKHIEUNAIByPK_ID(PK_ID, updateGrid);
         }
 
     </script>

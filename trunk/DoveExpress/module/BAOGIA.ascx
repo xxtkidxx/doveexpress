@@ -58,7 +58,7 @@
         function rowSelected(sender, args) {
             PK_ID = args.getDataKeyValue("PK_ID");
             $find("<%= RadTabStripBAOGIA.ClientID %>").set_selectedIndex(0);
-            MyWebService.GetBAOGIAByPK_ID(PK_ID, setValues);
+            MyWebServiceBG.GetBAOGIAByPK_ID(PK_ID, setValues);
         }
 
         function setValues(baogia) {
@@ -101,7 +101,7 @@
         }
 
         function updateChanges() {
-            MyWebService.UpdateBAOGIAByBAOGIA(getValues(), updateGrid);
+            MyWebServiceBG.UpdateBAOGIAByBAOGIA(getValues(), updateGrid);
         }
 
         function updateGrid(result) {
@@ -145,7 +145,7 @@
         }
 
         function deleteCurrent() {
-            MyWebService.DeleteBAOGIAByPK_ID(PK_ID, updateGrid);
+            MyWebServiceBG.DeleteBAOGIAByPK_ID(PK_ID, updateGrid);
         }
 
     </script>

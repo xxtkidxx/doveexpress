@@ -3525,5 +3525,224 @@ namespace ITCLIB
             #endregion
         }
     }
+    //TuanDA
+    namespace BAOGIA
+    {
+        public class BAOGIA
+        {
+            #region Private fields
+            private int _PK_ID;
+            private string _C_CODE;
+            private DateTime _C_DATE;
+            private string _FK_KHACHHANG;
+            private string _C_TENKH;
+            private string _C_SDT;
+            private string _C_NOIDUNG;
+            private int _FK_NGUOITAO;
+            private string _C_STATUS;
+            #endregion
+            #region Constructors
+            public BAOGIA()
+            {
+            }
+            public BAOGIA(SqlDataReader reader)
+            {
+                _PK_ID = Convert.ToInt32(reader["PK_ID"]);
+                _C_CODE = reader["C_CODE"].ToString();
+                _C_DATE = Convert.ToDateTime(reader["C_DATE"]);
+                _FK_KHACHHANG = reader["FK_KHACHHANG"].ToString();
+                _C_TENKH = reader["C_TENKH"].ToString();
+                _C_SDT = reader["C_SDT"].ToString();
+                _C_NOIDUNG = reader["C_NOIDUNG"].ToString();
+                _FK_NGUOITAO = Convert.ToInt32(reader["FK_NGUOITAO"]);
+                _C_STATUS = reader["C_STATUS"].ToString();
+            }
+            #endregion
+            #region Public properties
+            public int PK_ID
+            {
+                get
+                {
+                    return this._PK_ID;
+                }
+                set
+                {
+                    if ((this._PK_ID != value))
+                    {
+                        this._PK_ID = value;
+                    }
+                }
+            }
+            public string C_CODE
+            {
+                get
+                {
+                    return this._C_CODE;
+                }
+                set
+                {
+                    if ((this._C_CODE != value))
+                    {
+                        this._C_CODE = value;
+                    }
+                }
+            }
+            public DateTime C_DATE
+            {
+                get
+                {
+                    return this._C_DATE;
+                }
+                set
+                {
+                    if ((this._C_DATE != value))
+                    {
+                        this._C_DATE = value;
+                    }
+                }
+            }
+            public string FK_KHACHHANG
+            {
+                get
+                {
+                    return this._FK_KHACHHANG;
+                }
+                set
+                {
+                    if ((this._FK_KHACHHANG != value))
+                    {
+                        this._FK_KHACHHANG = value;
+                    }
+                }
+            }
+            public string C_TENKH
+            {
+                get
+                {
+                    return this._C_TENKH;
+                }
+                set
+                {
+                    if ((this._C_TENKH != value))
+                    {
+
+                        this._C_TENKH = value;
+                    }
+                }
+            }
+            public string C_SDT
+            {
+                get
+                {
+                    return this._C_SDT;
+                }
+                set
+                {
+                    if ((this._C_SDT != value))
+                    {
+
+                        this._C_SDT = value;
+                    }
+                }
+            }
+            public string C_NOIDUNG
+            {
+                get
+                {
+                    return this._C_NOIDUNG;
+                }
+                set
+                {
+                    if ((this._C_NOIDUNG != value))
+                    {
+
+                        this._C_NOIDUNG = value;
+                    }
+                }
+            }
+            public int FK_NGUOITAO
+            {
+                get
+                {
+                    return this._FK_NGUOITAO;
+                }
+                set
+                {
+                    if ((this._FK_NGUOITAO != value))
+                    {
+
+                        this._FK_NGUOITAO = value;
+                    }
+                }
+            }
+            public string C_STATUS
+            {
+                get
+                {
+                    return this._C_STATUS;
+                }
+                set
+                {
+                    if ((this._C_STATUS != value))
+                    {
+
+                        this._C_STATUS = value;
+                    }
+                }
+            }
+            #endregion
+        }
+        public class BAOGIAList : List<BAOGIA>
+        {
+            #region Constuctors
+
+            public BAOGIAList()
+            {
+                LoadAllBAOGIA();
+            }
+
+            #endregion
+
+            #region Helper methods
+
+            private void LoadAllBAOGIA()
+            {
+                if (this.Count > 0)
+                    this.Clear();
+
+                SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["DOVEEXPRESSConnectionString"].ConnectionString);
+                SqlCommand cmd = new SqlCommand("SELECT [BAOGIA].[PK_ID], [BAOGIA].[C_CODE], [BAOGIA].[C_DATE], [BAOGIA].[FK_KHACHHANG], [BAOGIA].[C_TENKH], [BAOGIA].[C_SDT], [BAOGIA].[C_NOIDUNG], [BAOGIA].[FK_NGUOITAO], [BAOGIA].[C_STATUS], USERS.C_NAME as NGUOITAONAME FROM [BAOGIA] LEFT OUTER JOIN USERS ON BAOGIA.FK_NGUOITAO =USERS.PK_ID ORDER BY C_STATUS ASC, C_DATE DESC", conn);
+                cmd.CommandType = CommandType.Text;
+
+                try
+                {
+                    conn.Open();
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        this.Add(new BAOGIA(dr));
+                    }
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+
+            public BAOGIA GetBAOGIAByPK_ID(int id)
+            {
+                foreach (BAOGIA baogia in this)
+                {
+                    if (baogia.PK_ID == id)
+                    {
+                        return baogia;
+                    }
+                }
+                return null;
+            }
+
+            #endregion
+        }
+    }
 }
 
