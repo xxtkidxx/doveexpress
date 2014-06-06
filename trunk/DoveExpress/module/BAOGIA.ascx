@@ -92,7 +92,7 @@
         }
 
         function getValues() {
-            baogia.PK_ID = $get("<%= txtID.ClientID %>").value;
+            baogia.PK_ID = $get("<%= txtID.ClientID %>").value;           
             baogia.C_CODE = $find("<%= txtC_CODE.ClientID %>").get_value();
             baogia.C_DATE = $find("<%= radC_DATE.ClientID %>").get_selectedDate();
             baogia.C_TENKH = $find("<%= txtC_TENKH.ClientID %>").get_value();
@@ -103,22 +103,26 @@
                 baogia.FK_KHACHHANG = $find("<%= cmbMaKhachHang.ClientID %>").get_value();
             } else {
                 baogia.FK_KHACHHANG = "0";
-            }
+            }           
             if ($find("<%= cmbFK_NGUOITAO.ClientID %>").get_value() != "") {
                 baogia.FK_NGUOITAO = $find("<%= cmbFK_NGUOITAO.ClientID %>").get_value();
-                        } else {
-                            baogia.FK_NGUOITAO = "0";
-                        }
-                        return baogia;
-                    }
+            } else {
+                baogia.FK_NGUOITAO = "0";
+            }
+            return baogia;
+        }
 
-                    function updateChanges() {
-                        MyWebServiceBG.UpdateBAOGIAByBAOGIA(getValues(), updateGrid);
+        function updateChanges() {
+            if ($find("<%= cmbMaKhachHang.ClientID %>").get_value() != "" && $find("<%= cmbFK_NGUOITAO.ClientID %>").get_value() != "") {
+                            MyWebServiceBG.UpdateBAOGIAByBAOGIA(getValues(), updateGrid);
+                        } else {
+                            alert("Hãy chọn khách hàng và người tạo báo giá");
+                        }
                     }
 
                     function updateGrid(result) {
                         $find("<%= RadGridBAOGIA.ClientID %>").get_masterTableView().set_dataSource(result);
-            $find("<%= RadGridBAOGIA.ClientID %>").get_masterTableView().rebind();
+                        $find("<%= RadGridBAOGIA.ClientID %>").get_masterTableView().rebind();
         }
         checkAjax = true;
         checkEdit = true;
@@ -157,7 +161,7 @@
         }
 
         function deleteCurrent() {
-            MyWebServiceBG.DeleteBAOGIAByPK_ID(PK_ID, updateGrid);
+            MyWebServiceKN.DeleteBAOGIAByPK_ID($find("<%= RadGridBAOGIA.ClientID %>").get_masterTableView().get_selectedItems()[0].getDataKeyValue("PK_ID"), updateGrid);
         }
 
     </script>
@@ -555,6 +559,6 @@
         <asp:Parameter Name="C_NOIDUNG" Type="String" />
     </InsertParameters>
 </asp:SqlDataSource>
-<asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Visible="false" Text="Button" />
-<asp:TextBox ID="TextBox1" runat="server" Visible="false"></asp:TextBox>
+<asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Visible="true" Text="Button" />
+<asp:TextBox ID="TextBox1" runat="server" Visible="true"></asp:TextBox>
 
