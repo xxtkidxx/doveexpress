@@ -621,6 +621,6 @@
         <asp:Parameter Name="C_NOIDUNG" Type="String" />
     </InsertParameters>
 </asp:SqlDataSource>
-<asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Visible="true" Text="Button" />
-<asp:TextBox ID="TextBox1" runat="server" Visible="true"></asp:TextBox>
+<asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Visible="false" Text="Button" />
+<asp:TextBox ID="TextBox1" runat="server" Visible="false"></asp:TextBox>
 
