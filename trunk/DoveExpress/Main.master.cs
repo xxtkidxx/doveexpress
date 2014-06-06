@@ -450,7 +450,7 @@ public partial class Main : System.Web.UI.MasterPage
                         _AjaxUpdatedControl.LoadingPanelID = "RadAjaxLoadingPanelKHIEUNAI";
                         _AjaxSetting.UpdatedControls.Add(_AjaxUpdatedControl);
                         RadAjaxManager.AjaxSettings.Add(_AjaxSetting);
-                        control = LoadControl("module/KHIEUNAITEST.ascx");
+                        control = LoadControl("module/KHIEUNAI.ascx");
                         break;
                 }
             }

@@ -7,7 +7,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Telerik.Web.UI;
 
-public partial class module_KHIEUNAITEST : System.Web.UI.UserControl
+public partial class module_KHIEUNAI : System.Web.UI.UserControl
 {
     #region Biến toàn cục
     private string C_BILL

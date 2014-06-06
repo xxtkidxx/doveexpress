@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="KHIEUNAITEST.ascx.cs" Inherits="module_KHIEUNAITEST" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="KHIEUNAI.ascx.cs" Inherits="module_KHIEUNAI" %>
 <telerik:RadCodeBlock ID="RadCodeBlock1" runat="server">
     <script type="text/javascript">
         function OnKeyPressRadTextBox(sender, eventArgs) {
