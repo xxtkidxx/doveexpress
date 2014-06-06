@@ -3492,7 +3492,7 @@ namespace ITCLIB
                     this.Clear();
 
                 SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["DOVEEXPRESSConnectionString"].ConnectionString);
-                SqlCommand cmd = new SqlCommand("SELECT [KHIEUNAI].[PK_ID], [KHIEUNAI].[C_CODE], [KHIEUNAI].[C_TYPE], [KHIEUNAI].[C_DATE], [KHIEUNAI].[C_BILL], [KHIEUNAI].[FK_KHACHHANG], [KHIEUNAI].[C_TENKH], [KHIEUNAI].[C_SDT], [KHIEUNAI].[C_NOIDUNG], [KHIEUNAI].[FK_NGUOITAO], [KHIEUNAI].[C_STATUS], USERS.C_NAME as NGUOITAONAME FROM [KHIEUNAI] LEFT OUTER JOIN USERS ON KHIEUNAI.FK_NGUOITAO =USERS.PK_ID", conn);
+                SqlCommand cmd = new SqlCommand("SELECT [KHIEUNAI].[PK_ID], [KHIEUNAI].[C_CODE], [KHIEUNAI].[C_TYPE], [KHIEUNAI].[C_DATE], [KHIEUNAI].[C_BILL], [KHIEUNAI].[FK_KHACHHANG], [KHIEUNAI].[C_TENKH], [KHIEUNAI].[C_SDT], [KHIEUNAI].[C_NOIDUNG], [KHIEUNAI].[FK_NGUOITAO], [KHIEUNAI].[C_STATUS], USERS.C_NAME as NGUOITAONAME FROM [KHIEUNAI] LEFT OUTER JOIN USERS ON KHIEUNAI.FK_NGUOITAO =USERS.PK_ID ORDER BY C_STATUS ASC, C_DATE DESC", conn);
                 cmd.CommandType = CommandType.Text;
 
                 try

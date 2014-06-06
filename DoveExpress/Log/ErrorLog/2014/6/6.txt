@@ -70,3 +70,18 @@ Thời gian lỗi : 2014-06-06 01:33:04 AM
 Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=KHIEUNAI. 
 Nội dung lỗi:Object reference not set to an instance of an object.
 __________________________
+Thời gian lỗi : 2014-06-06 14:53:12 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Cannot create an object of type 'System.Boolean' from its string representation '<%= ITCLIB.Security.Security.CanAddModule("NHANGUI") %>' for the 'Visible' property.
+__________________________
+Thời gian lỗi : 2014-06-06 14:56:28 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:e:\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\module\NHANGUI.ascx(602): error CS0030: Cannot convert type 'string' to 'bool'
+__________________________
+Thời gian lỗi : 2014-06-06 16:43:42 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=KHIEUNAI. 
+Nội dung lỗi:Object reference not set to an instance of an object.
+__________________________
