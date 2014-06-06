@@ -40,3 +40,51 @@ Tài khoản : sysadmin
 Module : Login
 Kết quả : Thành công
 __________________________
+Thời gian: 2014-06-06 13:44:46 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2014-06-06 14:20:51 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0500003"}
+__________________________
+Thời gian: 2014-06-06 14:20:51 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0500002"}
+__________________________
+Thời gian: 2014-06-06 14:20:51 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0500001"}
+__________________________
+Thời gian: 2014-06-06 14:22:05 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2014-06-06 14:34:38 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0500002"}
+__________________________
+Thời gian: 2014-06-06 14:34:39 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0500003"}
+__________________________
+Thời gian: 2014-06-06 14:34:39 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0500001"}
+__________________________

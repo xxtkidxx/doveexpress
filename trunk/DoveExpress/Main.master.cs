@@ -239,13 +239,16 @@ public partial class Main : System.Web.UI.MasterPage
                         _AjaxSettingImport.UpdatedControls.Add(_AjaxUpdatedControlMessage);
                         RadAjaxManager.AjaxSettings.Add(_AjaxSettingImport);
 
-                      
+
+                        AjaxUpdatedControl _AjaxUpdatedControlClearExcel = new AjaxUpdatedControl();
                         _AjaxSettingClear.AjaxControlID = "btnClear";
                         _AjaxUpdatedControlClear.ControlID = "RadGridNHANGUI";
                         _AjaxUpdatedControlClearMessage.ControlID = "lblMessage";
+                        _AjaxUpdatedControlClearExcel.ControlID = "lblMessageAddExcell";
                         _AjaxUpdatedControlClear.LoadingPanelID = "RadAjaxLoadingPanelNHANGUI";
                         _AjaxSettingClear.UpdatedControls.Add(_AjaxUpdatedControlClear);
                         _AjaxSettingClear.UpdatedControls.Add(_AjaxUpdatedControlClearMessage);
+                        _AjaxSettingClear.UpdatedControls.Add(_AjaxUpdatedControlClearExcel);
                         RadAjaxManager.AjaxSettings.Add(_AjaxSettingClear);
 
                          AjaxSetting _AjaxSettingAddExcel = new AjaxSetting();
@@ -254,7 +257,7 @@ public partial class Main : System.Web.UI.MasterPage
                          _AjaxSettingAddExcel.AjaxControlID = "btnAddExcell";
                          _AjaxUpdatedControlAddExcel.ControlID = "lblMessageAddExcell";
                          _AjaxUpdatedControlAddRadGrid.ControlID = "RadGridNHANGUI";
-                         _AjaxUpdatedControlAddExcel.LoadingPanelID = "RadAjaxLoadingPanelNHANGUI";
+                         _AjaxUpdatedControlAddRadGrid.LoadingPanelID = "RadAjaxLoadingPanelNHANGUI";
                          _AjaxSettingAddExcel.UpdatedControls.Add(_AjaxUpdatedControlAddExcel);
                          _AjaxSettingAddExcel.UpdatedControls.Add(_AjaxUpdatedControlAddRadGrid);
                          RadAjaxManager.AjaxSettings.Add(_AjaxSettingAddExcel);

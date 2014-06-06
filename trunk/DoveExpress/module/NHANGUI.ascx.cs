@@ -1548,7 +1548,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
     }
     protected void Button1_Click(object sender, EventArgs e)
     {
-        TextBox1.Text = Session["t"].ToString();
+        //TextBox1.Text = Session["t"].ToString();
         //ITCLIB.Admin.JavaScript.ShowMessage(Session["t"].ToString(), this);
     }
     protected void txtBillNhanh_TextChanged(object sender, EventArgs e)
@@ -1771,9 +1771,9 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
                                 C_HINHTHUCTT = "NULL";
                                 C_TIENHANGVAT = 0;
                             }
-                            string C_TIENTHUHO = oDataTable.Rows[i][5].ToString().Trim();
-                            var formats = new[] { "dd/M/yyyy", "dd/MM/yyyy", "d/M/yyyy" };
-                            DateTime C_NGAY = DateTime.ParseExact(oDataTable.Rows[i][6].ToString().Trim(), formats, System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.AssumeLocal);
+                            decimal C_TIENTHUHO = decimal.Parse((oDataTable.Rows[i][5].ToString().Trim() == "" ? "0" : oDataTable.Rows[i][5].ToString().Trim()));
+                            //var formats = new[] { "dd/M/yyyy", "dd/MM/yyyy", "d/M/yyyy", "dd/M/yyyy hh:mm:ss tt"};
+                            DateTime C_NGAY = Convert.ToDateTime(oDataTable.Rows[i][6].ToString().Trim());//DateTime.ParseExact(oDataTable.Rows[i][6].ToString().Trim(), formats, System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.AssumeLocal);
                             DateTime C_NGAYGIONHAN = C_NGAY;
                             string FK_DOITAC = ITCLIB.Admin.cFunction.LoadIDDoiTacName(oDataTable.Rows[i][7].ToString().Trim());
                             string C_DIENGIAIDOITAC = oDataTable.Rows[i][8].ToString().Trim();
@@ -1803,9 +1803,15 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
                 {
                     ITCLIB.Admin.SQL InsertQuery = new ITCLIB.Admin.SQL();
                     //lblMessageAddExcell.Text = insertSQL;
-                    InsertQuery.ExecuteNonQuery(insertSQL);
-                    lblMessageAddExcell.Text = "Thêm mới thành công " + BillCount + " Bill";
-                    RadGridNHANGUI.Rebind();
+                    if (InsertQuery.ExecuteNonQuery(insertSQL) != 0)
+                    {
+                        lblMessageAddExcell.Text = "Thêm mới thành công " + BillCount + " Bill";
+                        RadGridNHANGUI.Rebind();
+                    }
+                    else
+                    {
+                        lblMessageAddExcell.Text = "Lỗi Import vào CSDL";
+                    }
                 }
             }
             else
