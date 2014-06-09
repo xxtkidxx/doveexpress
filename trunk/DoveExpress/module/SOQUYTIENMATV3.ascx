@@ -422,5 +422,5 @@
 </asp:SqlDataSource>
 <asp:SqlDataSource ID="KIHIEUTAIKHOANDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
     SelectCommand="SELECT DMKIHIEUTAIKHOAN.C_CODE,DMKIHIEUTAIKHOAN.C_NAME, (DMKIHIEUTAIKHOAN.C_CODE + '-' + DMKIHIEUTAIKHOAN.C_NAME) as C_NAMEFIX  FROM DMKIHIEUTAIKHOAN"></asp:SqlDataSource>
-<asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Visible="true" Text="Button" />
-<asp:TextBox ID="TextBox1" runat="server" Visible="true"></asp:TextBox>
+<asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Visible="false" Text="Button" />
+<asp:TextBox ID="TextBox1" runat="server" Visible="false"></asp:TextBox>

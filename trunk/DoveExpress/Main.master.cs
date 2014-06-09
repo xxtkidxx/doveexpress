@@ -238,8 +238,7 @@ public partial class Main : System.Web.UI.MasterPage
                         _AjaxSettingImport.UpdatedControls.Add(_AjaxUpdatedControlImport);
                         _AjaxSettingImport.UpdatedControls.Add(_AjaxUpdatedControlMessage);
                         RadAjaxManager.AjaxSettings.Add(_AjaxSettingImport);
-
-
+                        
                         AjaxUpdatedControl _AjaxUpdatedControlClearExcel = new AjaxUpdatedControl();
                         _AjaxSettingClear.AjaxControlID = "btnClear";
                         _AjaxUpdatedControlClear.ControlID = "RadGridNHANGUI";
