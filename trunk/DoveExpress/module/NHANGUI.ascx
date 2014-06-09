@@ -533,6 +533,15 @@
         }
     </script>
 </telerik:RadCodeBlock>
+<telerik:RadAjaxManagerProxy ID="AjaxManagerProxyNHANGUI" runat="server">
+    <AjaxSettings>
+        <telerik:AjaxSetting AjaxControlID="RadGridNHANGUI">
+            <UpdatedControls>
+                <telerik:AjaxUpdatedControl ControlID="RadGridNHANGUI" LoadingPanelID="RadAjaxLoadingPanelNHANGUI" />
+            </UpdatedControls>
+        </telerik:AjaxSetting>
+    </AjaxSettings>
+</telerik:RadAjaxManagerProxy>
 <telerik:RadAjaxLoadingPanel Skin="Vista" ID="RadAjaxLoadingPanelNHANGUI" runat="server" />
 <style type="text/css">
     table.gridtable {

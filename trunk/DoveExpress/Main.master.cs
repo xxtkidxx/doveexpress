@@ -218,49 +218,6 @@ public partial class Main : System.Web.UI.MasterPage
                         control = LoadControl("module/DOITAC.ascx");
                         break;
                     case "nhangui":
-                        _AjaxSetting.AjaxControlID = "RadGridNHANGUI";
-                        _AjaxUpdatedControl.ControlID = "RadGridNHANGUI";
-                        AjaxSetting _AjaxSettingOther = new AjaxSetting();
-                        AjaxUpdatedControl _AjaxUpdatedControlOther = new AjaxUpdatedControl();
-                        _AjaxSettingOther.AjaxControlID = "RadGridNHANGUI";
-                        _AjaxUpdatedControlOther.ControlID = "txtBillNhanh";
-                        _AjaxUpdatedControlOther.LoadingPanelID = "RadAjaxLoadingPanelNHANGUI";
-                        _AjaxUpdatedControl.LoadingPanelID = "RadAjaxLoadingPanelNHANGUI";
-                        _AjaxSetting.UpdatedControls.Add(_AjaxUpdatedControl);
-                        _AjaxSettingOther.UpdatedControls.Add(_AjaxUpdatedControlOther);
-                        RadAjaxManager.AjaxSettings.Add(_AjaxSetting);
-                        RadAjaxManager.AjaxSettings.Add(_AjaxSettingOther);
-
-                        _AjaxSettingImport.AjaxControlID = "btnImport";
-                         _AjaxUpdatedControlMessage.ControlID = "lblMessage";
-                         _AjaxUpdatedControlImport.ControlID = "RadGridNHANGUI";
-                         _AjaxUpdatedControlImport.LoadingPanelID = "RadAjaxLoadingPanelNHANGUI";
-                        _AjaxSettingImport.UpdatedControls.Add(_AjaxUpdatedControlImport);
-                        _AjaxSettingImport.UpdatedControls.Add(_AjaxUpdatedControlMessage);
-                        RadAjaxManager.AjaxSettings.Add(_AjaxSettingImport);
-                        
-                        AjaxUpdatedControl _AjaxUpdatedControlClearExcel = new AjaxUpdatedControl();
-                        _AjaxSettingClear.AjaxControlID = "btnClear";
-                        _AjaxUpdatedControlClear.ControlID = "RadGridNHANGUI";
-                        _AjaxUpdatedControlClearMessage.ControlID = "lblMessage";
-                        _AjaxUpdatedControlClearExcel.ControlID = "lblMessageAddExcell";
-                        _AjaxUpdatedControlClear.LoadingPanelID = "RadAjaxLoadingPanelNHANGUI";
-                        _AjaxSettingClear.UpdatedControls.Add(_AjaxUpdatedControlClear);
-                        _AjaxSettingClear.UpdatedControls.Add(_AjaxUpdatedControlClearMessage);
-                        _AjaxSettingClear.UpdatedControls.Add(_AjaxUpdatedControlClearExcel);
-                        RadAjaxManager.AjaxSettings.Add(_AjaxSettingClear);
-
-                         AjaxSetting _AjaxSettingAddExcel = new AjaxSetting();
-                         AjaxUpdatedControl _AjaxUpdatedControlAddExcel = new AjaxUpdatedControl();
-                         AjaxUpdatedControl _AjaxUpdatedControlAddRadGrid = new AjaxUpdatedControl();
-                         _AjaxSettingAddExcel.AjaxControlID = "btnAddExcell";
-                         _AjaxUpdatedControlAddExcel.ControlID = "lblMessageAddExcell";
-                         _AjaxUpdatedControlAddRadGrid.ControlID = "RadGridNHANGUI";
-                         _AjaxUpdatedControlAddRadGrid.LoadingPanelID = "RadAjaxLoadingPanelNHANGUI";
-                         _AjaxSettingAddExcel.UpdatedControls.Add(_AjaxUpdatedControlAddExcel);
-                         _AjaxSettingAddExcel.UpdatedControls.Add(_AjaxUpdatedControlAddRadGrid);
-                         RadAjaxManager.AjaxSettings.Add(_AjaxSettingAddExcel);
-
                         control = LoadControl("module/NHANGUI.ascx");
                         break;
                     case "nhanguiqt":

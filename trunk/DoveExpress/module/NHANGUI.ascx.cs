@@ -1067,8 +1067,6 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
                     boundColumn.CurrentFilterValue = string.Empty;
                 }
             }
-            lblMessage.Text = "";
-            lblMessageAddExcell.Text = "";
             RadGridNHANGUI.MasterTableView.Rebind();
         }
     }
@@ -1576,6 +1574,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
             }
             txtBillNhanh.Text = "";
             txtBillNhanh.Focus();
+            RadGridNHANGUI.Rebind();
         }
     }
     protected bool CheckBillQuick(string C_BILL)
@@ -1723,7 +1722,6 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
     {
         RadGridNHANGUI.MasterTableView.FilterExpression = string.Empty;
         lblMessage.Text = "";
-        lblMessageAddExcell.Text = "";
         RadGridNHANGUI.Rebind();
     }
     protected void btnAddExcell_Click(object sender, EventArgs e)
