@@ -540,6 +540,11 @@
                 <telerik:AjaxUpdatedControl ControlID="RadGridNHANGUI" LoadingPanelID="RadAjaxLoadingPanelNHANGUI" />
             </UpdatedControls>
         </telerik:AjaxSetting>
+           <telerik:AjaxSetting AjaxControlID="txtBillNhanh">
+            <UpdatedControls>
+                <telerik:AjaxUpdatedControl ControlID="RadGridNHANGUI" LoadingPanelID="RadAjaxLoadingPanelNHANGUI" />
+            </UpdatedControls>
+        </telerik:AjaxSetting>
     </AjaxSettings>
 </telerik:RadAjaxManagerProxy>
 <telerik:RadAjaxLoadingPanel Skin="Vista" ID="RadAjaxLoadingPanelNHANGUI" runat="server" />
@@ -597,7 +602,7 @@
             </telerik:RadComboBox>
         </td>
          <td>
-                <telerik:RadAsyncUpload runat="server" ID="RadAsyncUploadExcel" Width="50%" HideFileInput="false" Localization-Select="Chọn" InputSize="50"
+                <telerik:RadAsyncUpload runat="server" ID="RadAsyncUploadImport" Width="50%" HideFileInput="false" Localization-Select="Chọn" InputSize="50"
                     AllowedFileExtensions="xls,xlsx" MaxFileSize="1048576000">
                 </telerik:RadAsyncUpload>
                 <asp:Button ID="btnImport" runat="server" Text="Lọc" OnClick="btnImport_Click" />
@@ -608,7 +613,7 @@
                 <telerik:RadAsyncUpload runat="server" ID="RadAsyncUploadAddExcel" Width="50%" HideFileInput="false" Localization-Select="Chọn" InputSize="50"
                     AllowedFileExtensions="xls,xlsx" MaxFileSize="1048576000">
                 </telerik:RadAsyncUpload>
-                <asp:Button ID="btnAddExcell" runat="server" Text="Lọc" OnClick="btnAddExcell_Click" />
+                <asp:Button ID="btnAddExcell" runat="server" Text="Thực hiện" OnClick="btnAddExcell_Click" />
                 <asp:Label ID="lblMessageAddExcell" runat="server" Text="" ForeColor="Red"></asp:Label>
         </td>
     </tr>

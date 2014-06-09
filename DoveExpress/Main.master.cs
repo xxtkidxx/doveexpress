@@ -23,13 +23,6 @@ public partial class Main : System.Web.UI.MasterPage
                 AjaxSetting _AjaxSetting = new AjaxSetting();
                 AjaxUpdatedControl _AjaxUpdatedControl = new AjaxUpdatedControl();
 
-                AjaxSetting _AjaxSettingImport = new AjaxSetting();
-                AjaxUpdatedControl _AjaxUpdatedControlImport = new AjaxUpdatedControl();
-                AjaxUpdatedControl _AjaxUpdatedControlMessage = new AjaxUpdatedControl();
-
-                AjaxSetting _AjaxSettingClear = new AjaxSetting();
-                AjaxUpdatedControl _AjaxUpdatedControlClear = new AjaxUpdatedControl();
-                AjaxUpdatedControl _AjaxUpdatedControlClearMessage = new AjaxUpdatedControl();
                 switch ((string)Request.QueryString["ctl"].ToLower())
                 {
                     case "groupuser":
@@ -221,36 +214,6 @@ public partial class Main : System.Web.UI.MasterPage
                         control = LoadControl("module/NHANGUI.ascx");
                         break;
                     case "nhanguiqt":
-                        _AjaxSetting.AjaxControlID = "RadGridNHANGUIQT";
-                        _AjaxUpdatedControl.ControlID = "RadGridNHANGUIQT";
-                        AjaxSetting _AjaxSettingOtherQT = new AjaxSetting();
-                        AjaxUpdatedControl _AjaxUpdatedControlOtherQT = new AjaxUpdatedControl();
-                        _AjaxSettingOtherQT.AjaxControlID = "RadGridNHANGUIQT";
-                        _AjaxUpdatedControlOtherQT.ControlID = "txtBillNhanh";
-                        _AjaxUpdatedControlOtherQT.LoadingPanelID = "RadAjaxLoadingPanelNHANGUIQT";
-                        _AjaxUpdatedControl.LoadingPanelID = "RadAjaxLoadingPanelNHANGUIQT";
-                        _AjaxSetting.UpdatedControls.Add(_AjaxUpdatedControl);
-                        _AjaxSettingOtherQT.UpdatedControls.Add(_AjaxUpdatedControlOtherQT);
-                        RadAjaxManager.AjaxSettings.Add(_AjaxSetting);
-                        RadAjaxManager.AjaxSettings.Add(_AjaxSettingOtherQT);
-
-                        _AjaxSettingImport.AjaxControlID = "btnImport";
-                         _AjaxUpdatedControlMessage.ControlID = "lblMessage";
-                         _AjaxUpdatedControlImport.ControlID = "RadGridNHANGUIQT";
-                         _AjaxUpdatedControlImport.LoadingPanelID = "RadAjaxLoadingPanelNHANGUIQT";
-                        _AjaxSettingImport.UpdatedControls.Add(_AjaxUpdatedControlImport);
-                        _AjaxSettingImport.UpdatedControls.Add(_AjaxUpdatedControlMessage);
-                        RadAjaxManager.AjaxSettings.Add(_AjaxSettingImport);
-
-                      
-                        _AjaxSettingClear.AjaxControlID = "btnClear";
-                        _AjaxUpdatedControlClear.ControlID = "RadGridNHANGUIQT";
-                        _AjaxUpdatedControlClearMessage.ControlID = "lblMessage";
-                        _AjaxUpdatedControlClear.LoadingPanelID = "RadAjaxLoadingPanelNHANGUIQT";
-                        _AjaxSettingClear.UpdatedControls.Add(_AjaxUpdatedControlClear);
-                        _AjaxSettingClear.UpdatedControls.Add(_AjaxUpdatedControlClearMessage);
-                        RadAjaxManager.AjaxSettings.Add(_AjaxSettingClear);
-
                         control = LoadControl("module/NHANGUIQT.ascx");
                         break;
                     case "nhanguiph":
@@ -259,24 +222,6 @@ public partial class Main : System.Web.UI.MasterPage
                         _AjaxUpdatedControl.LoadingPanelID = "RadAjaxLoadingPanelNHANGUIPH";
                         _AjaxSetting.UpdatedControls.Add(_AjaxUpdatedControl);
                         RadAjaxManager.AjaxSettings.Add(_AjaxSetting);
-
-                       
-                        _AjaxSettingImport.AjaxControlID = "btnImport";
-                         _AjaxUpdatedControlMessage.ControlID = "lblMessage";
-                        _AjaxUpdatedControlImport.ControlID = "RadGridNHANGUIPH";
-                        _AjaxUpdatedControlImport.LoadingPanelID = "RadAjaxLoadingPanelNHANGUIPH";
-                        _AjaxSettingImport.UpdatedControls.Add(_AjaxUpdatedControlImport);
-                        _AjaxSettingImport.UpdatedControls.Add(_AjaxUpdatedControlMessage);
-                        RadAjaxManager.AjaxSettings.Add(_AjaxSettingImport);
-
-                      
-                        _AjaxSettingClear.AjaxControlID = "btnClear";
-                        _AjaxUpdatedControlClear.ControlID = "RadGridNHANGUIPH";
-                        _AjaxUpdatedControlClearMessage.ControlID = "lblMessage";
-                        _AjaxUpdatedControlClear.LoadingPanelID = "RadAjaxLoadingPanelNHANGUIPH";
-                        _AjaxSettingClear.UpdatedControls.Add(_AjaxUpdatedControlClear);
-                        _AjaxSettingClear.UpdatedControls.Add(_AjaxUpdatedControlClearMessage);
-                        RadAjaxManager.AjaxSettings.Add(_AjaxSettingClear);
 
                         control = LoadControl("module/NHANGUIPH.ascx");
                         break;
