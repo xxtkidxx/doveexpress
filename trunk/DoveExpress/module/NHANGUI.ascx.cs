@@ -1650,12 +1650,12 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
     }
     protected void btnImport_Click(object sender, EventArgs e)
     {
-        //lblMessage.Text = RadAsyncUploadExcel.TemporaryFolder + RadAsyncUploadExcel.UploadedFiles[0].FileName;
-        if (RadAsyncUploadExcel.UploadedFiles.Count != 0)
+        //lblMessage.Text = RadAsyncUploadImport.TemporaryFolder + RadAsyncUploadImport.UploadedFiles[0].FileName;
+        if (RadAsyncUploadImport.UploadedFiles.Count != 0)
         {
-            System.IO.Stream stream = RadAsyncUploadExcel.UploadedFiles[0].InputStream;
+            System.IO.Stream stream = RadAsyncUploadImport.UploadedFiles[0].InputStream;
             IExcelDataReader excelReader;
-            if (RadAsyncUploadExcel.UploadedFiles[0].GetExtension() == ".xls")
+            if (RadAsyncUploadImport.UploadedFiles[0].GetExtension() == ".xls")
             {
                 excelReader = ExcelReaderFactory.CreateBinaryReader(stream);
             }
@@ -1715,7 +1715,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
         }
         else
         {
-            lblMessage.Text = "Hãy chọn file Excel để lọc dữ liệu";
+            //lblMessage.Text = "Hãy chọn file Excel để lọc dữ liệu";
         }
     }
     protected void btnClear_Click(object sender, EventArgs e)
@@ -1820,7 +1820,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
         }
         else
         {
-            lblMessageAddExcell.Text = "Hãy chọn file Excel để thêm dữ liệu";
+            //lblMessageAddExcell.Text = "Hãy chọn file Excel để thêm dữ liệu";
         }
     }
 }

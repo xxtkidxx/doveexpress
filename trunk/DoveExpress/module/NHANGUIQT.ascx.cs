@@ -1654,6 +1654,7 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
             }
             txtBillNhanh.Text = "";
             txtBillNhanh.Focus();
+            RadGridNHANGUIQT.Rebind();
         }
     }
     protected bool CheckBillQuick(string C_BILL)
@@ -1794,7 +1795,7 @@ public partial class module_NHANGUIQT : System.Web.UI.UserControl
         }
         else
         {
-            lblMessage.Text = "Hãy chọn file Excel để lọc dữ liệu";
+            //lblMessage.Text = "Hãy chọn file Excel để lọc dữ liệu";
         }
     }
     protected void btnClear_Click(object sender, EventArgs e)
