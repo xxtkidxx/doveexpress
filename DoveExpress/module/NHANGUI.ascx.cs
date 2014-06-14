@@ -1749,6 +1749,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
                 bool check = true;
                 int BillCount = 0;
                 string insertSQL = "";
+                string HasBillString = "";
                 for (int i = 0; i < oDataTable.Rows.Count; i++)
                 {
                     string C_BILL = oDataTable.Rows[i][1].ToString().Trim();
@@ -1771,18 +1772,26 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
                                 C_TIENHANGVAT = 0;
                             }
                             decimal C_TIENTHUHO = decimal.Parse((oDataTable.Rows[i][5].ToString().Trim() == "" ? "0" : oDataTable.Rows[i][5].ToString().Trim()));
-                            //var formats = new[] { "dd/M/yyyy", "dd/MM/yyyy", "d/M/yyyy", "dd/M/yyyy hh:mm:ss tt"};
-                            DateTime C_NGAY = Convert.ToDateTime(oDataTable.Rows[i][6].ToString().Trim());//DateTime.ParseExact(oDataTable.Rows[i][6].ToString().Trim(), formats, System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.AssumeLocal);
+                            //var formats = new[] { "d/MM/yyyy", "dd/M/yyyy", "dd/MM/yyyy", "d/M/yyyy hh:mm:ss tt", "d/MM/yyyy hh:mm:ss tt", "dd/M/yyyy hh:mm:ss tt", "dd/MM/yyyy hh:mm:ss tt"};
+                            DateTime C_NGAY = Convert.ToDateTime(oDataTable.Rows[i][6].ToString().Trim());
+                            //DateTime C_NGAY = DateTime.ParseExact(oDataTable.Rows[i][6].ToString().Trim(), formats, System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.AssumeLocal);
                             DateTime C_NGAYGIONHAN = C_NGAY;
                             string FK_DOITAC = ITCLIB.Admin.cFunction.LoadIDDoiTacName(oDataTable.Rows[i][7].ToString().Trim());
                             string C_DIENGIAIDOITAC = oDataTable.Rows[i][8].ToString().Trim();
                             decimal C_GIADOITAC = decimal.Parse((oDataTable.Rows[i][9].ToString().Trim() == "" ? "0" : oDataTable.Rows[i][9].ToString().Trim()));
-                            insertSQL += "INSERT INTO [NHANGUI] ([C_NGAY], [C_BILL], [C_TIENTHUHO], [C_KHOILUONG], [C_HINHTHUCTT], [C_TIENHANGVAT], [C_NGAYGIONHAN], [FK_DOITAC], [C_GIADOITAC], [C_DIENGIAIDOITAC], [C_TYPE], [FK_VUNGLAMVIEC], [FK_USERADD]) VALUES ('" + String.Format("{0:yyyy-MM-dd hh:mm:ss tt}", C_NGAY) + "', '" + C_BILL + "', " + C_TIENTHUHO + ", " + C_KHOILUONG + ", " + C_HINHTHUCTT + ", " + C_TIENHANGVAT + ", '" + String.Format("{0:yyyy-MM-dd hh:mm:ss tt}", C_NGAYGIONHAN) + "', " + FK_DOITAC + ", " + C_GIADOITAC + ", N'" + C_DIENGIAIDOITAC + "' , 1, N'" + Session["VUNGLAMVIEC"] + "', " + Session["UserID"] + ");INSERT INTO [SOQUYTIENMAT] ([C_NGAY], [C_TYPE], [FK_KIHIEUTAIKHOAN], [C_DESC], [C_SOTIEN], [C_BILL],[C_TON],[C_ORDER],[FK_VUNGLAMVIEC]) VALUES ('" + String.Format("{0:yyyy-MM-dd hh:mm:ss tt}", C_NGAY) + "',N'Thu',NULL, N'Bill ' + '" + C_BILL + "', 0, '" + C_BILL + "', 0, 1, N'" + Session["VUNGLAMVIEC"] + "');INSERT INTO TRACKING (C_BILL, C_DATE, FK_TRANGTHAI) SELECT '" + C_BILL + "', '" + String.Format("{0:yyyy-MM-dd hh:mm:ss tt}", C_NGAYGIONHAN) + "', N'F' UNION ALL SELECT '" + C_BILL + "', '" + String.Format("{0:yyyy-MM-dd hh:mm:ss tt}", C_NGAY) + "',N'G_' + N'" + Session["VUNGLAMVIEC"] + "';";
-                            BillCount += 1;
+                            if (CheckBillQuick(C_BILL))
+                            {
+                                insertSQL += "INSERT INTO [NHANGUI] ([C_NGAY], [C_BILL], [C_TIENTHUHO], [C_KHOILUONG], [C_HINHTHUCTT], [C_TIENHANGVAT], [C_NGAYGIONHAN], [FK_DOITAC], [C_GIADOITAC], [C_DIENGIAIDOITAC], [C_TYPE], [FK_VUNGLAMVIEC], [FK_USERADD]) VALUES ('" + String.Format("{0:yyyy-MM-dd hh:mm:ss tt}", C_NGAY) + "', '" + C_BILL + "', " + C_TIENTHUHO + ", " + C_KHOILUONG + ", " + C_HINHTHUCTT + ", " + C_TIENHANGVAT + ", '" + String.Format("{0:yyyy-MM-dd hh:mm:ss tt}", C_NGAYGIONHAN) + "', " + FK_DOITAC + ", " + C_GIADOITAC + ", N'" + C_DIENGIAIDOITAC + "' , 1, N'" + Session["VUNGLAMVIEC"] + "', " + Session["UserID"] + ");INSERT INTO [SOQUYTIENMAT] ([C_NGAY], [C_TYPE], [FK_KIHIEUTAIKHOAN], [C_DESC], [C_SOTIEN], [C_BILL],[C_TON],[C_ORDER],[FK_VUNGLAMVIEC]) VALUES ('" + String.Format("{0:yyyy-MM-dd hh:mm:ss tt}", C_NGAY) + "',N'Thu',NULL, N'Bill ' + '" + C_BILL + "', 0, '" + C_BILL + "', 0, 1, N'" + Session["VUNGLAMVIEC"] + "');INSERT INTO TRACKING (C_BILL, C_DATE, FK_TRANGTHAI) SELECT '" + C_BILL + "', '" + String.Format("{0:yyyy-MM-dd hh:mm:ss tt}", C_NGAYGIONHAN) + "', N'F' UNION ALL SELECT '" + C_BILL + "', '" + String.Format("{0:yyyy-MM-dd hh:mm:ss tt}", C_NGAY) + "',N'G_' + N'" + Session["VUNGLAMVIEC"] + "';";
+                                BillCount += 1;
+                            }
+                            else
+                            {
+                                HasBillString += C_BILL + " ";
+                            }
                         }
                         catch (FormatException format1)
                         {
-                            lblMessageAddExcell.Text = "Dữ liệu tại dòng thứ " + (i + 1) + " không đúng định dạng." + format1.Message;
+                            lblMessageAddExcell.Text = "Dữ liệu tại dòng thứ " + (i + 1) + " không đúng định dạng." + format1.Message + oDataTable.Rows[i][6].ToString().Trim();
                             check = false;
                             break;
                         }
@@ -1804,7 +1813,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
                     //lblMessageAddExcell.Text = insertSQL;
                     if (InsertQuery.ExecuteNonQuery(insertSQL) != 0)
                     {
-                        lblMessageAddExcell.Text = "Thêm mới thành công " + BillCount + " Bill";
+                        lblMessageAddExcell.Text = "Thêm mới thành công " + BillCount + " Bill" + (HasBillString == "" ? "" : ". BILL " + HasBillString + "đã tồn tại trong cơ sở dữ liệu");
                         RadGridNHANGUI.Rebind();
                     }
                     else
