@@ -1,0 +1,158 @@
+Thời gian lỗi : 2014-06-09 09:23:17 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Selection out of range
+Parameter name: value
+__________________________
+Thời gian lỗi : 2014-06-09 09:24:01 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Selection out of range
+Parameter name: value
+__________________________
+Thời gian lỗi : 2014-06-09 09:24:06 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Selection out of range
+Parameter name: value
+__________________________
+Thời gian lỗi : 2014-06-09 09:24:56 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Selection out of range
+Parameter name: value
+__________________________
+Thời gian lỗi : 2014-06-09 09:27:20 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Selection out of range
+Parameter name: value
+__________________________
+Thời gian lỗi : 2014-06-09 09:33:31 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Selection out of range
+Parameter name: value
+__________________________
+Thời gian lỗi : 2014-06-09 09:34:55 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Selection out of range
+Parameter name: value
+__________________________
+Thời gian lỗi : 2014-06-09 09:37:09 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Selection out of range
+Parameter name: value
+__________________________
+Thời gian lỗi : 2014-06-09 09:37:22 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Selection out of range
+Parameter name: value
+__________________________
+Thời gian lỗi : 2014-06-09 09:50:14 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Selection out of range
+Parameter name: value
+__________________________
+Thời gian lỗi : 2014-06-09 09:50:35 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Selection out of range
+Parameter name: value
+__________________________
+Thời gian lỗi : 2014-06-09 10:00:12 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Selection out of range
+Parameter name: value
+__________________________
+Thời gian lỗi : 2014-06-09 10:00:28 AM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/Default.aspx?ctl=NHANGUI. 
+Nội dung lỗi:Selection out of range
+Parameter name: value
+__________________________
+Thời gian lỗi : 2014-06-09 15:49:30 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/Update.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2014-06-09 15:49:30 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/Edit.gif. 
+Nội dung lỗi:The process cannot access the file 'E:\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\Log\ErrorLog\2014\6\9.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2014-06-09 15:49:30 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/Cancel.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2014-06-09 15:49:30 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/AddRecord.gif. 
+Nội dung lỗi:The process cannot access the file 'E:\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\Log\ErrorLog\2014\6\9.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2014-06-09 15:49:30 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/Insert.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2014-06-09 15:49:31 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/Delete.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2014-06-09 15:49:31 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/print.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2014-06-09 15:49:31 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/img_OpenPanel.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2014-06-09 15:49:31 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/filterCancel.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2014-06-09 15:49:31 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/Refresh.gif. 
+Nội dung lỗi:The process cannot access the file 'E:\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\Log\ErrorLog\2014\6\9.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2014-06-09 15:49:31 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/pdf.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2014-06-09 15:49:31 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/word.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2014-06-09 15:49:31 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/excel.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2014-06-09 15:49:31 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/Grid/csv.gif. 
+Nội dung lỗi:File does not exist.
+__________________________
+Thời gian lỗi : 2014-06-09 15:49:31 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/img_save.jpg. 
+Nội dung lỗi:The process cannot access the file 'E:\SkyDrive\Documents\Work\2013\DoveExpress\DoveExpress\Log\ErrorLog\2014\6\9.txt' because it is being used by another process.
+__________________________
+Thời gian lỗi : 2014-06-09 15:49:31 PM
+Địa chỉ IP : ::1
+Đường dẫn lỗi: http://localhost:53224/DoveExpress/module/Images/img_Close.jpg. 
+Nội dung lỗi:File does not exist.
+__________________________
