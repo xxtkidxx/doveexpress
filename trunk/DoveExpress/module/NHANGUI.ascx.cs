@@ -492,6 +492,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
     protected void LoadDVPT()
     {
         string SelectSQL = "Select DMDICHVUPHUTROI.C_VALUE,DMDICHVUPHUTROI.C_VALUE1,DMDICHVUPHUTROI.C_TYPE FROM DMDICHVUPHUTROI WHERE DMDICHVUPHUTROI.FK_MASANPHAM =" + FK_DICHVU + " AND FK_MABANGCUOC = " + FK_MABANGCUOC;
+        //Session["t"] = SelectSQL;
         DataTable oDataTable = new DataTable();
         ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
         oDataTable = SelectQuery.query_data(SelectSQL);
@@ -532,6 +533,8 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
     }
     protected void LoadCOD()
     {
+        CODX = 0;
+        CODY = 0;
         string SelectSQL = "Select DMDICHVUPHUTROI.C_VALUE,DMDICHVUPHUTROI.C_VALUE1,DMDICHVUPHUTROI.C_TYPE FROM DMDICHVUPHUTROI WHERE FK_MABANGCUOC = " + FK_MABANGCUOC + " AND FK_MAVUNG = " + FK_MAVUNG;
         DataTable oDataTable = new DataTable();
         ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
@@ -552,6 +555,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
     {
         string SelectSQL;
         SelectSQL = "Select DMMAVUNG.PK_ID FROM DMMAVUNG WHERE FK_MASANPHAM=" + FK_DICHVU + " AND C_TYPE = 1 AND FK_VUNGLAMVIEC = N'" + Session["VUNGLAMVIEC"] + "' AND ((DMMAVUNG.C_DESC ='" + FK_QUANHUYEN + "') OR (DMMAVUNG.C_DESC LIKE '%," + FK_QUANHUYEN + ",%') OR (DMMAVUNG.C_DESC LIKE '%," + FK_QUANHUYEN + "') OR (DMMAVUNG.C_DESC LIKE '" + FK_QUANHUYEN + ",%'))";
+        //Session["t"] = SelectSQL;
         DataTable oDataTable = new DataTable();
         ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
         oDataTable = SelectQuery.query_data(SelectSQL);
@@ -844,21 +848,8 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
                             {
                                 FK_NHOMKHACHHANG = "";
                                 FK_MABANGCUOC = "";
-                            }
-                            string SelectSQL3;
-                            SelectSQL3 = "Select DMMAVUNG.PK_ID FROM DMMAVUNG WHERE FK_MASANPHAM=" + FK_DICHVU + " AND FK_VUNGLAMVIEC = N'" + Session["VUNGLAMVIEC"] + "' AND C_TYPE = 1 AND ((DMMAVUNG.C_DESC ='" + FK_QUANHUYEN + "') OR (DMMAVUNG.C_DESC LIKE '%," + FK_QUANHUYEN + ",%') OR (DMMAVUNG.C_DESC LIKE '%," + FK_QUANHUYEN + "') OR (DMMAVUNG.C_DESC LIKE '" + FK_QUANHUYEN + ",%')) AND (DMMAVUNG.FK_VUNGLAMVIEC = N'" + Session["VUNGLAMVIEC"].ToString() + "')";
-                            DataTable oDataTable3 = new DataTable();
-                            ITCLIB.Admin.SQL SelectQuery3 = new ITCLIB.Admin.SQL();
-                            oDataTable3 = SelectQuery3.query_data(SelectSQL3);
-                            if (oDataTable3.Rows.Count != 0)
-                            {
-                                FK_MAVUNG = oDataTable3.Rows[0]["PK_ID"].ToString();
-                            }
-                            else
-                            {
-                                FK_MAVUNG = "";
-                            }
-                            PPXD = 0;
+                            }                            
+                            LoadMaVung();
                             LoadDVPT();
                             C_KHOILUONG = int.Parse(oDataTableNew.Rows[0]["C_KHOILUONG"].ToString());
                             CUOCCHINH = decimal.Parse(oDataTableNew.Rows[0]["C_GIACUOC"].ToString());
@@ -909,32 +900,8 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
                     FK_NHOMKHACHHANG = "";
                     FK_MABANGCUOC = "";
                 }
-                string SelectSQL3;
-                SelectSQL3 = "Select DMMAVUNG.PK_ID FROM DMMAVUNG WHERE FK_MASANPHAM=" + FK_DICHVU + " AND FK_VUNGLAMVIEC = N'" + Session["VUNGLAMVIEC"] + "' AND C_TYPE = 1 AND ((DMMAVUNG.C_DESC ='" + FK_QUANHUYEN + "') OR (DMMAVUNG.C_DESC LIKE '%," + FK_QUANHUYEN + ",%') OR (DMMAVUNG.C_DESC LIKE '%," + FK_QUANHUYEN + "') OR (DMMAVUNG.C_DESC LIKE '" + FK_QUANHUYEN + ",%')) AND (DMMAVUNG.FK_VUNGLAMVIEC = N'" + Session["VUNGLAMVIEC"].ToString() + "')";
-                DataTable oDataTable3 = new DataTable();
-                ITCLIB.Admin.SQL SelectQuery3 = new ITCLIB.Admin.SQL();
-                oDataTable3 = SelectQuery3.query_data(SelectSQL3);
-                if (oDataTable3.Rows.Count != 0)
-                {
-                    FK_MAVUNG = oDataTable3.Rows[0]["PK_ID"].ToString();
-                }
-                else
-                {
-                    FK_MAVUNG = "";
-                }
-                PPXD = 0;
-                string SelectSQL4;
-                SelectSQL4 = "Select DMDICHVUPHUTROI.C_VALUE FROM DMDICHVUPHUTROI WHERE DMDICHVUPHUTROI.FK_MASANPHAM =" + FK_DICHVU + " AND DMDICHVUPHUTROI.FK_MABANGCUOC = " + FK_MABANGCUOC + " AND C_TYPE = N'PPXD'";
-                DataTable oDataTable4 = new DataTable();
-                ITCLIB.Admin.SQL SelectQuery4 = new ITCLIB.Admin.SQL();
-                oDataTable4 = SelectQuery4.query_data(SelectSQL4);
-                if (oDataTable4.Rows.Count != 0)
-                {
-                    if (oDataTable4.Rows[0]["C_VALUE"] != DBNull.Value)
-                    {
-                        PPXD = decimal.Parse(oDataTable4.Rows[0]["C_VALUE"].ToString());
-                    }
-                }
+                LoadMaVung();
+                LoadDVPT();
                 C_KHOILUONG = (txtC_KHOILUONG.Text != "") ? int.Parse(txtC_KHOILUONG.Text) : 0;
                 CUOCCHINH = (txtC_GIACUOC.Text == "") ? 0 : decimal.Parse(txtC_GIACUOC.Text);
                 FK_DOITAC = cmbFK_DOITAC.SelectedValue;
@@ -1547,8 +1514,8 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
     }
     protected void Button1_Click(object sender, EventArgs e)
     {
-        //TextBox1.Text = Session["t"].ToString();
-        //ITCLIB.Admin.JavaScript.ShowMessage(Session["t"].ToString(), this);
+        TextBox1.Text = Session["t"].ToString();
+        ITCLIB.Admin.JavaScript.ShowMessage(Session["t"].ToString(), this);
     }
     protected void txtBillNhanh_TextChanged(object sender, EventArgs e)
     {

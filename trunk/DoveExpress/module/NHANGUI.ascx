@@ -369,8 +369,6 @@
     var isDONGGOI = false;
     function SetC_DONGGOI() {
         isDONGGOI = !isDONGGOI;
-        //alert(DONGGOIX);
-        //alert(DONGGOIY);
         if (isDONGGOI) {
             //txtC_DONGGOI.set_value(Math.max(50000, DONGGOIX + (txtC_GIATRIHANGHOA.get_value() * DONGGOIY/100)));
             txtC_DONGGOI.set_value(DONGGOIX * 1 + (txtC_GIATRIHANGHOA.get_value() * DONGGOIY / 100));
@@ -430,11 +428,10 @@
                         checkKH = false;
                     }
                     PPXD = arrayOfStrings[3];
-                    txtC_GIACUOC.set_value(arrayOfStrings[4]);
-                    CUOCCHINH = arrayOfStrings[4];
-                    txtC_GIADOITAC.set_value(arrayOfStrings[5]);
                     VAT = arrayOfStrings[8];
-
+                    CUOCCHINH = arrayOfStrings[4];
+                    txtC_GIACUOC.set_value(arrayOfStrings[4]);                    
+                    txtC_GIADOITAC.set_value(arrayOfStrings[5]);                   
                     DONGGOIX = arrayOfStrings[9];
                     DONGGOIY = arrayOfStrings[10];
                     if (isDONGGOI) {
