@@ -1,0 +1,78 @@
+Thời gian: 2014-06-14 21:40:18 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2014-06-14 21:55:06 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"2222222"}
+__________________________
+Thời gian: 2014-06-14 21:55:06 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"1111111"}
+__________________________
+Thời gian: 2014-06-14 21:55:06 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"3333333"}
+__________________________
+Thời gian: 2014-06-14 21:55:06 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"4444444"}
+__________________________
+Thời gian: 2014-06-14 21:55:06 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"5555555"}
+__________________________
+Thời gian: 2014-06-14 21:55:06 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"6666666"}
+__________________________
+Thời gian: 2014-06-14 22:02:01 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"1111111"}
+__________________________
+Thời gian: 2014-06-14 22:02:01 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"2222222"}
+__________________________
+Thời gian: 2014-06-14 22:02:01 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"3333333"}
+__________________________
+Thời gian: 2014-06-14 22:02:01 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"4444444"}
+__________________________
+Thời gian: 2014-06-14 22:02:01 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"5555555"}
+__________________________
+Thời gian: 2014-06-14 22:02:01 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"6666666"}
+__________________________
