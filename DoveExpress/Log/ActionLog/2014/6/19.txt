@@ -460,3 +460,21 @@ Tài khoản : 1
 Module : Deleted NHANGUIs
 Kết quả : {C_BILL:"7041601"}
 __________________________
+Thời gian: 2014-06-19 21:31:25 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2014-06-19 22:11:48 PM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2014-06-19 22:18:37 PM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"1234567"}
+__________________________
