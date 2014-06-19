@@ -1778,14 +1778,21 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
                 {
                     ITCLIB.Admin.SQL InsertQuery = new ITCLIB.Admin.SQL();
                     //lblMessageAddExcell.Text = insertSQL;
-                    if (InsertQuery.ExecuteNonQuery(insertSQL) != 0)
+                    if (insertSQL != "")
                     {
-                        lblMessageAddExcell.Text = "Thêm mới thành công " + BillCount + " Bill" + (HasBillString == "" ? "" : ". BILL " + HasBillString + "đã tồn tại trong cơ sở dữ liệu");
-                        RadGridNHANGUI.Rebind();
+                        if (InsertQuery.ExecuteNonQuery(insertSQL) != 0)
+                        {
+                            lblMessageAddExcell.Text = "Thêm mới thành công " + BillCount + " Bill" + (HasBillString == "" ? "" : ". BILL " + HasBillString + "đã tồn tại trong cơ sở dữ liệu");
+                            RadGridNHANGUI.Rebind();
+                        }
+                        else
+                        {
+                            lblMessageAddExcell.Text = "Lỗi Import vào CSDL";
+                        }
                     }
                     else
                     {
-                        lblMessageAddExcell.Text = "Lỗi Import vào CSDL";
+                        lblMessageAddExcell.Text = "Không đọc được dữ liệu file Excel";
                     }
                 }
             }
