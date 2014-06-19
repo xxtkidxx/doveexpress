@@ -33,7 +33,7 @@ public partial class controls_Menu : System.Web.UI.UserControl
         Menu.FindItemByValue("NHANGUI").Visible = ITCLIB.Security.Security.CanViewModule("NHANGUI");
         Menu.FindItemByValue("NHANGUIQT").Visible = ITCLIB.Security.Security.CanViewModule("NHANGUI");
         Menu.FindItemByValue("NHANGUIPH").Visible = ITCLIB.Security.Security.CanViewModule("NHANGUIPH");
-        Menu.FindItemByValue("NHANGUIBILLEDIT").Visible = ITCLIB.Security.Security.CanEditModule("NHANGUIBILLEDIT");
+        Menu.FindItemByValue("NHANGUIBILLEDIT").Visible = ITCLIB.Security.Security.CanEditModule("NHANGUI");
 
         Menu.FindItemByValue("NHANGUIMENU").Visible = ITCLIB.Security.Security.CanViewModule("NHANGUI") || ITCLIB.Security.Security.CanViewModule("NHANGUIPH");
         Menu.FindItemByValue("BAOCAO").Visible = ITCLIB.Security.Security.CanViewModule("BAOCAO");
