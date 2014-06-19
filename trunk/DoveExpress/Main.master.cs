@@ -225,6 +225,9 @@ public partial class Main : System.Web.UI.MasterPage
 
                         control = LoadControl("module/NHANGUIPH.ascx");
                         break;
+                    case "nhanguibilledit":
+                        control = LoadControl("module/NHANGUIBILLEDIT.ascx");
+                        break;
                     case "baocaongay":
                         _AjaxSetting.AjaxControlID = "RadGridBAOCAONGAY";
                         _AjaxUpdatedControl.ControlID = "RadGridBAOCAONGAY";

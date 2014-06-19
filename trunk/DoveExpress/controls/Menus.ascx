@@ -134,6 +134,9 @@
                 <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=NHANGUIPH"
                     Text="Thông tin phát hàng" Value="NHANGUIPH">
                 </telerik:RadMenuItem>
+                <telerik:RadMenuItem runat="server" Font-Size="Small" NavigateUrl="../Default.aspx?ctl=NHANGUIBILLEDIT"
+                    Text="Sửa số Bill sai" Value="NHANGUIBILLEDIT">
+                </telerik:RadMenuItem>
             </Items>
         </telerik:RadMenuItem>
         <telerik:RadMenuItem runat="server" Font-Size="Small" Text="Báo cáo" Value="BAOCAO">
