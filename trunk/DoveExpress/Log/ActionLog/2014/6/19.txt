@@ -1,0 +1,462 @@
+Thời gian: 2014-06-19 10:03:32 AM
+Địa chỉ IP : ::1
+Tài khoản : sysadmin
+Module : Login
+Kết quả : Thành công
+__________________________
+Thời gian: 2014-06-19 10:47:10 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"1111111"}
+__________________________
+Thời gian: 2014-06-19 10:47:10 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"2222222"}
+__________________________
+Thời gian: 2014-06-19 10:47:10 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"3333333"}
+__________________________
+Thời gian: 2014-06-19 10:47:10 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"4444444"}
+__________________________
+Thời gian: 2014-06-19 10:47:10 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"5555555"}
+__________________________
+Thời gian: 2014-06-19 10:47:10 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"6666666"}
+__________________________
+Thời gian: 2014-06-19 11:39:28 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0422099"}
+__________________________
+Thời gian: 2014-06-19 11:39:28 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0420538"}
+__________________________
+Thời gian: 2014-06-19 11:39:28 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0429543"}
+__________________________
+Thời gian: 2014-06-19 11:39:28 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0429644"}
+__________________________
+Thời gian: 2014-06-19 11:39:28 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0429147"}
+__________________________
+Thời gian: 2014-06-19 11:39:28 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0406213"}
+__________________________
+Thời gian: 2014-06-19 11:39:28 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0424066"}
+__________________________
+Thời gian: 2014-06-19 11:39:28 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0429168"}
+__________________________
+Thời gian: 2014-06-19 11:39:28 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0406219"}
+__________________________
+Thời gian: 2014-06-19 11:39:28 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0429545"}
+__________________________
+Thời gian: 2014-06-19 11:39:28 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0421109"}
+__________________________
+Thời gian: 2014-06-19 11:39:28 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0406215"}
+__________________________
+Thời gian: 2014-06-19 11:39:29 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0429903"}
+__________________________
+Thời gian: 2014-06-19 11:39:29 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0428145"}
+__________________________
+Thời gian: 2014-06-19 11:39:29 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0428603"}
+__________________________
+Thời gian: 2014-06-19 11:39:29 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0427079"}
+__________________________
+Thời gian: 2014-06-19 11:39:29 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0420324"}
+__________________________
+Thời gian: 2014-06-19 11:39:29 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0428785"}
+__________________________
+Thời gian: 2014-06-19 11:39:29 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0420304"}
+__________________________
+Thời gian: 2014-06-19 11:39:29 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0429912"}
+__________________________
+Thời gian: 2014-06-19 11:39:29 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0410761"}
+__________________________
+Thời gian: 2014-06-19 11:39:29 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0422077"}
+__________________________
+Thời gian: 2014-06-19 11:39:29 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0424125"}
+__________________________
+Thời gian: 2014-06-19 11:39:29 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0425162"}
+__________________________
+Thời gian: 2014-06-19 11:39:30 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"7041788"}
+__________________________
+Thời gian: 2014-06-19 11:39:30 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0422079"}
+__________________________
+Thời gian: 2014-06-19 11:39:30 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0422078"}
+__________________________
+Thời gian: 2014-06-19 11:39:30 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0409034"}
+__________________________
+Thời gian: 2014-06-19 11:39:30 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0409035"}
+__________________________
+Thời gian: 2014-06-19 11:39:30 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0427176"}
+__________________________
+Thời gian: 2014-06-19 11:39:30 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0425159"}
+__________________________
+Thời gian: 2014-06-19 11:39:30 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0425160"}
+__________________________
+Thời gian: 2014-06-19 11:39:30 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0422099"}
+__________________________
+Thời gian: 2014-06-19 11:39:30 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0429147"}
+__________________________
+Thời gian: 2014-06-19 11:39:30 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0406213"}
+__________________________
+Thời gian: 2014-06-19 11:39:31 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0424066"}
+__________________________
+Thời gian: 2014-06-19 11:39:31 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0420538"}
+__________________________
+Thời gian: 2014-06-19 11:39:31 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0429543"}
+__________________________
+Thời gian: 2014-06-19 11:39:31 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0429644"}
+__________________________
+Thời gian: 2014-06-19 11:39:31 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0429168"}
+__________________________
+Thời gian: 2014-06-19 11:39:31 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0406219"}
+__________________________
+Thời gian: 2014-06-19 11:39:31 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0429545"}
+__________________________
+Thời gian: 2014-06-19 11:39:31 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0421109"}
+__________________________
+Thời gian: 2014-06-19 11:39:31 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0406215"}
+__________________________
+Thời gian: 2014-06-19 11:39:31 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0429903"}
+__________________________
+Thời gian: 2014-06-19 11:39:31 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0428145"}
+__________________________
+Thời gian: 2014-06-19 11:39:31 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0428603"}
+__________________________
+Thời gian: 2014-06-19 11:39:32 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0427079"}
+__________________________
+Thời gian: 2014-06-19 11:39:32 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0420324"}
+__________________________
+Thời gian: 2014-06-19 11:39:32 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0428785"}
+__________________________
+Thời gian: 2014-06-19 11:43:10 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0422099"}
+__________________________
+Thời gian: 2014-06-19 11:43:10 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0429147"}
+__________________________
+Thời gian: 2014-06-19 11:43:10 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0406213"}
+__________________________
+Thời gian: 2014-06-19 11:43:10 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0424066"}
+__________________________
+Thời gian: 2014-06-19 11:43:10 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0420538"}
+__________________________
+Thời gian: 2014-06-19 11:43:10 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0429543"}
+__________________________
+Thời gian: 2014-06-19 11:43:10 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0429644"}
+__________________________
+Thời gian: 2014-06-19 11:43:10 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0429168"}
+__________________________
+Thời gian: 2014-06-19 11:43:11 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0406219"}
+__________________________
+Thời gian: 2014-06-19 11:43:11 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0429545"}
+__________________________
+Thời gian: 2014-06-19 11:43:11 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0421109"}
+__________________________
+Thời gian: 2014-06-19 11:43:11 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0406215"}
+__________________________
+Thời gian: 2014-06-19 11:43:11 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0429903"}
+__________________________
+Thời gian: 2014-06-19 11:43:11 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0428145"}
+__________________________
+Thời gian: 2014-06-19 11:43:11 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0428603"}
+__________________________
+Thời gian: 2014-06-19 11:43:11 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0427079"}
+__________________________
+Thời gian: 2014-06-19 11:43:11 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0420324"}
+__________________________
+Thời gian: 2014-06-19 11:43:11 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0428785"}
+__________________________
+Thời gian: 2014-06-19 11:43:11 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"0420304"}
+__________________________
+Thời gian: 2014-06-19 11:43:11 AM
+Địa chỉ IP : ::1
+Tài khoản : 1
+Module : Deleted NHANGUIs
+Kết quả : {C_BILL:"7041601"}
+__________________________
