@@ -1719,7 +1719,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
                 string HasBillString = "";
                 for (int i = 0; i < oDataTable.Rows.Count; i++)
                 {
-                    string C_BILL = oDataTable.Rows[i][1].ToString().Trim();
+                    string C_BILL = oDataTable.Rows[i][1].ToString().Trim().Replace(" ","");
                     if (C_BILL != "")
                     {
                         if (C_BILL.Length == 7)
