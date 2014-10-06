@@ -130,11 +130,9 @@
                 ©Copyright 2012-<%= System.DateTime.Now.Year %>
             Chuyển phát nhanh Bồ Câu - Dove Express.
             <br />
-                Hà Nội: 33 ngách 15 ngõ 167 Tây Sơn, Đống Đa - ÐT: 04.2242.4232 - Fax: 04.3533.5153
-            - Email: hn@dovevn.com
+               Hà Nội: 14 ngõ 59 Láng Hạ - ÐT: 04.3533.5153 - Fax: 04.6027.6000 - Email: hn@dovevn.com 
             <br />
-                TP.HCM: 49/3 Hậu Giang, Tân Bình - ÐT: 08. 2218.0607 - Fax: 08. 3948.7154 - Email:
-            hcm@dovevn.com
+                TP.HCM: 108/6 Cộng Hòa, P4, Tân Bình - ÐT: 08. 62.66.44.55 - Fax: 08. 6296.1795 - Email: hcm@dovevn.com
             <br />
                 Website: www.dovevn.com
             </div>
