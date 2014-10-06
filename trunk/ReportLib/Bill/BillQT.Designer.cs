@@ -1310,8 +1310,8 @@
             this.textBox21.Style.Padding.Right = Telerik.Reporting.Drawing.Unit.Point(1D);
             this.textBox21.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Left;
             this.textBox21.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
-            this.textBox21.Value = "Hà Nội: 33 Ngách 167/15 Tây Sơn, Đống Đa - 04.3533.5153; HCM: 47/4 Hậu Giang, P4." +
-    " Tân Bình - 08.6266.4455; Website: dovevn.com";
+            this.textBox21.Value = "Hà Nội: 14 ngõ 59 Láng Hạ - 04.3533.5153; HCM: 108/6 Cộng Hòa, P4, Tân Bình - 08." +
+    "6266.4455; Website: dovevn.com";
             // 
             // textBox59
             // 

@@ -237,6 +237,7 @@
             // 
             this.detail.Height = Telerik.Reporting.Drawing.Unit.Mm(271.77999877929688D);
             this.detail.Items.AddRange(new Telerik.Reporting.ReportItemBase[] {
+            this.panel11,
             this.panel12,
             this.barcode1,
             this.textBox1,
@@ -266,7 +267,6 @@
             this.textBox95,
             this.textBox96,
             this.textBox97,
-            this.panel11,
             this.panel13,
             this.textBox135,
             this.pictureBox2,
@@ -1738,8 +1738,8 @@
             this.textBox21.Style.Padding.Right = Telerik.Reporting.Drawing.Unit.Point(1D);
             this.textBox21.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Left;
             this.textBox21.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
-            this.textBox21.Value = "Hà Nội: 33 Ngách 167/15 Tây Sơn, Đống Đa - 04.3533.5153; HCM: 47/4 Hậu Giang, P4." +
-    " Tân Bình - 08.6266.4455; Website: dovevn.com";
+            this.textBox21.Value = "Hà Nội: 14 ngõ 59 Láng Hạ - 04.3533.5153; HCM: 108/6 Cộng Hòa, P4, Tân Bình - 08." +
+    "6266.4455; Website: dovevn.com";
             // 
             // textBox59
             // 
@@ -1851,8 +1851,8 @@
             this.textBox67.Style.Padding.Right = Telerik.Reporting.Drawing.Unit.Point(1D);
             this.textBox67.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Left;
             this.textBox67.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
-            this.textBox67.Value = "Hà Nội: 33 Ngách 167/15 Tây Sơn, Đống Đa - 04.3533.5153; HCM: 47/4 Hậu Giang, P4." +
-    " Tân Bình - 08.6266.4455; Website: dovevn.com";
+            this.textBox67.Value = "Hà Nội: 14 ngõ 59 Láng Hạ - 04.3533.5153; HCM: 108/6 Cộng Hòa, P4, Tân Bình - 08." +
+    "6266.4455; Website: dovevn.com";
             // 
             // panel8
             // 
