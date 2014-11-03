@@ -530,20 +530,7 @@
         }
     </script>
 </telerik:RadCodeBlock>
-<telerik:RadAjaxManagerProxy ID="AjaxManagerProxyNHANGUI" runat="server">
-    <AjaxSettings>
-        <telerik:AjaxSetting AjaxControlID="RadGridNHANGUI">
-            <UpdatedControls>
-                <telerik:AjaxUpdatedControl ControlID="RadGridNHANGUI" LoadingPanelID="RadAjaxLoadingPanelNHANGUI" />
-            </UpdatedControls>
-        </telerik:AjaxSetting>
-           <telerik:AjaxSetting AjaxControlID="txtBillNhanh">
-            <UpdatedControls>
-                <telerik:AjaxUpdatedControl ControlID="RadGridNHANGUI" LoadingPanelID="RadAjaxLoadingPanelNHANGUI" />
-            </UpdatedControls>
-        </telerik:AjaxSetting>
-    </AjaxSettings>
-</telerik:RadAjaxManagerProxy>
+
 <telerik:RadAjaxLoadingPanel Skin="Vista" ID="RadAjaxLoadingPanelNHANGUI" runat="server" />
 <style type="text/css">
     table.gridtable {
@@ -587,7 +574,7 @@
     </tr>
     <tr>
         <td>
-            <telerik:RadTextBox ID="txtBillNhanh" ForeColor="Red" Width="200px" runat="server"
+            <telerik:RadTextBox ID="txtBillNhanh" ForeColor="Red" Width="200px" runat="server" MaxLength="7"
                 OnTextChanged="txtBillNhanh_TextChanged">
                 <ClientEvents OnKeyPress="OnKeyPressRadTextBox" />
             </telerik:RadTextBox>
