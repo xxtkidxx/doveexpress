@@ -565,7 +565,7 @@
     </tr>
     <tr>
         <td>
-            <telerik:RadTextBox ID="txtBillNhanh" ForeColor="Red" Width="200px" runat="server"
+            <telerik:RadTextBox ID="txtBillNhanh" ForeColor="Red" Width="200px" runat="server" MaxLength="7"
                 OnTextChanged="txtBillNhanh_TextChanged">
                 <ClientEvents OnKeyPress="OnKeyPressRadTextBox" />
             </telerik:RadTextBox>
