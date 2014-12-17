@@ -464,7 +464,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
             if (FK_QUANHUYEN != "" && FK_DICHVU != "")
             {
                 LoadMaVungDT();
-            }            
+            }
         }
         if (C_KHOILUONG != 0)
         {
@@ -849,7 +849,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
                             {
                                 FK_NHOMKHACHHANG = "";
                                 FK_MABANGCUOC = "";
-                            }                            
+                            }
                             LoadMaVung();
                             LoadDVPT();
                             C_KHOILUONG = int.Parse(oDataTableNew.Rows[0]["C_KHOILUONG"].ToString());
@@ -1720,6 +1720,21 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
                 string HasBillString = "";
                 for (int i = 0; i < oDataTable.Rows.Count; i++)
                 {
+                    for (int k = i + 1; k < oDataTable.Rows.Count; k++)
+                    {
+                        if (oDataTable.Rows[k][1].ToString().Replace(" ", "") == oDataTable.Rows[i][1].ToString().Replace(" ", ""))
+                        {
+                            check = false;
+                            lblMessageAddExcell.Text = "Trong bảng kê có hai Bill trùng nhau";
+                            break;
+                            
+                        }
+                    }
+                }  
+                if (check)
+                {
+                for (int i = 0; i < oDataTable.Rows.Count; i++)
+                {
                     string C_BILL = oDataTable.Rows[i][1].ToString().Replace(" ","");
                     if (C_BILL != "")
                     {
@@ -1753,7 +1768,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
                                     decimal C_GIADOITAC = decimal.Parse((oDataTable.Rows[i][9].ToString().Trim() == "" ? "0" : oDataTable.Rows[i][9].ToString().Trim()));
                                     if (CheckBillQuick(C_BILL))
                                     {
-                                        insertSQL += "INSERT INTO [NHANGUI] ([C_NGAY], [C_BILL], [C_TIENTHUHO], [C_KHOILUONG], [C_HINHTHUCTT], [C_TIENHANGVAT], [C_NGAYGIONHAN], [FK_DOITAC], [C_GIADOITAC], [C_DIENGIAIDOITAC], [C_TYPE], [FK_VUNGLAMVIEC], [FK_USERADD]) VALUES ('" + String.Format("{0:yyyy-MM-dd hh:mm:ss tt}", C_NGAY) + "', '" + C_BILL + "', " + C_TIENTHUHO + ", " + C_KHOILUONG + ", " + C_HINHTHUCTT + ", " + C_TIENHANGVAT + ", '" + String.Format("{0:yyyy-MM-dd hh:mm:ss tt}", C_NGAYGIONHAN) + "', " + FK_DOITAC + ", " + C_GIADOITAC + ", N'" + C_DIENGIAIDOITAC + "' , 1, N'" + Session["VUNGLAMVIEC"] + "', " + Session["UserID"] + ");INSERT INTO [SOQUYTIENMAT] ([C_NGAY], [C_TYPE], [FK_KIHIEUTAIKHOAN], [C_DESC], [C_SOTIEN], [C_BILL],[C_TON],[C_ORDER],[FK_VUNGLAMVIEC]) VALUES ('" + String.Format("{0:yyyy-MM-dd hh:mm:ss tt}", C_NGAY) + "',N'Thu',NULL, N'Bill ' + '" + C_BILL + "', 0, '" + C_BILL + "', 0, 1, N'" + Session["VUNGLAMVIEC"] + "');INSERT INTO TRACKING (C_BILL, C_DATE, FK_TRANGTHAI) SELECT '" + C_BILL + "', '" + String.Format("{0:yyyy-MM-dd hh:mm:ss tt}", C_NGAYGIONHAN) + "', N'F' UNION ALL SELECT '" + C_BILL + "', '" + String.Format("{0:yyyy-MM-dd hh:mm:ss tt}", C_NGAY) + "',N'G_' + N'" + Session["VUNGLAMVIEC"] + "';";
+                                        insertSQL += "INSERT INTO [NHANGUI] ([C_NGAY], [C_BILL], [C_TIENTHUHO], [C_KHOILUONG], [C_KHOILUONGTHUC], [C_HINHTHUCTT], [C_TIENHANGVAT], [C_NGAYGIONHAN], [FK_DOITAC], [C_GIADOITAC], [C_DIENGIAIDOITAC], [C_TYPE], [FK_VUNGLAMVIEC], [FK_USERADD]) VALUES ('" + String.Format("{0:yyyy-MM-dd hh:mm:ss tt}", C_NGAY) + "', '" + C_BILL + "', " + C_TIENTHUHO + ", " + C_KHOILUONG + ", " + C_KHOILUONG + ", " + C_HINHTHUCTT + ", " + C_TIENHANGVAT + ", '" + String.Format("{0:yyyy-MM-dd hh:mm:ss tt}", C_NGAYGIONHAN) + "', " + FK_DOITAC + ", " + C_GIADOITAC + ", N'" + C_DIENGIAIDOITAC + "' , 1, N'" + Session["VUNGLAMVIEC"] + "', " + Session["UserID"] + ");INSERT INTO [SOQUYTIENMAT] ([C_NGAY], [C_TYPE], [FK_KIHIEUTAIKHOAN], [C_DESC], [C_SOTIEN], [C_BILL],[C_TON],[C_ORDER],[FK_VUNGLAMVIEC]) VALUES ('" + String.Format("{0:yyyy-MM-dd hh:mm:ss tt}", C_NGAY) + "',N'Thu',NULL, N'Bill ' + '" + C_BILL + "', 0, '" + C_BILL + "', 0, 1, N'" + Session["VUNGLAMVIEC"] + "');INSERT INTO TRACKING (C_BILL, C_DATE, FK_TRANGTHAI) SELECT '" + C_BILL + "', '" + String.Format("{0:yyyy-MM-dd hh:mm:ss tt}", C_NGAYGIONHAN) + "', N'F' UNION ALL SELECT '" + C_BILL + "', '" + String.Format("{0:yyyy-MM-dd hh:mm:ss tt}", C_NGAY) + "',N'G_' + N'" + Session["VUNGLAMVIEC"] + "';";
                                         BillCount += 1;
                                     }
                                     else
@@ -1791,6 +1806,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
                         }
                     }                   
                 }
+            }
                 if (check)
                 {
                     ITCLIB.Admin.SQL InsertQuery = new ITCLIB.Admin.SQL();
@@ -1821,6 +1837,58 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
         else
         {
             //lblMessageAddExcell.Text = "Hãy chọn file Excel để thêm dữ liệu";
+        }
+    }
+    protected void cmbMonth_PreRender(object sender, EventArgs e)
+    {
+        if (!IsPostBack)
+        {
+            cmbMonth.SelectedValue = System.DateTime.Now.Month.ToString();
+            NHANGUIDataSource.SelectParameters["MONTH"].DefaultValue = System.DateTime.Now.Month.ToString();
+        }
+    }
+    protected void cmbYear_PreRender(object sender, EventArgs e)
+    {
+        if (!IsPostBack)
+        {
+            RadComboBoxItem ItemAll = new RadComboBoxItem("Tất cả", "0");
+            cmbYear.Items.Add(ItemAll);
+            string SelectSQL = "SELECT MIN(year(C_NGAY)) as MINNAM FROM NHANGUI";
+            DataTable oDataTable = new DataTable();
+            ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
+            oDataTable = SelectQuery.query_data(SelectSQL);
+            if (oDataTable.Rows.Count != 0)
+            {
+                if (oDataTable.Rows[0]["MINNAM"] == DBNull.Value)
+                {
+                    int intYear = DateTime.Now.Year;
+                    RadComboBoxItem Item0 = new RadComboBoxItem(intYear.ToString(), intYear.ToString());
+                    intYear += 1;
+                    RadComboBoxItem Item1 = new RadComboBoxItem(intYear.ToString(), intYear.ToString());
+                    cmbYear.Items.Add(Item0);
+                    cmbYear.Items.Add(Item1);
+                }
+                else
+                {
+                    int intYear = DateTime.Now.Year;
+                    for (int i = int.Parse(oDataTable.Rows[0]["MINNAM"].ToString()); i <= intYear + 1; i++)
+                    {
+                        RadComboBoxItem Item = new RadComboBoxItem(i.ToString(), i.ToString());
+                        cmbYear.Items.Add(Item);
+                    }
+                }
+            }
+            else
+            {
+                int intYear = DateTime.Now.Year;
+                for (int i = int.Parse(oDataTable.Rows[0]["MINNAM"].ToString()); i <= intYear + 1; i++)
+                {
+                    RadComboBoxItem Item = new RadComboBoxItem(i.ToString(), i.ToString());
+                    cmbYear.Items.Add(Item);
+                }
+            }
+            cmbYear.SelectedValue = System.DateTime.Now.Year.ToString();
+            NHANGUIDataSource.SelectParameters["YEAR"].DefaultValue = System.DateTime.Now.Year.ToString();
         }
     }
 }
