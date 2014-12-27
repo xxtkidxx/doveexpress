@@ -904,7 +904,7 @@
                                     <span class="rtsTxtnew">NV Nhập:</span>
                                 </td>
                                 <td colspan="4">
-                                    <telerik:RadComboBox ID="cmbFK_USERADD" runat="server" SelectedValue='<%# Bind("FK_USERADD") %>' Enabled ="false"
+                                    <telerik:RadComboBox ID="cmbFK_USERADD" runat="server" SelectedValue='<%# Bind("FK_USERADD") %>'
                                         DataTextField="C_NAME" DataValueField="PK_ID" DataSourceID="UserDataSource" ShowToggleImage="True"
                                         EmptyMessage="Chọn" AllowCustomText="True" Filter="Contains">
                                     </telerik:RadComboBox>
