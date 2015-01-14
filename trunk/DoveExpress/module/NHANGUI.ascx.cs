@@ -1852,8 +1852,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
         if (!IsPostBack)
         {
             RadComboBoxItem ItemAll = new RadComboBoxItem("Tất cả", "0");
-            cmbYear.Items.Add(ItemAll);
-            string SelectSQL = "SELECT MIN(year(C_NGAY)) as MINNAM FROM NHANGUI";
+            /*string SelectSQL = "SELECT MIN(year(C_NGAY)) as MINNAM FROM NHANGUI";
             DataTable oDataTable = new DataTable();
             ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
             oDataTable = SelectQuery.query_data(SelectSQL);
@@ -1886,6 +1885,12 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
                     RadComboBoxItem Item = new RadComboBoxItem(i.ToString(), i.ToString());
                     cmbYear.Items.Add(Item);
                 }
+            }*/
+            int intYear = DateTime.Now.Year;
+            for (int i = intYear - 2; i <= intYear + 1; i++)
+            {
+                RadComboBoxItem Item = new RadComboBoxItem(i.ToString(), i.ToString());
+                cmbYear.Items.Add(Item);
             }
             cmbYear.SelectedValue = System.DateTime.Now.Year.ToString();
             NHANGUIDataSource.SelectParameters["YEAR"].DefaultValue = System.DateTime.Now.Year.ToString();
