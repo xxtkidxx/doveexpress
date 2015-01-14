@@ -390,4 +390,62 @@ public partial class module_NHANGUIPH : System.Web.UI.UserControl
         lblMessage.Text = "";
         RadGridNHANGUIPH.Rebind();
     }
+    protected void cmbMonth_PreRender(object sender, EventArgs e)
+    {
+        if (!IsPostBack)
+        {
+            cmbMonth.SelectedValue = System.DateTime.Now.Month.ToString();
+            NHANGUIPHDataSource.SelectParameters["MONTH"].DefaultValue = System.DateTime.Now.Month.ToString();
+        }
+    }
+    protected void cmbYear_PreRender(object sender, EventArgs e)
+    {
+        if (!IsPostBack)
+        {
+            RadComboBoxItem ItemAll = new RadComboBoxItem("Tất cả", "0");
+            cmbYear.Items.Add(ItemAll);
+            /*string SelectSQL = "SELECT MIN(year(C_NGAY)) as MINNAM FROM NHANGUI";
+            DataTable oDataTable = new DataTable();
+            ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
+            oDataTable = SelectQuery.query_data(SelectSQL);
+            if (oDataTable.Rows.Count != 0)
+            {
+                if (oDataTable.Rows[0]["MINNAM"] == DBNull.Value)
+                {
+                    int intYear = DateTime.Now.Year;
+                    RadComboBoxItem Item0 = new RadComboBoxItem(intYear.ToString(), intYear.ToString());
+                    intYear += 1;
+                    RadComboBoxItem Item1 = new RadComboBoxItem(intYear.ToString(), intYear.ToString());
+                    cmbYear.Items.Add(Item0);
+                    cmbYear.Items.Add(Item1);
+                }
+                else
+                {
+                    int intYear = DateTime.Now.Year;
+                    for (int i = int.Parse(oDataTable.Rows[0]["MINNAM"].ToString()); i <= intYear + 1; i++)
+                    {
+                        RadComboBoxItem Item = new RadComboBoxItem(i.ToString(), i.ToString());
+                        cmbYear.Items.Add(Item);
+                    }
+                }
+            }
+            else
+            {
+                int intYear = DateTime.Now.Year;
+                for (int i = int.Parse(oDataTable.Rows[0]["MINNAM"].ToString()); i <= intYear + 1; i++)
+                {
+                    RadComboBoxItem Item = new RadComboBoxItem(i.ToString(), i.ToString());
+                    cmbYear.Items.Add(Item);
+                }
+            }*/
+            int intYear = DateTime.Now.Year;
+            for (int i = intYear - 2; i <= intYear + 1; i++)
+            {
+                RadComboBoxItem Item = new RadComboBoxItem(i.ToString(), i.ToString());
+                cmbYear.Items.Add(Item);
+            }
+            cmbYear.SelectedValue = System.DateTime.Now.Year.ToString();
+            NHANGUIPHDataSource.SelectParameters["YEAR"].DefaultValue = System.DateTime.Now.Year.ToString();
+        }
+    }
 }

@@ -62,6 +62,15 @@
             oWindow.set_top(0);
             return false;
         }
+
+        function cmbYearClientSelectedIndexChangedHandler(sender, eventArgs) {
+            $find("<%=RadGridNHANGUIPH.ClientID %>").get_masterTableView().rebind();
+                    return false;
+                }
+                function cmbMonthClientSelectedIndexChangedHandler(sender, eventArgs) {
+                    $find("<%=RadGridNHANGUIPH.ClientID %>").get_masterTableView().rebind();
+            return false;
+        }
     </script>
 </telerik:RadCodeBlock>
 <telerik:RadAjaxLoadingPanel Skin="Vista" ID="RadAjaxLoadingPanelNHANGUIPH" runat="server" />
@@ -73,7 +82,7 @@
         border-width: 1px;
         border-color: #666666;
         border-collapse: collapse;
-        width: 50%;
+        width: 90%;
         margin: 5px 5px 5px 5px;
     }
 
@@ -96,12 +105,41 @@
 </style>
 <table class="gridtable">
     <tr>
-        <th>Đối tác
+        <th>Lọc dữ liệu
         </th>
-        <th>Lọc Bill theo file Excel
+        <th width="15%">Đối tác
+        </th>
+        <th width="15%">Lọc Bill theo file Excel
         </th>
     </tr>
     <tr>
+         <td>
+            Tháng:&nbsp;
+        <telerik:RadComboBox ID="cmbMonth" runat="server"  Width="25%" OnClientSelectedIndexChanged="cmbMonthClientSelectedIndexChangedHandler"
+            ShowToggleImage="True" EmptyMessage="Chọn tháng" OnPreRender="cmbMonth_PreRender">
+            <Items>
+                <telerik:RadComboBoxItem Value="0" Text="Tất cả" />
+                <telerik:RadComboBoxItem Value="1" Text="Tháng 1" />
+                <telerik:RadComboBoxItem Value="2" Text="Tháng 2" />
+                <telerik:RadComboBoxItem Value="3" Text="Tháng 3" />
+                <telerik:RadComboBoxItem Value="4" Text="Tháng 4" />
+                <telerik:RadComboBoxItem Value="5" Text="Tháng 5" />
+                <telerik:RadComboBoxItem Value="6" Text="Tháng 6" />
+                <telerik:RadComboBoxItem Value="7" Text="Tháng 7" />
+                <telerik:RadComboBoxItem Value="8" Text="Tháng 8" />
+                <telerik:RadComboBoxItem Value="9" Text="Tháng 9" />
+                <telerik:RadComboBoxItem Value="10" Text="Tháng 10" />
+                <telerik:RadComboBoxItem Value="11" Text="Tháng 11" />
+                <telerik:RadComboBoxItem Value="12" Text="Tháng 12" />
+            </Items>
+        </telerik:RadComboBox>
+        Năm:&nbsp;
+        <telerik:RadComboBox ID="cmbYear" runat="server"  Width="20%" OnClientSelectedIndexChanged="cmbYearClientSelectedIndexChangedHandler"
+            ShowToggleImage="True" EmptyMessage="Chọn năm" OnPreRender="cmbYear_PreRender">
+            <Items>
+            </Items>
+        </telerik:RadComboBox>
+        </td>
         <td>
             <telerik:RadComboBox ID="cmbDoiTac" runat="server" Width="95%" DataTextField="C_NAME"
                 DataValueField="PK_ID" DataSourceID="DoiTacDataSource" ShowToggleImage="True"
@@ -317,11 +355,13 @@
     Top="50px" Left="100px">
 </telerik:RadWindowManager>
 <asp:SqlDataSource ID="NHANGUIPHDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DOVEEXPRESSConnectionString %>"
-    SelectCommand="SELECT [NHANGUI].[PK_ID], [NHANGUI].[C_NGAY], DATEADD(D, 0, DATEDIFF(D, 0, [NHANGUI].[C_NGAY])) as C_NGAYFIX, [NHANGUI].[FK_KHACHHANG], [NHANGUI].[C_BILL], 'BC' + [NHANGUI].[C_BILL] as C_BILLFIX, [NHANGUI].[C_TENKH], [NHANGUI].[C_TELGUI], [NHANGUI].[C_NGUOINHAN], [NHANGUI].[C_DIACHINHAN], [NHANGUI].[C_TELNHAN], [NHANGUI].[FK_QUANHUYEN], [NHANGUI].[C_NOIDUNG], [NHANGUI].[C_SOKIEN], [NHANGUI].[C_GIATRIHANGHOA], [NHANGUI].[FK_MASANPHAM],  [NHANGUI].[C_PPXD], [NHANGUI].[C_KHOILUONGTHUC], [NHANGUI].[C_KHOILUONGQD], [NHANGUI].[C_KHOILUONG], [NHANGUI].[C_GIACUOC], [NHANGUI].[C_DONGGOI], [NHANGUI].[C_KHAIGIA], [NHANGUI].[C_COD], [NHANGUI].[C_BAOPHAT], [NHANGUI].[C_HENGIO], [NHANGUI].[C_HINHTHUCTT], [NHANGUI].[C_DATHU], ([NHANGUI].[C_TIENHANGVAT] - [NHANGUI].[C_DATHU]) as [C_CONLAI],(ISNULL([NHANGUI].[C_DONGGOI],0) + ISNULL([NHANGUI].[C_KHAIGIA],0) + ISNULL([NHANGUI].[C_COD],0) + ISNULL([NHANGUI].[C_BAOPHAT],0) + ISNULL([NHANGUI].[C_HENGIO],0)  + ISNULL([NHANGUI].[C_HAIQUAN],0)  + ISNULL([NHANGUI].[C_HUNTRUNG],0)) as [C_PHUTROISUM], [NHANGUI].[C_TIENHANG], [NHANGUI].[C_VAT], [NHANGUI].[C_TIENHANGVAT], [NHANGUI].[FK_NHANVIENNHAN], [NHANGUI].[FK_DOITAC], [NHANGUI].[C_GIADOITAC], (CASE WHEN NOT EXISTS (SELECT USERS.PK_ID FROM USERS WHERE USERS.PK_ID = NHANGUI.FK_NHANVIENPHAT) THEN NULL ELSE NHANGUI.FK_NHANVIENPHAT END) as FK_NHANVIENPHAT, [NHANGUI].[C_NGAYGIOPHAT], (CASE WHEN NOT EXISTS (SELECT USERS.PK_ID FROM USERS WHERE USERS.PK_ID = NHANGUI.FK_NHANVIENKHAITHAC) THEN NULL ELSE NHANGUI.FK_NHANVIENKHAITHAC END) as FK_NHANVIENKHAITHAC, [NHANGUI].[C_NGUOIKYNHAN], [NHANGUI].[C_BOPHAN], [NHANGUI].[FK_TRANGTHAI], (CASE WHEN [NHANGUI].[FK_TRANGTHAI] = N'True' THEN N'Đã ký nhận' ELSE (SELECT TOP 1 DMTRANGTHAI.C_NAME FROM TRACKING LEFT OUTER JOIN DMTRANGTHAI ON TRACKING.FK_TRANGTHAI = DMTRANGTHAI.C_CODE WHERE TRACKING.C_BILL = NHANGUI.C_BILL ORDER BY TRACKING.C_DATE DESC) END) as TRANGTHAINAME, USERSNHAN.C_NAME as NHANVIENNHANNAME,USERSPHAT.C_NAME as NHANVIENPHATNAME,USERSKHAITHAC.C_NAME as NHANVIENKHAITHACNAME,DMMASANPHAM.C_NAME as SANPHAMNAME,DMQUANHUYEN.C_NAME as QUANHUYENNAME,DMTINHTHANH.C_NAME as TINHTHANHNAME FROM [NHANGUI] LEFT OUTER JOIN USERS as USERSNHAN ON NHANGUI.FK_NHANVIENNHAN = USERSNHAN.PK_ID LEFT OUTER JOIN USERS as USERSPHAT ON NHANGUI.FK_NHANVIENPHAT = USERSPHAT.PK_ID LEFT OUTER JOIN USERS as USERSKHAITHAC ON NHANGUI.FK_NHANVIENKHAITHAC = USERSKHAITHAC.PK_ID LEFT OUTER JOIN DMMASANPHAM ON NHANGUI.FK_MASANPHAM=DMMASANPHAM.PK_ID LEFT OUTER JOIN DMQUANHUYEN ON NHANGUI.FK_QUANHUYEN = DMQUANHUYEN.C_CODE LEFT OUTER JOIN DMTINHTHANH ON DMQUANHUYEN.FK_TINHTHANH = DMTINHTHANH.PK_ID LEFT OUTER JOIN DMDOITAC ON [NHANGUI].FK_DOITAC = DMDOITAC.PK_ID WHERE (@FK_DOITAC = -1 OR [NHANGUI].FK_DOITAC = @FK_DOITAC) AND (([NHANGUI].[FK_VUNGLAMVIEC] = @FK_VUNGLAMVIEC) OR ([DMDOITAC].[FK_VUNGLAMVIEC] LIKE '%' + @FK_VUNGLAMVIEC + '%')) ORDER BY [NHANGUI].C_NGAY DESC"
+    SelectCommand="SELECT [NHANGUI].[PK_ID], [NHANGUI].[C_NGAY], DATEADD(D, 0, DATEDIFF(D, 0, [NHANGUI].[C_NGAY])) as C_NGAYFIX, [NHANGUI].[FK_KHACHHANG], [NHANGUI].[C_BILL], 'BC' + [NHANGUI].[C_BILL] as C_BILLFIX, [NHANGUI].[C_TENKH], [NHANGUI].[C_TELGUI], [NHANGUI].[C_NGUOINHAN], [NHANGUI].[C_DIACHINHAN], [NHANGUI].[C_TELNHAN], [NHANGUI].[FK_QUANHUYEN], [NHANGUI].[C_NOIDUNG], [NHANGUI].[C_SOKIEN], [NHANGUI].[C_GIATRIHANGHOA], [NHANGUI].[FK_MASANPHAM],  [NHANGUI].[C_PPXD], [NHANGUI].[C_KHOILUONGTHUC], [NHANGUI].[C_KHOILUONGQD], [NHANGUI].[C_KHOILUONG], [NHANGUI].[C_GIACUOC], [NHANGUI].[C_DONGGOI], [NHANGUI].[C_KHAIGIA], [NHANGUI].[C_COD], [NHANGUI].[C_BAOPHAT], [NHANGUI].[C_HENGIO], [NHANGUI].[C_HINHTHUCTT], [NHANGUI].[C_DATHU], ([NHANGUI].[C_TIENHANGVAT] - [NHANGUI].[C_DATHU]) as [C_CONLAI],(ISNULL([NHANGUI].[C_DONGGOI],0) + ISNULL([NHANGUI].[C_KHAIGIA],0) + ISNULL([NHANGUI].[C_COD],0) + ISNULL([NHANGUI].[C_BAOPHAT],0) + ISNULL([NHANGUI].[C_HENGIO],0)  + ISNULL([NHANGUI].[C_HAIQUAN],0)  + ISNULL([NHANGUI].[C_HUNTRUNG],0)) as [C_PHUTROISUM], [NHANGUI].[C_TIENHANG], [NHANGUI].[C_VAT], [NHANGUI].[C_TIENHANGVAT], [NHANGUI].[FK_NHANVIENNHAN], [NHANGUI].[FK_DOITAC], [NHANGUI].[C_GIADOITAC], (CASE WHEN NOT EXISTS (SELECT USERS.PK_ID FROM USERS WHERE USERS.PK_ID = NHANGUI.FK_NHANVIENPHAT) THEN NULL ELSE NHANGUI.FK_NHANVIENPHAT END) as FK_NHANVIENPHAT, [NHANGUI].[C_NGAYGIOPHAT], (CASE WHEN NOT EXISTS (SELECT USERS.PK_ID FROM USERS WHERE USERS.PK_ID = NHANGUI.FK_NHANVIENKHAITHAC) THEN NULL ELSE NHANGUI.FK_NHANVIENKHAITHAC END) as FK_NHANVIENKHAITHAC, [NHANGUI].[C_NGUOIKYNHAN], [NHANGUI].[C_BOPHAN], [NHANGUI].[FK_TRANGTHAI], (CASE WHEN [NHANGUI].[FK_TRANGTHAI] = N'True' THEN N'Đã ký nhận' ELSE (SELECT TOP 1 DMTRANGTHAI.C_NAME FROM TRACKING LEFT OUTER JOIN DMTRANGTHAI ON TRACKING.FK_TRANGTHAI = DMTRANGTHAI.C_CODE WHERE TRACKING.C_BILL = NHANGUI.C_BILL ORDER BY TRACKING.C_DATE DESC) END) as TRANGTHAINAME, USERSNHAN.C_NAME as NHANVIENNHANNAME,USERSPHAT.C_NAME as NHANVIENPHATNAME,USERSKHAITHAC.C_NAME as NHANVIENKHAITHACNAME,DMMASANPHAM.C_NAME as SANPHAMNAME,DMQUANHUYEN.C_NAME as QUANHUYENNAME,DMTINHTHANH.C_NAME as TINHTHANHNAME FROM [NHANGUI] LEFT OUTER JOIN USERS as USERSNHAN ON NHANGUI.FK_NHANVIENNHAN = USERSNHAN.PK_ID LEFT OUTER JOIN USERS as USERSPHAT ON NHANGUI.FK_NHANVIENPHAT = USERSPHAT.PK_ID LEFT OUTER JOIN USERS as USERSKHAITHAC ON NHANGUI.FK_NHANVIENKHAITHAC = USERSKHAITHAC.PK_ID LEFT OUTER JOIN DMMASANPHAM ON NHANGUI.FK_MASANPHAM=DMMASANPHAM.PK_ID LEFT OUTER JOIN DMQUANHUYEN ON NHANGUI.FK_QUANHUYEN = DMQUANHUYEN.C_CODE LEFT OUTER JOIN DMTINHTHANH ON DMQUANHUYEN.FK_TINHTHANH = DMTINHTHANH.PK_ID LEFT OUTER JOIN DMDOITAC ON [NHANGUI].FK_DOITAC = DMDOITAC.PK_ID WHERE (@FK_DOITAC = -1 OR [NHANGUI].FK_DOITAC = @FK_DOITAC) AND (month([NHANGUI].[C_NGAY]) = @MONTH OR @MONTH = 0) AND (year([NHANGUI].[C_NGAY]) = @YEAR OR @YEAR = 0) AND (([NHANGUI].[FK_VUNGLAMVIEC] = @FK_VUNGLAMVIEC) OR ([DMDOITAC].[FK_VUNGLAMVIEC] LIKE '%' + @FK_VUNGLAMVIEC + '%')) ORDER BY [NHANGUI].C_NGAY DESC"
     UpdateCommand="UPDATE [NHANGUI] SET [FK_NHANVIENPHAT] = @FK_NHANVIENPHAT, [C_NGAYGIOPHAT] = @C_NGAYGIOPHAT, [FK_NHANVIENKHAITHAC]=@FK_NHANVIENKHAITHAC, [C_NGUOIKYNHAN] = @C_NGUOIKYNHAN, [C_BOPHAN] = @C_BOPHAN, [FK_TRANGTHAI] = @FK_TRANGTHAI WHERE [C_BILL] = @C_BILL">
     <SelectParameters>
         <asp:ControlParameter Name="FK_DOITAC" Type="String" ControlID="cmbDoiTac" DefaultValue="-1" />
         <asp:SessionParameter Name="FK_VUNGLAMVIEC" Type="String" SessionField="VUNGLAMVIEC" />
+        <asp:ControlParameter ControlID="cmbMonth" Name="MONTH" PropertyName="SelectedValue" />
+        <asp:ControlParameter ControlID="cmbYear" Name="YEAR" PropertyName="SelectedValue" />
     </SelectParameters>
     <UpdateParameters>
         <asp:Parameter Name="FK_NHANVIENPHAT" Type="Int32" />
