@@ -255,25 +255,7 @@ public partial class module_NHANGUIPH : System.Web.UI.UserControl
         {
             cmbDoiTac.SelectedIndex = 0;
         }
-    }
-
-    public string GetStatusBill(string C_BILL)
-    {
-        string result = "";
-        string SelectSQL = "SELECT TOP 1 DMTRANGTHAI.C_NAME FROM TRACKING LEFT OUTER JOIN DMTRANGTHAI ON TRACKING.FK_TRANGTHAI = DMTRANGTHAI.C_CODE WHERE TRACKING.C_BILL = N'" + C_BILL + "' ORDER BY TRACKING.C_DATE DESC";
-        DataTable oDataTable = new DataTable();
-        ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
-        oDataTable = SelectQuery.query_data(SelectSQL);
-        if (oDataTable.Rows.Count != 0)
-        {
-            result = oDataTable.Rows[0]["C_NAME"].ToString();
-        }
-        else
-        {
-            result ="";
-        }
-        return result;
-    }
+    }   
     protected void RadGridNHANGUIPH_ItemCreated(object sender, GridItemEventArgs e)
     {
         if (e.Item is GridPagerItem)
@@ -447,5 +429,35 @@ public partial class module_NHANGUIPH : System.Web.UI.UserControl
             cmbYear.SelectedValue = System.DateTime.Now.Year.ToString();
             NHANGUIPHDataSource.SelectParameters["YEAR"].DefaultValue = System.DateTime.Now.Year.ToString();
         }
+    }
+    public string LoadTrangThai(object C_BILL, object FK_TRANGTHAI)
+    {
+        string result = "";
+        if (FK_TRANGTHAI.ToString() == "True")
+        {
+            result = "Đã ký nhận";
+        }
+        else
+        {
+            result = GetStatusBill(C_BILL.ToString());
+        }
+        return result;
+    }
+    public string GetStatusBill(string C_BILL)
+    {
+        string result = "";
+        string SelectSQL = "SELECT TOP 1 DMTRANGTHAI.C_NAME FROM TRACKING LEFT OUTER JOIN DMTRANGTHAI ON TRACKING.FK_TRANGTHAI = DMTRANGTHAI.C_CODE WHERE TRACKING.C_BILL = N'" + C_BILL + "' ORDER BY TRACKING.C_DATE DESC";
+        DataTable oDataTable = new DataTable();
+        ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
+        oDataTable = SelectQuery.query_data(SelectSQL);
+        if (oDataTable.Rows.Count != 0)
+        {
+            result = oDataTable.Rows[0]["C_NAME"].ToString();
+        }
+        else
+        {
+            result = "";
+        }
+        return result;
     }
 }
