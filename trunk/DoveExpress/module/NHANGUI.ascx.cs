@@ -952,10 +952,15 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
         else if (e.CommandName == RadGrid.PerformInsertCommandName)
         {
             GridEditableItem editItem = (GridEditableItem)e.Item;
+            RadComboBox cmbMaKhachHang = (RadComboBox)editItem.FindControl("cmbMaKhachHang");
+            NHANGUIDataSource.InsertParameters["FK_KHACHHANG"].DefaultValue = cmbMaKhachHang.SelectedValue;
             NHANGUIDataSource.InsertParameters["FK_TRANGTHAI"].DefaultValue = "False";
         }
         else if (e.CommandName == RadGrid.UpdateCommandName)
         {
+            GridEditableItem editItem = (GridEditableItem)e.Item;
+            RadComboBox cmbMaKhachHang = (RadComboBox)editItem.FindControl("cmbMaKhachHang");
+            NHANGUIDataSource.UpdateParameters["FK_KHACHHANG"].DefaultValue = cmbMaKhachHang.SelectedValue;
         }
         else if (e.CommandName == RadGrid.CancelAllCommandName)
         {
@@ -1723,7 +1728,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
                 {
                     for (int k = i + 1; k < oDataTable.Rows.Count; k++)
                     {
-                        if ((oDataTable.Rows[k][1].ToString().Replace(" ", "") == oDataTable.Rows[i][1].ToString().Replace(" ", "")) && (oDataTable.Rows[k][1].ToString().Replace(" ", "") !=""))
+                        if ((oDataTable.Rows[k][1].ToString().Replace(" ", "") == oDataTable.Rows[i][1].ToString().Replace(" ", "")) && (oDataTable.Rows[k][1].ToString().Replace(" ", "") != ""))
                         {
                             check = false;
                             lblMessageAddExcell.Text = "Trong bảng kê có hai Bill trùng nhau" + i + "_" + k;
@@ -1895,5 +1900,19 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
             cmbYear.SelectedValue = System.DateTime.Now.Year.ToString();
             NHANGUIDataSource.SelectParameters["YEAR"].DefaultValue = System.DateTime.Now.Year.ToString();
         }
+    }
+    public object CheckKhachHang(object FK_KHACHHANG)
+    {
+        object result = DBNull.Value;
+        string SelectSQL;
+        SelectSQL = "Select DMKHACHHANG.C_CODE FROM DMKHACHHANG WHERE DMKHACHHANG.C_CODE = '" + FK_KHACHHANG.ToString() + "'";
+        DataTable oDataTable = new DataTable();
+        ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
+        oDataTable = SelectQuery.query_data(SelectSQL);
+        if (oDataTable.Rows.Count != 0)
+        {
+            result = FK_KHACHHANG;
+        }
+        return result;
     }
 }
