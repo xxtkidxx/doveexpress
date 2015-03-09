@@ -953,14 +953,33 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
         {
             GridEditableItem editItem = (GridEditableItem)e.Item;
             RadComboBox cmbMaKhachHang = (RadComboBox)editItem.FindControl("cmbMaKhachHang");
+            RadComboBox cmbFK_NHANVIENNHAN = (RadComboBox)editItem.FindControl("cmbFK_NHANVIENNHAN");
+            RadComboBox cmbFK_NHANVIENKHAITHAC = (RadComboBox)editItem.FindControl("cmbFK_NHANVIENKHAITHAC");
+            RadComboBox cmbFK_NHANVIENPHAT = (RadComboBox)editItem.FindControl("cmbFK_NHANVIENPHAT");
+            RadComboBox cmbFK_DOITAC = (RadComboBox)editItem.FindControl("cmbFK_DOITAC");
             NHANGUIDataSource.InsertParameters["FK_KHACHHANG"].DefaultValue = cmbMaKhachHang.SelectedValue;
+            NHANGUIDataSource.InsertParameters["FK_USERADD"].DefaultValue = Session["UserID"].ToString();
+            NHANGUIDataSource.InsertParameters["FK_NHANVIENNHAN"].DefaultValue = cmbFK_NHANVIENNHAN.SelectedValue;
+            NHANGUIDataSource.InsertParameters["FK_NHANVIENKHAITHAC"].DefaultValue = cmbFK_NHANVIENKHAITHAC.SelectedValue;
+            NHANGUIDataSource.InsertParameters["FK_NHANVIENPHAT"].DefaultValue = cmbFK_NHANVIENPHAT.SelectedValue;
+            NHANGUIDataSource.InsertParameters["FK_DOITAC"].DefaultValue = cmbFK_DOITAC.SelectedValue;
             NHANGUIDataSource.InsertParameters["FK_TRANGTHAI"].DefaultValue = "False";
         }
         else if (e.CommandName == RadGrid.UpdateCommandName)
         {
             GridEditableItem editItem = (GridEditableItem)e.Item;
             RadComboBox cmbMaKhachHang = (RadComboBox)editItem.FindControl("cmbMaKhachHang");
+            RadComboBox cmbFK_USERADD = (RadComboBox)editItem.FindControl("cmbFK_USERADD");
+            RadComboBox cmbFK_NHANVIENNHAN = (RadComboBox)editItem.FindControl("cmbFK_NHANVIENNHAN");
+            RadComboBox cmbFK_NHANVIENKHAITHAC = (RadComboBox)editItem.FindControl("cmbFK_NHANVIENKHAITHAC");
+            RadComboBox cmbFK_NHANVIENPHAT = (RadComboBox)editItem.FindControl("cmbFK_NHANVIENPHAT");
+            RadComboBox cmbFK_DOITAC = (RadComboBox)editItem.FindControl("cmbFK_DOITAC");
             NHANGUIDataSource.UpdateParameters["FK_KHACHHANG"].DefaultValue = cmbMaKhachHang.SelectedValue;
+            NHANGUIDataSource.UpdateParameters["FK_USERADD"].DefaultValue = cmbFK_USERADD.SelectedValue;
+            NHANGUIDataSource.UpdateParameters["FK_NHANVIENNHAN"].DefaultValue = cmbFK_NHANVIENNHAN.SelectedValue;
+            NHANGUIDataSource.UpdateParameters["FK_NHANVIENKHAITHAC"].DefaultValue = cmbFK_NHANVIENKHAITHAC.SelectedValue;
+            NHANGUIDataSource.UpdateParameters["FK_NHANVIENPHAT"].DefaultValue = cmbFK_NHANVIENPHAT.SelectedValue;
+            NHANGUIDataSource.UpdateParameters["FK_DOITAC"].DefaultValue = cmbFK_DOITAC.SelectedValue;
         }
         else if (e.CommandName == RadGrid.CancelAllCommandName)
         {
@@ -1926,6 +1945,62 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
         if (oDataTable.Rows.Count != 0)
         {
             result = FK_NHANVIENNHAN;
+        }
+        return result;
+    }
+    public object CheckDOITAC(object FK_DOITAC)
+    {
+        object result = DBNull.Value;
+        string SelectSQL;
+        SelectSQL = "Select DMDOITAC.PK_ID FROM DMDOITAC WHERE DMDOITAC.PK_ID = " + FK_DOITAC.ToString() + "";
+        DataTable oDataTable = new DataTable();
+        ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
+        oDataTable = SelectQuery.query_data(SelectSQL);
+        if (oDataTable.Rows.Count != 0)
+        {
+            result = FK_DOITAC;
+        }
+        return result;
+    }
+    public object CheckUSERADD(object FK_USERADD)
+    {
+        object result = DBNull.Value;
+        string SelectSQL;
+        SelectSQL = "Select USERS.PK_ID FROM USERS WHERE USERS.PK_ID = " + FK_USERADD.ToString() + "";
+        DataTable oDataTable = new DataTable();
+        ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
+        oDataTable = SelectQuery.query_data(SelectSQL);
+        if (oDataTable.Rows.Count != 0)
+        {
+            result = FK_USERADD;
+        }
+        return result;
+    }
+    public object CheckNHANVIENKHAITHAC(object FK_NHANVIENKHAITHAC)
+    {
+        object result = DBNull.Value;
+        string SelectSQL;
+        SelectSQL = "Select USERS.PK_ID FROM USERS WHERE USERS.PK_ID = " + FK_NHANVIENKHAITHAC.ToString() + "";
+        DataTable oDataTable = new DataTable();
+        ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
+        oDataTable = SelectQuery.query_data(SelectSQL);
+        if (oDataTable.Rows.Count != 0)
+        {
+            result = FK_NHANVIENKHAITHAC;
+        }
+        return result;
+    }
+    public object CheckNHANVIENPHAT(object FK_NHANVIENPHAT)
+    {
+        object result = DBNull.Value;
+        string SelectSQL;
+        SelectSQL = "Select USERS.PK_ID FROM USERS WHERE USERS.PK_ID = " + FK_NHANVIENPHAT.ToString() + "";
+        DataTable oDataTable = new DataTable();
+        ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
+        oDataTable = SelectQuery.query_data(SelectSQL);
+        if (oDataTable.Rows.Count != 0)
+        {
+            result = FK_NHANVIENPHAT;
         }
         return result;
     }
