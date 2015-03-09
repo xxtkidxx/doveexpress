@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "DoveExpress", ".", "{5400B45F-370B-4520-A616-240119FAFA45}"
 	ProjectSection(WebsiteProperties) = preProject
 		SccProjectName = "Svn"
@@ -8,7 +8,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "DoveExpress", ".", "{5400B4
 		SccLocalPath = "Svn"
 		SccProvider = "SubversionScc"
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
-		ProjectReferences = "{CC5085B0-191C-49EB-AC82-79547375DEFE}|ReportLib.dll;"
+		ProjectReferences = ""
 		Debug.AspNetCompiler.VirtualPath = "/CNC"
 		Debug.AspNetCompiler.PhysicalPath = "..\DoveExpress\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\CNC\"
