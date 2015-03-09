@@ -1915,4 +1915,18 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
         }
         return result;
     }
+    public object CheckNHANVIENNHAN(object FK_NHANVIENNHAN)
+    {
+        object result = DBNull.Value;
+        string SelectSQL;
+        SelectSQL = "Select USERS.PK_ID FROM USERS WHERE USERS.PK_ID = " + FK_NHANVIENNHAN.ToString() + "";
+        DataTable oDataTable = new DataTable();
+        ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
+        oDataTable = SelectQuery.query_data(SelectSQL);
+        if (oDataTable.Rows.Count != 0)
+        {
+            result = FK_NHANVIENNHAN;
+        }
+        return result;
+    }
 }
