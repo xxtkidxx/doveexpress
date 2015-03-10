@@ -1938,7 +1938,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
     {
         object result = DBNull.Value;
         string SelectSQL;
-        SelectSQL = "SELECT USERS.PK_ID,USERS.FK_GroupUser,USERS.FK_DEPT,USERS.C_LoginName,USERS.C_Password,USERS.C_NAME,USERS.C_Address,USERS.c_Tel,USERS.C_Email,USERS.C_DESC,GROUPUSER.C_NAME AS GROUPUSERNAME FROM USERS INNER JOIN GROUPUSER ON  USERS.FK_GROUPUSER = GROUPUSER.PK_ID WHERE FK_GROUPUSER NOT IN (0,1) AND (FK_VUNGLAMVIEC = N'Tất cả' OR FK_VUNGLAMVIEC = N'" + Session["VUNGLAMVIEC"].ToString() + "')  AND USERS.PK_ID = " + FK_NHANVIENNHAN.ToString() + "";
+        SelectSQL = "SELECT USERS.PK_ID FROM USERS INNER JOIN GROUPUSER ON  USERS.FK_GROUPUSER = GROUPUSER.PK_ID WHERE FK_GROUPUSER NOT IN (0,1) AND (FK_VUNGLAMVIEC = N'Tất cả' OR FK_VUNGLAMVIEC = N'" + Session["VUNGLAMVIEC"].ToString() + "')  AND USERS.PK_ID = " + FK_NHANVIENNHAN.ToString() + "";
         DataTable oDataTable = new DataTable();
         ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
         oDataTable = SelectQuery.query_data(SelectSQL);
@@ -1966,7 +1966,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
     {
         object result = DBNull.Value;
         string SelectSQL;
-        SelectSQL = "SELECT USERS.PK_ID,USERS.FK_GroupUser,USERS.FK_DEPT,USERS.C_LoginName,USERS.C_Password,USERS.C_NAME,USERS.C_Address,USERS.c_Tel,USERS.C_Email,USERS.C_DESC,GROUPUSER.C_NAME AS GROUPUSERNAME FROM USERS INNER JOIN GROUPUSER ON  USERS.FK_GROUPUSER = GROUPUSER.PK_ID WHERE FK_GROUPUSER NOT IN (0,1) AND (FK_VUNGLAMVIEC = N'Tất cả' OR FK_VUNGLAMVIEC = N'" + Session["VUNGLAMVIEC"].ToString() + "')  AND USERS.PK_ID = " + FK_USERADD.ToString() + "";
+        SelectSQL = "SELECT USERS.PK_ID FROM USERS INNER JOIN GROUPUSER ON  USERS.FK_GROUPUSER = GROUPUSER.PK_ID WHERE FK_GROUPUSER NOT IN (0,1) AND (FK_VUNGLAMVIEC = N'Tất cả' OR FK_VUNGLAMVIEC = N'" + Session["VUNGLAMVIEC"].ToString() + "')  AND USERS.PK_ID = " + FK_USERADD.ToString() + "";
         DataTable oDataTable = new DataTable();
         ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
         oDataTable = SelectQuery.query_data(SelectSQL);
@@ -1980,7 +1980,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
     {
         object result = DBNull.Value;
         string SelectSQL;
-        SelectSQL = "SELECT USERS.PK_ID,USERS.FK_GroupUser,USERS.FK_DEPT,USERS.C_LoginName,USERS.C_Password,USERS.C_NAME,USERS.C_Address,USERS.c_Tel,USERS.C_Email,USERS.C_DESC,GROUPUSER.C_NAME AS GROUPUSERNAME FROM USERS INNER JOIN GROUPUSER ON  USERS.FK_GROUPUSER = GROUPUSER.PK_ID WHERE FK_GROUPUSER NOT IN (0,1) AND (FK_VUNGLAMVIEC = N'Tất cả' OR FK_VUNGLAMVIEC = N'" + Session["VUNGLAMVIEC"].ToString() + "')  AND USERS.PK_ID = " + FK_NHANVIENKHAITHAC.ToString() + "";
+        SelectSQL = "SELECT USERS.PK_ID FROM USERS INNER JOIN GROUPUSER ON  USERS.FK_GROUPUSER = GROUPUSER.PK_ID WHERE FK_GROUPUSER NOT IN (0,1) AND (FK_VUNGLAMVIEC = N'Tất cả' OR FK_VUNGLAMVIEC = N'" + Session["VUNGLAMVIEC"].ToString() + "')  AND USERS.PK_ID = " + FK_NHANVIENKHAITHAC.ToString() + "";
         DataTable oDataTable = new DataTable();
         ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
         oDataTable = SelectQuery.query_data(SelectSQL);
@@ -1994,7 +1994,7 @@ public partial class module_NHANGUI : System.Web.UI.UserControl
     {
         object result = DBNull.Value;
         string SelectSQL;
-        SelectSQL = "SELECT USERS.PK_ID,USERS.FK_GroupUser,USERS.FK_DEPT,USERS.C_LoginName,USERS.C_Password,USERS.C_NAME,USERS.C_Address,USERS.c_Tel,USERS.C_Email,USERS.C_DESC,GROUPUSER.C_NAME AS GROUPUSERNAME FROM USERS INNER JOIN GROUPUSER ON  USERS.FK_GROUPUSER = GROUPUSER.PK_ID WHERE FK_GROUPUSER NOT IN (0,1) AND (FK_VUNGLAMVIEC = N'Tất cả' OR FK_VUNGLAMVIEC = N'" + Session["VUNGLAMVIEC"].ToString() + "')  AND USERS.PK_ID = " + FK_NHANVIENPHAT.ToString() + "";
+        SelectSQL = "SELECT USERS.PK_ID FROM USERS INNER JOIN GROUPUSER ON  USERS.FK_GROUPUSER = GROUPUSER.PK_ID WHERE FK_GROUPUSER NOT IN (0,1) AND (FK_VUNGLAMVIEC = N'Tất cả' OR FK_VUNGLAMVIEC = N'" + Session["VUNGLAMVIEC"].ToString() + "')  AND USERS.PK_ID = " + FK_NHANVIENPHAT.ToString() + "";
         DataTable oDataTable = new DataTable();
         ITCLIB.Admin.SQL SelectQuery = new ITCLIB.Admin.SQL();
         oDataTable = SelectQuery.query_data(SelectSQL);
